@@ -1,0 +1,19 @@
+inherited FrmBaseFilha: TFrmBaseFilha
+  Left = 260
+  Top = 160
+  Caption = 'FrmBaseFilha'
+  ClientHeight = 400
+  ClientWidth = 564
+  FormStyle = fsMDIChild
+  OldCreateOrder = True
+  Position = poDefault
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
+  ExplicitLeft = 260
+  ExplicitTop = 160
+  ExplicitWidth = 580
+  ExplicitHeight = 439
+  PixelsPerInch = 96
+  TextHeight = 13
+end

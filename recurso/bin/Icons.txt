@@ -1,0 +1,4 @@
+MSG_DLG_ERROR ICON "Imagens\Icons\Error.ico"
+MSG_DLG_INFORMATION ICON "Imagens\Icons\Information.ico"
+MSG_DLG_WARNING ICON "Imagens\Icons\Warning.ico"
+MSG_DLG_CONFIRMATION ICON "Imagens\Icons\Confirmation.ico"

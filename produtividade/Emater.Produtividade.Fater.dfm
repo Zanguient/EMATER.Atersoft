@@ -39,8 +39,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         831
         508)
       object Label27: TLabel
-        Left = 441
-        Top = 337
+        Left = 437
+        Top = 331
         Width = 136
         Height = 13
         Anchors = [akRight, akBottom]
@@ -50,8 +50,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         ExplicitTop = 350
       end
       object Label29: TLabel
-        Left = 593
-        Top = 337
+        Left = 589
+        Top = 331
         Width = 156
         Height = 13
         Anchors = [akRight, akBottom]
@@ -69,10 +69,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         ParentColor = False
         TabOrder = 0
         DesignSize = (
-          807
-          322)
-        Height = 329
-        Width = 807
+          803
+          316)
+        Height = 323
+        Width = 803
         object Label1: TLabel
           Left = 8
           Top = 16
@@ -209,7 +209,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.ListSource = DtSrcFinalidade
           Properties.PostPopupValueOnTab = True
           TabOrder = 6
-          Width = 375
+          Width = 371
         end
         object DbLkpCmbBxRecurso: TcxDBLookupComboBox
           Left = 424
@@ -228,7 +228,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.ListSource = DtSrcRecurso
           Properties.PostPopupValueOnTab = True
           TabOrder = 3
-          Width = 375
+          Width = 371
         end
         object DbLkpCmbBxProjeto: TcxDBLookupComboBox
           Left = 8
@@ -248,7 +248,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.PostPopupValueOnTab = True
           Properties.OnChange = DbLkpCmbBxProjetoPropertiesChange
           TabOrder = 7
-          Width = 791
+          Width = 787
         end
         object DbLkpCmbBxMetodoFinal: TcxDBLookupComboBox
           Left = 216
@@ -271,22 +271,22 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         object PgCntrlTexto: TcxPageControl
           Left = 8
           Top = 139
-          Width = 791
-          Height = 166
+          Width = 787
+          Height = 153
           Anchors = [akLeft, akTop, akRight, akBottom]
           TabOrder = 8
           Properties.ActivePage = TbShtTematica
           Properties.CustomButtons.Buttons = <>
-          ClientRectBottom = 164
+          ClientRectBottom = 151
           ClientRectLeft = 2
-          ClientRectRight = 789
+          ClientRectRight = 785
           ClientRectTop = 28
           object TbShtTematica: TcxTabSheet
             Caption = 'Tem'#225'tica'
             ImageIndex = 0
             DesignSize = (
-              787
-              136)
+              783
+              123)
             object BtnTematica: TcxButton
               Left = 8
               Top = 8
@@ -312,16 +312,16 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 1
-              Height = 87
-              Width = 771
+              Height = 74
+              Width = 767
             end
           end
           object TbShtOrientacao: TcxTabSheet
             Caption = 'Orienta'#231#227'o t'#233'cnica'
             ImageIndex = 1
             DesignSize = (
-              787
-              136)
+              783
+              123)
             object DbMemoOrientacao: TcxDBMemo
               Left = 8
               Top = 40
@@ -330,8 +330,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 1
-              Height = 87
-              Width = 771
+              Height = 74
+              Width = 767
             end
             object BtnOrientacao: TcxButton
               Left = 8
@@ -349,8 +349,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Caption = 'Resumo da a'#231#227'o'
             ImageIndex = 2
             DesignSize = (
-              787
-              136)
+              783
+              123)
             object DbMemoResumo: TcxDBMemo
               Left = 8
               Top = 40
@@ -359,8 +359,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 1
-              Height = 87
-              Width = 771
+              Height = 74
+              Width = 767
             end
             object BtnResumo: TcxButton
               Left = 8
@@ -378,8 +378,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Caption = 'Parcerias'
             ImageIndex = 3
             DesignSize = (
-              787
-              136)
+              783
+              123)
             object BtnParceria: TcxButton
               Left = 8
               Top = 8
@@ -399,16 +399,16 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 1
-              Height = 87
-              Width = 771
+              Height = 74
+              Width = 767
             end
           end
           object TbShtTecnologia: TcxTabSheet
             Caption = 'Tecnologia inovadora'
             ImageIndex = 4
             DesignSize = (
-              787
-              136)
+              783
+              123)
             object DbChckBxTecnologia: TcxDBCheckBox
               Left = 144
               Top = 11
@@ -443,16 +443,16 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 2
-              Height = 87
-              Width = 771
+              Height = 74
+              Width = 767
             end
           end
           object TbShtPratica: TcxTabSheet
             Caption = 'Boas pr'#225'ticas'
             ImageIndex = 5
             DesignSize = (
-              787
-              136)
+              783
+              123)
             object DbChckBxBoas: TcxDBCheckBox
               Left = 144
               Top = 11
@@ -487,15 +487,15 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 2
-              Height = 87
-              Width = 771
+              Height = 74
+              Width = 767
             end
           end
         end
       end
       object GrdTecVw: TcxGrid
-        Left = 441
-        Top = 354
+        Left = 437
+        Top = 348
         Width = 145
         Height = 137
         Anchors = [akRight, akBottom]
@@ -572,8 +572,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         end
       end
       object GrdFerVw: TcxGrid
-        Left = 594
-        Top = 354
+        Left = 590
+        Top = 348
         Width = 221
         Height = 137
         Anchors = [akRight, akBottom]
@@ -651,17 +651,17 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       end
       object GrpBxRegistro: TcxGroupBox
         Left = 8
-        Top = 330
+        Top = 324
         Anchors = [akLeft, akRight, akBottom]
         Caption = 'Outras informa'#231#245'es da Fater'
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
         DesignSize = (
-          426
+          422
           154)
         Height = 161
-        Width = 426
+        Width = 422
         object Label13: TLabel
           Left = 8
           Top = 16
@@ -678,7 +678,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Transparent = True
         end
         object Label7: TLabel
-          Left = 213
+          Left = 209
           Top = 56
           Width = 45
           Height = 13
@@ -730,7 +730,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Width = 137
         end
         object DbImgCmbBxSituacao: TcxDBImageComboBox
-          Left = 213
+          Left = 209
           Top = 72
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'FAT_SITUACAO'
@@ -775,7 +775,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 1
-          Width = 266
+          Width = 262
         end
         object DbLkpCmbBxUnidade: TcxDBLookupComboBox
           Left = 8
@@ -795,7 +795,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.PostPopupValueOnTab = True
           Properties.ReadOnly = True
           TabOrder = 2
-          Width = 198
+          Width = 194
         end
         object DbEdtModificadoData: TcxDBTextEdit
           Left = 8
@@ -814,7 +814,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           DataBinding.DataSource = DtSrcPrincipal
           Enabled = False
           TabOrder = 5
-          Width = 274
+          Width = 270
         end
       end
     end
@@ -859,7 +859,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       object LblCategorias: TLabel
         Left = 8
         Top = 8
-        Width = 807
+        Width = 803
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -879,7 +879,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       object Shape1: TShape
         Left = 8
         Top = 8
-        Width = 807
+        Width = 803
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Brush.Style = bsClear
@@ -889,7 +889,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       object Label14: TLabel
         Left = 8
         Top = 212
-        Width = 807
+        Width = 803
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -909,7 +909,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       object Shape2: TShape
         Left = 8
         Top = 212
-        Width = 807
+        Width = 803
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Brush.Style = bsClear
@@ -1102,7 +1102,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         Left = 384
         Top = 260
         Width = 329
-        Height = 139
+        Height = 133
         Anchors = [akLeft, akTop, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1113,6 +1113,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         TabOrder = 4
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitHeight = 139
         object GrdFerDisTbl: TcxGridDBTableView
           OnDblClick = GrdFerDisTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -1184,7 +1185,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         Left = 8
         Top = 260
         Width = 329
-        Height = 139
+        Height = 133
         Anchors = [akLeft, akTop, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1195,6 +1196,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         TabOrder = 5
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitHeight = 139
         object GrdFerTbl: TcxGridDBTableView
           OnDblClick = GrdFerTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -1294,28 +1296,28 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       object PgCntrlDetalhes: TcxPageControl
         Left = 8
         Top = 8
-        Width = 807
-        Height = 483
+        Width = 803
+        Height = 477
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 0
         Properties.ActivePage = TbShtProduto
         Properties.CustomButtons.Buttons = <>
-        ClientRectBottom = 481
+        ClientRectBottom = 475
         ClientRectLeft = 2
-        ClientRectRight = 805
+        ClientRectRight = 801
         ClientRectTop = 28
         object TbShtProduto: TcxTabSheet
           Caption = 'Cria'#231#227'o/cultura/servi'#231'o'
           ImageIndex = 4
           OnShow = TbShtProdutoShow
           DesignSize = (
-            803
-            453)
+            799
+            447)
           object GrdPrd: TcxGrid
             Left = 8
             Top = 40
-            Width = 787
-            Height = 405
+            Width = 783
+            Height = 399
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1427,8 +1429,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           ImageIndex = 0
           OnShow = TbShtBeneficiariosShow
           DesignSize = (
-            803
-            453)
+            799
+            447)
           object Label15: TLabel
             Left = 8
             Top = 8
@@ -1448,7 +1450,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object GrdBen: TcxGrid
             Left = 8
             Top = 56
-            Width = 787
+            Width = 783
             Height = 161
             Anchors = [akLeft, akTop, akRight]
             Font.Charset = ANSI_CHARSET
@@ -1460,6 +1462,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             TabOrder = 2
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
+            ExplicitWidth = 787
             object GrdBenTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1554,8 +1557,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object GrdBenPar: TcxGrid
             Left = 8
             Top = 288
-            Width = 787
-            Height = 157
+            Width = 783
+            Height = 151
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1566,6 +1569,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             TabOrder = 5
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
+            ExplicitWidth = 787
+            ExplicitHeight = 157
             object GrdBenParTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1663,8 +1668,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           ImageIndex = 1
           OnShow = TbShtTecnicoShow
           DesignSize = (
-            803
-            453)
+            799
+            447)
           object BtnTecIncluir: TcxButton
             Tag = 1
             Left = 8
@@ -1692,8 +1697,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object GrdPar: TcxGrid
             Left = 8
             Top = 40
-            Width = 787
-            Height = 405
+            Width = 783
+            Height = 399
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1769,13 +1774,13 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           ImageIndex = 2
           OnShow = TbShtComunidadesShow
           DesignSize = (
-            803
-            453)
+            799
+            447)
           object GrdCom: TcxGrid
             Left = 8
             Top = 40
-            Width = 787
-            Height = 405
+            Width = 783
+            Height = 399
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1786,6 +1791,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             TabOrder = 2
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
+            ExplicitWidth = 787
+            ExplicitHeight = 405
             object GrdComTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1879,13 +1886,13 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           ImageIndex = 3
           OnShow = TbShtOrganizacaoShow
           DesignSize = (
-            803
-            453)
+            799
+            447)
           object GrdOrg: TcxGrid
             Left = 8
             Top = 40
-            Width = 787
-            Height = 405
+            Width = 783
+            Height = 399
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1896,6 +1903,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             TabOrder = 2
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
+            ExplicitWidth = 787
+            ExplicitHeight = 405
             object GrdOrgTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'

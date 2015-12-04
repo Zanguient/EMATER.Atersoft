@@ -17,9 +17,9 @@ inherited FrmPessoalFuncionarioConsulta: TFrmPessoalFuncionarioConsulta
     ExplicitWidth = 692
   end
   inherited GrdConsulta: TcxGrid
-    Top = 157
+    Top = 152
     Width = 816
-    Height = 334
+    Height = 339
     ExplicitTop = 157
     ExplicitWidth = 692
     ExplicitHeight = 334
@@ -317,94 +317,8 @@ inherited FrmPessoalFuncionarioConsulta: TFrmPessoalFuncionarioConsulta
       'where'
       '  (a.reg_excluido = 0) and'
       '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
+    Left = 48
     Top = 248
-    object DtStConsultaFUN_ID: TFIBIntegerField
-      FieldName = 'FUN_ID'
-    end
-    object DtStConsultaFUN_DATA: TFIBDateField
-      DisplayLabel = 'Data cadastro'
-      FieldName = 'FUN_DATA'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStConsultaFUN_NOME: TFIBStringField
-      DisplayLabel = 'Nome'
-      FieldName = 'FUN_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaFUN_MATRICULA: TFIBStringField
-      DisplayLabel = 'Matr'#237'cula'
-      FieldName = 'FUN_MATRICULA'
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaFUN_CPF: TFIBStringField
-      DisplayLabel = 'CPF'
-      FieldName = 'FUN_CPF'
-      EditMask = '000.000.000-00;0; '
-      Size = 11
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaFUN_TELEFONE: TFIBStringField
-      DisplayLabel = 'Telefone'
-      FieldName = 'FUN_TELEFONE'
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaFUN_CELULAR: TFIBStringField
-      DisplayLabel = 'Celular'
-      FieldName = 'FUN_CELULAR'
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCID_NOME: TFIBStringField
-      DisplayLabel = 'Munic'#237'pio'
-      FieldName = 'CID_NOME'
-      Size = 80
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaUFE_ID: TFIBStringField
-      DisplayLabel = 'UF'
-      FieldName = 'UFE_ID'
-      Size = 2
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaFNC_DESCRICAO: TFIBStringField
-      DisplayLabel = 'Fun'#231#227'o'
-      FieldName = 'FNC_DESCRICAO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaUND_NOME: TFIBStringField
-      DisplayLabel = 'Escrit'#243'rio'
-      FieldName = 'UND_NOME'
-      Size = 152
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStConsultaREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStConsultaREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm'
-    end
   end
   inherited BarManager: TdxBarManager
     Top = 248
@@ -432,29 +346,207 @@ inherited FrmPessoalFuncionarioConsulta: TFrmPessoalFuncionarioConsulta
   inherited PopupMenuConsulta: TdxBarPopupMenu
     Top = 248
   end
-  object DtStMunicipio: TpFIBDataSet
-    SelectSQL.Strings = (
+  inherited QryConsulta: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.fun_id,'
+      '  a.fun_data, '
+      '  a.fun_nome, '
+      '  a.fun_matricula, '
+      '  a.fun_cpf,'
+      '  a.fun_telefone,'
+      '  a.fun_celular, '
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado,'
+      '  b.cid_nome,'
+      '  b.ufe_id,'
+      '  c.fnc_descricao,'
+      '  (e.unt_descricao || '#39': '#39' || d.und_nome) as und_nome'
+      'from'
+      
+        '  tab_pes_funcionario a left join tab_dne_cidade b on (a.cid_id ' +
+        '= b.cid_id) left join'
+      '  tab_pes_funcao c on (a.fnc_id = c.fnc_id) left join'
+      '  tab_sis_unidade d on (a.und_id = d.und_id) left join'
+      '  tab_sis_unidade_tipo e on (d.unt_id = e.unt_id)'
+      'where'
+      '  (a.reg_excluido = 0) and'
+      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
+    Top = 248
+    object QryConsultaFUN_ID: TIntegerField
+      FieldName = 'FUN_ID'
+      Origin = 'FUN_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QryConsultaFUN_DATA: TDateField
+      DisplayLabel = 'Data de cadastro'
+      FieldName = 'FUN_DATA'
+      Origin = 'FUN_DATA'
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QryConsultaFUN_NOME: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'FUN_NOME'
+      Origin = 'FUN_NOME'
+      Size = 100
+    end
+    object QryConsultaFUN_MATRICULA: TStringField
+      DisplayLabel = 'Matr'#237'cula'
+      FieldName = 'FUN_MATRICULA'
+      Origin = 'FUN_MATRICULA'
+    end
+    object QryConsultaFUN_CPF: TStringField
+      DisplayLabel = 'CPF'
+      FieldName = 'FUN_CPF'
+      Origin = 'FUN_CPF'
+      EditMask = '000.000.000-00;0; '
+      Size = 11
+    end
+    object QryConsultaFUN_TELEFONE: TStringField
+      DisplayLabel = 'Telefone'
+      FieldName = 'FUN_TELEFONE'
+      Origin = 'FUN_TELEFONE'
+    end
+    object QryConsultaFUN_CELULAR: TStringField
+      DisplayLabel = 'Celular'
+      FieldName = 'FUN_CELULAR'
+      Origin = 'FUN_CELULAR'
+    end
+    object QryConsultaREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryConsultaREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryConsultaREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryConsultaREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+    object QryConsultaCID_NOME: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Munic'#237'pio'
+      FieldName = 'CID_NOME'
+      Origin = 'CID_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 80
+    end
+    object QryConsultaUFE_ID: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'UF'
+      FieldName = 'UFE_ID'
+      Origin = 'UFE_ID'
+      ProviderFlags = []
+      ReadOnly = True
+      FixedChar = True
+      Size = 2
+    end
+    object QryConsultaFNC_DESCRICAO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Fun'#231#227'o'
+      FieldName = 'FNC_DESCRICAO'
+      Origin = 'FNC_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
+    object QryConsultaUND_NOME: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Escrit'#243'rio'
+      FieldName = 'UND_NOME'
+      Origin = 'UND_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 152
+    end
+  end
+  inherited UpdtConsulta: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_PES_FUNCIONARIO'
+      '(FUN_ID, FUN_DATA, FUN_NOME, FUN_MATRICULA, '
+      '  FUN_CPF, FUN_TELEFONE, FUN_CELULAR, REG_EXCLUIDO, '
+      '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_FUN_ID, :NEW_FUN_DATA, :NEW_FUN_NOME, :NEW_FUN_MATR' +
+        'ICULA, '
+      
+        '  :NEW_FUN_CPF, :NEW_FUN_TELEFONE, :NEW_FUN_CELULAR, :NEW_REG_EX' +
+        'CLUIDO, '
+      '  :NEW_REG_REPLICADO, :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_PES_FUNCIONARIO'
+      
+        'SET FUN_ID = :NEW_FUN_ID, FUN_DATA = :NEW_FUN_DATA, FUN_NOME = :' +
+        'NEW_FUN_NOME, '
+      '  FUN_MATRICULA = :NEW_FUN_MATRICULA, FUN_CPF = :NEW_FUN_CPF, '
+      
+        '  FUN_TELEFONE = :NEW_FUN_TELEFONE, FUN_CELULAR = :NEW_FUN_CELUL' +
+        'AR, '
+      
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
+      
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
+      'WHERE FUN_ID = :OLD_FUN_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_PES_FUNCIONARIO'
+      'WHERE FUN_ID = :OLD_FUN_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT FUN_ID, FUN_DATA, FUN_NOME, FUN_MATRICULA, FUN_SEXO, FUN_' +
+        'NASCIMENTO, '
+      
+        '  FUN_CPF, FUN_RG_NUMERO, FUN_RG_ORGAO, FUN_RG_DATA, FUN_ENDEREC' +
+        'O, '
+      
+        '  FUN_NUMERO, FUN_COMPLEMENTO, FUN_BAIRRO, FUN_CEP, FUN_TELEFONE' +
+        ', '
+      '  FUN_CELULAR, FUN_EMAIL, FNC_ID, FST_ID, CRG_ID, USR_ID, '
+      '  UND_ID, CID_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_PES_FUNCIONARIO'
+      'WHERE FUN_ID = :FUN_ID')
+    Top = 248
+  end
+  object DtSrcMunicipio: TDataSource
+    DataSet = QryMunicipio
+    Left = 144
+    Top = 336
+  end
+  object QryMunicipio: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
       
         'select cid_id, cid_nome from stp_dne_cidade_por_unidade(:unidade' +
         ')')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 144
-    Top = 304
-    object DtStMunicipioCID_ID: TFIBIntegerField
-      FieldName = 'CID_ID'
-    end
-    object DtStMunicipioCID_NOME: TFIBStringField
-      FieldName = 'CID_NOME'
-      Size = 80
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-  end
-  object DtSrcMunicipio: TDataSource
-    DataSet = DtStMunicipio
-    Left = 144
+    Left = 112
     Top = 336
+    ParamData = <
+      item
+        Name = 'UNIDADE'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object QryMunicipioCID_ID: TIntegerField
+      FieldName = 'CID_ID'
+      Origin = 'CID_ID'
+    end
+    object QryMunicipioCID_NOME: TStringField
+      FieldName = 'CID_NOME'
+      Origin = 'CID_NOME'
+      Size = 80
+    end
   end
 end

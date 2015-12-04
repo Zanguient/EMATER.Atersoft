@@ -721,7 +721,7 @@ begin
         DtStFaterFuncionario.Last;
         DtStFaterFuncionario.Append;
         DtStFaterFuncionarioFAT_ID.AsLargeInt := QryPrincipalFAT_ID.AsLargeInt;
-        DtStFaterFuncionarioFUN_ID.Value := FrmPessoalFuncionarioBusca.DtStConsultaFUN_ID.Value;
+        DtStFaterFuncionarioFUN_ID.Value := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.Value;
         DtmSistemaModulo.GravarAuditoriaInclusao(DtStFaterFuncionario, 'TAB_PRD_FATER_FUNCIONARIO', 'FFU_ID');
         DtStFaterFuncionario.Post;
         DtStFaterFuncionario.Refresh;

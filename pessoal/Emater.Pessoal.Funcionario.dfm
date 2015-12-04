@@ -162,6 +162,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Width = 23
           Height = 13
           Caption = 'CPF:'
+          Transparent = True
         end
         object Label2: TLabel
           Tag = 2
@@ -177,6 +178,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
+          Transparent = True
         end
         object Label3: TLabel
           Tag = 2
@@ -186,6 +188,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'Matr'#237'cula:'
           FocusControl = DbEdtMatricula
+          Transparent = True
         end
         object Label4: TLabel
           Left = 8
@@ -193,6 +196,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Width = 28
           Height = 13
           Caption = 'Sexo:'
+          Transparent = True
         end
         object Label7: TLabel
           Left = 8
@@ -201,6 +205,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'Data de nascimento:'
           FocusControl = DbEdtNascimento
+          Transparent = True
         end
         object Label9: TLabel
           Left = 266
@@ -210,6 +215,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Anchors = [akTop, akRight]
           Caption = 'Documento RG:'
           FocusControl = DbEdtRG
+          Transparent = True
           ExplicitLeft = 232
         end
         object Label10: TLabel
@@ -220,6 +226,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Anchors = [akTop, akRight]
           Caption = #211'rg'#227'o emissor RG:'
           FocusControl = DbEdtOrgao
+          Transparent = True
           ExplicitLeft = 320
         end
         object Label11: TLabel
@@ -230,6 +237,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Anchors = [akTop, akRight]
           Caption = 'Data emiss'#227'o RG:'
           FocusControl = DbEdtDataEmissao
+          Transparent = True
           ExplicitLeft = 432
         end
         object Label23: TLabel
@@ -238,6 +246,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Width = 33
           Height = 13
           Caption = 'Cargo:'
+          Transparent = True
         end
         object Label6: TLabel
           Left = 144
@@ -245,6 +254,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Width = 39
           Height = 13
           Caption = 'Fun'#231#227'o:'
+          Transparent = True
         end
         object Label8: TLabel
           Left = 360
@@ -252,6 +262,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Width = 96
           Height = 13
           Caption = 'Situa'#231#227'o da fun'#231#227'o:'
+          Transparent = True
         end
         object Label5: TLabel
           Tag = 2
@@ -261,6 +272,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'Data de cadastro:'
           FocusControl = DbEdtData
+          Transparent = True
         end
         object Label24: TLabel
           Left = 240
@@ -268,6 +280,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Width = 48
           Height = 13
           Caption = 'Escrit'#243'rio:'
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 232
@@ -454,6 +467,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'Endere'#231'o:'
           FocusControl = DbEdtEndereco
+          Transparent = True
         end
         object Label13: TLabel
           Left = 328
@@ -462,6 +476,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'N'#250'mero:'
           FocusControl = DbEdtNumero
+          Transparent = True
         end
         object Label14: TLabel
           Left = 384
@@ -470,6 +485,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'Complemento:'
           FocusControl = DbEdtComplemento
+          Transparent = True
         end
         object Label15: TLabel
           Left = 8
@@ -478,6 +494,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'Bairro:'
           FocusControl = DbEdtBairro
+          Transparent = True
         end
         object Label16: TLabel
           Left = 8
@@ -485,6 +502,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Width = 23
           Height = 13
           Caption = 'CEP:'
+          Transparent = True
         end
         object Label17: TLabel
           Left = 256
@@ -492,6 +510,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Width = 47
           Height = 13
           Caption = 'Munic'#237'pio:'
+          Transparent = True
         end
         object Label18: TLabel
           Left = 546
@@ -509,6 +528,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'Telefone:'
           FocusControl = DbEdtTelefone1
+          Transparent = True
         end
         object Label20: TLabel
           Left = 128
@@ -517,6 +537,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'Celular:'
           FocusControl = DbEdtTelefone2
+          Transparent = True
         end
         object Label21: TLabel
           Left = 256
@@ -525,6 +546,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'E-mail:'
           FocusControl = DbEdtEmail
+          Transparent = True
         end
         object DbEdtEndereco: TcxDBTextEdit
           Left = 80
@@ -651,6 +673,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Caption = 'Login de acesso:'
           Enabled = False
           FocusControl = DbEdtLogin
+          Transparent = True
         end
         object LblPerfil: TLabel
           Left = 8
@@ -659,6 +682,7 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Height = 13
           Caption = 'Perfil do usu'#225'rio:'
           Enabled = False
+          Transparent = True
         end
         object BtnUsuario: TcxButton
           Tag = 1
@@ -711,11 +735,11 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           DataBinding.DataField = 'USR_EXPIRADA'
           DataBinding.DataSource = DtSrcUsuario
           Enabled = False
-          ParentBackground = False
           ParentColor = False
           Properties.ImmediatePost = True
           Style.StyleController = DtmRecursoModulo.cxEditStyleController
           TabOrder = 2
+          Transparent = True
           Width = 161
         end
         object DbChckBxAtivo: TcxDBCheckBox
@@ -725,11 +749,11 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           DataBinding.DataField = 'USR_ATIVO'
           DataBinding.DataSource = DtSrcUsuario
           Enabled = False
-          ParentBackground = False
           ParentColor = False
           Properties.ImmediatePost = True
           Style.StyleController = DtmRecursoModulo.cxEditStyleController
           TabOrder = 3
+          Transparent = True
           Width = 153
         end
       end
@@ -958,190 +982,324 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
     AutoUpdateOptions.AutoReWriteSqls = True
     AutoUpdateOptions.CanChangeSQLs = True
     AutoUpdateOptions.UpdateOnlyModifiedFields = True
-    AfterOpen = DtStPrincipalAfterOpen
-    AfterPost = DtStPrincipalAfterPost
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 488
-    Top = 216
-    object DtStPrincipalFUN_ID: TFIBIntegerField
-      FieldName = 'FUN_ID'
-    end
-    object DtStPrincipalFUN_DATA: TFIBDateField
-      DisplayLabel = 'Data de cadastro'
-      FieldName = 'FUN_DATA'
-      Required = True
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStPrincipalFUN_NOME: TFIBStringField
-      DisplayLabel = 'Nome do funcion'#225'rio'
-      FieldName = 'FUN_NOME'
-      Required = True
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_MATRICULA: TFIBStringField
-      DisplayLabel = 'Matr'#237'cula'
-      FieldName = 'FUN_MATRICULA'
-      Required = True
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_SEXO: TFIBStringField
-      DisplayLabel = 'Sexo'
-      FieldName = 'FUN_SEXO'
-      Size = 1
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_NASCIMENTO: TFIBDateField
-      DisplayLabel = 'Nascimento'
-      FieldName = 'FUN_NASCIMENTO'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStPrincipalFUN_CPF: TFIBStringField
-      DisplayLabel = 'CPF'
-      FieldName = 'FUN_CPF'
-      Required = True
-      EditMask = '000.000.000\-00;0; '
-      Size = 11
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_RG_NUMERO: TFIBStringField
-      DisplayLabel = 'N'#250'mero RG'
-      FieldName = 'FUN_RG_NUMERO'
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_RG_ORGAO: TFIBStringField
-      DisplayLabel = #211'rg'#227'o emissor RG'
-      FieldName = 'FUN_RG_ORGAO'
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_RG_DATA: TFIBDateField
-      DisplayLabel = 'Data emiss'#227'o RG'
-      FieldName = 'FUN_RG_DATA'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStPrincipalFUN_ENDERECO: TFIBStringField
-      DisplayLabel = 'Endere'#231'o'
-      FieldName = 'FUN_ENDERECO'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_NUMERO: TFIBStringField
-      DisplayLabel = 'N'#250'mero'
-      FieldName = 'FUN_NUMERO'
-      Size = 10
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_COMPLEMENTO: TFIBStringField
-      DisplayLabel = 'Complemento'
-      FieldName = 'FUN_COMPLEMENTO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_BAIRRO: TFIBStringField
-      DisplayLabel = 'Bairro'
-      FieldName = 'FUN_BAIRRO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_CEP: TFIBStringField
-      DisplayLabel = 'CEP'
-      FieldName = 'FUN_CEP'
-      Size = 8
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_TELEFONE: TFIBStringField
-      DisplayLabel = 'Telefone'
-      FieldName = 'FUN_TELEFONE'
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_CELULAR: TFIBStringField
-      DisplayLabel = 'Celular'
-      FieldName = 'FUN_CELULAR'
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_EMAIL: TFIBStringField
-      DisplayLabel = 'E-mail'
-      FieldName = 'FUN_EMAIL'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFNC_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Fun'#231#227'o'
-      FieldName = 'FNC_ID'
-    end
-    object DtStPrincipalFST_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Situa'#231#227'o da fun'#231#227'o'
-      FieldName = 'FST_ID'
-    end
-    object DtStPrincipalCRG_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Cargo'
-      FieldName = 'CRG_ID'
-    end
-    object DtStPrincipalUSR_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Usu'#225'rio'
-      FieldName = 'USR_ID'
-    end
-    object DtStPrincipalUND_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Escrit'#243'rio'
-      FieldName = 'UND_ID'
-    end
-    object DtStPrincipalCID_ID: TFIBIntegerField
-      FieldName = 'CID_ID'
-    end
-    object DtStPrincipalCID_NOME: TFIBStringField
-      FieldName = 'CID_NOME'
-      Size = 80
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalUFE_ID: TFIBStringField
-      FieldName = 'UFE_ID'
-      Size = 2
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
-    end
+    Left = 456
+    Top = 168
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 520
+    Top = 216
+  end
+  inherited QryPrincipal: TFDQuery
+    AfterOpen = QryPrincipalAfterOpen
+    AfterPost = QryPrincipalAfterPost
+    SQL.Strings = (
+      'select '
+      '  a.fun_id, '
+      '  a.fun_data, '
+      '  a.fun_nome, '
+      '  a.fun_matricula, '
+      '  a.fun_sexo, '
+      '  a.fun_nascimento, '
+      '  a.fun_cpf, '
+      '  a.fun_rg_numero, '
+      '  a.fun_rg_orgao, '
+      '  a.fun_rg_data, '
+      '  a.fun_endereco, '
+      '  a.fun_numero, '
+      '  a.fun_complemento, '
+      '  a.fun_bairro, '
+      '  a.fun_cep, '
+      '  a.fun_telefone, '
+      '  a.fun_celular, '
+      '  a.fun_email, '
+      '  a.reg_excluido, '
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado,'
+      '  a.fnc_id, '
+      '  a.fst_id, '
+      '  a.crg_id, '
+      '  a.usr_id, '
+      '  a.und_id,'
+      '  a.cid_id,'
+      '  b.cid_nome,'
+      '  b.ufe_id'
+      'from '
+      
+        '  tab_pes_funcionario a left join tab_dne_cidade b on (a.cid_id ' +
+        '= b.cid_id)'
+      'where'
+      '  (a.fun_id = :fun_id)')
+    Left = 456
+    Top = 216
+    ParamData = <
+      item
+        Name = 'FUN_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object QryPrincipalFUN_ID: TIntegerField
+      FieldName = 'FUN_ID'
+      Origin = 'FUN_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPrincipalFUN_DATA: TDateField
+      DisplayLabel = 'Data de cadastro'
+      FieldName = 'FUN_DATA'
+      Origin = 'FUN_DATA'
+      Required = True
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QryPrincipalFUN_NOME: TStringField
+      DisplayLabel = 'Nome do funcion'#225'rio'
+      FieldName = 'FUN_NOME'
+      Origin = 'FUN_NOME'
+      Required = True
+      Size = 100
+    end
+    object QryPrincipalFUN_MATRICULA: TStringField
+      DisplayLabel = 'Matr'#237'cula'
+      FieldName = 'FUN_MATRICULA'
+      Origin = 'FUN_MATRICULA'
+      Required = True
+    end
+    object QryPrincipalFUN_SEXO: TStringField
+      DisplayLabel = 'Sexo'
+      FieldName = 'FUN_SEXO'
+      Origin = 'FUN_SEXO'
+      FixedChar = True
+      Size = 1
+    end
+    object QryPrincipalFUN_NASCIMENTO: TDateField
+      DisplayLabel = 'Nascimento'
+      FieldName = 'FUN_NASCIMENTO'
+      Origin = 'FUN_NASCIMENTO'
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QryPrincipalFUN_CPF: TStringField
+      DisplayLabel = 'CPF'
+      FieldName = 'FUN_CPF'
+      Origin = 'FUN_CPF'
+      Required = True
+      EditMask = '000.000.000\-00;0; '
+      Size = 11
+    end
+    object QryPrincipalFUN_RG_NUMERO: TStringField
+      DisplayLabel = 'N'#250'mero RG'
+      FieldName = 'FUN_RG_NUMERO'
+      Origin = 'FUN_RG_NUMERO'
+    end
+    object QryPrincipalFUN_RG_ORGAO: TStringField
+      DisplayLabel = #211'rg'#227'o emissor RG'
+      FieldName = 'FUN_RG_ORGAO'
+      Origin = 'FUN_RG_ORGAO'
+    end
+    object QryPrincipalFUN_RG_DATA: TDateField
+      DisplayLabel = 'Data emiss'#227'o RG'
+      FieldName = 'FUN_RG_DATA'
+      Origin = 'FUN_RG_DATA'
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QryPrincipalFUN_ENDERECO: TStringField
+      DisplayLabel = 'Endere'#231'o'
+      FieldName = 'FUN_ENDERECO'
+      Origin = 'FUN_ENDERECO'
+      Size = 100
+    end
+    object QryPrincipalFUN_NUMERO: TStringField
+      DisplayLabel = 'N'#250'mero'
+      FieldName = 'FUN_NUMERO'
+      Origin = 'FUN_NUMERO'
+      Size = 10
+    end
+    object QryPrincipalFUN_COMPLEMENTO: TStringField
+      DisplayLabel = 'Complemento'
+      FieldName = 'FUN_COMPLEMENTO'
+      Origin = 'FUN_COMPLEMENTO'
+      Size = 50
+    end
+    object QryPrincipalFUN_BAIRRO: TStringField
+      DisplayLabel = 'Bairro'
+      FieldName = 'FUN_BAIRRO'
+      Origin = 'FUN_BAIRRO'
+      Size = 50
+    end
+    object QryPrincipalFUN_CEP: TStringField
+      DisplayLabel = 'CEP'
+      FieldName = 'FUN_CEP'
+      Origin = 'FUN_CEP'
+      FixedChar = True
+      Size = 8
+    end
+    object QryPrincipalFUN_TELEFONE: TStringField
+      DisplayLabel = 'Telefone'
+      FieldName = 'FUN_TELEFONE'
+      Origin = 'FUN_TELEFONE'
+    end
+    object QryPrincipalFUN_CELULAR: TStringField
+      DisplayLabel = 'Celular'
+      FieldName = 'FUN_CELULAR'
+      Origin = 'FUN_CELULAR'
+    end
+    object QryPrincipalFUN_EMAIL: TStringField
+      DisplayLabel = 'E-mail'
+      FieldName = 'FUN_EMAIL'
+      Origin = 'FUN_EMAIL'
+      Size = 50
+    end
+    object QryPrincipalFNC_ID: TIntegerField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Fun'#231#227'o'
+      FieldName = 'FNC_ID'
+      Origin = 'FNC_ID'
+    end
+    object QryPrincipalFST_ID: TIntegerField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Situa'#231#227'o da fun'#231#227'o'
+      FieldName = 'FST_ID'
+      Origin = 'FST_ID'
+    end
+    object QryPrincipalCRG_ID: TIntegerField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Cargo'
+      FieldName = 'CRG_ID'
+      Origin = 'CRG_ID'
+    end
+    object QryPrincipalUSR_ID: TIntegerField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Usu'#225'rio'
+      FieldName = 'USR_ID'
+      Origin = 'USR_ID'
+    end
+    object QryPrincipalUND_ID: TIntegerField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Escrit'#243'rio'
+      FieldName = 'UND_ID'
+      Origin = 'UND_ID'
+    end
+    object QryPrincipalCID_ID: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'CID_ID'
+      Origin = 'CID_ID'
+    end
+    object QryPrincipalCID_NOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CID_NOME'
+      Origin = 'CID_NOME'
+      ProviderFlags = []
+      Size = 80
+    end
+    object QryPrincipalUFE_ID: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'UFE_ID'
+      Origin = 'UFE_ID'
+      ProviderFlags = []
+      FixedChar = True
+      Size = 2
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_PES_FUNCIONARIO'
+      '(FUN_ID, FUN_DATA, FUN_NOME, FUN_MATRICULA, '
+      '  FUN_SEXO, FUN_NASCIMENTO, FUN_CPF, FUN_RG_NUMERO, '
+      '  FUN_RG_ORGAO, FUN_RG_DATA, FUN_ENDERECO, '
+      '  FUN_NUMERO, FUN_COMPLEMENTO, FUN_BAIRRO, '
+      '  FUN_CEP, FUN_TELEFONE, FUN_CELULAR, FUN_EMAIL, '
+      '  FNC_ID, FST_ID, CRG_ID, USR_ID, UND_ID, '
+      '  CID_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO)'
+      
+        'VALUES (:NEW_FUN_ID, :NEW_FUN_DATA, :NEW_FUN_NOME, :NEW_FUN_MATR' +
+        'ICULA, '
+      
+        '  :NEW_FUN_SEXO, :NEW_FUN_NASCIMENTO, :NEW_FUN_CPF, :NEW_FUN_RG_' +
+        'NUMERO, '
+      '  :NEW_FUN_RG_ORGAO, :NEW_FUN_RG_DATA, :NEW_FUN_ENDERECO, '
+      '  :NEW_FUN_NUMERO, :NEW_FUN_COMPLEMENTO, :NEW_FUN_BAIRRO, '
+      
+        '  :NEW_FUN_CEP, :NEW_FUN_TELEFONE, :NEW_FUN_CELULAR, :NEW_FUN_EM' +
+        'AIL, '
+      
+        '  :NEW_FNC_ID, :NEW_FST_ID, :NEW_CRG_ID, :NEW_USR_ID, :NEW_UND_I' +
+        'D, '
+      
+        '  :NEW_CID_ID, :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, :NEW_REG_U' +
+        'SUARIO, '
+      '  :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_PES_FUNCIONARIO'
+      
+        'SET FUN_ID = :NEW_FUN_ID, FUN_DATA = :NEW_FUN_DATA, FUN_NOME = :' +
+        'NEW_FUN_NOME, '
+      '  FUN_MATRICULA = :NEW_FUN_MATRICULA, FUN_SEXO = :NEW_FUN_SEXO, '
+      '  FUN_NASCIMENTO = :NEW_FUN_NASCIMENTO, FUN_CPF = :NEW_FUN_CPF, '
+      
+        '  FUN_RG_NUMERO = :NEW_FUN_RG_NUMERO, FUN_RG_ORGAO = :NEW_FUN_RG' +
+        '_ORGAO, '
+      
+        '  FUN_RG_DATA = :NEW_FUN_RG_DATA, FUN_ENDERECO = :NEW_FUN_ENDERE' +
+        'CO, '
+      
+        '  FUN_NUMERO = :NEW_FUN_NUMERO, FUN_COMPLEMENTO = :NEW_FUN_COMPL' +
+        'EMENTO, '
+      
+        '  FUN_BAIRRO = :NEW_FUN_BAIRRO, FUN_CEP = :NEW_FUN_CEP, FUN_TELE' +
+        'FONE = :NEW_FUN_TELEFONE, '
+      '  FUN_CELULAR = :NEW_FUN_CELULAR, FUN_EMAIL = :NEW_FUN_EMAIL, '
+      
+        '  FNC_ID = :NEW_FNC_ID, FST_ID = :NEW_FST_ID, CRG_ID = :NEW_CRG_' +
+        'ID, '
+      
+        '  USR_ID = :NEW_USR_ID, UND_ID = :NEW_UND_ID, CID_ID = :NEW_CID_' +
+        'ID, '
+      
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
+      
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
+      'WHERE FUN_ID = :OLD_FUN_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_PES_FUNCIONARIO'
+      'WHERE FUN_ID = :OLD_FUN_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT FUN_ID, FUN_DATA, FUN_NOME, FUN_MATRICULA, FUN_SEXO, FUN_' +
+        'NASCIMENTO, '
+      
+        '  FUN_CPF, FUN_RG_NUMERO, FUN_RG_ORGAO, FUN_RG_DATA, FUN_ENDEREC' +
+        'O, '
+      
+        '  FUN_NUMERO, FUN_COMPLEMENTO, FUN_BAIRRO, FUN_CEP, FUN_TELEFONE' +
+        ', '
+      '  FUN_CELULAR, FUN_EMAIL, FNC_ID, FST_ID, CRG_ID, USR_ID, '
+      '  UND_ID, CID_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_PES_FUNCIONARIO'
+      'WHERE FUN_ID = :FUN_ID')
+    Left = 488
     Top = 216
   end
   object DtSrcFuncao: TDataSource
@@ -1151,83 +1309,139 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
   end
   object DtSrcCargo: TDataSource
     DataSet = DtmPessoalModulo.DtStCargo
-    Left = 522
-    Top = 278
+    Left = 520
+    Top = 280
   end
   object DtSrcFuncaoSituacao: TDataSource
     DataSet = DtmPessoalModulo.DtStFuncaoSituacao
-    Left = 522
-    Top = 310
+    Left = 520
+    Top = 312
   end
   object DtSrcUsuario: TDataSource
-    DataSet = DtStUsuario
+    DataSet = QryUsuario
     OnStateChange = DtSrcUsuarioStateChange
     Left = 384
     Top = 336
   end
-  object DtStUsuario: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_SIS_USUARIO'
-      'SET '
-      '    USR_LOGIN = :USR_LOGIN,'
-      '    USR_EXPIRADA = :USR_EXPIRADA,'
-      '    USR_ATIVO = :USR_ATIVO,'
-      '    PER_ID = :PER_ID,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    USR_ID = :OLD_USR_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_SIS_USUARIO'
-      'WHERE'
-      '        USR_ID = :OLD_USR_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_SIS_USUARIO('
-      '    USR_ID,'
-      '    USR_LOGIN,'
-      '    USR_EXPIRADA,'
-      '    USR_ATIVO,'
-      '    PER_ID,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :USR_ID,'
-      '    :USR_LOGIN,'
-      '    :USR_EXPIRADA,'
-      '    :USR_ATIVO,'
-      '    :PER_ID,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
+  object QryFuncionarioMatricula: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
       'select'
-      '  a.usr_id,'
-      '  a.usr_login, '
-      '  a.usr_expirada, '
-      '  a.usr_ativo,'
-      '  a.per_id,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_sis_usuario a'
-      'where( '
-      '  (a.usr_id = :usr_id)'
-      '     ) and (     A.USR_ID = :OLD_USR_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
+      '  f.fun_id,'
+      '  f.fun_nome,'
+      '  f.reg_excluido,'
+      '  f.und_id,'
+      '  u.und_nome'
+      
+        'from tab_pes_funcionario f left join tab_sis_unidade u on (f.und' +
+        '_id = u.und_id)'
+      'where'
+      '  (f.fun_matricula = :matricula)')
+    Left = 376
+    Top = 216
+    ParamData = <
+      item
+        Name = 'MATRICULA'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 20
+      end>
+    object QryFuncionarioMatriculaFUN_ID: TIntegerField
+      FieldName = 'FUN_ID'
+      Origin = 'FUN_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryFuncionarioMatriculaFUN_NOME: TStringField
+      FieldName = 'FUN_NOME'
+      Origin = 'FUN_NOME'
+      Required = True
+      Size = 100
+    end
+    object QryFuncionarioMatriculaREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+      Required = True
+    end
+    object QryFuncionarioMatriculaUND_ID: TIntegerField
+      FieldName = 'UND_ID'
+      Origin = 'UND_ID'
+    end
+    object QryFuncionarioMatriculaUND_NOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'UND_NOME'
+      Origin = 'UND_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 100
+    end
+  end
+  object QryFuncionarioCPF: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
+      'select'
+      '  f.fun_id,'
+      '  f.fun_nome,'
+      '  f.reg_excluido,'
+      '  f.und_id,'
+      '  u.und_nome'
+      
+        'from tab_pes_funcionario f left join tab_sis_unidade u on (f.und' +
+        '_id = u.und_id)'
+      'where'
+      '  (f.fun_cpf = :cpf)')
+    Left = 344
+    Top = 216
+    ParamData = <
+      item
+        Name = 'CPF'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 11
+      end>
+    object QryFuncionarioCPFFUN_ID: TIntegerField
+      FieldName = 'FUN_ID'
+      Origin = 'FUN_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryFuncionarioCPFFUN_NOME: TStringField
+      FieldName = 'FUN_NOME'
+      Origin = 'FUN_NOME'
+      Required = True
+      Size = 100
+    end
+    object QryFuncionarioCPFREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+      Required = True
+    end
+    object QryFuncionarioCPFUND_ID: TIntegerField
+      FieldName = 'UND_ID'
+      Origin = 'UND_ID'
+    end
+    object QryFuncionarioCPFUND_NOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'UND_NOME'
+      Origin = 'UND_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 100
+    end
+  end
+  object QryUsuario: TFDQuery
+    BeforePost = QryUsuarioBeforePost
+    MasterSource = DtSrcPrincipal
+    MasterFields = 'USR_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    UpdateObject = UpdtUsuario
+    SQL.Strings = (
       'select'
       '  a.usr_id,'
       '  a.usr_login, '
@@ -1242,144 +1456,99 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
       '  tab_sis_usuario a'
       'where'
       '  (a.usr_id = :usr_id)')
-    BeforePost = DtStUsuarioBeforePost
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    Left = 352
+    Left = 320
     Top = 336
-    poSQLINT64ToBCD = True
-    object DtStUsuarioUSR_ID: TFIBIntegerField
+    ParamData = <
+      item
+        Name = 'USR_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object QryUsuarioUSR_ID: TIntegerField
       FieldName = 'USR_ID'
+      Origin = 'USR_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object DtStUsuarioUSR_LOGIN: TFIBStringField
-      DisplayLabel = 'Login:'
+    object QryUsuarioUSR_LOGIN: TStringField
+      DisplayLabel = 'Login'
       FieldName = 'USR_LOGIN'
+      Origin = 'USR_LOGIN'
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStUsuarioUSR_EXPIRADA: TFIBBooleanField
-      DefaultExpression = 'True'
+    object QryUsuarioUSR_EXPIRADA: TSmallintField
+      Alignment = taLeftJustify
       FieldName = 'USR_EXPIRADA'
+      Origin = 'USR_EXPIRADA'
     end
-    object DtStUsuarioUSR_ATIVO: TFIBBooleanField
-      DefaultExpression = 'True'
+    object QryUsuarioUSR_ATIVO: TSmallintField
+      Alignment = taLeftJustify
       FieldName = 'USR_ATIVO'
+      Origin = 'USR_ATIVO'
     end
-    object DtStUsuarioPER_ID: TFIBIntegerField
+    object QryUsuarioPER_ID: TIntegerField
       Alignment = taLeftJustify
       FieldName = 'PER_ID'
+      Origin = 'PER_ID'
     end
-    object DtStUsuarioREG_EXCLUIDO: TFIBBooleanField
+    object QryUsuarioREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
     end
-    object DtStUsuarioREG_REPLICADO: TFIBBooleanField
+    object QryUsuarioREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
     end
-    object DtStUsuarioREG_USUARIO: TFIBStringField
+    object QryUsuarioREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStUsuarioREG_MODIFICADO: TFIBDateTimeField
+    object QryUsuarioREG_MODIFICADO: TSQLTimeStampField
       FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
     end
   end
-  object DtStFuncionarioMatricula: TpFIBDataSet
-    SelectSQL.Strings = (
-      'select'
-      '  f.fun_id,'
-      '  f.fun_nome,'
-      '  f.reg_excluido,'
-      '  f.und_id,'
-      '  u.und_nome'
+  object UpdtUsuario: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_SIS_USUARIO'
+      '(USR_ID, USR_LOGIN, USR_EXPIRADA, USR_ATIVO, '
+      '  PER_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO)'
       
-        'from tab_pes_funcionario f left join tab_sis_unidade u on (f.und' +
-        '_id = u.und_id)'
-      'where'
-      '  (f.fun_matricula = :matricula)')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcPrincipal
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 192
-    Top = 208
-    object DtStFuncionarioMatriculaFUN_ID: TFIBIntegerField
-      FieldName = 'FUN_ID'
-    end
-    object DtStFuncionarioMatriculaFUN_NOME: TFIBStringField
-      FieldName = 'FUN_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStFuncionarioMatriculaUND_ID: TFIBIntegerField
-      FieldName = 'UND_ID'
-    end
-    object DtStFuncionarioMatriculaUND_NOME: TFIBStringField
-      FieldName = 'UND_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStFuncionarioMatriculaREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-  end
-  object DtStFuncionarioCPF: TpFIBDataSet
-    SelectSQL.Strings = (
-      'select'
-      '  f.fun_id,'
-      '  f.fun_nome,'
-      '  f.reg_excluido,'
-      '  f.und_id,'
-      '  u.und_nome'
+        'VALUES (:NEW_USR_ID, :NEW_USR_LOGIN, :NEW_USR_EXPIRADA, :NEW_USR' +
+        '_ATIVO, '
       
-        'from tab_pes_funcionario f left join tab_sis_unidade u on (f.und' +
-        '_id = u.und_id)'
-      'where'
-      '  (f.fun_cpf = :cpf)')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcPrincipal
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 192
-    Top = 240
-    object DtStFuncionarioCPFFUN_ID: TFIBIntegerField
-      FieldName = 'FUN_ID'
-    end
-    object DtStFuncionarioCPFFUN_NOME: TFIBStringField
-      FieldName = 'FUN_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStFuncionarioCPFREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStFuncionarioCPFUND_ID: TFIBIntegerField
-      FieldName = 'UND_ID'
-    end
-    object DtStFuncionarioCPFUND_NOME: TFIBStringField
-      FieldName = 'UND_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
+        '  :NEW_PER_ID, :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, :NEW_REG_U' +
+        'SUARIO, '
+      '  :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_SIS_USUARIO'
+      
+        'SET USR_ID = :NEW_USR_ID, USR_LOGIN = :NEW_USR_LOGIN, USR_EXPIRA' +
+        'DA = :NEW_USR_EXPIRADA, '
+      
+        '  USR_ATIVO = :NEW_USR_ATIVO, PER_ID = :NEW_PER_ID, REG_EXCLUIDO' +
+        ' = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE USR_ID = :OLD_USR_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_SIS_USUARIO'
+      'WHERE USR_ID = :OLD_USR_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT USR_ID, USR_DATA, USR_LOGIN, USR_SENHA, USR_EXPIRADA, USR' +
+        '_ATIVO, '
+      
+        '  USR_OBSERVACAO, PER_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUAR' +
+        'IO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_SIS_USUARIO'
+      'WHERE USR_ID = :USR_ID')
+    Left = 352
+    Top = 336
   end
 end

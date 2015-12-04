@@ -8,33 +8,11 @@ uses
   dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, FIBDataSet, pFIBDataSet, cxPC,
   Vcl.StdCtrls, cxButtons, cxContainer, cxEdit, cxDBEdit, cxSpinEdit, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox,
   cxDropDownEdit, cxImageComboBox, cxMaskEdit, cxCalendar, cxTextEdit, cxGroupBox, Vcl.ExtCtrls, dxSkinSeven, dxSkinSevenClassic,
-  cxCheckBox, dxBarBuiltInMenu;
+  cxCheckBox, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
   TFrmPessoalFuncionario = class(TFrmBaseTabela)
-    DtStPrincipalFUN_ID: TFIBIntegerField;
-    DtStPrincipalFUN_DATA: TFIBDateField;
-    DtStPrincipalFUN_NOME: TFIBStringField;
-    DtStPrincipalFUN_MATRICULA: TFIBStringField;
-    DtStPrincipalFUN_SEXO: TFIBStringField;
-    DtStPrincipalFUN_NASCIMENTO: TFIBDateField;
-    DtStPrincipalFUN_CPF: TFIBStringField;
-    DtStPrincipalFUN_RG_NUMERO: TFIBStringField;
-    DtStPrincipalFUN_RG_ORGAO: TFIBStringField;
-    DtStPrincipalFUN_RG_DATA: TFIBDateField;
-    DtStPrincipalFUN_ENDERECO: TFIBStringField;
-    DtStPrincipalFUN_NUMERO: TFIBStringField;
-    DtStPrincipalFUN_COMPLEMENTO: TFIBStringField;
-    DtStPrincipalFUN_BAIRRO: TFIBStringField;
-    DtStPrincipalFUN_CEP: TFIBStringField;
-    DtStPrincipalFUN_TELEFONE: TFIBStringField;
-    DtStPrincipalFUN_CELULAR: TFIBStringField;
-    DtStPrincipalFUN_EMAIL: TFIBStringField;
-    DtStPrincipalFNC_ID: TFIBIntegerField;
-    DtStPrincipalFST_ID: TFIBIntegerField;
-    DtStPrincipalCRG_ID: TFIBIntegerField;
-    DtStPrincipalUSR_ID: TFIBIntegerField;
-    DtStPrincipalUND_ID: TFIBIntegerField;
     GRpBxPrincipal: TcxGroupBox;
     Label1: TLabel;
     Label2: TLabel;
@@ -82,9 +60,6 @@ type
     DbLkpCmbBxFuncaoSituacao: TcxDBLookupComboBox;
     DtSrcCargo: TDataSource;
     DtSrcFuncaoSituacao: TDataSource;
-    DtStPrincipalCID_ID: TFIBIntegerField;
-    DtStPrincipalCID_NOME: TFIBStringField;
-    DtStPrincipalUFE_ID: TFIBStringField;
     DtSrcUsuario: TDataSource;
     DbEdtTelefone1: TcxDBMaskEdit;
     DbEdtTelefone2: TcxDBMaskEdit;
@@ -94,52 +69,79 @@ type
     DbEdtData: TcxDBDateEdit;
     Label24: TLabel;
     DbLkpCmbBxUnidade: TcxDBLookupComboBox;
-    DtStUsuario: TpFIBDataSet;
-    DtStUsuarioUSR_ID: TFIBIntegerField;
-    DtStUsuarioUSR_LOGIN: TFIBStringField;
-    DtStUsuarioUSR_EXPIRADA: TFIBBooleanField;
-    DtStUsuarioUSR_ATIVO: TFIBBooleanField;
-    DtStUsuarioPER_ID: TFIBIntegerField;
     DbEdtLogin: TcxDBTextEdit;
     LblLogin: TLabel;
     LblPerfil: TLabel;
     DbLkpCmbBxPerfil: TcxDBLookupComboBox;
     DbChckBxExpirada: TcxDBCheckBox;
     DbChckBxAtivo: TcxDBCheckBox;
-    DtStFuncionarioMatricula: TpFIBDataSet;
-    DtStFuncionarioMatriculaFUN_ID: TFIBIntegerField;
-    DtStFuncionarioMatriculaFUN_NOME: TFIBStringField;
-    DtStFuncionarioMatriculaUND_ID: TFIBIntegerField;
-    DtStFuncionarioCPF: TpFIBDataSet;
-    DtStFuncionarioCPFFUN_ID: TFIBIntegerField;
-    DtStFuncionarioCPFFUN_NOME: TFIBStringField;
-    DtStFuncionarioCPFUND_ID: TFIBIntegerField;
-    DtStFuncionarioMatriculaUND_NOME: TFIBStringField;
-    DtStFuncionarioCPFUND_NOME: TFIBStringField;
-    DtStFuncionarioMatriculaREG_EXCLUIDO: TFIBBooleanField;
-    DtStFuncionarioCPFREG_EXCLUIDO: TFIBBooleanField;
-    DtStPrincipalREG_EXCLUIDO: TFIBBooleanField;
-    DtStPrincipalREG_REPLICADO: TFIBBooleanField;
-    DtStPrincipalREG_USUARIO: TFIBStringField;
-    DtStPrincipalREG_MODIFICADO: TFIBDateTimeField;
-    DtStUsuarioREG_EXCLUIDO: TFIBBooleanField;
-    DtStUsuarioREG_REPLICADO: TFIBBooleanField;
-    DtStUsuarioREG_USUARIO: TFIBStringField;
-    DtStUsuarioREG_MODIFICADO: TFIBDateTimeField;
+    QryPrincipalFUN_ID: TIntegerField;
+    QryPrincipalFUN_DATA: TDateField;
+    QryPrincipalFUN_NOME: TStringField;
+    QryPrincipalFUN_MATRICULA: TStringField;
+    QryPrincipalFUN_SEXO: TStringField;
+    QryPrincipalFUN_NASCIMENTO: TDateField;
+    QryPrincipalFUN_CPF: TStringField;
+    QryPrincipalFUN_RG_NUMERO: TStringField;
+    QryPrincipalFUN_RG_ORGAO: TStringField;
+    QryPrincipalFUN_RG_DATA: TDateField;
+    QryPrincipalFUN_ENDERECO: TStringField;
+    QryPrincipalFUN_NUMERO: TStringField;
+    QryPrincipalFUN_COMPLEMENTO: TStringField;
+    QryPrincipalFUN_BAIRRO: TStringField;
+    QryPrincipalFUN_CEP: TStringField;
+    QryPrincipalFUN_TELEFONE: TStringField;
+    QryPrincipalFUN_CELULAR: TStringField;
+    QryPrincipalFUN_EMAIL: TStringField;
+    QryPrincipalREG_EXCLUIDO: TSmallintField;
+    QryPrincipalREG_REPLICADO: TSmallintField;
+    QryPrincipalREG_USUARIO: TStringField;
+    QryPrincipalREG_MODIFICADO: TSQLTimeStampField;
+    QryPrincipalFNC_ID: TIntegerField;
+    QryPrincipalFST_ID: TIntegerField;
+    QryPrincipalCRG_ID: TIntegerField;
+    QryPrincipalUSR_ID: TIntegerField;
+    QryPrincipalUND_ID: TIntegerField;
+    QryPrincipalCID_ID: TIntegerField;
+    QryPrincipalCID_NOME: TStringField;
+    QryPrincipalUFE_ID: TStringField;
+    QryFuncionarioMatricula: TFDQuery;
+    QryFuncionarioCPF: TFDQuery;
+    QryFuncionarioCPFFUN_ID: TIntegerField;
+    QryFuncionarioCPFFUN_NOME: TStringField;
+    QryFuncionarioCPFREG_EXCLUIDO: TSmallintField;
+    QryFuncionarioCPFUND_ID: TIntegerField;
+    QryFuncionarioCPFUND_NOME: TStringField;
+    QryUsuario: TFDQuery;
+    QryUsuarioUSR_ID: TIntegerField;
+    QryUsuarioUSR_LOGIN: TStringField;
+    QryUsuarioUSR_EXPIRADA: TSmallintField;
+    QryUsuarioUSR_ATIVO: TSmallintField;
+    QryUsuarioPER_ID: TIntegerField;
+    QryUsuarioREG_EXCLUIDO: TSmallintField;
+    QryUsuarioREG_REPLICADO: TSmallintField;
+    QryUsuarioREG_USUARIO: TStringField;
+    QryUsuarioREG_MODIFICADO: TSQLTimeStampField;
+    UpdtUsuario: TFDUpdateSQL;
+    QryFuncionarioMatriculaFUN_ID: TIntegerField;
+    QryFuncionarioMatriculaFUN_NOME: TStringField;
+    QryFuncionarioMatriculaREG_EXCLUIDO: TSmallintField;
+    QryFuncionarioMatriculaUND_ID: TIntegerField;
+    QryFuncionarioMatriculaUND_NOME: TStringField;
     procedure FormCreate(Sender: TObject);
-    procedure DtStPrincipalNewRecord(DataSet: TDataSet);
     procedure BtnSalvarClick(Sender: TObject);
     procedure BtnUsuarioClick(Sender: TObject);
-    procedure DtStPrincipalAfterPost(DataSet: TDataSet);
-    procedure DtStPrincipalBeforePost(DataSet: TDataSet);
     procedure DtSrcPrincipalStateChange(Sender: TObject);
     procedure DtSrcUsuarioStateChange(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
-    procedure DtStPrincipalAfterOpen(DataSet: TDataSet);
     procedure BtnExcluirClick(Sender: TObject);
     procedure BtnNovoClick(Sender: TObject);
     procedure DbEdtNomePropertiesChange(Sender: TObject);
-    procedure DtStUsuarioBeforePost(DataSet: TDataSet);
+    procedure QryPrincipalAfterOpen(DataSet: TDataSet);
+    procedure QryPrincipalAfterPost(DataSet: TDataSet);
+    procedure QryUsuarioBeforePost(DataSet: TDataSet);
+    procedure QryPrincipalNewRecord(DataSet: TDataSet);
+    procedure QryPrincipalBeforePost(DataSet: TDataSet);
   private
     FNovoUsuario: Boolean;
     FTransferirFuncionario: Boolean;
@@ -162,15 +164,15 @@ uses Emater.Conexao.Modulo, Emater.Pessoal.Modulo, Emater.Sistema.Modulo, Emater
 
 procedure TFrmPessoalFuncionario.BtnCancelarClick(Sender: TObject);
 begin
-  if (DtStPrincipal.State in [dsEdit, dsInsert]) then
+  if (QryPrincipal.State in [dsEdit, dsInsert]) then
     inherited;
 
-  if (DtStUsuario.State in [dsEdit, dsInsert]) then
-    DtStUsuario.Cancel;
+  if (QryUsuario.State in [dsEdit, dsInsert]) then
+    QryUsuario.Cancel;
 
   FNovoUsuario := False;
 
-  CarregarUsuario(DtStPrincipalUSR_ID.AsInteger);
+  CarregarUsuario(QryPrincipalUSR_ID.AsInteger);
 end;
 
 procedure TFrmPessoalFuncionario.BtnExcluirClick(Sender: TObject);
@@ -191,11 +193,11 @@ var
   ID: Integer;
 begin
 
-  if (DtStPrincipal.State in [dsEdit, dsInsert]) then
+  if (QryPrincipal.State in [dsEdit, dsInsert]) then
     begin
       // Valida o CPF do funcionário:
-      if (Trim(DtStPrincipalFUN_CPF.AsString) <> '') then
-        if not Str.ValidarCPF(DtStPrincipalFUN_CPF.AsString) then
+      if (Trim(QryPrincipalFUN_CPF.AsString) <> '') then
+        if not Str.ValidarCPF(QryPrincipalFUN_CPF.AsString) then
           begin
             Msg.Aviso(CADASTRO_AVISO_CPF_INVALIDO);
             DbEdtCPF.SetFocus;
@@ -203,28 +205,28 @@ begin
           end;
 
 
-      if (DtStPrincipal.State = dsInsert) then
+      if (QryPrincipal.State = dsInsert) then
         begin
 
           // Validando se a matrícula já existe. Quando existir, o funcionário poderá estar
           // lotado em outra unidade e o sistema carregará o registro para que as informações do
           // funcionário sejam visualizadas ou atualizadas.
-          DtStFuncionarioMatricula.Close;
-          DtStFuncionarioMatricula.ParamByName('matricula').AsString := DtStPrincipalFUN_MATRICULA.AsString;
-          DtStFuncionarioMatricula.Open;
+          QryFuncionarioMatricula.Close;
+          QryFuncionarioMatricula.ParamByName('matricula').AsString := QryPrincipalFUN_MATRICULA.AsString;
+          QryFuncionarioMatricula.Open;
 
-          if not DtStFuncionarioMatricula.IsEmpty then
+          if not QryFuncionarioMatricula.IsEmpty then
             begin
-              Msg.Informacao(Format(CADASTRO_MATRICULA_FUNCIONARIO_EXISTENTE, [DtStFuncionarioMatriculaUND_NOME.AsString]));
-              ID := DtStFuncionarioMatriculaFUN_ID.AsInteger;
-              FTransferirUnidadeOrigem := DtStFuncionarioMatriculaUND_NOME.AsString;
-              FTransferirFuncionarioNome := DtStFuncionarioMatriculaFUN_NOME.AsString;
-              DtStPrincipal.Cancel;
-              DtStPrincipal.Close;
-              DtStPrincipal.Params[0].AsInteger := ID;
-              DtStPrincipal.Open;
-              DtStPrincipal.Edit;
-              DtStPrincipalUND_ID.AsInteger := DtmSistemaModulo.UnidadeLocalID;
+              Msg.Informacao(Format(CADASTRO_MATRICULA_FUNCIONARIO_EXISTENTE, [QryFuncionarioMatriculaUND_NOME.AsString]));
+              ID := QryFuncionarioMatriculaFUN_ID.AsInteger;
+              FTransferirUnidadeOrigem := QryFuncionarioMatriculaUND_NOME.AsString;
+              FTransferirFuncionarioNome := QryFuncionarioMatriculaFUN_NOME.AsString;
+              QryPrincipal.Cancel;
+              QryPrincipal.Close;
+              QryPrincipal.Params[0].AsInteger := ID;
+              QryPrincipal.Open;
+              QryPrincipal.Edit;
+              QryPrincipalUND_ID.AsInteger := DtmSistemaModulo.UnidadeLocalID;
               FTransferirFuncionario := True;
               DbEdtMatricula.SetFocus;
               Exit;
@@ -235,22 +237,22 @@ begin
               // Caso a matrícula não exista, será validado o CPF informado para o funcionário, se o mesmo já existe.
               // Caso exista, será realizado o mesmo procedimento de carregar o registro do funcionário pelo CPF para
               // visualização ou atualização das informações.
-              DtStFuncionarioCPF.Close;
-              DtStFuncionarioCPF.ParamByName('cpf').AsString := DtStPrincipalFUN_CPF.AsString;
-              DtStFuncionarioCPF.Open;
+              QryFuncionarioCPF.Close;
+              QryFuncionarioCPF.ParamByName('cpf').AsString := QryPrincipalFUN_CPF.AsString;
+              QryFuncionarioCPF.Open;
 
-              if not DtStFuncionarioCPF.IsEmpty then
+              if not QryFuncionarioCPF.IsEmpty then
                 begin
-                  Msg.Informacao(Format(CADASTRO_CPF_FUNCIONARIO_EXISTENTE, [DtStFuncionarioCPFUND_NOME.AsString]));
-                  ID := DtStFuncionarioCPFFUN_ID.AsInteger;
-                  FTransferirUnidadeOrigem := DtStFuncionarioCPFUND_NOME.AsString;
-                  FTransferirFuncionarioNome := DtStFuncionarioCPFFUN_NOME.AsString;
-                  DtStPrincipal.Cancel;
-                  DtStPrincipal.Close;
-                  DtStPrincipal.Params[0].AsInteger := ID;
-                  DtStPrincipal.Open;
-                  DtStPrincipal.Edit;
-                  DtStPrincipalUND_ID.AsInteger := DtmSistemaModulo.UnidadeLocalID;
+                  Msg.Informacao(Format(CADASTRO_CPF_FUNCIONARIO_EXISTENTE, [QryFuncionarioCPFUND_NOME.AsString]));
+                  ID := QryFuncionarioCPFFUN_ID.AsInteger;
+                  FTransferirUnidadeOrigem := QryFuncionarioCPFUND_NOME.AsString;
+                  FTransferirFuncionarioNome := QryFuncionarioCPFFUN_NOME.AsString;
+                  QryPrincipal.Cancel;
+                  QryPrincipal.Close;
+                  QryPrincipal.Params[0].AsInteger := ID;
+                  QryPrincipal.Open;
+                  QryPrincipal.Edit;
+                  QryPrincipalUND_ID.AsInteger := DtmSistemaModulo.UnidadeLocalID;
                   FTransferirFuncionario := True;
                   DbEdtMatricula.SetFocus;
                   Exit;
@@ -269,13 +271,13 @@ begin
 
       inherited;
 
-      if (not (DtStPrincipal.State in [dsInsert, dsEdit])) then
-        CarregarUsuario(DtStPrincipalUSR_ID.Value);
+      if (not (QryPrincipal.State in [dsInsert, dsEdit])) then
+        CarregarUsuario(QryPrincipalUSR_ID.Value);
     end;
 
-  if (DtStUsuario.State in [dsEdit, dsInsert]) and (not (DtStPrincipal.State in [dsInsert, dsEdit])) then
+  if (QryUsuario.State in [dsEdit, dsInsert]) and (not (QryPrincipal.State in [dsInsert, dsEdit])) then
     begin
-      DtStUsuario.Post;
+      QryUsuario.Post;
       Msg.Informacao(BASE_MSG_INFORMACAO_SALVAR);
     end;
 end;
@@ -288,8 +290,9 @@ begin
       try
         Hide;
         Screen.Cursor := crHourglass;
-        FrmSistemaUsuario.Editar(DtStUsuarioUSR_LOGIN.AsString);
-        DtStUsuario.CloseOpen(True);
+        FrmSistemaUsuario.Editar(QryUsuarioUSR_LOGIN.AsString);
+        QryUsuario.Close;
+        QryUsuario.Open;
       finally
         FrmSistemaUsuario.Release;
         FrmSistemaUsuario := nil;
@@ -301,9 +304,9 @@ end;
 
 procedure TFrmPessoalFuncionario.CarregarUsuario(const ID: Integer);
 begin
-  DtStUsuario.Close;
-  DtStUsuario.ParamByName('usr_id').AsInteger := ID;
-  DtStUsuario.Open;
+  QryUsuario.Close;
+  QryUsuario.ParamByName('usr_id').AsInteger := ID;
+  QryUsuario.Open;
 end;
 
 procedure TFrmPessoalFuncionario.DbEdtNomePropertiesChange(Sender: TObject);
@@ -316,7 +319,7 @@ procedure TFrmPessoalFuncionario.DtSrcPrincipalStateChange(Sender: TObject);
 begin
   inherited;
 
-  LblPerfil.Enabled := (DtStPrincipal.State = dsBrowse) and (not DtStPrincipal.IsEmpty);
+  LblPerfil.Enabled := (QryPrincipal.State = dsBrowse) and (not QryPrincipal.IsEmpty);
   DbLkpCmbBxPerfil.Enabled := LblPerfil.Enabled;
   DbChckBxExpirada.Enabled := LblPerfil.Enabled;
   DbChckBxAtivo.Enabled := LblPerfil.Enabled;
@@ -326,69 +329,17 @@ end;
 procedure TFrmPessoalFuncionario.DtSrcUsuarioStateChange(Sender: TObject);
 begin
   inherited;
-  with DtStUsuario do
+  with QryUsuario do
     begin
-      BtnNovo.Enabled := ((State = dsBrowse) and (not (State = dsInactive))) and (DtStPrincipal.State = dsBrowse);
+      BtnNovo.Enabled := ((State = dsBrowse) and (not (State = dsInactive))) and (QryPrincipal.State = dsBrowse);
       BtnExcluir.Enabled := ((State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0)) and
-        ((DtStPrincipal.State = dsBrowse) and (DtStPrincipal.RecordCount > 0));
+        ((QryPrincipal.State = dsBrowse) and (QryPrincipal.RecordCount > 0));
       BtnCancelar.Enabled := ((State in [dsEdit, dsInsert]) and (not (State = dsInactive))) or
-        (DtStPrincipal.State in [dsEdit, dsInsert]);
+        (QryPrincipal.State in [dsEdit, dsInsert]);
       BtnSalvar.Enabled := ((State in [dsEdit, dsInsert]) and (not (State = dsInactive)))  or
-        (DtStPrincipal.State in [dsEdit, dsInsert]);;
+        (QryPrincipal.State in [dsEdit, dsInsert]);;
       BtnRelatorio.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
     end;
-end;
-
-procedure TFrmPessoalFuncionario.DtStPrincipalAfterOpen(DataSet: TDataSet);
-begin
-  inherited;
-  CarregarUsuario(DtStPrincipalUSR_ID.Value);
-  FTransferirFuncionario := False;
-end;
-
-procedure TFrmPessoalFuncionario.DtStPrincipalAfterPost(DataSet: TDataSet);
-begin
-  inherited;
-  DtmPessoalModulo.DtStFuncionario.Close;
-  DtmPessoalModulo.DtStFuncionario.Open;
-
-  if FNovoUsuario then
-    begin
-      Msg.Informacao(SISTEMA_MSG_USUARIO_SENHA_PADRAO);
-      FNovoUsuario := False;
-    end;
-end;
-
-procedure TFrmPessoalFuncionario.DtStPrincipalBeforePost(DataSet: TDataSet);
-var
-  ID: Integer;
-begin
-  inherited;
-
-  if (DtStPrincipal.State = dsInsert) then
-    begin
-      ID := DtmSistemaModulo.UsuarioCriar(
-        DtStPrincipalFUN_MATRICULA.AsString,
-        Str.MD5('123'));
-      DtStPrincipalUSR_ID.AsInteger := ID;
-
-      FNovoUsuario := True;
-    end;
-end;
-
-procedure TFrmPessoalFuncionario.DtStPrincipalNewRecord(DataSet: TDataSet);
-begin
-  inherited;
-
-  DtStPrincipalFUN_DATA.Value := Date;
-  DtStPrincipalUND_ID.Value := DtmSistemaModulo.UnidadeLocalID;
-  DtStPrincipalREG_EXCLUIDO.Value := False;
-end;
-
-procedure TFrmPessoalFuncionario.DtStUsuarioBeforePost(DataSet: TDataSet);
-begin
-  inherited;
-  DtmSistemaModulo.GravarAuditoriaAlteracao(DtStUsuario);
 end;
 
 procedure TFrmPessoalFuncionario.FormCreate(Sender: TObject);
@@ -409,6 +360,57 @@ begin
   DbLkpCmbBxPerfil.Properties.ListSource := DtmSistemaModulo.DtSrcPerfil;
 
   FNovoUsuario := False;
+end;
+
+procedure TFrmPessoalFuncionario.QryPrincipalAfterOpen(DataSet: TDataSet);
+begin
+  inherited;
+  CarregarUsuario(QryPrincipalUSR_ID.Value);
+  FTransferirFuncionario := False;
+end;
+
+procedure TFrmPessoalFuncionario.QryPrincipalAfterPost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmPessoalModulo.DtStFuncionario.Close;
+  DtmPessoalModulo.DtStFuncionario.Open;
+
+  if FNovoUsuario then
+    begin
+      Msg.Informacao(SISTEMA_MSG_USUARIO_SENHA_PADRAO);
+      FNovoUsuario := False;
+    end;
+end;
+
+procedure TFrmPessoalFuncionario.QryPrincipalBeforePost(DataSet: TDataSet);
+var
+  ID: Integer;
+begin
+  inherited;
+
+  if (QryPrincipal.State = dsInsert) then
+    begin
+      ID := DtmSistemaModulo.UsuarioCriar(
+        QryPrincipalFUN_MATRICULA.AsString,
+        Str.MD5('123'));
+      QryPrincipalUSR_ID.AsInteger := ID;
+
+      FNovoUsuario := True;
+    end;
+end;
+
+procedure TFrmPessoalFuncionario.QryPrincipalNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  QryPrincipalFUN_DATA.Value := Date;
+  QryPrincipalUND_ID.Value := DtmSistemaModulo.UnidadeLocalID;
+  QryPrincipalREG_EXCLUIDO.Value := 0;
+end;
+
+procedure TFrmPessoalFuncionario.QryUsuarioBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryUsuario);
 end;
 
 end.

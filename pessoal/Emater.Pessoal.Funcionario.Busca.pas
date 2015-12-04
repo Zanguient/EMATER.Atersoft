@@ -9,21 +9,11 @@ uses
   cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, Data.DB, cxDBData, dxSkinsdxBarPainter, dxBar, FIBDataSet,
   pFIBDataSet, cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
   cxTextEdit, Vcl.StdCtrls, cxButtons, cxMaskEdit, cxDropDownEdit, cxImageComboBox, cxPC, cxLookupEdit, cxDBLookupEdit,
-  cxDBLookupComboBox, dxSkinSeven, dxSkinSevenClassic;
+  cxDBLookupComboBox, dxBarBuiltInMenu,FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
+  FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
   TFrmPessoalFuncionarioBusca = class(TFrmBaseBusca)
-    DtStConsultaFUN_ID: TFIBIntegerField;
-    DtStConsultaFUN_DATA: TFIBDateField;
-    DtStConsultaFUN_NOME: TFIBStringField;
-    DtStConsultaFUN_MATRICULA: TFIBStringField;
-    DtStConsultaFUN_CPF: TFIBStringField;
-    DtStConsultaFUN_TELEFONE: TFIBStringField;
-    DtStConsultaFUN_CELULAR: TFIBStringField;
-    DtStConsultaCID_NOME: TFIBStringField;
-    DtStConsultaUFE_ID: TFIBStringField;
-    DtStConsultaFNC_DESCRICAO: TFIBStringField;
-    DtStConsultaUND_NOME: TFIBStringField;
     GrdConsultaTblFUN_DATA: TcxGridDBColumn;
     GrdConsultaTblFUN_NOME: TcxGridDBColumn;
     GrdConsultaTblFUN_MATRICULA: TcxGridDBColumn;
@@ -40,11 +30,22 @@ type
     Label3: TLabel;
     Label2: TLabel;
     EdtCPF: TcxMaskEdit;
-    DtStMunicipio: TpFIBDataSet;
-    DtStMunicipioCID_ID: TFIBIntegerField;
-    DtStMunicipioCID_NOME: TFIBStringField;
     DtSrcMunicipio: TDataSource;
-    DtStConsultaREG_EXCLUIDO: TFIBBooleanField;
+    QryConsultaFUN_ID: TIntegerField;
+    QryConsultaFUN_DATA: TDateField;
+    QryConsultaFUN_NOME: TStringField;
+    QryConsultaFUN_MATRICULA: TStringField;
+    QryConsultaFUN_CPF: TStringField;
+    QryConsultaFUN_TELEFONE: TStringField;
+    QryConsultaFUN_CELULAR: TStringField;
+    QryConsultaREG_EXCLUIDO: TSmallintField;
+    QryConsultaCID_NOME: TStringField;
+    QryConsultaUFE_ID: TStringField;
+    QryConsultaFNC_DESCRICAO: TStringField;
+    QryConsultaUND_NOME: TStringField;
+    QryMunicipio: TFDQuery;
+    QryMunicipioCID_ID: TIntegerField;
+    QryMunicipioCID_NOME: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure BtnConsultarClick(Sender: TObject);
     procedure LkpCmbBxUnidadePropertiesEditValueChanged(Sender: TObject);
@@ -74,54 +75,54 @@ begin
   Screen.Cursor := crHourGlass;
   CodeSite.EnterMethod(Self.Name + '.BtnConsultarClick().');
   try
-    DtStConsulta.Close;
-    DtStConsulta.SelectSQL.Clear;
-    DtStConsulta.SelectSQL.AddStrings(DefaultSQL);
+    QryConsulta.Close;
+    QryConsulta.SQL.Clear;
+    QryConsulta.SQL.AddStrings(DefaultSQL);
 
     CodeSite.SendMsg('Preparando para consultar o banco de dados.');
 
     // Nome do beneficiário:
     if (Trim(EdtValor.Text) <> '') then
       case ImgCmbBxOpcao.ItemIndex of
-        0: DtStConsulta.SelectSQL.Add(Format('and (a.fun_nome like %s)', [QuotedStr(EdtValor.Text + '%')]));
-        1: DtStConsulta.SelectSQL.Add(Format('and (a.fun_nome like %s)', [QuotedStr('%' + EdtValor.Text + '%')]));
+        0: QryConsulta.SQL.Add(Format('and (a.fun_nome like %s)', [QuotedStr(EdtValor.Text + '%')]));
+        1: QryConsulta.SQL.Add(Format('and (a.fun_nome like %s)', [QuotedStr('%' + EdtValor.Text + '%')]));
       end;
 
     // Matrícula:
     if (Trim(EdtMatricula.Text) <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.fun_matricula like %s)', [QuotedStr(EdtMatricula.Text)]));
+      QryConsulta.SQL.Add(Format('and (a.fun_matricula like %s)', [QuotedStr(EdtMatricula.Text)]));
 
     // CPF:
     S := Str.SomenteNumeros(EdtCPF.Text);
     if (S <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.fun_cpf = %s)', [QuotedStr(S)]));
+      QryConsulta.SQL.Add(Format('and (a.fun_cpf = %s)', [QuotedStr(S)]));
 
     // Unidade do cadastro:
     if (LkpCmbBxUnidade.Text <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.und_id = %s)', [IntToStr(LkpCmbBxUnidade.EditValue)]));
+      QryConsulta.SQL.Add(Format('and (a.und_id = %s)', [IntToStr(LkpCmbBxUnidade.EditValue)]));
 
     // Município:
     if (LkpCmbBxMunicipio.Text <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.cid_id = %s)', [IntToStr(LkpCmbBxMunicipio.EditValue)]));
+      QryConsulta.SQL.Add(Format('and (a.cid_id = %s)', [IntToStr(LkpCmbBxMunicipio.EditValue)]));
 
     // Carregando o resultado:
     CanLoad := True;
-    if (DefaultSQL.Count = DtStConsulta.SelectSQL.Count) then
+    if (DefaultSQL.Count = QryConsulta.SQL.Count) then
       CanLoad := Msg.Confirmacao(BASE_MSG_BUSCA_CARREGAR_TUDO);
 
     if CanLoad then
       begin
-        DtStConsulta.SelectSQL.Add('order by a.fun_nome');
-        DtStConsulta.Open;
+        QryConsulta.SQL.Add('order by a.fun_nome');
+        QryConsulta.Open;
 
-        if DtStConsulta.IsEmpty then
+        if QryConsulta.IsEmpty then
           begin
             CodeSite.SendMsg('Consulta realizada. Nenhum registro encontrado.');
             Msg.Informacao(BASE_MSG_BUSCA_NADA_ENCONTRADO);
           end
         else
           begin
-            CodeSite.SendMsg('Consulta realizada. Total de registros encontrados: ' + IntToStr(DtStConsulta.RecordCount) + '.');
+            CodeSite.SendMsg('Consulta realizada. Total de registros encontrados: ' + IntToStr(QryConsulta.RecordCount) + '.');
             GrdConsulta.SetFocus;
           end;
       end;
@@ -133,10 +134,10 @@ end;
 
 procedure TFrmPessoalFuncionarioBusca.CarregarCidadePorUnidade(const Unidade: Integer);
 begin
-  DtStMunicipio.Close;
-  DtStMunicipio.ParamByName('unidade').AsInteger := Unidade;
-  DtStMunicipio.Open;
-  DtStMunicipio.FetchAll;
+  QryMunicipio.Close;
+  QryMunicipio.ParamByName('unidade').AsInteger := Unidade;
+  QryMunicipio.Open;
+  QryMunicipio.FetchAll;
 end;
 
 procedure TFrmPessoalFuncionarioBusca.FormCreate(Sender: TObject);

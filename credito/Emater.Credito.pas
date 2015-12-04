@@ -9,7 +9,8 @@ uses
   pFIBDataSet, cxPC, Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, cxContainer, cxEdit, cxGroupBox, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit,
   cxDBLookupComboBox, cxCurrencyEdit, cxDBEdit, cxCalendar, cxMaskEdit, cxSpinEdit, cxMemo, cxTextEdit, cxButtonEdit, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData, cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
-  cxGridTableView, cxGridDBTableView, cxGrid, cxImageComboBox, cxCalc, dxBarBuiltInMenu;
+  cxGridTableView, cxGridDBTableView, cxGrid, cxImageComboBox, cxCalc, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
   TFrmCredito = class(TFrmBaseTabela)
@@ -767,8 +768,8 @@ begin
           begin
             if not (DtStPrincipal.State in [dsEdit, dsInsert]) then
               DtStPrincipal.Edit;
-            DtStPrincipalFUN_ID_CAMPO.AsInteger := FrmPessoalFuncionarioBusca.DtStConsultaFUN_ID.AsInteger;
-            DtStPrincipalCRD_TECNICO_CAMPO.AsString := FrmPessoalFuncionarioBusca.DtStConsultaFUN_NOME.AsString;
+            DtStPrincipalFUN_ID_CAMPO.AsInteger := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsInteger;
+            DtStPrincipalCRD_TECNICO_CAMPO.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
           end;
       finally
         FrmPessoalFuncionarioBusca.Release;
@@ -789,8 +790,8 @@ begin
           begin
             if not (DtStPrincipal.State in [dsEdit, dsInsert]) then
               DtStPrincipal.Edit;
-            DtStPrincipalFUN_ID_ELABORADOR.AsInteger := FrmPessoalFuncionarioBusca.DtStConsultaFUN_ID.AsInteger;
-            DtStPrincipalCRD_TECNICO_ELABORADOR.AsString := FrmPessoalFuncionarioBusca.DtStConsultaFUN_NOME.AsString;
+            DtStPrincipalFUN_ID_ELABORADOR.AsInteger := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsInteger;
+            DtStPrincipalCRD_TECNICO_ELABORADOR.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
           end;
       finally
         FrmPessoalFuncionarioBusca.Release;
@@ -811,8 +812,8 @@ begin
           begin
             if not (DtStVisita.State in [dsEdit, dsInsert]) then
               DtStVisita.Edit;
-            DtStVisitaFUN_ID_VISITA.AsInteger := FrmPessoalFuncionarioBusca.DtStConsultaFUN_ID.AsInteger;
-            DtStVisitaREG_TECNICO_VISITA.AsString := FrmPessoalFuncionarioBusca.DtStConsultaFUN_NOME.AsString;
+            DtStVisitaFUN_ID_VISITA.AsInteger := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsInteger;
+            DtStVisitaREG_TECNICO_VISITA.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
           end;
       finally
         FrmPessoalFuncionarioBusca.Release;

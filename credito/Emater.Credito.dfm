@@ -61,6 +61,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Situa'#231#227'o do projeto:'
           FocusControl = DbLkpCmbBxSituacao
+          Transparent = True
         end
         object Label12: TLabel
           Tag = 2
@@ -70,6 +71,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Data de elabora'#231#227'o:'
           FocusControl = DbDtEdtElaboracao
+          Transparent = True
         end
         object Label13: TLabel
           Tag = 2
@@ -79,6 +81,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Valor elaborado (R$):'
           FocusControl = DbEdtValorElaborado
+          Transparent = True
         end
         object Label14: TLabel
           Left = 8
@@ -87,6 +90,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Data de contrata'#231#227'o:'
           FocusControl = DbDtEdtContratacao
+          Transparent = True
         end
         object Label15: TLabel
           Tag = 2
@@ -96,6 +100,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Valor contratado (R$):'
           FocusControl = DbEdtValorContratado
+          Transparent = True
         end
         object Label16: TLabel
           Left = 8
@@ -104,6 +109,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Data de vig'#234'ncia:'
           FocusControl = DbDtEdtDataVigencia
+          Transparent = True
         end
         object DbDtEdtElaboracao: TcxDBDateEdit
           Left = 8
@@ -193,6 +199,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Data da '#250'ltima altera'#231#227'o:'
           FocusControl = DbEdtModificadoData
+          Transparent = True
         end
         object Label56: TLabel
           Left = 8
@@ -201,6 +208,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Usu'#225'rio da '#250'ltima altera'#231#227'o:'
           FocusControl = DbEdtModificadoUsuario
+          Transparent = True
         end
         object Label30: TLabel
           Left = 8
@@ -208,6 +216,7 @@ inherited FrmCredito: TFrmCredito
           Width = 109
           Height = 13
           Caption = 'Escrit'#243'rio respons'#225'vel:'
+          Transparent = True
         end
         object Label17: TLabel
           Left = 8
@@ -216,6 +225,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Data de cria'#231#227'o:'
           FocusControl = DbEdtCriacaoData
+          Transparent = True
         end
         object DbEdtModificadoUsuario: TcxDBTextEdit
           Left = 8
@@ -284,6 +294,7 @@ inherited FrmCredito: TFrmCredito
           Width = 65
           Height = 13
           Caption = 'Identificador:'
+          Transparent = True
         end
         object Label2: TLabel
           Tag = 2
@@ -293,6 +304,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'T'#237'tulo do projeto:'
           FocusControl = DbEdtTitulo
+          Transparent = True
         end
         object Label3: TLabel
           Tag = 2
@@ -302,6 +314,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Descri'#231#227'o do projeto:'
           FocusControl = DbMemoDetalhes
+          Transparent = True
         end
         object Label4: TLabel
           Tag = 2
@@ -312,6 +325,7 @@ inherited FrmCredito: TFrmCredito
           Anchors = [akLeft, akBottom]
           Caption = 'Agente financeiro:'
           FocusControl = DbLkpCmbBxFinanceira
+          Transparent = True
         end
         object Label5: TLabel
           Tag = 2
@@ -322,6 +336,7 @@ inherited FrmCredito: TFrmCredito
           Anchors = [akLeft, akBottom]
           Caption = 'Linha de cr'#233'dito:'
           FocusControl = DbLkpCmbBxLinha
+          Transparent = True
         end
         object Label6: TLabel
           Tag = 2
@@ -332,6 +347,7 @@ inherited FrmCredito: TFrmCredito
           Anchors = [akLeft, akBottom]
           Caption = 'Tipo de cr'#233'dito:'
           FocusControl = DbLkpCmbBxTipo
+          Transparent = True
         end
         object Label7: TLabel
           Tag = 2
@@ -342,6 +358,7 @@ inherited FrmCredito: TFrmCredito
           Anchors = [akLeft, akBottom]
           Caption = 'P'#250'blico benefici'#225'rio:'
           FocusControl = DbLkpCmbBxPublico
+          Transparent = True
         end
         object Label8: TLabel
           Left = 264
@@ -351,6 +368,7 @@ inherited FrmCredito: TFrmCredito
           Anchors = [akLeft, akBottom]
           Caption = 'Comunidade:'
           FocusControl = DbLkpCmbBxComunidade
+          Transparent = True
         end
         object Label9: TLabel
           Tag = 2
@@ -361,6 +379,7 @@ inherited FrmCredito: TFrmCredito
           Anchors = [akLeft, akBottom]
           Caption = 'T'#233'cnico de campo:'
           FocusControl = DbEdtTecnicoCampo
+          Transparent = True
         end
         object Label10: TLabel
           Tag = 2
@@ -371,6 +390,7 @@ inherited FrmCredito: TFrmCredito
           Anchors = [akLeft, akBottom]
           Caption = 'T'#233'cnico elaborador:'
           FocusControl = DbEdtTecnicoElaborador
+          Transparent = True
         end
         object DbEdtTitulo: TcxDBTextEdit
           Left = 136
@@ -635,6 +655,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Data da visita:'
           FocusControl = DbDtVisita
+          Transparent = True
         end
         object Label19: TLabel
           Left = 8
@@ -643,6 +664,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Resumo sobre a visita:'
           FocusControl = DbMemoVisita
+          Transparent = True
         end
         object Label20: TLabel
           Tag = 2
@@ -652,6 +674,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'T'#233'cnico da visita:'
           FocusControl = DbEdtTecnico
+          Transparent = True
         end
         object Label21: TLabel
           Tag = 2
@@ -662,6 +685,7 @@ inherited FrmCredito: TFrmCredito
           Anchors = [akLeft, akBottom]
           Caption = 'Data e hora do registro:'
           FocusControl = DbEdtDataRegistro
+          Transparent = True
         end
         object Label22: TLabel
           Tag = 2
@@ -672,6 +696,7 @@ inherited FrmCredito: TFrmCredito
           Anchors = [akLeft, akBottom]
           Caption = 'T'#233'cnico que registrou:'
           FocusControl = DbEdtTecnicoRegistro
+          Transparent = True
         end
         object DbDtVisita: TcxDBDateEdit
           Left = 8
@@ -863,10 +888,6 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Proponentes'
       ImageIndex = 2
       OnShow = TbShtProponentesShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -895,6 +916,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Data e hora do registro:'
           FocusControl = DbEdtDataHoraProponente
+          Transparent = True
         end
         object Label23: TLabel
           Tag = 2
@@ -903,6 +925,7 @@ inherited FrmCredito: TFrmCredito
           Width = 76
           Height = 13
           Caption = 'Tipo de pessoa:'
+          Transparent = True
         end
         object Label24: TLabel
           Tag = 2
@@ -911,6 +934,7 @@ inherited FrmCredito: TFrmCredito
           Width = 52
           Height = 13
           Caption = 'CPF/CNPJ:'
+          Transparent = True
         end
         object Label25: TLabel
           Left = 8
@@ -919,6 +943,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Nome do proponente:'
           FocusControl = DbEdtNome
+          Transparent = True
         end
         object Label27: TLabel
           Tag = 2
@@ -927,6 +952,7 @@ inherited FrmCredito: TFrmCredito
           Width = 24
           Height = 13
           Caption = 'DAP:'
+          Transparent = True
         end
         object Label29: TLabel
           Left = 8
@@ -935,6 +961,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Classifica'#231#227'o do porte:'
           FocusControl = DbLkpCmbBxClassificacao
+          Transparent = True
         end
         object DbEdtDataHoraProponente: TcxDBTextEdit
           Left = 192
@@ -1204,10 +1231,6 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Itens'
       ImageIndex = 3
       OnShow = TbShtItensShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -1336,6 +1359,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Tipo de item:'
           FocusControl = DbLkpCmbBxGrupo
+          Transparent = True
         end
         object LblItemTipoCredito: TLabel
           Tag = 2
@@ -1345,6 +1369,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Tipo de cr'#233'dito:'
           FocusControl = DbImgCmbBxTipoCredito
+          Transparent = True
         end
         object LblItemDescricao: TLabel
           Tag = 2
@@ -1354,6 +1379,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Descri'#231#227'o do item:'
           FocusControl = DbLkpCmbBxProduto
+          Transparent = True
         end
         object LblVariedade: TLabel
           Left = 8
@@ -1362,6 +1388,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Variedade:'
           FocusControl = DbLkpCmbBxVariedade
+          Transparent = True
           Visible = False
         end
         object LblItemAreaFinanciada: TLabel
@@ -1372,6 +1399,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = #193'rea financiada:'
           FocusControl = DbEdtAreaFinanciada
+          Transparent = True
           Visible = False
         end
         object Label41: TLabel
@@ -1382,6 +1410,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Data e hora do registro:'
           FocusControl = DbEdtItemDataHora
+          Transparent = True
         end
         object LblItemQuantidadeContratada: TLabel
           Tag = 2
@@ -1392,6 +1421,7 @@ inherited FrmCredito: TFrmCredito
           AutoSize = False
           Caption = 'Quantidade contratada:'
           FocusControl = DbEdtQuantidadeLiberada
+          Transparent = True
           WordWrap = True
         end
         object LblItemValorContratado: TLabel
@@ -1402,6 +1432,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Valor contratado (R$):'
           FocusControl = DbEdtItemValorLiberado
+          Transparent = True
         end
         object LblItemValorElaborado: TLabel
           Tag = 2
@@ -1411,6 +1442,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Valor elaborado (R$):'
           FocusControl = DbEdtItemValorElaborado
+          Transparent = True
         end
         object LblItemValorUnitario: TLabel
           Tag = 2
@@ -1420,6 +1452,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Valor unit'#225'rio (R$):'
           FocusControl = DbEdtItemValorUnitario
+          Transparent = True
         end
         object LblItemQuantidade: TLabel
           Tag = 2
@@ -1429,6 +1462,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Quantidade:'
           FocusControl = DbEdtQuantidade
+          Transparent = True
         end
         object LblItemUnidade: TLabel
           Tag = 2
@@ -1438,6 +1472,7 @@ inherited FrmCredito: TFrmCredito
           Height = 26
           AutoSize = False
           Caption = 'Unidade de medida:'
+          Transparent = True
           WordWrap = True
         end
         object LblRaca: TLabel
@@ -1447,6 +1482,7 @@ inherited FrmCredito: TFrmCredito
           Height = 13
           Caption = 'Ra'#231'a:'
           FocusControl = DbLkpCmbBxRaca
+          Transparent = True
           Visible = False
         end
         object DbLkpCmbBxGrupo: TcxDBLookupComboBox
@@ -2056,696 +2092,336 @@ inherited FrmCredito: TFrmCredito
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
     DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 472
-    Top = 216
-    object DtStPrincipalCRD_ID: TFIBBCDField
-      Alignment = taCenter
-      DisplayLabel = 'Identificador:'
-      FieldName = 'CRD_ID'
-      Size = 0
-    end
-    object DtStPrincipalCRD_TITULO: TFIBStringField
-      DisplayLabel = 'T'#237'tulo do projeto'
-      FieldName = 'CRD_TITULO'
-      Required = True
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalCRD_DESCRICAO: TFIBMemoField
-      DisplayLabel = 'Descri'#231#227'o do projeto'
-      FieldName = 'CRD_DESCRICAO'
-      Required = True
-      BlobType = ftMemo
-      Size = 8
-    end
-    object DtStPrincipalCRD_DATA_ELABORACAO: TFIBDateField
-      DisplayLabel = 'Data de elabora'#231#227'o'
-      FieldName = 'CRD_DATA_ELABORACAO'
-      Required = True
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStPrincipalCRD_DATA_INTERNALIZACAO: TFIBDateField
-      DisplayLabel = 'Data de internaliza'#231#227'o:'
-      FieldName = 'CRD_DATA_INTERNALIZACAO'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStPrincipalCRD_DATA_CONTRATACAO: TFIBDateField
-      DisplayLabel = 'Data de contrata'#231#227'o:'
-      FieldName = 'CRD_DATA_CONTRATACAO'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStPrincipalCRD_DATA_ENCERRAMENTO: TFIBDateField
-      DisplayLabel = 'Data de vig'#234'ncia:'
-      FieldName = 'CRD_DATA_ENCERRAMENTO'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStPrincipalCRD_DATA_HORA_REGISTRO: TFIBDateTimeField
-      DisplayLabel = 'Data de cria'#231#227'o do registro'
-      FieldName = 'CRD_DATA_HORA_REGISTRO'
-      Required = True
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStPrincipalCRD_VALOR_ELABORADO: TFIBBCDField
-      DefaultExpression = '0'
-      DisplayLabel = 'Valor elaborado (R$)'
-      FieldName = 'CRD_VALOR_ELABORADO'
-      Required = True
-      DisplayFormat = '#,##0.00'
-      EditFormat = '0.00'
-      Size = 2
-    end
-    object DtStPrincipalCRD_VALOR_CONTRATADO: TFIBBCDField
-      DefaultExpression = '0'
-      DisplayLabel = 'Valor contratado (R$)'
-      FieldName = 'CRD_VALOR_CONTRATADO'
-      Required = True
-      DisplayFormat = '#,##0.00'
-      EditFormat = '0.00'
-      Size = 2
-    end
-    object DtStPrincipalFUN_ID_CAMPO: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'T'#233'cnico de campo'
-      FieldName = 'FUN_ID_CAMPO'
-      Required = True
-    end
-    object DtStPrincipalFUN_ID_ELABORADOR: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'T'#233'cnico elaborador'
-      FieldName = 'FUN_ID_ELABORADOR'
-      Required = True
-    end
-    object DtStPrincipalUND_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Escrit'#243'rio respons'#225'vel'
-      FieldName = 'UND_ID'
-      Required = True
-    end
-    object DtStPrincipalFIN_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Agente financeiro'
-      FieldName = 'FIN_ID'
-      Required = True
-    end
-    object DtStPrincipalLIN_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Linha de cr'#233'dito'
-      FieldName = 'LIN_ID'
-      Required = True
-    end
-    object DtStPrincipalTIP_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Tipo de cr'#233'dito'
-      FieldName = 'TIP_ID'
-      Required = True
-    end
-    object DtStPrincipalPUB_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'P'#250'blico benefici'#225'rio'
-      FieldName = 'PUB_ID'
-      Required = True
-    end
-    object DtStPrincipalCOM_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Comunidade:'
-      FieldName = 'COM_ID'
-    end
-    object DtStPrincipalSIT_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Situa'#231#227'o do projeto'
-      FieldName = 'SIT_ID'
-      Required = True
-    end
-    object DtStPrincipalCRD_MODIFICADO_USUARIO_NOME: TFIBStringField
-      FieldName = 'CRD_MODIFICADO_USUARIO_NOME'
-      Size = 153
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalCRD_TECNICO_CAMPO: TFIBStringField
-      FieldName = 'CRD_TECNICO_CAMPO'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalCRD_TECNICO_ELABORADOR: TFIBStringField
-      FieldName = 'CRD_TECNICO_ELABORADOR'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
-    end
+    Left = 304
+    Top = 192
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 504
     Top = 216
   end
-  object DtStVisita: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CRD_VISITA'
-      'SET '
-      '    REG_DATA_VISITA = :REG_DATA_VISITA,'
-      '    REG_OBSERVACAO = :REG_OBSERVACAO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO,'
-      '    FUN_ID_VISITA = :FUN_ID_VISITA,'
-      '    FUN_ID_REGISTRO = :FUN_ID_REGISTRO,'
-      '    CRD_ID = :CRD_ID'
-      'WHERE'
-      '    REG_ID = :OLD_REG_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CRD_VISITA'
-      'WHERE'
-      '        REG_ID = :OLD_REG_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CRD_VISITA('
-      '    REG_ID,'
-      '    REG_DATA_VISITA,'
-      '    REG_OBSERVACAO,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO,'
-      '    FUN_ID_VISITA,'
-      '    FUN_ID_REGISTRO,'
-      '    CRD_ID'
-      ')'
-      'VALUES('
-      '    :REG_ID,'
-      '    :REG_DATA_VISITA,'
-      '    :REG_OBSERVACAO,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO,'
-      '    :FUN_ID_VISITA,'
-      '    :FUN_ID_REGISTRO,'
-      '    :CRD_ID'
-      ')')
-    RefreshSQL.Strings = (
+  inherited QryPrincipal: TFDQuery
+    SQL.Strings = (
       'select'
-      '  a.reg_id,'
-      '  a.reg_data_visita,  '
-      '  a.reg_observacao, '
+      '  a.crd_id,'
+      '  a.crd_titulo, '
+      '  a.crd_descricao, '
+      '  a.crd_data_elaboracao, '
+      '  a.crd_data_internalizacao, '
+      '  a.crd_data_contratacao, '
+      '  a.crd_data_encerramento, '
+      '  a.crd_data_hora_registro, '
+      '  a.crd_valor_elaborado, '
+      '  a.crd_valor_contratado, '
       '  a.reg_excluido,'
       '  a.reg_replicado,'
       '  a.reg_usuario,'
       '  a.reg_modificado,'
-      '  a.fun_id_visita, '
-      '  a.fun_id_registro, '
-      '  a.crd_id,'
-      '  b.fun_nome as reg_tecnico_visita,'
-      '  c.fun_nome as reg_tecnico_registro'
+      '  a.fun_id_campo, '
+      '  a.fun_id_elaborador, '
+      '  a.und_id, '
+      '  a.fin_id, '
+      '  a.lin_id, '
+      '  a.tip_id, '
+      '  a.pub_id, '
+      '  a.com_id, '
+      '  a.sit_id,'
+      
+        '  '#39'('#39' || coalesce(b.usr_login, '#39'N'#227'o identificado'#39') || '#39') '#39' || co' +
+        'alesce(c.fun_nome, '#39#39') as crd_modificado_usuario_nome,'
+      '  d.fun_nome as crd_tecnico_campo,'
+      '  e.fun_nome as crd_tecnico_elaborador'
       'from'
       
-        '  tab_crd_visita a left join tab_pes_funcionario b on (a.fun_id_' +
-        'visita = b.fun_id) left join'
-      '  tab_pes_funcionario c on (a.fun_id_registro = c.fun_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      '  (a.crd_id = :crd_id)'
-      '     ) and (     A.REG_ID = :OLD_REG_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.reg_id,'
-      '  a.reg_data_visita,  '
-      '  a.reg_observacao, '
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  a.fun_id_visita, '
-      '  a.fun_id_registro, '
-      '  a.crd_id,'
-      '  b.fun_nome as reg_tecnico_visita,'
-      '  c.fun_nome as reg_tecnico_registro'
-      'from'
-      
-        '  tab_crd_visita a left join tab_pes_funcionario b on (a.fun_id_' +
-        'visita = b.fun_id) left join'
-      '  tab_pes_funcionario c on (a.fun_id_registro = c.fun_id)'
+        '  tab_crd_credito_rural a join tab_sis_usuario b on (a.reg_usuar' +
+        'io = b.usr_login) left join'
+      '  tab_pes_funcionario c on (b.usr_id = c.usr_id) left join'
+      '  tab_pes_funcionario d on (a.fun_id_campo = d.fun_id) left join'
+      '  tab_pes_funcionario e on (a.fun_id_elaborador = e.fun_id)'
       'where'
-      '  (a.reg_excluido = 0) and'
-      '  (a.crd_id = :crd_id)'
-      'order by'
-      '  a.reg_data_visita desc')
-    AfterPost = DtStVisitaAfterPost
-    BeforePost = DtStVisitaBeforePost
-    OnNewRecord = DtStVisitaNewRecord
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcPrincipal
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 472
-    Top = 248
-    object DtStVisitaREG_ID: TFIBBCDField
-      FieldName = 'REG_ID'
-      Size = 0
+      '  (a.crd_id = :crd_id) and'
+      '  (a.und_id in (select und_id from vwt_sis_unidade_local)) and'
+      '  (a.reg_excluido = 0)')
+    Left = 440
+    Top = 216
+    ParamData = <
+      item
+        Name = 'CRD_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+      end>
+    object QryPrincipalCRD_ID: TLargeintField
+      Alignment = taCenter
+      DisplayLabel = 'Identificador:'
+      FieldName = 'CRD_ID'
+      Origin = 'CRD_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object DtStVisitaREG_DATA_VISITA: TFIBDateField
-      DisplayLabel = 'Data da visita'
-      FieldName = 'REG_DATA_VISITA'
+    object QryPrincipalCRD_TITULO: TStringField
+      DisplayLabel = 'T'#237'tulo do projeto'
+      FieldName = 'CRD_TITULO'
+      Origin = 'CRD_TITULO'
+      Required = True
+      Size = 100
+    end
+    object QryPrincipalCRD_DESCRICAO: TMemoField
+      DisplayLabel = 'Descri'#231#227'o do projeto'
+      FieldName = 'CRD_DESCRICAO'
+      Origin = 'CRD_DESCRICAO'
+      Required = True
+      BlobType = ftMemo
+    end
+    object QryPrincipalCRD_DATA_ELABORACAO: TDateField
+      DisplayLabel = 'Data de elabora'#231#227'o'
+      FieldName = 'CRD_DATA_ELABORACAO'
+      Origin = 'CRD_DATA_ELABORACAO'
       Required = True
       DisplayFormat = 'dd/mm/yyyy'
     end
-    object DtStVisitaREG_OBSERVACAO: TFIBMemoField
-      DisplayLabel = 'Resumo sobre a visita'
-      FieldName = 'REG_OBSERVACAO'
-      BlobType = ftMemo
-      Size = 8
+    object QryPrincipalCRD_DATA_INTERNALIZACAO: TDateField
+      FieldName = 'CRD_DATA_INTERNALIZACAO'
+      Origin = 'CRD_DATA_INTERNALIZACAO'
+      Required = True
+      DisplayFormat = 'dd/mm/yyyy'
     end
-    object DtStVisitaREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
+    object QryPrincipalCRD_DATA_CONTRATACAO: TDateField
+      DisplayLabel = 'Data de contrata'#231#227'o:'
+      FieldName = 'CRD_DATA_CONTRATACAO'
+      Origin = 'CRD_DATA_CONTRATACAO'
+      DisplayFormat = 'dd/mm/yyyy'
     end
-    object DtStVisitaFUN_ID_VISITA: TFIBIntegerField
-      DisplayLabel = 'T'#233'cnico da visita'
-      FieldName = 'FUN_ID_VISITA'
+    object QryPrincipalCRD_DATA_ENCERRAMENTO: TDateField
+      DisplayLabel = 'Data de vig'#234'ncia:'
+      FieldName = 'CRD_DATA_ENCERRAMENTO'
+      Origin = 'CRD_DATA_ENCERRAMENTO'
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QryPrincipalCRD_DATA_HORA_REGISTRO: TSQLTimeStampField
+      DisplayLabel = 'Data de cria'#231#227'o do registro'
+      FieldName = 'CRD_DATA_HORA_REGISTRO'
+      Origin = 'CRD_DATA_HORA_REGISTRO'
       Required = True
     end
-    object DtStVisitaFUN_ID_REGISTRO: TFIBIntegerField
-      DisplayLabel = 'T'#233'cnico que registrou'
-      FieldName = 'FUN_ID_REGISTRO'
+    object QryPrincipalCRD_VALOR_ELABORADO: TBCDField
+      DefaultExpression = '0'
+      DisplayLabel = 'Valor elaborado (R$)'
+      FieldName = 'CRD_VALOR_ELABORADO'
+      Origin = 'CRD_VALOR_ELABORADO'
+      Required = True
+      DisplayFormat = '#,##0.00'
+      Precision = 18
+      Size = 2
     end
-    object DtStVisitaCRD_ID: TFIBBCDField
-      FieldName = 'CRD_ID'
-      Size = 0
+    object QryPrincipalCRD_VALOR_CONTRATADO: TBCDField
+      DefaultExpression = '0'
+      DisplayLabel = 'Valor contratado (R$)'
+      FieldName = 'CRD_VALOR_CONTRATADO'
+      Origin = 'CRD_VALOR_CONTRATADO'
+      Required = True
+      DisplayFormat = '#,##0.00'
+      Precision = 18
+      Size = 2
     end
-    object DtStVisitaREG_TECNICO_VISITA: TFIBStringField
-      DisplayLabel = 'T'#233'cnico da visita'
-      FieldName = 'REG_TECNICO_VISITA'
+    object QryPrincipalFUN_ID_CAMPO: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'FUN_ID_CAMPO'
+      Origin = 'FUN_ID_CAMPO'
+      Required = True
+    end
+    object QryPrincipalFUN_ID_ELABORADOR: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'FUN_ID_ELABORADOR'
+      Origin = 'FUN_ID_ELABORADOR'
+      Required = True
+    end
+    object QryPrincipalUND_ID: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'UND_ID'
+      Origin = 'UND_ID'
+      Required = True
+    end
+    object QryPrincipalFIN_ID: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'FIN_ID'
+      Origin = 'FIN_ID'
+      Required = True
+    end
+    object QryPrincipalLIN_ID: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'LIN_ID'
+      Origin = 'LIN_ID'
+      Required = True
+    end
+    object QryPrincipalTIP_ID: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'TIP_ID'
+      Origin = 'TIP_ID'
+      Required = True
+    end
+    object QryPrincipalPUB_ID: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'PUB_ID'
+      Origin = 'PUB_ID'
+      Required = True
+    end
+    object QryPrincipalCOM_ID: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'COM_ID'
+      Origin = 'COM_ID'
+    end
+    object QryPrincipalSIT_ID: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'SIT_ID'
+      Origin = 'SIT_ID'
+      Required = True
+    end
+    object QryPrincipalCRD_MODIFICADO_USUARIO_NOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CRD_MODIFICADO_USUARIO_NOME'
+      Origin = 'CRD_MODIFICADO_USUARIO_NOME'
+      ProviderFlags = []
+      Size = 153
+    end
+    object QryPrincipalCRD_TECNICO_CAMPO: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CRD_TECNICO_CAMPO'
+      Origin = 'FUN_NOME'
+      ProviderFlags = []
       Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStVisitaREG_TECNICO_REGISTRO: TFIBStringField
-      DisplayLabel = 'T'#233'cnico que registrou:'
-      FieldName = 'REG_TECNICO_REGISTRO'
+    object QryPrincipalCRD_TECNICO_ELABORADOR: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CRD_TECNICO_ELABORADOR'
+      Origin = 'FUN_NOME'
+      ProviderFlags = []
       Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStVisitaREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
     end
-    object DtStVisitaREG_USUARIO: TFIBStringField
+    object QryPrincipalREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStVisitaREG_MODIFICADO: TFIBDateTimeField
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
       FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm'
+      Origin = 'REG_MODIFICADO'
     end
   end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_CREDITO_RURAL'
+      '(CRD_ID, CRD_TITULO, CRD_DESCRICAO, CRD_DATA_ELABORACAO, '
+      '  CRD_DATA_INTERNALIZACAO, CRD_DATA_CONTRATACAO, '
+      '  CRD_DATA_ENCERRAMENTO, CRD_DATA_HORA_REGISTRO, '
+      '  CRD_VALOR_ELABORADO, CRD_VALOR_CONTRATADO, FUN_ID_CAMPO, '
+      '  FUN_ID_ELABORADOR, UND_ID, FIN_ID, LIN_ID, '
+      '  TIP_ID, PUB_ID, COM_ID, SIT_ID, REG_EXCLUIDO, '
+      '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_CRD_ID, :NEW_CRD_TITULO, :NEW_CRD_DESCRICAO, :NEW_C' +
+        'RD_DATA_ELABORACAO, '
+      '  :NEW_CRD_DATA_INTERNALIZACAO, :NEW_CRD_DATA_CONTRATACAO, '
+      '  :NEW_CRD_DATA_ENCERRAMENTO, :NEW_CRD_DATA_HORA_REGISTRO, '
+      
+        '  :NEW_CRD_VALOR_ELABORADO, :NEW_CRD_VALOR_CONTRATADO, :NEW_FUN_' +
+        'ID_CAMPO, '
+      
+        '  :NEW_FUN_ID_ELABORADOR, :NEW_UND_ID, :NEW_FIN_ID, :NEW_LIN_ID,' +
+        ' '
+      
+        '  :NEW_TIP_ID, :NEW_PUB_ID, :NEW_COM_ID, :NEW_SIT_ID, :NEW_REG_E' +
+        'XCLUIDO, '
+      '  :NEW_REG_REPLICADO, :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_CREDITO_RURAL'
+      
+        'SET CRD_ID = :NEW_CRD_ID, CRD_TITULO = :NEW_CRD_TITULO, CRD_DESC' +
+        'RICAO = :NEW_CRD_DESCRICAO, '
+      
+        '  CRD_DATA_ELABORACAO = :NEW_CRD_DATA_ELABORACAO, CRD_DATA_INTER' +
+        'NALIZACAO = :NEW_CRD_DATA_INTERNALIZACAO, '
+      
+        '  CRD_DATA_CONTRATACAO = :NEW_CRD_DATA_CONTRATACAO, CRD_DATA_ENC' +
+        'ERRAMENTO = :NEW_CRD_DATA_ENCERRAMENTO, '
+      
+        '  CRD_DATA_HORA_REGISTRO = :NEW_CRD_DATA_HORA_REGISTRO, CRD_VALO' +
+        'R_ELABORADO = :NEW_CRD_VALOR_ELABORADO, '
+      
+        '  CRD_VALOR_CONTRATADO = :NEW_CRD_VALOR_CONTRATADO, FUN_ID_CAMPO' +
+        ' = :NEW_FUN_ID_CAMPO, '
+      
+        '  FUN_ID_ELABORADOR = :NEW_FUN_ID_ELABORADOR, UND_ID = :NEW_UND_' +
+        'ID, '
+      
+        '  FIN_ID = :NEW_FIN_ID, LIN_ID = :NEW_LIN_ID, TIP_ID = :NEW_TIP_' +
+        'ID, '
+      
+        '  PUB_ID = :NEW_PUB_ID, COM_ID = :NEW_COM_ID, SIT_ID = :NEW_SIT_' +
+        'ID, '
+      
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
+      
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
+      'WHERE CRD_ID = :OLD_CRD_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_CREDITO_RURAL'
+      'WHERE CRD_ID = :OLD_CRD_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT CRD_ID, CRD_TITULO, CRD_DESCRICAO, CRD_DATA_ELABORACAO, C' +
+        'RD_DATA_INTERNALIZACAO, '
+      
+        '  CRD_DATA_CONTRATACAO, CRD_DATA_ENCERRAMENTO, CRD_DATA_HORA_REG' +
+        'ISTRO, '
+      '  CRD_VALOR_ELABORADO, CRD_VALOR_CONTRATADO, FUN_ID_CAMPO, '
+      '  FUN_ID_ELABORADOR, UND_ID, FIN_ID, LIN_ID, TIP_ID, PUB_ID, '
+      '  COM_ID, SIT_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_CREDITO_RURAL'
+      'WHERE CRD_ID = :CRD_ID')
+    Left = 472
+    Top = 216
+  end
   object DtSrcVisita: TDataSource
-    DataSet = DtStVisita
+    DataSet = QryVisita
     OnStateChange = DtSrcVisitaStateChange
     Left = 504
     Top = 248
   end
-  object DtStProponente: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CRD_PROPONENTE'
-      'SET '
-      '    PRO_TIPO = :PRO_TIPO,'
-      '    PRO_DOCUMENTO = :PRO_DOCUMENTO,'
-      '    PRO_DAP = :PRO_DAP,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO,'
-      '    CRD_ID = :CRD_ID,'
-      '    CLS_ID = :CLS_ID'
-      'WHERE'
-      '    PRO_ID = :OLD_PRO_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CRD_PROPONENTE'
-      'WHERE'
-      '        PRO_ID = :OLD_PRO_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CRD_PROPONENTE('
-      '    PRO_ID,'
-      '    PRO_TIPO,'
-      '    PRO_DOCUMENTO,'
-      '    PRO_DAP,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO,'
-      '    CRD_ID,'
-      '    CLS_ID'
-      ')'
-      'VALUES('
-      '    :PRO_ID,'
-      '    :PRO_TIPO,'
-      '    :PRO_DOCUMENTO,'
-      '    :PRO_DAP,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO,'
-      '    :CRD_ID,'
-      '    :CLS_ID'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.pro_id, '
-      '  a.pro_tipo, '
-      '  a.pro_documento, '
-      '  case a.pro_tipo'
-      '    when '#39'F'#39' then b.ben_nome'
-      '    when '#39'J'#39' then c.org_nome'
-      '  end as pro_nome,'
-      '  a.pro_dap, '
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  a.crd_id, '
-      '  a.cls_id'
-      'from'
-      
-        '  tab_crd_proponente a left join tab_cad_beneficiario b on (a.pr' +
-        'o_documento = b.ben_cpf) left join'
-      '  tab_cad_organizacao c on (a.pro_documento = c.org_cnpj)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      '  (a.crd_id = :crd_id)'
-      '     ) and (     A.PRO_ID = :OLD_PRO_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.pro_id, '
-      '  a.pro_tipo, '
-      '  a.pro_documento, '
-      '  case a.pro_tipo'
-      '    when '#39'F'#39' then b.ben_nome'
-      '    when '#39'J'#39' then c.org_nome'
-      '  end as pro_nome,'
-      '  a.pro_dap, '
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  a.crd_id, '
-      '  a.cls_id'
-      'from'
-      
-        '  tab_crd_proponente a left join tab_cad_beneficiario b on (a.pr' +
-        'o_documento = b.ben_cpf) left join'
-      '  tab_cad_organizacao c on (a.pro_documento = c.org_cnpj)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      '  (a.crd_id = :crd_id)'
-      'order by'
-      '  pro_nome')
-    AfterPost = DtStProponenteAfterPost
-    BeforePost = DtStProponenteBeforePost
-    OnNewRecord = DtStProponenteNewRecord
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcPrincipal
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 472
-    Top = 280
-    object DtStProponentePRO_ID: TFIBBCDField
-      Alignment = taLeftJustify
-      FieldName = 'PRO_ID'
-      Size = 0
-    end
-    object DtStProponentePRO_TIPO: TFIBStringField
-      DisplayLabel = 'Tipo de pessoa'
-      FieldName = 'PRO_TIPO'
-      Required = True
-      Size = 1
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStProponentePRO_DOCUMENTO: TFIBStringField
-      DisplayLabel = 'CPF/CNPJ'
-      FieldName = 'PRO_DOCUMENTO'
-      Required = True
-      Size = 14
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStProponentePRO_NOME: TFIBStringField
-      DisplayLabel = 'Nome do proponente'
-      FieldName = 'PRO_NOME'
-      Size = 150
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStProponentePRO_DAP: TFIBStringField
-      DisplayLabel = 'DAP'
-      FieldName = 'PRO_DAP'
-      Required = True
-      Size = 150
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStProponenteCRD_ID: TFIBBCDField
-      Alignment = taLeftJustify
-      FieldName = 'CRD_ID'
-      Size = 0
-    end
-    object DtStProponenteCLS_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Classifica'#231#227'o do porte'
-      FieldName = 'CLS_ID'
-    end
-    object DtStProponenteREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStProponenteREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStProponenteREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStProponenteREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm'
-    end
-  end
   object DtSrcProponente: TDataSource
-    DataSet = DtStProponente
+    DataSet = QryProponente
     OnStateChange = DtSrcProponenteStateChange
     Left = 504
     Top = 280
   end
-  object DtStDAP: TpFIBDataSet
-    SelectSQL.Strings = (
-      'select first 1 dap from ('
-      '  select'
-      '    a.bdp_dap as dap'
-      '  from tab_cad_beneficiario_dap a'
-      '  where'
-      
-        '    (a.ben_id = (select b.ben_id from tab_cad_beneficiario b whe' +
-        're b.ben_cpf = :cpf)) and'
-      '    (a.bdp_validade >= current_date) and'
-      '    (a.reg_excluido = 0)'
-      '  order by'
-      '    a.bdp_emissao desc'
-      '  )')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 536
-    Top = 280
-    object DtStDAPDAP: TFIBStringField
-      FieldName = 'DAP'
-      Size = 150
-      Transliterate = False
-      EmptyStrToNull = True
-    end
+  object DtSrcItem: TDataSource
+    DataSet = QryItem
+    OnStateChange = DtSrcItemStateChange
+    Left = 504
+    Top = 312
   end
-  object DtStNome: TpFIBDataSet
-    SelectSQL.Strings = (
-      
-        'select a.ben_nome as nome from tab_cad_beneficiario a where a.be' +
-        'n_cpf = :documento;')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 568
-    Top = 280
-    object DtStNomeNOME: TFIBStringField
-      FieldName = 'NOME'
-      Size = 150
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-  end
-  object DtStItem: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CRD_ITEM'
-      'SET '
-      '    ITM_TIPO = :ITM_TIPO,'
-      '    ITM_AREA_FINANCIADA = :ITM_AREA_FINANCIADA,'
-      '    ITM_QTDE_SOLICITADA = :ITM_QTDE_SOLICITADA,'
-      '    ITM_QTDE_LIBERADA = :ITM_QTDE_LIBERADA,'
-      '    ITM_VALOR_UNITARIO = :ITM_VALOR_UNITARIO,'
-      '    ITM_VALOR_ELABORADO = :ITM_VALOR_ELABORADO,'
-      '    ITM_VALOR_LIBERADO = :ITM_VALOR_LIBERADO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO,'
-      '    PRD_ID = :PRD_ID,'
-      '    UNI_ID = :UNI_ID,'
-      '    VAR_ID = :VAR_ID,'
-      '    RAC_ID = :RAC_ID,'
-      '    BEM_ID = :BEM_ID,'
-      '    CRD_ID = :CRD_ID,'
-      '    GRP_ID = :GRP_ID'
-      'WHERE'
-      '    ITM_ID = :OLD_ITM_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CRD_ITEM'
-      'WHERE'
-      '        ITM_ID = :OLD_ITM_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CRD_ITEM('
-      '    ITM_ID,'
-      '    ITM_TIPO,'
-      '    ITM_AREA_FINANCIADA,'
-      '    ITM_QTDE_SOLICITADA,'
-      '    ITM_QTDE_LIBERADA,'
-      '    ITM_VALOR_UNITARIO,'
-      '    ITM_VALOR_ELABORADO,'
-      '    ITM_VALOR_LIBERADO,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO,'
-      '    PRD_ID,'
-      '    UNI_ID,'
-      '    VAR_ID,'
-      '    RAC_ID,'
-      '    BEM_ID,'
-      '    CRD_ID,'
-      '    GRP_ID'
-      ')'
-      'VALUES('
-      '    :ITM_ID,'
-      '    :ITM_TIPO,'
-      '    :ITM_AREA_FINANCIADA,'
-      '    :ITM_QTDE_SOLICITADA,'
-      '    :ITM_QTDE_LIBERADA,'
-      '    :ITM_VALOR_UNITARIO,'
-      '    :ITM_VALOR_ELABORADO,'
-      '    :ITM_VALOR_LIBERADO,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO,'
-      '    :PRD_ID,'
-      '    :UNI_ID,'
-      '    :VAR_ID,'
-      '    :RAC_ID,'
-      '    :BEM_ID,'
-      '    :CRD_ID,'
-      '    :GRP_ID'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.itm_id, '
-      '  a.itm_tipo, '
-      '  a.itm_area_financiada, '
-      '  a.itm_qtde_solicitada, '
-      '  a.itm_qtde_liberada, '
-      '  a.itm_valor_unitario, '
-      '  a.itm_valor_elaborado, '
-      '  a.itm_valor_liberado, '
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  a.prd_id, '
-      '  a.uni_id, '
-      '  a.var_id, '
-      '  a.rac_id, '
-      '  a.bem_id, '
-      '  a.crd_id, '
-      '  a.grp_id,'
-      '  case a.grp_id'
-      '    when '#39'100000001'#39' then b.prd_descricao'
-      '    when '#39'100000002'#39' then b.prd_descricao'
-      '    when '#39'100000003'#39' then c.bem_descricao'
-      '    when '#39'100000004'#39' then c.bem_descricao'
-      '    when '#39'100000005'#39' then c.bem_descricao'
-      '    else '#39#39
-      '  end as itm_descricao'
-      'from'
-      
-        '  tab_crd_item a left join tab_cad_produto b on (a.prd_id = b.pr' +
-        'd_id) left join'
-      '  tab_cad_bem c on (a.bem_id = c.bem_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      '  (a.crd_id = :crd_id)'
-      '     ) and (     A.ITM_ID = :OLD_ITM_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
+  object QryItem: TFDQuery
+    BeforePost = QryItemBeforePost
+    AfterPost = QryItemAfterPost
+    OnNewRecord = QryItemNewRecord
+    MasterSource = DtSrcPrincipal
+    MasterFields = 'CRD_ID'
+    DetailFields = 'CRD_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    UpdateObject = UpdtItem
+    SQL.Strings = (
       'select'
       '  a.itm_id, '
       '  a.itm_tipo, '
@@ -2784,146 +2460,579 @@ inherited FrmCredito: TFrmCredito
       '  (a.crd_id = :crd_id)'
       'order by'
       '  itm_descricao')
-    AfterPost = DtStItemAfterPost
-    BeforePost = DtStItemBeforePost
-    OnNewRecord = DtStItemNewRecord
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcPrincipal
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 472
+    Left = 440
     Top = 312
-    object DtStItemITM_ID: TFIBBCDField
+    ParamData = <
+      item
+        Name = 'CRD_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+      end>
+    object QryItemITM_ID: TLargeintField
+      Alignment = taLeftJustify
       FieldName = 'ITM_ID'
-      Size = 0
+      Origin = 'ITM_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object DtStItemITM_TIPO: TFIBSmallIntField
+    object QryItemITM_TIPO: TSmallintField
       Alignment = taLeftJustify
       DisplayLabel = 'Tipo de cr'#233'dito'
       FieldName = 'ITM_TIPO'
-      Required = True
+      Origin = 'ITM_TIPO'
     end
-    object DtStItemITM_AREA_FINANCIADA: TFIBBCDField
+    object QryItemITM_AREA_FINANCIADA: TBCDField
       DisplayLabel = #193'rea financiada'
       FieldName = 'ITM_AREA_FINANCIADA'
+      Origin = 'ITM_AREA_FINANCIADA'
       DisplayFormat = '#,##0.000'
-      EditFormat = '0.000'
+      Precision = 18
       Size = 3
     end
-    object DtStItemITM_QTDE_SOLICITADA: TFIBBCDField
+    object QryItemITM_QTDE_SOLICITADA: TBCDField
       DisplayLabel = 'Quantidade'
       FieldName = 'ITM_QTDE_SOLICITADA'
-      Required = True
+      Origin = 'ITM_QTDE_SOLICITADA'
       DisplayFormat = '#,##0.000'
       EditFormat = '0.000'
+      Precision = 18
       Size = 3
     end
-    object DtStItemITM_QTDE_LIBERADA: TFIBBCDField
+    object QryItemITM_QTDE_LIBERADA: TBCDField
       DisplayLabel = 'Quantidade contratada'
       FieldName = 'ITM_QTDE_LIBERADA'
-      Required = True
+      Origin = 'ITM_QTDE_LIBERADA'
       DisplayFormat = '#,##0.000'
       EditFormat = '0.000'
+      Precision = 18
       Size = 3
     end
-    object DtStItemITM_VALOR_UNITARIO: TFIBBCDField
-      DefaultExpression = '0'
+    object QryItemITM_VALOR_UNITARIO: TBCDField
       DisplayLabel = 'Valor unit'#225'rio (R$)'
       FieldName = 'ITM_VALOR_UNITARIO'
-      Required = True
+      Origin = 'ITM_VALOR_UNITARIO'
       DisplayFormat = '#,##0.00'
       EditFormat = '0.00'
+      Precision = 18
       Size = 2
     end
-    object DtStItemITM_VALOR_ELABORADO: TFIBBCDField
-      DefaultExpression = '0'
+    object QryItemITM_VALOR_ELABORADO: TBCDField
       DisplayLabel = 'Valor elaborado (R$)'
       FieldName = 'ITM_VALOR_ELABORADO'
-      Required = True
+      Origin = 'ITM_VALOR_ELABORADO'
       DisplayFormat = '#,##0.00'
       EditFormat = '0.00'
+      Precision = 18
       Size = 2
     end
-    object DtStItemITM_VALOR_LIBERADO: TFIBBCDField
-      DefaultExpression = '0'
+    object QryItemITM_VALOR_LIBERADO: TBCDField
       DisplayLabel = 'Valor contratado (R$)'
       FieldName = 'ITM_VALOR_LIBERADO'
-      Required = True
+      Origin = 'ITM_VALOR_LIBERADO'
       DisplayFormat = '#,##0.00'
       EditFormat = '0.00'
+      Precision = 18
       Size = 2
     end
-    object DtStItemPRD_ID: TFIBIntegerField
+    object QryItemPRD_ID: TIntegerField
       Alignment = taLeftJustify
       DisplayLabel = 'Descri'#231#227'o do produto'
       FieldName = 'PRD_ID'
+      Origin = 'PRD_ID'
     end
-    object DtStItemUNI_ID: TFIBIntegerField
+    object QryItemUNI_ID: TIntegerField
       Alignment = taLeftJustify
       DisplayLabel = 'Unidade de medida'
       FieldName = 'UNI_ID'
-      Required = True
+      Origin = 'UNI_ID'
     end
-    object DtStItemVAR_ID: TFIBIntegerField
+    object QryItemVAR_ID: TIntegerField
       Alignment = taLeftJustify
       DisplayLabel = 'Variedade'
       FieldName = 'VAR_ID'
+      Origin = 'VAR_ID'
     end
-    object DtStItemRAC_ID: TFIBIntegerField
+    object QryItemRAC_ID: TIntegerField
       Alignment = taLeftJustify
       DisplayLabel = 'Ra'#231'a'
       FieldName = 'RAC_ID'
+      Origin = 'RAC_ID'
     end
-    object DtStItemBEM_ID: TFIBIntegerField
+    object QryItemBEM_ID: TIntegerField
       Alignment = taLeftJustify
       DisplayLabel = 'Descri'#231#227'o do produto'
       FieldName = 'BEM_ID'
+      Origin = 'BEM_ID'
     end
-    object DtStItemCRD_ID: TFIBBCDField
+    object QryItemCRD_ID: TLargeintField
       Alignment = taLeftJustify
       FieldName = 'CRD_ID'
-      Size = 0
+      Origin = 'CRD_ID'
     end
-    object DtStItemGRP_ID: TFIBIntegerField
+    object QryItemGRP_ID: TIntegerField
       Alignment = taLeftJustify
       DisplayLabel = 'Tipo de item'
       FieldName = 'GRP_ID'
-      Required = True
+      Origin = 'GRP_ID'
     end
-    object DtStItemITM_DESCRICAO: TFIBStringField
+    object QryItemITM_DESCRICAO: TStringField
+      AutoGenerateValue = arDefault
       DisplayLabel = 'Descri'#231#227'o do produto'
       FieldName = 'ITM_DESCRICAO'
+      Origin = 'ITM_DESCRICAO'
+      ProviderFlags = []
       Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStItemREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
+    object QryItemREG_EXCLUIDO: TSmallintField
+      Alignment = taLeftJustify
       FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
     end
-    object DtStItemREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
+    object QryItemREG_REPLICADO: TSmallintField
+      Alignment = taLeftJustify
       FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
     end
-    object DtStItemREG_USUARIO: TFIBStringField
+    object QryItemREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStItemREG_MODIFICADO: TFIBDateTimeField
+    object QryItemREG_MODIFICADO: TSQLTimeStampField
       FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm'
+      Origin = 'REG_MODIFICADO'
     end
   end
-  object DtSrcItem: TDataSource
-    DataSet = DtStItem
-    OnStateChange = DtSrcItemStateChange
-    Left = 504
+  object UpdtItem: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_ITEM'
+      '(ITM_ID, ITM_TIPO, ITM_AREA_FINANCIADA, ITM_QTDE_SOLICITADA, '
+      '  ITM_QTDE_LIBERADA, ITM_VALOR_UNITARIO, ITM_VALOR_ELABORADO, '
+      '  ITM_VALOR_LIBERADO, PRD_ID, UNI_ID, VAR_ID, '
+      '  RAC_ID, BEM_ID, CRD_ID, GRP_ID, REG_EXCLUIDO, '
+      '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_ITM_ID, :NEW_ITM_TIPO, :NEW_ITM_AREA_FINANCIADA, :N' +
+        'EW_ITM_QTDE_SOLICITADA, '
+      
+        '  :NEW_ITM_QTDE_LIBERADA, :NEW_ITM_VALOR_UNITARIO, :NEW_ITM_VALO' +
+        'R_ELABORADO, '
+      
+        '  :NEW_ITM_VALOR_LIBERADO, :NEW_PRD_ID, :NEW_UNI_ID, :NEW_VAR_ID' +
+        ', '
+      
+        '  :NEW_RAC_ID, :NEW_BEM_ID, :NEW_CRD_ID, :NEW_GRP_ID, :NEW_REG_E' +
+        'XCLUIDO, '
+      '  :NEW_REG_REPLICADO, :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_ITEM'
+      
+        'SET ITM_ID = :NEW_ITM_ID, ITM_TIPO = :NEW_ITM_TIPO, ITM_AREA_FIN' +
+        'ANCIADA = :NEW_ITM_AREA_FINANCIADA, '
+      
+        '  ITM_QTDE_SOLICITADA = :NEW_ITM_QTDE_SOLICITADA, ITM_QTDE_LIBER' +
+        'ADA = :NEW_ITM_QTDE_LIBERADA, '
+      
+        '  ITM_VALOR_UNITARIO = :NEW_ITM_VALOR_UNITARIO, ITM_VALOR_ELABOR' +
+        'ADO = :NEW_ITM_VALOR_ELABORADO, '
+      
+        '  ITM_VALOR_LIBERADO = :NEW_ITM_VALOR_LIBERADO, PRD_ID = :NEW_PR' +
+        'D_ID, '
+      
+        '  UNI_ID = :NEW_UNI_ID, VAR_ID = :NEW_VAR_ID, RAC_ID = :NEW_RAC_' +
+        'ID, '
+      
+        '  BEM_ID = :NEW_BEM_ID, CRD_ID = :NEW_CRD_ID, GRP_ID = :NEW_GRP_' +
+        'ID, '
+      
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
+      
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
+      'WHERE ITM_ID = :OLD_ITM_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_ITEM'
+      'WHERE ITM_ID = :OLD_ITM_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT ITM_ID, ITM_TIPO, ITM_AREA_FINANCIADA, ITM_QTDE_SOLICITAD' +
+        'A, '
+      '  ITM_QTDE_LIBERADA, ITM_VALOR_UNITARIO, ITM_VALOR_ELABORADO, '
+      '  ITM_VALOR_LIBERADO, PRD_ID, UNI_ID, VAR_ID, RAC_ID, BEM_ID, '
+      '  CRD_ID, GRP_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_ITEM'
+      'WHERE ITM_ID = :ITM_ID')
+    Left = 472
     Top = 312
+  end
+  object QryVisita: TFDQuery
+    BeforePost = QryVisitaBeforePost
+    AfterPost = QryVisitaAfterPost
+    OnNewRecord = QryVisitaNewRecord
+    MasterSource = DtSrcPrincipal
+    MasterFields = 'CRD_ID'
+    DetailFields = 'CRD_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    UpdateObject = UpdtVisita
+    SQL.Strings = (
+      'select'
+      '  a.reg_id,'
+      '  a.reg_data_visita,  '
+      '  a.reg_observacao, '
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado,'
+      '  a.fun_id_visita, '
+      '  a.fun_id_registro, '
+      '  a.crd_id,'
+      '  b.fun_nome as reg_tecnico_visita,'
+      '  c.fun_nome as reg_tecnico_registro'
+      'from'
+      
+        '  tab_crd_visita a left join tab_pes_funcionario b on (a.fun_id_' +
+        'visita = b.fun_id) left join'
+      '  tab_pes_funcionario c on (a.fun_id_registro = c.fun_id)'
+      'where'
+      '  (a.reg_excluido = 0) and'
+      '  (a.crd_id = :crd_id)'
+      'order by'
+      '  a.reg_data_visita desc')
+    Left = 440
+    Top = 248
+    ParamData = <
+      item
+        Name = 'CRD_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+      end>
+    object QryVisitaREG_ID: TLargeintField
+      FieldName = 'REG_ID'
+      Origin = 'REG_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QryVisitaREG_DATA_VISITA: TDateField
+      DisplayLabel = 'Data da visita'
+      FieldName = 'REG_DATA_VISITA'
+      Origin = 'REG_DATA_VISITA'
+      Required = True
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QryVisitaREG_OBSERVACAO: TMemoField
+      DisplayLabel = 'Resumo sobre a visita'
+      FieldName = 'REG_OBSERVACAO'
+      Origin = 'REG_OBSERVACAO'
+      BlobType = ftMemo
+    end
+    object QryVisitaREG_EXCLUIDO: TSmallintField
+      Alignment = taLeftJustify
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryVisitaFUN_ID_VISITA: TIntegerField
+      Alignment = taLeftJustify
+      DisplayLabel = 'T'#233'cnico da visita'
+      FieldName = 'FUN_ID_VISITA'
+      Origin = 'FUN_ID_VISITA'
+      Required = True
+    end
+    object QryVisitaFUN_ID_REGISTRO: TIntegerField
+      Alignment = taLeftJustify
+      DisplayLabel = 'T'#233'cnico que registrou'
+      FieldName = 'FUN_ID_REGISTRO'
+      Origin = 'FUN_ID_REGISTRO'
+    end
+    object QryVisitaCRD_ID: TLargeintField
+      FieldName = 'CRD_ID'
+      Origin = 'CRD_ID'
+    end
+    object QryVisitaREG_TECNICO_VISITA: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'T'#233'cnico da visita'
+      FieldName = 'REG_TECNICO_VISITA'
+      Origin = 'FUN_NOME'
+      ProviderFlags = []
+      Size = 100
+    end
+    object QryVisitaREG_TECNICO_REGISTRO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'T'#233'cnico que registrou:'
+      FieldName = 'REG_TECNICO_REGISTRO'
+      Origin = 'FUN_NOME'
+      ProviderFlags = []
+      Size = 100
+    end
+    object QryVisitaREG_REPLICADO: TSmallintField
+      Alignment = taLeftJustify
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryVisitaREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryVisitaREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  object UpdtVisita: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_VISITA'
+      '(REG_ID, REG_DATA_VISITA, REG_OBSERVACAO, FUN_ID_VISITA, '
+      '  FUN_ID_REGISTRO, CRD_ID, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_REG_ID, :NEW_REG_DATA_VISITA, :NEW_REG_OBSERVACAO, ' +
+        ':NEW_FUN_ID_VISITA, '
+      
+        '  :NEW_FUN_ID_REGISTRO, :NEW_CRD_ID, :NEW_REG_EXCLUIDO, :NEW_REG' +
+        '_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_VISITA'
+      
+        'SET REG_ID = :NEW_REG_ID, REG_DATA_VISITA = :NEW_REG_DATA_VISITA' +
+        ', '
+      
+        '  REG_OBSERVACAO = :NEW_REG_OBSERVACAO, FUN_ID_VISITA = :NEW_FUN' +
+        '_ID_VISITA, '
+      '  FUN_ID_REGISTRO = :NEW_FUN_ID_REGISTRO, CRD_ID = :NEW_CRD_ID, '
+      
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
+      
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
+      'WHERE REG_ID = :OLD_REG_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_VISITA'
+      'WHERE REG_ID = :OLD_REG_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT REG_ID, REG_DATA_VISITA, REG_OBSERVACAO, FUN_ID_VISITA, F' +
+        'UN_ID_REGISTRO, '
+      
+        '  CRD_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, REG_MODIFICA' +
+        'DO'
+      'FROM TAB_CRD_VISITA'
+      'WHERE REG_ID = :REG_ID')
+    Left = 472
+    Top = 248
+  end
+  object QryProponente: TFDQuery
+    BeforePost = QryProponenteBeforePost
+    AfterPost = QryProponenteAfterPost
+    OnNewRecord = QryProponenteNewRecord
+    MasterSource = DtSrcPrincipal
+    MasterFields = 'CRD_ID'
+    DetailFields = 'CRD_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    UpdateObject = UpdtProponente
+    SQL.Strings = (
+      'select'
+      '  a.pro_id, '
+      '  a.pro_tipo, '
+      '  a.pro_documento, '
+      '  case a.pro_tipo'
+      '    when '#39'F'#39' then b.ben_nome'
+      '    when '#39'J'#39' then c.org_nome'
+      '  end as pro_nome,'
+      '  a.pro_dap, '
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado,'
+      '  a.crd_id, '
+      '  a.cls_id'
+      'from'
+      
+        '  tab_crd_proponente a left join tab_cad_beneficiario b on (a.pr' +
+        'o_documento = b.ben_cpf) left join'
+      '  tab_cad_organizacao c on (a.pro_documento = c.org_cnpj)'
+      'where'
+      '  (a.reg_excluido = 0) and'
+      '  (a.crd_id = :crd_id)'
+      'order by'
+      '  pro_nome')
+    Left = 440
+    Top = 280
+    ParamData = <
+      item
+        Name = 'CRD_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+      end>
+    object QryProponentePRO_ID: TLargeintField
+      FieldName = 'PRO_ID'
+      Origin = 'PRO_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryProponentePRO_TIPO: TStringField
+      DisplayLabel = 'Tipo pessoa'
+      FieldName = 'PRO_TIPO'
+      Origin = 'PRO_TIPO'
+      FixedChar = True
+      Size = 1
+    end
+    object QryProponentePRO_DOCUMENTO: TStringField
+      DisplayLabel = 'Tipo pessoa'
+      FieldName = 'PRO_DOCUMENTO'
+      Origin = 'PRO_DOCUMENTO'
+      Size = 14
+    end
+    object QryProponentePRO_NOME: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Nome'
+      FieldName = 'PRO_NOME'
+      Origin = 'PRO_NOME'
+      ProviderFlags = []
+      Size = 150
+    end
+    object QryProponentePRO_DAP: TStringField
+      DisplayLabel = 'DAP'
+      FieldName = 'PRO_DAP'
+      Origin = 'PRO_DAP'
+      Size = 150
+    end
+    object QryProponenteREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+      Required = True
+    end
+    object QryProponenteREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+      Required = True
+    end
+    object QryProponenteREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryProponenteREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+    object QryProponenteCRD_ID: TLargeintField
+      FieldName = 'CRD_ID'
+      Origin = 'CRD_ID'
+      Required = True
+    end
+    object QryProponenteCLS_ID: TIntegerField
+      FieldName = 'CLS_ID'
+      Origin = 'CLS_ID'
+    end
+  end
+  object UpdtProponente: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_PROPONENTE'
+      '(PRO_ID, PRO_TIPO, PRO_DOCUMENTO, PRO_DAP, '
+      '  CRD_ID, CLS_ID, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_PRO_ID, :NEW_PRO_TIPO, :NEW_PRO_DOCUMENTO, :NEW_PRO' +
+        '_DAP, '
+      
+        '  :NEW_CRD_ID, :NEW_CLS_ID, :NEW_REG_EXCLUIDO, :NEW_REG_REPLICAD' +
+        'O, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_PROPONENTE'
+      
+        'SET PRO_ID = :NEW_PRO_ID, PRO_TIPO = :NEW_PRO_TIPO, PRO_DOCUMENT' +
+        'O = :NEW_PRO_DOCUMENTO, '
+      
+        '  PRO_DAP = :NEW_PRO_DAP, CRD_ID = :NEW_CRD_ID, CLS_ID = :NEW_CL' +
+        'S_ID, '
+      
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
+      
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
+      'WHERE PRO_ID = :OLD_PRO_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_PROPONENTE'
+      'WHERE PRO_ID = :OLD_PRO_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT PRO_ID, PRO_TIPO, PRO_DOCUMENTO, PRO_DAP, CRD_ID, CLS_ID,' +
+        ' REG_EXCLUIDO, '
+      '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
+      'FROM TAB_CRD_PROPONENTE'
+      'WHERE PRO_ID = :PRO_ID')
+    Left = 472
+    Top = 280
+  end
+  object QryDAP: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
+      'select first 1 dap from ('
+      '  select'
+      '    a.bdp_dap as dap'
+      '  from tab_cad_beneficiario_dap a'
+      '  where'
+      
+        '    (a.ben_id = (select b.ben_id from tab_cad_beneficiario b whe' +
+        're b.ben_cpf = :cpf)) and'
+      '    (a.bdp_validade >= current_date) and'
+      '    (a.reg_excluido = 0)'
+      '  order by'
+      '    a.bdp_emissao desc'
+      '  )')
+    Left = 536
+    Top = 280
+    ParamData = <
+      item
+        Name = 'CPF'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 11
+      end>
+    object QryDAPDAP: TStringField
+      FieldName = 'DAP'
+      Origin = 'BDP_DAP'
+      Size = 150
+    end
+  end
+  object QryNome: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
+      
+        'select a.ben_nome as nome from tab_cad_beneficiario a where a.be' +
+        'n_cpf = :documento;')
+    Left = 568
+    Top = 280
+    ParamData = <
+      item
+        Name = 'DOCUMENTO'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 11
+      end>
+    object QryNomeNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'BEN_NOME'
+      Size = 150
+    end
   end
 end

@@ -8,7 +8,8 @@ uses
   dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, FIBDataSet,
   pFIBDataSet, cxPC, Vcl.StdCtrls, cxButtons, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, cxDBData,
   cxContainer, cxGroupBox, cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid,
-  cxTextEdit, cxDBEdit, dxBarBuiltInMenu;
+  cxTextEdit, cxDBEdit, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
   TFrmCreditoRaca = class(TFrmBaseTabela)
@@ -18,13 +19,13 @@ type
     GrpBxInformacao: TcxGroupBox;
     Label1: TLabel;
     DbEdtNome: TcxDBTextEdit;
-    DtStPrincipalRAC_ID: TFIBIntegerField;
-    DtStPrincipalRAC_DESCRICAO: TFIBStringField;
     GrdPrincipalTblRAC_DESCRICAO: TcxGridDBColumn;
-    DtStPrincipalREG_EXCLUIDO: TFIBBooleanField;
-    DtStPrincipalREG_REPLICADO: TFIBBooleanField;
-    DtStPrincipalREG_USUARIO: TFIBStringField;
-    DtStPrincipalREG_MODIFICADO: TFIBDateTimeField;
+    QryPrincipalRAC_ID: TIntegerField;
+    QryPrincipalRAC_DESCRICAO: TStringField;
+    QryPrincipalREG_EXCLUIDO: TSmallintField;
+    QryPrincipalREG_REPLICADO: TSmallintField;
+    QryPrincipalREG_USUARIO: TStringField;
+    QryPrincipalREG_MODIFICADO: TSQLTimeStampField;
     procedure BtnSalvarClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);

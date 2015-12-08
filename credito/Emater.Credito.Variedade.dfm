@@ -115,6 +115,7 @@ inherited FrmCreditoVariedade: TFrmCreditoVariedade
           Height = 13
           Caption = 'Descri'#231#227'o da variedade'
           FocusControl = DbEdtNome
+          Transparent = False
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8
@@ -235,36 +236,91 @@ inherited FrmCreditoVariedade: TFrmCreditoVariedade
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 216
-    Top = 184
-    object DtStPrincipalVAR_ID: TFIBIntegerField
-      FieldName = 'VAR_ID'
-    end
-    object DtStPrincipalVAR_DESCRICAO: TFIBStringField
-      DisplayLabel = 'Descri'#231#227'o da variedade'
-      FieldName = 'VAR_DESCRICAO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-    end
+    Left = 112
+    Top = 176
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248
+    Top = 184
+  end
+  inherited QryPrincipal: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.var_id,'
+      '  a.var_descricao,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_crd_variedade a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.var_descricao')
+    Left = 184
+    Top = 184
+    object QryPrincipalVAR_ID: TIntegerField
+      FieldName = 'VAR_ID'
+      Origin = 'VAR_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPrincipalVAR_DESCRICAO: TStringField
+      DisplayLabel = 'Descri'#231#227'o da variedade'
+      FieldName = 'VAR_DESCRICAO'
+      Origin = 'VAR_DESCRICAO'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_VARIEDADE'
+      '(VAR_ID, VAR_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_VAR_ID, :NEW_VAR_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
+        '_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_VARIEDADE'
+      
+        'SET VAR_ID = :NEW_VAR_ID, VAR_DESCRICAO = :NEW_VAR_DESCRICAO, RE' +
+        'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE VAR_ID = :OLD_VAR_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_VARIEDADE'
+      'WHERE VAR_ID = :OLD_VAR_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT VAR_ID, VAR_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
+        'SUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_VARIEDADE'
+      'WHERE VAR_ID = :VAR_ID')
+    Left = 216
     Top = 184
   end
 end

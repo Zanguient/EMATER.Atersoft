@@ -115,6 +115,7 @@ inherited FrmCreditoLinha: TFrmCreditoLinha
           Height = 13
           Caption = 'Nome da linha de cr'#233'dito:'
           FocusControl = DbEdtNome
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8
@@ -233,36 +234,91 @@ inherited FrmCreditoLinha: TFrmCreditoLinha
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 216
-    Top = 184
-    object DtStPrincipalLIN_ID: TFIBIntegerField
-      FieldName = 'LIN_ID'
-    end
-    object DtStPrincipalLIN_DESCRICAO: TFIBStringField
-      DisplayLabel = 'Nome da linha de cr'#233'dito'
-      FieldName = 'LIN_DESCRICAO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-    end
+    Left = 128
+    Top = 152
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248
+    Top = 184
+  end
+  inherited QryPrincipal: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.lin_id,'
+      '  a.lin_descricao,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_crd_linha a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.lin_descricao')
+    Left = 184
+    Top = 184
+    object QryPrincipalLIN_ID: TIntegerField
+      FieldName = 'LIN_ID'
+      Origin = 'LIN_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPrincipalLIN_DESCRICAO: TStringField
+      DisplayLabel = 'Nome da linha de cr'#233'dito'
+      FieldName = 'LIN_DESCRICAO'
+      Origin = 'LIN_DESCRICAO'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_LINHA'
+      '(LIN_ID, LIN_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_LIN_ID, :NEW_LIN_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
+        '_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_LINHA'
+      
+        'SET LIN_ID = :NEW_LIN_ID, LIN_DESCRICAO = :NEW_LIN_DESCRICAO, RE' +
+        'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE LIN_ID = :OLD_LIN_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_LINHA'
+      'WHERE LIN_ID = :OLD_LIN_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT LIN_ID, LIN_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
+        'SUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_LINHA'
+      'WHERE LIN_ID = :LIN_ID')
+    Left = 216
     Top = 184
   end
 end

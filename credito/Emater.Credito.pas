@@ -14,26 +14,6 @@ uses
 
 type
   TFrmCredito = class(TFrmBaseTabela)
-    DtStPrincipalCRD_ID: TFIBBCDField;
-    DtStPrincipalCRD_TITULO: TFIBStringField;
-    DtStPrincipalCRD_DESCRICAO: TFIBMemoField;
-    DtStPrincipalCRD_DATA_ELABORACAO: TFIBDateField;
-    DtStPrincipalCRD_DATA_INTERNALIZACAO: TFIBDateField;
-    DtStPrincipalCRD_DATA_CONTRATACAO: TFIBDateField;
-    DtStPrincipalCRD_DATA_ENCERRAMENTO: TFIBDateField;
-    DtStPrincipalCRD_DATA_HORA_REGISTRO: TFIBDateTimeField;
-    DtStPrincipalCRD_VALOR_ELABORADO: TFIBBCDField;
-    DtStPrincipalCRD_VALOR_CONTRATADO: TFIBBCDField;
-    DtStPrincipalFUN_ID_CAMPO: TFIBIntegerField;
-    DtStPrincipalFUN_ID_ELABORADOR: TFIBIntegerField;
-    DtStPrincipalUND_ID: TFIBIntegerField;
-    DtStPrincipalFIN_ID: TFIBIntegerField;
-    DtStPrincipalLIN_ID: TFIBIntegerField;
-    DtStPrincipalTIP_ID: TFIBIntegerField;
-    DtStPrincipalPUB_ID: TFIBIntegerField;
-    DtStPrincipalCOM_ID: TFIBIntegerField;
-    DtStPrincipalSIT_ID: TFIBIntegerField;
-    DtStPrincipalCRD_MODIFICADO_USUARIO_NOME: TFIBStringField;
     PnlTop: TPanel;
     LblTitulo: TLabel;
     Image: TImage;
@@ -90,19 +70,7 @@ type
     TbShtVisita: TcxTabSheet;
     TbShtProponentes: TcxTabSheet;
     TbShtItens: TcxTabSheet;
-    DtStPrincipalCRD_TECNICO_CAMPO: TFIBStringField;
-    DtStPrincipalCRD_TECNICO_ELABORADOR: TFIBStringField;
-    DtStVisita: TpFIBDataSet;
     DtSrcVisita: TDataSource;
-    DtStVisitaREG_ID: TFIBBCDField;
-    DtStVisitaREG_DATA_VISITA: TFIBDateField;
-    DtStVisitaREG_OBSERVACAO: TFIBMemoField;
-    DtStVisitaREG_EXCLUIDO: TFIBBooleanField;
-    DtStVisitaFUN_ID_VISITA: TFIBIntegerField;
-    DtStVisitaFUN_ID_REGISTRO: TFIBIntegerField;
-    DtStVisitaCRD_ID: TFIBBCDField;
-    DtStVisitaREG_TECNICO_VISITA: TFIBStringField;
-    DtStVisitaREG_TECNICO_REGISTRO: TFIBStringField;
     GrpBxVisita: TcxGroupBox;
     BtnVisitaNovo: TcxButton;
     BtnVisitaSalvar: TcxButton;
@@ -125,7 +93,6 @@ type
     DbEdtDataRegistro: TcxDBTextEdit;
     Label22: TLabel;
     DbEdtTecnicoRegistro: TcxDBTextEdit;
-    DtStProponente: TpFIBDataSet;
     DtSrcProponente: TDataSource;
     GrpBxProponente: TcxGroupBox;
     Label26: TLabel;
@@ -138,13 +105,6 @@ type
     GrdPropTbl: TcxGridDBTableView;
     GrdPropLvl: TcxGridLevel;
     Label28: TLabel;
-    DtStProponentePRO_ID: TFIBBCDField;
-    DtStProponentePRO_TIPO: TFIBStringField;
-    DtStProponentePRO_DOCUMENTO: TFIBStringField;
-    DtStProponentePRO_NOME: TFIBStringField;
-    DtStProponentePRO_DAP: TFIBStringField;
-    DtStProponenteCRD_ID: TFIBBCDField;
-    DtStProponenteCLS_ID: TFIBIntegerField;
     Label23: TLabel;
     Label24: TLabel;
     Label25: TLabel;
@@ -161,11 +121,6 @@ type
     GrdPropTblPRO_TIPO: TcxGridDBColumn;
     GrdPropTblPRO_NOME: TcxGridDBColumn;
     GrdPropTblPRO_DAP: TcxGridDBColumn;
-    DtStDAP: TpFIBDataSet;
-    DtStDAPDAP: TFIBStringField;
-    DtStNome: TpFIBDataSet;
-    DtStNomeNOME: TFIBStringField;
-    DtStItem: TpFIBDataSet;
     DtSrcItem: TDataSource;
     GrdItm: TcxGrid;
     GrdItmTbl: TcxGridDBTableView;
@@ -177,22 +132,6 @@ type
     BtnItmSalvar: TcxButton;
     BtnItmCancelar: TcxButton;
     BtnItmExcluir: TcxButton;
-    DtStItemITM_ID: TFIBBCDField;
-    DtStItemITM_TIPO: TFIBSmallIntField;
-    DtStItemITM_AREA_FINANCIADA: TFIBBCDField;
-    DtStItemITM_QTDE_SOLICITADA: TFIBBCDField;
-    DtStItemITM_QTDE_LIBERADA: TFIBBCDField;
-    DtStItemITM_VALOR_UNITARIO: TFIBBCDField;
-    DtStItemITM_VALOR_ELABORADO: TFIBBCDField;
-    DtStItemITM_VALOR_LIBERADO: TFIBBCDField;
-    DtStItemPRD_ID: TFIBIntegerField;
-    DtStItemUNI_ID: TFIBIntegerField;
-    DtStItemVAR_ID: TFIBIntegerField;
-    DtStItemRAC_ID: TFIBIntegerField;
-    DtStItemBEM_ID: TFIBIntegerField;
-    DtStItemCRD_ID: TFIBBCDField;
-    DtStItemGRP_ID: TFIBIntegerField;
-    DtStItemITM_DESCRICAO: TFIBStringField;
     LblItemTipoCredito: TLabel;
     DbImgCmbBxTipoCredito: TcxDBImageComboBox;
     LblItemDescricao: TLabel;
@@ -225,22 +164,86 @@ type
     GrdItmTblITM_VALOR_LIBERADO: TcxGridDBColumn;
     GrdItmTblITM_DESCRICAO: TcxGridDBColumn;
     GrdItmTblGRP_ID: TcxGridDBColumn;
-    DtStPrincipalREG_EXCLUIDO: TFIBBooleanField;
-    DtStPrincipalREG_REPLICADO: TFIBBooleanField;
-    DtStPrincipalREG_USUARIO: TFIBStringField;
-    DtStPrincipalREG_MODIFICADO: TFIBDateTimeField;
-    DtStVisitaREG_REPLICADO: TFIBBooleanField;
-    DtStVisitaREG_USUARIO: TFIBStringField;
-    DtStVisitaREG_MODIFICADO: TFIBDateTimeField;
-    DtStProponenteREG_EXCLUIDO: TFIBBooleanField;
-    DtStProponenteREG_REPLICADO: TFIBBooleanField;
-    DtStProponenteREG_USUARIO: TFIBStringField;
-    DtStProponenteREG_MODIFICADO: TFIBDateTimeField;
-    DtStItemREG_EXCLUIDO: TFIBBooleanField;
-    DtStItemREG_REPLICADO: TFIBBooleanField;
-    DtStItemREG_USUARIO: TFIBStringField;
-    DtStItemREG_MODIFICADO: TFIBDateTimeField;
     Label31: TLabel;
+    QryPrincipalCRD_ID: TLargeintField;
+    QryPrincipalCRD_TITULO: TStringField;
+    QryPrincipalCRD_DESCRICAO: TMemoField;
+    QryPrincipalCRD_DATA_ELABORACAO: TDateField;
+    QryPrincipalCRD_DATA_INTERNALIZACAO: TDateField;
+    QryPrincipalCRD_DATA_CONTRATACAO: TDateField;
+    QryPrincipalCRD_DATA_ENCERRAMENTO: TDateField;
+    QryPrincipalCRD_DATA_HORA_REGISTRO: TSQLTimeStampField;
+    QryPrincipalCRD_VALOR_ELABORADO: TBCDField;
+    QryPrincipalCRD_VALOR_CONTRATADO: TBCDField;
+    QryPrincipalREG_EXCLUIDO: TSmallintField;
+    QryPrincipalREG_REPLICADO: TSmallintField;
+    QryPrincipalREG_USUARIO: TStringField;
+    QryPrincipalREG_MODIFICADO: TSQLTimeStampField;
+    QryPrincipalFUN_ID_CAMPO: TIntegerField;
+    QryPrincipalFUN_ID_ELABORADOR: TIntegerField;
+    QryPrincipalUND_ID: TIntegerField;
+    QryPrincipalFIN_ID: TIntegerField;
+    QryPrincipalLIN_ID: TIntegerField;
+    QryPrincipalTIP_ID: TIntegerField;
+    QryPrincipalPUB_ID: TIntegerField;
+    QryPrincipalCOM_ID: TIntegerField;
+    QryPrincipalSIT_ID: TIntegerField;
+    QryPrincipalCRD_MODIFICADO_USUARIO_NOME: TStringField;
+    QryPrincipalCRD_TECNICO_CAMPO: TStringField;
+    QryPrincipalCRD_TECNICO_ELABORADOR: TStringField;
+    QryItem: TFDQuery;
+    UpdtItem: TFDUpdateSQL;
+    QryVisita: TFDQuery;
+    UpdtVisita: TFDUpdateSQL;
+    QryVisitaREG_ID: TLargeintField;
+    QryVisitaREG_DATA_VISITA: TDateField;
+    QryVisitaREG_OBSERVACAO: TMemoField;
+    QryVisitaREG_EXCLUIDO: TSmallintField;
+    QryVisitaREG_REPLICADO: TSmallintField;
+    QryVisitaREG_USUARIO: TStringField;
+    QryVisitaREG_MODIFICADO: TSQLTimeStampField;
+    QryVisitaFUN_ID_VISITA: TIntegerField;
+    QryVisitaFUN_ID_REGISTRO: TIntegerField;
+    QryVisitaCRD_ID: TLargeintField;
+    QryVisitaREG_TECNICO_VISITA: TStringField;
+    QryVisitaREG_TECNICO_REGISTRO: TStringField;
+    QryProponente: TFDQuery;
+    UpdtProponente: TFDUpdateSQL;
+    QryProponentePRO_ID: TLargeintField;
+    QryProponentePRO_TIPO: TStringField;
+    QryProponentePRO_DOCUMENTO: TStringField;
+    QryProponentePRO_NOME: TStringField;
+    QryProponentePRO_DAP: TStringField;
+    QryProponenteREG_EXCLUIDO: TSmallintField;
+    QryProponenteREG_REPLICADO: TSmallintField;
+    QryProponenteREG_USUARIO: TStringField;
+    QryProponenteREG_MODIFICADO: TSQLTimeStampField;
+    QryProponenteCRD_ID: TLargeintField;
+    QryProponenteCLS_ID: TIntegerField;
+    QryDAP: TFDQuery;
+    QryItemITM_ID: TLargeintField;
+    QryItemITM_TIPO: TSmallintField;
+    QryItemITM_AREA_FINANCIADA: TBCDField;
+    QryItemITM_QTDE_SOLICITADA: TBCDField;
+    QryItemITM_QTDE_LIBERADA: TBCDField;
+    QryItemITM_VALOR_UNITARIO: TBCDField;
+    QryItemITM_VALOR_ELABORADO: TBCDField;
+    QryItemITM_VALOR_LIBERADO: TBCDField;
+    QryItemREG_EXCLUIDO: TSmallintField;
+    QryItemREG_REPLICADO: TSmallintField;
+    QryItemREG_USUARIO: TStringField;
+    QryItemREG_MODIFICADO: TSQLTimeStampField;
+    QryItemPRD_ID: TIntegerField;
+    QryItemUNI_ID: TIntegerField;
+    QryItemVAR_ID: TIntegerField;
+    QryItemRAC_ID: TIntegerField;
+    QryItemBEM_ID: TIntegerField;
+    QryItemCRD_ID: TLargeintField;
+    QryItemGRP_ID: TIntegerField;
+    QryItemITM_DESCRICAO: TStringField;
+    QryNome: TFDQuery;
+    QryDAPDAP: TStringField;
+    QryNomeNOME: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure BtnFinanceiraTabelaClick(Sender: TObject);
     procedure BtnLinhaTabelaClick(Sender: TObject);
@@ -248,8 +251,6 @@ type
     procedure BtnPublicoTabelaClick(Sender: TObject);
     procedure BtnSituacaoTabelaClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure DtStPrincipalBeforePost(DataSet: TDataSet);
-    procedure DtStPrincipalNewRecord(DataSet: TDataSet);
     procedure DtSrcPrincipalStateChange(Sender: TObject);
     procedure BtnComunidadeTabelaClick(Sender: TObject);
     procedure DbEdtTecnicoCampoPropertiesButtonClick(Sender: TObject; AButtonIndex: Integer);
@@ -257,9 +258,6 @@ type
     procedure DtSrcVisitaStateChange(Sender: TObject);
     procedure TbShtVisitaShow(Sender: TObject);
     procedure DbEdtTecnicoPropertiesButtonClick(Sender: TObject; AButtonIndex: Integer);
-    procedure DtStVisitaNewRecord(DataSet: TDataSet);
-    procedure DtStVisitaBeforePost(DataSet: TDataSet);
-    procedure DtStVisitaAfterPost(DataSet: TDataSet);
     procedure BtnVisitaNovoClick(Sender: TObject);
     procedure BtnVisitaSalvarClick(Sender: TObject);
     procedure BtnVisitaCancelarClick(Sender: TObject);
@@ -275,9 +273,6 @@ type
     procedure BtnPropSalvarClick(Sender: TObject);
     procedure BtnPropCancelarClick(Sender: TObject);
     procedure BtnPropExcluirClick(Sender: TObject);
-    procedure DtStProponenteAfterPost(DataSet: TDataSet);
-    procedure DtStProponenteBeforePost(DataSet: TDataSet);
-    procedure DtStProponenteNewRecord(DataSet: TDataSet);
     procedure DtSrcItemStateChange(Sender: TObject);
     procedure BtnPropNovoClick(Sender: TObject);
     procedure BtnItmNovoClick(Sender: TObject);
@@ -285,12 +280,20 @@ type
     procedure BtnItmCancelarClick(Sender: TObject);
     procedure BtnItmExcluirClick(Sender: TObject);
     procedure TbShtItensShow(Sender: TObject);
-    procedure DtStItemAfterPost(DataSet: TDataSet);
-    procedure DtStItemBeforePost(DataSet: TDataSet);
-    procedure DtStItemNewRecord(DataSet: TDataSet);
     procedure DbLkpCmbBxGrupoPropertiesChange(Sender: TObject);
     procedure BtnVariedadeTabelaClick(Sender: TObject);
     procedure BtnRacaTabelaClick(Sender: TObject);
+    procedure QryVisitaAfterPost(DataSet: TDataSet);
+    procedure QryVisitaBeforePost(DataSet: TDataSet);
+    procedure QryVisitaNewRecord(DataSet: TDataSet);
+    procedure QryPrincipalBeforePost(DataSet: TDataSet);
+    procedure QryPrincipalNewRecord(DataSet: TDataSet);
+    procedure QryProponenteAfterPost(DataSet: TDataSet);
+    procedure QryProponenteBeforePost(DataSet: TDataSet);
+    procedure QryProponenteNewRecord(DataSet: TDataSet);
+    procedure QryItemAfterPost(DataSet: TDataSet);
+    procedure QryItemBeforePost(DataSet: TDataSet);
+    procedure QryItemNewRecord(DataSet: TDataSet);
   private
     procedure AtualizarReplicacaoPendente;
     procedure AplicarUltimaAlteracao;
@@ -316,10 +319,10 @@ procedure TFrmCredito.AplicarUltimaAlteracao;
 begin
   if not (DtStPrincipal.State in [dsEdit, dsInsert]) then
     DtStPrincipal.Edit;
-  DtStPrincipalREG_MODIFICADO.Value := Now;
-  DtStPrincipalREG_USUARIO.AsString := DtmConexaoModulo.UsuarioLogin;
-  if (DtStPrincipal.State in [dsEdit, dsInsert]) then
-    DtStPrincipal.Post;
+  QryPrincipalREG_MODIFICADO.AsDateTime := Now;
+  QryPrincipalREG_USUARIO.AsString := DtmConexaoModulo.UsuarioLogin;
+  if (QryPrincipal.State in [dsEdit, dsInsert]) then
+    QryPrincipal.Post;
 end;
 
 procedure TFrmCredito.AtualizarReplicacaoPendente;
@@ -327,7 +330,7 @@ begin
   DtmLogModulo.ReplicacaoPendenteExibir(
     CREDITO_REPLICACAO_TABELAS,
     CampoChave,
-    DtStPrincipal.FieldByName(CampoChave).AsString, LblReplicacao);
+    QryPrincipal.FieldByName(CampoChave).AsString, LblReplicacao);
 end;
 
 procedure TFrmCredito.BtnClassificacaoTabelaClick(Sender: TObject);
@@ -373,9 +376,9 @@ procedure TFrmCredito.BtnItmCancelarClick(Sender: TObject);
 begin
   if Msg.Confirmacao(BASE_MSG_CONFIRMAR_CANCELAMENTO) then
     begin
-      if (DtStItem.State in [dsEdit, dsInsert]) then
+      if (QryItem.State in [dsEdit, dsInsert]) then
         begin
-          DtStItem.Cancel;
+          QryItem.Cancel;
           AtualizarReplicacaoPendente;
         end;
       DbLkpCmbBxGrupo.SetFocus;
@@ -386,9 +389,9 @@ procedure TFrmCredito.BtnItmExcluirClick(Sender: TObject);
 begin
   if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
     try
-      DtmSistemaModulo.GravarAuditoriaExclusao(DtStItem);
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryItem);
 
-      DtSrcItem.OnStateChange(DtStItem);
+      DtSrcItem.OnStateChange(QryItem);
       AtualizarReplicacaoPendente;
     except
       Msg.Erro(BASE_MSG_ERRO_EXCLUIR);
@@ -397,8 +400,8 @@ end;
 
 procedure TFrmCredito.BtnItmNovoClick(Sender: TObject);
 begin
-  DtStItem.Last;
-  DtStItem.Append;
+  QryItem.Last;
+  QryItem.Append;
   DBLkpCmbBxGrupo.SetFocus;
 end;
 
@@ -406,16 +409,16 @@ procedure TFrmCredito.BtnItmSalvarClick(Sender: TObject);
 begin
 
   // Validação dos campos:
-  if DtStItemGRP_ID.IsNull or DtStItemITM_TIPO.IsNull or (((
-     DtStItemGRP_ID.Value = 100000001) or (DtStItemGRP_ID.Value = 100000002)) and DtStItemPRD_ID.IsNull) or (((
-     DtStItemGRP_ID.Value >= 100000003) and (DtStItemGRP_ID.Value <= 100000005)) and DtStItemBEM_ID.IsNull) or
-     DtStItemUNI_ID.IsNull or
-     DtStItemITM_QTDE_SOLICITADA.IsNull or
-     DtStItemITM_QTDE_LIBERADA.IsNull or
-     DtStItemITM_VALOR_UNITARIO.IsNull or
-     DtStItemITM_VALOR_ELABORADO.IsNull or
-     DtStItemITM_VALOR_LIBERADO.IsNull or
-     DtStItemITM_AREA_FINANCIADA.IsNull then
+  if QryItemGRP_ID.IsNull or QryItemITM_TIPO.IsNull or (((
+     QryItemGRP_ID.Value = 100000001) or (QryItemGRP_ID.Value = 100000002)) and QryItemPRD_ID.IsNull) or (((
+     QryItemGRP_ID.Value >= 100000003) and (QryItemGRP_ID.Value <= 100000005)) and QryItemBEM_ID.IsNull) or
+     QryItemUNI_ID.IsNull or
+     QryItemITM_QTDE_SOLICITADA.IsNull or
+     QryItemITM_QTDE_LIBERADA.IsNull or
+     QryItemITM_VALOR_UNITARIO.IsNull or
+     QryItemITM_VALOR_ELABORADO.IsNull or
+     QryItemITM_VALOR_LIBERADO.IsNull or
+     QryItemITM_AREA_FINANCIADA.IsNull then
     begin
       Msg.Aviso(CREDITO_CAMPOS_ORIGATORIOS);
       LblItemTipo.Font.Color := clRed;
@@ -434,28 +437,28 @@ begin
   PgCntrlMain.ActivePage := TbShtItens;
 
   // Mais Validações:
-  if (DtStItemITM_QTDE_SOLICITADA.Value <= 0) then
+  if (QryItemITM_QTDE_SOLICITADA.Value <= 0) then
     begin
       Msg.Aviso(CREDITO_VALIDACAO_QUANTIDADE);
       DbEdtQuantidade.SetFocus;
       Exit;
     end;
 
-  if (DtStItemITM_VALOR_UNITARIO.Value <= 0) then
+  if (QryItemITM_VALOR_UNITARIO.Value <= 0) then
     begin
       Msg.Aviso(CREDITO_VALIDACAO_VALOR_UNITARIO);
       DbEdtItemValorUnitario.SetFocus;
       Exit;
     end;
 
-  if (DtStItemITM_VALOR_ELABORADO.Value <= 0) then
+  if (QryItemITM_VALOR_ELABORADO.Value <= 0) then
     begin
       Msg.Aviso(CREDITO_VALIDACAO_VALOR_ELABORADO);
       DbEdtItemValorElaborado.SetFocus;
       Exit;
     end;
 
-  if (DtStItemITM_VALOR_LIBERADO.Value <= 0) then
+  if (QryItemITM_VALOR_LIBERADO.Value <= 0) then
     begin
       Msg.Aviso(CREDITO_VALIDACAO_VALOR_LIBERADO);
       DbEdtItemValorLiberado.SetFocus;
@@ -463,9 +466,9 @@ begin
     end;
 
   try
-    if not DtmDialogoModulo.ExisteCamposPendentes(DtStItem) then
+    if not DtmDialogoModulo.ExisteCamposPendentes(QryItem) then
       begin
-        DtStItem.Post;
+        QryItem.Post;
         AtualizarReplicacaoPendente;
       end;
   except on E: Exception do
@@ -558,9 +561,9 @@ procedure TFrmCredito.BtnVisitaCancelarClick(Sender: TObject);
 begin
   if Msg.Confirmacao(BASE_MSG_CONFIRMAR_CANCELAMENTO) then
     begin
-      if (DtStVisita.State in [dsEdit, dsInsert]) then
+      if (QryVisita.State in [dsEdit, dsInsert]) then
         begin
-          DtStVisita.Cancel;
+          QryVisita.Cancel;
           AtualizarReplicacaoPendente;
         end;
       DbDtVisita.SetFocus;
@@ -571,9 +574,9 @@ procedure TFrmCredito.BtnVisitaExcluirClick(Sender: TObject);
 begin
   if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
     try
-      DtmSistemaModulo.GravarAuditoriaExclusao(DtStVisita);
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryVisita);
 
-      DtSrcVisita.OnStateChange(DtStVisita);
+      DtSrcVisita.OnStateChange(QryVisita);
       AtualizarReplicacaoPendente;
     except
       Msg.Erro(BASE_MSG_ERRO_EXCLUIR);
@@ -582,17 +585,17 @@ end;
 
 procedure TFrmCredito.BtnVisitaNovoClick(Sender: TObject);
 begin
-  DtStVisita.Last;
-  DtStVisita.Append;
+  QryVisita.Last;
+  QryVisita.Append;
   DbDtVisita.SetFocus;
 end;
 
 procedure TFrmCredito.BtnVisitaSalvarClick(Sender: TObject);
 begin
   try
-    if not DtmDialogoModulo.ExisteCamposPendentes(DtStVisita) then
+    if not DtmDialogoModulo.ExisteCamposPendentes(QryVisita) then
       begin
-        DtStVisita.Post;
+        QryVisita.Post;
         AtualizarReplicacaoPendente;
       end;
   except on E: Exception do
@@ -607,9 +610,9 @@ procedure TFrmCredito.BtnPropCancelarClick(Sender: TObject);
 begin
   if Msg.Confirmacao(BASE_MSG_CONFIRMAR_CANCELAMENTO) then
     begin
-      if (DtStProponente.State in [dsEdit, dsInsert]) then
+      if (QryProponente.State in [dsEdit, dsInsert]) then
         begin
-          DtStProponente.Cancel;
+          QryProponente.Cancel;
           AtualizarReplicacaoPendente;
         end;
       DbImgCmbBxTipoPessoa.SetFocus;
@@ -620,9 +623,9 @@ procedure TFrmCredito.BtnPropExcluirClick(Sender: TObject);
 begin
   if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
     try
-      DtmSistemaModulo.GravarAuditoriaExclusao(DtStProponente);
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryProponente);
 
-      DtSrcProponente.OnStateChange(DtStProponente);
+      DtSrcProponente.OnStateChange(QryProponente);
       AtualizarReplicacaoPendente;
     except
       Msg.Erro(BASE_MSG_ERRO_EXCLUIR);
@@ -631,8 +634,8 @@ end;
 
 procedure TFrmCredito.BtnPropNovoClick(Sender: TObject);
 begin
-  DtStProponente.Last;
-  DtStProponente.Append;
+  QryProponente.Last;
+  QryProponente.Append;
   DbImgCmbBxTipoPessoa.SetFocus;
 end;
 
@@ -640,7 +643,7 @@ procedure TFrmCredito.BtnProponenteBuscarClick(Sender: TObject);
 begin
   if DtSrcProponente.AutoEdit then
     begin
-      if (DtStProponentePRO_TIPO.AsString = 'F') then
+      if (QryProponentePRO_TIPO.AsString = 'F') then
         begin
           FrmCadastroBeneficiarioBusca := TFrmCadastroBeneficiarioBusca.Create(Self);
           try
@@ -648,19 +651,19 @@ begin
 
             if (FrmCadastroBeneficiarioBusca.ShowModal = mrOk) then
               try
-                if not (DtStProponente.State in [dsEdit, dsInsert]) then
-                  DtStProponente.Edit;
+                if not (QryProponente.State in [dsEdit, dsInsert]) then
+                  QryProponente.Edit;
 
                 LimparProponente;
-                DtStProponentePRO_DOCUMENTO.AsString := FrmCadastroBeneficiarioBusca.DtStConsultaBEN_CPF.AsString;
-                DtStProponentePRO_NOME.AsString := FrmCadastroBeneficiarioBusca.DtStConsultaBEN_NOME.AsString;
+                QryProponentePRO_DOCUMENTO.AsString := FrmCadastroBeneficiarioBusca.DtStConsultaBEN_CPF.AsString;
+                QryProponentePRO_NOME.AsString := FrmCadastroBeneficiarioBusca.DtStConsultaBEN_NOME.AsString;
                 AtualizarDAP;
 
                 AtualizarReplicacaoPendente;
               except
                 on E: Exception do
-                  if DtStProponente.State = dsInsert then
-                    DtStProponente.Cancel;
+                  if QryProponente.State = dsInsert then
+                    QryProponente.Cancel;
               end;
           finally
             FrmCadastroBeneficiarioBusca.Release;
@@ -679,7 +682,7 @@ end;
 
 procedure TFrmCredito.BtnProponenteTabelaClick(Sender: TObject);
 begin
-  if (DtStProponentePRO_TIPO.AsString = 'F') then
+  if (QryProponentePRO_TIPO.AsString = 'F') then
     begin
       Screen.Cursor := crHourGlass;
       FrmCadastroBeneficiario := TFrmCadastroBeneficiario.Create(Self);
@@ -708,9 +711,9 @@ end;
 procedure TFrmCredito.BtnPropSalvarClick(Sender: TObject);
 begin
   try
-    if not DtmDialogoModulo.ExisteCamposPendentes(DtStProponente) then
+    if not DtmDialogoModulo.ExisteCamposPendentes(QryProponente) then
       begin
-        DtStProponente.Post;
+        QryProponente.Post;
         AtualizarReplicacaoPendente;
       end;
   except on E: Exception do
@@ -727,9 +730,9 @@ begin
   if DtSrcProponente.AutoEdit then
     if (Key = VK_DELETE) then
         begin
-          if not (DtStProponente.State in [dsEdit, dsInsert]) then DtStProponente.Edit;
-          DtStProponentePRO_DAP.Clear;
-          DtStProponentePRO_NOME.Clear;
+          if not (QryProponente.State in [dsEdit, dsInsert]) then QryProponente.Edit;
+          QryProponentePRO_DAP.Clear;
+          QryProponentePRO_NOME.Clear;
         end;
 end;
 
@@ -740,19 +743,19 @@ begin
     begin
       if CharInSet(Key, ['0'..'9', #8]) then
         begin
-          if not (DtStProponente.State in [dsEdit, dsInsert]) then DtStProponente.Edit;
-          DtStProponentePRO_DAP.Clear;
-          DtStProponentePRO_NOME.Clear;
+          if not (QryProponente.State in [dsEdit, dsInsert]) then QryProponente.Edit;
+          QryProponentePRO_DAP.Clear;
+          QryProponentePRO_NOME.Clear;
         end;
 
       if CharInSet(Key, [#13]) then
         begin
           Key := #0;
-          if not (DtStProponente.State in [dsEdit, dsInsert]) then DtStProponente.Edit;
-          DtStProponentePRO_DAP.Clear;
-          DtStProponentePRO_NOME.Clear;
+          if not (QryProponente.State in [dsEdit, dsInsert]) then QryProponente.Edit;
+          QryProponentePRO_DAP.Clear;
+          QryProponentePRO_NOME.Clear;
 
-          DtStProponentePRO_NOME.AsString := RecuperarNome;
+          QryProponentePRO_NOME.AsString := RecuperarNome;
           if (DbImgCmbBxTipoPessoa.ItemIndex = 0) then AtualizarDAP;
         end;
     end;
@@ -766,10 +769,10 @@ begin
       try
         if (FrmPessoalFuncionarioBusca.ShowModal = mrOk) then
           begin
-            if not (DtStPrincipal.State in [dsEdit, dsInsert]) then
-              DtStPrincipal.Edit;
-            DtStPrincipalFUN_ID_CAMPO.AsInteger := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsInteger;
-            DtStPrincipalCRD_TECNICO_CAMPO.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
+            if not (QryPrincipal.State in [dsEdit, dsInsert]) then
+              QryPrincipal.Edit;
+            QryPrincipalFUN_ID_CAMPO.AsInteger := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsInteger;
+            QryPrincipalCRD_TECNICO_CAMPO.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
           end;
       finally
         FrmPessoalFuncionarioBusca.Release;
@@ -788,10 +791,10 @@ begin
       try
         if (FrmPessoalFuncionarioBusca.ShowModal = mrOk) then
           begin
-            if not (DtStPrincipal.State in [dsEdit, dsInsert]) then
-              DtStPrincipal.Edit;
-            DtStPrincipalFUN_ID_ELABORADOR.AsInteger := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsInteger;
-            DtStPrincipalCRD_TECNICO_ELABORADOR.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
+            if not (QryPrincipal.State in [dsEdit, dsInsert]) then
+              QryPrincipal.Edit;
+            QryPrincipalFUN_ID_ELABORADOR.AsInteger := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsInteger;
+            QryPrincipalCRD_TECNICO_ELABORADOR.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
           end;
       finally
         FrmPessoalFuncionarioBusca.Release;
@@ -810,10 +813,10 @@ begin
       try
         if (FrmPessoalFuncionarioBusca.ShowModal = mrOk) then
           begin
-            if not (DtStVisita.State in [dsEdit, dsInsert]) then
-              DtStVisita.Edit;
-            DtStVisitaFUN_ID_VISITA.AsInteger := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsInteger;
-            DtStVisitaREG_TECNICO_VISITA.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
+            if not (QryVisita.State in [dsEdit, dsInsert]) then
+              QryVisita.Edit;
+            QryVisitaFUN_ID_VISITA.AsInteger := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsInteger;
+            QryVisitaREG_TECNICO_VISITA.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
           end;
       finally
         FrmPessoalFuncionarioBusca.Release;
@@ -845,7 +848,7 @@ begin
   DbLkpCmbBxRaca.Visible := False;
   BtnRacaTabela.Visible := False;
 
-  case DtStItemGRP_ID.Value of
+  case QryItemGRP_ID.Value of
     100000001: // Cultura:
       begin
         DbLkpCmbBxProduto.DataBinding.DataField := 'PRD_ID';
@@ -884,7 +887,7 @@ end;
 
 procedure TFrmCredito.DtSrcItemStateChange(Sender: TObject);
 begin
-  with DtStItem do
+  with QryItem do
     begin
       BtnItmNovo.Enabled := (State = dsBrowse) and (not (State = dsInactive));
       BtnItmExcluir.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
@@ -896,14 +899,14 @@ end;
 procedure TFrmCredito.DtSrcPrincipalStateChange(Sender: TObject);
 begin
   inherited;
-  TbShtVisita.TabVisible := (DtSrcPrincipal.State in [dsBrowse, dsEdit]) and (DtStPrincipal.RecordCount > 0);
+  TbShtVisita.TabVisible := (DtSrcPrincipal.State in [dsBrowse, dsEdit]) and (QryPrincipal.RecordCount > 0);
   TbShtProponentes.TabVisible := TbShtVisita.TabVisible;
   TbShtItens.TabVisible := TbShtVisita.TabVisible;
 end;
 
 procedure TFrmCredito.DtSrcProponenteStateChange(Sender: TObject);
 begin
-  with DtStProponente do
+  with QryProponente do
     begin
       BtnPropNovo.Enabled := (State = dsBrowse) and (not (State = dsInactive));
       BtnPropExcluir.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
@@ -914,7 +917,7 @@ end;
 
 procedure TFrmCredito.DtSrcVisitaStateChange(Sender: TObject);
 begin
-  with DtStVisita do
+  with QryVisita do
     begin
       BtnVisitaNovo.Enabled := (State = dsBrowse) and (not (State = dsInactive));
       BtnVisitaExcluir.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
@@ -923,96 +926,40 @@ begin
     end;
 end;
 
-procedure TFrmCredito.DtStItemAfterPost(DataSet: TDataSet);
+procedure TFrmCredito.QryPrincipalNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  QryPrincipalCRD_DATA_ELABORACAO.Value := Date;
+  QryPrincipalCRD_DATA_HORA_REGISTRO.AsDateTime := Now;
+  QryPrincipalCRD_VALOR_ELABORADO.Value := 0;
+  QryPrincipalCRD_VALOR_CONTRATADO.Value := 0;
+  QryPrincipalREG_EXCLUIDO.Value := 0;
+  QryPrincipalUND_ID.Value := DtmSistemaModulo.UnidadeLocalID;
+
+  QryPrincipalFUN_ID_CAMPO.AsInteger := DtmConexaoModulo.FuncionarioID;
+  QryPrincipalFUN_ID_ELABORADOR.AsInteger := DtmConexaoModulo.FuncionarioID;
+
+  QryPrincipalCRD_TECNICO_CAMPO.AsString := DtmConexaoModulo.UsuarioNome;
+  QryPrincipalCRD_TECNICO_ELABORADOR.AsString := DtmConexaoModulo.UsuarioNome;
+end;
+
+procedure TFrmCredito.QryProponenteAfterPost(DataSet: TDataSet);
 begin
   inherited;
   AplicarUltimaAlteracao;
 end;
 
-procedure TFrmCredito.DtStItemBeforePost(DataSet: TDataSet);
-begin
-  case DtStItemGRP_ID.Value of
-    100000001: DtStItemBEM_ID.Clear; // Cultura.
-    100000002: DtStItemBEM_ID.Clear; // Criação.
-    100000003: DtStItemPRD_ID.Clear; // Máquinas.
-    100000004: DtStItemPRD_ID.Clear; // Equipamentos e insumos.
-    100000005: DtStItemPRD_ID.Clear; // Benfeitorias.
-  end;
-
-  DtmSistemaModulo.GravarAuditoriaInclusao(DtStItem, 'TAB_CRD_ITEM', 'ITM_ID');
-end;
-
-procedure TFrmCredito.DtStItemNewRecord(DataSet: TDataSet);
+procedure TFrmCredito.QryProponenteBeforePost(DataSet: TDataSet);
 begin
   inherited;
-  DtStItemCRD_ID.AsInt64 := DtStPrincipalCRD_ID.AsInt64;
-  DtStItemITM_AREA_FINANCIADA.Value := 0;
-  DtStItemITM_QTDE_SOLICITADA.Value := 0;
-  DtStItemITM_QTDE_LIBERADA.Value := 0;
-  DtStItemITM_VALOR_UNITARIO.Value := 0;
-  DtStItemITM_VALOR_ELABORADO.Value := 0;
-  DtStItemITM_VALOR_LIBERADO.Value := 0;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryProponente, 'TAB_CRD_PROPONENTE', 'PRO_ID');
 end;
 
-procedure TFrmCredito.DtStPrincipalBeforePost(DataSet: TDataSet);
+procedure TFrmCredito.QryProponenteNewRecord(DataSet: TDataSet);
 begin
   inherited;
-  DtStPrincipalREG_MODIFICADO.Value := Now;
-  DtStPrincipalREG_USUARIO.AsString := DtmConexaoModulo.UsuarioLogin;
-end;
-
-procedure TFrmCredito.DtStPrincipalNewRecord(DataSet: TDataSet);
-begin
-  inherited;
-  DtStPrincipalCRD_DATA_ELABORACAO.Value := Date;
-  DtStPrincipalCRD_DATA_HORA_REGISTRO.Value := Now;
-  DtStPrincipalCRD_VALOR_ELABORADO.Value := 0;
-  DtStPrincipalCRD_VALOR_CONTRATADO.Value := 0;
-  DtStPrincipalREG_EXCLUIDO.Value := False;
-  DtStPrincipalUND_ID.Value := DtmSistemaModulo.UnidadeLocalID;
-
-  DtStPrincipalFUN_ID_CAMPO.AsInteger := DtmConexaoModulo.FuncionarioID;
-  DtStPrincipalFUN_ID_ELABORADOR.AsInteger := DtmConexaoModulo.FuncionarioID;
-
-  DtStPrincipalCRD_TECNICO_CAMPO.AsString := DtmConexaoModulo.UsuarioNome;
-  DtStPrincipalCRD_TECNICO_ELABORADOR.AsString := DtmConexaoModulo.UsuarioNome;
-end;
-
-procedure TFrmCredito.DtStProponenteAfterPost(DataSet: TDataSet);
-begin
-  inherited;
-  AplicarUltimaAlteracao;
-end;
-
-procedure TFrmCredito.DtStProponenteBeforePost(DataSet: TDataSet);
-begin
-  DtmSistemaModulo.GravarAuditoriaInclusao(DtStProponente, 'TAB_CRD_PROPONENTE', 'PRO_ID');
-end;
-
-procedure TFrmCredito.DtStProponenteNewRecord(DataSet: TDataSet);
-begin
-  inherited;
-  DtStProponentePRO_TIPO.AsString := 'F';
-  DtStProponenteCRD_ID.AsInt64 := DtStPrincipalCRD_ID.AsInt64;
-end;
-
-procedure TFrmCredito.DtStVisitaAfterPost(DataSet: TDataSet);
-begin
-  inherited;
-  AplicarUltimaAlteracao;
-end;
-
-procedure TFrmCredito.DtStVisitaBeforePost(DataSet: TDataSet);
-begin
-  DtmSistemaModulo.GravarAuditoriaInclusao(DtStVisita, 'TAB_CRD_VISITA', 'REG_ID');
-end;
-
-procedure TFrmCredito.DtStVisitaNewRecord(DataSet: TDataSet);
-begin
-  DtStVisitaREG_DATA_VISITA.Value := Date;
-  DtStVisitaFUN_ID_REGISTRO.Value := DtmConexaoModulo.FuncionarioID;
-  DtStVisitaCRD_ID.AsInt64 := DtStPrincipalCRD_ID.AsInt64;
-  DtStVisitaREG_TECNICO_REGISTRO.AsString := DtmConexaoModulo.UsuarioNome;
+  QryProponentePRO_TIPO.AsString := 'F';
+  QryProponenteCRD_ID.AsLargeint := QryPrincipalCRD_ID.AsLargeint;
 end;
 
 procedure TFrmCredito.FormCreate(Sender: TObject);
@@ -1066,47 +1013,107 @@ end;
 
 procedure TFrmCredito.LimparProponente;
 begin
-  if DtStProponente.State in [dsEdit, dsInsert] then
+  if QryProponente.State in [dsEdit, dsInsert] then
     begin
-      DtStProponentePRO_DOCUMENTO.Clear;
-      DtStProponentePRO_DAP.Clear;
-      DtStProponentePRO_NOME.Clear;
+      QryProponentePRO_DOCUMENTO.Clear;
+      QryProponentePRO_DAP.Clear;
+      QryProponentePRO_NOME.Clear;
     end;
+end;
+
+procedure TFrmCredito.QryItemAfterPost(DataSet: TDataSet);
+begin
+  inherited;
+  AplicarUltimaAlteracao;
+end;
+
+procedure TFrmCredito.QryItemBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  case QryItemGRP_ID.Value of
+    100000001: QryItemBEM_ID.Clear; // Cultura.
+    100000002: QryItemBEM_ID.Clear; // Criação.
+    100000003: QryItemPRD_ID.Clear; // Máquinas.
+    100000004: QryItemPRD_ID.Clear; // Equipamentos e insumos.
+    100000005: QryItemPRD_ID.Clear; // Benfeitorias.
+  end;
+
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryItem, 'TAB_CRD_ITEM', 'ITM_ID');
+end;
+
+procedure TFrmCredito.QryItemNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  QryItemCRD_ID.AsLargeint := QryPrincipalCRD_ID.AsLargeint;
+  QryItemITM_AREA_FINANCIADA.Value := 0;
+  QryItemITM_QTDE_SOLICITADA.Value := 0;
+  QryItemITM_QTDE_LIBERADA.Value := 0;
+  QryItemITM_VALOR_UNITARIO.Value := 0;
+  QryItemITM_VALOR_ELABORADO.Value := 0;
+  QryItemITM_VALOR_LIBERADO.Value := 0;
+end;
+
+procedure TFrmCredito.QryPrincipalBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  QryPrincipalREG_MODIFICADO.AsDateTime := Now;
+  QryPrincipalREG_USUARIO.AsString := DtmConexaoModulo.UsuarioLogin;
+end;
+
+procedure TFrmCredito.QryVisitaAfterPost(DataSet: TDataSet);
+begin
+  inherited;
+  AplicarUltimaAlteracao;
+end;
+
+procedure TFrmCredito.QryVisitaBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryVisita, 'TAB_CRD_VISITA', 'REG_ID');
+end;
+
+procedure TFrmCredito.QryVisitaNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  QryVisitaREG_DATA_VISITA.Value := Date;
+  QryVisitaFUN_ID_REGISTRO.Value := DtmConexaoModulo.FuncionarioID;
+  QryVisitaCRD_ID.AsLargeint := QryPrincipalCRD_ID.AsLargeInt;
+  QryVisitaREG_TECNICO_REGISTRO.AsString := DtmConexaoModulo.UsuarioNome;
 end;
 
 function TFrmCredito.RecuperarNome: string;
 begin
-  DtStNome.Close;
-  DtStNome.SQLs.SelectSQL.Clear;
+  QryNome.Close;
+  QryNome.SQL.Clear;
   case DbImgCmbBxTipoPessoa.ItemIndex of
-    0: DtStNome.SQLs.SelectSQL.Add('select a.ben_nome as nome from tab_cad_beneficiario a where a.ben_cpf = :documento');
-    1: DtStNome.SQLs.SelectSQL.Add('select a.org_nome as nome from tab_cad_organizacao a where a.org_cnpj = :documento');
+    0: QryNome.SQL.Add('select a.ben_nome as nome from tab_cad_beneficiario a where a.ben_cpf = :documento');
+    1: QryNome.SQL.Add('select a.org_nome as nome from tab_cad_organizacao a where a.org_cnpj = :documento');
   end;
-  DtStNome.ParamByName('documento').AsString := DtStProponentePRO_DOCUMENTO.AsString;
-  DtStNome.Open;
-  if DtStNome.IsEmpty then
+  QryNome.ParamByName('documento').AsString := QryProponentePRO_DOCUMENTO.AsString;
+  QryNome.Open;
+  if QryNome.IsEmpty then
     Result := ''
   else
-    Result := DtStNomeNOME.AsString;
+    Result := QryNomeNOME.AsString;
 end;
 
 procedure TFrmCredito.AtualizarDAP;
 begin
-  DtStProponentePRO_DAP.Clear;
-  DtStDAP.Close;
-  DtStDAP.ParamByName('cpf').AsString := DtStProponentePRO_DOCUMENTO.AsString;
-  DtStDAP.Open;
-  if DtStDAP.IsEmpty then
+  QryProponentePRO_DAP.Clear;
+  QryDAP.Close;
+  QryDAP.ParamByName('cpf').AsString := QryProponentePRO_DOCUMENTO.AsString;
+  QryDAP.Open;
+  if QryDAP.IsEmpty then
     Msg.Informacao(CREDITO_DAP_NAO_ENCONTRADA)
   else
-    DtStProponentePRO_DAP.AsString := DtStDAPDAP.AsString;
+    QryProponentePRO_DAP.AsString := QryDAPDAP.AsString;
 end;
 
 procedure TFrmCredito.TbShtItensShow(Sender: TObject);
 begin
-  if not DtStItem.Active then
+  if not QryItem.Active then
     begin
-      DtStItem.Open;
+      QryItem.Open;
       DtmCreditoModulo.DtStGrupo.Close;
       DtmCreditoModulo.DtStGrupo.Open;
     end;
@@ -1117,9 +1124,9 @@ end;
 
 procedure TFrmCredito.TbShtProponentesShow(Sender: TObject);
 begin
-  if not DtStProponente.Active then
+  if not QryProponente.Active then
     begin
-      DtStProponente.Open;
+      QryProponente.Open;
       DtmCreditoModulo.DtStClassificacao.Close;
       DtmCreditoModulo.DtStClassificacao.Open;
     end;
@@ -1127,8 +1134,8 @@ end;
 
 procedure TFrmCredito.TbShtVisitaShow(Sender: TObject);
 begin
-  if not DtStVisita.Active then
-    DtStVisita.Open;
+  if not QryVisita.Active then
+    QryVisita.Open;
 end;
 
 end.

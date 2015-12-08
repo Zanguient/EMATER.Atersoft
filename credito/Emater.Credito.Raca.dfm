@@ -6,10 +6,10 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
   Caption = 'Ra'#231'as'
   ClientHeight = 474
   ClientWidth = 412
-  ExplicitLeft = 8
-  ExplicitTop = 8
-  ExplicitWidth = 418
-  ExplicitHeight = 503
+  ExplicitLeft = 415
+  ExplicitTop = 152
+  ExplicitWidth = 428
+  ExplicitHeight = 513
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
@@ -41,7 +41,6 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
         TabOrder = 1
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 375
         object GrdPrincipalTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -104,7 +103,6 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
-        ExplicitWidth = 375
         DesignSize = (
           377
           74)
@@ -117,6 +115,7 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
           Height = 13
           Caption = 'Nome da ra'#231'a:'
           FocusControl = DbEdtNome
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8
@@ -125,7 +124,6 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
           DataBinding.DataField = 'RAC_DESCRICAO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 0
-          ExplicitWidth = 359
           Width = 361
         end
       end
@@ -236,36 +234,91 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 216
+    Left = 112
     Top = 184
-    object DtStPrincipalRAC_ID: TFIBIntegerField
-      FieldName = 'RAC_ID'
-    end
-    object DtStPrincipalRAC_DESCRICAO: TFIBStringField
-      DisplayLabel = 'Nome da ra'#231'a'
-      FieldName = 'RAC_DESCRICAO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-    end
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248
+    Top = 184
+  end
+  inherited QryPrincipal: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.rac_id,'
+      '  a.rac_descricao,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_crd_raca a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.rac_descricao')
+    Left = 184
+    Top = 184
+    object QryPrincipalRAC_ID: TIntegerField
+      FieldName = 'RAC_ID'
+      Origin = 'RAC_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPrincipalRAC_DESCRICAO: TStringField
+      DisplayLabel = 'Nome da ra'#231'a'
+      FieldName = 'RAC_DESCRICAO'
+      Origin = 'RAC_DESCRICAO'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_RACA'
+      '(RAC_ID, RAC_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_RAC_ID, :NEW_RAC_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
+        '_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_RACA'
+      
+        'SET RAC_ID = :NEW_RAC_ID, RAC_DESCRICAO = :NEW_RAC_DESCRICAO, RE' +
+        'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE RAC_ID = :OLD_RAC_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_RACA'
+      'WHERE RAC_ID = :OLD_RAC_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT RAC_ID, RAC_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
+        'SUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_RACA'
+      'WHERE RAC_ID = :RAC_ID')
+    Left = 216
     Top = 184
   end
 end

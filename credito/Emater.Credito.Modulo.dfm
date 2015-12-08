@@ -1,7 +1,7 @@
 object DtmCreditoModulo: TDtmCreditoModulo
   OldCreateOrder = False
-  Height = 390
-  Width = 651
+  Height = 433
+  Width = 676
   object DtSrcFinanceira: TDataSource
     DataSet = DtStFinanceira
     Left = 48

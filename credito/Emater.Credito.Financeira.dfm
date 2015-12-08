@@ -116,6 +116,7 @@ inherited FrmCreditoFinanceira: TFrmCreditoFinanceira
           Height = 13
           Caption = 'Nome do agente financeiro:'
           FocusControl = DbEdtNome
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8
@@ -234,8 +235,8 @@ inherited FrmCreditoFinanceira: TFrmCreditoFinanceira
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 216
-    Top = 184
+    Left = 256
+    Top = 80
     object DtStPrincipalFIN_ID: TFIBIntegerField
       FieldName = 'FIN_ID'
     end
@@ -265,6 +266,86 @@ inherited FrmCreditoFinanceira: TFrmCreditoFinanceira
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248
+    Top = 184
+  end
+  inherited QryPrincipal: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.fin_id,'
+      '  a.fin_descricao,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_crd_financeira a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.fin_descricao')
+    Left = 184
+    Top = 184
+    object QryPrincipalFIN_ID: TIntegerField
+      FieldName = 'FIN_ID'
+      Origin = 'FIN_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPrincipalFIN_DESCRICAO: TStringField
+      DisplayLabel = 'Nome do agente financeiro'
+      FieldName = 'FIN_DESCRICAO'
+      Origin = 'FIN_DESCRICAO'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_FINANCEIRA'
+      '(FIN_ID, FIN_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_FIN_ID, :NEW_FIN_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
+        '_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_FINANCEIRA'
+      
+        'SET FIN_ID = :NEW_FIN_ID, FIN_DESCRICAO = :NEW_FIN_DESCRICAO, RE' +
+        'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE FIN_ID = :OLD_FIN_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_FINANCEIRA'
+      'WHERE FIN_ID = :OLD_FIN_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT FIN_ID, FIN_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
+        'SUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_FINANCEIRA'
+      'WHERE FIN_ID = :FIN_ID')
+    Left = 216
     Top = 184
   end
 end

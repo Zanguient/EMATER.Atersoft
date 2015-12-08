@@ -115,6 +115,7 @@ inherited FrmCreditoSituacao: TFrmCreditoSituacao
           Height = 13
           Caption = 'Descri'#231#227'o da situa'#231#227'o:'
           FocusControl = DbEdtNome
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8
@@ -233,36 +234,91 @@ inherited FrmCreditoSituacao: TFrmCreditoSituacao
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 216
+    Left = 80
     Top = 184
-    object DtStPrincipalSIT_ID: TFIBIntegerField
-      FieldName = 'SIT_ID'
-    end
-    object DtStPrincipalSIT_DESCRICAO: TFIBStringField
-      DisplayLabel = 'Descri'#231#227'o da situa'#231#227'o'
-      FieldName = 'SIT_DESCRICAO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-    end
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248
+    Top = 184
+  end
+  inherited QryPrincipal: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.sit_id,'
+      '  a.sit_descricao,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_crd_situacao a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.sit_descricao')
+    Left = 184
+    Top = 184
+    object QryPrincipalSIT_ID: TIntegerField
+      FieldName = 'SIT_ID'
+      Origin = 'SIT_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPrincipalSIT_DESCRICAO: TStringField
+      DisplayLabel = 'Descri'#231#227'o da situa'#231#227'o'
+      FieldName = 'SIT_DESCRICAO'
+      Origin = 'SIT_DESCRICAO'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_SITUACAO'
+      '(SIT_ID, SIT_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_SIT_ID, :NEW_SIT_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
+        '_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_SITUACAO'
+      
+        'SET SIT_ID = :NEW_SIT_ID, SIT_DESCRICAO = :NEW_SIT_DESCRICAO, RE' +
+        'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE SIT_ID = :OLD_SIT_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_SITUACAO'
+      'WHERE SIT_ID = :OLD_SIT_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT SIT_ID, SIT_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
+        'SUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_SITUACAO'
+      'WHERE SIT_ID = :SIT_ID')
+    Left = 216
     Top = 184
   end
 end

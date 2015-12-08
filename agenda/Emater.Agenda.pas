@@ -9,33 +9,37 @@ uses
   cxSchedulerDateNavigator, cxSchedulerHolidays, cxSchedulerTimeGridView, cxSchedulerUtils, cxSchedulerWeekView, cxSchedulerYearView,
   cxSchedulerGanttView, cxSchedulerTreeListBrowser, dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic,
   dxSkinscxSchedulerPainter, Data.DB, FIBDataSet, pFIBDataSet, cxClasses, cxSchedulerDBStorage,
-  cxSchedulerRecurrence, cxSchedulerRibbonStyleEventEditor;
+  cxSchedulerRecurrence, cxSchedulerRibbonStyleEventEditor, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet, cxSchedulercxGridConnection;
 
 type
   TFrmAgenda = class(TFrmBaseFilha)
     cxScheduler1: TcxScheduler;
     cxSchedulerDBStorage: TcxSchedulerDBStorage;
-    cxSchedulerHolidays1: TcxSchedulerHolidays;
-    DtStAgenda: TpFIBDataSet;
+    cxSchedulerHolidays: TcxSchedulerHolidays;
     DtSrcAgenda: TDataSource;
-    DtStAgendaAGN_ID: TFIBBCDField;
-    DtStAgendaAGN_DATA_HORA_INICIO: TFIBDateTimeField;
-    DtStAgendaAGN_DATA_HORA_FIM: TFIBDateTimeField;
-    DtStAgendaAGN_DATA_HORA_REGISTRO: TFIBDateTimeField;
-    DtStAgendaAGN_EVENTO_TIPO: TFIBSmallIntField;
-    DtStAgendaAGN_ASSUNTO: TFIBMemoField;
-    DtStAgendaAGN_LOCAL: TFIBMemoField;
-    DtStAgendaAGN_PARTICIPANTE: TFIBMemoField;
-    DtStAgendaUND_ID: TFIBIntegerField;
-    DtStAgendaUSR_ID: TFIBIntegerField;
-    DtStAgendaEVE_ID: TFIBIntegerField;
-    DtStAgendaSIT_ID: TFIBIntegerField;
-    DtStAgendaREG_EXCLUIDO: TFIBBooleanField;
-    DtStAgendaREG_REPLICADO: TFIBBooleanField;
-    DtStAgendaREG_USUARIO: TFIBStringField;
-    DtStAgendaREG_MODIFICADO: TFIBDateTimeField;
+    QryAgenda: TFDQuery;
+    UpdtAgenda: TFDUpdateSQL;
+    QryAgendaAGN_ID: TLargeintField;
+    QryAgendaAGN_DATA_HORA_INICIO: TSQLTimeStampField;
+    QryAgendaAGN_DATA_HORA_FIM: TSQLTimeStampField;
+    QryAgendaAGN_DATA_HORA_REGISTRO: TSQLTimeStampField;
+    QryAgendaAGN_EVENTO_TIPO: TSmallintField;
+    QryAgendaAGN_LOCAL: TMemoField;
+    QryAgendaAGN_PARTICIPANTE: TMemoField;
+    QryAgendaUND_ID: TIntegerField;
+    QryAgendaEVE_ID: TIntegerField;
+    QryAgendaSIT_ID: TIntegerField;
+    QryAgendaREG_EXCLUIDO: TSmallintField;
+    QryAgendaREG_REPLICADO: TSmallintField;
+    QryAgendaREG_USUARIO: TStringField;
+    QryAgendaREG_MODIFICADO: TSQLTimeStampField;
+    QryAgendaAGN_ASSUNTO: TStringField;
+    QryAgendaAGN_DETALHE: TMemoField;
     procedure FormShow(Sender: TObject);
-    procedure DtStAgendaBeforePost(DataSet: TDataSet);
+    procedure cxScheduler1EventSelectionChanged(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent);
+    procedure cxScheduler1BeforeEditing(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent; AInplace: Boolean; var Allow: Boolean);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,16 +55,29 @@ implementation
 
 uses Emater.Conexao.Modulo;
 
-procedure TFrmAgenda.DtStAgendaBeforePost(DataSet: TDataSet);
+procedure TFrmAgenda.cxScheduler1BeforeEditing(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent; AInplace: Boolean; var Allow: Boolean);
 begin
   inherited;
-//
+  AInplace := True;
+  ShowMessage('cxScheduler1BeforeEditing');
+end;
+
+procedure TFrmAgenda.cxScheduler1EventSelectionChanged(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent);
+begin
+  inherited;
+  ShowMessage('cxScheduler1EventSelectionChanged');
+end;
+
+procedure TFrmAgenda.FormCreate(Sender: TObject);
+begin
+  inherited;
+  WindowState := wsMaximized;
 end;
 
 procedure TFrmAgenda.FormShow(Sender: TObject);
 begin
   inherited;
-  DtStAgenda.Open;
+  QryAgenda.Open;
 end;
 
 end.

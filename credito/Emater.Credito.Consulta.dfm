@@ -14,9 +14,9 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
     ExplicitWidth = 782
   end
   inherited GrdConsulta: TcxGrid
-    Top = 196
+    Top = 191
     Width = 782
-    Height = 277
+    Height = 282
     ExplicitTop = 196
     ExplicitWidth = 782
     ExplicitHeight = 277
@@ -402,89 +402,7 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
       '  tab_sis_unidade g on (a.und_id = g.und_id)'
       'where'
       '  (a.reg_excluido = 0)')
-    Top = 248
-    object DtStConsultaCRD_ID: TFIBBCDField
-      DisplayLabel = 'Identificador'
-      FieldName = 'CRD_ID'
-      Size = 0
-    end
-    object DtStConsultaCRD_TITULO: TFIBStringField
-      DisplayLabel = 'T'#237'tulo do projeto'
-      FieldName = 'CRD_TITULO'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCRD_SITUACAO: TFIBStringField
-      DisplayLabel = 'Situa'#231#227'o'
-      FieldName = 'CRD_SITUACAO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCRD_AGENTE_FINANCEIRO: TFIBStringField
-      DisplayLabel = 'Agente financeiro'
-      FieldName = 'CRD_AGENTE_FINANCEIRO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCRD_LINHA_CREDITO: TFIBStringField
-      DisplayLabel = 'Linha de cr'#233'dito'
-      FieldName = 'CRD_LINHA_CREDITO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCRD_TIPO_CREDITO: TFIBStringField
-      DisplayLabel = 'Tipo de cr'#233'dito'
-      FieldName = 'CRD_TIPO_CREDITO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCRD_PUBLICO_BENEFICIARIO: TFIBStringField
-      DisplayLabel = 'P'#250'blico benefici'#225'rio'
-      FieldName = 'CRD_PUBLICO_BENEFICIARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCRD_ESCRITORIO: TFIBStringField
-      DisplayLabel = 'Escrit'#243'rio'
-      FieldName = 'CRD_ESCRITORIO'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCRD_DATA_ELABORACAO: TFIBDateField
-      DisplayLabel = 'Data de elabora'#231#227'o'
-      FieldName = 'CRD_DATA_ELABORACAO'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStConsultaCRD_DATA_CONTRATACAO: TFIBDateField
-      DisplayLabel = 'Data de contrata'#231#227'o'
-      FieldName = 'CRD_DATA_CONTRATACAO'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStConsultaREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStConsultaREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStConsultaREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm'
-    end
+    Top = 280
   end
   inherited BarManager: TdxBarManager
     Top = 248
@@ -513,6 +431,174 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
     end
   end
   inherited PopupMenuConsulta: TdxBarPopupMenu
+    Top = 248
+  end
+  inherited QryConsulta: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.crd_id,'
+      '  a.crd_titulo,'
+      '  b.sit_descricao as crd_situacao,'
+      '  c.fin_descricao as crd_agente_financeiro,'
+      '  d.lin_descricao as crd_linha_credito,'
+      '  e.tip_descricao as crd_tipo_credito,'
+      '  f.pub_descricao as crd_publico_beneficiario,'
+      '  g.und_nome as crd_escritorio,'
+      '  a.crd_data_elaboracao,'
+      '  a.crd_data_contratacao,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      
+        '  tab_crd_credito_rural a left join tab_crd_situacao b on (a.sit' +
+        '_id = b.sit_id) left join'
+      '  tab_crd_financeira c on (a.fin_id = c.fin_id) left join'
+      '  tab_crd_linha d on (a.lin_id = d.lin_id) left join'
+      '  tab_crd_tipo e on (a.tip_id = e.tip_id) left join'
+      '  tab_crd_publico f on (a.pub_id = f.pub_id) left join'
+      '  tab_sis_unidade g on (a.und_id = g.und_id)'
+      'where'
+      '  (a.reg_excluido = 0)')
+    Top = 248
+    object QryConsultaCRD_ID: TLargeintField
+      DisplayLabel = 'Identificador'
+      FieldName = 'CRD_ID'
+      Origin = 'CRD_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryConsultaCRD_TITULO: TStringField
+      DisplayLabel = 'T'#237'tulo do projeto'
+      FieldName = 'CRD_TITULO'
+      Origin = 'CRD_TITULO'
+      Size = 100
+    end
+    object QryConsultaCRD_SITUACAO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Situa'#231#227'o'
+      FieldName = 'CRD_SITUACAO'
+      Origin = 'SIT_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
+    object QryConsultaCRD_AGENTE_FINANCEIRO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Agente financeiro'
+      FieldName = 'CRD_AGENTE_FINANCEIRO'
+      Origin = 'FIN_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
+    object QryConsultaCRD_LINHA_CREDITO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Linha de cr'#233'dito'
+      FieldName = 'CRD_LINHA_CREDITO'
+      Origin = 'LIN_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
+    object QryConsultaCRD_TIPO_CREDITO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Tipo de cr'#233'dito'
+      FieldName = 'CRD_TIPO_CREDITO'
+      Origin = 'TIP_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
+    object QryConsultaCRD_PUBLICO_BENEFICIARIO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'P'#250'blico benefici'#225'rio'
+      FieldName = 'CRD_PUBLICO_BENEFICIARIO'
+      Origin = 'PUB_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
+    object QryConsultaCRD_ESCRITORIO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Escrit'#243'rio'
+      FieldName = 'CRD_ESCRITORIO'
+      Origin = 'UND_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 100
+    end
+    object QryConsultaCRD_DATA_ELABORACAO: TDateField
+      DisplayLabel = 'Data de elabora'#231#227'o'
+      FieldName = 'CRD_DATA_ELABORACAO'
+      Origin = 'CRD_DATA_ELABORACAO'
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QryConsultaCRD_DATA_CONTRATACAO: TDateField
+      DisplayLabel = 'Data de contrata'#231#227'o'
+      FieldName = 'CRD_DATA_CONTRATACAO'
+      Origin = 'CRD_DATA_CONTRATACAO'
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QryConsultaREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryConsultaREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryConsultaREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryConsultaREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtConsulta: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_CREDITO_RURAL'
+      '(CRD_ID, CRD_TITULO, CRD_DATA_ELABORACAO, CRD_DATA_CONTRATACAO, '
+      '  REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO)'
+      
+        'VALUES (:NEW_CRD_ID, :NEW_CRD_TITULO, :NEW_CRD_DATA_ELABORACAO, ' +
+        ':NEW_CRD_DATA_CONTRATACAO, '
+      '  :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, :NEW_REG_USUARIO, '
+      '  :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_CREDITO_RURAL'
+      
+        'SET CRD_ID = :NEW_CRD_ID, CRD_TITULO = :NEW_CRD_TITULO, CRD_DATA' +
+        '_ELABORACAO = :NEW_CRD_DATA_ELABORACAO, '
+      
+        '  CRD_DATA_CONTRATACAO = :NEW_CRD_DATA_CONTRATACAO, REG_EXCLUIDO' +
+        ' = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE CRD_ID = :OLD_CRD_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_CREDITO_RURAL'
+      'WHERE CRD_ID = :OLD_CRD_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT CRD_ID, CRD_TITULO, CRD_DESCRICAO, CRD_DATA_ELABORACAO, C' +
+        'RD_DATA_INTERNALIZACAO, '
+      
+        '  CRD_DATA_CONTRATACAO, CRD_DATA_ENCERRAMENTO, CRD_DATA_HORA_REG' +
+        'ISTRO, '
+      '  CRD_VALOR_ELABORADO, CRD_VALOR_CONTRATADO, FUN_ID_CAMPO, '
+      '  FUN_ID_ELABORADOR, UND_ID, FIN_ID, LIN_ID, TIP_ID, PUB_ID, '
+      '  COM_ID, SIT_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_CREDITO_RURAL'
+      'WHERE CRD_ID = :CRD_ID')
     Top = 248
   end
 end

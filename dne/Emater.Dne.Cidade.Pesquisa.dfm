@@ -9,7 +9,7 @@ inherited FrmDneCidadePesquisa: TFrmDneCidadePesquisa
   ExplicitLeft = 407
   ExplicitTop = 203
   ExplicitWidth = 313
-  ExplicitHeight = 440
+  ExplicitHeight = 441
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

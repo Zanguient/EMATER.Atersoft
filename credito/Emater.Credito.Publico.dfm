@@ -115,6 +115,7 @@ inherited FrmCreditoPublico: TFrmCreditoPublico
           Height = 13
           Caption = 'Descri'#231#227'o do p'#250'blico benefici'#225'rio:'
           FocusControl = DbEdtNome
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8
@@ -233,36 +234,91 @@ inherited FrmCreditoPublico: TFrmCreditoPublico
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 216
-    Top = 184
-    object DtStPrincipalPUB_ID: TFIBIntegerField
-      FieldName = 'PUB_ID'
-    end
-    object DtStPrincipalPUB_DESCRICAO: TFIBStringField
-      DisplayLabel = 'Descri'#231#227'o do p'#250'blico benefici'#225'rio'
-      FieldName = 'PUB_DESCRICAO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-    end
+    Left = 192
+    Top = 128
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248
+    Top = 184
+  end
+  inherited QryPrincipal: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.pub_id,'
+      '  a.pub_descricao,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_crd_publico a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.pub_descricao')
+    Left = 184
+    Top = 184
+    object QryPrincipalPUB_ID: TIntegerField
+      FieldName = 'PUB_ID'
+      Origin = 'PUB_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPrincipalPUB_DESCRICAO: TStringField
+      DisplayLabel = 'Descri'#231#227'o do p'#250'blico benefici'#225'rio'
+      FieldName = 'PUB_DESCRICAO'
+      Origin = 'PUB_DESCRICAO'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_PUBLICO'
+      '(PUB_ID, PUB_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_PUB_ID, :NEW_PUB_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
+        '_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_PUBLICO'
+      
+        'SET PUB_ID = :NEW_PUB_ID, PUB_DESCRICAO = :NEW_PUB_DESCRICAO, RE' +
+        'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE PUB_ID = :OLD_PUB_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_PUBLICO'
+      'WHERE PUB_ID = :OLD_PUB_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT PUB_ID, PUB_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
+        'SUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_PUBLICO'
+      'WHERE PUB_ID = :PUB_ID')
+    Left = 216
     Top = 184
   end
 end

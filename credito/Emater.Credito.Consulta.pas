@@ -9,7 +9,8 @@ uses
   cxEdit, cxNavigator, Data.DB, cxDBData, cxContainer, Vcl.Menus, dxSkinsdxBarPainter, dxBar, cxClasses, FIBDataSet, pFIBDataSet,
   cxTextEdit, Vcl.StdCtrls, cxButtons, cxMaskEdit, cxDropDownEdit, cxImageComboBox, Vcl.ExtCtrls, cxGridLevel, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, Vcl.ComCtrls, dxCore,
-  cxDateUtils, cxCalendar;
+  cxDateUtils, cxCalendar, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
   TFrmCreditoConsulta = class(TFrmBaseConsulta)
@@ -33,16 +34,6 @@ type
     EdtContratacaoDataFim: TcxDateEdit;
     EdtContratacaoDataInicio: TcxDateEdit;
     Label10: TLabel;
-    DtStConsultaCRD_ID: TFIBBCDField;
-    DtStConsultaCRD_TITULO: TFIBStringField;
-    DtStConsultaCRD_SITUACAO: TFIBStringField;
-    DtStConsultaCRD_AGENTE_FINANCEIRO: TFIBStringField;
-    DtStConsultaCRD_LINHA_CREDITO: TFIBStringField;
-    DtStConsultaCRD_TIPO_CREDITO: TFIBStringField;
-    DtStConsultaCRD_PUBLICO_BENEFICIARIO: TFIBStringField;
-    DtStConsultaCRD_ESCRITORIO: TFIBStringField;
-    DtStConsultaCRD_DATA_ELABORACAO: TFIBDateField;
-    DtStConsultaCRD_DATA_CONTRATACAO: TFIBDateField;
     GrdConsultaTblCRD_TITULO: TcxGridDBColumn;
     GrdConsultaTblCRD_SITUACAO: TcxGridDBColumn;
     GrdConsultaTblCRD_AGENTE_FINANCEIRO: TcxGridDBColumn;
@@ -52,10 +43,20 @@ type
     GrdConsultaTblCRD_ESCRITORIO: TcxGridDBColumn;
     GrdConsultaTblCRD_DATA_ELABORACAO: TcxGridDBColumn;
     GrdConsultaTblCRD_DATA_CONTRATACAO: TcxGridDBColumn;
-    DtStConsultaREG_EXCLUIDO: TFIBBooleanField;
-    DtStConsultaREG_REPLICADO: TFIBBooleanField;
-    DtStConsultaREG_USUARIO: TFIBStringField;
-    DtStConsultaREG_MODIFICADO: TFIBDateTimeField;
+    QryConsultaCRD_ID: TLargeintField;
+    QryConsultaCRD_TITULO: TStringField;
+    QryConsultaCRD_SITUACAO: TStringField;
+    QryConsultaCRD_AGENTE_FINANCEIRO: TStringField;
+    QryConsultaCRD_LINHA_CREDITO: TStringField;
+    QryConsultaCRD_TIPO_CREDITO: TStringField;
+    QryConsultaCRD_PUBLICO_BENEFICIARIO: TStringField;
+    QryConsultaCRD_ESCRITORIO: TStringField;
+    QryConsultaCRD_DATA_ELABORACAO: TDateField;
+    QryConsultaCRD_DATA_CONTRATACAO: TDateField;
+    QryConsultaREG_EXCLUIDO: TSmallintField;
+    QryConsultaREG_REPLICADO: TSmallintField;
+    QryConsultaREG_USUARIO: TStringField;
+    QryConsultaREG_MODIFICADO: TSQLTimeStampField;
     procedure FormCreate(Sender: TObject);
     procedure BtnConsultarClick(Sender: TObject);
   public
@@ -81,45 +82,45 @@ begin
 
   CodeSite.EnterMethod(Self.Name + '.BtnConsultarClick().');
   try
-    DtStConsulta.Close;
-    DtStConsulta.SelectSQL.Clear;
-    DtStConsulta.SelectSQL.AddStrings(DefaultSQL);
+    QryConsulta.Close;
+    QryConsulta.SQL.Clear;
+    QryConsulta.SQL.AddStrings(DefaultSQL);
 
     CodeSite.SendMsg('Preparando para consultar o banco de dados.');
 
     // Título do projeto:
     if (Trim(EdtValor.Text) <> '') then
       case ImgCmbBxOpcao.ItemIndex of
-        0: DtStConsulta.SelectSQL.Add(Format('and (a.crd_titulo like %s)', [QuotedStr(EdtValor.Text + '%')]));
-        1: DtStConsulta.SelectSQL.Add(Format('and (a.crd_titulo like %s)', [QuotedStr('%' + EdtValor.Text + '%')]));
+        0: QryConsulta.SQL.Add(Format('and (a.crd_titulo like %s)', [QuotedStr(EdtValor.Text + '%')]));
+        1: QryConsulta.SQL.Add(Format('and (a.crd_titulo like %s)', [QuotedStr('%' + EdtValor.Text + '%')]));
       end;
 
     // Situação do projeto:
     if (LkpCmbBxSituacao.Text <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.sit_id = %s)', [IntToStr(LkpCmbBxSituacao.EditValue)]));
+      QryConsulta.SQL.Add(Format('and (a.sit_id = %s)', [IntToStr(LkpCmbBxSituacao.EditValue)]));
 
     // Agente financeiro:
     if (LkpCmbBxAgente.Text <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.fin_id = %s)', [IntToStr(LkpCmbBxAgente.EditValue)]));
+      QryConsulta.SQL.Add(Format('and (a.fin_id = %s)', [IntToStr(LkpCmbBxAgente.EditValue)]));
 
     // Linha de crédito:
     if (LkpCmbBxLinha.Text <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.lin_id = %s)', [IntToStr(LkpCmbBxLinha.EditValue)]));
+      QryConsulta.SQL.Add(Format('and (a.lin_id = %s)', [IntToStr(LkpCmbBxLinha.EditValue)]));
 
     // Tipo de crédito:
     if (LkpCmbBxTipo.Text <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.tip_id = %s)', [IntToStr(LkpCmbBxTipo.EditValue)]));
+      QryConsulta.SQL.Add(Format('and (a.tip_id = %s)', [IntToStr(LkpCmbBxTipo.EditValue)]));
 
     // Público beneficiário:
     if (LkpCmbBxPublico.Text <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.pub_id = %s)', [IntToStr(LkpCmbBxPublico.EditValue)]));
+      QryConsulta.SQL.Add(Format('and (a.pub_id = %s)', [IntToStr(LkpCmbBxPublico.EditValue)]));
 
     // Data de elaboração (período):
     if (EdtElaboracaoDataInicio.Text <> '') and (EdtElaboracaoDataFim.Text <> '') then
       begin
         DataInicio := FormatDateTime('dd.mm.yyyy', EdtElaboracaoDataInicio.Date);
         DataFim := FormatDateTime('dd.mm.yyyy', EdtElaboracaoDataFim.Date);
-        DtStConsulta.SelectSQL.Add(Format('and (a.crd_data_elaboracao between %s and %s)', [QuotedStr(DataInicio), QuotedStr(DataFim)]));
+        QryConsulta.SQL.Add(Format('and (a.crd_data_elaboracao between %s and %s)', [QuotedStr(DataInicio), QuotedStr(DataFim)]));
       end;
 
     // Data de contratação (período):
@@ -127,31 +128,31 @@ begin
       begin
         DataInicio := FormatDateTime('dd.mm.yyyy', EdtContratacaoDataInicio.Date);
         DataFim := FormatDateTime('dd.mm.yyyy', EdtContratacaoDataFim.Date);
-        DtStConsulta.SelectSQL.Add(Format('and (a.crd_data_contratacao between %s and %s)', [QuotedStr(DataInicio), QuotedStr(DataFim)]));
+        QryConsulta.SQL.Add(Format('and (a.crd_data_contratacao between %s and %s)', [QuotedStr(DataInicio), QuotedStr(DataFim)]));
       end;
 
     // Unidade do cadastro:
     if (LkpCmbBxEscritorio.Text <> '') then
-      DtStConsulta.SelectSQL.Add(Format('and (a.und_id in (select und_id from stp_sis_unidade_subordinada(%s)))', [IntToStr(LkpCmbBxEscritorio.EditValue)]));
+      QryConsulta.SQL.Add(Format('and (a.und_id in (select und_id from stp_sis_unidade_subordinada(%s)))', [IntToStr(LkpCmbBxEscritorio.EditValue)]));
 
     // Carregando o resultado:
     CanLoad := True;
-    if (DefaultSQL.Count = DtStConsulta.SelectSQL.Count) then
+    if (DefaultSQL.Count = QryConsulta.SQL.Count) then
       CanLoad := Msg.Confirmacao(BASE_MSG_BUSCA_CARREGAR_TUDO);
 
     if CanLoad then
       begin
-        DtStConsulta.SelectSQL.Add('order by a.crd_titulo');
-        DtStConsulta.Open;
+        QryConsulta.SQL.Add('order by a.crd_titulo');
+        QryConsulta.Open;
 
-        if DtStConsulta.IsEmpty then
+        if QryConsulta.IsEmpty then
           begin
             CodeSite.SendMsg('Consulta realizada. Nenhum registro encontrado.');
             Msg.Informacao(BASE_MSG_BUSCA_NADA_ENCONTRADO);
           end
         else
           begin
-            CodeSite.SendMsg('Consulta realizada. Total de registros encontrados: ' + IntToStr(DtStConsulta.RecordCount) + '.');
+            CodeSite.SendMsg('Consulta realizada. Total de registros encontrados: ' + IntToStr(QryConsulta.RecordCount) + '.');
             GrdConsulta.SetFocus;
           end;
       end;

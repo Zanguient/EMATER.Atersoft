@@ -115,6 +115,7 @@ inherited FrmCreditoClassificacao: TFrmCreditoClassificacao
           Height = 13
           Caption = 'Descri'#231#227'o da classifica'#231#227'o:'
           FocusControl = DbEdtNome
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8
@@ -237,39 +238,91 @@ inherited FrmCreditoClassificacao: TFrmCreditoClassificacao
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 216
-    Top = 184
-    object DtStPrincipalCLS_ID: TFIBIntegerField
-      FieldName = 'CLS_ID'
-    end
-    object DtStPrincipalCLS_DESCRICAO: TFIBStringField
-      DisplayLabel = 'Descri'#231#227'o da classifica'#231#227'o'
-      FieldName = 'CLS_DESCRICAO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
-    end
+    Left = 160
+    Top = 144
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248
+    Top = 184
+  end
+  inherited QryPrincipal: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.cls_id,'
+      '  a.cls_descricao,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_crd_classificacao a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.cls_descricao')
+    Left = 184
+    Top = 184
+    object QryPrincipalCLS_ID: TIntegerField
+      FieldName = 'CLS_ID'
+      Origin = 'CLS_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPrincipalCLS_DESCRICAO: TStringField
+      DisplayLabel = 'Descri'#231#227'o da classifica'#231#227'o'
+      FieldName = 'CLS_DESCRICAO'
+      Origin = 'CLS_DESCRICAO'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_CLASSIFICACAO'
+      '(CLS_ID, CLS_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_CLS_ID, :NEW_CLS_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
+        '_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_CLASSIFICACAO'
+      
+        'SET CLS_ID = :NEW_CLS_ID, CLS_DESCRICAO = :NEW_CLS_DESCRICAO, RE' +
+        'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE CLS_ID = :OLD_CLS_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_CLASSIFICACAO'
+      'WHERE CLS_ID = :OLD_CLS_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT CLS_ID, CLS_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
+        'SUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_CLASSIFICACAO'
+      'WHERE CLS_ID = :CLS_ID')
+    Left = 216
     Top = 184
   end
 end

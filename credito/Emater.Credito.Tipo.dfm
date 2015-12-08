@@ -115,6 +115,7 @@ inherited FrmCreditoTipo: TFrmCreditoTipo
           Height = 13
           Caption = 'Nome do tipo de cr'#233'dito:'
           FocusControl = DbEdtNome
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8
@@ -233,39 +234,91 @@ inherited FrmCreditoTipo: TFrmCreditoTipo
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 216
+    Left = 96
     Top = 184
-    object DtStPrincipalTIP_ID: TFIBIntegerField
-      FieldName = 'TIP_ID'
-    end
-    object DtStPrincipalTIP_DESCRICAO: TFIBStringField
-      DisplayLabel = 'Nome do tipo de cr'#233'dito'
-      FieldName = 'TIP_DESCRICAO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
-    end
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248
+    Top = 184
+  end
+  inherited QryPrincipal: TFDQuery
+    SQL.Strings = (
+      'select'
+      '  a.tip_id,'
+      '  a.tip_descricao,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_crd_tipo a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.tip_descricao')
+    Left = 184
+    Top = 184
+    object QryPrincipalTIP_ID: TIntegerField
+      FieldName = 'TIP_ID'
+      Origin = 'TIP_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPrincipalTIP_DESCRICAO: TStringField
+      DisplayLabel = 'Nome do tipo de cr'#233'dito'
+      FieldName = 'TIP_DESCRICAO'
+      Origin = 'TIP_DESCRICAO'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CRD_TIPO'
+      '(TIP_ID, TIP_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_TIP_ID, :NEW_TIP_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
+        '_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CRD_TIPO'
+      
+        'SET TIP_ID = :NEW_TIP_ID, TIP_DESCRICAO = :NEW_TIP_DESCRICAO, RE' +
+        'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE TIP_ID = :OLD_TIP_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CRD_TIPO'
+      'WHERE TIP_ID = :OLD_TIP_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT TIP_ID, TIP_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
+        'SUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CRD_TIPO'
+      'WHERE TIP_ID = :TIP_ID')
+    Left = 216
     Top = 184
   end
 end

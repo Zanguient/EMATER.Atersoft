@@ -11,7 +11,7 @@ inherited FrmAgenda: TFrmAgenda
   ExplicitHeight = 620
   PixelsPerInch = 96
   TextHeight = 13
-  object cxScheduler1: TcxScheduler
+  object cxScheduler: TcxScheduler
     Left = 0
     Top = 0
     Width = 826
@@ -30,9 +30,8 @@ inherited FrmAgenda: TFrmAgenda
     OptionsView.ViewPosition = vpRight
     Storage = cxSchedulerDBStorage
     TabOrder = 0
-    OnBeforeEditing = cxScheduler1BeforeEditing
-    OnEventSelectionChanged = cxScheduler1EventSelectionChanged
-    Selection = 35
+    OnBeforeEditing = cxSchedulerBeforeEditing
+    Selection = 42
     Splitters = {
       01000000FB000000900000000001000090000000010000009500000044020000}
     StoredClientBounds = {01000000010000003903000044020000}
@@ -43,11 +42,8 @@ inherited FrmAgenda: TFrmAgenda
     Holidays = cxSchedulerHolidays
     DataSource = DtSrcAgenda
     FieldNames.Caption = 'AGN_ASSUNTO'
-    FieldNames.EventType = 'AGN_EVENTO_TIPO'
     FieldNames.Finish = 'AGN_DATA_HORA_FIM'
     FieldNames.ID = 'AGN_ID'
-    FieldNames.Location = 'AGN_LOCAL'
-    FieldNames.Options = 'REG_USUARIO'
     FieldNames.Start = 'AGN_DATA_HORA_INICIO'
     Left = 408
     Top = 296
@@ -63,7 +59,6 @@ inherited FrmAgenda: TFrmAgenda
     Top = 296
   end
   object QryAgenda: TFDQuery
-    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction

@@ -6,37 +6,35 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Dialogo, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters, dxSkinsCore, dxSkinOffice2013White,
   dxSkinscxPCPainter, dxBarBuiltInMenu, Vcl.Menus, Vcl.StdCtrls, cxButtons, cxPC, Data.DB, cxContainer, cxEdit, cxTextEdit, cxDBEdit, cxMemo, cxSpinEdit,
-  cxTimeEdit, cxMaskEdit, cxDropDownEdit, cxCalendar, cxGroupBox, cxImageComboBox, Vcl.ExtCtrls, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox;
+  cxTimeEdit, cxMaskEdit, cxDropDownEdit, cxCalendar, cxGroupBox, cxImageComboBox, Vcl.ExtCtrls, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
+  FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData, cxGridLevel,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid;
 
 type
   TFrmAgendaEvento = class(TFrmBaseDialogo)
     DtSrcAgenda: TDataSource;
     TbShtDetalhes: TcxTabSheet;
-    cxGroupBox1: TcxGroupBox;
-    cxGroupBox2: TcxGroupBox;
-    cxDBMemo1: TcxDBMemo;
+    GrpBxCompromisso: TcxGroupBox;
+    DbMemoDetalhes: TcxDBMemo;
     Label2: TLabel;
-    cxDBTextEdit1: TcxDBTextEdit;
+    DbEdtAssunto: TcxDBTextEdit;
     Label1: TLabel;
     Label5: TLabel;
-    cxDBMemo2: TcxDBMemo;
-    cxDBTimeEdit2: TcxDBTimeEdit;
-    cxDBDateEdit2: TcxDBDateEdit;
+    DbMemoLocal: TcxDBMemo;
+    DbEdtTmFim: TcxDBTimeEdit;
+    DbDtEdtFim: TcxDBDateEdit;
     Label4: TLabel;
-    cxDBTimeEdit1: TcxDBTimeEdit;
+    DbEdtTmInicio: TcxDBTimeEdit;
     Label3: TLabel;
-    cxDBDateEdit1: TcxDBDateEdit;
+    DbDtEdtInicio: TcxDBDateEdit;
     Bevel1: TBevel;
-    cxDBLookupComboBox2: TcxDBLookupComboBox;
+    DbLkpCmbBxEvento: TcxDBLookupComboBox;
     Label9: TLabel;
     Label8: TLabel;
-    cxDBLookupComboBox1: TcxDBLookupComboBox;
+    DbLkpCmbBxSituacao: TcxDBLookupComboBox;
     Label6: TLabel;
-    cxDBImageComboBox1: TcxDBImageComboBox;
-    cxGroupBox3: TcxGroupBox;
-    cxGroupBox4: TcxGroupBox;
-    Label7: TLabel;
-    cxDBMemo3: TcxDBMemo;
+    DbImgCmbBxTipo: TcxDBImageComboBox;
     GrpBxRegistro: TcxGroupBox;
     Label37: TLabel;
     Label56: TLabel;
@@ -46,10 +44,75 @@ type
     DbEdtModificadoData: TcxDBTextEdit;
     cxDBLookupComboBox3: TcxDBLookupComboBox;
     DbEdtCriacaoData: TcxDBTextEdit;
-  private
-    { Private declarations }
+    QryAgenda: TFDQuery;
+    QryAgendaAGN_ID: TLargeintField;
+    QryAgendaAGN_DATA_HORA_INICIO: TSQLTimeStampField;
+    QryAgendaAGN_DATA_HORA_FIM: TSQLTimeStampField;
+    QryAgendaAGN_DATA_HORA_REGISTRO: TSQLTimeStampField;
+    QryAgendaAGN_EVENTO_TIPO: TSmallintField;
+    QryAgendaAGN_ASSUNTO: TStringField;
+    QryAgendaAGN_DETALHE: TMemoField;
+    QryAgendaAGN_LOCAL: TMemoField;
+    QryAgendaAGN_PARTICIPANTE: TMemoField;
+    QryAgendaUND_ID: TIntegerField;
+    QryAgendaEVE_ID: TIntegerField;
+    QryAgendaSIT_ID: TIntegerField;
+    QryAgendaREG_EXCLUIDO: TSmallintField;
+    QryAgendaREG_REPLICADO: TSmallintField;
+    QryAgendaREG_USUARIO: TStringField;
+    QryAgendaREG_MODIFICADO: TSQLTimeStampField;
+    UpdtAgenda: TFDUpdateSQL;
+    GrdFnc: TcxGrid;
+    GrdFncTbl: TcxGridDBTableView;
+    GrdFncLvl: TcxGridLevel;
+    Label11: TLabel;
+    Label7: TLabel;
+    DbMemoParticipantes: TcxDBMemo;
+    GrdCom: TcxGrid;
+    GrdComTbl: TcxGridDBTableView;
+    GrdComLvl: TcxGridLevel;
+    Label12: TLabel;
+    BtnFncIncluir: TcxButton;
+    BtnFncRemover: TcxButton;
+    BtnComRemover: TcxButton;
+    BtnComIncluir: TcxButton;
+    DtSrcTecnico: TDataSource;
+    QryTecnico: TFDQuery;
+    UpdtTecnico: TFDUpdateSQL;
+    DtSrcComunidade: TDataSource;
+    UpdtComunidade: TFDUpdateSQL;
+    QryComunidade: TFDQuery;
+    QrySituacao: TFDQuery;
+    DtSrcSituacao: TDataSource;
+    QryEvento: TFDQuery;
+    DtSrcEvento: TDataSource;
+    QryTecnicoREG_EXCLUIDO: TSmallintField;
+    QryTecnicoREG_REPLICADO: TSmallintField;
+    QryTecnicoREG_USUARIO: TStringField;
+    QryTecnicoREG_MODIFICADO: TSQLTimeStampField;
+    QryTecnicoFUN_MATRICULA: TStringField;
+    QryTecnicoFUN_NOME: TStringField;
+    QryTecnicoAGF_ID: TLargeintField;
+    QryTecnicoAGN_ID: TLargeintField;
+    QryTecnicoFUN_ID: TIntegerField;
+    GrdFncTblFUN_MATRICULA: TcxGridDBColumn;
+    GrdFncTblFUN_NOME: TcxGridDBColumn;
+    QryComunidadeAGC_ID: TLargeintField;
+    QryComunidadeAGN_ID: TLargeintField;
+    QryComunidadeCOM_ID: TIntegerField;
+    QryComunidadeREG_EXCLUIDO: TSmallintField;
+    QryComunidadeREG_REPLICADO: TSmallintField;
+    QryComunidadeREG_USUARIO: TStringField;
+    QryComunidadeREG_MODIFICADO: TSQLTimeStampField;
+    QryComunidadeCOM_NOME: TStringField;
+    GrdComTblCOM_NOME: TcxGridDBColumn;
+    QryAgendaAGN_MODIFICADO_USUARIO_NOME: TStringField;
+    procedure FormCreate(Sender: TObject);
+    procedure QryAgendaNewRecord(DataSet: TDataSet);
+    procedure BtnOKClick(Sender: TObject);
   public
-    { Public declarations }
+    function Novo(const DataInicio, DataFim: TDateTime): Boolean;
+    function Editar(const ID: LargeInt): Boolean;
   end;
 
 var
@@ -59,6 +122,63 @@ implementation
 
 {$R *.dfm}
 
-uses Emater.Agenda;
+uses Emater.Conexao.Modulo, Emater.Sistema.Modulo;
+
+procedure TFrmAgendaEvento.BtnOKClick(Sender: TObject);
+begin
+  inherited;
+
+  try
+    QryAgenda.Post;
+    ModalResult := mrOk;
+  except
+    on E: Exception do
+      begin
+        ShowMessage(E.Message);
+        ModalResult := mrNone;
+      end;
+  end;
+end;
+
+function TFrmAgendaEvento.Editar(const ID: LargeInt): Boolean;
+begin
+  Result := False;
+end;
+
+procedure TFrmAgendaEvento.FormCreate(Sender: TObject);
+begin
+  inherited;
+
+  QrySituacao.Open;
+  QryEvento.Open;
+end;
+
+function TFrmAgendaEvento.Novo(const DataInicio, DataFim: TDateTime): Boolean;
+begin
+  QryAgenda.Close;
+  QryAgenda.ParamByName('agn_id').AsLargeInt := 0;
+  QryAgenda.Open;
+  QryAgenda.Insert;
+
+  QryAgendaAGN_DATA_HORA_INICIO.AsDateTime := DataInicio;
+  QryAgendaAGN_DATA_HORA_FIM.AsDateTime := DataFim;
+
+  QryTecnico.Open;
+  QryComunidade.Open;
+
+  Result := (ShowModal = mrOk);
+end;
+
+procedure TFrmAgendaEvento.QryAgendaNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  QryAgendaAGN_ID.AsLargeInt := DtmSistemaModulo.GerarIdentificador('TAB_AGN_AGENDA', 'AGN_ID');
+  QryAgendaAGN_DATA_HORA_REGISTRO.AsDateTime := Now;
+  QryAgendaAGN_EVENTO_TIPO.Value := 1;
+  QryAgendaREG_EXCLUIDO.Value := 0;
+  QryAgendaREG_REPLICADO.Value := 0;
+  QryAgendaREG_USUARIO.Value := DtmConexaoModulo.UsuarioLogin;
+  QryAgendaREG_MODIFICADO.AsDateTime := Now;
+end;
 
 end.

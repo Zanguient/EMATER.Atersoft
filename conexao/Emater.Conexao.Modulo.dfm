@@ -57,6 +57,7 @@ object DtmConexaoModulo: TDtmConexaoModulo
       'PageSize=8192')
     ResourceOptions.AssignedValues = [rvSilentMode]
     ResourceOptions.SilentMode = True
+    Connected = True
     LoginPrompt = False
     Transaction = FDReadTransaction
     UpdateTransaction = FDWriteTransaction

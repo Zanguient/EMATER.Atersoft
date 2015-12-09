@@ -14,7 +14,7 @@ uses
 
 type
   TFrmAgenda = class(TFrmBaseFilha)
-    cxScheduler1: TcxScheduler;
+    cxScheduler: TcxScheduler;
     cxSchedulerDBStorage: TcxSchedulerDBStorage;
     cxSchedulerHolidays: TcxSchedulerHolidays;
     DtSrcAgenda: TDataSource;
@@ -37,13 +37,8 @@ type
     QryAgendaAGN_ASSUNTO: TStringField;
     QryAgendaAGN_DETALHE: TMemoField;
     procedure FormShow(Sender: TObject);
-    procedure cxScheduler1EventSelectionChanged(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent);
-    procedure cxScheduler1BeforeEditing(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent; AInplace: Boolean; var Allow: Boolean);
+    procedure cxSchedulerBeforeEditing(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent; AInplace: Boolean; var Allow: Boolean);
     procedure FormCreate(Sender: TObject);
-  private
-    { Private declarations }
-  public
-    { Public declarations }
   end;
 
 var
@@ -53,19 +48,24 @@ implementation
 
 {$R *.dfm}
 
-uses Emater.Conexao.Modulo;
+uses Emater.Conexao.Modulo, Emater.Agenda.Evento;
 
-procedure TFrmAgenda.cxScheduler1BeforeEditing(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent; AInplace: Boolean; var Allow: Boolean);
+procedure TFrmAgenda.cxSchedulerBeforeEditing(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent; AInplace: Boolean; var Allow: Boolean);
 begin
-  inherited;
-  AInplace := True;
-  ShowMessage('cxScheduler1BeforeEditing');
-end;
-
-procedure TFrmAgenda.cxScheduler1EventSelectionChanged(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent);
-begin
-  inherited;
-  ShowMessage('cxScheduler1EventSelectionChanged');
+  Screen.Cursor := crHourGlass;
+  FrmAgendaEvento := TFrmAgendaEvento.Create(Self);
+  try
+    if FrmAgendaEvento.Novo(AEvent.Start, AEvent.Finish) then
+      begin
+        QryAgenda.Close;
+        QryAgenda.Open;
+      end;
+  finally
+    FrmAgendaEvento.Release;
+    FrmAgendaEvento := nil;
+    Screen.Cursor := crDefault;
+  end;
+  Allow := False;
 end;
 
 procedure TFrmAgenda.FormCreate(Sender: TObject);

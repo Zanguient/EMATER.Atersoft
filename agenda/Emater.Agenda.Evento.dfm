@@ -19,6 +19,8 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
     ClientRectRight = 494
     inherited TbShtPrincipal: TcxTabSheet
       Caption = 'Geral'
+      ExplicitLeft = 0
+      ExplicitTop = 24
       ExplicitWidth = 492
       ExplicitHeight = 444
       object GrpBxCompromisso: TcxGroupBox
@@ -312,6 +314,10 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
     object TbShtDetalhes: TcxTabSheet
       Caption = 'Detalhes'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         492
         444)
@@ -348,8 +354,8 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       object GrdFnc: TcxGrid
         Left = 96
         Top = 16
-        Width = 385
-        Height = 146
+        Width = 381
+        Height = 140
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -360,6 +366,8 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         TabOrder = 2
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 385
+        ExplicitHeight = 146
         object GrdFncTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -432,8 +440,8 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       object GrdCom: TcxGrid
         Left = 96
         Top = 168
-        Width = 385
-        Height = 146
+        Width = 381
+        Height = 140
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -444,6 +452,8 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         TabOrder = 5
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 385
+        ExplicitHeight = 146
         object GrdComTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -570,7 +580,19 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       '  a.agn_participante, '
       '  a.und_id, '
       '  a.eve_id, '
-      '  a.sit_id, '
+      '  a.sit_id,'
+      '  a.agn_actual_finish, '
+      '  a.agn_actual_start, '
+      '  a.agn_task_complete_field, '
+      '  a.agn_task_index_field, '
+      '  a.agn_task_status_field, '
+      '  a.agn_task_links_field, '
+      '  a.agn_options, '
+      '  a.agn_state, '
+      '  a.agn_event_type, '
+      '  a.agn_label_color, '
+      '  a.agn_resource_id, '
+      '  a.agn_parent_id,'
       '  a.reg_excluido, '
       '  a.reg_replicado, '
       '  a.reg_usuario, '
@@ -650,6 +672,54 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       Alignment = taLeftJustify
       FieldName = 'SIT_ID'
       Origin = 'SIT_ID'
+    end
+    object QryAgendaAGN_ACTUAL_FINISH: TIntegerField
+      FieldName = 'AGN_ACTUAL_FINISH'
+      Origin = 'AGN_ACTUAL_FINISH'
+    end
+    object QryAgendaAGN_ACTUAL_START: TIntegerField
+      FieldName = 'AGN_ACTUAL_START'
+      Origin = 'AGN_ACTUAL_START'
+    end
+    object QryAgendaAGN_TASK_COMPLETE_FIELD: TIntegerField
+      FieldName = 'AGN_TASK_COMPLETE_FIELD'
+      Origin = 'AGN_TASK_COMPLETE_FIELD'
+    end
+    object QryAgendaAGN_TASK_INDEX_FIELD: TIntegerField
+      FieldName = 'AGN_TASK_INDEX_FIELD'
+      Origin = 'AGN_TASK_INDEX_FIELD'
+    end
+    object QryAgendaAGN_TASK_STATUS_FIELD: TIntegerField
+      FieldName = 'AGN_TASK_STATUS_FIELD'
+      Origin = 'AGN_TASK_STATUS_FIELD'
+    end
+    object QryAgendaAGN_TASK_LINKS_FIELD: TBlobField
+      FieldName = 'AGN_TASK_LINKS_FIELD'
+      Origin = 'AGN_TASK_LINKS_FIELD'
+    end
+    object QryAgendaAGN_OPTIONS: TIntegerField
+      FieldName = 'AGN_OPTIONS'
+      Origin = 'AGN_OPTIONS'
+    end
+    object QryAgendaAGN_STATE: TIntegerField
+      FieldName = 'AGN_STATE'
+      Origin = 'AGN_STATE'
+    end
+    object QryAgendaAGN_EVENT_TYPE: TIntegerField
+      FieldName = 'AGN_EVENT_TYPE'
+      Origin = 'AGN_EVENT_TYPE'
+    end
+    object QryAgendaAGN_LABEL_COLOR: TIntegerField
+      FieldName = 'AGN_LABEL_COLOR'
+      Origin = 'AGN_LABEL_COLOR'
+    end
+    object QryAgendaAGN_RESOURCE_ID: TIntegerField
+      FieldName = 'AGN_RESOURCE_ID'
+      Origin = 'AGN_RESOURCE_ID'
+    end
+    object QryAgendaAGN_PARENT_ID: TIntegerField
+      FieldName = 'AGN_PARENT_ID'
+      Origin = 'AGN_PARENT_ID'
     end
     object QryAgendaREG_EXCLUIDO: TSmallintField
       Alignment = taLeftJustify

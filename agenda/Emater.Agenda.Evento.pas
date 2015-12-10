@@ -107,6 +107,18 @@ type
     QryComunidadeCOM_NOME: TStringField;
     GrdComTblCOM_NOME: TcxGridDBColumn;
     QryAgendaAGN_MODIFICADO_USUARIO_NOME: TStringField;
+    QryAgendaAGN_ACTUAL_FINISH: TIntegerField;
+    QryAgendaAGN_ACTUAL_START: TIntegerField;
+    QryAgendaAGN_TASK_COMPLETE_FIELD: TIntegerField;
+    QryAgendaAGN_TASK_INDEX_FIELD: TIntegerField;
+    QryAgendaAGN_TASK_STATUS_FIELD: TIntegerField;
+    QryAgendaAGN_TASK_LINKS_FIELD: TBlobField;
+    QryAgendaAGN_OPTIONS: TIntegerField;
+    QryAgendaAGN_STATE: TIntegerField;
+    QryAgendaAGN_EVENT_TYPE: TIntegerField;
+    QryAgendaAGN_LABEL_COLOR: TIntegerField;
+    QryAgendaAGN_RESOURCE_ID: TIntegerField;
+    QryAgendaAGN_PARENT_ID: TIntegerField;
     procedure FormCreate(Sender: TObject);
     procedure QryAgendaNewRecord(DataSet: TDataSet);
     procedure BtnOKClick(Sender: TObject);
@@ -142,7 +154,15 @@ end;
 
 function TFrmAgendaEvento.Editar(const ID: LargeInt): Boolean;
 begin
-  Result := False;
+  QryAgenda.Close;
+  QryAgenda.ParamByName('agn_id').AsLargeInt := ID;
+  QryAgenda.Open;
+  QryAgenda.Edit;
+
+  QryTecnico.Open;
+  QryComunidade.Open;
+
+  Result := (ShowModal = mrOk);
 end;
 
 procedure TFrmAgendaEvento.FormCreate(Sender: TObject);
@@ -179,6 +199,15 @@ begin
   QryAgendaREG_REPLICADO.Value := 0;
   QryAgendaREG_USUARIO.Value := DtmConexaoModulo.UsuarioLogin;
   QryAgendaREG_MODIFICADO.AsDateTime := Now;
+  QryAgendaAGN_ACTUAL_START.Value := 0;
+  QryAgendaAGN_ACTUAL_FINISH.Value := 0;
+  QryAgendaAGN_TASK_COMPLETE_FIELD.Value := 0;
+  QryAgendaAGN_TASK_INDEX_FIELD.Value := 0;
+  QryAgendaAGN_TASK_STATUS_FIELD.Value := 0;
+  QryAgendaAGN_OPTIONS.Value := 0;
+  QryAgendaAGN_STATE.Value := 0;
+  QryAgendaAGN_EVENT_TYPE.Value := 0;
+  QryAgendaAGN_LABEL_COLOR.Value := clRed;
 end;
 
 end.

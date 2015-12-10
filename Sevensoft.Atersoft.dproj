@@ -417,6 +417,10 @@
             <Form>FrmAgendaEvento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Principal.pas">
+            <Form>FrmProaterPrincipal</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

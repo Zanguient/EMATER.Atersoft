@@ -3111,7 +3111,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     end
     object RbnTbPROATER: TdxRibbonTab
       Caption = 'PROATER'
-      Groups = <>
+      Groups = <
+        item
+          ToolbarName = 'BrPROATER'
+        end>
       Index = 2
     end
     object RbnTbAgenda: TdxRibbonTab
@@ -3412,8 +3415,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       'Banco de dados'
       'Sistema'
       'Cr'#233'dito Rural'
-      'Agenda')
+      'Agenda'
+      'PROATER')
     Categories.ItemsVisibles = (
+      2
       2
       2
       2
@@ -3427,6 +3432,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       2
       2)
     Categories.Visibles = (
+      True
       True
       True
       True
@@ -3799,6 +3805,26 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Visible = True
       WholeRow = False
     end
+    object BrPROATER: TdxBar
+      Caption = 'PROATER'
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 229
+      FloatTop = 118
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'BtnPROATER'
+        end>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
     object BtnBeneficiarioConsulta: TdxBarLargeButton
       Tag = 1
       Caption = 'Consulta'
@@ -3824,6 +3850,16 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       OnClick = BtnBeneficiarioNovoClick
       SyncImageIndex = False
       ImageIndex = 148
+    end
+    object BtnPROATER: TdxBarLargeButton
+      Caption = 'PROATER'
+      Category = 12
+      Hint = 'PROATER'
+      Visible = ivAlways
+      LargeImageIndex = 2
+      OnClick = BtnPROATERClick
+      SyncImageIndex = False
+      ImageIndex = 151
     end
     object BtnUnidadeAdicionar: TdxBarLargeButton
       Tag = 1

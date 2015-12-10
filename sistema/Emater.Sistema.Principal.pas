@@ -110,6 +110,8 @@ type
     RbnTbAgenda: TdxRibbonTab;
     BtnAgenda: TdxBarLargeButton;
     BrAgenda: TdxBar;
+    BrPROATER: TdxBar;
+    BtnPROATER: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnBeneficiarioNovoClick(Sender: TObject);
     procedure BtnComunidadesClick(Sender: TObject);
@@ -171,6 +173,7 @@ type
     procedure BtnCreditoVariedadesClick(Sender: TObject);
     procedure BtnCreditoRacaClick(Sender: TObject);
     procedure BtnAgendaClick(Sender: TObject);
+    procedure BtnPROATERClick(Sender: TObject);
   public
     procedure AtualizarBarraStatus(const BD, Usuario, Local: string);
     procedure RecenteRemover(const Controle: TdxRibbonBackstageViewGalleryControl; const ID: Int64);
@@ -200,7 +203,7 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Relatorio.Fater.Quadrimestre, Emater.Classe.Log, Emater.Sistema.Sobre, Emater.Relatorio.Fater.Comunidade,
   Emater.Cadastro.Beneficiario.Busca, Emater.Sistema.Consts, Emater.Sistema.Ajuda, Emater.Credito.Consulta, Emater.Credito,
   Emater.Credito.Financeira, Emater.Credito.Linha, Emater.Credito.Tipo, Emater.Credito.Publico, Emater.Credito.Situacao,
-  Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda;
+  Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal;
 
 { TForm1 }
 
@@ -697,6 +700,18 @@ begin
     GetFormByName('FrmSistemaPermissao').BringToFront
   else
     FrmSistemaPermissao := TFrmSistemaPermissao.Create(Self);
+end;
+
+procedure TFrmSistemaPrincipal.BtnPROATERClick(Sender: TObject);
+begin
+  inherited;
+  if FindFormByName('FrmProaterPrincipal') then
+    GetFormByName('FrmProaterPrincipal').BringToFront
+  else
+    begin
+      FrmProaterPrincipal := TFrmProaterPrincipal.Create(Self);
+      FrmProaterPrincipal.ShowModal;
+    end;
 end;
 
 procedure TFrmSistemaPrincipal.BtnProducaoBeneficiarioClick(Sender: TObject);

@@ -627,6 +627,10 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Visitas'
       ImageIndex = 1
       OnShow = TbShtVisitaShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -1267,8 +1271,6 @@ inherited FrmCredito: TFrmCredito
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 457
-        ExplicitHeight = 353
         object GrdItmTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1701,7 +1703,6 @@ inherited FrmCredito: TFrmCredito
         Description = 'Cria um novo item.'
         TabOrder = 2
         OnClick = BtnItmNovoClick
-        ExplicitTop = 352
       end
       object BtnItmSalvar: TcxButton
         Tag = 1
@@ -1715,7 +1716,6 @@ inherited FrmCredito: TFrmCredito
         Description = 'Salva as altera'#231#245'es realizadas no item.'
         TabOrder = 3
         OnClick = BtnItmSalvarClick
-        ExplicitTop = 352
       end
       object BtnItmCancelar: TcxButton
         Tag = 1
@@ -1729,7 +1729,6 @@ inherited FrmCredito: TFrmCredito
         Description = 'Cancela as altera'#231#245'es realizadas no item.'
         TabOrder = 4
         OnClick = BtnItmCancelarClick
-        ExplicitTop = 352
       end
       object BtnItmExcluir: TcxButton
         Tag = 1
@@ -1743,7 +1742,6 @@ inherited FrmCredito: TFrmCredito
         Description = 'Exclui o item atualmente selecionado.'
         TabOrder = 5
         OnClick = BtnItmExcluirClick
-        ExplicitTop = 352
       end
     end
   end

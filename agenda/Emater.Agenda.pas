@@ -10,7 +10,8 @@ uses
   cxSchedulerGanttView, cxSchedulerTreeListBrowser, dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic,
   dxSkinscxSchedulerPainter, Data.DB, FIBDataSet, pFIBDataSet, cxClasses, cxSchedulerDBStorage,
   cxSchedulerRecurrence, cxSchedulerRibbonStyleEventEditor, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
-  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet, cxSchedulercxGridConnection;
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet, cxSchedulercxGridConnection, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
 
 type
   TFrmAgenda = class(TFrmBaseFilha)
@@ -36,6 +37,20 @@ type
     QryAgendaREG_MODIFICADO: TSQLTimeStampField;
     QryAgendaAGN_ASSUNTO: TStringField;
     QryAgendaAGN_DETALHE: TMemoField;
+    QryAgendaAGN_ACTUAL_FINISH: TIntegerField;
+    QryAgendaAGN_ACTUAL_START: TIntegerField;
+    QryAgendaAGN_TASK_COMPLETE_FIELD: TIntegerField;
+    QryAgendaAGN_TASK_INDEX_FIELD: TIntegerField;
+    QryAgendaAGN_TASK_STATUS_FIELD: TIntegerField;
+    QryAgendaAGN_TASK_LINKS_FIELD: TBlobField;
+    QryAgendaAGN_OPTIONS: TIntegerField;
+    QryAgendaAGN_STATE: TIntegerField;
+    QryAgendaAGN_EVENT_TYPE: TIntegerField;
+    QryAgendaAGN_LABEL_COLOR: TIntegerField;
+    QryAgendaAGN_RESOURCE_ID: TIntegerField;
+    QryAgendaAGN_PARENT_ID: TIntegerField;
+    Image: TImage;
+    LblTitulo: TLabel;
     procedure FormShow(Sender: TObject);
     procedure cxSchedulerBeforeEditing(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent; AInplace: Boolean; var Allow: Boolean);
     procedure FormCreate(Sender: TObject);
@@ -55,10 +70,21 @@ begin
   Screen.Cursor := crHourGlass;
   FrmAgendaEvento := TFrmAgendaEvento.Create(Self);
   try
-    if FrmAgendaEvento.Novo(AEvent.Start, AEvent.Finish) then
+    if AInplace then
       begin
-        QryAgenda.Close;
-        QryAgenda.Open;
+        if FrmAgendaEvento.Editar(AEvent.ID) then
+          begin
+            QryAgenda.Close;
+            QryAgenda.Open;
+          end;
+      end
+    else
+      begin
+        if FrmAgendaEvento.Novo(AEvent.Start, AEvent.Finish) then
+          begin
+            QryAgenda.Close;
+            QryAgenda.Open;
+          end;
       end;
   finally
     FrmAgendaEvento.Release;

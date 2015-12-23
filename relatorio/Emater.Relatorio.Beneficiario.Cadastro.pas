@@ -49,6 +49,8 @@ type
     DtStPesquisarBEN_ID: TLargeintField;
     DtStPesquisarBEN_CPF: TStringField;
     DtStPesquisarBEN_NOME: TStringField;
+    DtStMaquina: TFDQuery;
+    FrxDtStMaquina: TfrxDBDataset;
     procedure BtnImprimirClick(Sender: TObject);
     procedure BtnPesquisarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -115,6 +117,7 @@ begin
         DtStAtividade.Close;
         DtStSemovente.Close;
         DtStBem.Close;
+        DtStMaquina.Close;
         DtStProducaoFamiliar.Close;
         DtStFamilia.Close;
         DtStDAP.Close;
@@ -128,6 +131,7 @@ begin
         DtStFamilia.Open;
         DtStProducaoFamiliar.Open;
         DtStBem.Open;
+        DtStMaquina.Open;
         DtStSemovente.Open;
         DtStAtividade.Open;
         DtStComercializacao.Open;

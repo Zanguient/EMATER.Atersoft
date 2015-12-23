@@ -7,46 +7,48 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Relatorio, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,
   dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, cxContainer, cxEdit, frxClass,
   cxTextEdit, cxMaskEdit, cxDropDownEdit, Vcl.Imaging.jpeg, Vcl.ExtCtrls, cxGroupBox, Vcl.StdCtrls, cxPC, cxButtons, Data.DB,
-  FIBDataSet, pFIBDataSet, frxDBSet, dxSkinSeven, dxSkinSevenClassic;
+  dxSkinSeven, dxSkinSevenClassic, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, frxDBSet;
 
 type
   TFrmRelatorioBeneficiarioCadastro = class(TFrmBaseRelatorio)
     FrxDtStPrincipal: TfrxDBDataset;
-    DtStPrincipal: TpFIBDataSet;
     DtSrcPrincipal: TDataSource;
     FrxDtStDAP: TfrxDBDataset;
-    DtStDAP: TpFIBDataSet;
-    DtStFamilia: TpFIBDataSet;
     FrxDtStFamilia: TfrxDBDataset;
-    DtStProducaoFamiliar: TpFIBDataSet;
     FrxDtStProducaoFamiliar: TfrxDBDataset;
     FrxDtStBem: TfrxDBDataset;
-    DtStBem: TpFIBDataSet;
     DtSrcProducaoFamiliar: TDataSource;
-    DtStSemovente: TpFIBDataSet;
     FrxDtStSemovente: TfrxDBDataset;
     FrxDtStAtividade: TfrxDBDataset;
-    DtStAtividade: TpFIBDataSet;
     FrxDtStComercializacao: TfrxDBDataset;
-    DtStComercializacao: TpFIBDataSet;
     DtSrcAtividade: TDataSource;
     FrxDtStFater: TfrxDBDataset;
-    DtStFater: TpFIBDataSet;
     BtnPesquisar: TcxButton;
     LblBeneficiario: TLabel;
     EdtNome: TcxTextEdit;
     Label1: TLabel;
     EdtCPF: TcxMaskEdit;
     Label2: TLabel;
-    DtStPesquisar: TpFIBDataSet;
-    DtStPesquisarBEN_ID: TFIBBCDField;
-    DtStPesquisarBEN_CPF: TFIBStringField;
-    DtStPesquisarBEN_NOME: TFIBStringField;
     DtSrcFater: TDataSource;
     FrxDtStComunidade: TfrxDBDataset;
-    DtStComunidade: TpFIBDataSet;
     FrxDtStTecnico: TfrxDBDataset;
-    DtStTecnico: TpFIBDataSet;
+    DtStPrincipal: TFDQuery;
+    DtStPesquisar: TFDQuery;
+    DtStDAP: TFDQuery;
+    DtStFamilia: TFDQuery;
+    DtStProducaoFamiliar: TFDQuery;
+    DtStBem: TFDQuery;
+    DtStSemovente: TFDQuery;
+    DtStAtividade: TFDQuery;
+    DtStComercializacao: TFDQuery;
+    DtStFater: TFDQuery;
+    DtStComunidade: TFDQuery;
+    DtStTecnico: TFDQuery;
+    DtStPesquisarBEN_ID: TLargeintField;
+    DtStPesquisarBEN_CPF: TStringField;
+    DtStPesquisarBEN_NOME: TStringField;
     procedure BtnImprimirClick(Sender: TObject);
     procedure BtnPesquisarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -93,7 +95,7 @@ begin
       Exit;
     end;
   EdtNome.Text := DtStPesquisarBEN_NOME.AsString;
-  FBeneficiarioID := DtStPesquisarBEN_ID.AsInt64;
+  FBeneficiarioID := DtStPesquisarBEN_ID.AsLargeInt;
 
   Screen.Cursor := crHourGlass;
   BtnImprimir.Enabled := False;
@@ -119,7 +121,7 @@ begin
         DtStPrincipal.Close;
 
         // Beneficiário:
-        DtStPrincipal.ParamByName('beneficiario').AsInt64 := FBeneficiarioID;
+        DtStPrincipal.ParamByName('beneficiario').AsLargeInt := FBeneficiarioID;
 
         DtStPrincipal.Open;
         DtStDAP.Open;

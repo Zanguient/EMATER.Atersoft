@@ -45,10 +45,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentColor = False
         TabOrder = 0
         DesignSize = (
-          781
+          785
           296)
         Height = 303
-        Width = 781
+        Width = 785
         object Label1: TLabel
           Tag = 2
           Left = 104
@@ -69,7 +69,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label3: TLabel
-          Left = 724
+          Left = 728
           Top = 16
           Width = 41
           Height = 13
@@ -77,7 +77,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'N'#250'mero:'
           FocusControl = DbEdtNumero
           Transparent = True
-          ExplicitLeft = 728
         end
         object Label4: TLabel
           Left = 8
@@ -107,14 +106,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label18: TLabel
-          Left = 748
+          Left = 752
           Top = 56
           Width = 17
           Height = 13
           Anchors = [akTop, akRight]
           Caption = 'UF:'
           Transparent = True
-          ExplicitLeft = 752
         end
         object Label6: TLabel
           Left = 8
@@ -194,10 +192,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_ENDERECO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 2
-          Width = 253
+          Width = 257
         end
         object DbEdtNumero: TcxDBTextEdit
-          Left = 724
+          Left = 728
           Top = 32
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'PRO_NUMERO'
@@ -237,10 +235,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 6
-          Width = 293
+          Width = 297
         end
         object DbEdtUF: TcxDBTextEdit
-          Left = 748
+          Left = 752
           Top = 72
           TabStop = False
           Anchors = [akTop, akRight]
@@ -257,7 +255,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_ACESSO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 8
-          Width = 765
+          Width = 769
         end
         object DbLkpCmbBxComunidade: TcxDBLookupComboBox
           Left = 8
@@ -430,7 +428,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           ParentColor = False
           TabOrder = 16
           Height = 113
-          Width = 261
+          Width = 265
           object DbChckBxAgua: TcxDBCheckBox
             Left = 8
             Top = 16
@@ -539,7 +537,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 12
-          Width = 181
+          Width = 185
         end
         object DbLkpCmbBxDocumento: TcxDBLookupComboBox
           Left = 368
@@ -587,41 +585,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 1
         Height = 87
         Width = 381
-        object Label11: TLabel
-          Left = 104
-          Top = 12
-          Width = 32
-          Height = 13
-          Caption = 'Graus:'
-          FocusControl = DbEdtLatGraus
-          Transparent = True
-        end
-        object Label12: TLabel
-          Left = 168
-          Top = 12
-          Width = 41
-          Height = 13
-          Caption = 'Minutos:'
-          FocusControl = DbEdtLatMinutos
-          Transparent = True
-        end
-        object Label13: TLabel
-          Left = 232
-          Top = 12
-          Width = 51
-          Height = 13
-          Caption = 'Segundos:'
-          FocusControl = DbEdtLatSegundos
-          Transparent = True
-        end
-        object Label14: TLabel
-          Left = 296
-          Top = 12
-          Width = 54
-          Height = 13
-          Caption = 'Hemisf'#233'rio:'
-          Transparent = True
-        end
         object Label15: TLabel
           Left = 8
           Top = 31
@@ -638,62 +601,132 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Longitude:'
           Transparent = True
         end
+        object Label40: TLabel
+          Left = 156
+          Top = 55
+          Width = 8
+          Height = 13
+          Caption = '='
+          Transparent = True
+        end
+        object Label41: TLabel
+          Left = 156
+          Top = 31
+          Width = 8
+          Height = 13
+          Caption = '='
+          Transparent = True
+        end
+        object Label42: TLabel
+          Left = 219
+          Top = 31
+          Width = 5
+          Height = 13
+          Caption = #186
+          FocusControl = DbEdtLatGraus
+          Transparent = True
+        end
+        object Label48: TLabel
+          Left = 219
+          Top = 55
+          Width = 5
+          Height = 13
+          Caption = #186
+          FocusControl = DbEdtLatGraus
+          Transparent = True
+        end
+        object Label11: TLabel
+          Left = 291
+          Top = 31
+          Width = 2
+          Height = 13
+          Caption = #39
+          FocusControl = DbEdtLatMinutos
+          Transparent = True
+        end
+        object Label14: TLabel
+          Left = 291
+          Top = 55
+          Width = 2
+          Height = 13
+          Caption = #39
+          FocusControl = DbEdtLatMinutos
+          Transparent = True
+        end
+        object Label49: TLabel
+          Left = 365
+          Top = 31
+          Width = 4
+          Height = 13
+          Caption = #39#39
+          FocusControl = DbEdtLatMinutos
+          Transparent = True
+        end
+        object Label50: TLabel
+          Left = 365
+          Top = 55
+          Width = 4
+          Height = 13
+          Caption = #39#39
+          FocusControl = DbEdtLatMinutos
+          Transparent = True
+        end
         object DbEdtLatGraus: TcxDBTextEdit
-          Left = 104
+          Left = 168
           Top = 27
           DataBinding.DataField = 'PRO_LATITUDE_GRAUS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
           TabOrder = 0
-          Width = 57
+          Width = 49
         end
         object DbEdtLatMinutos: TcxDBTextEdit
-          Left = 168
+          Left = 240
           Top = 27
           DataBinding.DataField = 'PRO_LATITUDE_MINUTOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
           TabOrder = 1
-          Width = 57
+          Width = 49
         end
         object DbEdtLatSegundos: TcxDBTextEdit
-          Left = 232
+          Left = 312
           Top = 27
           DataBinding.DataField = 'PRO_LATITUDE_SEGUNDOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 5
           TabOrder = 2
-          Width = 57
+          Width = 49
         end
         object DbEdtLongGraus: TcxDBTextEdit
-          Left = 104
+          Left = 168
           Top = 51
           DataBinding.DataField = 'PRO_LONGITUDE_GRAUS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
           TabOrder = 4
-          Width = 57
+          Width = 49
         end
         object DbEdtLongMinutos: TcxDBTextEdit
-          Left = 168
+          Left = 240
           Top = 51
           DataBinding.DataField = 'PRO_LONGITUDE_MINUTOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
           TabOrder = 5
-          Width = 57
+          Width = 49
         end
         object DbEdtLongSegundos: TcxDBTextEdit
-          Left = 232
+          Left = 312
           Top = 51
           DataBinding.DataField = 'PRO_LONGITUDE_SEGUNDOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 5
           TabOrder = 6
-          Width = 57
+          Width = 49
         end
         object DbImgCmbBxLatHemisferio: TcxDBImageComboBox
-          Left = 296
+          Left = 80
           Top = 27
           DataBinding.DataField = 'PRO_LATITUDE_HEMISFERIO'
           DataBinding.DataSource = DtSrcPrincipal
@@ -716,10 +749,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 'W'
             end>
           TabOrder = 3
-          Width = 81
+          Width = 73
         end
         object DbImgCmbBxHemisferio: TcxDBImageComboBox
-          Left = 296
+          Left = 80
           Top = 51
           DataBinding.DataField = 'PRO_LONGITUDE_HEMISFERIO'
           DataBinding.DataSource = DtSrcPrincipal
@@ -742,7 +775,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 'W'
             end>
           TabOrder = 7
-          Width = 81
+          Width = 73
         end
       end
       object GrpBxTerra: TcxGroupBox
@@ -754,7 +787,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentColor = False
         TabOrder = 3
         Height = 197
-        Width = 393
+        Width = 397
         object Shape2: TShape
           Left = 240
           Top = 167
@@ -801,11 +834,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label23: TLabel
-          Left = 186
+          Left = 197
           Top = 27
-          Width = 51
+          Width = 40
           Height = 13
-          Caption = 'Terra nua:'
+          Caption = 'APP (*):'
           FocusControl = DbEdtTerraNua
           Transparent = True
         end
@@ -896,6 +929,15 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
+          Transparent = True
+        end
+        object Label12: TLabel
+          Left = 8
+          Top = 171
+          Width = 183
+          Height = 13
+          Caption = '(*) '#193'rea de preserva'#231#227'o permanente.'
+          FocusControl = DbEdtTerraNua
           Transparent = True
         end
         object DbEdtAreaLegal: TcxDBCalcEdit
@@ -1133,6 +1175,133 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
       end
     end
+    object TbShtBeneficiarios: TcxTabSheet
+      Caption = 'Benefici'#225'rios'
+      ImageIndex = 6
+      OnShow = TbShtBeneficiariosShow
+      DesignSize = (
+        801
+        511)
+      object GrdBen: TcxGrid
+        Left = 8
+        Top = 40
+        Width = 785
+        Height = 465
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 3
+        LookAndFeel.Kind = lfFlat
+        LookAndFeel.NativeStyle = True
+        object GrdBenTbl: TcxGridDBTableView
+          OnDblClick = GrdBenTblDblClick
+          Navigator.Buttons.CustomButtons = <>
+          Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
+          Navigator.Buttons.PriorPage.Visible = False
+          Navigator.Buttons.Prior.Hint = 'Prescri'#231#227'o anterior'
+          Navigator.Buttons.Prior.Visible = True
+          Navigator.Buttons.Next.Hint = 'Pr'#243'xima prescri'#231#227'o'
+          Navigator.Buttons.NextPage.Visible = False
+          Navigator.Buttons.Last.Hint = #218'ltima prescri'#231#227'o'
+          Navigator.Buttons.Insert.Visible = False
+          Navigator.Buttons.Delete.Visible = False
+          Navigator.Buttons.Edit.Visible = False
+          Navigator.Buttons.Post.Visible = False
+          Navigator.Buttons.Cancel.Visible = False
+          Navigator.Buttons.Refresh.Visible = False
+          Navigator.Buttons.SaveBookmark.Visible = False
+          Navigator.Buttons.GotoBookmark.Visible = False
+          Navigator.Buttons.Filter.Visible = False
+          FilterBox.CustomizeDialog = False
+          DataController.DataSource = DtSrcProducaoBeneficiario
+          DataController.KeyFieldNames = 'BEN_ID'
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <>
+          DataController.Summary.SummaryGroups = <>
+          OptionsBehavior.CellHints = True
+          OptionsBehavior.ImmediateEditor = False
+          OptionsCustomize.ColumnFiltering = False
+          OptionsCustomize.ColumnGrouping = False
+          OptionsCustomize.ColumnHidingOnGrouping = False
+          OptionsCustomize.ColumnMoving = False
+          OptionsData.CancelOnExit = False
+          OptionsData.Deleting = False
+          OptionsData.DeletingConfirmation = False
+          OptionsData.Editing = False
+          OptionsData.Inserting = False
+          OptionsSelection.CellSelect = False
+          OptionsView.CellEndEllipsis = True
+          OptionsView.NoDataToDisplayInfoText = '<Nenhuma informa'#231#227'o para exibir>'
+          OptionsView.ColumnAutoWidth = True
+          OptionsView.GridLines = glNone
+          OptionsView.GroupByBox = False
+          OptionsView.HeaderEndEllipsis = True
+          OptionsView.HeaderHeight = 21
+          Styles.ContentEven = DtmRecursoModulo.cxStyleEven
+          Styles.Inactive = DtmRecursoModulo.cxStyleSelection
+          Styles.Selection = DtmRecursoModulo.cxStyleSelection
+          object GrdBenTblBEN_NOME: TcxGridDBColumn
+            DataBinding.FieldName = 'BEN_NOME'
+            Width = 292
+          end
+          object GrdBenTblBEN_CPF: TcxGridDBColumn
+            DataBinding.FieldName = 'BEN_CPF'
+            Width = 109
+          end
+          object GrdBenTblBEN_SEXO: TcxGridDBColumn
+            DataBinding.FieldName = 'BEN_SEXO'
+            Width = 89
+          end
+          object GrdBenTblBEN_NASCIMENTO: TcxGridDBColumn
+            DataBinding.FieldName = 'BEN_NASCIMENTO'
+            Width = 101
+          end
+        end
+        object GrdBenLvl: TcxGridLevel
+          GridView = GrdBenTbl
+        end
+      end
+      object BtnBenExcluir: TcxButton
+        Tag = 1
+        Left = 128
+        Top = 8
+        Width = 113
+        Height = 25
+        Hint = 'Excluir benefici'#225'rio da unidade'
+        Caption = 'Excluir benefici'#225'rio'
+        Description = 'Exclui o benefici'#225'rio vinculado a esta unidade de produ'#231#227'o.'
+        TabOrder = 1
+        OnClick = BtnBenExcluirClick
+      end
+      object BtnBenIncluir: TcxButton
+        Tag = 1
+        Left = 8
+        Top = 8
+        Width = 113
+        Height = 25
+        Hint = 'Inserir benefici'#225'rio na unidade'
+        Caption = 'Incluir benefici'#225'rio...'
+        Description = 'Insere um benefici'#225'rio vinculado a esta unidade de produ'#231#227'o.'
+        TabOrder = 0
+        OnClick = BtnBenIncluirClick
+      end
+      object BtnBenVisualizar: TcxButton
+        Tag = 1
+        Left = 248
+        Top = 8
+        Width = 113
+        Height = 25
+        Hint = 'Visualizar benefici'#225'rio da unidade'
+        Caption = 'Visualizar benefici'#225'rio'
+        Description = 'Visualiza o benefici'#225'rio atualmente selecionado.'
+        TabOrder = 2
+        OnClick = BtnBenVisualizarClick
+      end
+    end
     object TbShtBenfeitorias: TcxTabSheet
       Caption = 'Benfeitorias'
       ImageIndex = 2
@@ -1142,9 +1311,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         511)
       object GrdPrdBem: TcxGrid
         Left = 8
-        Top = 120
-        Width = 781
-        Height = 375
+        Top = 184
+        Width = 785
+        Height = 321
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1253,17 +1422,17 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       end
       object GRpBxBenfeitorias: TcxGroupBox
         Left = 8
-        Top = 0
+        Top = 64
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Informa'#231#245'es da benfeitoria'
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
         DesignSize = (
-          781
+          785
           74)
         Height = 81
-        Width = 781
+        Width = 785
         object Label10: TLabel
           Tag = 2
           Left = 8
@@ -1274,7 +1443,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label33: TLabel
-          Left = 660
+          Left = 664
           Top = 24
           Width = 60
           Height = 13
@@ -1282,21 +1451,19 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Quantidade:'
           FocusControl = DbEdtQuantidade
           Transparent = True
-          ExplicitLeft = 664
         end
         object Label34: TLabel
           Tag = 2
-          Left = 412
+          Left = 416
           Top = 24
           Width = 37
           Height = 13
           Anchors = [akTop, akRight]
           Caption = 'Estado:'
           Transparent = True
-          ExplicitLeft = 416
         end
         object Label46: TLabel
-          Left = 556
+          Left = 560
           Top = 24
           Width = 87
           Height = 13
@@ -1304,7 +1471,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Data de cadastro:'
           FocusControl = EdtDataBem
           Transparent = True
-          ExplicitLeft = 560
         end
         object DbLkpCmbBxBenfeitoria: TcxDBLookupComboBox
           Left = 8
@@ -1323,19 +1489,20 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 397
+          Width = 401
         end
         object DbEdtQuantidade: TcxDBSpinEdit
-          Left = 660
+          Left = 664
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
+          ExplicitLeft = 660
           Width = 113
         end
         object DbImgCmbBxEstado: TcxDBImageComboBox
-          Left = 412
+          Left = 416
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_ESTADO'
@@ -1363,10 +1530,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
+          ExplicitLeft = 412
           Width = 137
         end
         object EdtDataBem: TcxDBDateEdit
-          Left = 556
+          Left = 560
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_DATA'
@@ -1375,13 +1543,14 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
+          ExplicitLeft = 556
           Width = 97
         end
       end
       object BtnBemNovo: TcxButton
         Tag = 1
         Left = 8
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Inserir nova benfeitoria'
@@ -1399,7 +1568,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnBemSalvar: TcxButton
         Tag = 1
         Left = 88
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Salvar altera'#231#245'es na benfeitoria'
@@ -1417,7 +1586,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnBemCancelar: TcxButton
         Tag = 1
         Left = 168
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Cancelar altera'#231#245'es na benfeitoria'
@@ -1435,7 +1604,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnBemExcluir: TcxButton
         Tag = 1
         Left = 248
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Excluir benfeitoria'
@@ -1449,6 +1618,74 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Font.Style = []
         ParentFont = False
         OnClick = BtnBemExcluirClick
+      end
+      object GrpBxBeneficiario: TcxGroupBox
+        Left = 8
+        Top = 0
+        Anchors = [akLeft, akTop, akRight]
+        Caption = 'Benefici'#225'rio'
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 6
+        DesignSize = (
+          785
+          52)
+        Height = 59
+        Width = 785
+        object cxDBNavigator1: TcxDBNavigator
+          Left = 8
+          Top = 19
+          Width = 94
+          Height = 25
+          Buttons.CustomButtons = <>
+          Buttons.PriorPage.Visible = False
+          Buttons.NextPage.Visible = False
+          Buttons.Insert.Visible = False
+          Buttons.Append.Visible = False
+          Buttons.Delete.Visible = False
+          Buttons.Edit.Visible = False
+          Buttons.Post.Visible = False
+          Buttons.Cancel.Visible = False
+          Buttons.Refresh.Visible = False
+          Buttons.SaveBookmark.Visible = False
+          Buttons.GotoBookmark.Visible = False
+          Buttons.Filter.Visible = False
+          DataSource = DtSrcProducaoBeneficiario
+          TabOrder = 0
+        end
+        object DbEdtBeneficiario: TcxDBTextEdit
+          Left = 108
+          Top = 18
+          Anchors = [akLeft, akTop, akRight]
+          DataBinding.DataField = 'BEN_NOME'
+          DataBinding.DataSource = DtSrcProducaoBeneficiario
+          ParentFont = False
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -16
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = []
+          Style.IsFontAssigned = True
+          TabOrder = 1
+          Width = 495
+        end
+        object DbEdtCPF: TcxDBTextEdit
+          Left = 608
+          Top = 18
+          Anchors = [akTop, akRight]
+          DataBinding.DataField = 'BEN_CPF'
+          DataBinding.DataSource = DtSrcProducaoBeneficiario
+          ParentFont = False
+          Properties.Alignment.Horz = taCenter
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -16
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = []
+          Style.IsFontAssigned = True
+          TabOrder = 2
+          Width = 169
+        end
       end
     end
     object TbShtMaquinas: TcxTabSheet
@@ -1466,9 +1703,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         511)
       object GrdPrdMaq: TcxGrid
         Left = 8
-        Top = 120
-        Width = 781
-        Height = 375
+        Top = 184
+        Width = 785
+        Height = 321
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1577,17 +1814,17 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       end
       object cxGroupBox1: TcxGroupBox
         Left = 8
-        Top = 0
+        Top = 64
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Informa'#231#245'es da m'#225'quina ou equipamento'
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
         DesignSize = (
-          781
+          785
           74)
         Height = 81
-        Width = 781
+        Width = 785
         object Label35: TLabel
           Tag = 2
           Left = 8
@@ -1598,7 +1835,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label36: TLabel
-          Left = 660
+          Left = 664
           Top = 24
           Width = 60
           Height = 13
@@ -1606,21 +1843,19 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Quantidade:'
           FocusControl = DbEdtMaquinaQtde
           Transparent = True
-          ExplicitLeft = 664
         end
         object Label37: TLabel
           Tag = 2
-          Left = 412
+          Left = 416
           Top = 24
           Width = 37
           Height = 13
           Anchors = [akTop, akRight]
           Caption = 'Estado:'
           Transparent = True
-          ExplicitLeft = 416
         end
         object Label47: TLabel
-          Left = 556
+          Left = 560
           Top = 24
           Width = 87
           Height = 13
@@ -1628,7 +1863,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Data de cadastro:'
           FocusControl = EdtDataEquipamento
           Transparent = True
-          ExplicitLeft = 560
         end
         object DbLkpCmbBxMaquina: TcxDBLookupComboBox
           Left = 8
@@ -1647,19 +1881,20 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 397
+          Width = 401
         end
         object DbEdtMaquinaQtde: TcxDBSpinEdit
-          Left = 660
+          Left = 664
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
+          ExplicitLeft = 660
           Width = 113
         end
         object DbImgCmbBxMaquinaEstado: TcxDBImageComboBox
-          Left = 412
+          Left = 416
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_ESTADO'
@@ -1687,10 +1922,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
+          ExplicitLeft = 412
           Width = 137
         end
         object EdtDataEquipamento: TcxDBDateEdit
-          Left = 556
+          Left = 560
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_DATA'
@@ -1699,13 +1935,14 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
+          ExplicitLeft = 556
           Width = 97
         end
       end
       object BtnMaqNovo: TcxButton
         Tag = 1
         Left = 8
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Inserir nova m'#225'quina ou equipamento'
@@ -1723,7 +1960,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnMaqSalvar: TcxButton
         Tag = 1
         Left = 88
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Salvar altera'#231#245'es na m'#225'quina ou equipamento'
@@ -1743,7 +1980,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnMaqCancelar: TcxButton
         Tag = 1
         Left = 168
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Cancelar altera'#231#245'es na m'#225'quina ou equipamento'
@@ -1757,7 +1994,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnMaqExcluir: TcxButton
         Tag = 1
         Left = 248
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Excluir m'#225'quina ou equipamento'
@@ -1776,9 +2013,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         511)
       object GrdPrdSem: TcxGrid
         Left = 8
-        Top = 120
-        Width = 781
-        Height = 375
+        Top = 184
+        Width = 785
+        Height = 321
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1862,17 +2099,17 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       end
       object GrpBxSemovente: TcxGroupBox
         Left = 8
-        Top = 0
+        Top = 64
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Informa'#231#245'es do semovente'
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
         DesignSize = (
-          781
+          785
           74)
         Height = 81
-        Width = 781
+        Width = 785
         object Label38: TLabel
           Tag = 2
           Left = 8
@@ -1883,7 +2120,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label39: TLabel
-          Left = 684
+          Left = 688
           Top = 24
           Width = 60
           Height = 13
@@ -1891,6 +2128,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Quantidade:'
           FocusControl = DbEdtSemoventeQtde
           Transparent = True
+          ExplicitLeft = 684
         end
         object DbLkpCmbBxSemovente: TcxDBLookupComboBox
           Left = 8
@@ -1915,22 +2153,23 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcSemovente
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 669
+          Width = 673
         end
         object DbEdtSemoventeQtde: TcxDBSpinEdit
-          Left = 684
+          Left = 688
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'PRD_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoSemovente
           TabOrder = 1
+          ExplicitLeft = 684
           Width = 89
         end
       end
       object BtnSemNovo: TcxButton
         Tag = 1
         Left = 8
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Inserir novo semovente'
@@ -1942,7 +2181,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnSemSalvar: TcxButton
         Tag = 1
         Left = 88
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Salvar altera'#231#245'es no semovente'
@@ -1954,7 +2193,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnSemCancelar: TcxButton
         Tag = 1
         Left = 168
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Cancelar altera'#231#245'es no semovente'
@@ -1966,7 +2205,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnSemExcluir: TcxButton
         Tag = 1
         Left = 248
-        Top = 88
+        Top = 152
         Width = 75
         Height = 25
         Hint = 'Excluir semovente'
@@ -1979,75 +2218,15 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     object TbShtAtividades: TcxTabSheet
       Caption = 'Atividades produtivas e comercializa'#231#227'o'
       ImageIndex = 5
-      OnShow = erivado
+      OnShow = TbShtAtividadesShow
       DesignSize = (
         801
         511)
-      object Label40: TLabel
-        Left = 8
-        Top = 8
-        Width = 781
-        Height = 25
-        Anchors = [akLeft, akTop, akRight]
-        AutoSize = False
-        Caption = ' Atividades produtivas da unidade de produ'#231#227'o familiar'
-        Color = 14612957
-        Font.Charset = ANSI_CHARSET
-        Font.Color = 4092194
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentColor = False
-        ParentFont = False
-        Transparent = False
-        Layout = tlCenter
-        ExplicitWidth = 785
-      end
-      object Shape3: TShape
-        Left = 8
-        Top = 8
-        Width = 781
-        Height = 25
-        Anchors = [akLeft, akTop, akRight]
-        Brush.Style = bsClear
-        Pen.Color = 4092194
-        ExplicitWidth = 785
-      end
-      object Label41: TLabel
-        Left = 8
-        Top = 260
-        Width = 781
-        Height = 25
-        Anchors = [akLeft, akTop, akRight]
-        AutoSize = False
-        Caption = ' Detalhes da comercializa'#231#227'o da produ'#231#227'o'
-        Color = 14612957
-        Font.Charset = ANSI_CHARSET
-        Font.Color = 4092194
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentColor = False
-        ParentFont = False
-        Transparent = False
-        Layout = tlCenter
-        ExplicitWidth = 785
-      end
-      object Shape4: TShape
-        Left = 8
-        Top = 260
-        Width = 781
-        Height = 25
-        Anchors = [akLeft, akTop, akRight]
-        Brush.Style = bsClear
-        Pen.Color = 4092194
-        ExplicitWidth = 785
-      end
       object GrdPrdAtv: TcxGrid
         Left = 8
-        Top = 72
-        Width = 781
-        Height = 177
+        Top = 99
+        Width = 785
+        Height = 193
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2141,7 +2320,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnAtvIncluir: TcxButton
         Tag = 1
         Left = 8
-        Top = 40
+        Top = 67
         Width = 137
         Height = 25
         Hint = 'Inserir atividade produtiva'
@@ -2155,7 +2334,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnAtvExcluir: TcxButton
         Tag = 1
         Left = 296
-        Top = 40
+        Top = 67
         Width = 137
         Height = 25
         Hint = 'Excluir atividade produtiva'
@@ -2166,9 +2345,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       end
       object GrdPrd: TcxGrid
         Left = 8
-        Top = 324
-        Width = 781
-        Height = 171
+        Top = 336
+        Width = 785
+        Height = 169
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2268,7 +2447,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnPrdIncluir: TcxButton
         Tag = 1
         Left = 8
-        Top = 292
+        Top = 304
         Width = 137
         Height = 25
         Hint = 'Inserir detalhes da comercializa'#231#227'o da produ'#231#227'o'
@@ -2288,7 +2467,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnPrdExcluir: TcxButton
         Tag = 1
         Left = 296
-        Top = 292
+        Top = 304
         Width = 137
         Height = 25
         Hint = 'Excluir detalhes da comercializa'#231#227'o da produ'#231#227'o'
@@ -2302,7 +2481,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnAtvEditar: TcxButton
         Tag = 1
         Left = 152
-        Top = 40
+        Top = 67
         Width = 137
         Height = 25
         Hint = 'Editar atividade produtiva'
@@ -2314,7 +2493,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object BtnPrdEditar: TcxButton
         Tag = 1
         Left = 152
-        Top = 292
+        Top = 304
         Width = 137
         Height = 25
         Hint = 'Editar detalhes da comercializa'#231#227'o da produ'#231#227'o'
@@ -2324,163 +2503,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           'liza'#231#227'o da produ'#231#227'o.'
         TabOrder = 7
         OnClick = BtnPrdEditarClick
-      end
-    end
-    object TbShtBeneficiarios: TcxTabSheet
-      Caption = 'Benefici'#225'rios'
-      ImageIndex = 6
-      OnShow = TbShtBeneficiariosShow
-      DesignSize = (
-        801
-        511)
-      object Label42: TLabel
-        Left = 8
-        Top = 8
-        Width = 781
-        Height = 25
-        Anchors = [akLeft, akTop, akRight]
-        AutoSize = False
-        Caption = ' Benefici'#225'rios relacionados a esta unidade de produ'#231#227'o familiar'
-        Color = 14612957
-        Font.Charset = ANSI_CHARSET
-        Font.Color = 4092194
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentColor = False
-        ParentFont = False
-        Transparent = False
-        Layout = tlCenter
-        ExplicitWidth = 785
-      end
-      object Shape5: TShape
-        Left = 8
-        Top = 8
-        Width = 781
-        Height = 25
-        Anchors = [akLeft, akTop, akRight]
-        Brush.Style = bsClear
-        Pen.Color = 4092194
-        ExplicitWidth = 785
-      end
-      object GrdBen: TcxGrid
-        Left = 8
-        Top = 72
-        Width = 781
-        Height = 423
-        Anchors = [akLeft, akTop, akRight, akBottom]
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 3
-        LookAndFeel.Kind = lfFlat
-        LookAndFeel.NativeStyle = True
-        object GrdBenTbl: TcxGridDBTableView
-          OnDblClick = GrdBenTblDblClick
-          Navigator.Buttons.CustomButtons = <>
-          Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
-          Navigator.Buttons.PriorPage.Visible = False
-          Navigator.Buttons.Prior.Hint = 'Prescri'#231#227'o anterior'
-          Navigator.Buttons.Prior.Visible = True
-          Navigator.Buttons.Next.Hint = 'Pr'#243'xima prescri'#231#227'o'
-          Navigator.Buttons.NextPage.Visible = False
-          Navigator.Buttons.Last.Hint = #218'ltima prescri'#231#227'o'
-          Navigator.Buttons.Insert.Visible = False
-          Navigator.Buttons.Delete.Visible = False
-          Navigator.Buttons.Edit.Visible = False
-          Navigator.Buttons.Post.Visible = False
-          Navigator.Buttons.Cancel.Visible = False
-          Navigator.Buttons.Refresh.Visible = False
-          Navigator.Buttons.SaveBookmark.Visible = False
-          Navigator.Buttons.GotoBookmark.Visible = False
-          Navigator.Buttons.Filter.Visible = False
-          FilterBox.CustomizeDialog = False
-          DataController.DataSource = DtSrcProducaoBeneficiario
-          DataController.KeyFieldNames = 'BEN_ID'
-          DataController.Summary.DefaultGroupSummaryItems = <>
-          DataController.Summary.FooterSummaryItems = <>
-          DataController.Summary.SummaryGroups = <>
-          OptionsBehavior.CellHints = True
-          OptionsBehavior.ImmediateEditor = False
-          OptionsCustomize.ColumnFiltering = False
-          OptionsCustomize.ColumnGrouping = False
-          OptionsCustomize.ColumnHidingOnGrouping = False
-          OptionsCustomize.ColumnMoving = False
-          OptionsData.CancelOnExit = False
-          OptionsData.Deleting = False
-          OptionsData.DeletingConfirmation = False
-          OptionsData.Editing = False
-          OptionsData.Inserting = False
-          OptionsSelection.CellSelect = False
-          OptionsView.CellEndEllipsis = True
-          OptionsView.NoDataToDisplayInfoText = '<Nenhuma informa'#231#227'o para exibir>'
-          OptionsView.ColumnAutoWidth = True
-          OptionsView.GridLines = glNone
-          OptionsView.GroupByBox = False
-          OptionsView.HeaderEndEllipsis = True
-          OptionsView.HeaderHeight = 21
-          Styles.ContentEven = DtmRecursoModulo.cxStyleEven
-          Styles.Inactive = DtmRecursoModulo.cxStyleSelection
-          Styles.Selection = DtmRecursoModulo.cxStyleSelection
-          object GrdBenTblBEN_NOME: TcxGridDBColumn
-            DataBinding.FieldName = 'BEN_NOME'
-            Width = 292
-          end
-          object GrdBenTblBEN_CPF: TcxGridDBColumn
-            DataBinding.FieldName = 'BEN_CPF'
-            Width = 109
-          end
-          object GrdBenTblBEN_SEXO: TcxGridDBColumn
-            DataBinding.FieldName = 'BEN_SEXO'
-            Width = 89
-          end
-          object GrdBenTblBEN_NASCIMENTO: TcxGridDBColumn
-            DataBinding.FieldName = 'BEN_NASCIMENTO'
-            Width = 101
-          end
-        end
-        object GrdBenLvl: TcxGridLevel
-          GridView = GrdBenTbl
-        end
-      end
-      object BtnBenExcluir: TcxButton
-        Tag = 1
-        Left = 128
-        Top = 40
-        Width = 113
-        Height = 25
-        Hint = 'Excluir benefici'#225'rio da unidade'
-        Caption = 'Excluir benefici'#225'rio'
-        Description = 'Exclui o benefici'#225'rio vinculado a esta unidade de produ'#231#227'o.'
-        TabOrder = 1
-        OnClick = BtnBenExcluirClick
-      end
-      object BtnBenIncluir: TcxButton
-        Tag = 1
-        Left = 8
-        Top = 40
-        Width = 113
-        Height = 25
-        Hint = 'Inserir benefici'#225'rio na unidade'
-        Caption = 'Incluir benefici'#225'rio...'
-        Description = 'Insere um benefici'#225'rio vinculado a esta unidade de produ'#231#227'o.'
-        TabOrder = 0
-        OnClick = BtnBenIncluirClick
-      end
-      object BtnBenVisualizar: TcxButton
-        Tag = 1
-        Left = 248
-        Top = 40
-        Width = 113
-        Height = 25
-        Hint = 'Visualizar benefici'#225'rio da unidade'
-        Caption = 'Visualizar benefici'#225'rio'
-        Description = 'Visualiza o benefici'#225'rio atualmente selecionado.'
-        TabOrder = 2
-        OnClick = BtnBenVisualizarClick
       end
     end
   end
@@ -2969,13 +2991,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
     DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
     DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 64
-    Top = 112
+    Left = 696
+    Top = 16
     oAutoFormatFields = False
   end
   inherited DtSrcPrincipal: TDataSource
-    Left = 112
-    Top = 328
+    Left = 336
+    Top = 360
   end
   inherited QryPrincipal: TFDQuery
     AfterPost = QryPrincipalAfterPost
@@ -3045,8 +3067,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0) and'
       '  (a.und_id in (select und_id from vwt_sis_unidade_local)) and'
       '  (a.pro_id = :pro_id)')
-    Left = 48
-    Top = 328
+    Left = 272
+    Top = 360
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -3551,66 +3573,66 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         'DO'
       'FROM TAB_CAD_PRODUCAO_FAMILIAR'
       'WHERE PRO_ID = :PRO_ID')
-    Left = 80
-    Top = 328
+    Left = 304
+    Top = 360
   end
   object DtSrcProducaoBem: TDataSource
     DataSet = QryProducaoBem
     OnStateChange = DtSrcProducaoBemStateChange
-    Left = 112
-    Top = 360
+    Left = 336
+    Top = 424
   end
   object DtSrcBem: TDataSource
     DataSet = QryBem
-    Left = 224
-    Top = 360
+    Left = 448
+    Top = 392
   end
   object DtSrcProducaoSemovente: TDataSource
     DataSet = QryProducaoSemovente
     OnStateChange = DtSrcProducaoSemoventeStateChange
-    Left = 112
-    Top = 392
+    Left = 336
+    Top = 456
   end
   object DtSrcSemovente: TDataSource
     DataSet = QrySemovente
-    Left = 224
-    Top = 392
+    Left = 448
+    Top = 424
   end
   object DtSrcProducaoAtividade: TDataSource
     DataSet = QryProducaoAtividade
     OnStateChange = DtSrcProducaoAtividadeStateChange
-    Left = 112
-    Top = 424
+    Left = 336
+    Top = 488
   end
   object DtSrcProduto: TDataSource
     DataSet = QryProduto
-    Left = 224
-    Top = 424
+    Left = 448
+    Top = 456
   end
   object DtSrcProducaoProduto: TDataSource
     DataSet = QryProducaoProduto
     OnStateChange = DtSrcProducaoProdutoStateChange
-    Left = 112
-    Top = 456
+    Left = 336
+    Top = 520
   end
   object DtSrcDestino: TDataSource
     DataSet = QryDestino
-    Left = 224
-    Top = 488
+    Left = 448
+    Top = 520
   end
   object DtSrcProducaoBeneficiario: TDataSource
     DataSet = QryProducaoBeneficiario
     OnStateChange = DtSrcProducaoBeneficiarioStateChange
-    Left = 112
-    Top = 488
+    Left = 336
+    Top = 392
   end
   object QryProducaoBem: TFDQuery
     BeforePost = QryProducaoBemBeforePost
     AfterPost = QryProducaoBemAfterPost
     OnNewRecord = QryProducaoBemNewRecord
-    MasterSource = DtSrcPrincipal
-    MasterFields = 'PRO_ID'
-    DetailFields = 'PRO_ID'
+    MasterSource = DtSrcProducaoBeneficiario
+    MasterFields = 'PRO_ID;BEN_ID'
+    DetailFields = 'PRO_ID;BEN_ID'
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
@@ -3620,6 +3642,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     SQL.Strings = (
       'select'
       '  a.pbe_id,'
+      '  a.ben_id,'
       '  a.pro_id,'
       '  a.bem_id,'
       '  a.bem_estado,'
@@ -3639,11 +3662,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  tab_cad_bem_classificacao c on (b.cls_id = c.cls_id)'
       'where'
       '  (a.pro_id = :pro_id) and'
+      '  (a.ben_id = :ben_id) and'
       '  (a.reg_excluido = 0)'
       'order by'
       '  b.bem_descricao')
-    Left = 48
-    Top = 360
+    Left = 272
+    Top = 424
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -3651,12 +3675,21 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParamType = ptInput
         Size = 4
         Value = Null
+      end
+      item
+        Name = 'BEN_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
       end>
     object QryProducaoBemPBE_ID: TLargeintField
       FieldName = 'PBE_ID'
       Origin = 'PBE_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
+    end
+    object QryProducaoBemBEN_ID: TLargeintField
+      FieldName = 'BEN_ID'
+      Origin = 'BEN_ID'
     end
     object QryProducaoBemPRO_ID: TIntegerField
       FieldName = 'PRO_ID'
@@ -3737,20 +3770,24 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     Connection = DtmConexaoModulo.FDConnection
     InsertSQL.Strings = (
       'INSERT INTO TAB_CAD_PRODUCAO_BEM'
-      '(PBE_ID, PRO_ID, BEM_ID, BEM_ESTADO, BEM_DATA, '
-      '  BEM_QUANTIDADE, REG_EXCLUIDO, REG_REPLICADO, '
+      '(PBE_ID, BEN_ID, PRO_ID, BEM_ID, BEM_ESTADO, '
+      '  BEM_DATA, BEM_QUANTIDADE, REG_EXCLUIDO, REG_REPLICADO, '
       '  REG_USUARIO, REG_MODIFICADO)'
       
-        'VALUES (:NEW_PBE_ID, :NEW_PRO_ID, :NEW_BEM_ID, :NEW_BEM_ESTADO, ' +
-        ':NEW_BEM_DATA, '
-      '  :NEW_BEM_QUANTIDADE, :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, '
+        'VALUES (:NEW_PBE_ID, :NEW_BEN_ID, :NEW_PRO_ID, :NEW_BEM_ID, :NEW' +
+        '_BEM_ESTADO, '
+      
+        '  :NEW_BEM_DATA, :NEW_BEM_QUANTIDADE, :NEW_REG_EXCLUIDO, :NEW_RE' +
+        'G_REPLICADO, '
       '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
     ModifySQL.Strings = (
       'UPDATE TAB_CAD_PRODUCAO_BEM'
       
-        'SET PBE_ID = :NEW_PBE_ID, PRO_ID = :NEW_PRO_ID, BEM_ID = :NEW_BE' +
-        'M_ID, '
-      '  BEM_ESTADO = :NEW_BEM_ESTADO, BEM_DATA = :NEW_BEM_DATA, '
+        'SET PBE_ID = :NEW_PBE_ID, BEN_ID = :NEW_BEN_ID, PRO_ID = :NEW_PR' +
+        'O_ID, '
+      
+        '  BEM_ID = :NEW_BEM_ID, BEM_ESTADO = :NEW_BEM_ESTADO, BEM_DATA =' +
+        ' :NEW_BEM_DATA, '
       
         '  BEM_QUANTIDADE = :NEW_BEM_QUANTIDADE, REG_EXCLUIDO = :NEW_REG_' +
         'EXCLUIDO, '
@@ -3764,21 +3801,21 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       'WHERE PBE_ID = :OLD_PBE_ID')
     FetchRowSQL.Strings = (
       
-        'SELECT PBE_ID, PRO_ID, BEM_ID, BEM_ESTADO, BEM_DATA, BEM_QUANTID' +
-        'ADE, '
+        'SELECT PBE_ID, BEN_ID, PRO_ID, BEM_ID, BEM_ESTADO, BEM_DATA, BEM' +
+        '_QUANTIDADE, '
       '  REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_BEM'
       'WHERE PBE_ID = :PBE_ID')
-    Left = 80
-    Top = 360
+    Left = 304
+    Top = 424
   end
   object QryProducaoSemovente: TFDQuery
     BeforePost = QryProducaoSemoventeBeforePost
     AfterPost = QryProducaoSemoventeAfterPost
     OnNewRecord = QryProducaoSemoventeNewRecord
-    MasterSource = DtSrcPrincipal
-    MasterFields = 'PRO_ID'
-    DetailFields = 'PRO_ID'
+    MasterSource = DtSrcProducaoBeneficiario
+    MasterFields = 'PRO_ID;BEN_ID'
+    DetailFields = 'PRO_ID;BEN_ID'
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
@@ -3788,6 +3825,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     SQL.Strings = (
       'select'
       '  s.pse_id,'
+      '  s.ben_id,'
       '  s.pro_id,'
       '  s.prd_id,'
       '  s.prd_quantidade,'
@@ -3808,11 +3846,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  tab_cad_classe d on (a.cls_id = d.cls_id)'
       'where'
       '  (s.pro_id = :pro_id) and'
+      '  (s.ben_id = :ben_id) and'
       '  (s.reg_excluido = 0)'
       'order by'
       '  a.prd_descricao')
-    Left = 48
-    Top = 392
+    Left = 272
+    Top = 456
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -3820,12 +3859,21 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParamType = ptInput
         Size = 4
         Value = Null
+      end
+      item
+        Name = 'BEN_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
       end>
     object QryProducaoSemoventePSE_ID: TLargeintField
       FieldName = 'PSE_ID'
       Origin = 'PSE_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
+    end
+    object QryProducaoSemoventeBEN_ID: TLargeintField
+      FieldName = 'BEN_ID'
+      Origin = 'BEN_ID'
     end
     object QryProducaoSemoventePRO_ID: TIntegerField
       FieldName = 'PRO_ID'
@@ -3934,17 +3982,17 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_SEMOVENTE'
       'WHERE PSE_ID = :PSE_ID')
-    Left = 80
-    Top = 392
+    Left = 304
+    Top = 456
   end
   object QryProducaoAtividade: TFDQuery
     BeforePost = QryProducaoAtividadeBeforePost
     AfterPost = QryProducaoAtividadeAfterPost
     AfterScroll = QryProducaoAtividadeAfterScroll
     OnNewRecord = QryProducaoAtividadeNewRecord
-    MasterSource = DtSrcPrincipal
-    MasterFields = 'PRO_ID'
-    DetailFields = 'PRO_ID'
+    MasterSource = DtSrcProducaoBeneficiario
+    MasterFields = 'PRO_ID;BEN_ID'
+    DetailFields = 'PRO_ID;BEN_ID'
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
@@ -3967,6 +4015,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  a.reg_usuario,'
       '  a.reg_modificado,'
       '  a.pro_id,'
+      '  a.ben_id,'
       '  a.sip_id,'
       '  a.prd_id,'
       '  a.uni_id,'
@@ -3986,11 +4035,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  tab_cad_unidade_medida d on (a.uni_id = d.uni_id)'
       'where'
       '  (a.pro_id = :pro_id) and'
+      '  (a.ben_id = :ben_id) and'
       '  (a.reg_excluido = 0)'
       'order by'
       '   a.atv_safra_inicio, a.atv_safra_fim, c.prd_descricao')
-    Left = 48
-    Top = 424
+    Left = 272
+    Top = 488
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -3998,6 +4048,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParamType = ptInput
         Size = 4
         Value = Null
+      end
+      item
+        Name = 'BEN_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
       end>
     object QryProducaoAtividadeATV_ID: TLargeintField
       FieldName = 'ATV_ID'
@@ -4046,6 +4101,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       FieldName = 'PRO_ID'
       Origin = 'PRO_ID'
       Required = True
+    end
+    object QryProducaoAtividadeBEN_ID: TLargeintField
+      FieldName = 'BEN_ID'
+      Origin = 'BEN_ID'
     end
     object QryProducaoAtividadeSIP_ID: TIntegerField
       Alignment = taLeftJustify
@@ -4140,8 +4199,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '(ATV_ID, ATV_SAFRA_INICIO, ATV_SAFRA_FIM, ATV_PERIODO_PLANTIO, '
       '  ATV_AREA_PLANTADA, ATV_AREA_COLHIDA, ATV_AREA_PERDIDA, '
       '  ATV_QUANTIDADE, ATV_DATA_VISITA, PRO_ID, '
-      '  SIP_ID, PRD_ID, UNI_ID, UND_ID, FUN_ID, '
-      '  REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  BEN_ID, SIP_ID, PRD_ID, UNI_ID, UND_ID, '
+      '  FUN_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
       '  REG_MODIFICADO)'
       
         'VALUES (:NEW_ATV_ID, :NEW_ATV_SAFRA_INICIO, :NEW_ATV_SAFRA_FIM, ' +
@@ -4151,9 +4210,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         'ERDIDA, '
       '  :NEW_ATV_QUANTIDADE, :NEW_ATV_DATA_VISITA, :NEW_PRO_ID, '
       
-        '  :NEW_SIP_ID, :NEW_PRD_ID, :NEW_UNI_ID, :NEW_UND_ID, :NEW_FUN_I' +
+        '  :NEW_BEN_ID, :NEW_SIP_ID, :NEW_PRD_ID, :NEW_UNI_ID, :NEW_UND_I' +
         'D, '
-      '  :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, :NEW_REG_USUARIO, '
+      
+        '  :NEW_FUN_ID, :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, :NEW_REG_U' +
+        'SUARIO, '
       '  :NEW_REG_MODIFICADO)')
     ModifySQL.Strings = (
       'UPDATE TAB_CAD_PRODUCAO_ATIVIDADE'
@@ -4171,15 +4232,17 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         'W_ATV_QUANTIDADE, '
       '  ATV_DATA_VISITA = :NEW_ATV_DATA_VISITA, PRO_ID = :NEW_PRO_ID, '
       
-        '  SIP_ID = :NEW_SIP_ID, PRD_ID = :NEW_PRD_ID, UNI_ID = :NEW_UNI_' +
+        '  BEN_ID = :NEW_BEN_ID, SIP_ID = :NEW_SIP_ID, PRD_ID = :NEW_PRD_' +
         'ID, '
       
-        '  UND_ID = :NEW_UND_ID, FUN_ID = :NEW_FUN_ID, REG_EXCLUIDO = :NE' +
-        'W_REG_EXCLUIDO, '
+        '  UNI_ID = :NEW_UNI_ID, UND_ID = :NEW_UND_ID, FUN_ID = :NEW_FUN_' +
+        'ID, '
       
-        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
-        'ARIO, '
-      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
+      
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
       'WHERE ATV_ID = :OLD_ATV_ID')
     DeleteSQL.Strings = (
       'DELETE FROM TAB_CAD_PRODUCAO_ATIVIDADE'
@@ -4191,14 +4254,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       
         '  ATV_AREA_PLANTADA, ATV_AREA_COLHIDA, ATV_AREA_PERDIDA, ATV_QUA' +
         'NTIDADE, '
-      '  ATV_DATA_VISITA, PRO_ID, SIP_ID, PRD_ID, UNI_ID, UND_ID, '
-      
-        '  FUN_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, REG_MODIFICA' +
-        'DO'
+      '  ATV_DATA_VISITA, PRO_ID, BEN_ID, SIP_ID, PRD_ID, UNI_ID, '
+      '  UND_ID, FUN_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_ATIVIDADE'
       'WHERE ATV_ID = :ATV_ID')
-    Left = 80
-    Top = 424
+    Left = 304
+    Top = 488
   end
   object QryProducaoProduto: TFDQuery
     BeforePost = QryProducaoProdutoBeforePost
@@ -4250,8 +4312,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  prp_descricao_produto_derivado')
-    Left = 48
-    Top = 456
+    Left = 272
+    Top = 520
     ParamData = <
       item
         Name = 'ATV_ID'
@@ -4431,8 +4493,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_PRODUTO'
       'WHERE PRP_ID = :PRP_ID')
-    Left = 80
-    Top = 456
+    Left = 304
+    Top = 520
   end
   object QryProducaoBeneficiario: TFDQuery
     AfterPost = QryProducaoBeneficiarioAfterPost
@@ -4471,8 +4533,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  b.ben_nome')
-    Left = 48
-    Top = 488
+    Left = 272
+    Top = 392
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -4589,8 +4651,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_CAD_BENEFICIARIO_PRODUCAO'
       'WHERE BPR_ID = :BPR_ID')
-    Left = 80
-    Top = 488
+    Left = 304
+    Top = 392
   end
   object QryBem: TFDQuery
     Connection = DtmConexaoModulo.FDConnection
@@ -4607,8 +4669,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  a.bem_descricao')
-    Left = 160
-    Top = 360
+    Left = 384
+    Top = 392
   end
   object QrySemovente: TFDQuery
     Connection = DtmConexaoModulo.FDConnection
@@ -4632,8 +4694,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  a.prd_descricao')
-    Left = 160
-    Top = 392
+    Left = 384
+    Top = 424
   end
   object QryProduto: TFDQuery
     Connection = DtmConexaoModulo.FDConnection
@@ -4662,8 +4724,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  a.prd_descricao')
-    Left = 160
-    Top = 424
+    Left = 384
+    Top = 456
   end
   object UpdtProduto: TFDUpdateSQL
     Connection = DtmConexaoModulo.FDConnection
@@ -4691,8 +4753,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         'DO'
       'FROM TAB_CAD_PRODUTO'
       'WHERE PRD_ID = :PRD_ID')
-    Left = 192
-    Top = 424
+    Left = 416
+    Top = 456
   end
   object QryDerivado: TFDQuery
     MasterSource = DtSrcProducaoAtividade
@@ -4719,8 +4781,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (c.reg_excluido = 0)'
       'order by'
       '  b.dev_descricao, c.uni_descricao')
-    Left = 160
-    Top = 456
+    Left = 384
+    Top = 488
     ParamData = <
       item
         Name = 'PRD_ID'
@@ -4773,8 +4835,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  a.des_descricao')
-    Left = 160
-    Top = 488
+    Left = 384
+    Top = 520
     object QryDestinoDES_ID: TIntegerField
       FieldName = 'DES_ID'
       Origin = 'DES_ID'

@@ -11,7 +11,7 @@ uses
   cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData, cxGridLevel, cxGridCustomTableView, cxGridTableView,
   cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid, Vcl.DBCtrls, Math, cxSpinEdit, cxCalendar, DateUtils, dxBarBuiltInMenu, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.Client, FireDAC.Comp.DataSet, Data.SqlTimSt;
+  FireDAC.Comp.Client, FireDAC.Comp.DataSet, Data.SqlTimSt, cxLabel, cxDBLabel, cxDBNavigator;
 
 type
   TFrmCadastroUnidade = class(TFrmBaseTabela)
@@ -55,10 +55,6 @@ type
     DbChckBxAguaRio: TcxDBCheckBox;
     DbChckBxAguaOutras: TcxDBCheckBox;
     GrpBxGeo: TcxGroupBox;
-    Label11: TLabel;
-    Label12: TLabel;
-    Label13: TLabel;
-    Label14: TLabel;
     DbEdtLatGraus: TcxDBTextEdit;
     DbEdtLatMinutos: TcxDBTextEdit;
     DbEdtLatSegundos: TcxDBTextEdit;
@@ -176,10 +172,6 @@ type
     GrdPrdSemTblGRP_DESCRICAO: TcxGridDBColumn;
     GrdPrdSemTblCLS_DESCRICAO: TcxGridDBColumn;
     BtnAtvEditar: TcxButton;
-    Label40: TLabel;
-    Shape3: TShape;
-    Label41: TLabel;
-    Shape4: TShape;
     BtnPrdEditar: TcxButton;
     DtSrcProducaoAtividade: TDataSource;
     GrdPrdAtvTblATV_PERIODO_PLANTIO: TcxGridDBColumn;
@@ -201,8 +193,6 @@ type
     DbEdtReceita: TcxDBCurrencyEdit;
     LblReceita: TLabel;
     TbShtBeneficiarios: TcxTabSheet;
-    Label42: TLabel;
-    Shape5: TShape;
     DtSrcProducaoBeneficiario: TDataSource;
     GrdBen: TcxGrid;
     GrdBenTbl: TcxGridDBTableView;
@@ -393,6 +383,22 @@ type
     QryProducaoSemoventeREG_USUARIO: TStringField;
     QryProducaoSemoventeREG_MODIFICADO: TSQLTimeStampField;
     QryProducaoAtividadeATV_SAFRA_PERIODO: TStringField;
+    GrpBxBeneficiario: TcxGroupBox;
+    cxDBNavigator1: TcxDBNavigator;
+    DbEdtBeneficiario: TcxDBTextEdit;
+    DbEdtCPF: TcxDBTextEdit;
+    QryProducaoBemBEN_ID: TLargeintField;
+    QryProducaoSemoventeBEN_ID: TLargeintField;
+    QryProducaoAtividadeBEN_ID: TLargeintField;
+    Label40: TLabel;
+    Label41: TLabel;
+    Label42: TLabel;
+    Label48: TLabel;
+    Label11: TLabel;
+    Label14: TLabel;
+    Label49: TLabel;
+    Label50: TLabel;
+    Label12: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DtSrcPrincipalStateChange(Sender: TObject);
@@ -415,7 +421,6 @@ type
     procedure BtnSemExcluirClick(Sender: TObject);
     procedure DtSrcProducaoSemoventeStateChange(Sender: TObject);
     procedure DtSrcProducaoAtividadeStateChange(Sender: TObject);
-    procedure erivado(Sender: TObject);
     procedure BtnAtvIncluirClick(Sender: TObject);
     procedure BtnAtvEditarClick(Sender: TObject);
     procedure BtnAtvExcluirClick(Sender: TObject);
@@ -454,6 +459,7 @@ type
     procedure QryProducaoProdutoNewRecord(DataSet: TDataSet);
     procedure QryProducaoBeneficiarioAfterPost(DataSet: TDataSet);
     procedure QryProducaoAtividadeATV_SAFRA_INICIOChange(Sender: TField);
+    procedure TbShtAtividadesShow(Sender: TObject);
   private
     procedure AtualizarReplicacaoPendente;
     procedure AplicarUltimaAlteracao;
@@ -847,6 +853,10 @@ end;
 
 procedure TFrmCadastroUnidade.TbShtMaquinasShow(Sender: TObject);
 begin
+  GrpBxBeneficiario.Parent := TbShtMaquinas;
+  if not QryProducaoBeneficiario.Active then
+    QryProducaoBeneficiario.Open;
+
   if not QryProducaoBem.Active then
     begin
       QryProducaoBem.Open;
@@ -860,15 +870,22 @@ begin
   QryBem.Filtered := False;
   QryBem.Filter := 'cls_id in (100000002, 100000003)';
   QryBem.Filtered := True;
+
+  DtSrcProducaoBem.OnStateChange(Sender);
 end;
 
 procedure TFrmCadastroUnidade.TbShtSemoventesShow(Sender: TObject);
 begin
+  GrpBxBeneficiario.Parent := TbShtSemoventes;
+  if not QryProducaoBeneficiario.Active then
+    QryProducaoBeneficiario.Open;
   if not QryProducaoSemovente.Active then
     begin
       QryProducaoSemovente.Open;
       QrySemovente.Open;
     end;
+
+  DtSrcProducaoSemovente.OnStateChange(Sender);
 end;
 
 procedure TFrmCadastroUnidade.DbChckBxAguaClick(Sender: TObject);
@@ -951,15 +968,15 @@ procedure TFrmCadastroUnidade.DtSrcProducaoBemStateChange(Sender: TObject);
 begin
   with QryProducaoBem do
     begin
-      BtnBemNovo.Enabled := (State = dsBrowse) and (not (State = dsInactive));
-      BtnBemExcluir.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
-      BtnBemCancelar.Enabled := (State in [dsEdit, dsInsert]) and (not (State = dsInactive));
-      BtnBemSalvar.Enabled := (State in [dsEdit, dsInsert]) and (not (State = dsInactive));
+      BtnBemNovo.Enabled := (State = dsBrowse);
+      BtnBemExcluir.Enabled := (State = dsBrowse) and (RecordCount > 0);
+      BtnBemCancelar.Enabled := (State in [dsEdit, dsInsert]);
+      BtnBemSalvar.Enabled := (State in [dsEdit, dsInsert]);
 
-      BtnMaqNovo.Enabled := (State = dsBrowse) and (not (State = dsInactive));
-      BtnMaqExcluir.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
-      BtnMaqCancelar.Enabled := (State in [dsEdit, dsInsert]) and (not (State = dsInactive));
-      BtnMaqSalvar.Enabled := (State in [dsEdit, dsInsert]) and (not (State = dsInactive));
+      BtnMaqNovo.Enabled := (State = dsBrowse);
+      BtnMaqExcluir.Enabled := (State = dsBrowse) and (RecordCount > 0);
+      BtnMaqCancelar.Enabled := (State in [dsEdit, dsInsert]);
+      BtnMaqSalvar.Enabled := (State in [dsEdit, dsInsert]);
     end;
 end;
 
@@ -977,10 +994,10 @@ procedure TFrmCadastroUnidade.DtSrcProducaoSemoventeStateChange(Sender: TObject)
 begin
   with QryProducaoSemovente do
     begin
-      BtnSemNovo.Enabled := (State = dsBrowse) and (not (State = dsInactive));
-      BtnSemExcluir.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
-      BtnSemCancelar.Enabled := (State in [dsEdit, dsInsert]) and (not (State = dsInactive));
-      BtnSemSalvar.Enabled := (State in [dsEdit, dsInsert]) and (not (State = dsInactive));
+      BtnSemNovo.Enabled := (State = dsBrowse);
+      BtnSemExcluir.Enabled := (State = dsBrowse) and (RecordCount > 0);
+      BtnSemCancelar.Enabled := (State in [dsEdit, dsInsert]);
+      BtnSemSalvar.Enabled := (State in [dsEdit, dsInsert]);
     end;
 end;
 
@@ -1152,7 +1169,8 @@ begin
   QryProducaoAtividadeATV_AREA_PLANTADA.Value := 0;
   QryProducaoAtividadeATV_AREA_COLHIDA.Value := 0;
   QryProducaoAtividadeATV_DATA_VISITA.Value := Date;
-  QryProducaoAtividadePRO_ID.Value := QryPrincipalPRO_ID.Value;
+  QryProducaoAtividadePRO_ID.Value := QryProducaoBeneficiarioPRO_ID.Value;
+  QryProducaoAtividadeBEN_ID.Value := QryProducaoBeneficiarioBEN_ID.Value;
   QryProducaoAtividadeUND_ID.Value := DtmSistemaModulo.UnidadeLocalID;
   QryProducaoAtividadeATV_SAFRA_INICIO.AsInteger := YearOf(Date);
 
@@ -1178,7 +1196,8 @@ procedure TFrmCadastroUnidade.QryProducaoBemNewRecord(DataSet: TDataSet);
 begin
   inherited;
   DtmSistemaModulo.GravarIdentificador(QryProducaoBem, 'TAB_CAD_PRODUCAO_BEM', 'PBE_ID');
-  QryProducaoBemPRO_ID.Value := QryPrincipalPRO_ID.Value;
+  QryProducaoBemBEN_ID.Value := QryProducaoBeneficiarioBEN_ID.Value;
+  QryProducaoBemPRO_ID.Value := QryProducaoBeneficiarioPRO_ID.Value;
   QryProducaoBemBEM_QUANTIDADE.Value := 1;
   QryProducaoBemBEM_ESTADO.Value := 1;
   QryProducaoBemBEM_DATA.Value := Date;
@@ -1250,7 +1269,8 @@ procedure TFrmCadastroUnidade.QryProducaoSemoventeNewRecord(DataSet: TDataSet);
 begin
   inherited;
   DtmSistemaModulo.GravarIdentificador(QryProducaoSemovente, 'TAB_CAD_PRODUCAO_SEMOVENTE', 'PSE_ID');
-  QryProducaoSemoventePRO_ID.Value := QryPrincipalPRO_ID.Value;
+  QryProducaoSemoventePRO_ID.Value := QryProducaoBeneficiarioPRO_ID.Value;
+  QryProducaoSemoventeBEN_ID.Value := QryProducaoBeneficiarioBEN_ID.Value;
   QryProducaoSemoventePRD_QUANTIDADE.Value := 1;
   QryProducaoSemoventeREG_EXCLUIDO.Value := 0;
 end;
@@ -1267,16 +1287,20 @@ begin
       False);
 end;
 
-procedure TFrmCadastroUnidade.erivado(Sender: TObject);
+procedure TFrmCadastroUnidade.TbShtAtividadesShow(Sender: TObject);
 begin
-  if not QryProducaoAtividade.Active then
-    begin
-      QryProducaoAtividade.Open;
-      QryProduto.Open;
-      QryDerivado.Open;
-      QryProducaoProduto.Open;
-      QryDestino.Open;
-    end;
+  GrpBxBeneficiario.Parent := TbShtAtividades;
+  if not QryProducaoBeneficiario.Active then
+    QryProducaoBeneficiario.Open;
+
+  QryProducaoAtividade.Open;
+  QryProduto.Open;
+  QryDerivado.Open;
+  QryProducaoProduto.Open;
+  QryDestino.Open;
+
+  DtSrcProducaoAtividade.OnStateChange(Sender);
+  DtSrcProducaoProduto.OnStateChange(Sender);
 end;
 
 procedure TFrmCadastroUnidade.TbShtBeneficiariosShow(Sender: TObject);
@@ -1287,6 +1311,10 @@ end;
 
 procedure TFrmCadastroUnidade.TbShtBenfeitoriasShow(Sender: TObject);
 begin
+  GrpBxBeneficiario.Parent := TbShtBenfeitorias;
+  if not QryProducaoBeneficiario.Active then
+    QryProducaoBeneficiario.Open;
+
   if not QryProducaoBem.Active then
     begin
       QryProducaoBem.Open;
@@ -1300,6 +1328,8 @@ begin
   QryBem.Filtered := False;
   QryBem.Filter := 'cls_id = 100000001';
   QryBem.Filtered := True;
+
+  DtSrcProducaoBem.OnStateChange(Sender);
 end;
 
 end.

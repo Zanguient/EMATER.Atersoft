@@ -1408,7 +1408,7 @@ end;
 procedure TFrmCadastroBeneficiario.QryBeneficiarioProgramaGovernoNewRecord(DataSet: TDataSet);
 begin
   inherited;
-  QryBeneficiarioProgramaGovernoBEN_ID.AsInteger := QryPrincipalBEN_ID.AsInteger;
+  QryBeneficiarioProgramaGovernoBEN_ID.AsLargeInt := QryPrincipalBEN_ID.AsLargeInt;
 end;
 
 procedure TFrmCadastroBeneficiario.QryFamiliaAfterPost(DataSet: TDataSet);

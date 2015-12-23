@@ -161,7 +161,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
   inherited BtnSelecionar: TcxButton
     Left = 574
     Top = 586
-    ExplicitLeft = 573
+    ExplicitLeft = 574
     ExplicitTop = 586
   end
   inherited PgCntrlMain: TcxPageControl
@@ -170,19 +170,19 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     Height = 542
     ParentFont = False
     ExplicitTop = 37
-    ExplicitWidth = 720
+    ExplicitWidth = 721
     ExplicitHeight = 542
     ClientRectBottom = 540
     ClientRectRight = 719
     inherited TbShtPrincipal: TcxTabSheet
       Caption = 'Benefici'#225'rio de ATER'
-      ExplicitWidth = 716
+      ExplicitWidth = 717
       ExplicitHeight = 512
       object PgCntrlBeneficiario: TcxPageControl
         Left = 8
         Top = 8
-        Width = 698
-        Height = 497
+        Width = 694
+        Height = 491
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -193,17 +193,16 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
         TabOrder = 0
         Properties.ActivePage = TbShtBeneficiario
         Properties.CustomButtons.Buttons = <>
-        ExplicitWidth = 697
-        ClientRectBottom = 495
+        ClientRectBottom = 489
         ClientRectLeft = 2
-        ClientRectRight = 696
+        ClientRectRight = 692
         ClientRectTop = 28
         object TbShtBeneficiario: TcxTabSheet
           Caption = 'Principal'
           ImageIndex = 0
           DesignSize = (
-            694
-            467)
+            690
+            461)
           object GRpBxPrincipal: TcxGroupBox
             Left = 8
             Top = 0
@@ -213,10 +212,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             ParentColor = False
             TabOrder = 0
             DesignSize = (
-              677
+              673
               146)
             Height = 153
-            Width = 677
+            Width = 673
             object Label1: TLabel
               Tag = 2
               Left = 8
@@ -249,7 +248,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Transparent = True
             end
             object Label3: TLabel
-              Left = 404
+              Left = 400
               Top = 19
               Width = 39
               Height = 13
@@ -261,7 +260,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             end
             object Label4: TLabel
               Tag = 2
-              Left = 564
+              Left = 560
               Top = 19
               Width = 28
               Height = 13
@@ -294,7 +293,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             end
             object Label7: TLabel
               Tag = 2
-              Left = 404
+              Left = 400
               Top = 59
               Width = 99
               Height = 13
@@ -312,7 +311,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             end
             object Label8: TLabel
               Tag = 2
-              Left = 516
+              Left = 512
               Top = 59
               Width = 64
               Height = 13
@@ -361,7 +360,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Transparent = True
             end
             object Label53: TLabel
-              Left = 572
+              Left = 568
               Top = 99
               Width = 95
               Height = 13
@@ -388,10 +387,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               DataBinding.DataSource = DtSrcPrincipal
               Properties.OnChange = DbEdtNomePropertiesChange
               TabOrder = 1
-              Width = 285
+              Width = 281
             end
             object DbEdtApelido: TcxDBTextEdit
-              Left = 404
+              Left = 400
               Top = 35
               Anchors = [akTop, akRight]
               DataBinding.DataField = 'BEN_APELIDO'
@@ -400,7 +399,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Width = 153
             end
             object DbEdtNascimento: TcxDBDateEdit
-              Left = 404
+              Left = 400
               Top = 75
               Anchors = [akTop, akRight]
               DataBinding.DataField = 'BEN_NASCIMENTO'
@@ -433,7 +432,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Width = 129
             end
             object DBImgCmbBxSexo: TcxDBImageComboBox
-              Left = 564
+              Left = 560
               Top = 35
               Anchors = [akTop, akRight]
               DataBinding.DataField = 'BEN_SEXO'
@@ -483,10 +482,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               DataBinding.DataField = 'BEN_NOME_MAE'
               DataBinding.DataSource = DtSrcPrincipal
               TabOrder = 12
-              Width = 205
+              Width = 201
             end
             object DbEdtMembros: TcxDBSpinEdit
-              Left = 572
+              Left = 568
               Top = 115
               Anchors = [akTop, akRight]
               DataBinding.DataField = 'BEN_MEMBROS'
@@ -501,7 +500,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Width = 97
             end
             object DbLkpCmbBxEscolaridade: TcxDBLookupComboBox
-              Left = 516
+              Left = 512
               Top = 75
               Anchors = [akTop, akRight]
               DataBinding.DataField = 'ESC_ID'
@@ -544,7 +543,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Properties.ReadOnly = True
               Properties.OnButtonClick = DbBtnEdtNaturalidadePropertiesButtonClick
               TabOrder = 6
-              Width = 173
+              Width = 169
             end
           end
           object GrpBxEndereco: TcxGroupBox
@@ -563,10 +562,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Style.IsFontAssigned = True
             TabOrder = 1
             DesignSize = (
-              677
+              673
               142)
             Height = 149
-            Width = 677
+            Width = 673
             object Label12: TLabel
               Tag = 2
               Left = 80
@@ -596,7 +595,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Transparent = True
             end
             object Label15: TLabel
-              Left = 548
+              Left = 544
               Top = 16
               Width = 32
               Height = 13
@@ -674,7 +673,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Transparent = True
             end
             object Label31: TLabel
-              Left = 484
+              Left = 480
               Top = 16
               Width = 51
               Height = 13
@@ -706,10 +705,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               DataBinding.DataField = 'BEN_COMPLEMENTO'
               DataBinding.DataSource = DtSrcPrincipal
               TabOrder = 3
-              Width = 117
+              Width = 113
             end
             object DbEdtBairro: TcxDBTextEdit
-              Left = 548
+              Left = 544
               Top = 32
               Anchors = [akTop, akRight]
               DataBinding.DataField = 'BEN_BAIRRO'
@@ -731,7 +730,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               DataBinding.DataField = 'BEN_EMAIL'
               DataBinding.DataSource = DtSrcPrincipal
               TabOrder = 10
-              Width = 181
+              Width = 177
             end
             object DbLkpCmbBxMunicipio: TcxDBLookupComboBox
               Left = 8
@@ -806,7 +805,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Properties.ListOptions.ShowHeader = False
               Properties.PostPopupValueOnTab = True
               TabOrder = 13
-              Width = 293
+              Width = 289
             end
             object BtnComunidadeBuscar: TcxButton
               Tag = 1
@@ -825,7 +824,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             end
             object BtnOrganizacaoBuscar: TcxButton
               Tag = 1
-              Left = 648
+              Left = 644
               Top = 113
               Width = 21
               Height = 19
@@ -840,7 +839,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               OnClick = BtnOrganizacaoBuscarClick
             end
             object DbImgCmbBxRibeirinho: TcxDBImageComboBox
-              Left = 484
+              Left = 480
               Top = 32
               Anchors = [akTop, akRight]
               DataBinding.DataField = 'BEN_RIBEIRINHO'
@@ -909,10 +908,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             ParentColor = False
             TabOrder = 2
             DesignSize = (
-              483
+              479
               142)
             Height = 149
-            Width = 483
+            Width = 479
             object Label54: TLabel
               Left = 8
               Top = 55
@@ -1027,7 +1026,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Properties.PostPopupValueOnTab = True
               Properties.ReadOnly = False
               TabOrder = 2
-              Width = 187
+              Width = 183
             end
             object DbImgCmbBxSituacao: TcxDBImageComboBox
               Left = 288
@@ -1054,7 +1053,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                   Value = 3
                 end>
               TabOrder = 3
-              Width = 187
+              Width = 183
             end
             object DbEdtData: TcxDBDateEdit
               Left = 144
@@ -1082,11 +1081,11 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               DataBinding.DataSource = DtSrcPrincipal
               Enabled = False
               TabOrder = 6
-              Width = 331
+              Width = 327
             end
           end
           object cxGroupBox1: TcxGroupBox
-            Left = 498
+            Left = 494
             Top = 306
             Anchors = [akTop, akRight]
             Caption = 'Outras informa'#231#245'es'
@@ -1288,8 +1287,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Categoria e atividade produtiva'
           ImageIndex = 1
           DesignSize = (
-            694
-            467)
+            690
+            461)
           object LblCatDis: TLabel
             Left = 360
             Top = 40
@@ -1325,7 +1324,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object LblDivisoes: TLabel
             Left = 8
             Top = 224
-            Width = 674
+            Width = 670
             Height = 25
             Anchors = [akLeft, akTop, akRight]
             AutoSize = False
@@ -1345,7 +1344,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object LblCategorias: TLabel
             Left = 8
             Top = 8
-            Width = 674
+            Width = 670
             Height = 25
             Anchors = [akLeft, akTop, akRight]
             AutoSize = False
@@ -1365,7 +1364,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object Shape1: TShape
             Left = 8
             Top = 8
-            Width = 674
+            Width = 670
             Height = 25
             Anchors = [akLeft, akTop, akRight]
             Brush.Style = bsClear
@@ -1375,7 +1374,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object Shape2: TShape
             Left = 8
             Top = 224
-            Width = 674
+            Width = 670
             Height = 25
             Anchors = [akLeft, akTop, akRight]
             Brush.Style = bsClear
@@ -1779,8 +1778,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Programas governamentais'
           ImageIndex = 3
           DesignSize = (
-            694
-            467)
+            690
+            461)
           object LblPrgDis: TLabel
             Left = 360
             Top = 40
@@ -1799,7 +1798,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object LblProgramas: TLabel
             Left = 8
             Top = 8
-            Width = 674
+            Width = 670
             Height = 25
             Anchors = [akLeft, akTop, akRight]
             AutoSize = False
@@ -1819,7 +1818,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object Shape3: TShape
             Left = 8
             Top = 8
-            Width = 674
+            Width = 670
             Height = 25
             Anchors = [akLeft, akTop, akRight]
             Brush.Style = bsClear
@@ -2031,8 +2030,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           ImageIndex = 2
           OnShow = TbShtDAPShow
           DesignSize = (
-            694
-            467)
+            690
+            461)
           object LblDAP: TLabel
             Left = 8
             Top = 176
@@ -2050,10 +2049,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             ParentColor = False
             TabOrder = 0
             DesignSize = (
-              677
+              673
               106)
             Height = 113
-            Width = 677
+            Width = 673
             object Label32: TLabel
               Left = 8
               Top = 16
@@ -2136,7 +2135,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 end>
               Properties.ListOptions.ShowHeader = False
               TabOrder = 1
-              Width = 413
+              ExplicitWidth = 413
+              Width = 409
             end
             object DbLkpCmbBxOrigem: TcxDBLookupComboBox
               Left = 464
@@ -2151,7 +2151,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 end>
               Properties.ListOptions.ShowHeader = False
               TabOrder = 5
-              Width = 205
+              ExplicitWidth = 205
+              Width = 201
             end
             object DbEdtNIS: TcxDBMaskEdit
               Left = 8
@@ -2225,8 +2226,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object GrdDAP: TcxGrid
             Left = 8
             Top = 192
-            Width = 677
-            Height = 266
+            Width = 673
+            Height = 260
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -2237,6 +2238,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             TabOrder = 5
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
+            ExplicitWidth = 677
+            ExplicitHeight = 266
             object GrdDAPTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -2314,18 +2317,14 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     object TbShtSecundaria: TcxTabSheet
       Caption = 'Unidade de Produ'#231#227'o Familiar'
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         717
         512)
       object PgCntrlUnidade: TcxPageControl
         Left = 8
         Top = 8
-        Width = 698
-        Height = 497
+        Width = 694
+        Height = 491
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2336,22 +2335,17 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
         TabOrder = 0
         Properties.ActivePage = TbShtFamilia
         Properties.CustomButtons.Buttons = <>
-        ExplicitWidth = 697
-        ClientRectBottom = 495
+        ClientRectBottom = 489
         ClientRectLeft = 2
-        ClientRectRight = 696
+        ClientRectRight = 692
         ClientRectTop = 28
         object TbShtFamilia: TcxTabSheet
           Caption = 'Integrante familiar'
           ImageIndex = 0
           OnShow = TbShtFamiliaShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 669
-          ExplicitHeight = 447
           DesignSize = (
-            694
-            467)
+            690
+            461)
           object Label38: TLabel
             Left = 8
             Top = 280
@@ -2381,10 +2375,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             ParentColor = False
             TabOrder = 1
             DesignSize = (
-              679
+              675
               218)
             Height = 225
-            Width = 679
+            Width = 675
             object Label39: TLabel
               Left = 8
               Top = 16
@@ -2402,7 +2396,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Transparent = True
             end
             object Label41: TLabel
-              Left = 566
+              Left = 562
               Top = 16
               Width = 99
               Height = 13
@@ -2481,12 +2475,13 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Transparent = True
             end
             object DbEdtFamiliaNascimento: TcxDBDateEdit
-              Left = 566
+              Left = 562
               Top = 32
               Anchors = [akTop, akRight]
               DataBinding.DataField = 'FAM_NASCIMENTO'
               DataBinding.DataSource = DtSrcFamilia
               TabOrder = 2
+              ExplicitLeft = 566
               Width = 105
             end
             object DbedtFamiliaNome: TcxDBTextEdit
@@ -2496,7 +2491,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               DataBinding.DataField = 'FAM_NOME'
               DataBinding.DataSource = DtSrcFamilia
               TabOrder = 1
-              Width = 415
+              ExplicitWidth = 415
+              Width = 411
             end
             object DbEdtFamiliaRGNumero: TcxDBTextEdit
               Left = 144
@@ -2547,7 +2543,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Properties.ScrollBars = ssVertical
               TabOrder = 12
               Height = 49
-              Width = 663
+              Width = 659
             end
             object DbImgCmbBxFamiliaSexo: TcxDBImageComboBox
               Left = 8
@@ -2613,7 +2609,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Properties.ListOptions.ShowHeader = False
               Properties.PostPopupValueOnTab = True
               TabOrder = 6
-              Width = 151
+              ExplicitWidth = 151
+              Width = 147
             end
             object DbEdtFamiliaCPF: TcxDBMaskEdit
               Left = 8
@@ -2645,8 +2642,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object GrdFam: TcxGrid
             Left = 8
             Top = 296
-            Width = 679
-            Height = 162
+            Width = 675
+            Height = 156
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -2657,6 +2654,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             TabOrder = 2
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
+            ExplicitWidth = 679
+            ExplicitHeight = 162
             object GrdFamTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -2786,8 +2785,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           ImageIndex = 1
           OnShow = TbShtUnidadeShow
           DesignSize = (
-            694
-            467)
+            690
+            461)
           object Label50: TLabel
             Left = 8
             Top = 8
@@ -2799,7 +2798,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object GrdBenPrdMn: TcxGrid
             Left = 8
             Top = 56
-            Width = 675
+            Width = 671
             Height = 401
             Anchors = [akLeft, akTop, akRight]
             Font.Charset = ANSI_CHARSET
@@ -2811,6 +2810,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             TabOrder = 5
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
+            ExplicitWidth = 675
             object GrdBenPrdMnTbl: TcxGridDBTableView
               OnDblClick = GrdBenPrdMnTblDblClick
               Navigator.Buttons.CustomButtons = <>
@@ -2960,13 +2960,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Caracteriza'#231#227'o da produ'#231#227'o'
           ImageIndex = 2
           OnShow = TbShtProducaoShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
-            694
-            467)
+            690
+            461)
           object Label51: TLabel
             Left = 8
             Top = 8
@@ -2978,7 +2974,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object GrdBenPrd: TcxGrid
             Left = 8
             Top = 24
-            Width = 675
+            Width = 671
             Height = 105
             Anchors = [akLeft, akTop, akRight]
             Font.Charset = ANSI_CHARSET
@@ -2990,6 +2986,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             TabOrder = 0
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
+            ExplicitWidth = 675
             object GrdBenPrdTbl: TcxGridDBTableView
               OnDblClick = GrdBenPrdTblDblClick
               Navigator.Buttons.CustomButtons = <>
@@ -3065,8 +3062,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           object PgCntrlCaracterizacao: TcxPageControl
             Left = 8
             Top = 136
-            Width = 675
-            Height = 322
+            Width = 671
+            Height = 316
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -3077,23 +3074,22 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             TabOrder = 1
             Properties.ActivePage = TbShtBenfeitorias
             Properties.CustomButtons.Buttons = <>
-            ExplicitWidth = 674
-            ClientRectBottom = 320
+            ClientRectBottom = 314
             ClientRectLeft = 2
-            ClientRectRight = 673
+            ClientRectRight = 669
             ClientRectTop = 28
             object TbShtBenfeitorias: TcxTabSheet
               Caption = 'Benfeitorias'
               ImageIndex = 0
               OnShow = TbShtBenfeitoriasShow
               DesignSize = (
-                671
-                292)
+                667
+                286)
               object GrdPrdBem: TcxGrid
                 Left = 8
                 Top = 8
-                Width = 655
-                Height = 276
+                Width = 651
+                Height = 270
                 Anchors = [akLeft, akTop, akRight, akBottom]
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -3104,6 +3100,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 0
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
+                ExplicitWidth = 655
+                ExplicitHeight = 276
                 object GrdPrdBemTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3205,13 +3203,13 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               ImageIndex = 1
               OnShow = TbShtMaquinasShow
               DesignSize = (
-                671
-                292)
+                667
+                286)
               object GrdPrdMaq: TcxGrid
                 Left = 8
                 Top = 8
-                Width = 655
-                Height = 276
+                Width = 651
+                Height = 270
                 Anchors = [akLeft, akTop, akRight, akBottom]
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -3222,6 +3220,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 0
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
+                ExplicitWidth = 655
+                ExplicitHeight = 276
                 object GrdPrdMaqTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3325,13 +3325,13 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               ImageIndex = 2
               OnShow = TbShtSemoventesShow
               DesignSize = (
-                671
-                292)
+                667
+                286)
               object GrdPrdSem: TcxGrid
                 Left = 8
                 Top = 8
-                Width = 655
-                Height = 276
+                Width = 651
+                Height = 270
                 Anchors = [akLeft, akTop, akRight, akBottom]
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -3342,6 +3342,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 0
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
+                ExplicitWidth = 655
+                ExplicitHeight = 276
                 object GrdPrdSemTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3419,12 +3421,12 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               ImageIndex = 3
               OnShow = TbShtAtividadesShow
               DesignSize = (
-                671
-                292)
+                667
+                286)
               object GrdPrdAtv: TcxGrid
                 Left = 8
                 Top = 8
-                Width = 655
+                Width = 651
                 Height = 142
                 Anchors = [akLeft, akTop, akRight]
                 Font.Charset = ANSI_CHARSET
@@ -3436,6 +3438,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 0
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
+                ExplicitWidth = 655
                 object GrdPrdAtvTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3510,8 +3513,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               object GrdPrd: TcxGrid
                 Left = 8
                 Top = 157
-                Width = 655
-                Height = 127
+                Width = 651
+                Height = 121
                 Anchors = [akLeft, akTop, akRight, akBottom]
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -3522,6 +3525,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 1
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
+                ExplicitWidth = 655
+                ExplicitHeight = 127
                 object GrdPrdTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3634,7 +3639,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
   inherited BtnFechar: TcxButton
     Left = 654
     Top = 586
-    ExplicitLeft = 653
+    ExplicitLeft = 654
     ExplicitTop = 586
   end
   inherited BtnRelatorio: TcxButton
@@ -5126,12 +5131,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     object QryBeneficiarioProgramaGovernoREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryBeneficiarioProgramaGovernoREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
       Origin = 'REG_REPLICADO'
-      Required = True
     end
     object QryBeneficiarioProgramaGovernoREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
@@ -5147,7 +5150,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'PRG_DESCRICAO'
       Origin = 'PRG_DESCRICAO'
       ProviderFlags = []
-      ReadOnly = True
       Size = 100
     end
   end

@@ -3851,16 +3851,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       SyncImageIndex = False
       ImageIndex = 148
     end
-    object BtnPROATER: TdxBarLargeButton
-      Caption = 'PROATER'
-      Category = 12
-      Hint = 'PROATER'
-      Visible = ivAlways
-      LargeImageIndex = 2
-      OnClick = BtnPROATERClick
-      SyncImageIndex = False
-      ImageIndex = 151
-    end
     object BtnUnidadeAdicionar: TdxBarLargeButton
       Tag = 1
       Caption = 'Nova'
@@ -4634,6 +4624,16 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Visible = ivAlways
       LargeImageIndex = 29
       OnClick = BtnAgendaClick
+    end
+    object BtnPROATER: TdxBarLargeButton
+      Caption = 'PROATER'
+      Category = 12
+      Hint = 'PROATER'
+      Visible = ivAlways
+      LargeImageIndex = 2
+      OnClick = BtnPROATERClick
+      SyncImageIndex = False
+      ImageIndex = 151
     end
   end
   object dxSkinController: TdxSkinController

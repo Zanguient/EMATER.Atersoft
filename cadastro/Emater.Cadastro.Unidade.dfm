@@ -1,41 +1,41 @@
 inherited FrmCadastroUnidade: TFrmCadastroUnidade
   Tag = 1
-  Left = 368
-  Top = 108
+  Left = 358
+  Top = 78
   Hint = 'Cadastro de unidades de produ'#231#227'o familiar.'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
   Caption = 'Unidade de Produ'#231#227'o Familiar'
-  ClientHeight = 613
+  ClientHeight = 630
   ClientWidth = 820
-  ExplicitLeft = 368
-  ExplicitTop = 108
+  ExplicitLeft = 358
+  ExplicitTop = 78
   ExplicitWidth = 836
-  ExplicitHeight = 652
+  ExplicitHeight = 669
   DesignSize = (
     820
-    613)
+    630)
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
     Left = 658
-    Top = 581
+    Top = 598
     ExplicitLeft = 658
-    ExplicitTop = 581
+    ExplicitTop = 598
   end
   inherited PgCntrlMain: TcxPageControl
     Top = 34
     Width = 805
-    Height = 541
+    Height = 558
     ParentFont = False
     ExplicitTop = 34
     ExplicitWidth = 805
-    ExplicitHeight = 541
-    ClientRectBottom = 539
+    ExplicitHeight = 558
+    ClientRectBottom = 556
     ClientRectRight = 803
     inherited TbShtPrincipal: TcxTabSheet
       ExplicitWidth = 801
-      ExplicitHeight = 511
+      ExplicitHeight = 528
       object GRpBxPrincipal: TcxGroupBox
         Left = 8
         Top = 0
@@ -45,10 +45,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentColor = False
         TabOrder = 0
         DesignSize = (
-          785
+          781
           296)
         Height = 303
-        Width = 785
+        Width = 781
         object Label1: TLabel
           Tag = 2
           Left = 104
@@ -69,7 +69,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label3: TLabel
-          Left = 728
+          Left = 724
           Top = 16
           Width = 41
           Height = 13
@@ -77,6 +77,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'N'#250'mero:'
           FocusControl = DbEdtNumero
           Transparent = True
+          ExplicitLeft = 728
         end
         object Label4: TLabel
           Left = 8
@@ -106,13 +107,14 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label18: TLabel
-          Left = 752
+          Left = 748
           Top = 56
           Width = 17
           Height = 13
           Anchors = [akTop, akRight]
           Caption = 'UF:'
           Transparent = True
+          ExplicitLeft = 752
         end
         object Label6: TLabel
           Left = 8
@@ -192,10 +194,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_ENDERECO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 2
-          Width = 257
+          Width = 253
         end
         object DbEdtNumero: TcxDBTextEdit
-          Left = 728
+          Left = 724
           Top = 32
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'PRO_NUMERO'
@@ -235,10 +237,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 6
-          Width = 297
+          Width = 293
         end
         object DbEdtUF: TcxDBTextEdit
-          Left = 752
+          Left = 748
           Top = 72
           TabStop = False
           Anchors = [akTop, akRight]
@@ -255,7 +257,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_ACESSO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 8
-          Width = 769
+          Width = 765
         end
         object DbLkpCmbBxComunidade: TcxDBLookupComboBox
           Left = 8
@@ -342,6 +344,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui CAR (Cadastro de Ambiente Rural):'
             DataBinding.DataField = 'PRO_CAR'
             DataBinding.DataSource = DtSrcPrincipal
+            ParentBackground = False
             ParentColor = False
             Properties.ImmediatePost = True
             Properties.ValueChecked = '1'
@@ -377,6 +380,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui sistema de energia el'#233'trica:'
             DataBinding.DataField = 'PRO_ENERGIA_SITUACAO'
             DataBinding.DataSource = DtSrcPrincipal
+            ParentBackground = False
             ParentColor = False
             Properties.Alignment = taLeftJustify
             Properties.ImmediatePost = True
@@ -395,6 +399,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_ENERGIA_CONCESSIONARIA'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -410,6 +415,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_ENERGIA_OUTRAS'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -428,13 +434,14 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           ParentColor = False
           TabOrder = 16
           Height = 113
-          Width = 265
+          Width = 261
           object DbChckBxAgua: TcxDBCheckBox
             Left = 8
             Top = 16
             Caption = 'Possui sistema de abastecimento de '#225'gua:'
             DataBinding.DataField = 'PRO_AGUA_SITUACAO'
             DataBinding.DataSource = DtSrcPrincipal
+            ParentBackground = False
             ParentColor = False
             Properties.ImmediatePost = True
             Properties.ValueChecked = '1'
@@ -452,6 +459,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_CONCESSIONARIA'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -467,6 +475,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_POCO_ARTESIANO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -482,6 +491,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_POCO_AMAZONICO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -497,6 +507,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_RIO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -512,6 +523,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_OUTRAS'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -537,7 +549,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 12
-          Width = 185
+          Width = 181
         end
         object DbLkpCmbBxDocumento: TcxDBLookupComboBox
           Left = 368
@@ -583,11 +595,14 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
-        Height = 87
-        Width = 381
+        DesignSize = (
+          377
+          92)
+        Height = 99
+        Width = 377
         object Label15: TLabel
           Left = 8
-          Top = 31
+          Top = 19
           Width = 43
           Height = 13
           Caption = 'Latitude:'
@@ -595,7 +610,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label19: TLabel
           Left = 8
-          Top = 55
+          Top = 43
           Width = 51
           Height = 13
           Caption = 'Longitude:'
@@ -603,7 +618,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label40: TLabel
           Left = 156
-          Top = 55
+          Top = 43
           Width = 8
           Height = 13
           Caption = '='
@@ -611,7 +626,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label41: TLabel
           Left = 156
-          Top = 31
+          Top = 19
           Width = 8
           Height = 13
           Caption = '='
@@ -619,7 +634,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label42: TLabel
           Left = 219
-          Top = 31
+          Top = 19
           Width = 5
           Height = 13
           Caption = #186
@@ -628,7 +643,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label48: TLabel
           Left = 219
-          Top = 55
+          Top = 43
           Width = 5
           Height = 13
           Caption = #186
@@ -637,7 +652,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label11: TLabel
           Left = 291
-          Top = 31
+          Top = 19
           Width = 2
           Height = 13
           Caption = #39
@@ -646,7 +661,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label14: TLabel
           Left = 291
-          Top = 55
+          Top = 43
           Width = 2
           Height = 13
           Caption = #39
@@ -655,7 +670,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label49: TLabel
           Left = 365
-          Top = 31
+          Top = 19
           Width = 4
           Height = 13
           Caption = #39#39
@@ -664,16 +679,25 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label50: TLabel
           Left = 365
-          Top = 55
+          Top = 43
           Width = 4
           Height = 13
           Caption = #39#39
           FocusControl = DbEdtLatMinutos
           Transparent = True
         end
+        object Label13: TLabel
+          Tag = 2
+          Left = 8
+          Top = 67
+          Width = 39
+          Height = 13
+          Caption = 'DATUM:'
+          Transparent = True
+        end
         object DbEdtLatGraus: TcxDBTextEdit
           Left = 168
-          Top = 27
+          Top = 15
           DataBinding.DataField = 'PRO_LATITUDE_GRAUS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
@@ -682,7 +706,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtLatMinutos: TcxDBTextEdit
           Left = 240
-          Top = 27
+          Top = 15
           DataBinding.DataField = 'PRO_LATITUDE_MINUTOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
@@ -691,7 +715,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtLatSegundos: TcxDBTextEdit
           Left = 312
-          Top = 27
+          Top = 15
           DataBinding.DataField = 'PRO_LATITUDE_SEGUNDOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 5
@@ -700,7 +724,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtLongGraus: TcxDBTextEdit
           Left = 168
-          Top = 51
+          Top = 39
           DataBinding.DataField = 'PRO_LONGITUDE_GRAUS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
@@ -709,7 +733,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtLongMinutos: TcxDBTextEdit
           Left = 240
-          Top = 51
+          Top = 39
           DataBinding.DataField = 'PRO_LONGITUDE_MINUTOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
@@ -718,7 +742,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtLongSegundos: TcxDBTextEdit
           Left = 312
-          Top = 51
+          Top = 39
           DataBinding.DataField = 'PRO_LONGITUDE_SEGUNDOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 5
@@ -727,7 +751,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbImgCmbBxLatHemisferio: TcxDBImageComboBox
           Left = 80
-          Top = 27
+          Top = 15
           DataBinding.DataField = 'PRO_LATITUDE_HEMISFERIO'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.Items = <
@@ -753,7 +777,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbImgCmbBxHemisferio: TcxDBImageComboBox
           Left = 80
-          Top = 51
+          Top = 39
           DataBinding.DataField = 'PRO_LONGITUDE_HEMISFERIO'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.Items = <
@@ -777,20 +801,38 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           TabOrder = 7
           Width = 73
         end
+        object DbLkpCmbBxDatum: TcxDBLookupComboBox
+          Left = 80
+          Top = 63
+          Anchors = [akLeft, akTop, akRight]
+          DataBinding.DataField = 'DAT_ID'
+          DataBinding.DataSource = DtSrcPrincipal
+          Properties.DropDownRows = 16
+          Properties.ImmediatePost = True
+          Properties.KeyFieldNames = 'DAT_ID'
+          Properties.ListColumns = <
+            item
+              FieldName = 'DAT_NOME'
+            end>
+          Properties.ListOptions.ShowHeader = False
+          Properties.PostPopupValueOnTab = True
+          TabOrder = 8
+          Width = 277
+        end
       end
       object GrpBxTerra: TcxGroupBox
-        Left = 396
+        Left = 392
         Top = 304
         Anchors = [akTop, akRight]
         Caption = 'Condi'#231#227'o da terra'
         ParentBackground = False
         ParentColor = False
         TabOrder = 3
-        Height = 197
+        Height = 217
         Width = 397
         object Shape2: TShape
           Left = 240
-          Top = 167
+          Top = 183
           Width = 145
           Height = 18
           Brush.Style = bsClear
@@ -798,7 +840,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbTxtTotal: TDBText
           Left = 328
-          Top = 169
+          Top = 185
           Width = 53
           Height = 13
           Alignment = taRightJustify
@@ -835,7 +877,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label23: TLabel
           Left = 197
-          Top = 27
+          Top = 43
           Width = 40
           Height = 13
           Caption = 'APP (*):'
@@ -844,7 +886,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label24: TLabel
           Left = 186
-          Top = 51
+          Top = 67
           Width = 51
           Height = 13
           Caption = 'Pastagem:'
@@ -853,7 +895,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label25: TLabel
           Left = 137
-          Top = 76
+          Top = 92
           Width = 100
           Height = 13
           Caption = 'Cultura permanente:'
@@ -862,7 +904,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label26: TLabel
           Left = 143
-          Top = 100
+          Top = 116
           Width = 94
           Height = 13
           Caption = 'Cultura tempor'#225'ria:'
@@ -871,7 +913,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label27: TLabel
           Left = 168
-          Top = 123
+          Top = 139
           Width = 69
           Height = 13
           Caption = 'Reserva legal:'
@@ -880,7 +922,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label28: TLabel
           Left = 200
-          Top = 147
+          Top = 163
           Width = 37
           Height = 13
           Caption = 'Outros:'
@@ -889,7 +931,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label29: TLabel
           Left = 240
-          Top = 8
+          Top = 24
           Width = 71
           Height = 13
           Caption = #193'rea real (ha):'
@@ -898,7 +940,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label30: TLabel
           Left = 344
-          Top = 8
+          Top = 24
           Width = 15
           Height = 13
           Caption = '%:'
@@ -907,7 +949,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label9: TLabel
           Left = 209
-          Top = 169
+          Top = 185
           Width = 28
           Height = 13
           Caption = 'Total:'
@@ -916,7 +958,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbTxtTotalArea: TDBText
           Left = 241
-          Top = 169
+          Top = 185
           Width = 76
           Height = 13
           Alignment = taRightJustify
@@ -933,7 +975,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label12: TLabel
           Left = 8
-          Top = 171
+          Top = 187
           Width = 183
           Height = 13
           Caption = '(*) '#193'rea de preserva'#231#227'o permanente.'
@@ -958,7 +1000,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtTerraNua: TcxDBCalcEdit
           Left = 240
-          Top = 23
+          Top = 39
           DataBinding.DataField = 'PRO_AREA_NUA'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 2
@@ -966,7 +1008,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtPastagem: TcxDBCalcEdit
           Left = 240
-          Top = 47
+          Top = 63
           DataBinding.DataField = 'PRO_AREA_PASTAGEM'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 4
@@ -974,7 +1016,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtPermanente: TcxDBCalcEdit
           Left = 240
-          Top = 71
+          Top = 87
           DataBinding.DataField = 'PRO_AREA_PERMANENTE'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 6
@@ -982,7 +1024,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtTemporaria: TcxDBCalcEdit
           Left = 240
-          Top = 95
+          Top = 111
           DataBinding.DataField = 'PRO_AREA_TEMPORARIA'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 8
@@ -990,7 +1032,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtReserva: TcxDBCalcEdit
           Left = 240
-          Top = 119
+          Top = 135
           DataBinding.DataField = 'PRO_AREA_RESERVA'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 10
@@ -998,7 +1040,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtOutros: TcxDBCalcEdit
           Left = 240
-          Top = 143
+          Top = 159
           DataBinding.DataField = 'PRO_AREA_OUTROS'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 12
@@ -1006,7 +1048,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtTerraNuaPerc: TcxDBTextEdit
           Left = 344
-          Top = 23
+          Top = 39
           TabStop = False
           DataBinding.DataField = 'PRO_AREA_NUA_PERC'
           DataBinding.DataSource = DtSrcPrincipal
@@ -1016,7 +1058,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtPastagemPerc: TcxDBTextEdit
           Left = 344
-          Top = 47
+          Top = 63
           TabStop = False
           DataBinding.DataField = 'PRO_AREA_PASTAGEM_PERC'
           DataBinding.DataSource = DtSrcPrincipal
@@ -1026,7 +1068,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtPermanentePerc: TcxDBTextEdit
           Left = 344
-          Top = 71
+          Top = 87
           TabStop = False
           DataBinding.DataField = 'PRO_AREA_PERMANENTE_PERC'
           DataBinding.DataSource = DtSrcPrincipal
@@ -1036,7 +1078,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtTemporariaPerc: TcxDBTextEdit
           Left = 344
-          Top = 95
+          Top = 111
           TabStop = False
           DataBinding.DataField = 'PRO_AREA_TEMPORARIA_PERC'
           DataBinding.DataSource = DtSrcPrincipal
@@ -1046,7 +1088,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtReservaPerc: TcxDBTextEdit
           Left = 344
-          Top = 119
+          Top = 135
           TabStop = False
           DataBinding.DataField = 'PRO_AREA_RESERVA_PERC'
           DataBinding.DataSource = DtSrcPrincipal
@@ -1056,7 +1098,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtOutrosPerc: TcxDBTextEdit
           Left = 344
-          Top = 143
+          Top = 159
           TabStop = False
           DataBinding.DataField = 'PRO_AREA_OUTROS_PERC'
           DataBinding.DataSource = DtSrcPrincipal
@@ -1067,20 +1109,20 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       end
       object GrpBxRegistro: TcxGroupBox
         Left = 8
-        Top = 391
+        Top = 403
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Informa'#231#245'es do registro'
         ParentBackground = False
         ParentColor = False
         TabOrder = 2
         DesignSize = (
-          381
-          103)
-        Height = 110
-        Width = 381
+          377
+          111)
+        Height = 118
+        Width = 377
         object Label31: TLabel
           Left = 8
-          Top = 40
+          Top = 44
           Width = 48
           Height = 13
           Caption = 'Escrit'#243'rio:'
@@ -1089,7 +1131,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         object Label32: TLabel
           Tag = 2
           Left = 8
-          Top = 16
+          Top = 20
           Width = 101
           Height = 13
           Caption = 'T'#233'cnico respons'#225'vel:'
@@ -1097,7 +1139,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label44: TLabel
           Left = 8
-          Top = 60
+          Top = 64
           Width = 121
           Height = 13
           Caption = 'Data da '#250'ltima altera'#231#227'o:'
@@ -1106,7 +1148,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label45: TLabel
           Left = 136
-          Top = 60
+          Top = 64
           Width = 134
           Height = 13
           Caption = 'Usu'#225'rio da '#250'ltima altera'#231#227'o:'
@@ -1114,8 +1156,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object DbLkpCmbBxTecnico: TcxDBLookupComboBox
-          Left = 136
-          Top = 12
+          Left = 120
+          Top = 16
           Anchors = [akLeft, akTop, akRight]
           DataBinding.DataField = 'FUN_ID'
           DataBinding.DataSource = DtSrcPrincipal
@@ -1132,11 +1174,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 237
+          Width = 245
         end
         object DbLkpCmbBxUnidade: TcxDBLookupComboBox
-          Left = 136
-          Top = 36
+          Left = 120
+          Top = 40
           TabStop = False
           Anchors = [akLeft, akTop, akRight]
           DataBinding.DataField = 'UND_ID'
@@ -1152,11 +1194,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.PostPopupValueOnTab = True
           Properties.ReadOnly = True
           TabOrder = 1
-          Width = 237
+          Width = 245
         end
         object DbEdtModificadoData: TcxDBTextEdit
           Left = 8
-          Top = 75
+          Top = 80
           DataBinding.DataField = 'PRO_MODIFICADO_DATA'
           DataBinding.DataSource = DtSrcPrincipal
           Enabled = False
@@ -1165,13 +1207,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object DbEdtModificadoUsuario: TcxDBTextEdit
           Left = 136
-          Top = 75
+          Top = 80
           Anchors = [akLeft, akTop, akRight]
           DataBinding.DataField = 'PRO_MODIFICADO_USUARIO_NOME'
           DataBinding.DataSource = DtSrcPrincipal
           Enabled = False
           TabOrder = 3
-          Width = 237
+          Width = 229
         end
       end
     end
@@ -1179,14 +1221,18 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benefici'#225'rios'
       ImageIndex = 6
       OnShow = TbShtBeneficiariosShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 511
       DesignSize = (
         801
-        511)
+        528)
       object GrdBen: TcxGrid
         Left = 8
         Top = 40
-        Width = 785
-        Height = 465
+        Width = 781
+        Height = 476
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1197,6 +1243,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 3
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 785
+        ExplicitHeight = 465
         object GrdBenTbl: TcxGridDBTableView
           OnDblClick = GrdBenTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -1306,14 +1354,18 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benfeitorias'
       ImageIndex = 2
       OnShow = TbShtBenfeitoriasShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 511
       DesignSize = (
         801
-        511)
+        528)
       object GrdPrdBem: TcxGrid
         Left = 8
         Top = 184
-        Width = 785
-        Height = 321
+        Width = 781
+        Height = 332
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1324,6 +1376,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 5
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 785
+        ExplicitHeight = 321
         object GrdPrdBemTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1428,11 +1482,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
+        ExplicitWidth = 785
         DesignSize = (
-          785
+          781
           74)
         Height = 81
-        Width = 785
+        Width = 781
         object Label10: TLabel
           Tag = 2
           Left = 8
@@ -1443,7 +1498,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label33: TLabel
-          Left = 664
+          Left = 660
           Top = 24
           Width = 60
           Height = 13
@@ -1451,19 +1506,21 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Quantidade:'
           FocusControl = DbEdtQuantidade
           Transparent = True
+          ExplicitLeft = 664
         end
         object Label34: TLabel
           Tag = 2
-          Left = 416
+          Left = 412
           Top = 24
           Width = 37
           Height = 13
           Anchors = [akTop, akRight]
           Caption = 'Estado:'
           Transparent = True
+          ExplicitLeft = 416
         end
         object Label46: TLabel
-          Left = 560
+          Left = 556
           Top = 24
           Width = 87
           Height = 13
@@ -1471,6 +1528,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Data de cadastro:'
           FocusControl = EdtDataBem
           Transparent = True
+          ExplicitLeft = 560
         end
         object DbLkpCmbBxBenfeitoria: TcxDBLookupComboBox
           Left = 8
@@ -1489,20 +1547,21 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 401
+          ExplicitWidth = 401
+          Width = 397
         end
         object DbEdtQuantidade: TcxDBSpinEdit
-          Left = 664
+          Left = 660
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
-          ExplicitLeft = 660
+          ExplicitLeft = 664
           Width = 113
         end
         object DbImgCmbBxEstado: TcxDBImageComboBox
-          Left = 416
+          Left = 412
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_ESTADO'
@@ -1530,11 +1589,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
-          ExplicitLeft = 412
+          ExplicitLeft = 416
           Width = 137
         end
         object EdtDataBem: TcxDBDateEdit
-          Left = 560
+          Left = 556
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_DATA'
@@ -1543,7 +1602,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
-          ExplicitLeft = 556
+          ExplicitLeft = 560
           Width = 97
         end
       end
@@ -1627,11 +1686,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 6
+        ExplicitWidth = 785
         DesignSize = (
-          785
+          781
           52)
         Height = 59
-        Width = 785
+        Width = 781
         object cxDBNavigator1: TcxDBNavigator
           Left = 8
           Top = 19
@@ -1667,10 +1727,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Style.Font.Style = []
           Style.IsFontAssigned = True
           TabOrder = 1
-          Width = 495
+          ExplicitWidth = 495
+          Width = 491
         end
         object DbEdtCPF: TcxDBTextEdit
-          Left = 608
+          Left = 604
           Top = 18
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEN_CPF'
@@ -1684,6 +1745,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Style.Font.Style = []
           Style.IsFontAssigned = True
           TabOrder = 2
+          ExplicitLeft = 608
           Width = 169
         end
       end
@@ -1698,14 +1760,18 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ImageIndex = 3
       ParentFont = False
       OnShow = TbShtMaquinasShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 511
       DesignSize = (
         801
-        511)
+        528)
       object GrdPrdMaq: TcxGrid
         Left = 8
         Top = 184
-        Width = 785
-        Height = 321
+        Width = 781
+        Height = 332
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1716,6 +1782,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 785
+        ExplicitHeight = 321
         object GrdPrdMaqTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1820,11 +1888,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
+        ExplicitWidth = 785
         DesignSize = (
-          785
+          781
           74)
         Height = 81
-        Width = 785
+        Width = 781
         object Label35: TLabel
           Tag = 2
           Left = 8
@@ -1835,7 +1904,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label36: TLabel
-          Left = 664
+          Left = 660
           Top = 24
           Width = 60
           Height = 13
@@ -1843,19 +1912,21 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Quantidade:'
           FocusControl = DbEdtMaquinaQtde
           Transparent = True
+          ExplicitLeft = 664
         end
         object Label37: TLabel
           Tag = 2
-          Left = 416
+          Left = 412
           Top = 24
           Width = 37
           Height = 13
           Anchors = [akTop, akRight]
           Caption = 'Estado:'
           Transparent = True
+          ExplicitLeft = 416
         end
         object Label47: TLabel
-          Left = 560
+          Left = 556
           Top = 24
           Width = 87
           Height = 13
@@ -1863,6 +1934,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Data de cadastro:'
           FocusControl = EdtDataEquipamento
           Transparent = True
+          ExplicitLeft = 560
         end
         object DbLkpCmbBxMaquina: TcxDBLookupComboBox
           Left = 8
@@ -1881,20 +1953,21 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 401
+          ExplicitWidth = 401
+          Width = 397
         end
         object DbEdtMaquinaQtde: TcxDBSpinEdit
-          Left = 664
+          Left = 660
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
-          ExplicitLeft = 660
+          ExplicitLeft = 664
           Width = 113
         end
         object DbImgCmbBxMaquinaEstado: TcxDBImageComboBox
-          Left = 416
+          Left = 412
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_ESTADO'
@@ -1922,11 +1995,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
-          ExplicitLeft = 412
+          ExplicitLeft = 416
           Width = 137
         end
         object EdtDataEquipamento: TcxDBDateEdit
-          Left = 560
+          Left = 556
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_DATA'
@@ -1935,7 +2008,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
-          ExplicitLeft = 556
+          ExplicitLeft = 560
           Width = 97
         end
       end
@@ -2008,14 +2081,18 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Semoventes'
       ImageIndex = 4
       OnShow = TbShtSemoventesShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 511
       DesignSize = (
         801
-        511)
+        528)
       object GrdPrdSem: TcxGrid
         Left = 8
         Top = 184
-        Width = 785
-        Height = 321
+        Width = 781
+        Height = 332
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2026,6 +2103,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 785
+        ExplicitHeight = 321
         object GrdPrdSemTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -2105,11 +2184,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
+        ExplicitWidth = 785
         DesignSize = (
-          785
+          781
           74)
         Height = 81
-        Width = 785
+        Width = 781
         object Label38: TLabel
           Tag = 2
           Left = 8
@@ -2120,7 +2200,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label39: TLabel
-          Left = 688
+          Left = 684
           Top = 24
           Width = 60
           Height = 13
@@ -2128,7 +2208,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Quantidade:'
           FocusControl = DbEdtSemoventeQtde
           Transparent = True
-          ExplicitLeft = 684
         end
         object DbLkpCmbBxSemovente: TcxDBLookupComboBox
           Left = 8
@@ -2153,16 +2232,17 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcSemovente
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 673
+          ExplicitWidth = 673
+          Width = 669
         end
         object DbEdtSemoventeQtde: TcxDBSpinEdit
-          Left = 688
+          Left = 684
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'PRD_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoSemovente
           TabOrder = 1
-          ExplicitLeft = 684
+          ExplicitLeft = 688
           Width = 89
         end
       end
@@ -2221,11 +2301,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       OnShow = TbShtAtividadesShow
       DesignSize = (
         801
-        511)
+        528)
       object GrdPrdAtv: TcxGrid
         Left = 8
         Top = 99
-        Width = 785
+        Width = 781
         Height = 193
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -2285,32 +2365,32 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Styles.Inactive = DtmRecursoModulo.cxStyleSelection
           Styles.Selection = DtmRecursoModulo.cxStyleSelection
           object GrdPrdAtvTblATV_PERIODO_PLANTIO: TcxGridDBColumn
-            DataBinding.FieldName = 'ATV_SAFRA_PERIODO'
-            Width = 74
+            DataBinding.FieldName = 'ATV_PERIODO'
+            Width = 68
           end
           object GrdPrdAtvTblSIP_DESCRICAO: TcxGridDBColumn
             DataBinding.FieldName = 'SIP_DESCRICAO'
-            Width = 130
+            Width = 139
           end
           object GrdPrdAtvTblPRD_DESCRICAO: TcxGridDBColumn
             DataBinding.FieldName = 'PRD_DESCRICAO'
-            Width = 204
-          end
-          object GrdPrdAtvTblUNI_DESCRICAO: TcxGridDBColumn
-            DataBinding.FieldName = 'UNI_DESCRICAO'
-            Width = 75
+            Width = 218
           end
           object GrdPrdAtvTblATV_AREA_PLANTADA: TcxGridDBColumn
             DataBinding.FieldName = 'ATV_AREA_PLANTADA'
-            Width = 99
+            Width = 106
           end
           object GrdPrdAtvTblATV_AREA_COLHIDA: TcxGridDBColumn
             DataBinding.FieldName = 'ATV_AREA_COLHIDA'
-            Width = 91
+            Width = 97
           end
           object GrdPrdAtvTblATV_QUANTIDADE: TcxGridDBColumn
             DataBinding.FieldName = 'ATV_QUANTIDADE'
-            Width = 70
+            Width = 75
+          end
+          object GrdPrdAtvTblUNI_DESCRICAO: TcxGridDBColumn
+            DataBinding.FieldName = 'UNI_DESCRICAO'
+            Width = 80
           end
         end
         object GrdPrdAtvLvl: TcxGridLevel
@@ -2346,8 +2426,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object GrdPrd: TcxGrid
         Left = 8
         Top = 336
-        Width = 785
-        Height = 169
+        Width = 781
+        Height = 180
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2508,45 +2588,45 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
   end
   inherited BtnNovo: TcxButton
     Tag = 1
-    Top = 581
+    Top = 598
     Hint = 'Inserir nova unidade de produ'#231#227'o'
     Description = 'Cria um novo registro de unidade de produ'#231#227'o.'
-    ExplicitTop = 581
+    ExplicitTop = 598
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
-    Top = 581
+    Top = 598
     Hint = 'Salvar altera'#231#245'es na unidade de produ'#231#227'o'
     Description = 
       'Salva as altera'#231#245'es realizadas no registro da unidade de produ'#231#227 +
       'o.'
-    ExplicitTop = 581
+    ExplicitTop = 598
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
-    Top = 581
+    Top = 598
     Hint = 'Cancelar altera'#231#245'es na unidade de produ'#231#227'o'
     Description = 
       'Cancela as altera'#231#245'es realizadas no registro da unidade de produ' +
       #231#227'o.'
-    ExplicitTop = 581
+    ExplicitTop = 598
   end
   inherited BtnExcluir: TcxButton
     Tag = 1
-    Top = 581
+    Top = 598
     Hint = 'Excluir unidade de produ'#231#227'o'
     Description = 'Exclui a unidade de produ'#231#227'o atualmente selecionada.'
-    ExplicitTop = 581
+    ExplicitTop = 598
   end
   inherited BtnFechar: TcxButton
     Left = 738
-    Top = 581
+    Top = 598
     ExplicitLeft = 738
-    ExplicitTop = 581
+    ExplicitTop = 598
   end
   inherited BtnRelatorio: TcxButton
-    Top = 581
-    ExplicitTop = 581
+    Top = 598
+    ExplicitTop = 598
   end
   object PnlTop: TPanel [8]
     Left = 0
@@ -2996,8 +3076,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     oAutoFormatFields = False
   end
   inherited DtSrcPrincipal: TDataSource
-    Left = 336
-    Top = 360
+    Left = 440
+    Top = 168
   end
   inherited QryPrincipal: TFDQuery
     AfterPost = QryPrincipalAfterPost
@@ -3053,6 +3133,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  a.und_id, '
       '  a.oct_id, '
       '  a.dct_id,'
+      '  a.dat_id,'
       '  b.ufe_id,'
       
         '  '#39'('#39' || coalesce(c.usr_login, '#39'N'#227'o identificado'#39') || '#39') '#39' || co' +
@@ -3067,8 +3148,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0) and'
       '  (a.und_id in (select und_id from vwt_sis_unidade_local)) and'
       '  (a.pro_id = :pro_id)')
-    Left = 272
-    Top = 360
+    Left = 376
+    Top = 168
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -3341,6 +3422,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       FieldName = 'DCT_ID'
       Origin = 'DCT_ID'
     end
+    object QryPrincipalDAT_ID: TIntegerField
+      Alignment = taLeftJustify
+      FieldName = 'DAT_ID'
+      Origin = 'DAT_ID'
+    end
     object QryPrincipalUFE_ID: TStringField
       AutoGenerateValue = arDefault
       FieldName = 'UFE_ID'
@@ -3434,8 +3520,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  PRO_AREA_NUA, PRO_AREA_PASTAGEM, PRO_AREA_PERMANENTE, '
       '  PRO_AREA_TEMPORARIA, PRO_AREA_RESERVA, PRO_AREA_OUTROS, '
       '  CID_ID, COM_ID, FUN_ID, UND_ID, DCT_ID, '
-      '  OCT_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
-      '  REG_MODIFICADO)'
+      '  OCT_ID, DAT_ID, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
       
         'VALUES (:NEW_PRO_ID, :NEW_PRO_DATA, :NEW_PRO_DENOMINACAO, :NEW_P' +
         'RO_ENDERECO, '
@@ -3469,9 +3555,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         '  :NEW_CID_ID, :NEW_COM_ID, :NEW_FUN_ID, :NEW_UND_ID, :NEW_DCT_I' +
         'D, '
       
-        '  :NEW_OCT_ID, :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, :NEW_REG_U' +
-        'SUARIO, '
-      '  :NEW_REG_MODIFICADO)')
+        '  :NEW_OCT_ID, :NEW_DAT_ID, :NEW_REG_EXCLUIDO, :NEW_REG_REPLICAD' +
+        'O, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
     ModifySQL.Strings = (
       'UPDATE TAB_CAD_PRODUCAO_FAMILIAR'
       
@@ -3530,12 +3616,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       
         '  UND_ID = :NEW_UND_ID, DCT_ID = :NEW_DCT_ID, OCT_ID = :NEW_OCT_' +
         'ID, '
+      '  DAT_ID = :NEW_DAT_ID, REG_EXCLUIDO = :NEW_REG_EXCLUIDO, '
       
-        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
-        'LICADO, '
-      
-        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
-        'FICADO'
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
       'WHERE PRO_ID = :OLD_PRO_ID')
     DeleteSQL.Strings = (
       'DELETE FROM TAB_CAD_PRODUCAO_FAMILIAR'
@@ -3568,63 +3653,62 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ', '
       '  PRO_AREA_PERMANENTE, PRO_AREA_TEMPORARIA, PRO_AREA_RESERVA, '
       '  PRO_AREA_OUTROS, CID_ID, COM_ID, FUN_ID, UND_ID, DCT_ID, '
-      
-        '  OCT_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, REG_MODIFICA' +
-        'DO'
+      '  OCT_ID, DAT_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_FAMILIAR'
       'WHERE PRO_ID = :PRO_ID')
-    Left = 304
-    Top = 360
+    Left = 408
+    Top = 168
   end
   object DtSrcProducaoBem: TDataSource
     DataSet = QryProducaoBem
     OnStateChange = DtSrcProducaoBemStateChange
-    Left = 336
-    Top = 424
+    Left = 440
+    Top = 232
   end
   object DtSrcBem: TDataSource
     DataSet = QryBem
-    Left = 448
-    Top = 392
+    Left = 552
+    Top = 200
   end
   object DtSrcProducaoSemovente: TDataSource
     DataSet = QryProducaoSemovente
     OnStateChange = DtSrcProducaoSemoventeStateChange
-    Left = 336
-    Top = 456
+    Left = 440
+    Top = 264
   end
   object DtSrcSemovente: TDataSource
     DataSet = QrySemovente
-    Left = 448
-    Top = 424
+    Left = 552
+    Top = 232
   end
   object DtSrcProducaoAtividade: TDataSource
     DataSet = QryProducaoAtividade
     OnStateChange = DtSrcProducaoAtividadeStateChange
-    Left = 336
-    Top = 488
+    Left = 440
+    Top = 296
   end
   object DtSrcProduto: TDataSource
     DataSet = QryProduto
-    Left = 448
-    Top = 456
+    Left = 552
+    Top = 264
   end
   object DtSrcProducaoProduto: TDataSource
     DataSet = QryProducaoProduto
     OnStateChange = DtSrcProducaoProdutoStateChange
-    Left = 336
-    Top = 520
+    Left = 440
+    Top = 328
   end
   object DtSrcDestino: TDataSource
     DataSet = QryDestino
-    Left = 448
-    Top = 520
+    Left = 552
+    Top = 328
   end
   object DtSrcProducaoBeneficiario: TDataSource
     DataSet = QryProducaoBeneficiario
     OnStateChange = DtSrcProducaoBeneficiarioStateChange
-    Left = 336
-    Top = 392
+    Left = 440
+    Top = 200
   end
   object QryProducaoBem: TFDQuery
     BeforePost = QryProducaoBemBeforePost
@@ -3666,8 +3750,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  b.bem_descricao')
-    Left = 272
-    Top = 424
+    Left = 376
+    Top = 232
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -3806,8 +3890,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_BEM'
       'WHERE PBE_ID = :PBE_ID')
-    Left = 304
-    Top = 424
+    Left = 408
+    Top = 232
   end
   object QryProducaoSemovente: TFDQuery
     BeforePost = QryProducaoSemoventeBeforePost
@@ -3850,8 +3934,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (s.reg_excluido = 0)'
       'order by'
       '  a.prd_descricao')
-    Left = 272
-    Top = 456
+    Left = 376
+    Top = 264
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -3982,8 +4066,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_SEMOVENTE'
       'WHERE PSE_ID = :PSE_ID')
-    Left = 304
-    Top = 456
+    Left = 408
+    Top = 264
   end
   object QryProducaoAtividade: TFDQuery
     BeforePost = QryProducaoAtividadeBeforePost
@@ -4002,12 +4086,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     SQL.Strings = (
       'select'
       '  a.atv_id,'
-      '  a.atv_safra_inicio,'
-      '  a.atv_safra_fim,'
       '  a.atv_area_plantada,'
       '  a.atv_area_colhida,'
       '  a.atv_area_perdida,'
+      '  a.atv_ano,'
       '  a.atv_periodo_plantio,'
+      '  a.atv_periodo_colheita,'
       '  a.atv_quantidade,'
       '  a.atv_data_visita,'
       '  a.reg_excluido,'
@@ -4024,9 +4108,15 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  b.sip_descricao,'
       '  c.prd_descricao,'
       '  d.uni_descricao,'
+      '  coalesce(cast(a.atv_ano as varchar(4)),'
       
-        '  coalesce(a.atv_safra_inicio || '#39'/'#39', '#39#39') || coalesce(a.atv_safr' +
-        'a_fim, '#39#39') as atv_safra_periodo'
+        '    substring(cast(a.atv_periodo_colheita as varchar(6)) from 5 ' +
+        'for 2) || '#39'/'#39' ||'
+      
+        '    substring(cast(a.atv_periodo_colheita as varchar(6)) from 1 ' +
+        'for 4)'
+      '    )'
+      '  as atv_periodo'
       'from'
       
         '  tab_cad_producao_atividade a left join tab_cad_sistema_produti' +
@@ -4038,9 +4128,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.ben_id = :ben_id) and'
       '  (a.reg_excluido = 0)'
       'order by'
-      '   a.atv_safra_inicio, a.atv_safra_fim, c.prd_descricao')
-    Left = 272
-    Top = 488
+      
+        '   coalesce(a.atv_ano, cast(substring(a.atv_periodo_colheita fro' +
+        'm 1 for 4) as integer)) desc, c.prd_descricao')
+    Left = 376
+    Top = 296
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -4058,38 +4150,34 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       FieldName = 'ATV_ID'
       Origin = 'ATV_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
-    end
-    object QryProducaoAtividadeATV_SAFRA_INICIO: TIntegerField
-      DisplayLabel = 'Safra in'#237'cio'
-      FieldName = 'ATV_SAFRA_INICIO'
-      Origin = 'ATV_SAFRA_INICIO'
-      OnChange = QryProducaoAtividadeATV_SAFRA_INICIOChange
-    end
-    object QryProducaoAtividadeATV_SAFRA_FIM: TIntegerField
-      DisplayLabel = 'Safra fim'
-      FieldName = 'ATV_SAFRA_FIM'
-      Origin = 'ATV_SAFRA_FIM'
     end
     object QryProducaoAtividadeATV_AREA_PLANTADA: TCurrencyField
       DisplayLabel = #193'rea plantada (ha)'
       FieldName = 'ATV_AREA_PLANTADA'
       Origin = 'ATV_AREA_PLANTADA'
+      DisplayFormat = ',##0.###'
+      EditFormat = '0.000'
     end
     object QryProducaoAtividadeATV_AREA_COLHIDA: TCurrencyField
       DisplayLabel = #193'rea colhida (ha)'
       FieldName = 'ATV_AREA_COLHIDA'
       Origin = 'ATV_AREA_COLHIDA'
+      DisplayFormat = ',##0.###'
+      EditFormat = '0.000'
     end
     object QryProducaoAtividadeATV_AREA_PERDIDA: TCurrencyField
       DisplayLabel = 'Perda da lavoura (ha)'
       FieldName = 'ATV_AREA_PERDIDA'
       Origin = 'ATV_AREA_PERDIDA'
+      DisplayFormat = ',##0.###'
+      EditFormat = '0.000'
     end
     object QryProducaoAtividadeATV_QUANTIDADE: TCurrencyField
       DisplayLabel = 'Quantidade'
       FieldName = 'ATV_QUANTIDADE'
       Origin = 'ATV_QUANTIDADE'
+      DisplayFormat = ',##0.###'
+      EditFormat = '0.000'
     end
     object QryProducaoAtividadeATV_DATA_VISITA: TDateField
       DisplayLabel = 'Data da visita'
@@ -4098,11 +4186,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       DisplayFormat = 'dd/mm/yyyy'
     end
     object QryProducaoAtividadePRO_ID: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'PRO_ID'
       Origin = 'PRO_ID'
       Required = True
     end
     object QryProducaoAtividadeBEN_ID: TLargeintField
+      Alignment = taLeftJustify
       FieldName = 'BEN_ID'
       Origin = 'BEN_ID'
     end
@@ -4121,14 +4211,17 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Required = True
     end
     object QryProducaoAtividadeUNI_ID: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'UNI_ID'
       Origin = 'UNI_ID'
     end
     object QryProducaoAtividadeUND_ID: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'UND_ID'
       Origin = 'UND_ID'
     end
     object QryProducaoAtividadeFUN_ID: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'FUN_ID'
       Origin = 'FUN_ID'
     end
@@ -4159,19 +4252,29 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ReadOnly = True
       Size = 50
     end
+    object QryProducaoAtividadeATV_ANO: TIntegerField
+      FieldName = 'ATV_ANO'
+      Origin = 'ATV_ANO'
+    end
     object QryProducaoAtividadeATV_PERIODO_PLANTIO: TIntegerField
       FieldName = 'ATV_PERIODO_PLANTIO'
       Origin = 'ATV_PERIODO_PLANTIO'
+      OnGetText = QryProducaoAtividadeATV_PERIODO_PLANTIOGetText
+      OnSetText = QryProducaoAtividadeATV_PERIODO_PLANTIOSetText
+    end
+    object QryProducaoAtividadeATV_PERIODO_COLHEITA: TIntegerField
+      FieldName = 'ATV_PERIODO_COLHEITA'
+      Origin = 'ATV_PERIODO_COLHEITA'
+      OnGetText = QryProducaoAtividadeATV_PERIODO_PLANTIOGetText
+      OnSetText = QryProducaoAtividadeATV_PERIODO_PLANTIOSetText
     end
     object QryProducaoAtividadeREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryProducaoAtividadeREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
       Origin = 'REG_REPLICADO'
-      Required = True
     end
     object QryProducaoAtividadeREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
@@ -4182,29 +4285,29 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       FieldName = 'REG_MODIFICADO'
       Origin = 'REG_MODIFICADO'
     end
-    object QryProducaoAtividadeATV_SAFRA_PERIODO: TStringField
+    object QryProducaoAtividadeATV_PERIODO: TStringField
       AutoGenerateValue = arDefault
-      DisplayLabel = 'Safra (in'#237'cio/fim)'
-      FieldName = 'ATV_SAFRA_PERIODO'
-      Origin = 'ATV_SAFRA_PERIODO'
+      DisplayLabel = 'M'#234's/ano'
+      FieldName = 'ATV_PERIODO'
+      Origin = 'ATV_PERIODO'
       ProviderFlags = []
       ReadOnly = True
-      Size = 23
+      Size = 13
     end
   end
   object UpdtProducaoAtividade: TFDUpdateSQL
     Connection = DtmConexaoModulo.FDConnection
     InsertSQL.Strings = (
       'INSERT INTO TAB_CAD_PRODUCAO_ATIVIDADE'
-      '(ATV_ID, ATV_SAFRA_INICIO, ATV_SAFRA_FIM, ATV_PERIODO_PLANTIO, '
+      '(ATV_ID, ATV_ANO, ATV_PERIODO_PLANTIO, ATV_PERIODO_COLHEITA, '
       '  ATV_AREA_PLANTADA, ATV_AREA_COLHIDA, ATV_AREA_PERDIDA, '
       '  ATV_QUANTIDADE, ATV_DATA_VISITA, PRO_ID, '
       '  BEN_ID, SIP_ID, PRD_ID, UNI_ID, UND_ID, '
       '  FUN_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
       '  REG_MODIFICADO)'
       
-        'VALUES (:NEW_ATV_ID, :NEW_ATV_SAFRA_INICIO, :NEW_ATV_SAFRA_FIM, ' +
-        ':NEW_ATV_PERIODO_PLANTIO, '
+        'VALUES (:NEW_ATV_ID, :NEW_ATV_ANO, :NEW_ATV_PERIODO_PLANTIO, :NE' +
+        'W_ATV_PERIODO_COLHEITA, '
       
         '  :NEW_ATV_AREA_PLANTADA, :NEW_ATV_AREA_COLHIDA, :NEW_ATV_AREA_P' +
         'ERDIDA, '
@@ -4219,38 +4322,36 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     ModifySQL.Strings = (
       'UPDATE TAB_CAD_PRODUCAO_ATIVIDADE'
       
-        'SET ATV_ID = :NEW_ATV_ID, ATV_SAFRA_INICIO = :NEW_ATV_SAFRA_INIC' +
-        'IO, '
+        'SET ATV_ID = :NEW_ATV_ID, ATV_ANO = :NEW_ATV_ANO, ATV_PERIODO_PL' +
+        'ANTIO = :NEW_ATV_PERIODO_PLANTIO, '
       
-        '  ATV_SAFRA_FIM = :NEW_ATV_SAFRA_FIM, ATV_PERIODO_PLANTIO = :NEW' +
-        '_ATV_PERIODO_PLANTIO, '
+        '  ATV_PERIODO_COLHEITA = :NEW_ATV_PERIODO_COLHEITA, ATV_AREA_PLA' +
+        'NTADA = :NEW_ATV_AREA_PLANTADA, '
       
-        '  ATV_AREA_PLANTADA = :NEW_ATV_AREA_PLANTADA, ATV_AREA_COLHIDA =' +
-        ' :NEW_ATV_AREA_COLHIDA, '
+        '  ATV_AREA_COLHIDA = :NEW_ATV_AREA_COLHIDA, ATV_AREA_PERDIDA = :' +
+        'NEW_ATV_AREA_PERDIDA, '
       
-        '  ATV_AREA_PERDIDA = :NEW_ATV_AREA_PERDIDA, ATV_QUANTIDADE = :NE' +
-        'W_ATV_QUANTIDADE, '
-      '  ATV_DATA_VISITA = :NEW_ATV_DATA_VISITA, PRO_ID = :NEW_PRO_ID, '
+        '  ATV_QUANTIDADE = :NEW_ATV_QUANTIDADE, ATV_DATA_VISITA = :NEW_A' +
+        'TV_DATA_VISITA, '
       
-        '  BEN_ID = :NEW_BEN_ID, SIP_ID = :NEW_SIP_ID, PRD_ID = :NEW_PRD_' +
+        '  PRO_ID = :NEW_PRO_ID, BEN_ID = :NEW_BEN_ID, SIP_ID = :NEW_SIP_' +
         'ID, '
       
-        '  UNI_ID = :NEW_UNI_ID, UND_ID = :NEW_UND_ID, FUN_ID = :NEW_FUN_' +
+        '  PRD_ID = :NEW_PRD_ID, UNI_ID = :NEW_UNI_ID, UND_ID = :NEW_UND_' +
         'ID, '
+      '  FUN_ID = :NEW_FUN_ID, REG_EXCLUIDO = :NEW_REG_EXCLUIDO, '
       
-        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
-        'LICADO, '
-      
-        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
-        'FICADO'
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
       'WHERE ATV_ID = :OLD_ATV_ID')
     DeleteSQL.Strings = (
       'DELETE FROM TAB_CAD_PRODUCAO_ATIVIDADE'
       'WHERE ATV_ID = :OLD_ATV_ID')
     FetchRowSQL.Strings = (
       
-        'SELECT ATV_ID, ATV_SAFRA_INICIO, ATV_SAFRA_FIM, ATV_PERIODO_PLAN' +
-        'TIO, '
+        'SELECT ATV_ID, ATV_ANO, ATV_PERIODO_PLANTIO, ATV_PERIODO_COLHEIT' +
+        'A, '
       
         '  ATV_AREA_PLANTADA, ATV_AREA_COLHIDA, ATV_AREA_PERDIDA, ATV_QUA' +
         'NTIDADE, '
@@ -4259,8 +4360,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_ATIVIDADE'
       'WHERE ATV_ID = :ATV_ID')
-    Left = 304
-    Top = 488
+    Left = 408
+    Top = 296
   end
   object QryProducaoProduto: TFDQuery
     BeforePost = QryProducaoProdutoBeforePost
@@ -4312,8 +4413,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  prp_descricao_produto_derivado')
-    Left = 272
-    Top = 520
+    Left = 376
+    Top = 328
     ParamData = <
       item
         Name = 'ATV_ID'
@@ -4326,7 +4427,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       FieldName = 'PRP_ID'
       Origin = 'PRP_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryProducaoProdutoPRP_TIPO: TSmallintField
       DisplayLabel = 'Tipo de item'
@@ -4344,11 +4444,15 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       DisplayLabel = 'Qtde consumida'
       FieldName = 'PRP_QTDE_CONSUMIDA'
       Origin = 'PRP_QTDE_CONSUMIDA'
+      DisplayFormat = ',##0.###'
+      EditFormat = '0.000'
     end
     object QryProducaoProdutoPRP_QTDE_COMERCIALIZADA: TCurrencyField
       DisplayLabel = 'Qtde comercializada'
       FieldName = 'PRP_QTDE_COMERCIALIZADA'
       Origin = 'PRP_QTDE_COMERCIALIZADA'
+      DisplayFormat = ',##0.###'
+      EditFormat = '0.000'
     end
     object QryProducaoProdutoPRP_VALOR: TBCDField
       DefaultExpression = '0'
@@ -4417,12 +4521,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     object QryProducaoProdutoREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryProducaoProdutoREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
       Origin = 'REG_REPLICADO'
-      Required = True
     end
     object QryProducaoProdutoREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
@@ -4493,11 +4595,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_PRODUTO'
       'WHERE PRP_ID = :PRP_ID')
-    Left = 304
-    Top = 520
+    Left = 408
+    Top = 328
   end
   object QryProducaoBeneficiario: TFDQuery
     AfterPost = QryProducaoBeneficiarioAfterPost
+    AfterScroll = QryProducaoBeneficiarioAfterScroll
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -4533,8 +4636,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  b.ben_nome')
-    Left = 272
-    Top = 392
+    Left = 376
+    Top = 200
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -4651,8 +4754,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_CAD_BENEFICIARIO_PRODUCAO'
       'WHERE BPR_ID = :BPR_ID')
-    Left = 304
-    Top = 392
+    Left = 408
+    Top = 200
   end
   object QryBem: TFDQuery
     Connection = DtmConexaoModulo.FDConnection
@@ -4669,8 +4772,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  a.bem_descricao')
-    Left = 384
-    Top = 392
+    Left = 488
+    Top = 200
   end
   object QrySemovente: TFDQuery
     Connection = DtmConexaoModulo.FDConnection
@@ -4694,8 +4797,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  a.prd_descricao')
-    Left = 384
-    Top = 424
+    Left = 488
+    Top = 232
   end
   object QryProduto: TFDQuery
     Connection = DtmConexaoModulo.FDConnection
@@ -4724,8 +4827,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  a.prd_descricao')
-    Left = 384
-    Top = 456
+    Left = 488
+    Top = 264
   end
   object UpdtProduto: TFDUpdateSQL
     Connection = DtmConexaoModulo.FDConnection
@@ -4753,8 +4856,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         'DO'
       'FROM TAB_CAD_PRODUTO'
       'WHERE PRD_ID = :PRD_ID')
-    Left = 416
-    Top = 456
+    Left = 520
+    Top = 264
   end
   object QryDerivado: TFDQuery
     MasterSource = DtSrcProducaoAtividade
@@ -4781,8 +4884,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (c.reg_excluido = 0)'
       'order by'
       '  b.dev_descricao, c.uni_descricao')
-    Left = 384
-    Top = 488
+    Left = 488
+    Top = 296
     ParamData = <
       item
         Name = 'PRD_ID'
@@ -4835,8 +4938,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  (a.reg_excluido = 0)'
       'order by'
       '  a.des_descricao')
-    Left = 384
-    Top = 520
+    Left = 488
+    Top = 328
     object QryDestinoDES_ID: TIntegerField
       FieldName = 'DES_ID'
       Origin = 'DES_ID'

@@ -1,15 +1,15 @@
 inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
-  Left = 287
-  Top = 146
+  Left = 365
+  Top = 183
   ActiveControl = DbEdtDataVisita
   Caption = 'Atividade produtiva'
-  ClientHeight = 381
+  ClientHeight = 420
   ClientWidth = 616
   OnShow = FormShow
-  ExplicitLeft = 287
-  ExplicitTop = 146
+  ExplicitLeft = 365
+  ExplicitTop = 183
   ExplicitWidth = 632
-  ExplicitHeight = 420
+  ExplicitHeight = 459
   PixelsPerInch = 96
   TextHeight = 13
   object LblTitulo: TLabel [0]
@@ -123,16 +123,18 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
   inherited PgCntrlPrincipal: TcxPageControl
     Top = 35
     Width = 600
-    Height = 307
+    Height = 346
     ExplicitTop = 35
     ExplicitWidth = 600
     ExplicitHeight = 307
-    ClientRectBottom = 305
+    ClientRectBottom = 344
     ClientRectRight = 598
     inherited TbShtPrincipal: TcxTabSheet
       Caption = 'Detalhes da atividade produtiva'
-      ExplicitWidth = 595
-      ExplicitHeight = 231
+      ExplicitLeft = -22
+      ExplicitTop = 20
+      ExplicitWidth = 596
+      ExplicitHeight = 316
       object GrpBxAtividades: TcxGroupBox
         Left = 8
         Top = 0
@@ -140,7 +142,7 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
-        Height = 193
+        Height = 233
         Width = 577
         object Label1: TLabel
           Left = 8
@@ -149,14 +151,6 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Height = 13
           Caption = 'Data da visita:'
           FocusControl = DbEdtDataVisita
-          Transparent = True
-        end
-        object LblSafra: TLabel
-          Left = 344
-          Top = 16
-          Width = 103
-          Height = 13
-          Caption = 'Safra ano (in'#237'cio/fim):'
           Transparent = True
         end
         object Label38: TLabel
@@ -174,8 +168,8 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object LblAreaPlantada: TLabel
-          Left = 120
-          Top = 96
+          Left = 8
+          Top = 176
           Width = 95
           Height = 13
           Caption = #193'rea plantada (ha):'
@@ -183,8 +177,8 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object LblAreaColhida: TLabel
-          Left = 232
-          Top = 96
+          Left = 128
+          Top = 176
           Width = 86
           Height = 13
           Caption = #193'rea colhida (ha):'
@@ -192,8 +186,8 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object LblAreaPerdida: TLabel
-          Left = 344
-          Top = 96
+          Left = 248
+          Top = 176
           Width = 89
           Height = 13
           Caption = #193'rea perdida (ha):'
@@ -209,8 +203,8 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object Label7: TLabel
-          Left = 8
-          Top = 136
+          Left = 128
+          Top = 96
           Width = 60
           Height = 13
           Caption = 'Quantidade:'
@@ -231,19 +225,28 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           ParentFont = False
           Transparent = True
         end
-        object LblBarra: TLabel
-          Left = 398
-          Top = 36
-          Width = 4
-          Height = 13
-          Caption = '/'
-        end
         object LblPeriodoPlantio: TLabel
-          Left = 456
-          Top = 96
+          Left = 8
+          Top = 136
           Width = 88
           Height = 13
-          Caption = 'Plantio (ano/m'#234's):'
+          Caption = 'Plantio (m'#234's/ano):'
+          Transparent = True
+        end
+        object LblPeriodoColheita: TLabel
+          Left = 128
+          Top = 136
+          Width = 95
+          Height = 13
+          Caption = 'Colheita (m'#234's/ano):'
+          Transparent = True
+        end
+        object LblAno: TLabel
+          Left = 248
+          Top = 96
+          Width = 23
+          Height = 13
+          Caption = 'Ano:'
           Transparent = True
         end
         object DbEdtDataVisita: TcxDBDateEdit
@@ -283,38 +286,24 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Properties.PostPopupValueOnTab = True
           Properties.OnChange = DbLkpCmbBxProdutoPropertiesChange
           Properties.OnEditValueChanged = DbLkpCmbBxProdutoPropertiesEditValueChanged
-          TabOrder = 4
+          TabOrder = 2
           Width = 561
         end
-        object DbEdtSafraInicio: TcxDBMaskEdit
-          Left = 344
-          Top = 32
-          DataBinding.DataField = 'ATV_SAFRA_INICIO'
-          DataBinding.DataSource = DtSrcProducaoAtividade
-          Properties.Alignment.Horz = taCenter
-          Properties.AlwaysShowBlanksAndLiterals = True
-          Properties.ClearKey = 46
-          Properties.EditMask = '!9999;0; '
-          Properties.MaxLength = 0
-          Properties.ValidationOptions = []
-          TabOrder = 2
-          Width = 51
-        end
         object DbEdtAreaPlantada: TcxDBCalcEdit
-          Left = 120
-          Top = 112
+          Left = 8
+          Top = 192
           DataBinding.DataField = 'ATV_AREA_PLANTADA'
           DataBinding.DataSource = DtSrcProducaoAtividade
-          TabOrder = 6
-          Width = 105
+          TabOrder = 8
+          Width = 113
         end
         object DbEdtAreaColhida: TcxDBCalcEdit
-          Left = 232
-          Top = 112
+          Left = 128
+          Top = 192
           DataBinding.DataField = 'ATV_AREA_COLHIDA'
           DataBinding.DataSource = DtSrcProducaoAtividade
-          TabOrder = 7
-          Width = 105
+          TabOrder = 9
+          Width = 113
         end
         object DbLkpCmbBxUnidadeMedida: TcxDBLookupComboBox
           Left = 8
@@ -337,16 +326,16 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Properties.ListSource = DtmCadastroModulo.DtSrcUnidade
           Properties.PostPopupValueOnTab = True
           Properties.ReadOnly = True
-          TabOrder = 5
-          Width = 105
+          TabOrder = 3
+          Width = 113
         end
         object DbEdtQuantidade: TcxDBCalcEdit
-          Left = 8
-          Top = 152
+          Left = 128
+          Top = 112
           DataBinding.DataField = 'ATV_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoAtividade
-          TabOrder = 10
-          Width = 105
+          TabOrder = 4
+          Width = 113
         end
         object DbLkpCmbBxSistema: TcxDBLookupComboBox
           Left = 120
@@ -365,48 +354,62 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           TabOrder = 1
           Width = 217
         end
-        object DbEdtSafraFim: TcxDBMaskEdit
-          Left = 405
-          Top = 32
-          DataBinding.DataField = 'ATV_SAFRA_FIM'
-          DataBinding.DataSource = DtSrcProducaoAtividade
-          Enabled = False
-          Properties.Alignment.Horz = taCenter
-          Properties.AlwaysShowBlanksAndLiterals = True
-          Properties.ClearKey = 46
-          Properties.EditMask = '!9999;0; '
-          Properties.MaxLength = 0
-          Properties.ValidationOptions = []
-          TabOrder = 3
-          Width = 51
-        end
         object DbEdtPeriodoPlantio: TcxDBMaskEdit
-          Left = 456
-          Top = 112
+          Left = 8
+          Top = 152
           DataBinding.DataField = 'ATV_PERIODO_PLANTIO'
           DataBinding.DataSource = DtSrcProducaoAtividade
           Properties.Alignment.Horz = taLeftJustify
           Properties.AlwaysShowBlanksAndLiterals = True
           Properties.ClearKey = 46
-          Properties.EditMask = '!9999\/99;0; '
+          Properties.EditMask = '!99\/9999;0; '
           Properties.MaxLength = 0
           Properties.ValidationOptions = []
           Properties.OnValidate = DbEdtAnoMesPropertiesValidate
-          TabOrder = 9
+          TabOrder = 6
           Width = 113
         end
         object DbEdtAreaPerdida: TcxDBCalcEdit
-          Left = 344
-          Top = 112
+          Left = 248
+          Top = 192
           DataBinding.DataField = 'ATV_AREA_PERDIDA'
           DataBinding.DataSource = DtSrcProducaoAtividade
-          TabOrder = 8
-          Width = 105
+          TabOrder = 10
+          Width = 113
+        end
+        object DbEdtPeriodoColheita: TcxDBMaskEdit
+          Left = 128
+          Top = 152
+          DataBinding.DataField = 'ATV_PERIODO_COLHEITA'
+          DataBinding.DataSource = DtSrcProducaoAtividade
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.AlwaysShowBlanksAndLiterals = True
+          Properties.ClearKey = 46
+          Properties.EditMask = '!99\/9999;0; '
+          Properties.MaxLength = 0
+          Properties.ValidationOptions = []
+          Properties.OnValidate = DbEdtAnoMesPropertiesValidate
+          TabOrder = 7
+          Width = 113
+        end
+        object DbEdtAno: TcxDBMaskEdit
+          Left = 248
+          Top = 112
+          DataBinding.DataField = 'ATV_ANO'
+          DataBinding.DataSource = DtSrcProducaoAtividade
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.AlwaysShowBlanksAndLiterals = True
+          Properties.ClearKey = 46
+          Properties.EditMask = '!9999;0; '
+          Properties.MaxLength = 0
+          Properties.ValidationOptions = []
+          TabOrder = 5
+          Width = 113
         end
       end
       object GrpBxRegistro: TcxGroupBox
         Left = 8
-        Top = 200
+        Top = 240
         Caption = 'Informa'#231#245'es do registro'
         ParentBackground = False
         ParentColor = False
@@ -474,7 +477,7 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
   end
   inherited BtnOK: TcxButton
     Left = 452
-    Top = 349
+    Top = 388
     ModalResult = 0
     OnClick = BtnOKClick
     ExplicitLeft = 451
@@ -482,7 +485,7 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
   end
   inherited BtnCancelar: TcxButton
     Left = 533
-    Top = 349
+    Top = 388
     ExplicitLeft = 532
     ExplicitTop = 275
   end

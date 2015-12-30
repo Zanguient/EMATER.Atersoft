@@ -533,7 +533,7 @@ begin
     try
       if Assigned(DtSrcPrincipal.DataSet) then
         begin
-          if (DtSrcPrincipal.DataSet.State = dsBrowse) then
+          if (DtSrcPrincipal.DataSet.State = dsInactive) then
             begin
               CodeSite.SendMsg('Carregando os dados.');
               DtSrcPrincipal.DataSet.Open;

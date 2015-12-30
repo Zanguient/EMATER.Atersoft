@@ -255,7 +255,7 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
     AnchorY = 122
   end
   object BtnCancelar: TcxButton
-    Left = 40
+    Left = 168
     Top = 362
     Width = 113
     Height = 25
@@ -263,6 +263,25 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
     Cancel = True
     Caption = 'Sair'
     ModalResult = 2
+    OptionsImage.NumGlyphs = 2
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 6
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object BtnEncerrar: TcxButton
+    Left = 40
+    Top = 362
+    Width = 113
+    Height = 25
+    Hint = 'Encerrar aplica'#231#227'o'
+    Caption = '&Encerrar'
+    Enabled = False
     OptionsImage.NumGlyphs = 2
     ParentShowHint = False
     ShowHint = True
@@ -274,27 +293,8 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
     Font.Style = []
     ParentFont = False
   end
-  object BtnEncerrar: TcxButton
-    Left = 168
-    Top = 362
-    Width = 113
-    Height = 25
-    Hint = 'Encerrar aplica'#231#227'o'
-    Caption = '&Encerrar'
-    Enabled = False
-    OptionsImage.NumGlyphs = 2
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 5
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object BtnMais: TcxButton
-    Left = 168
+    Left = 40
     Top = 362
     Width = 113
     Height = 25
@@ -304,7 +304,7 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
     OptionsImage.NumGlyphs = 2
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 6
+    TabOrder = 5
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11

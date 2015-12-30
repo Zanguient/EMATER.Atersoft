@@ -14,10 +14,8 @@ type
     GrpBxAtividades: TcxGroupBox;
     Label1: TLabel;
     DbEdtDataVisita: TcxDBDateEdit;
-    LblSafra: TLabel;
     Label38: TLabel;
     DbLkpCmbBxProduto: TcxDBLookupComboBox;
-    DbEdtSafraInicio: TcxDBMaskEdit;
     LblAreaPlantada: TLabel;
     DbEdtAreaPlantada: TcxDBCalcEdit;
     LblAreaColhida: TLabel;
@@ -38,11 +36,13 @@ type
     DbLkpCmbBxSistema: TcxDBLookupComboBox;
     LblTitulo: TLabel;
     Image: TImage;
-    DbEdtSafraFim: TcxDBMaskEdit;
-    LblBarra: TLabel;
     LblPeriodoPlantio: TLabel;
     DbEdtPeriodoPlantio: TcxDBMaskEdit;
     DbEdtAreaPerdida: TcxDBCalcEdit;
+    LblPeriodoColheita: TLabel;
+    DbEdtPeriodoColheita: TcxDBMaskEdit;
+    LblAno: TLabel;
+    DbEdtAno: TcxDBMaskEdit;
     procedure FormShow(Sender: TObject);
     procedure DbLkpCmbBxProdutoPropertiesEditValueChanged(Sender: TObject);
     procedure DbLkpCmbBxProdutoPropertiesChange(Sender: TObject);
@@ -77,8 +77,8 @@ var
 begin
   if (Trim(DisplayValue) <> '') then
     begin
-      Ano := StrToIntDef(Copy(DisplayValue, 1, 4), 0);
-      Mes := StrToIntDef(Copy(DisplayValue, 6, 2), 0);
+      Ano := StrToIntDef(Copy(DisplayValue, 4, 4), 0);
+      Mes := StrToIntDef(Copy(DisplayValue, 1, 2), 0);
 
       AnoAtual := YearOf(Date);
       if ((Ano < 1900) or (Ano > AnoAtual)) then
@@ -130,15 +130,26 @@ begin
 end;
 
 procedure TFrmCadastroUnidadeAtividade.ValidarDivisaoTipo(const Tipo: Integer);
+var
+  Cultura, Criacao, Outros: Boolean;
 begin
-  LblAreaPlantada.Visible := (Tipo = 2);
-  DbEdtAreaPlantada.Visible := LblAreaPlantada.Visible;
-  LblAreaColhida.Visible := LblAreaPlantada.Visible;
-  DbEdtAreaColhida.Visible := LblAreaPlantada.Visible;
-  LblAreaPerdida.Visible := LblAreaPlantada.Visible;
-  DbEdtAreaPerdida.Visible := LblAreaPlantada.Visible;
-  LblPeriodoPlantio.Visible := LblAreaPlantada.Visible;
-  DbEdtPeriodoPlantio.Visible := LblAreaPlantada.Visible;
+  Criacao := (Tipo = 1);
+  Cultura := (Tipo = 2);
+  Outros := (Tipo = 3);
+
+  LblAno.Visible := Criacao or Outros;
+  DbEdtAno.Visible := Criacao or Outros;
+
+  LblAreaPlantada.Visible := Cultura;
+  DbEdtAreaPlantada.Visible := Cultura;
+  LblAreaColhida.Visible := Cultura;
+  DbEdtAreaColhida.Visible := Cultura;
+  LblAreaPerdida.Visible := Cultura;
+  DbEdtAreaPerdida.Visible := Cultura;
+  LblPeriodoPlantio.Visible := Cultura;
+  DbEdtPeriodoPlantio.Visible := Cultura;
+  LblPeriodoColheita.Visible := Cultura;
+  DbEdtPeriodoColheita.Visible := Cultura;
 end;
 
 end.

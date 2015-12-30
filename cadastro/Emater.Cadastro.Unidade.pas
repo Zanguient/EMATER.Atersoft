@@ -314,8 +314,6 @@ type
     QryProducaoSemoventeGRP_DESCRICAO: TStringField;
     QryProducaoSemoventeCLS_DESCRICAO: TStringField;
     QryProducaoAtividadeATV_ID: TLargeintField;
-    QryProducaoAtividadeATV_SAFRA_INICIO: TIntegerField;
-    QryProducaoAtividadeATV_SAFRA_FIM: TIntegerField;
     QryProducaoAtividadeATV_AREA_PLANTADA: TCurrencyField;
     QryProducaoAtividadeATV_AREA_COLHIDA: TCurrencyField;
     QryProducaoAtividadeATV_AREA_PERDIDA: TCurrencyField;
@@ -382,7 +380,6 @@ type
     QryProducaoSemoventeREG_REPLICADO: TSmallintField;
     QryProducaoSemoventeREG_USUARIO: TStringField;
     QryProducaoSemoventeREG_MODIFICADO: TSQLTimeStampField;
-    QryProducaoAtividadeATV_SAFRA_PERIODO: TStringField;
     GrpBxBeneficiario: TcxGroupBox;
     cxDBNavigator1: TcxDBNavigator;
     DbEdtBeneficiario: TcxDBTextEdit;
@@ -399,6 +396,12 @@ type
     Label49: TLabel;
     Label50: TLabel;
     Label12: TLabel;
+    QryProducaoAtividadeATV_ANO: TIntegerField;
+    QryProducaoAtividadeATV_PERIODO_COLHEITA: TIntegerField;
+    QryProducaoAtividadeATV_PERIODO: TStringField;
+    QryPrincipalDAT_ID: TIntegerField;
+    DbLkpCmbBxDatum: TcxDBLookupComboBox;
+    Label13: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DtSrcPrincipalStateChange(Sender: TObject);
@@ -458,8 +461,10 @@ type
     procedure QryProducaoProdutoCalcFields(DataSet: TDataSet);
     procedure QryProducaoProdutoNewRecord(DataSet: TDataSet);
     procedure QryProducaoBeneficiarioAfterPost(DataSet: TDataSet);
-    procedure QryProducaoAtividadeATV_SAFRA_INICIOChange(Sender: TField);
     procedure TbShtAtividadesShow(Sender: TObject);
+    procedure QryProducaoAtividadeATV_PERIODO_PLANTIOGetText(Sender: TField; var Text: string; DisplayText: Boolean);
+    procedure QryProducaoAtividadeATV_PERIODO_PLANTIOSetText(Sender: TField; const Text: string);
+    procedure QryProducaoBeneficiarioAfterScroll(DataSet: TDataSet);
   private
     procedure AtualizarReplicacaoPendente;
     procedure AplicarUltimaAlteracao;
@@ -493,8 +498,11 @@ begin
     Screen.Cursor := crHourGlass;
     QryProducaoAtividade.Edit;
 
-    FrmCadastroUnidadeAtividade.DtSrcProducaoAtividade.DataSet := QryProducaoAtividade;
-    FrmCadastroUnidadeAtividade.DtSrcProduto.DataSet := QryProduto;
+    if not (FrmCadastroUnidadeAtividade.DtSrcProducaoAtividade.DataSet = QryProducaoAtividade) then
+      begin
+        FrmCadastroUnidadeAtividade.DtSrcProducaoAtividade.DataSet := QryProducaoAtividade;
+        FrmCadastroUnidadeAtividade.DtSrcProduto.DataSet := QryProduto;
+      end;
 
     if (FrmCadastroUnidadeAtividade.ShowModal = mrOk) then
       QryProducaoAtividade.Post
@@ -957,9 +965,9 @@ procedure TFrmCadastroUnidade.DtSrcProducaoAtividadeStateChange(Sender: TObject)
 begin
   with QryProducaoAtividade do
     begin
-      BtnAtvIncluir.Enabled := (State = dsBrowse) and (not (State = dsInactive));
-      BtnAtvEditar.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
-      BtnAtvExcluir.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
+      BtnAtvIncluir.Enabled := (State = dsBrowse);
+      BtnAtvEditar.Enabled := (State = dsBrowse) and (RecordCount > 0);
+      BtnAtvExcluir.Enabled := (State = dsBrowse) and (RecordCount > 0);
     end;
   DtSrcProducaoProduto.OnStateChange(QryProducaoProduto);
 end;
@@ -1045,6 +1053,7 @@ begin
   DbLkpCmbBxDocumento.Properties.ListSource := DtmCadastroModulo.DtSrcDocumentoTipo;
   DbLkpCmbBxOcupacao.Properties.ListSource := DtmCadastroModulo.DtSrcOcupacaoTipo;
   DbLkpCmbBxTecnico.Properties.ListSource := DtmPessoalModulo.DtSrcFuncionario;
+  DbLkpCmbBxDatum.Properties.ListSource := DtmCadastroModulo.DtSrcDatum;
 end;
 
 procedure TFrmCadastroUnidade.FormShow(Sender: TObject);
@@ -1144,10 +1153,23 @@ begin
   DtSrcProducaoProduto.OnStateChange(DtSrcProducaoProduto);
 end;
 
-procedure TFrmCadastroUnidade.QryProducaoAtividadeATV_SAFRA_INICIOChange(Sender: TField);
+procedure TFrmCadastroUnidade.QryProducaoAtividadeATV_PERIODO_PLANTIOGetText(Sender: TField; var Text: string; DisplayText: Boolean);
+var
+  Ano, Mes: string;
 begin
-  if (QryProducaoAtividade.State in [dsEdit, dsInsert]) and (QryProducaoAtividadeATV_SAFRA_INICIO.Value > 0) then
-    QryProducaoAtividadeATV_SAFRA_FIM.Value := QryProducaoAtividadeATV_SAFRA_INICIO.Value + 1;
+  Ano := Copy(Sender.AsString, 1, 4);
+  Mes := Copy(Sender.AsString, 5, 2);
+  if (Ano <> '') and (Mes <> '') then
+    Text :=  Mes + '/' + Ano
+  else
+    Text := '  /    ';
+end;
+
+procedure TFrmCadastroUnidade.QryProducaoAtividadeATV_PERIODO_PLANTIOSetText(Sender: TField; const Text: string);
+begin
+  inherited;
+  if (Trim(Text) <> '') then
+    Sender.AsInteger := StrToInt(Copy(Text, 3, 4) + Copy(Text, 1 ,2));
 end;
 
 procedure TFrmCadastroUnidade.QryProducaoAtividadeBeforePost(DataSet: TDataSet);
@@ -1172,7 +1194,7 @@ begin
   QryProducaoAtividadePRO_ID.Value := QryProducaoBeneficiarioPRO_ID.Value;
   QryProducaoAtividadeBEN_ID.Value := QryProducaoBeneficiarioBEN_ID.Value;
   QryProducaoAtividadeUND_ID.Value := DtmSistemaModulo.UnidadeLocalID;
-  QryProducaoAtividadeATV_SAFRA_INICIO.AsInteger := YearOf(Date);
+  QryProducaoAtividadeATV_ANO.AsInteger := YearOf(Date);
 
   if (DtmConexaoModulo.PerfilID = SISTEMA_PERFIL_CHEFIA) or (DtmConexaoModulo.PerfilID = SISTEMA_PERFIL_TECNICO) then
     QryProducaoAtividadeFUN_ID.AsInteger := DtmConexaoModulo.FuncionarioID;
@@ -1208,6 +1230,14 @@ procedure TFrmCadastroUnidade.QryProducaoBeneficiarioAfterPost(DataSet: TDataSet
 begin
   inherited;
   AplicarUltimaAlteracao;
+end;
+
+procedure TFrmCadastroUnidade.QryProducaoBeneficiarioAfterScroll(DataSet: TDataSet);
+begin
+  inherited;
+  DtSrcProducaoAtividade.OnStateChange(DataSet);
+  DtSrcProducaoBem.OnStateChange(DataSet);
+  DtSrcProducaoSemovente.OnStateChange(DataSet);
 end;
 
 procedure TFrmCadastroUnidade.QryProducaoProdutoAfterPost(DataSet: TDataSet);
@@ -1300,7 +1330,6 @@ begin
   QryDestino.Open;
 
   DtSrcProducaoAtividade.OnStateChange(Sender);
-  DtSrcProducaoProduto.OnStateChange(Sender);
 end;
 
 procedure TFrmCadastroUnidade.TbShtBeneficiariosShow(Sender: TObject);

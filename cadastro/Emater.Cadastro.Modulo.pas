@@ -68,6 +68,9 @@ type
     UpdtProduto: TFDUpdateSQL;
     DtStOrganizacaoPublico: TFDQuery;
     UpdtOrganizacaoPublico: TFDUpdateSQL;
+    DtSrcDatum: TDataSource;
+    DtStDatum: TFDQuery;
+    UpdtDatum: TFDUpdateSQL;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -152,6 +155,9 @@ begin
 
   DtStOrganizacaoPublico.Close;
   DtStOrganizacaoPublico.Open;
+
+  DtStDAtum.Close;
+  DtStDatum.Open;
 end;
 
 end.

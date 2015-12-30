@@ -1232,4 +1232,64 @@ object DtmCadastroModulo: TDtmCadastroModulo
     Left = 584
     Top = 432
   end
+  object DtSrcDatum: TDataSource
+    DataSet = DtStDatum
+    Left = 696
+    Top = 480
+  end
+  object DtStDatum: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    UpdateObject = UpdtDatum
+    SQL.Strings = (
+      'select'
+      '  a.dat_id,'
+      '  a.dat_nome,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_cad_datum a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.dat_nome')
+    Left = 696
+    Top = 384
+  end
+  object UpdtDatum: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_CAD_DATUM'
+      '(DAT_ID, DAT_NOME, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_DAT_ID, :NEW_DAT_NOME, :NEW_REG_EXCLUIDO, :NEW_REG_' +
+        'REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CAD_DATUM'
+      
+        'SET DAT_ID = :NEW_DAT_ID, DAT_NOME = :NEW_DAT_NOME, REG_EXCLUIDO' +
+        ' = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE DAT_ID = :OLD_DAT_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_CAD_DATUM'
+      'WHERE DAT_ID = :OLD_DAT_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT DAT_ID, DAT_NOME, REG_EXCLUIDO, REG_REPLICADO, REG_USUARI' +
+        'O, '
+      '  REG_MODIFICADO'
+      'FROM TAB_CAD_DATUM'
+      'WHERE DAT_ID = :DAT_ID')
+    Left = 696
+    Top = 432
+  end
 end

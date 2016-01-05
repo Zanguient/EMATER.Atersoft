@@ -710,7 +710,7 @@ begin
   else
     begin
       FrmProaterPrincipal := TFrmProaterPrincipal.Create(Self);
-      FrmProaterPrincipal.ShowModal;
+      FrmProaterPrincipal.Novo;
     end;
 end;
 

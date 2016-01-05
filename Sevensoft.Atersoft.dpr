@@ -107,7 +107,8 @@ uses
   Emater.Credito.Variedade in 'credito\Emater.Credito.Variedade.pas' {FrmCreditoVariedade},
   Emater.Agenda in 'agenda\Emater.Agenda.pas' {FrmBaseFilha1},
   Emater.Agenda.Evento in 'agenda\Emater.Agenda.Evento.pas' {FrmAgendaEvento},
-  Emater.Proater.Principal in 'proater\Emater.Proater.Principal.pas' {FrmProaterPrincipal};
+  Emater.Proater.Principal in 'proater\Emater.Proater.Principal.pas' {FrmProaterPrincipal},
+  Emater.Proater.Comunidade in 'proater\Emater.Proater.Comunidade.pas' {FrmProaterComunidade};
 
 {$R *.res}
 

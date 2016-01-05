@@ -89,7 +89,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
   end
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
-    ReportOptions.LastChange = 42368.342462291700000000
+    ReportOptions.LastChange = 42373.641598449100000000
     Left = 64
     Top = 72
     Datasets = <
@@ -6249,7 +6249,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       end
       object MasterDataFater: TfrxMasterData
         FillType = ftBrush
-        Height = 823.937540000000000000
+        Height = 827.717070000000000000
         Top = 207.874150000000000000
         Width = 718.110700000000000000
         DataSet = FrxDtStFater
@@ -6257,7 +6257,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         RowCount = 0
         StartNewPage = True
         object SubreportFater: TfrxSubreport
-          Top = 805.039890000000000000
+          Top = 808.819420000000000000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
           Page = FrxPrincipal.Page7
@@ -6644,7 +6644,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         object Memo281: TfrxMemoView
           Top = 453.543600000000000000
           Width = 718.110700000000000000
-          Height = 120.944940470000000000
+          Height = 98.267760470000000000
           DataField = 'FAT_RESUMO'
           DataSet = FrxDtStFater
           DataSetName = 'DtStFater'
@@ -6656,13 +6656,13 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
+          GapY = 6.000000000000000000
           Memo.UTF8W = (
             '[DtStFater."FAT_RESUMO"]')
           ParentFont = False
-          VAlign = vaCenter
         end
         object Memo282: TfrxMemoView
-          Top = 578.268090000000000000
+          Top = 555.590910000000000000
           Width = 154.960730000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -6676,7 +6676,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           ParentFont = False
         end
         object Memo283: TfrxMemoView
-          Top = 593.386210000000000000
+          Top = 570.709030000000000000
           Width = 718.110700000000000000
           Height = 68.031520470000000000
           DataField = 'FAT_TEMATICA'
@@ -6690,13 +6690,13 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
+          GapY = 6.000000000000000000
           Memo.UTF8W = (
             '[DtStFater."FAT_TEMATICA"]')
           ParentFont = False
-          VAlign = vaCenter
         end
         object Memo284: TfrxMemoView
-          Top = 665.197280000000000000
+          Top = 642.520100000000000000
           Width = 154.960730000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -6710,9 +6710,9 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           ParentFont = False
         end
         object Memo285: TfrxMemoView
-          Top = 680.315400000000000000
+          Top = 657.638220000000000000
           Width = 718.110700000000000000
-          Height = 120.944940470000000000
+          Height = 68.031520470000000000
           DataField = 'FAT_RESUMO'
           DataSet = FrxDtStFater
           DataSetName = 'DtStFater'
@@ -6724,10 +6724,44 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
+          GapY = 6.000000000000000000
           Memo.UTF8W = (
             '[DtStFater."FAT_RESUMO"]')
           ParentFont = False
-          VAlign = vaCenter
+        end
+        object Memo286: TfrxMemoView
+          Top = 729.449290000000000000
+          Width = 154.960730000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Width = 0.500000000000000000
+          Memo.UTF8W = (
+            '1.14. Parcerias')
+          ParentFont = False
+        end
+        object Memo287: TfrxMemoView
+          Top = 744.567410000000000000
+          Width = 718.110700000000000000
+          Height = 60.472460470000000000
+          DataField = 'FAT_PARCERIA'
+          DataSet = FrxDtStFater
+          DataSetName = 'DtStFater'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 6.000000000000000000
+          GapY = 6.000000000000000000
+          Memo.UTF8W = (
+            '[DtStFater."FAT_PARCERIA"]')
+          ParentFont = False
         end
       end
     end
@@ -6743,51 +6777,19 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       PrintOnPreviousPage = True
       object HeaderFaterProducao: TfrxHeader
         FillType = ftBrush
-        Height = 79.370130000000000000
+        Height = 15.118110240000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
-        object Memo286: TfrxMemoView
-          Width = 154.960730000000000000
-          Height = 15.118110240000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -9
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Width = 0.500000000000000000
-          Memo.UTF8W = (
-            '1.14. Parcerias')
-          ParentFont = False
-        end
-        object Memo287: TfrxMemoView
-          Top = 15.118120000000000000
-          Width = 718.110700000000000000
-          Height = 45.354340470000000000
-          DataField = 'FAT_PARCERIA'
-          DataSet = FrxDtStFater
-          DataSetName = 'DtStFater'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.500000000000000000
-          GapX = 6.000000000000000000
-          Memo.UTF8W = (
-            '[DtStFater."FAT_PARCERIA"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
+        StartNewPage = True
         object Memo288: TfrxMemoView
-          Top = 64.252010000000000000
-          Width = 151.181200000000000000
+          Width = 374.173470000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -9
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = [ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '1.15. Cria'#231#227'o/cultura/servi'#231'o')
@@ -6797,18 +6799,19 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       end
       object HeaderFaterOrganizacao: TfrxHeader
         FillType = ftBrush
-        Height = 18.897650000000000000
-        Top = 351.496290000000000000
+        Height = 18.897640240000000000
+        Top = 355.275820000000000000
         Width = 718.110700000000000000
         object Memo197: TfrxMemoView
           Top = 3.779530000000000000
-          Width = 151.181200000000000000
+          Width = 374.173470000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -9
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = [ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '1.18. Oraniza'#231#227'o social')
@@ -6818,11 +6821,14 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       end
       object MasterDataFaterProducao: TfrxMasterData
         FillType = ftBrush
-        Height = 26.456690470000000000
-        Top = 120.944960000000000000
+        Height = 22.677160470000000000
+        Top = 56.692950000000000000
         Width = 718.110700000000000000
         DataSet = FrxDtStFaterProducao
         DataSetName = 'DtStFaterProducao'
+        KeepFooter = True
+        KeepHeader = True
+        KeepTogether = True
         RowCount = 0
         object Memo289: TfrxMemoView
           Width = 374.173470000000000000
@@ -6835,7 +6841,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = [ftBottom]
+          Frame.Typ = [ftLeft, ftRight]
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
           Memo.UTF8W = (
@@ -6847,48 +6853,52 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       object HeaderFaterTecnico: TfrxHeader
         FillType = ftBrush
         Height = 18.897650000000000000
-        Top = 170.078850000000000000
+        Top = 128.504020000000000000
         Width = 718.110700000000000000
         object Memo290: TfrxMemoView
           Top = 3.779530000000000000
-          Width = 151.181200000000000000
+          Width = 374.173470000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -9
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = [ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
-            '1.15. Cria'#231#227'o/cultura/servi'#231'o')
+            '1.16. T'#233'cnicos envolvidos')
           ParentFont = False
           VAlign = vaCenter
         end
       end
       object MasterDataFaterTecnico: TfrxMasterData
         FillType = ftBrush
-        Height = 26.456710000000000000
-        Top = 211.653680000000000000
+        Height = 22.677180000000000000
+        Top = 170.078850000000000000
         Width = 718.110700000000000000
         DataSet = FrxDtStFaterTecnico
         DataSetName = 'DtStFaterTecnico'
+        KeepFooter = True
+        KeepHeader = True
+        KeepTogether = True
         RowCount = 0
         object Memo291: TfrxMemoView
           Width = 374.173470000000000000
           Height = 22.677160470000000000
-          DataField = 'PRD_DESCRICAO'
-          DataSet = FrxDtStFaterProducao
-          DataSetName = 'DtStFaterProducao'
+          DataField = 'FUN_NOME'
+          DataSet = FrxDtStFaterTecnico
+          DataSetName = 'DtStFaterTecnico'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = [ftBottom]
+          Frame.Typ = [ftLeft, ftRight]
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
           Memo.UTF8W = (
-            '[DtStFaterProducao."PRD_DESCRICAO"]')
+            '[DtStFaterTecnico."FUN_NOME"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -6896,17 +6906,18 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       object HeaderFaterComunidade: TfrxHeader
         FillType = ftBrush
         Height = 18.897650000000000000
-        Top = 260.787570000000000000
+        Top = 241.889920000000000000
         Width = 718.110700000000000000
         object Memo292: TfrxMemoView
           Top = 3.779530000000000000
-          Width = 151.181200000000000000
+          Width = 374.173470000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -9
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = [ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '1.17. Comunidade')
@@ -6916,8 +6927,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       end
       object MasterDataFaterComunidade: TfrxMasterData
         FillType = ftBrush
-        Height = 26.456710000000000000
-        Top = 302.362400000000000000
+        Height = 22.677180000000000000
+        Top = 283.464750000000000000
         Width = 718.110700000000000000
         DataSet = FrxDtStFaterComunidade
         DataSetName = 'DtStFaterComunidade'
@@ -6933,7 +6944,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = [ftBottom]
+          Frame.Typ = [ftLeft, ftRight]
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
           Memo.UTF8W = (
@@ -6944,8 +6955,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       end
       object MasterDataFaterOrganizacao: TfrxMasterData
         FillType = ftBrush
-        Height = 26.456710000000000000
-        Top = 393.071120000000000000
+        Height = 22.677160470000000000
+        Top = 396.850650000000000000
         Width = 718.110700000000000000
         DataSet = FrxDtStFaterOrganizacao
         DataSetName = 'DtStFaterOrganizacao'
@@ -6953,27 +6964,27 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         object Memo198: TfrxMemoView
           Width = 374.173470000000000000
           Height = 22.677160470000000000
-          DataField = 'COM_NOME'
-          DataSet = FrxDtStFaterComunidade
-          DataSetName = 'DtStFaterComunidade'
+          DataField = 'ORG_NOME'
+          DataSet = FrxDtStFaterOrganizacao
+          DataSetName = 'DtStFaterOrganizacao'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = [ftBottom]
+          Frame.Typ = [ftLeft, ftRight]
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
           Memo.UTF8W = (
-            '[DtStFaterComunidade."COM_NOME"]')
+            '[DtStFaterOrganizacao."ORG_NOME"]')
           ParentFont = False
           VAlign = vaCenter
         end
       end
       object HeaderBeneficiario: TfrxHeader
         FillType = ftBrush
-        Height = 136.063080000000000000
-        Top = 442.205010000000000000
+        Height = 132.283550000000000000
+        Top = 468.661720000000000000
         Width = 718.110700000000000000
         object Memo199: TfrxMemoView
           Top = 3.779530000000000000
@@ -7096,7 +7107,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           ParentFont = False
         end
         object Memo297: TfrxMemoView
-          Top = 120.944960000000000000
+          Top = 117.165430000000000000
           Width = 117.165430000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -7111,7 +7122,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo298: TfrxMemoView
           Left = 136.063080000000000000
-          Top = 120.944960000000000000
+          Top = 117.165430000000000000
           Width = 117.165430000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -7128,7 +7139,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       object MasterDataFaterBeneficiario: TfrxMasterData
         FillType = ftBrush
         Height = 26.456710000000000000
-        Top = 600.945270000000000000
+        Top = 623.622450000000000000
         Width = 718.110700000000000000
         DataSet = FrxDtStFaterBeneficiario
         DataSetName = 'DtStFaterBeneficiario'
@@ -7137,7 +7148,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         object Memo299: TfrxMemoView
           Left = 136.063080000000000000
           Width = 582.047620000000000000
-          Height = 22.677160470000000000
+          Height = 26.456690470000000000
           DataField = 'BEN_NOME'
           DataSet = FrxDtStFaterBeneficiario
           DataSetName = 'DtStFaterBeneficiario'
@@ -7146,7 +7157,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = [ftBottom]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
           Memo.UTF8W = (
@@ -7155,8 +7166,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           VAlign = vaCenter
         end
         object Memo300: TfrxMemoView
-          Width = 132.283550000000000000
-          Height = 22.677180000000000000
+          Width = 136.063080000000000000
+          Height = 26.456710000000000000
           DataSet = FrxDtStFaterBeneficiario
           DataSetName = 'DtStFaterBeneficiario'
           Font.Charset = DEFAULT_CHARSET
@@ -7164,7 +7175,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = [ftBottom]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
           Memo.UTF8W = (
@@ -7173,6 +7184,82 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
               '_CPF">)]')
           ParentFont = False
           WordWrap = False
+          VAlign = vaCenter
+        end
+      end
+      object FooterFaterProducao: TfrxFooter
+        FillType = ftBrush
+        Height = 3.779520240000000000
+        Top = 102.047310000000000000
+        Width = 718.110700000000000000
+        object Memo301: TfrxMemoView
+          Width = 374.173470000000000000
+          Height = 3.779520240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftTop]
+          Frame.Width = 0.500000000000000000
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object FooterFaterOrganizacao: TfrxFooter
+        FillType = ftBrush
+        Height = 3.779520240000000000
+        Top = 442.205010000000000000
+        Width = 718.110700000000000000
+        object Memo304: TfrxMemoView
+          Width = 374.173470000000000000
+          Height = 3.779520240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftTop]
+          Frame.Width = 0.500000000000000000
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object FooterFaterTecnico: TfrxFooter
+        FillType = ftBrush
+        Height = 3.779530000000000000
+        Top = 215.433210000000000000
+        Width = 718.110700000000000000
+        object Memo302: TfrxMemoView
+          Width = 374.173470000000000000
+          Height = 3.779520240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftTop]
+          Frame.Width = 0.500000000000000000
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object FooterFaterComunidade: TfrxFooter
+        FillType = ftBrush
+        Height = 3.779530000000000000
+        Top = 328.819110000000000000
+        Width = 718.110700000000000000
+        object Memo303: TfrxMemoView
+          Width = 374.173470000000000000
+          Height = 3.779520240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftTop]
+          Frame.Width = 0.500000000000000000
+          ParentFont = False
           VAlign = vaCenter
         end
       end
@@ -7286,15 +7373,10 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
     SQL.Strings = (
-      'select * from stp_rel_base_beneficiario_01(:beneficiario)'
-      '--select * from stp_rel_base_beneficiario_01(100000000001)')
+      '--select * from stp_rel_base_beneficiario_01(:beneficiario)'
+      'select * from stp_rel_base_beneficiario_01(100000000001)')
     Left = 128
     Top = 72
-    ParamData = <
-      item
-        Name = 'BENEFICIARIO'
-        ParamType = ptInput
-      end>
   end
   object DtStPesquisar: TFDQuery
     Connection = DtmConexaoModulo.FDConnection

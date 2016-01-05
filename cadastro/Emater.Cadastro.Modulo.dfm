@@ -46,6 +46,7 @@ object DtmCadastroModulo: TDtmCadastroModulo
     Top = 480
   end
   object DtSrcComunidade: TDataSource
+    DataSet = DtStComunidade
     Left = 256
     Top = 480
   end
@@ -60,6 +61,7 @@ object DtmCadastroModulo: TDtmCadastroModulo
     Top = 112
   end
   object DtSrcOcupacaoTipo: TDataSource
+    DataSet = DtStOcupacaoTipo
     Left = 584
     Top = 112
   end

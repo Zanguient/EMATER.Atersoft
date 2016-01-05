@@ -24,8 +24,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     ClientRectBottom = 542
     ClientRectRight = 789
     inherited TbShtPrincipal: TcxTabSheet
-      ExplicitLeft = 0
-      ExplicitTop = 24
       ExplicitWidth = 787
       ExplicitHeight = 514
       object Label30: TLabel
@@ -43,7 +41,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Width = 92
         Height = 13
         Caption = 'Data do PROATER:'
-        FocusControl = DbDtEdtElaboracao
+        FocusControl = DbDtEdtPROATER
         Transparent = True
       end
       object Label37: TLabel
@@ -64,26 +62,22 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         FocusControl = DbEdtModificadoUsuario
         Transparent = True
       end
-      object cxPageControl1: TcxPageControl
+      object PgCntrlApresentacao: TcxPageControl
         Left = 8
         Top = 64
         Width = 769
         Height = 441
         TabOrder = 0
-        Properties.ActivePage = cxTabSheet1
+        Properties.ActivePage = TbShtApresentacao
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 439
         ClientRectLeft = 2
         ClientRectRight = 767
         ClientRectTop = 28
-        object cxTabSheet1: TcxTabSheet
+        object TbShtApresentacao: TcxTabSheet
           Caption = 'Apresenta'#231#227'o'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
-          object cxDBMemo1: TcxDBMemo
+          object DbMemoApresentacao: TcxDBMemo
             Left = 8
             Top = 48
             DataBinding.DataField = 'PRO_APRESENTACAO'
@@ -93,7 +87,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 353
             Width = 753
           end
-          object cxButton2: TcxButton
+          object BtnApresentacao: TcxButton
             Left = 8
             Top = 16
             Width = 129
@@ -108,16 +102,13 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Font.Name = 'Tahoma'
             Font.Style = []
             ParentFont = False
+            OnClick = BtnApresentacaoClick
           end
         end
-        object cxTabSheet3: TcxTabSheet
+        object TbShtObservacao: TcxTabSheet
           Caption = 'Observa'#231#245'es'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
-          object cxDBMemo3: TcxDBMemo
+          object DbMemoObservacao: TcxDBMemo
             Left = 8
             Top = 48
             DataBinding.DataField = 'PRO_OBSERVACAO'
@@ -127,7 +118,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 353
             Width = 745
           end
-          object BtnTematica: TcxButton
+          object BtnObservacao: TcxButton
             Left = 8
             Top = 16
             Width = 129
@@ -142,6 +133,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Font.Name = 'Tahoma'
             Font.Style = []
             ParentFont = False
+            OnClick = BtnObservacaoClick
           end
         end
       end
@@ -160,13 +152,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             FieldName = 'UND_NOME_DESCRICAO'
           end>
         Properties.ListOptions.ShowHeader = False
-        Properties.ListSource = DtmSistemaModulo.DtSrcUnidade
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
         TabOrder = 1
         Width = 257
       end
-      object DbDtEdtElaboracao: TcxDBDateEdit
+      object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8
         Top = 32
         DataBinding.DataField = 'PRO_DATA'
@@ -193,32 +184,24 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Width = 241
       end
     end
-    object cxTabSheet4: TcxTabSheet
+    object TbShtDiagnostico: TcxTabSheet
       Caption = 'Diagn'#243'stico do munic'#237'pio'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
-      object cxPageControl2: TcxPageControl
+      object PgCntrlDiagnostico: TcxPageControl
         Left = 8
         Top = 8
         Width = 769
         Height = 497
         TabOrder = 0
-        Properties.ActivePage = cxTabSheet9
+        Properties.ActivePage = TbShtEstatistica
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 495
         ClientRectLeft = 2
         ClientRectRight = 767
         ClientRectTop = 28
-        object cxTabSheet9: TcxTabSheet
+        object TbShtEstatistica: TcxTabSheet
           Caption = 'Estat'#237'sticas'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object cxButton1: TcxButton
             Left = 8
             Top = 24
@@ -234,8 +217,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Font.Name = 'Tahoma'
             Font.Style = []
             ParentFont = False
+            OnClick = cxButton1Click
           end
-          object cxDBMemo2: TcxDBMemo
+          object DbMemoEstatistica: TcxDBMemo
             Left = 8
             Top = 56
             DataBinding.DataField = 'PRO_ESTATISTICA'
@@ -246,13 +230,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Width = 747
           end
         end
-        object cxTabSheet7: TcxTabSheet
+        object TbShtComunidades: TcxTabSheet
           Caption = 'Benefici'#225'rios e UPF'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -345,6 +325,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 1
+            OnClick = BtnComIncluirClick
           end
           object BtnComEditar: TcxButton
             Left = 88
@@ -353,6 +334,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 2
+            OnClick = BtnComEditarClick
           end
           object BtnComExcluir: TcxButton
             Left = 168
@@ -361,15 +343,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 3
+            OnClick = BtnComExcluirClick
           end
         end
-        object cxTabSheet8: TcxTabSheet
+        object TbShtProblemas: TcxTabSheet
           Caption = 'Problemas e potencialidades'
           ImageIndex = 1
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -480,13 +459,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             TabOrder = 3
           end
         end
-        object cxTabSheet10: TcxTabSheet
+        object TbShtAcordos: TcxTabSheet
           Caption = 'Acordos, conv'#234'nios e parcerias'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -598,26 +573,22 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         end
       end
     end
-    object cxTabSheet5: TcxTabSheet
+    object TbShtCapacidade: TcxTabSheet
       Caption = 'Capacidade operacional do ESLOC'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
-      object cxPageControl3: TcxPageControl
+      object PgCntrlCapacidade: TcxPageControl
         Left = 8
         Top = 8
         Width = 769
         Height = 497
         TabOrder = 0
-        Properties.ActivePage = cxTabSheet2
+        Properties.ActivePage = TbShtRecursos
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 495
         ClientRectLeft = 2
         ClientRectRight = 767
         ClientRectTop = 28
-        object cxTabSheet2: TcxTabSheet
+        object TbShtRecursos: TcxTabSheet
           Caption = 'Recursos humanos'
           ImageIndex = 0
           DesignSize = (
@@ -828,13 +799,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
         end
-        object cxTabSheet11: TcxTabSheet
+        object TbShtMobiliario: TcxTabSheet
           Caption = 'Mobili'#225'rio'
           ImageIndex = 1
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -941,13 +908,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
         end
-        object cxTabSheet12: TcxTabSheet
+        object TbShtEquipamentos: TcxTabSheet
           Caption = 'Equipamentos'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1054,13 +1017,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
         end
-        object cxTabSheet13: TcxTabSheet
+        object TbShtVeiculos: TcxTabSheet
           Caption = 'Ve'#237'culos'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1171,13 +1130,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
         end
-        object cxTabSheet14: TcxTabSheet
+        object TbShtDespesas: TcxTabSheet
           Caption = 'Despesas de custeio'
           ImageIndex = 4
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1280,13 +1235,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
         end
-        object cxTabSheet15: TcxTabSheet
+        object TbShtNecessidades: TcxTabSheet
           Caption = 'Necessidades de qualifica'#231#227'o'
           ImageIndex = 5
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1395,26 +1346,22 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         end
       end
     end
-    object cxTabSheet6: TcxTabSheet
+    object TbShtPlano: TcxTabSheet
       Caption = 'Plano de ATER do ESLOC'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
-      object cxPageControl4: TcxPageControl
+      object PgCntrlPlano: TcxPageControl
         Left = 8
         Top = 8
         Width = 769
         Height = 497
         TabOrder = 0
-        Properties.ActivePage = cxTabSheet16
+        Properties.ActivePage = TbShtProjetos
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 495
         ClientRectLeft = 2
         ClientRectRight = 767
         ClientRectTop = 28
-        object cxTabSheet16: TcxTabSheet
+        object TbShtProjetos: TcxTabSheet
           Caption = 'Projetos e subprojetos'
           ImageIndex = 0
           DesignSize = (
@@ -1537,7 +1484,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
         end
-        object cxTabSheet17: TcxTabSheet
+        object TbShtMetas: TcxTabSheet
           Caption = 'Metas'
           ImageIndex = 1
           DesignSize = (
@@ -1748,13 +1695,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
         end
-        object cxTabSheet18: TcxTabSheet
+        object TbShtMetodologias: TcxTabSheet
           Caption = 'Metodologias de ATER'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1861,13 +1804,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
         end
-        object cxTabSheet19: TcxTabSheet
+        object TbShtBeneficiarios: TcxTabSheet
           Caption = 'Benefici'#225'rios de ATER'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1982,13 +1921,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
         end
-        object cxTabSheet20: TcxTabSheet
+        object TbShtOrcamento: TcxTabSheet
           Caption = 'Previs'#227'o or'#231'ament'#225'ria'
           ImageIndex = 4
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -2137,6 +2072,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 288
   end
   inherited QryPrincipal: TFDQuery
+    CachedUpdates = True
     SQL.Strings = (
       'select'
       '  a.pro_id,'
@@ -2213,28 +2149,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Left = 144
     Top = 288
   end
-  object FDQuery1: TFDQuery
-    Connection = DtmConexaoModulo.FDConnection
-    Transaction = DtmConexaoModulo.FDReadTransaction
-    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
-    UpdateObject = FDUpdateSQL1
-    Left = 640
-    Top = 360
-  end
-  object FDUpdateSQL1: TFDUpdateSQL
-    Connection = DtmConexaoModulo.FDConnection
-    Left = 672
-    Top = 360
-  end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    OnStateChange = DtSrcPrincipalStateChange
-    Left = 704
-    Top = 360
-  end
   object DtSrcComunidade: TDataSource
     DataSet = QryComunidade
-    OnStateChange = DtSrcPrincipalStateChange
+    OnStateChange = DtSrcComunidadeStateChange
     Left = 176
     Top = 320
   end
@@ -2283,6 +2200,11 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 320
   end
   object QryComunidade: TFDQuery
+    BeforePost = QryComunidadeBeforePost
+    OnNewRecord = QryComunidadeNewRecord
+    Filtered = True
+    Filter = 'REG_EXCLUIDO = 0'
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -2325,7 +2247,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       FieldName = 'PRC_ID'
       Origin = 'PRC_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryComunidadePRC_LOCALIZACAO: TStringField
       DisplayLabel = 'Localiza'#231#227'o'
@@ -2346,7 +2267,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object QryComunidadePRO_ID: TLargeintField
       FieldName = 'PRO_ID'
       Origin = 'PRO_ID'
-      Required = True
     end
     object QryComunidadeCOM_ID: TIntegerField
       FieldName = 'COM_ID'
@@ -2359,7 +2279,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       FieldName = 'COM_NOME'
       Origin = 'COM_NOME'
       ProviderFlags = []
-      ReadOnly = True
       Size = 100
     end
     object QryComunidadeREG_EXCLUIDO: TSmallintField
@@ -2706,7 +2625,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     end
   end
   object QryFuncionario: TFDQuery
-    Active = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -2846,7 +2764,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 320
   end
   object QryDemanda: TFDQuery
-    Active = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3019,7 +2936,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 352
   end
   object QryEquipamento: TFDQuery
-    Active = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3150,7 +3066,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 384
   end
   object QryVeiculo: TFDQuery
-    Active = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3296,7 +3211,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 416
   end
   object QryCusto: TFDQuery
-    Active = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3396,7 +3310,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 448
   end
   object QryQualificacao: TFDQuery
-    Active = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3857,7 +3770,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 320
   end
   object QrySubMetodo: TFDQuery
-    Active = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -4119,7 +4031,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 384
   end
   object QrySubOrcamento: TFDQuery
-    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction

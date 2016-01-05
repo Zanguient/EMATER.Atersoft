@@ -154,6 +154,7 @@ begin
                   Msg.Informacao(BASE_MSG_INFORMACAO_SALVAR);
                   ColorirCamposObrigatorios(clWindowText);
                   CodeSite.SendMsg('Alterações no registro gravadas com sucesso.');
+
                   if (DtSrcPrincipal.DataSet is TClientDataSet) then
                     begin
                       if TClientDataSet(DtSrcPrincipal.DataSet).ApplyUpdates(-1) = 0 then
@@ -416,7 +417,7 @@ begin
     if Assigned(DtSrcPrincipal.DataSet)  then
       begin
         CodeSite.SendMsg('Verificando se há campo-chave definido para geração do identificador.');
-        if (DtSrcPrincipal.DataSet.State = dsInsert) and (FCampoChave <> '') then
+        if (DtSrcPrincipal.DataSet.State = dsInsert) and (FCampoChave <> '') and (DtSrcPrincipal.DataSet.FieldByName(FCampoChave).IsNull) then
           begin
             DtSrcPrincipal.DataSet.FieldByName(FCampoChave).AsLargeInt := DtmSistemaModulo.GerarIdentificador(FTabela, FCampoChave);
             CodeSite.SendMsg('Identificador gerado para ' + FCampoChave + ': ' + DtSrcPrincipal.DataSet.FieldByName(FCampoChave).AsString + '.');

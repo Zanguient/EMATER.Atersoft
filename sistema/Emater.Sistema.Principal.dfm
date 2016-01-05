@@ -3081,7 +3081,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
-      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3110,6 +3109,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 1
     end
     object RbnTbPROATER: TdxRibbonTab
+      Active = True
       Caption = 'PROATER'
       Groups = <
         item

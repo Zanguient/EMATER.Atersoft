@@ -36,7 +36,7 @@ type
   public
     function GerarIdentificador(const ATabela, ACampo: string): Int64;
     procedure GravarIdentificador(DataSet: TDataSet; TableName, KeyFieldName: string);
-    procedure GravarAuditoriaExclusao(DataSet: TDataSet);
+    procedure GravarAuditoriaExclusao(DataSet: TDataSet; DoRefresh: Boolean = True);
     procedure GravarAuditoriaInclusao(DataSet: TDataSet; TableName, KeyFieldName: string);
     procedure GravarAuditoriaAlteracao(DataSet: TDataSet);
     function UnidadeLocalID: Integer;
@@ -79,7 +79,7 @@ begin
     end;
 end;
 
-procedure TDtmSistemaModulo.GravarAuditoriaExclusao(DataSet: TDataSet);
+procedure TDtmSistemaModulo.GravarAuditoriaExclusao(DataSet: TDataSet; DoRefresh: Boolean = True);
 begin
   DataSet.Edit;
   DataSet.FieldByName('REG_EXCLUIDO').Value := 1;
@@ -87,15 +87,20 @@ begin
   DataSet.FieldByName('REG_USUARIO').AsString := DtmConexaoModulo.UsuarioLogin;
   DataSet.FieldByName('REG_MODIFICADO').Value := Now;
   DataSet.Post;
-  DataSet.Close;
-  DataSet.Open;
+
+  if DoRefresh then
+    begin
+      DataSet.Close;
+      DataSet.Open;
+    end;
 end;
 
 procedure TDtmSistemaModulo.GravarAuditoriaInclusao(DataSet: TDataSet; TableName, KeyFieldName: string);
 begin
   if (DataSet.State = dsInsert) then
     begin
-      DataSet.FieldByName(KeyFieldName).AsLargeInt := GerarIdentificador(TableName, KeyFieldName);
+      if DataSet.FieldByName(KeyFieldName).IsNull then
+        DataSet.FieldByName(KeyFieldName).AsLargeInt := GerarIdentificador(TableName, KeyFieldName);
       DataSet.FieldByName('REG_EXCLUIDO').Value := 0;
       DataSet.FieldByName('REG_REPLICADO').Value := 0;
       DataSet.FieldByName('REG_USUARIO').AsString := DtmConexaoModulo.UsuarioLogin;

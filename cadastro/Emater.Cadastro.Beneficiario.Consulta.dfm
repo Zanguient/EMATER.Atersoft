@@ -29,8 +29,7 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
     Top = 191
     Width = 615
     Height = 282
-    ExplicitLeft = -184
-    ExplicitTop = 159
+    ExplicitTop = 191
     ExplicitWidth = 615
     ExplicitHeight = 282
     inherited GrdConsultaTbl: TcxGridDBTableView
@@ -121,7 +120,6 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
     Height = 136
     BevelEdges = [beTop]
     BevelKind = bkTile
-    ExplicitTop = 55
     ExplicitWidth = 816
     ExplicitHeight = 136
     DesignSize = (
@@ -361,8 +359,6 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 7
-    ExplicitTop = 196
-    ExplicitHeight = 277
     object SplitterAtributos: TSplitter
       Left = 0
       Top = 193
@@ -475,7 +471,6 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
       TabOrder = 1
       LookAndFeel.Kind = lfFlat
       LookAndFeel.NativeStyle = True
-      ExplicitHeight = 79
       object GrdDivTbl: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -545,6 +540,10 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
         GridView = GrdDivTbl
       end
     end
+  end
+  object DtSrcComunidade: TDataSource [7]
+    Left = 128
+    Top = 376
   end
   inherited DtSrcConsulta: TDataSource
     Left = 128
@@ -1000,72 +999,6 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
     Left = 160
     Top = 280
   end
-  object DtSrcCategoria: TDataSource [11]
-    DataSet = QryCategoria
-    Left = 128
-    Top = 312
-  end
-  object DtSrcDivisao: TDataSource [12]
-    DataSet = QryDivisao
-    Left = 128
-    Top = 344
-  end
-  object dxComponentPrinter: TdxComponentPrinter [13]
-    CurrentLink = dxComponentPrinterLink
-    PreviewOptions.Caption = 'Listagem de Benefici'#225'rios de ATER'
-    Version = 0
-    Left = 224
-    Top = 280
-    object dxComponentPrinterLink: TdxGridReportLink
-      Active = True
-      Component = GrdConsulta
-      PageNumberFormat = pnfNumeral
-      PrinterPage.DMPaper = 9
-      PrinterPage.Footer = 6350
-      PrinterPage.GrayShading = True
-      PrinterPage.Header = 10000
-      PrinterPage.Margins.Bottom = 12700
-      PrinterPage.Margins.Left = 12700
-      PrinterPage.Margins.Right = 12700
-      PrinterPage.Margins.Top = 30000
-      PrinterPage.Orientation = poLandscape
-      PrinterPage.PageFooter.LeftTitle.Strings = (
-        'Data e hora da impress'#227'o: [Data e hora da impress'#227'o]')
-      PrinterPage.PageFooter.RightTitle.Strings = (
-        'P'#225'gina [P'#225'gina # de # p'#225'ginas]')
-      PrinterPage.PageHeader.Font.Charset = DEFAULT_CHARSET
-      PrinterPage.PageHeader.Font.Color = clBlack
-      PrinterPage.PageHeader.Font.Height = -15
-      PrinterPage.PageHeader.Font.Name = 'Tahoma'
-      PrinterPage.PageHeader.Font.Style = [fsBold]
-      PrinterPage.PageHeader.LeftTitle.Strings = (
-        
-          'EMATER-PAR'#193' '#8211' Empresa de Assist'#234'ncia T'#233'cnica e Extens'#227'o Rural do' +
-          ' Estado do Par'#225
-        'SISATER Desktop - Sistema de Acompanhamento de ATER')
-      PrinterPage.PageSize.X = 210000
-      PrinterPage.PageSize.Y = 297000
-      PrinterPage._dxMeasurementUnits_ = 0
-      PrinterPage._dxLastMU_ = 2
-      ReportDocument.Caption = 'Listagem de Benefici'#225'rios de ATER'
-      ReportDocument.CreationDate = 42306.455120023150000000
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
-      OptionsSize.AutoWidth = True
-      OptionsView.FilterBar = False
-      BuiltInReportLink = True
-    end
-  end
-  object dxPSEngineController: TdxPSEngineController [14]
-    Active = True
-    DialogsLookAndFeel.NativeStyle = True
-    PreviewDialogStyle = 'Standard'
-    Left = 256
-    Top = 280
-  end
-  object DtSrcComunidade: TDataSource [15]
-    Left = 128
-    Top = 376
-  end
   inherited QryConsulta: TFDQuery
     SQL.Strings = (
       'select'
@@ -1350,6 +1283,68 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
       'FROM TAB_CAD_BENEFICIARIO'
       'WHERE BEN_ID = :BEN_ID')
     Left = 96
+    Top = 280
+  end
+  object DtSrcCategoria: TDataSource
+    DataSet = QryCategoria
+    Left = 128
+    Top = 312
+  end
+  object DtSrcDivisao: TDataSource
+    DataSet = QryDivisao
+    Left = 128
+    Top = 344
+  end
+  object dxComponentPrinter: TdxComponentPrinter
+    CurrentLink = dxComponentPrinterLink
+    PreviewOptions.Caption = 'Listagem de Benefici'#225'rios de ATER'
+    Version = 0
+    Left = 224
+    Top = 280
+    object dxComponentPrinterLink: TdxGridReportLink
+      Active = True
+      Component = GrdConsulta
+      PageNumberFormat = pnfNumeral
+      PrinterPage.DMPaper = 9
+      PrinterPage.Footer = 6350
+      PrinterPage.GrayShading = True
+      PrinterPage.Header = 10000
+      PrinterPage.Margins.Bottom = 12700
+      PrinterPage.Margins.Left = 12700
+      PrinterPage.Margins.Right = 12700
+      PrinterPage.Margins.Top = 30000
+      PrinterPage.Orientation = poLandscape
+      PrinterPage.PageFooter.LeftTitle.Strings = (
+        'Data e hora da impress'#227'o: [Data e hora da impress'#227'o]')
+      PrinterPage.PageFooter.RightTitle.Strings = (
+        'P'#225'gina [P'#225'gina # de # p'#225'ginas]')
+      PrinterPage.PageHeader.Font.Charset = DEFAULT_CHARSET
+      PrinterPage.PageHeader.Font.Color = clBlack
+      PrinterPage.PageHeader.Font.Height = -15
+      PrinterPage.PageHeader.Font.Name = 'Tahoma'
+      PrinterPage.PageHeader.Font.Style = [fsBold]
+      PrinterPage.PageHeader.LeftTitle.Strings = (
+        
+          'EMATER-PAR'#193' '#8211' Empresa de Assist'#234'ncia T'#233'cnica e Extens'#227'o Rural do' +
+          ' Estado do Par'#225
+        'SISATER Desktop - Sistema de Acompanhamento de ATER')
+      PrinterPage.PageSize.X = 210000
+      PrinterPage.PageSize.Y = 297000
+      PrinterPage._dxMeasurementUnits_ = 0
+      PrinterPage._dxLastMU_ = 2
+      ReportDocument.Caption = 'Listagem de Benefici'#225'rios de ATER'
+      ReportDocument.CreationDate = 42378.826117060180000000
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
+      OptionsSize.AutoWidth = True
+      OptionsView.FilterBar = False
+      BuiltInReportLink = True
+    end
+  end
+  object dxPSEngineController: TdxPSEngineController
+    Active = True
+    DialogsLookAndFeel.NativeStyle = True
+    PreviewDialogStyle = 'Standard'
+    Left = 256
     Top = 280
   end
   object QryCategoria: TFDQuery

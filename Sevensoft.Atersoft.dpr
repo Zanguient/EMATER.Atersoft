@@ -108,7 +108,10 @@ uses
   Emater.Agenda in 'agenda\Emater.Agenda.pas' {FrmBaseFilha1},
   Emater.Agenda.Evento in 'agenda\Emater.Agenda.Evento.pas' {FrmAgendaEvento},
   Emater.Proater.Principal in 'proater\Emater.Proater.Principal.pas' {FrmProaterPrincipal},
-  Emater.Proater.Comunidade in 'proater\Emater.Proater.Comunidade.pas' {FrmProaterComunidade};
+  Emater.Proater.Comunidade in 'proater\Emater.Proater.Comunidade.pas' {FrmProaterComunidade},
+  Emater.Proater.Consulta in 'proater\Emater.Proater.Consulta.pas' {FrmProaterConsulta},
+  Emater.Proater.Potencial in 'proater\Emater.Proater.Potencial.pas' {FrmProaterPotencial},
+  Emater.Proater.Modulo in 'proater\Emater.Proater.Modulo.pas' {DtmProaterModulo: TDataModule};
 
 {$R *.res}
 
@@ -176,6 +179,7 @@ begin
       Application.CreateForm(TDtmLogModulo, DtmLogModulo);
       Application.CreateForm(TDtmRelatorioModulo, DtmRelatorioModulo);
       Application.CreateForm(TDtmCreditoModulo, DtmCreditoModulo);
+      Application.CreateForm(TDtmProaterModulo, DtmProaterModulo);
       CodeSite.SendMsg('Módulos de dados criados com sucesso.');
 
       CodeSite.SendMsg('Inicialização completa. Criando a janela principal.');

@@ -15,6 +15,8 @@ inherited FrmProaterComunidade: TFrmProaterComunidade
   inherited PgCntrlPrincipal: TcxPageControl
     Width = 480
     Height = 309
+    ExplicitWidth = 480
+    ExplicitHeight = 309
     ClientRectBottom = 307
     ClientRectRight = 478
     inherited TbShtPrincipal: TcxTabSheet
@@ -104,11 +106,15 @@ inherited FrmProaterComunidade: TFrmProaterComunidade
     Left = 332
     Top = 323
     TabOrder = 2
+    ExplicitLeft = 332
+    ExplicitTop = 323
   end
   inherited BtnCancelar: TcxButton
     Left = 413
     Top = 323
     TabOrder = 3
+    ExplicitLeft = 413
+    ExplicitTop = 323
   end
   object BtnPesquisar: TcxButton
     Left = 8

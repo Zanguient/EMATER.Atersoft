@@ -203,7 +203,7 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Relatorio.Fater.Quadrimestre, Emater.Classe.Log, Emater.Sistema.Sobre, Emater.Relatorio.Fater.Comunidade,
   Emater.Cadastro.Beneficiario.Busca, Emater.Sistema.Consts, Emater.Sistema.Ajuda, Emater.Credito.Consulta, Emater.Credito,
   Emater.Credito.Financeira, Emater.Credito.Linha, Emater.Credito.Tipo, Emater.Credito.Publico, Emater.Credito.Situacao,
-  Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal;
+  Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal, Emater.Proater.Consulta;
 
 { TForm1 }
 
@@ -705,13 +705,11 @@ end;
 procedure TFrmSistemaPrincipal.BtnPROATERClick(Sender: TObject);
 begin
   inherited;
-  if FindFormByName('FrmProaterPrincipal') then
-    GetFormByName('FrmProaterPrincipal').BringToFront
+
+  if FindFormByName('FrmProaterConsulta') then
+    GetFormByName('FrmProaterConsulta').BringToFront
   else
-    begin
-      FrmProaterPrincipal := TFrmProaterPrincipal.Create(Self);
-      FrmProaterPrincipal.Novo;
-    end;
+    FrmProaterConsulta := TFrmProaterConsulta.Create(Self);
 end;
 
 procedure TFrmSistemaPrincipal.BtnProducaoBeneficiarioClick(Sender: TObject);
@@ -829,6 +827,8 @@ begin
 
     dxRibbonStatusBar.Panels[3].Text := FormatDateTime('dd/mm/yyyy', Date);
     dxRibbonStatusBar.Panels[4].Text := FormatDateTime('hh:nn:ss', Time);
+
+    RbnTbCadastros.Active := True;
   finally
     CodeSite.ExitMethod(Self.Name + '.FormCreate().');
   end;

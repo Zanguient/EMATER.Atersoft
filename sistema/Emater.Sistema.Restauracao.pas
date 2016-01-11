@@ -39,7 +39,7 @@ implementation
 
 uses Emater.Recurso.Modulo, Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Sistema.Consts, Emater.Cadastro.Modulo,
   Emater.Pessoal.Modulo, Emater.Produtividade.Modulo, Emater.Sistema.Principal, Emater.Dialogo.Modulo, Emater.Dne.Modulo,
-  Emater.Log.Modulo, Emater.Relatorio.Modulo;
+  Emater.Log.Modulo, Emater.Relatorio.Modulo, Emater.Proater.Modulo;
 
 procedure TFrmSistemaRestauracao.BtnAbrirClick(Sender: TObject);
 begin
@@ -138,6 +138,7 @@ begin
             DtmDneModulo.RecarregarDados;
             DtmLogModulo.RecarregarDados;
             DtmRelatorioModulo.RecarregarDados;
+            DtmProaterModulo.RecarregarDados;
 
             FrmSistemaPrincipal.AtualizarBarraStatus(
               DtmConexaoModulo.Servidor + ':' + DtmConexaoModulo.Base,

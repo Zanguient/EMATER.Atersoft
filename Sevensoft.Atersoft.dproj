@@ -425,6 +425,19 @@
             <Form>FrmProaterComunidade</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Consulta.pas">
+            <Form>FrmProaterConsulta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Potencial.pas">
+            <Form>FrmProaterPotencial</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Modulo.pas">
+            <Form>DtmProaterModulo</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -10,6 +10,13 @@ uses
   dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic;
 
 type
+  TDataSetControl = record
+    Query: TFDQuery;
+    MasterSource: TDataSource;
+  end;
+
+  TDataSetArray = array of TDataSetControl;
+
   TFrmBaseTabela = class(TFrmBaseBasico)
     PgCntrlMain: TcxPageControl;
     TbShtPrincipal: TcxTabSheet;
@@ -36,15 +43,22 @@ type
     procedure PrepareInterfaceForSelect;
     procedure QryPrincipalBeforePost(DataSet: TDataSet);
     procedure QryPrincipalNewRecord(DataSet: TDataSet);
+    procedure FormDestroy(Sender: TObject);
   private
     FControleAtivo: TWinControl;
     FCampoExcluido: string;
     FCampoChave: string;
     FTabela: string;
+    FDataSets: TDataSetArray;
+    FIsCachedUpdates: Boolean;
+    procedure DadosCacheAplicar(const DataSet: TFDQuery);
+    procedure DadosCacheCancelar(const DataSet: TFDQuery; DoRefresh: Boolean = True);
+    function DadosCachePendente: Boolean;
   published
     property ControleAtivo: TWinControl read FControleAtivo write FControleAtivo;
     property CampoChave: string read FCampoChave write FCampoChave;
     property Tabela: string read FTabela write FTabela;
+    property DataSets: TDataSetArray read FDataSets;
   public
     procedure Novo;
     procedure Editar(const ID: Largeint);
@@ -53,6 +67,7 @@ type
     function SelecionarNumero(const ACampoNome: string): Largeint;
     function SelecionarTexto(const ACampoNome: string): string;
     procedure DesabilitarControles;
+    procedure GetDataSets;
   end;
 
 var
@@ -98,10 +113,19 @@ begin
     PgCntrlMain.ActivePage := TbShtPrincipal;
 
     SublinharCamposObrigatorios;
+
+    // Preparando o vetor dos DataSets caso devam ser CachedUpdates:
+    GetDataSets;
   finally
     CodeSite.ExitMethod(Self.Name + '.FormCreate().');
     Screen.Cursor := crDefault;
   end;
+end;
+
+procedure TFrmBaseTabela.FormDestroy(Sender: TObject);
+begin
+  inherited;
+  Finalize(FDataSets);
 end;
 
 procedure TFrmBaseTabela.BtnNovoClick(Sender: TObject);
@@ -124,6 +148,8 @@ begin
 end;
 
 procedure TFrmBaseTabela.BtnSalvarClick(Sender: TObject);
+var
+  I: Integer;
 begin
   // Salva as alterações realizadas no registro.
   CodeSite.EnterMethod(Self.Name + '.BtnSalvarClick().');
@@ -151,9 +177,6 @@ begin
 
                   CodeSite.SendMsg('Preparando para gravar as alterações do registro.');
                   DtSrcPrincipal.DataSet.Post;
-                  Msg.Informacao(BASE_MSG_INFORMACAO_SALVAR);
-                  ColorirCamposObrigatorios(clWindowText);
-                  CodeSite.SendMsg('Alterações no registro gravadas com sucesso.');
 
                   if (DtSrcPrincipal.DataSet is TClientDataSet) then
                     begin
@@ -162,10 +185,34 @@ begin
                       else
                         TClientDataSet(DtSrcPrincipal.DataSet).UndoLastChange(True);
                     end;
-                  if Assigned(FControleAtivo) then
-                    if FControleAtivo.CanFocus then
-                      FControleAtivo.SetFocus;
-                end
+
+                end;
+
+              if FIsCachedUpdates then
+                begin
+                  // Desabilita o MasterSource de cada DataSet:
+                  for I := Low(FDataSets) to High(DataSets) do
+                    FDataSets[I].Query.MasterSource := nil;
+
+                  // DataSet principal deve ser o primeiro a ser salvo:
+                  DadosCacheAplicar(TFDQuery(DtSrcPrincipal.DataSet));
+
+                  // Aplica os dados em cache para os demais DataSets:
+                  for I := Low(FDataSets) to High(FDataSets) do
+                    DadosCacheAplicar(FDataSets[I].Query);
+
+                  // Habilita o MasterSource de cada DataSet:
+                  for I := Low(FDataSets) to High(DataSets) do
+                    FDataSets[I].Query.MasterSource := FDataSets[I].MasterSource;
+                end;
+
+              Msg.Informacao(BASE_MSG_INFORMACAO_SALVAR);
+              ColorirCamposObrigatorios(clWindowText);
+              CodeSite.SendMsg('Alterações no registro gravadas com sucesso.');
+
+              if Assigned(FControleAtivo) then
+                if FControleAtivo.CanFocus then
+                  FControleAtivo.SetFocus;
             end
           else
             ColorirCamposObrigatorios(clRed);
@@ -196,7 +243,34 @@ begin
   end;
 end;
 
+procedure TFrmBaseTabela.DadosCacheCancelar(const DataSet: TFDQuery; DoRefresh: Boolean);
+begin
+  if DataSet.UpdatesPending then
+    begin
+      DataSet.CancelUpdates;
+
+      if DoRefresh then
+        begin
+          DataSet.Close;
+          DataSet.Open;
+        end;
+    end;
+end;
+
+function TFrmBaseTabela.DadosCachePendente: Boolean;
+var
+  I: Integer;
+begin
+  Result := False;
+
+  if FIsCachedUpdates then
+    for I := Low(FDataSets) to High(FDataSets) do
+      Result := Result or FDataSets[I].Query.UpdatesPending;
+end;
+
 procedure TFrmBaseTabela.BtnCancelarClick(Sender: TObject);
+var
+  I: Integer;
 begin
   // Pergunta-se ao usuário se este tem certeza que realmente
   // deseja cancelar as alterações realizadas no registro.
@@ -207,11 +281,30 @@ begin
         CodeSite.SendMsg('Confirmar cancelamento das alterações.');
         if Msg.Confirmacao(BASE_MSG_CONFIRMAR_CANCELAMENTO) then
           begin
+
             if (DtSrcPrincipal.DataSet.State in [dsEdit, dsInsert]) then
+              DtSrcPrincipal.DataSet.Cancel;
+
+            if FIsCachedUpdates then
               begin
-                DtSrcPrincipal.DataSet.Cancel;
-                CodeSite.SendMsg('Alterações no registro canceladas.');
+                // Desabilita o MasterSource de cada DataSet:
+                for I := Low(FDataSets) to High(DataSets) do
+                  FDataSets[I].Query.MasterSource := nil;
+
+                // DataSet principal deve ser o primeiro a ser salvo:
+                DadosCacheCancelar(TFDQuery(DtSrcPrincipal.DataSet));
+
+                // Aplica os dados em cache para os demais DataSets:
+                for I := Low(FDataSets) to High(FDataSets) do
+                  DadosCacheCancelar(FDataSets[I].Query);
+
+                // Habilita o MasterSource de cada DataSet:
+                for I := Low(FDataSets) to High(DataSets) do
+                  FDataSets[I].Query.MasterSource := FDataSets[I].MasterSource;
               end;
+
+            CodeSite.SendMsg('Alterações no registro canceladas.');
+
             if Assigned(FControleAtivo) then
               if FControleAtivo.CanFocus then
                 FControleAtivo.SetFocus;
@@ -299,6 +392,8 @@ begin
 end;
 
 procedure TFrmBaseTabela.FormClose(Sender: TObject; var Action: TCloseAction);
+var
+  I: Integer;
 begin
   // Verificando se o registro está sendo editado.
   // Caso esteja sendo editado, é feito uma pergunta se o usuário
@@ -307,13 +402,20 @@ begin
   CodeSite.EnterMethod(Self.Name + '.FormClose().');
   try
     if Assigned(DtSrcPrincipal.DataSet) then
-      if (DtSrcPrincipal.DataSet.State in [dsEdit, dsInsert]) then
+      if (DtSrcPrincipal.DataSet.State in [dsEdit, dsInsert]) or DadosCachePendente then
         begin
           CodeSite.SendMsg('Há alterações pendentes. Confirmar cancelamento das alterações.');
           if Msg.Confirmacao(BASE_MSG_CONFIRMAR_CANCELAMENTO) then
             begin
               CodeSite.SendMsg('O usuário confirmou o cancelamento das alterações.');
               DtSrcPrincipal.DataSet.Cancel;
+
+              if FIsCachedUpdates then
+                begin
+                  for I := Low(FDataSets) to High(DataSets) do
+                    DadosCacheCancelar(FDataSets[I].Query, False);
+                end;
+
               CodeSite.SendMsg('Alterações canceladas com sucesso. A janela será fechada.');
             end
           else
@@ -350,19 +452,39 @@ begin
   end;
 end;
 
+procedure TFrmBaseTabela.DadosCacheAplicar(const DataSet: TFDQuery);
+begin
+  if DataSet.CachedUpdates and DataSet.UpdatesPending then
+    if (DataSet.ApplyUpdates = 0) then
+      DataSet.CommitUpdates;
+end;
+
 procedure TFrmBaseTabela.DtSrcPrincipalStateChange(Sender: TObject);
+var
+  Editando, Vazio: Boolean;
+  I: Integer;
 begin
   // Atualizando os botões de acordo com o status do DataSet:
   inherited;
   if Assigned(DtSrcPrincipal.DataSet) then
     begin
+
+      Editando := (DtSrcPrincipal.DataSet.State in [dsEdit, dsInsert]);
+      Vazio := (DtSrcPrincipal.DataSet.RecordCount > 0);
+
+      if FIsCachedUpdates then
+        begin
+          for I := Low(FDataSets) to High(FDataSets) do
+            Editando := Editando or FDataSets[I].Query.UpdatesPending;
+        end;
+
       with DtSrcPrincipal.DataSet do
         begin
-          BtnNovo.Enabled := (State = dsBrowse) and (not (State = dsInactive));
-          BtnExcluir.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
-          BtnCancelar.Enabled := (State in [dsEdit, dsInsert]) and (not (State = dsInactive));
-          BtnSalvar.Enabled := (State in [dsEdit, dsInsert]) and (not (State = dsInactive));
-          BtnRelatorio.Enabled := (State = dsBrowse)  and (not (State = dsInactive)) and (RecordCount > 0);
+          BtnNovo.Enabled := not Editando;
+          BtnSalvar.Enabled := Editando;
+          BtnCancelar.Enabled := Editando;
+          BtnExcluir.Enabled := (not Editando) and (not Vazio);
+          BtnRelatorio.Enabled := (not Editando) and (not Vazio);
         end;
     end;
 end;
@@ -554,6 +676,28 @@ begin
     CodeSite.ExitMethod(Self.Name + '.FormShow().');
     Screen.Cursor := crDefault;
   end;
+end;
+
+procedure TFrmBaseTabela.GetDataSets;
+var
+  I, Size: Integer;
+begin
+  Size := 1;
+  FIsCachedUpdates := False;
+  for I := 0 to ComponentCount - 1 do
+    if (Components[I] is TFDQuery) then
+      begin
+        if TFDQuery(Components[I]).CachedUpdates then
+          begin
+            SetLength(FDataSets, Size);
+            FDataSets[Size - 1].Query := TFDQuery(Components[I]);
+            FDataSets[Size - 1].MasterSource := TFDQuery(Components[I]).MasterSource;
+            TFDQuery(Components[I]).Filter := 'REG_EXCLUIDO = 0';
+            TFDQuery(Components[I]).Filtered := True;
+            Size := Size + 1;
+            FIsCachedUpdates := True;
+          end;
+      end;
 end;
 
 end.

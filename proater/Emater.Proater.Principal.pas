@@ -30,10 +30,6 @@ type
     DbLkpCmbBxUnidade: TcxDBLookupComboBox;
     Label12: TLabel;
     DbDtEdtPROATER: TcxDBDateEdit;
-    Label37: TLabel;
-    DbEdtModificadoData: TcxDBTextEdit;
-    Label56: TLabel;
-    DbEdtModificadoUsuario: TcxDBTextEdit;
     DbMemoApresentacao: TcxDBMemo;
     DbMemoObservacao: TcxDBMemo;
     BtnObservacao: TcxButton;
@@ -67,7 +63,7 @@ type
     TbShtProblemas: TcxTabSheet;
     TbShtEstatistica: TcxTabSheet;
     TbShtAcordos: TcxTabSheet;
-    cxButton1: TcxButton;
+    BtnEstatistica: TcxButton;
     DbMemoEstatistica: TcxDBMemo;
     PgCntrlCapacidade: TcxPageControl;
     TbShtRecursos: TcxTabSheet;
@@ -423,14 +419,18 @@ type
     GrdOrcTblORC_ELEMENTO: TcxGridDBColumn;
     GrdOrcTblORC_ANO: TcxGridDBColumn;
     GrdOrcTblORC_VALOR: TcxGridDBColumn;
+    QryPrincipalPRO_PERIODO_INICIO: TIntegerField;
+    QryPrincipalPRO_PERIODO_FIM: TIntegerField;
+    LblPeriodoPlantio: TLabel;
+    DbEdtPeriodoInicio: TcxDBMaskEdit;
+    LblPeriodoColheita: TLabel;
+    DbEdtPeriodoFim: TcxDBMaskEdit;
     procedure FormCreate(Sender: TObject);
     procedure BtnNovoClick(Sender: TObject);
     procedure QryPrincipalNewRecord(DataSet: TDataSet);
     procedure BtnApresentacaoClick(Sender: TObject);
     procedure BtnObservacaoClick(Sender: TObject);
-    procedure cxButton1Click(Sender: TObject);
-    procedure BtnSalvarClick(Sender: TObject);
-    procedure DtSrcPrincipalStateChange(Sender: TObject);
+    procedure BtnEstatisticaClick(Sender: TObject);
     procedure QryComunidadeBeforePost(DataSet: TDataSet);
     procedure QryComunidadeNewRecord(DataSet: TDataSet);
     procedure BtnComIncluirClick(Sender: TObject);
@@ -438,11 +438,14 @@ type
     procedure DtSrcComunidadeStateChange(Sender: TObject);
     procedure BtnComEditarClick(Sender: TObject);
     procedure BtnComExcluirClick(Sender: TObject);
+    procedure GrdComTblDblClick(Sender: TObject);
+    procedure QryPotencialNewRecord(DataSet: TDataSet);
+    procedure QryPotencialBeforePost(DataSet: TDataSet);
+    procedure DtSrcPrincipalStateChange(Sender: TObject);
+    procedure GrdPotTblDblClick(Sender: TObject);
+    procedure BtnPotIncluirClick(Sender: TObject);
   private
     procedure VisualizarTexto(const FieldName: string);
-    procedure AplicarDados(const DataSet: TFDQuery);
-  public
-    { Public declarations }
   end;
 
 var
@@ -452,13 +455,8 @@ implementation
 
 {$R *.dfm}
 
-uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Produtividade.Fater.Editor, Emater.Proater.Comunidade, Emater.Base.Consts;
-
-procedure TFrmProaterPrincipal.AplicarDados(const DataSet: TFDQuery);
-begin
-  if DataSet.CachedUpdates and DataSet.UpdatesPending then
-    DataSet.ApplyUpdates;
-end;
+uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Produtividade.Fater.Editor, Emater.Proater.Comunidade, Emater.Base.Consts, Emater.Proater.Potencial,
+  Emater.Proater.Modulo;
 
 procedure TFrmProaterPrincipal.BtnApresentacaoClick(Sender: TObject);
 begin
@@ -472,7 +470,7 @@ begin
     QryComunidade.Edit;
     if (FrmProaterComunidade.ShowModal = mrOK) then
       begin
-        QryComunidadeCOM_NOME.Value := FrmProaterComunidade.DbLkpCmbBxComunidade.Text;
+        QryComunidadeCOM_NOME.AsString := FrmProaterComunidade.DbLkpCmbBxComunidade.Text;
         QryComunidade.Post;
       end
     else
@@ -486,7 +484,10 @@ end;
 procedure TFrmProaterPrincipal.BtnComExcluirClick(Sender: TObject);
 begin
   if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
-    DtmSistemaModulo.GravarAuditoriaExclusao(QryComunidade);
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryComunidade, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
 end;
 
 procedure TFrmProaterPrincipal.BtnComIncluirClick(Sender: TObject);
@@ -496,7 +497,7 @@ begin
     QryComunidade.Insert;
     if (FrmProaterComunidade.ShowModal = mrOK) then
       begin
-        QryComunidadeCOM_NOME.Value := FrmProaterComunidade.DbLkpCmbBxComunidade.Text;
+        QryComunidadeCOM_NOME.AsString := FrmProaterComunidade.DbLkpCmbBxComunidade.Text;
         QryComunidade.Post;
       end
     else
@@ -519,21 +520,29 @@ begin
   VisualizarTexto('PRO_OBSERVACAO');
 end;
 
-procedure TFrmProaterPrincipal.BtnSalvarClick(Sender: TObject);
+procedure TFrmProaterPrincipal.BtnPotIncluirClick(Sender: TObject);
 begin
-  QryComunidade.MasterSource := nil;
-
-  inherited;
-
-  AplicarDados(QryPrincipal);
-  AplicarDados(QryComunidade);
-
-  QryComunidade.MasterSource := DtSrcPrincipal;
-
-  DtSrcPrincipal.OnStateChange(Sender);
+  FrmProaterPotencial := TFrmProaterPotencial.Create(Self);
+  try
+    QryPotencial.Insert;
+    if (FrmProaterPotencial.ShowModal = mrOK) then
+      begin
+        if DtmProaterModulo.QryContexto.Locate('CTX_ID', QryPotencialCTX_ID.Value, []) then
+          begin
+            QryPotencialCTX_TIPO_DESCRICAO.AsString := DtmProaterModulo.QryContexto.FieldByName('tipo_descricao').AsString;
+            QryPotencialCTX_CONTEXTO.AsString := DtmProaterModulo.QryContexto.FieldByName('ctx_contexto').AsString;
+          end;
+        QryPotencial.Post;
+      end
+    else
+      QryPotencial.Cancel;
+  finally
+    FrmProaterPotencial.Release;
+    FrmProaterPotencial := nil;
+  end;
 end;
 
-procedure TFrmProaterPrincipal.cxButton1Click(Sender: TObject);
+procedure TFrmProaterPrincipal.BtnEstatisticaClick(Sender: TObject);
 begin
   VisualizarTexto('PRO_ESTATISTICA');
 end;
@@ -545,24 +554,17 @@ begin
   BtnComEditar.Enabled := (QryComunidade.RecordCount > 0);
   BtnComExcluir.Enabled := (QryComunidade.RecordCount > 0);
 
-  DtSrcPrincipal.OnStateChange(Sender);
+  DtSrcPrincipalStateChange(Sender);
 end;
 
 procedure TFrmProaterPrincipal.DtSrcPrincipalStateChange(Sender: TObject);
-var
-  Editando, Vazio: Boolean;
 begin
   inherited;
+  BtnPotIncluir.Enabled := QryPotencial.Active;
+  BtnPotEditar.Enabled := (QryPotencial.RecordCount > 0);
+  BtnPotExcluir.Enabled := (QryPotencial.RecordCount > 0);
 
-  Editando := (QryPrincipal.State in [dsInsert, dsEdit]) or
-    QryComunidade.UpdatesPending;
-
-  Vazio := QryPrincipal.RecordCount > 0;
-
-  BtnNovo.Enabled := not Editando;
-  BtnSalvar.Enabled := Editando;
-  BtnCancelar.Enabled := Editando;
-  BtnExcluir.Enabled := (not Editando) and (not Vazio);
+  DtSrcPrincipalStateChange(Sender);
 end;
 
 procedure TFrmProaterPrincipal.FormCreate(Sender: TObject);
@@ -578,12 +580,28 @@ begin
   PgCntrlDiagnostico.ActivePageIndex := 0;
   PgCntrlCapacidade.ActivePageIndex := 0;
   PgCntrlPlano.ActivePageIndex := 0;
+
+  FrmProaterPrincipal := Self;
 end;
 
 procedure TFrmProaterPrincipal.FormShow(Sender: TObject);
 begin
   inherited;
   QryComunidade.Open;
+end;
+
+procedure TFrmProaterPrincipal.GrdComTblDblClick(Sender: TObject);
+begin
+  inherited;
+  if (not QryComunidade.IsEmpty) and (BtnComEditar.Enabled) and (BtnComEditar.Visible) then
+    BtnComEditar.Click;
+end;
+
+procedure TFrmProaterPrincipal.GrdPotTblDblClick(Sender: TObject);
+begin
+  inherited;
+  if (not QryPotencial.IsEmpty) and (BtnPotEditar.Enabled) and (BtnPotEditar.Visible) then
+    BtnPotEditar.Click;
 end;
 
 procedure TFrmProaterPrincipal.QryComunidadeBeforePost(DataSet: TDataSet);
@@ -600,6 +618,19 @@ begin
   QryComunidadePRO_ID.Value := QryPrincipalPRO_ID.Value;
   QryComunidadePRC_QTDE_UPF.Value := 0;
   QryComunidadePRC_QTDE_BENEFICIARIO.Value := 0;
+end;
+
+procedure TFrmProaterPrincipal.QryPotencialBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryPotencial);
+end;
+
+procedure TFrmProaterPrincipal.QryPotencialNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryPotencial, 'TAB_PRD_PROATER_POTENCIAL', 'PRP_ID');
+  QryPotencialPRO_ID.Value := QryPrincipalPRO_ID.Value;
 end;
 
 procedure TFrmProaterPrincipal.QryPrincipalNewRecord(DataSet: TDataSet);

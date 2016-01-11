@@ -36,7 +36,9 @@ object DtmSistemaModulo: TDtmSistemaModulo
       '  a.und_id, '
       '  a.und_superior,'
       '  a.cid_id,'
-      '  (b.unt_descricao || '#39' '#39' || a.und_nome) as und_nome_descricao'
+      
+        '  (a.und_nome || '#39' ('#39' || b.unt_descricao || '#39')'#39') as und_nome_des' +
+        'cricao'
       'from'
       
         '  tab_sis_unidade a left join tab_sis_unidade_tipo b on (a.unt_i' +

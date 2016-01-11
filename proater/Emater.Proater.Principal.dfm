@@ -19,6 +19,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   inherited PgCntrlMain: TcxPageControl
     Width = 791
     Height = 544
+    Properties.ActivePage = TbShtDiagnostico
     ExplicitWidth = 791
     ExplicitHeight = 544
     ClientRectBottom = 542
@@ -27,8 +28,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       ExplicitWidth = 787
       ExplicitHeight = 514
       object Label30: TLabel
-        Left = 136
-        Top = 17
+        Left = 376
+        Top = 16
         Width = 48
         Height = 13
         Caption = 'Escrit'#243'rio:'
@@ -44,22 +45,20 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         FocusControl = DbDtEdtPROATER
         Transparent = True
       end
-      object Label37: TLabel
-        Left = 648
-        Top = 17
-        Width = 81
+      object LblPeriodoPlantio: TLabel
+        Left = 136
+        Top = 16
+        Width = 68
         Height = 13
-        Caption = #218'ltima altera'#231#227'o:'
-        FocusControl = DbEdtModificadoData
+        Caption = 'Per'#237'odo inicial:'
         Transparent = True
       end
-      object Label56: TLabel
-        Left = 400
-        Top = 17
-        Width = 134
+      object LblPeriodoColheita: TLabel
+        Left = 256
+        Top = 16
+        Width = 63
         Height = 13
-        Caption = 'Usu'#225'rio da '#250'ltima altera'#231#227'o:'
-        FocusControl = DbEdtModificadoUsuario
+        Caption = 'Per'#237'odo final:'
         Transparent = True
       end
       object PgCntrlApresentacao: TcxPageControl
@@ -67,7 +66,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Top = 64
         Width = 769
         Height = 441
-        TabOrder = 0
+        TabOrder = 4
         Properties.ActivePage = TbShtApresentacao
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 439
@@ -77,6 +76,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtApresentacao: TcxTabSheet
           Caption = 'Apresenta'#231#227'o'
           ImageIndex = 0
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object DbMemoApresentacao: TcxDBMemo
             Left = 8
             Top = 48
@@ -108,6 +111,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtObservacao: TcxTabSheet
           Caption = 'Observa'#231#245'es'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object DbMemoObservacao: TcxDBMemo
             Left = 8
             Top = 48
@@ -138,9 +145,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         end
       end
       object DbLkpCmbBxUnidade: TcxDBLookupComboBox
-        Left = 136
-        Top = 33
+        Left = 376
+        Top = 32
         TabStop = False
+        Anchors = [akLeft, akTop, akRight]
         DataBinding.DataField = 'UND_ID'
         DataBinding.DataSource = DtSrcPrincipal
         Enabled = False
@@ -154,46 +162,60 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Properties.ListOptions.ShowHeader = False
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
-        TabOrder = 1
-        Width = 257
+        TabOrder = 3
+        Width = 401
       end
       object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8
         Top = 32
         DataBinding.DataField = 'PRO_DATA'
         DataBinding.DataSource = DtSrcPrincipal
-        TabOrder = 2
+        TabOrder = 0
         Width = 121
       end
-      object DbEdtModificadoData: TcxDBTextEdit
-        Left = 648
-        Top = 33
-        DataBinding.DataField = 'REG_MODIFICADO'
+      object DbEdtPeriodoInicio: TcxDBMaskEdit
+        Left = 136
+        Top = 32
+        DataBinding.DataField = 'PRO_PERIODO_INICIO'
         DataBinding.DataSource = DtSrcPrincipal
-        Enabled = False
-        TabOrder = 3
-        Width = 129
+        Properties.Alignment.Horz = taLeftJustify
+        Properties.AlwaysShowBlanksAndLiterals = True
+        Properties.ClearKey = 46
+        Properties.EditMask = '!99\/9999;0; '
+        Properties.MaxLength = 0
+        Properties.ValidationOptions = []
+        TabOrder = 1
+        Width = 113
       end
-      object DbEdtModificadoUsuario: TcxDBTextEdit
-        Left = 400
-        Top = 33
-        DataBinding.DataField = 'REG_USUARIO'
+      object DbEdtPeriodoFim: TcxDBMaskEdit
+        Left = 256
+        Top = 32
+        DataBinding.DataField = 'PRO_PERIODO_FIM'
         DataBinding.DataSource = DtSrcPrincipal
-        Enabled = False
-        TabOrder = 4
-        Width = 241
+        Properties.Alignment.Horz = taLeftJustify
+        Properties.AlwaysShowBlanksAndLiterals = True
+        Properties.ClearKey = 46
+        Properties.EditMask = '!99\/9999;0; '
+        Properties.MaxLength = 0
+        Properties.ValidationOptions = []
+        TabOrder = 2
+        Width = 113
       end
     end
     object TbShtDiagnostico: TcxTabSheet
       Caption = 'Diagn'#243'stico do munic'#237'pio'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PgCntrlDiagnostico: TcxPageControl
         Left = 8
         Top = 8
         Width = 769
         Height = 497
         TabOrder = 0
-        Properties.ActivePage = TbShtEstatistica
+        Properties.ActivePage = TbShtProblemas
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 495
         ClientRectLeft = 2
@@ -202,7 +224,11 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtEstatistica: TcxTabSheet
           Caption = 'Estat'#237'sticas'
           ImageIndex = 2
-          object cxButton1: TcxButton
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
+          object BtnEstatistica: TcxButton
             Left = 8
             Top = 24
             Width = 129
@@ -217,7 +243,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Font.Name = 'Tahoma'
             Font.Style = []
             ParentFont = False
-            OnClick = cxButton1Click
+            OnClick = BtnEstatisticaClick
           end
           object DbMemoEstatistica: TcxDBMemo
             Left = 8
@@ -252,6 +278,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdComTbl: TcxGridDBTableView
+              OnDblClick = GrdComTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -368,6 +395,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdPotTbl: TcxGridDBTableView
+              OnDblClick = GrdPotTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -441,6 +469,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 1
+            OnClick = BtnPotIncluirClick
           end
           object BtnPotEditar: TcxButton
             Left = 88
@@ -576,6 +605,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtCapacidade: TcxTabSheet
       Caption = 'Capacidade operacional do ESLOC'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PgCntrlCapacidade: TcxPageControl
         Left = 8
         Top = 8
@@ -1349,6 +1382,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtPlano: TcxTabSheet
       Caption = 'Plano de ATER do ESLOC'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PgCntrlPlano: TcxPageControl
         Left = 8
         Top = 8
@@ -2077,6 +2114,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       'select'
       '  a.pro_id,'
       '  a.pro_data, '
+      '  a.pro_periodo_inicio,'
+      '  a.pro_periodo_fim,'
       '  a.pro_apresentacao, '
       '  a.pro_observacao, '
       '  a.pro_estatistica, '
@@ -2108,6 +2147,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       FieldName = 'PRO_DATA'
       Origin = 'PRO_DATA'
     end
+    object QryPrincipalPRO_PERIODO_INICIO: TIntegerField
+      FieldName = 'PRO_PERIODO_INICIO'
+      Origin = 'PRO_PERIODO_INICIO'
+    end
+    object QryPrincipalPRO_PERIODO_FIM: TIntegerField
+      FieldName = 'PRO_PERIODO_FIM'
+      Origin = 'PRO_PERIODO_FIM'
+    end
     object QryPrincipalPRO_APRESENTACAO: TMemoField
       FieldName = 'PRO_APRESENTACAO'
       Origin = 'PRO_APRESENTACAO'
@@ -2124,6 +2171,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       BlobType = ftMemo
     end
     object QryPrincipalUND_ID: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'UND_ID'
       Origin = 'UND_ID'
     end
@@ -2146,6 +2194,52 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     end
   end
   inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_PRD_PROATER'
+      '(PRO_ID, PRO_DATA, PRO_PERIODO_INICIO, PRO_PERIODO_FIM, '
+      '  PRO_APRESENTACAO, PRO_OBSERVACAO, PRO_ESTATISTICA, '
+      '  UND_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+      '  REG_MODIFICADO)'
+      
+        'VALUES (:NEW_PRO_ID, :NEW_PRO_DATA, :NEW_PRO_PERIODO_INICIO, :NE' +
+        'W_PRO_PERIODO_FIM, '
+      
+        '  :NEW_PRO_APRESENTACAO, :NEW_PRO_OBSERVACAO, :NEW_PRO_ESTATISTI' +
+        'CA, '
+      
+        '  :NEW_UND_ID, :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, :NEW_REG_U' +
+        'SUARIO, '
+      '  :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_PRD_PROATER'
+      
+        'SET PRO_ID = :NEW_PRO_ID, PRO_DATA = :NEW_PRO_DATA, PRO_PERIODO_' +
+        'INICIO = :NEW_PRO_PERIODO_INICIO, '
+      
+        '  PRO_PERIODO_FIM = :NEW_PRO_PERIODO_FIM, PRO_APRESENTACAO = :NE' +
+        'W_PRO_APRESENTACAO, '
+      
+        '  PRO_OBSERVACAO = :NEW_PRO_OBSERVACAO, PRO_ESTATISTICA = :NEW_P' +
+        'RO_ESTATISTICA, '
+      '  UND_ID = :NEW_UND_ID, REG_EXCLUIDO = :NEW_REG_EXCLUIDO, '
+      
+        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
+        'ARIO, '
+      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+      'WHERE PRO_ID = :OLD_PRO_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_PRD_PROATER'
+      'WHERE PRO_ID = :OLD_PRO_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT PRO_ID, PRO_DATA, PRO_PERIODO_INICIO, PRO_PERIODO_FIM, PR' +
+        'O_APRESENTACAO, '
+      
+        '  PRO_OBSERVACAO, PRO_ESTATISTICA, UND_ID, REG_EXCLUIDO, REG_REP' +
+        'LICADO, '
+      '  REG_USUARIO, REG_MODIFICADO'
+      'FROM TAB_PRD_PROATER'
+      'WHERE PRO_ID = :PRO_ID')
     Left = 144
     Top = 288
   end
@@ -2347,6 +2441,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 352
   end
   object QryPotencial: TFDQuery
+    BeforePost = QryPotencialBeforePost
+    OnNewRecord = QryPotencialNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection

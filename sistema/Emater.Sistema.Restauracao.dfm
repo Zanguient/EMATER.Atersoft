@@ -10,7 +10,7 @@ inherited FrmSistemaRestauracao: TFrmSistemaRestauracao
   ExplicitLeft = 279
   ExplicitTop = 162
   ExplicitWidth = 649
-  ExplicitHeight = 495
+  ExplicitHeight = 496
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

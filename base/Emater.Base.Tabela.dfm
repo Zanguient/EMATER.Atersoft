@@ -1,6 +1,6 @@
 inherited FrmBaseTabela: TFrmBaseTabela
-  Left = 282
-  Top = 245
+  Left = 396
+  Top = 179
   BorderStyle = bsDialog
   Caption = 'Tabela'
   ClientHeight = 383
@@ -11,8 +11,8 @@ inherited FrmBaseTabela: TFrmBaseTabela
   Position = poScreenCenter
   OnClose = FormClose
   OnShow = FormShow
-  ExplicitLeft = 282
-  ExplicitTop = 245
+  ExplicitLeft = 396
+  ExplicitTop = 179
   ExplicitWidth = 586
   ExplicitHeight = 422
   DesignSize = (

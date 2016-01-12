@@ -1,6 +1,7 @@
 inherited FrmProaterPotencial: TFrmProaterPotencial
   Left = 419
   Top = 221
+  ActiveControl = DbLkpCmbBxContexto
   Caption = 'Problemas e Potencialidades'
   ClientHeight = 455
   ClientWidth = 471
@@ -14,9 +15,12 @@ inherited FrmProaterPotencial: TFrmProaterPotencial
   inherited PgCntrlPrincipal: TcxPageControl
     Width = 455
     Height = 409
+    ExplicitWidth = 455
+    ExplicitHeight = 409
     ClientRectBottom = 407
     ClientRectRight = 453
     inherited TbShtPrincipal: TcxTabSheet
+      Caption = 'Geral'
       object Label22: TLabel
         Left = 8
         Top = 32
@@ -83,10 +87,14 @@ inherited FrmProaterPotencial: TFrmProaterPotencial
   inherited BtnOK: TcxButton
     Left = 307
     Top = 423
+    ExplicitLeft = 307
+    ExplicitTop = 423
   end
   inherited BtnCancelar: TcxButton
     Left = 388
     Top = 423
+    ExplicitLeft = 388
+    ExplicitTop = 423
   end
   object DtSrcPotencial: TDataSource
     DataSet = FrmProaterPrincipal.QryPotencial

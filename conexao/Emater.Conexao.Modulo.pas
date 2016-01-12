@@ -358,7 +358,8 @@ procedure TDtmConexaoModulo.FDConnectionError(ASender, AInitiator: TObject; var 
 type
   TKindMessage = (mkNone, mkException, mkTable, mkProcedure);
 var
-  Objeto, Mensagem, S: string;
+  //Objeto, S: string;
+  Mensagem: string;
 
   function GetKindMessage: TKindMessage;
   begin

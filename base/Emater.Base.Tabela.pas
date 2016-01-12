@@ -204,6 +204,8 @@ begin
                   // Habilita o MasterSource de cada DataSet:
                   for I := Low(FDataSets) to High(DataSets) do
                     FDataSets[I].Query.MasterSource := FDataSets[I].MasterSource;
+
+                  DtSrcPrincipalStateChange(Sender);
                 end;
 
               Msg.Informacao(BASE_MSG_INFORMACAO_SALVAR);
@@ -302,6 +304,8 @@ begin
                 for I := Low(FDataSets) to High(DataSets) do
                   FDataSets[I].Query.MasterSource := FDataSets[I].MasterSource;
               end;
+
+            DtSrcPrincipalStateChange(Sender);
 
             CodeSite.SendMsg('Alterações no registro canceladas.');
 

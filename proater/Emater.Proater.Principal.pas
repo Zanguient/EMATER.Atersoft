@@ -441,9 +441,11 @@ type
     procedure GrdComTblDblClick(Sender: TObject);
     procedure QryPotencialNewRecord(DataSet: TDataSet);
     procedure QryPotencialBeforePost(DataSet: TDataSet);
-    procedure DtSrcPrincipalStateChange(Sender: TObject);
     procedure GrdPotTblDblClick(Sender: TObject);
     procedure BtnPotIncluirClick(Sender: TObject);
+    procedure BtnPotEditarClick(Sender: TObject);
+    procedure BtnPotExcluirClick(Sender: TObject);
+    procedure DtSrcPotencialStateChange(Sender: TObject);
   private
     procedure VisualizarTexto(const FieldName: string);
   end;
@@ -456,7 +458,7 @@ implementation
 {$R *.dfm}
 
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Produtividade.Fater.Editor, Emater.Proater.Comunidade, Emater.Base.Consts, Emater.Proater.Potencial,
-  Emater.Proater.Modulo;
+  Emater.Proater.Modulo, Emater.Recurso.Modulo;
 
 procedure TFrmProaterPrincipal.BtnApresentacaoClick(Sender: TObject);
 begin
@@ -520,6 +522,37 @@ begin
   VisualizarTexto('PRO_OBSERVACAO');
 end;
 
+procedure TFrmProaterPrincipal.BtnPotEditarClick(Sender: TObject);
+begin
+  FrmProaterPotencial := TFrmProaterPotencial.Create(Self);
+  try
+    QryPotencial.Edit;
+    if (FrmProaterPotencial.ShowModal = mrOK) then
+      begin
+        if DtmProaterModulo.QryContexto.Locate('CTX_ID', QryPotencialCTX_ID.Value, []) then
+          begin
+            QryPotencialCTX_TIPO_DESCRICAO.AsString := DtmProaterModulo.QryContexto.FieldByName('ctx_tipo_descricao').AsString;
+            QryPotencialCTX_CONTEXTO.AsString := DtmProaterModulo.QryContexto.FieldByName('ctx_contexto').AsString;
+          end;
+        QryPotencial.Post;
+      end
+    else
+      QryPotencial.Cancel;
+  finally
+    FrmProaterPotencial.Release;
+    FrmProaterPotencial := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnPotExcluirClick(Sender: TObject);
+begin
+  if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryPotencial, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
+end;
+
 procedure TFrmProaterPrincipal.BtnPotIncluirClick(Sender: TObject);
 begin
   FrmProaterPotencial := TFrmProaterPotencial.Create(Self);
@@ -529,7 +562,7 @@ begin
       begin
         if DtmProaterModulo.QryContexto.Locate('CTX_ID', QryPotencialCTX_ID.Value, []) then
           begin
-            QryPotencialCTX_TIPO_DESCRICAO.AsString := DtmProaterModulo.QryContexto.FieldByName('tipo_descricao').AsString;
+            QryPotencialCTX_TIPO_DESCRICAO.AsString := DtmProaterModulo.QryContexto.FieldByName('ctx_tipo_descricao').AsString;
             QryPotencialCTX_CONTEXTO.AsString := DtmProaterModulo.QryContexto.FieldByName('ctx_contexto').AsString;
           end;
         QryPotencial.Post;
@@ -549,7 +582,6 @@ end;
 
 procedure TFrmProaterPrincipal.DtSrcComunidadeStateChange(Sender: TObject);
 begin
-  inherited;
   BtnComIncluir.Enabled := QryComunidade.Active;
   BtnComEditar.Enabled := (QryComunidade.RecordCount > 0);
   BtnComExcluir.Enabled := (QryComunidade.RecordCount > 0);
@@ -557,9 +589,8 @@ begin
   DtSrcPrincipalStateChange(Sender);
 end;
 
-procedure TFrmProaterPrincipal.DtSrcPrincipalStateChange(Sender: TObject);
+procedure TFrmProaterPrincipal.DtSrcPotencialStateChange(Sender: TObject);
 begin
-  inherited;
   BtnPotIncluir.Enabled := QryPotencial.Active;
   BtnPotEditar.Enabled := (QryPotencial.RecordCount > 0);
   BtnPotExcluir.Enabled := (QryPotencial.RecordCount > 0);
@@ -588,6 +619,7 @@ procedure TFrmProaterPrincipal.FormShow(Sender: TObject);
 begin
   inherited;
   QryComunidade.Open;
+  QryPotencial.Open;
 end;
 
 procedure TFrmProaterPrincipal.GrdComTblDblClick(Sender: TObject);

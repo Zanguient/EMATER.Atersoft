@@ -197,7 +197,7 @@ begin
   QryAgendaAGN_EVENTO_TIPO.Value := 1;
   QryAgendaREG_EXCLUIDO.Value := 0;
   QryAgendaREG_REPLICADO.Value := 0;
-  QryAgendaREG_USUARIO.Value := DtmConexaoModulo.UsuarioLogin;
+  QryAgendaREG_USUARIO.AsString := DtmConexaoModulo.UsuarioLogin;
   QryAgendaREG_MODIFICADO.AsDateTime := Now;
   QryAgendaAGN_ACTUAL_START.Value := 0;
   QryAgendaAGN_ACTUAL_FINISH.Value := 0;

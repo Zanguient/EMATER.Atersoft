@@ -163,7 +163,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
         TabOrder = 3
-        Width = 401
+        Width = 397
       end
       object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8
@@ -443,19 +443,19 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               Styles.Selection = DtmRecursoModulo.cxStyleSelection
               object GrdPotTblCTX_TIPO_DESCRICAO: TcxGridDBColumn
                 DataBinding.FieldName = 'CTX_TIPO_DESCRICAO'
-                Width = 122
+                Width = 146
               end
               object GrdPotTblCTX_CONTEXTO: TcxGridDBColumn
                 DataBinding.FieldName = 'CTX_CONTEXTO'
-                Width = 210
+                Width = 223
               end
               object GrdPotTblPRP_POTENCIALIDADE: TcxGridDBColumn
                 DataBinding.FieldName = 'PRP_POTENCIALIDADE'
-                Width = 209
+                Width = 190
               end
               object GrdPotTblPRP_PROBLEMA: TcxGridDBColumn
                 DataBinding.FieldName = 'PRP_PROBLEMA'
-                Width = 204
+                Width = 186
               end
             end
             object GrdPotLvl: TcxGridLevel
@@ -478,6 +478,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 2
+            OnClick = BtnPotEditarClick
           end
           object BtnPotExcluir: TcxButton
             Left = 168
@@ -486,6 +487,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 3
+            OnClick = BtnPotExcluirClick
           end
         end
         object TbShtAcordos: TcxTabSheet
@@ -2296,8 +2298,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   object QryComunidade: TFDQuery
     BeforePost = QryComunidadeBeforePost
     OnNewRecord = QryComunidadeNewRecord
-    Filtered = True
-    Filter = 'REG_EXCLUIDO = 0'
     CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
@@ -2397,7 +2397,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcPotencial: TDataSource
     DataSet = QryPotencial
-    OnStateChange = DtSrcPrincipalStateChange
+    OnStateChange = DtSrcPotencialStateChange
     Left = 176
     Top = 352
   end
@@ -2464,9 +2464,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       '  b.ctx_tipo,'
       '  b.ctx_contexto,'
       '  case b.ctx_tipo'
-      '    when 1 then '#39'Dimens'#227'o econ'#244'mica'#39
-      '    when 2 then '#39'Dimens'#227'o social'#39
-      '    when 3 then '#39'Dimens'#227'o ambiental'#39
+      '    when 1 then '#39'DIMENS'#195'O ECON'#212'MICA'#39
+      '    when 2 then '#39'DIMENS'#195'O SOCIAL'#39
+      '    when 3 then '#39'DIMENS'#195'O AMBIENTAL'#39
       '  end as ctx_tipo_descricao'
       'from'
       
@@ -2556,7 +2556,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcAcordo: TDataSource
     DataSet = QryAcordo
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 176
     Top = 384
   end
@@ -2814,7 +2813,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcFuncionario: TDataSource
     DataSet = QryFuncionario
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 312
     Top = 288
   end
@@ -2856,7 +2854,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcDemanda: TDataSource
     DataSet = QryDemanda
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 312
     Top = 320
   end
@@ -3028,7 +3025,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcMobiliario: TDataSource
     DataSet = QryMobiliario
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 312
     Top = 352
   end
@@ -3158,7 +3154,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcEquipamento: TDataSource
     DataSet = QryEquipamento
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 312
     Top = 384
   end
@@ -3303,7 +3298,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcVeiculo: TDataSource
     DataSet = QryVeiculo
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 312
     Top = 416
   end
@@ -3402,7 +3396,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcCusto: TDataSource
     DataSet = QryCusto
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 312
     Top = 448
   end
@@ -3537,7 +3530,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcQualificacao: TDataSource
     DataSet = QryQualificacao
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 312
     Top = 480
   end
@@ -3773,7 +3765,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcSubProjeto: TDataSource
     DataSet = QrySubProjeto
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 456
     Top = 288
   end
@@ -3862,7 +3853,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcSubMeta: TDataSource
     DataSet = QrySubMeta
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 456
     Top = 320
   end
@@ -3996,7 +3986,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcSubMetodo: TDataSource
     DataSet = QrySubMetodo
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 456
     Top = 352
   end
@@ -4123,7 +4112,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcSubBeneficiario: TDataSource
     DataSet = QrySubBeneficiario
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 456
     Top = 384
   end
@@ -4257,7 +4245,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcSubOrcamento: TDataSource
     DataSet = QrySubOrcamento
-    OnStateChange = DtSrcPrincipalStateChange
     Left = 456
     Top = 416
   end

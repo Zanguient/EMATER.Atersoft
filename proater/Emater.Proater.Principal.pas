@@ -175,7 +175,7 @@ type
     BtnMobEditar: TcxButton;
     BtnMobExcluir: TcxButton;
     GrdMob: TcxGrid;
-    cxGridDBTableView1: TcxGridDBTableView;
+    GrdMobTbl: TcxGridDBTableView;
     GrdMobLvl: TcxGridLevel;
     QryMobiliario: TFDQuery;
     UpdtMobiliario: TFDUpdateSQL;
@@ -194,9 +194,9 @@ type
     DtSrcEquipamento: TDataSource;
     GrdDemTblDEM_QUANTIDADE: TcxGridDBColumn;
     GrdDemTblCRG_DESCRICAO: TcxGridDBColumn;
-    cxGridDBTableView1PRM_DESCRICAO: TcxGridDBColumn;
-    cxGridDBTableView1PRM_QTDE_EXISTENTE: TcxGridDBColumn;
-    cxGridDBTableView1PRM_QTDE_NECESSARIA: TcxGridDBColumn;
+    GrdMobTblPRM_DESCRICAO: TcxGridDBColumn;
+    GrdMobTblPRM_QTDE_EXISTENTE: TcxGridDBColumn;
+    GrdMobTblPRM_QTDE_NECESSARIA: TcxGridDBColumn;
     QryVeiculo: TFDQuery;
     UpdtVeiculo: TFDUpdateSQL;
     DtSrcVeiculo: TDataSource;
@@ -374,23 +374,23 @@ type
     GrdBen: TcxGrid;
     GrdBenTbl: TcxGridDBTableView;
     GrdBenLvl: TcxGridLevel;
-    QrySubBeneficiario: TFDQuery;
-    UpdtSubBeneficiario: TFDUpdateSQL;
-    DtSrcSubBeneficiario: TDataSource;
-    QrySubBeneficiarioPLC_ID: TLargeintField;
-    QrySubBeneficiarioPLC_ANO: TSmallintField;
-    QrySubBeneficiarioPLC_QUANTIDADE: TIntegerField;
-    QrySubBeneficiarioCOM_ID: TIntegerField;
-    QrySubBeneficiarioCAT_ID: TIntegerField;
-    QrySubBeneficiarioPRD_ID: TIntegerField;
-    QrySubBeneficiarioSPR_ID: TIntegerField;
-    QrySubBeneficiarioREG_EXCLUIDO: TSmallintField;
-    QrySubBeneficiarioREG_REPLICADO: TSmallintField;
-    QrySubBeneficiarioREG_USUARIO: TStringField;
-    QrySubBeneficiarioREG_MODIFICADO: TSQLTimeStampField;
-    QrySubBeneficiarioCOM_NOME: TStringField;
-    QrySubBeneficiarioCAT_DESCRICAO: TStringField;
-    QrySubBeneficiarioPRD_DESCRICAO: TStringField;
+    QrySubComunidade: TFDQuery;
+    UpdtSubComunidade: TFDUpdateSQL;
+    DtSrcSubComunidade: TDataSource;
+    QrySubComunidadePLC_ID: TLargeintField;
+    QrySubComunidadePLC_ANO: TSmallintField;
+    QrySubComunidadePLC_QUANTIDADE: TIntegerField;
+    QrySubComunidadeCOM_ID: TIntegerField;
+    QrySubComunidadeCAT_ID: TIntegerField;
+    QrySubComunidadePRD_ID: TIntegerField;
+    QrySubComunidadeSPR_ID: TIntegerField;
+    QrySubComunidadeREG_EXCLUIDO: TSmallintField;
+    QrySubComunidadeREG_REPLICADO: TSmallintField;
+    QrySubComunidadeREG_USUARIO: TStringField;
+    QrySubComunidadeREG_MODIFICADO: TSQLTimeStampField;
+    QrySubComunidadeCOM_NOME: TStringField;
+    QrySubComunidadeCAT_DESCRICAO: TStringField;
+    QrySubComunidadePRD_DESCRICAO: TStringField;
     GrdBenTblPLC_ANO: TcxGridDBColumn;
     GrdBenTblPLC_QUANTIDADE: TcxGridDBColumn;
     GrdBenTblCOM_NOME: TcxGridDBColumn;
@@ -446,8 +446,67 @@ type
     procedure BtnPotEditarClick(Sender: TObject);
     procedure BtnPotExcluirClick(Sender: TObject);
     procedure DtSrcPotencialStateChange(Sender: TObject);
+    procedure QryAcordoNewRecord(DataSet: TDataSet);
+    procedure QryAcordoBeforePost(DataSet: TDataSet);
+    procedure DtSrcAcordoStateChange(Sender: TObject);
+    procedure GrdAcrTblDblClick(Sender: TObject);
+    procedure BtnAcrIncluirClick(Sender: TObject);
+    procedure BtnAcrEditarClick(Sender: TObject);
+    procedure BtnAcrExcluirClick(Sender: TObject);
+    procedure QryFuncionarioNewRecord(DataSet: TDataSet);
+    procedure QryFuncionarioBeforePost(DataSet: TDataSet);
+    procedure QryDemandaBeforePost(DataSet: TDataSet);
+    procedure QryMobiliarioBeforePost(DataSet: TDataSet);
+    procedure QryEquipamentoBeforePost(DataSet: TDataSet);
+    procedure QryVeiculoBeforePost(DataSet: TDataSet);
+    procedure QryCustoBeforePost(DataSet: TDataSet);
+    procedure QryQualificacaoBeforePost(DataSet: TDataSet);
+    procedure QrySubProjetoBeforePost(DataSet: TDataSet);
+    procedure QrySubMetaBeforePost(DataSet: TDataSet);
+    procedure QrySubMetodoBeforePost(DataSet: TDataSet);
+    procedure QrySubComunidadeBeforePost(DataSet: TDataSet);
+    procedure QrySubOrcamentoBeforePost(DataSet: TDataSet);
+    procedure QryDemandaNewRecord(DataSet: TDataSet);
+    procedure QryMobiliarioNewRecord(DataSet: TDataSet);
+    procedure QryEquipamentoNewRecord(DataSet: TDataSet);
+    procedure QryVeiculoNewRecord(DataSet: TDataSet);
+    procedure QryCustoNewRecord(DataSet: TDataSet);
+    procedure QryQualificacaoNewRecord(DataSet: TDataSet);
+    procedure QrySubProjetoNewRecord(DataSet: TDataSet);
+    procedure QrySubMetaNewRecord(DataSet: TDataSet);
+    procedure QrySubMetodoNewRecord(DataSet: TDataSet);
+    procedure QrySubComunidadeNewRecord(DataSet: TDataSet);
+    procedure QrySubOrcamentoNewRecord(DataSet: TDataSet);
+    procedure DtSrcFuncionarioStateChange(Sender: TObject);
+    procedure DtSrcDemandaStateChange(Sender: TObject);
+    procedure DtSrcMobiliarioStateChange(Sender: TObject);
+    procedure DtSrcEquipamentoStateChange(Sender: TObject);
+    procedure DtSrcVeiculoStateChange(Sender: TObject);
+    procedure DtSrcCustoStateChange(Sender: TObject);
+    procedure DtSrcQualificacaoStateChange(Sender: TObject);
+    procedure DtSrcSubProjetoStateChange(Sender: TObject);
+    procedure DtSrcSubMetaStateChange(Sender: TObject);
+    procedure DtSrcSubMetodoStateChange(Sender: TObject);
+    procedure DtSrcSubComunidadeStateChange(Sender: TObject);
+    procedure DtSrcSubOrcamentoStateChange(Sender: TObject);
+    procedure GrdMobTblDblClick(Sender: TObject);
+    procedure GrdEqpTblDblClick(Sender: TObject);
+    procedure GrdVeiTblDblClick(Sender: TObject);
+    procedure GrdCusTblDblClick(Sender: TObject);
+    procedure GrdQuaTblDblClick(Sender: TObject);
+    procedure GrdSubTblDblClick(Sender: TObject);
+    procedure GrdMetaTblDblClick(Sender: TObject);
+    procedure GrdMetTblDblClick(Sender: TObject);
+    procedure GrdBenTblDblClick(Sender: TObject);
+    procedure GrdOrcTblDblClick(Sender: TObject);
+    procedure BtnFncIncluirClick(Sender: TObject);
+    procedure BtnFncExcluirClick(Sender: TObject);
+    procedure QryPrincipalPRO_PERIODO_INICIOGetText(Sender: TField; var Text: string; DisplayText: Boolean);
+    procedure QryPrincipalPRO_PERIODO_INICIOSetText(Sender: TField; const Text: string);
+    procedure BtnDemIncluirClick(Sender: TObject);
   private
     procedure VisualizarTexto(const FieldName: string);
+    procedure EditarItem(const FDQuery: TFDQuery; const Button: TcxButton);
   end;
 
 var
@@ -458,7 +517,54 @@ implementation
 {$R *.dfm}
 
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Produtividade.Fater.Editor, Emater.Proater.Comunidade, Emater.Base.Consts, Emater.Proater.Potencial,
-  Emater.Proater.Modulo, Emater.Recurso.Modulo;
+  Emater.Proater.Modulo, Emater.Recurso.Modulo, Emater.Proater.Acordo, Emater.Pessoal.Funcionario.Busca, Emater.Proater.Demanda;
+
+procedure TFrmProaterPrincipal.BtnAcrEditarClick(Sender: TObject);
+begin
+  FrmProaterAcordo := TFrmProaterAcordo.Create(Self);
+  try
+    QryAcordo.Edit;
+    if (FrmProaterAcordo.ShowModal = mrOK) then
+      begin
+        QryAcordoPRA_TIPO_DESCRICAO.AsString := FrmProaterAcordo.DbImgCmbBxTipo.Text;
+        QryAcordoPRA_SITUACAO_DESCRICAO.AsString := FrmProaterAcordo.DbImgCmbBxSituacao.Text;
+        QryAcordo.Post;
+      end
+    else
+      QryAcordo.Cancel;
+  finally
+    FrmProaterAcordo.Release;
+    FrmProaterAcordo := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnAcrExcluirClick(Sender: TObject);
+begin
+  if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryAcordo, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
+end;
+
+procedure TFrmProaterPrincipal.BtnAcrIncluirClick(Sender: TObject);
+begin
+  FrmProaterAcordo := TFrmProaterAcordo.Create(Self);
+  try
+    QryAcordo.Insert;
+    if (FrmProaterAcordo.ShowModal = mrOK) then
+      begin
+        QryAcordoPRA_TIPO_DESCRICAO.AsString := FrmProaterAcordo.DbImgCmbBxTipo.Text;
+        QryAcordoPRA_SITUACAO_DESCRICAO.AsString := FrmProaterAcordo.DbImgCmbBxSituacao.Text;
+        QryAcordo.Post;
+      end
+    else
+      QryAcordo.Cancel;
+  finally
+    FrmProaterAcordo.Release;
+    FrmProaterAcordo := nil;
+  end;
+end;
 
 procedure TFrmProaterPrincipal.BtnApresentacaoClick(Sender: TObject);
 begin
@@ -507,6 +613,24 @@ begin
   finally
     FrmProaterComunidade.Release;
     FrmProaterComunidade := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnDemIncluirClick(Sender: TObject);
+begin
+  FrmProaterDemanda := TFrmProaterDemanda.Create(Self);
+  try
+    QryDemanda.Insert;
+    if (FrmProaterDemanda.ShowModal = mrOK) then
+      begin
+        QryDemandaCRG_DESCRICAO.AsString := FrmProaterDemanda.DbLkpCmbBxCargo.Text;
+        QryDemanda.Post;
+      end
+    else
+      QryDemanda.Cancel;
+  finally
+    FrmProaterDemanda.Release;
+    FrmProaterDemanda := nil;
   end;
 end;
 
@@ -580,11 +704,97 @@ begin
   VisualizarTexto('PRO_ESTATISTICA');
 end;
 
+procedure TFrmProaterPrincipal.BtnFncExcluirClick(Sender: TObject);
+begin
+  if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryFuncionario, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
+end;
+
+procedure TFrmProaterPrincipal.BtnFncIncluirClick(Sender: TObject);
+begin
+  FrmPessoalFuncionarioBusca := TFrmPessoalFuncionarioBusca.Create(Self);
+  try
+    Screen.Cursor := crHourGlass;
+
+    if (FrmPessoalFuncionarioBusca.ShowModal = mrOk) then
+      try
+        QryFuncionario.Insert;
+        QryFuncionarioFUN_ID.Value := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.Value;
+        QryFuncionarioFUN_NOME.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
+        QryFuncionarioFUN_MATRICULA.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_MATRICULA.AsString;
+        QryFuncionario.Post;
+      except
+        on E: Exception do
+          if QryFuncionario.State = dsInsert then
+            QryFuncionario.Cancel;
+      end;
+  finally
+    FrmPessoalFuncionarioBusca.Release;
+    FrmPessoalFuncionarioBusca := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.DtSrcAcordoStateChange(Sender: TObject);
+begin
+  BtnAcrIncluir.Enabled := QryAcordo.Active;
+  BtnAcrEditar.Enabled := (QryAcordo.RecordCount > 0);
+  BtnAcrExcluir.Enabled := (QryAcordo.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
 procedure TFrmProaterPrincipal.DtSrcComunidadeStateChange(Sender: TObject);
 begin
   BtnComIncluir.Enabled := QryComunidade.Active;
   BtnComEditar.Enabled := (QryComunidade.RecordCount > 0);
   BtnComExcluir.Enabled := (QryComunidade.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcCustoStateChange(Sender: TObject);
+begin
+  BtnCusIncluir.Enabled := QryCusto.Active;
+  BtnCusEditar.Enabled := (QryCusto.RecordCount > 0);
+  BtnCusExcluir.Enabled := (QryCusto.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcDemandaStateChange(Sender: TObject);
+begin
+  BtnDemIncluir.Enabled := QryDemanda.Active;
+  BtnDemExcluir.Enabled := (QryDemanda.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcEquipamentoStateChange(Sender: TObject);
+begin
+  BtnEqpIncluir.Enabled := QryEquipamento.Active;
+  BtnEqpEditar.Enabled := (QryEquipamento.RecordCount > 0);
+  BtnEqpExcluir.Enabled := (QryEquipamento.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcFuncionarioStateChange(Sender: TObject);
+begin
+  BtnFncIncluir.Enabled := QryFuncionario.Active;
+  BtnFncExcluir.Enabled := (QryFuncionario.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcMobiliarioStateChange(Sender: TObject);
+begin
+  BtnMobIncluir.Enabled := QryMobiliario.Active;
+  BtnMobEditar.Enabled := (QryMobiliario.RecordCount > 0);
+  BtnMobExcluir.Enabled := (QryMobiliario.RecordCount > 0);
 
   DtSrcPrincipalStateChange(Sender);
 end;
@@ -596,6 +806,76 @@ begin
   BtnPotExcluir.Enabled := (QryPotencial.RecordCount > 0);
 
   DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcQualificacaoStateChange(Sender: TObject);
+begin
+  BtnQuaIncluir.Enabled := QryQualificacao.Active;
+  BtnQuaEditar.Enabled := (QryQualificacao.RecordCount > 0);
+  BtnQuaExcluir.Enabled := (QryQualificacao.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcSubComunidadeStateChange(Sender: TObject);
+begin
+  BtnBenIncluir.Enabled := QrySubComunidade.Active and (QrySubProjeto.RecordCount > 0);
+  BtnBenEditar.Enabled := (QrySubComunidade.RecordCount > 0);
+  BtnBenExcluir.Enabled := (QrySubComunidade.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcSubMetaStateChange(Sender: TObject);
+begin
+  BtnMetaIncluir.Enabled := QrySubMeta.Active and (QrySubProjeto.RecordCount > 0);
+  BtnMetaEditar.Enabled := (QrySubMeta.RecordCount > 0);
+  BtnMetaExcluir.Enabled := (QrySubMeta.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcSubMetodoStateChange(Sender: TObject);
+begin
+  BtnMetIncluir.Enabled := QrySubMetodo.Active and (QrySubProjeto.RecordCount > 0);
+  BtnMetEditar.Enabled := (QrySubMetodo.RecordCount > 0);
+  BtnMetExcluir.Enabled := (QrySubMetodo.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcSubOrcamentoStateChange(Sender: TObject);
+begin
+  BtnOrcIncluir.Enabled := QrySubOrcamento.Active and (QrySubProjeto.RecordCount > 0);
+  BtnOrcEditar.Enabled := (QrySubOrcamento.RecordCount > 0);
+  BtnOrcExcluir.Enabled := (QrySubOrcamento.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcSubProjetoStateChange(Sender: TObject);
+begin
+  inherited;
+  BtnPotIncluir.Enabled := QryPotencial.Active;
+  BtnPotEditar.Enabled := (QryPotencial.RecordCount > 0);
+  BtnPotExcluir.Enabled := (QryPotencial.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.DtSrcVeiculoStateChange(Sender: TObject);
+begin
+  BtnVeiIncluir.Enabled := QryVeiculo.Active;
+  BtnVeiEditar.Enabled := (QryVeiculo.RecordCount > 0);
+  BtnVeiExcluir.Enabled := (QryVeiculo.RecordCount > 0);
+
+  DtSrcPrincipalStateChange(Sender);
+end;
+
+procedure TFrmProaterPrincipal.EditarItem(const FDQuery: TFDQuery; const Button: TcxButton);
+begin
+  if (not FDQuery.IsEmpty) and (Button.Enabled) and (Button.Visible) then
+    Button.Click;
 end;
 
 procedure TFrmProaterPrincipal.FormCreate(Sender: TObject);
@@ -620,20 +900,100 @@ begin
   inherited;
   QryComunidade.Open;
   QryPotencial.Open;
+  QryAcordo.Open;
+  QryFuncionario.Open;
+  QryDemanda.Open;
+  QryMobiliario.Open;
+  QryEquipamento.Open;
+  QryVeiculo.Open;
+  QryCusto.Open;
+  QryQualificacao.Open;
+  QrySubProjeto.Open;
+  QrySubMeta.Open;
+  QrySubMetodo.Open;
+  QrySubComunidade.Open;
+  QrySubOrcamento.Open;
+
+  DbDtEdtPROATER.SetFocus;
+end;
+
+procedure TFrmProaterPrincipal.GrdAcrTblDblClick(Sender: TObject);
+begin
+  EditarItem(QryAcordo, BtnAcrEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdBenTblDblClick(Sender: TObject);
+begin
+  EditarItem(QrySubComunidade, BtnBenEditar);
 end;
 
 procedure TFrmProaterPrincipal.GrdComTblDblClick(Sender: TObject);
 begin
-  inherited;
-  if (not QryComunidade.IsEmpty) and (BtnComEditar.Enabled) and (BtnComEditar.Visible) then
-    BtnComEditar.Click;
+  EditarItem(QryComunidade, BtnComEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdCusTblDblClick(Sender: TObject);
+begin
+  EditarItem(QryCusto, BtnCusEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdEqpTblDblClick(Sender: TObject);
+begin
+  EditarItem(QryEquipamento, BtnEqpEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdMetaTblDblClick(Sender: TObject);
+begin
+  EditarItem(QrySubMeta, BtnMetaEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdMetTblDblClick(Sender: TObject);
+begin
+  EditarItem(QrySubMetodo, BtnMetEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdMobTblDblClick(Sender: TObject);
+begin
+  EditarItem(QryMobiliario, BtnMobEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdOrcTblDblClick(Sender: TObject);
+begin
+  EditarItem(QrySubOrcamento, BtnOrcEditar);
 end;
 
 procedure TFrmProaterPrincipal.GrdPotTblDblClick(Sender: TObject);
 begin
   inherited;
-  if (not QryPotencial.IsEmpty) and (BtnPotEditar.Enabled) and (BtnPotEditar.Visible) then
-    BtnPotEditar.Click;
+  EditarItem(QryPotencial, BtnPotEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdQuaTblDblClick(Sender: TObject);
+begin
+  EditarItem(QryQualificacao, BtnQuaEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdSubTblDblClick(Sender: TObject);
+begin
+    EditarItem(QrySubProjeto, BtnSubEditar);
+end;
+
+procedure TFrmProaterPrincipal.GrdVeiTblDblClick(Sender: TObject);
+begin
+  EditarItem(QryVeiculo, BtnVeiEditar);
+end;
+
+procedure TFrmProaterPrincipal.QryAcordoBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryAcordo);
+end;
+
+procedure TFrmProaterPrincipal.QryAcordoNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryAcordo, 'TAB_PRD_PROATER_ACORDO', 'PRA_ID');
+  QryAcordoPRO_ID.Value := QryPrincipalPRO_ID.Value;
 end;
 
 procedure TFrmProaterPrincipal.QryComunidadeBeforePost(DataSet: TDataSet);
@@ -650,6 +1010,71 @@ begin
   QryComunidadePRO_ID.Value := QryPrincipalPRO_ID.Value;
   QryComunidadePRC_QTDE_UPF.Value := 0;
   QryComunidadePRC_QTDE_BENEFICIARIO.Value := 0;
+end;
+
+procedure TFrmProaterPrincipal.QryCustoBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryCusto);
+end;
+
+procedure TFrmProaterPrincipal.QryCustoNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryCusto, 'TAB_PRD_PROATER_CUSTO', 'PRC_ID');
+  QryCustoPRO_ID.Value := QryPrincipalPRO_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QryDemandaBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryDemanda);
+end;
+
+procedure TFrmProaterPrincipal.QryDemandaNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryDemanda, 'TAB_PRD_PROATER_DEMANDA', 'DEM_ID');
+  QryDemandaPRO_ID.Value := QryPrincipalPRO_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QryEquipamentoBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryEquipamento);
+end;
+
+procedure TFrmProaterPrincipal.QryEquipamentoNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryEquipamento, 'TAB_PRD_PROATER_EQUIPAMENTO', 'PRE_ID');
+  QryEquipamentoPRO_ID.Value := QryPrincipalPRO_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QryFuncionarioBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryFuncionario);
+end;
+
+procedure TFrmProaterPrincipal.QryFuncionarioNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryFuncionario, 'TAB_PRD_PROATER_FUNCIONARIO', 'PRF_ID');
+  QryFuncionarioPRO_ID.Value := QryPrincipalPRO_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QryMobiliarioBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryMobiliario);
+end;
+
+procedure TFrmProaterPrincipal.QryMobiliarioNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryMobiliario, 'TAB_PRD_PROATER_MOBILIARIO', 'PRM_ID');
+  QryMobiliarioPRO_ID.Value := QryPrincipalPRO_ID.Value;
 end;
 
 procedure TFrmProaterPrincipal.QryPotencialBeforePost(DataSet: TDataSet);
@@ -675,6 +1100,115 @@ begin
   //QryPrincipalPRO_OBSERVACAO.Value := '';
   //QryPrincipalPRO_ESTATISTICA.Value := '';
   QryPrincipalUND_ID.Value := DtmSistemaModulo.UnidadeLocalID;
+end;
+
+procedure TFrmProaterPrincipal.QryPrincipalPRO_PERIODO_INICIOGetText(Sender: TField; var Text: string; DisplayText: Boolean);
+var
+  Ano, Mes: string;
+begin
+  Ano := Copy(Sender.AsString, 1, 4);
+  Mes := Copy(Sender.AsString, 5, 2);
+  if (Ano <> '') and (Mes <> '') then
+    Text :=  Mes + '/' + Ano
+  else
+    Text := '  /    ';
+end;
+
+procedure TFrmProaterPrincipal.QryPrincipalPRO_PERIODO_INICIOSetText(Sender: TField; const Text: string);
+begin
+  if (Trim(Text) <> '') then
+    Sender.AsInteger := StrToInt(Copy(Text, 3, 4) + Copy(Text, 1 ,2));
+end;
+
+procedure TFrmProaterPrincipal.QryQualificacaoBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryQualificacao);
+end;
+
+procedure TFrmProaterPrincipal.QryQualificacaoNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryQualificacao, 'TAB_PRD_PROATER_QUALIFICACAO', 'QUA_ID');
+  QryQualificacaoPRO_ID.Value := QryPrincipalPRO_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QrySubComunidadeBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QrySubComunidade);
+end;
+
+procedure TFrmProaterPrincipal.QrySubComunidadeNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QrySubComunidade, 'TAB_PRD_SUBPROJETO_COMUNIDADE', 'PLC_ID');
+  QrySubComunidadeSPR_ID.Value := QrySubProjetoSPR_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QrySubMetaBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QrySubMeta);
+end;
+
+procedure TFrmProaterPrincipal.QrySubMetaNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QrySubMeta, 'TAB_PRD_SUBPROJETO_META', 'MET_ID');
+  QrySubMetaSPR_ID.Value := QrySubProjetoSPR_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QrySubMetodoBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QrySubMetodo);
+end;
+
+procedure TFrmProaterPrincipal.QrySubMetodoNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QrySubMetodo, 'TAB_PRD_SUBPROJETO_METODO', 'PSM_ID');
+  QrySubMetodoSPR_ID.Value := QrySubProjetoSPR_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QrySubOrcamentoBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QrySubOrcamento);
+end;
+
+procedure TFrmProaterPrincipal.QrySubOrcamentoNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QrySubOrcamento, 'TAB_PRD_SUBPROJETO_ORCAMENTO', 'ORC_ID');
+  QrySubOrcamentoSPR_ID.Value := QrySubProjetoSPR_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QrySubProjetoBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QrySubProjeto);
+end;
+
+procedure TFrmProaterPrincipal.QrySubProjetoNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QrySubProjeto, 'TAB_PRD_SUBPROJETO', 'SPR_ID');
+  QrySubProjetoPRO_ID.Value := QryPrincipalPRO_ID.Value;
+end;
+
+procedure TFrmProaterPrincipal.QryVeiculoBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaAlteracao(QryVeiculo);
+end;
+
+procedure TFrmProaterPrincipal.QryVeiculoNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.GravarAuditoriaInclusao(QryVeiculo, 'TAB_PRD_PROATER_VEICULO', 'VEI_ID');
+  QryVeiculoPRO_ID.Value := QryPrincipalPRO_ID.Value;
 end;
 
 procedure TFrmProaterPrincipal.VisualizarTexto(const FieldName: string);

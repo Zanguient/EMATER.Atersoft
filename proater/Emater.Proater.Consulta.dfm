@@ -45,12 +45,14 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       end
       object GrdConsultaTblPRO_PERIODO_INICIO: TcxGridDBColumn
         DataBinding.FieldName = 'PRO_PERIODO_INICIO'
+        PropertiesClassName = 'TcxTextEditProperties'
         MinWidth = 82
         Options.HorzSizing = False
         Width = 82
       end
       object GrdConsultaTblPRO_PERIODO_FIM: TcxGridDBColumn
         DataBinding.FieldName = 'PRO_PERIODO_FIM'
+        PropertiesClassName = 'TcxTextEditProperties'
         MinWidth = 82
         Options.HorzSizing = False
         Width = 82
@@ -354,14 +356,20 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       Origin = 'PRO_DATA'
     end
     object QryConsultaPRO_PERIODO_INICIO: TIntegerField
+      Alignment = taLeftJustify
       DisplayLabel = 'Per'#237'odo inicial'
       FieldName = 'PRO_PERIODO_INICIO'
       Origin = 'PRO_PERIODO_INICIO'
+      OnGetText = QryConsultaPRO_PERIODO_INICIOGetText
+      OnSetText = QryConsultaPRO_PERIODO_INICIOSetText
     end
     object QryConsultaPRO_PERIODO_FIM: TIntegerField
+      Alignment = taLeftJustify
       DisplayLabel = 'Per'#237'odo final'
       FieldName = 'PRO_PERIODO_FIM'
       Origin = 'PRO_PERIODO_FIM'
+      OnGetText = QryConsultaPRO_PERIODO_INICIOGetText
+      OnSetText = QryConsultaPRO_PERIODO_INICIOSetText
     end
     object QryConsultaUND_ID: TIntegerField
       FieldName = 'UND_ID'

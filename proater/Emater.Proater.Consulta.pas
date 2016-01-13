@@ -62,6 +62,8 @@ type
     procedure GrdResumoPRO_QTDE_COMUNIDADEPropertiesValidateDrawValue(Sender: TcxCustomEditorRowProperties; ARecordIndex: Integer; const [Ref] AValue: Variant;
       AData: TcxEditValidateInfo);
     procedure GrdResumoPRO_QTDE_COMUNIDADEPropertiesGetDisplayText(Sender: TcxCustomEditorRowProperties; ARecord: Integer; var AText: string);
+    procedure QryConsultaPRO_PERIODO_INICIOGetText(Sender: TField; var Text: string; DisplayText: Boolean);
+    procedure QryConsultaPRO_PERIODO_INICIOSetText(Sender: TField; const Text: string);
   private
     procedure DefinirFiltros;
   public
@@ -127,6 +129,24 @@ begin
       if BtnConsultar.Visible then
         BtnConsultar.Click;
     end;
+end;
+
+procedure TFrmProaterConsulta.QryConsultaPRO_PERIODO_INICIOGetText(Sender: TField; var Text: string; DisplayText: Boolean);
+var
+  Ano, Mes: string;
+begin
+  Ano := Copy(Sender.AsString, 1, 4);
+  Mes := Copy(Sender.AsString, 5, 2);
+  if (Ano <> '') and (Mes <> '') then
+    Text :=  Mes + '/' + Ano
+  else
+    Text := '  /    ';
+end;
+
+procedure TFrmProaterConsulta.QryConsultaPRO_PERIODO_INICIOSetText(Sender: TField; const Text: string);
+begin
+  if (Trim(Text) <> '') then
+    Sender.AsInteger := StrToInt(Copy(Text, 3, 4) + Copy(Text, 1 ,2));
 end;
 
 procedure TFrmProaterConsulta.BtnConsultarClick(Sender: TObject);

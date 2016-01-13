@@ -19,12 +19,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   inherited PgCntrlMain: TcxPageControl
     Width = 791
     Height = 544
-    Properties.ActivePage = TbShtDiagnostico
+    Properties.ActivePage = TbShtCapacidade
     ExplicitWidth = 791
     ExplicitHeight = 544
     ClientRectBottom = 542
     ClientRectRight = 789
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 0
+      ExplicitTop = 24
       ExplicitWidth = 787
       ExplicitHeight = 514
       object Label30: TLabel
@@ -163,7 +165,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
         TabOrder = 3
-        Width = 397
+        ExplicitWidth = 393
+        Width = 389
       end
       object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8
@@ -215,7 +218,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Width = 769
         Height = 497
         TabOrder = 0
-        Properties.ActivePage = TbShtProblemas
+        Properties.ActivePage = TbShtAcordos
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 495
         ClientRectLeft = 2
@@ -259,6 +262,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtComunidades: TcxTabSheet
           Caption = 'Benefici'#225'rios e UPF'
           ImageIndex = 0
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -376,6 +383,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtProblemas: TcxTabSheet
           Caption = 'Problemas e potencialidades'
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -503,6 +514,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnAcrIncluirClick
           end
           object BtnAcrEditar: TcxButton
             Left = 88
@@ -511,6 +523,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnAcrEditarClick
           end
           object BtnAcrExcluir: TcxButton
             Left = 168
@@ -519,6 +532,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnAcrExcluirClick
           end
           object GrdAcr: TcxGrid
             Left = 8
@@ -536,6 +550,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdAcrTbl: TcxGridDBTableView
+              OnDblClick = GrdAcrTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -664,6 +679,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnFncIncluirClick
           end
           object BtnFncExcluir: TcxButton
             Left = 88
@@ -672,6 +688,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 1
+            OnClick = BtnFncExcluirClick
           end
           object GrdFnc: TcxGrid
             Left = 8
@@ -752,6 +769,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 3
+            OnClick = BtnDemIncluirClick
           end
           object BtnDemExcluir: TcxButton
             Left = 88
@@ -837,6 +855,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtMobiliario: TcxTabSheet
           Caption = 'Mobili'#225'rio'
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -879,7 +901,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             TabOrder = 3
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
-            object cxGridDBTableView1: TcxGridDBTableView
+            object GrdMobTbl: TcxGridDBTableView
+              OnDblClick = GrdMobTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -925,27 +948,31 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               Styles.ContentEven = DtmRecursoModulo.cxStyleEven
               Styles.Inactive = DtmRecursoModulo.cxStyleSelection
               Styles.Selection = DtmRecursoModulo.cxStyleSelection
-              object cxGridDBTableView1PRM_DESCRICAO: TcxGridDBColumn
+              object GrdMobTblPRM_DESCRICAO: TcxGridDBColumn
                 DataBinding.FieldName = 'PRM_DESCRICAO'
                 Width = 464
               end
-              object cxGridDBTableView1PRM_QTDE_EXISTENTE: TcxGridDBColumn
+              object GrdMobTblPRM_QTDE_EXISTENTE: TcxGridDBColumn
                 DataBinding.FieldName = 'PRM_QTDE_EXISTENTE'
                 Width = 141
               end
-              object cxGridDBTableView1PRM_QTDE_NECESSARIA: TcxGridDBColumn
+              object GrdMobTblPRM_QTDE_NECESSARIA: TcxGridDBColumn
                 DataBinding.FieldName = 'PRM_QTDE_NECESSARIA'
                 Width = 140
               end
             end
             object GrdMobLvl: TcxGridLevel
-              GridView = cxGridDBTableView1
+              GridView = GrdMobTbl
             end
           end
         end
         object TbShtEquipamentos: TcxTabSheet
           Caption = 'Equipamentos'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -989,6 +1016,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdEqpTbl: TcxGridDBTableView
+              OnDblClick = GrdEqpTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -1055,6 +1083,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtVeiculos: TcxTabSheet
           Caption = 'Ve'#237'culos'
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1098,6 +1130,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdVeiTbl: TcxGridDBTableView
+              OnDblClick = GrdVeiTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -1168,6 +1201,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtDespesas: TcxTabSheet
           Caption = 'Despesas de custeio'
           ImageIndex = 4
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1211,6 +1248,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdCusTbl: TcxGridDBTableView
+              OnDblClick = GrdCusTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -1273,6 +1311,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtNecessidades: TcxTabSheet
           Caption = 'Necessidades de qualifica'#231#227'o'
           ImageIndex = 5
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1316,6 +1358,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdQuaTbl: TcxGridDBTableView
+              OnDblClick = GrdQuaTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -1403,6 +1446,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtProjetos: TcxTabSheet
           Caption = 'Projetos e subprojetos'
           ImageIndex = 0
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1446,6 +1493,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdSubTbl: TcxGridDBTableView
+              OnDblClick = GrdSubTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -1569,6 +1617,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdMetaTbl: TcxGridDBTableView
+              OnDblClick = GrdMetaTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -1737,6 +1786,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtMetodologias: TcxTabSheet
           Caption = 'Metodologias de ATER'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1780,6 +1833,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdMetTbl: TcxGridDBTableView
+              OnDblClick = GrdMetTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -1846,6 +1900,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtBeneficiarios: TcxTabSheet
           Caption = 'Benefici'#225'rios de ATER'
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1889,6 +1947,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdBenTbl: TcxGridDBTableView
+              OnDblClick = GrdBenTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -1907,7 +1966,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               Navigator.Buttons.GotoBookmark.Visible = False
               Navigator.Buttons.Filter.Visible = False
               FilterBox.CustomizeDialog = False
-              DataController.DataSource = DtSrcSubBeneficiario
+              DataController.DataSource = DtSrcSubComunidade
               DataController.KeyFieldNames = 'PLC_ID'
               DataController.Summary.DefaultGroupSummaryItems = <>
               DataController.Summary.FooterSummaryItems = <>
@@ -1963,6 +2022,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtOrcamento: TcxTabSheet
           Caption = 'Previs'#227'o or'#231'ament'#225'ria'
           ImageIndex = 4
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -2006,6 +2069,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
             object GrdOrcTbl: TcxGridDBTableView
+              OnDblClick = GrdOrcTblDblClick
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
               Navigator.Buttons.PriorPage.Visible = False
@@ -2152,10 +2216,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object QryPrincipalPRO_PERIODO_INICIO: TIntegerField
       FieldName = 'PRO_PERIODO_INICIO'
       Origin = 'PRO_PERIODO_INICIO'
+      OnGetText = QryPrincipalPRO_PERIODO_INICIOGetText
+      OnSetText = QryPrincipalPRO_PERIODO_INICIOSetText
     end
     object QryPrincipalPRO_PERIODO_FIM: TIntegerField
       FieldName = 'PRO_PERIODO_FIM'
       Origin = 'PRO_PERIODO_FIM'
+      OnGetText = QryPrincipalPRO_PERIODO_INICIOGetText
+      OnSetText = QryPrincipalPRO_PERIODO_INICIOSetText
     end
     object QryPrincipalPRO_APRESENTACAO: TMemoField
       FieldName = 'PRO_APRESENTACAO'
@@ -2556,6 +2624,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcAcordo: TDataSource
     DataSet = QryAcordo
+    OnStateChange = DtSrcAcordoStateChange
     Left = 176
     Top = 384
   end
@@ -2603,6 +2672,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Top = 384
   end
   object QryAcordo: TFDQuery
+    BeforePost = QryAcordoBeforePost
+    OnNewRecord = QryAcordoNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -2653,6 +2725,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       Required = True
     end
     object QryAcordoPRA_TIPO: TSmallintField
+      Alignment = taLeftJustify
       FieldName = 'PRA_TIPO'
       Origin = 'PRA_TIPO'
       Required = True
@@ -2676,6 +2749,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       BlobType = ftMemo
     end
     object QryAcordoPRA_SITUACAO: TSmallintField
+      Alignment = taLeftJustify
       FieldName = 'PRA_SITUACAO'
       Origin = 'PRA_SITUACAO'
     end
@@ -2721,6 +2795,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     end
   end
   object QryFuncionario: TFDQuery
+    BeforePost = QryFuncionarioBeforePost
+    OnNewRecord = QryFuncionarioNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -2767,6 +2844,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       Required = True
     end
     object QryFuncionarioFUN_ID: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'FUN_ID'
       Origin = 'FUN_ID'
       Required = True
@@ -2813,6 +2891,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcFuncionario: TDataSource
     DataSet = QryFuncionario
+    OnStateChange = DtSrcFuncionarioStateChange
     Left = 312
     Top = 288
   end
@@ -2854,10 +2933,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcDemanda: TDataSource
     DataSet = QryDemanda
+    OnStateChange = DtSrcDemandaStateChange
     Left = 312
     Top = 320
   end
   object QryDemanda: TFDQuery
+    BeforePost = QryDemandaBeforePost
+    OnNewRecord = QryDemandaNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -2941,6 +3024,9 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     end
   end
   object QryMobiliario: TFDQuery
+    BeforePost = QryMobiliarioBeforePost
+    OnNewRecord = QryMobiliarioNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3025,10 +3111,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcMobiliario: TDataSource
     DataSet = QryMobiliario
+    OnStateChange = DtSrcMobiliarioStateChange
     Left = 312
     Top = 352
   end
   object QryEquipamento: TFDQuery
+    BeforePost = QryEquipamentoBeforePost
+    OnNewRecord = QryEquipamentoNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3154,10 +3244,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcEquipamento: TDataSource
     DataSet = QryEquipamento
+    OnStateChange = DtSrcEquipamentoStateChange
     Left = 312
     Top = 384
   end
   object QryVeiculo: TFDQuery
+    BeforePost = QryVeiculoBeforePost
+    OnNewRecord = QryVeiculoNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3298,10 +3392,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcVeiculo: TDataSource
     DataSet = QryVeiculo
+    OnStateChange = DtSrcVeiculoStateChange
     Left = 312
     Top = 416
   end
   object QryCusto: TFDQuery
+    BeforePost = QryCustoBeforePost
+    OnNewRecord = QryCustoNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3396,10 +3494,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcCusto: TDataSource
     DataSet = QryCusto
+    OnStateChange = DtSrcCustoStateChange
     Left = 312
     Top = 448
   end
   object QryQualificacao: TFDQuery
+    BeforePost = QryQualificacaoBeforePost
+    OnNewRecord = QryQualificacaoNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3530,10 +3632,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcQualificacao: TDataSource
     DataSet = QryQualificacao
+    OnStateChange = DtSrcQualificacaoStateChange
     Left = 312
     Top = 480
   end
   object QrySubProjeto: TFDQuery
+    BeforePost = QrySubProjetoBeforePost
+    OnNewRecord = QrySubProjetoNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3765,10 +3871,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcSubProjeto: TDataSource
     DataSet = QrySubProjeto
+    OnStateChange = DtSrcSubProjetoStateChange
     Left = 456
     Top = 288
   end
   object QrySubMeta: TFDQuery
+    BeforePost = QrySubMetaBeforePost
+    OnNewRecord = QrySubMetaNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3853,10 +3963,14 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcSubMeta: TDataSource
     DataSet = QrySubMeta
+    OnStateChange = DtSrcSubMetaStateChange
     Left = 456
     Top = 320
   end
   object QrySubMetodo: TFDQuery
+    BeforePost = QrySubMetodoBeforePost
+    OnNewRecord = QrySubMetodoNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -3986,16 +4100,20 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcSubMetodo: TDataSource
     DataSet = QrySubMetodo
+    OnStateChange = DtSrcSubMetodoStateChange
     Left = 456
     Top = 352
   end
-  object QrySubBeneficiario: TFDQuery
+  object QrySubComunidade: TFDQuery
+    BeforePost = QrySubComunidadeBeforePost
+    OnNewRecord = QrySubComunidadeNewRecord
+    CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
-    UpdateObject = UpdtSubBeneficiario
+    UpdateObject = UpdtSubComunidade
     SQL.Strings = (
       'select'
       '  a.plc_id,'
@@ -4031,56 +4149,56 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         DataType = ftInteger
         ParamType = ptInput
       end>
-    object QrySubBeneficiarioPLC_ID: TLargeintField
+    object QrySubComunidadePLC_ID: TLargeintField
       FieldName = 'PLC_ID'
       Origin = 'PLC_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
-    object QrySubBeneficiarioPLC_ANO: TSmallintField
+    object QrySubComunidadePLC_ANO: TSmallintField
       DisplayLabel = 'Ano'
       FieldName = 'PLC_ANO'
       Origin = 'PLC_ANO'
     end
-    object QrySubBeneficiarioPLC_QUANTIDADE: TIntegerField
+    object QrySubComunidadePLC_QUANTIDADE: TIntegerField
       DisplayLabel = 'Quantidade'
       FieldName = 'PLC_QUANTIDADE'
       Origin = 'PLC_QUANTIDADE'
     end
-    object QrySubBeneficiarioCOM_ID: TIntegerField
+    object QrySubComunidadeCOM_ID: TIntegerField
       FieldName = 'COM_ID'
       Origin = 'COM_ID'
     end
-    object QrySubBeneficiarioCAT_ID: TIntegerField
+    object QrySubComunidadeCAT_ID: TIntegerField
       FieldName = 'CAT_ID'
       Origin = 'CAT_ID'
     end
-    object QrySubBeneficiarioPRD_ID: TIntegerField
+    object QrySubComunidadePRD_ID: TIntegerField
       FieldName = 'PRD_ID'
       Origin = 'PRD_ID'
     end
-    object QrySubBeneficiarioSPR_ID: TIntegerField
+    object QrySubComunidadeSPR_ID: TIntegerField
       FieldName = 'SPR_ID'
       Origin = 'SPR_ID'
     end
-    object QrySubBeneficiarioREG_EXCLUIDO: TSmallintField
+    object QrySubComunidadeREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
     end
-    object QrySubBeneficiarioREG_REPLICADO: TSmallintField
+    object QrySubComunidadeREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
       Origin = 'REG_REPLICADO'
     end
-    object QrySubBeneficiarioREG_USUARIO: TStringField
+    object QrySubComunidadeREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
       Origin = 'REG_USUARIO'
       Size = 50
     end
-    object QrySubBeneficiarioREG_MODIFICADO: TSQLTimeStampField
+    object QrySubComunidadeREG_MODIFICADO: TSQLTimeStampField
       FieldName = 'REG_MODIFICADO'
       Origin = 'REG_MODIFICADO'
     end
-    object QrySubBeneficiarioCOM_NOME: TStringField
+    object QrySubComunidadeCOM_NOME: TStringField
       AutoGenerateValue = arDefault
       DisplayLabel = 'Comunidade'
       FieldName = 'COM_NOME'
@@ -4088,7 +4206,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       ProviderFlags = []
       Size = 100
     end
-    object QrySubBeneficiarioCAT_DESCRICAO: TStringField
+    object QrySubComunidadeCAT_DESCRICAO: TStringField
       AutoGenerateValue = arDefault
       DisplayLabel = 'Categoria'
       FieldName = 'CAT_DESCRICAO'
@@ -4096,7 +4214,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       ProviderFlags = []
       Size = 50
     end
-    object QrySubBeneficiarioPRD_DESCRICAO: TStringField
+    object QrySubComunidadePRD_DESCRICAO: TStringField
       AutoGenerateValue = arDefault
       DisplayLabel = 'Produto'
       FieldName = 'PRD_DESCRICAO'
@@ -4105,17 +4223,21 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       Size = 50
     end
   end
-  object UpdtSubBeneficiario: TFDUpdateSQL
+  object UpdtSubComunidade: TFDUpdateSQL
     Connection = DtmConexaoModulo.FDConnection
     Left = 424
     Top = 384
   end
-  object DtSrcSubBeneficiario: TDataSource
-    DataSet = QrySubBeneficiario
+  object DtSrcSubComunidade: TDataSource
+    DataSet = QrySubComunidade
+    OnStateChange = DtSrcSubComunidadeStateChange
     Left = 456
     Top = 384
   end
   object QrySubOrcamento: TFDQuery
+    BeforePost = QrySubOrcamentoBeforePost
+    OnNewRecord = QrySubOrcamentoNewRecord
+    CachedUpdates = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
@@ -4245,6 +4367,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   end
   object DtSrcSubOrcamento: TDataSource
     DataSet = QrySubOrcamento
+    OnStateChange = DtSrcSubOrcamentoStateChange
     Left = 456
     Top = 416
   end

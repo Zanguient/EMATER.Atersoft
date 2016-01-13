@@ -111,7 +111,9 @@ uses
   Emater.Proater.Comunidade in 'proater\Emater.Proater.Comunidade.pas' {FrmProaterComunidade},
   Emater.Proater.Consulta in 'proater\Emater.Proater.Consulta.pas' {FrmProaterConsulta},
   Emater.Proater.Potencial in 'proater\Emater.Proater.Potencial.pas' {FrmProaterPotencial},
-  Emater.Proater.Modulo in 'proater\Emater.Proater.Modulo.pas' {DtmProaterModulo: TDataModule};
+  Emater.Proater.Modulo in 'proater\Emater.Proater.Modulo.pas' {DtmProaterModulo: TDataModule},
+  Emater.Proater.Acordo in 'proater\Emater.Proater.Acordo.pas' {FrmProaterAcordo},
+  Emater.Proater.Demanda in 'proater\Emater.Proater.Demanda.pas' {FrmProaterDemanda};
 
 {$R *.res}
 
@@ -150,6 +152,7 @@ begin
   //
   CodeSite.SendMsg('Criando o módulo de conexão com o banco de dados.');
   Application.CreateForm(TDtmConexaoModulo, DtmConexaoModulo);
+  Application.CreateForm(TFrmProaterDemanda, FrmProaterDemanda);
   CodeSite.SendMsg('Módulo de conexão com o banco de dados criado com sucesso.');
   //
   // Inibindo a abertura.

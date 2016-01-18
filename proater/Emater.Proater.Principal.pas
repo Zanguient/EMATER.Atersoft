@@ -504,6 +504,13 @@ type
     procedure QryPrincipalPRO_PERIODO_INICIOGetText(Sender: TField; var Text: string; DisplayText: Boolean);
     procedure QryPrincipalPRO_PERIODO_INICIOSetText(Sender: TField; const Text: string);
     procedure BtnDemIncluirClick(Sender: TObject);
+    procedure BtnDemExcluirClick(Sender: TObject);
+    procedure BtnMobIncluirClick(Sender: TObject);
+    procedure BtnMobEditarClick(Sender: TObject);
+    procedure BtnMobExcluirClick(Sender: TObject);
+    procedure BtnEqpIncluirClick(Sender: TObject);
+    procedure BtnEqpEditarClick(Sender: TObject);
+    procedure BtnEqpExcluirClick(Sender: TObject);
   private
     procedure VisualizarTexto(const FieldName: string);
     procedure EditarItem(const FDQuery: TFDQuery; const Button: TcxButton);
@@ -517,7 +524,8 @@ implementation
 {$R *.dfm}
 
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Produtividade.Fater.Editor, Emater.Proater.Comunidade, Emater.Base.Consts, Emater.Proater.Potencial,
-  Emater.Proater.Modulo, Emater.Recurso.Modulo, Emater.Proater.Acordo, Emater.Pessoal.Funcionario.Busca, Emater.Proater.Demanda;
+  Emater.Proater.Modulo, Emater.Recurso.Modulo, Emater.Proater.Acordo, Emater.Pessoal.Funcionario.Busca, Emater.Proater.Demanda, Emater.Proater.Mobiliario,
+  Emater.Proater.Equipamento;
 
 procedure TFrmProaterPrincipal.BtnAcrEditarClick(Sender: TObject);
 begin
@@ -616,6 +624,15 @@ begin
   end;
 end;
 
+procedure TFrmProaterPrincipal.BtnDemExcluirClick(Sender: TObject);
+begin
+  if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryDemanda, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
+end;
+
 procedure TFrmProaterPrincipal.BtnDemIncluirClick(Sender: TObject);
 begin
   FrmProaterDemanda := TFrmProaterDemanda.Create(Self);
@@ -699,6 +716,45 @@ begin
   end;
 end;
 
+procedure TFrmProaterPrincipal.BtnEqpEditarClick(Sender: TObject);
+begin
+  FrmProaterEquipamento := TFrmProaterEquipamento.Create(Self);
+  try
+    QryEquipamento.Edit;
+    if (FrmProaterEquipamento.ShowModal = mrOK) then
+      QryEquipamento.Post
+    else
+      QryEquipamento.Cancel;
+  finally
+    FrmProaterEquipamento.Release;
+    FrmProaterEquipamento := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnEqpExcluirClick(Sender: TObject);
+begin
+  if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryEquipamento, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
+end;
+
+procedure TFrmProaterPrincipal.BtnEqpIncluirClick(Sender: TObject);
+begin
+  FrmProaterEquipamento := TFrmProaterEquipamento.Create(Self);
+  try
+    QryEquipamento.Insert;
+    if (FrmProaterEquipamento.ShowModal = mrOK) then
+      QryEquipamento.Post
+    else
+      QryEquipamento.Cancel;
+  finally
+    FrmProaterEquipamento.Release;
+    FrmProaterEquipamento := nil;
+  end;
+end;
+
 procedure TFrmProaterPrincipal.BtnEstatisticaClick(Sender: TObject);
 begin
   VisualizarTexto('PRO_ESTATISTICA');
@@ -735,6 +791,45 @@ begin
     FrmPessoalFuncionarioBusca.Release;
     FrmPessoalFuncionarioBusca := nil;
     Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnMobEditarClick(Sender: TObject);
+begin
+  FrmProaterMobiliario := TFrmProaterMobiliario.Create(Self);
+  try
+    QryMobiliario.Edit;
+    if (FrmProaterMobiliario.ShowModal = mrOK) then
+      QryMobiliario.Post
+    else
+      QryMobiliario.Cancel;
+  finally
+    FrmProaterMobiliario.Release;
+    FrmProaterMobiliario := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnMobExcluirClick(Sender: TObject);
+begin
+  if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryMobiliario, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
+end;
+
+procedure TFrmProaterPrincipal.BtnMobIncluirClick(Sender: TObject);
+begin
+  FrmProaterMobiliario := TFrmProaterMobiliario.Create(Self);
+  try
+    QryMobiliario.Insert;
+    if (FrmProaterMobiliario.ShowModal = mrOK) then
+      QryMobiliario.Post
+    else
+      QryMobiliario.Cancel;
+  finally
+    FrmProaterMobiliario.Release;
+    FrmProaterMobiliario := nil;
   end;
 end;
 

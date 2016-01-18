@@ -1,11 +1,11 @@
 inherited FrmProaterPrincipal: TFrmProaterPrincipal
-  Left = 337
-  Top = 143
+  Left = 304
+  Top = 106
   Caption = 'PROATER'
   ClientHeight = 590
   ClientWidth = 806
-  ExplicitLeft = 337
-  ExplicitTop = 143
+  ExplicitLeft = 304
+  ExplicitTop = 106
   ExplicitWidth = 822
   ExplicitHeight = 629
   PixelsPerInch = 96
@@ -165,8 +165,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
         TabOrder = 3
-        ExplicitWidth = 393
-        Width = 389
+        ExplicitWidth = 385
+        Width = 381
       end
       object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8
@@ -504,6 +504,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtAcordos: TcxTabSheet
           Caption = 'Acordos, conv'#234'nios e parcerias'
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -622,17 +626,13 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtCapacidade: TcxTabSheet
       Caption = 'Capacidade operacional do ESLOC'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PgCntrlCapacidade: TcxPageControl
         Left = 8
         Top = 8
         Width = 769
         Height = 497
         TabOrder = 0
-        Properties.ActivePage = TbShtRecursos
+        Properties.ActivePage = TbShtVeiculos
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 495
         ClientRectLeft = 2
@@ -641,6 +641,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtRecursos: TcxTabSheet
           Caption = 'Recursos humanos'
           ImageIndex = 0
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -778,6 +782,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 4
+            OnClick = BtnDemExcluirClick
           end
           object GrdDem: TcxGrid
             Left = 8
@@ -869,6 +874,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnMobIncluirClick
           end
           object BtnMobEditar: TcxButton
             Left = 88
@@ -877,6 +883,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnMobEditarClick
           end
           object BtnMobExcluir: TcxButton
             Left = 168
@@ -885,6 +892,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnMobExcluirClick
           end
           object GrdMob: TcxGrid
             Left = 8
@@ -969,10 +977,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtEquipamentos: TcxTabSheet
           Caption = 'Equipamentos'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -983,6 +987,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnEqpIncluirClick
           end
           object BtnEqpEditar: TcxButton
             Left = 88
@@ -991,6 +996,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnEqpEditarClick
           end
           object BtnEqpExcluir: TcxButton
             Left = 168
@@ -999,6 +1005,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnEqpExcluirClick
           end
           object GrdEqp: TcxGrid
             Left = 8
@@ -1083,10 +1090,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtVeiculos: TcxTabSheet
           Caption = 'Ve'#237'culos'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1201,10 +1204,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtDespesas: TcxTabSheet
           Caption = 'Despesas de custeio'
           ImageIndex = 4
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1311,10 +1310,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtNecessidades: TcxTabSheet
           Caption = 'Necessidades de qualifica'#231#227'o'
           ImageIndex = 5
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)

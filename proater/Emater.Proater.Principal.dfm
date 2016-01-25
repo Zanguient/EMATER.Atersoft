@@ -155,8 +155,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
         TabOrder = 3
-        ExplicitWidth = 377
-        Width = 373
+        Width = 369
       end
       object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8

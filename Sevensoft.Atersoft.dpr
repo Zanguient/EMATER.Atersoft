@@ -114,8 +114,11 @@ uses
   Emater.Proater.Modulo in 'proater\Emater.Proater.Modulo.pas' {DtmProaterModulo: TDataModule},
   Emater.Proater.Acordo in 'proater\Emater.Proater.Acordo.pas' {FrmProaterAcordo},
   Emater.Proater.Demanda in 'proater\Emater.Proater.Demanda.pas' {FrmProaterDemanda},
+  Emater.Proater.Custo in 'proater\Emater.Proater.Custo.pas' {FrmProaterCusto},
+  Emater.Proater.Mobiliario in 'proater\Emater.Proater.Mobiliario.pas' {FrmProaterMobiliario},
   Emater.Proater.Equipamento in 'proater\Emater.Proater.Equipamento.pas' {FrmProaterEquipamento},
-  Emater.Proater.Mobiliario in 'proater\Emater.Proater.Mobiliario.pas' {FrmProaterMobiliario};
+  Emater.Proater.Qualificacao in 'proater\Emater.Proater.Qualificacao.pas' {FrmProaterQualificacao},
+  Emater.Proater.Veiculo in 'proater\Emater.Proater.Veiculo.pas' {FrmProaterVeiculo};
 
 {$R *.res}
 

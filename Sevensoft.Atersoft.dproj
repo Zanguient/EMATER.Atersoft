@@ -446,12 +446,24 @@
             <Form>FrmProaterDemanda</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="proater\Emater.Proater.Equipamento.pas">
-            <Form>FrmProaterEquipamento</Form>
+        <DCCReference Include="proater\Emater.Proater.Custo.pas">
+            <Form>FrmProaterCusto</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="proater\Emater.Proater.Mobiliario.pas">
             <Form>FrmProaterMobiliario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Equipamento.pas">
+            <Form>FrmProaterEquipamento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Qualificacao.pas">
+            <Form>FrmProaterQualificacao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Veiculo.pas">
+            <Form>FrmProaterVeiculo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

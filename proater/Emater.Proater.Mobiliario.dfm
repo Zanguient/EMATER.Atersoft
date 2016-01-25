@@ -62,7 +62,7 @@ inherited FrmProaterMobiliario: TFrmProaterMobiliario
         Top = 188
         DataBinding.DataField = 'PRM_QTDE_NECESSARIA'
         DataBinding.DataSource = DtSrcMobiliario
-        TabOrder = 1
+        TabOrder = 2
         Width = 81
       end
       object DbEdtQtdeExistente: TcxDBTextEdit
@@ -70,7 +70,7 @@ inherited FrmProaterMobiliario: TFrmProaterMobiliario
         Top = 164
         DataBinding.DataField = 'PRM_QTDE_EXISTENTE'
         DataBinding.DataSource = DtSrcMobiliario
-        TabOrder = 2
+        TabOrder = 1
         Width = 81
       end
     end

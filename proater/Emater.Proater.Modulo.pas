@@ -11,6 +11,15 @@ type
     DtSrcContexto: TDataSource;
     QryContexto: TFDQuery;
     UpdtContexto: TFDUpdateSQL;
+    DtSrcVeiculoTipo: TDataSource;
+    QryVeiculoTipo: TFDQuery;
+    UpdtVeiculoTipo: TFDUpdateSQL;
+    DtSrcCustoTipo: TDataSource;
+    QryCustoTipo: TFDQuery;
+    UpdtCustoTipo: TFDUpdateSQL;
+    DtSrcMetodologia: TDataSource;
+    QryMetodologia: TFDQuery;
+    UpdtMetodologia: TFDUpdateSQL;
     procedure DataModuleCreate(Sender: TObject);
   public
     procedure RecarregarDados;
@@ -38,6 +47,15 @@ procedure TDtmProaterModulo.RecarregarDados;
 begin
   QryContexto.Close;
   QryContexto.Open;
+
+  QryVeiculoTipo.Close;
+  QryVeiculoTipo.Open;
+
+  QryCustoTipo.Close;
+  QryCustoTipo.Open;
+
+  QryMetodologia.Close;
+  QryMetodologia.Open;
 end;
 
 end.

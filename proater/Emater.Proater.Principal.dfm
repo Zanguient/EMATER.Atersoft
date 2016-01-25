@@ -19,14 +19,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   inherited PgCntrlMain: TcxPageControl
     Width = 791
     Height = 544
-    Properties.ActivePage = TbShtCapacidade
+    Properties.ActivePage = TbShtPlano
     ExplicitWidth = 791
     ExplicitHeight = 544
     ClientRectBottom = 542
     ClientRectRight = 789
     inherited TbShtPrincipal: TcxTabSheet
-      ExplicitLeft = 0
-      ExplicitTop = 24
       ExplicitWidth = 787
       ExplicitHeight = 514
       object Label30: TLabel
@@ -78,10 +76,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtApresentacao: TcxTabSheet
           Caption = 'Apresenta'#231#227'o'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object DbMemoApresentacao: TcxDBMemo
             Left = 8
             Top = 48
@@ -113,10 +107,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtObservacao: TcxTabSheet
           Caption = 'Observa'#231#245'es'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object DbMemoObservacao: TcxDBMemo
             Left = 8
             Top = 48
@@ -165,8 +155,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
         TabOrder = 3
-        ExplicitWidth = 385
-        Width = 381
+        ExplicitWidth = 377
+        Width = 373
       end
       object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8
@@ -208,17 +198,13 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtDiagnostico: TcxTabSheet
       Caption = 'Diagn'#243'stico do munic'#237'pio'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PgCntrlDiagnostico: TcxPageControl
         Left = 8
         Top = 8
         Width = 769
         Height = 497
         TabOrder = 0
-        Properties.ActivePage = TbShtAcordos
+        Properties.ActivePage = TbShtEstatistica
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 495
         ClientRectLeft = 2
@@ -227,10 +213,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtEstatistica: TcxTabSheet
           Caption = 'Estat'#237'sticas'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object BtnEstatistica: TcxButton
             Left = 8
             Top = 24
@@ -262,10 +244,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtComunidades: TcxTabSheet
           Caption = 'Benefici'#225'rios e UPF'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -383,10 +361,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtProblemas: TcxTabSheet
           Caption = 'Problemas e potencialidades'
           ImageIndex = 1
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -504,10 +478,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtAcordos: TcxTabSheet
           Caption = 'Acordos, conv'#234'nios e parcerias'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -632,7 +602,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Width = 769
         Height = 497
         TabOrder = 0
-        Properties.ActivePage = TbShtVeiculos
+        Properties.ActivePage = TbShtNecessidades
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 495
         ClientRectLeft = 2
@@ -641,10 +611,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtRecursos: TcxTabSheet
           Caption = 'Recursos humanos'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -860,10 +826,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtMobiliario: TcxTabSheet
           Caption = 'Mobili'#225'rio'
           ImageIndex = 1
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1100,6 +1062,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnVeiIncluirClick
           end
           object BtnVeiEditar: TcxButton
             Left = 88
@@ -1108,6 +1071,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnVeiEditarClick
           end
           object BtnVeiExcluir: TcxButton
             Left = 168
@@ -1116,6 +1080,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnVeiExcluirClick
           end
           object GrdVei: TcxGrid
             Left = 8
@@ -1214,6 +1179,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnCusIncluirClick
           end
           object BtnCusEditar: TcxButton
             Left = 88
@@ -1222,6 +1188,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnCusEditarClick
           end
           object BtnCusExcluir: TcxButton
             Left = 168
@@ -1230,6 +1197,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnCusExcluirClick
           end
           object GrdCus: TcxGrid
             Left = 8
@@ -1320,6 +1288,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnQuaIncluirClick
           end
           object BtnQuaEditar: TcxButton
             Left = 88
@@ -1328,6 +1297,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnQuaEditarClick
           end
           object BtnQuaExcluir: TcxButton
             Left = 168
@@ -1336,6 +1306,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnQuaExcluirClick
           end
           object GrdQua: TcxGrid
             Left = 8
@@ -1422,10 +1393,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtPlano: TcxTabSheet
       Caption = 'Plano de ATER do ESLOC'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PgCntrlPlano: TcxPageControl
         Left = 8
         Top = 8
@@ -1441,10 +1408,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtProjetos: TcxTabSheet
           Caption = 'Projetos e subprojetos'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1781,10 +1744,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtMetodologias: TcxTabSheet
           Caption = 'Metodologias de ATER'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1895,10 +1854,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtBeneficiarios: TcxTabSheet
           Caption = 'Benefici'#225'rios de ATER'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -2017,10 +1972,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtOrcamento: TcxTabSheet
           Caption = 'Previs'#227'o or'#231'ament'#225'ria'
           ImageIndex = 4
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)

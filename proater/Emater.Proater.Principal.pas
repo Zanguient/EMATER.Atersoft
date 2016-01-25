@@ -511,6 +511,15 @@ type
     procedure BtnEqpIncluirClick(Sender: TObject);
     procedure BtnEqpEditarClick(Sender: TObject);
     procedure BtnEqpExcluirClick(Sender: TObject);
+    procedure BtnVeiIncluirClick(Sender: TObject);
+    procedure BtnVeiEditarClick(Sender: TObject);
+    procedure BtnVeiExcluirClick(Sender: TObject);
+    procedure BtnCusIncluirClick(Sender: TObject);
+    procedure BtnCusEditarClick(Sender: TObject);
+    procedure BtnCusExcluirClick(Sender: TObject);
+    procedure BtnQuaExcluirClick(Sender: TObject);
+    procedure BtnQuaIncluirClick(Sender: TObject);
+    procedure BtnQuaEditarClick(Sender: TObject);
   private
     procedure VisualizarTexto(const FieldName: string);
     procedure EditarItem(const FDQuery: TFDQuery; const Button: TcxButton);
@@ -525,7 +534,7 @@ implementation
 
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Produtividade.Fater.Editor, Emater.Proater.Comunidade, Emater.Base.Consts, Emater.Proater.Potencial,
   Emater.Proater.Modulo, Emater.Recurso.Modulo, Emater.Proater.Acordo, Emater.Pessoal.Funcionario.Busca, Emater.Proater.Demanda, Emater.Proater.Mobiliario,
-  Emater.Proater.Equipamento;
+  Emater.Proater.Equipamento, Emater.Proater.Veiculo, Emater.Proater.Custo, Emater.Proater.Qualificacao;
 
 procedure TFrmProaterPrincipal.BtnAcrEditarClick(Sender: TObject);
 begin
@@ -624,6 +633,51 @@ begin
   end;
 end;
 
+procedure TFrmProaterPrincipal.BtnCusEditarClick(Sender: TObject);
+begin
+  FrmProaterCusto := TFrmProaterCusto.Create(Self);
+  try
+    QryCusto.Edit;
+    if (FrmProaterCusto.ShowModal = mrOK) then
+      begin
+        QryCustoPCT_DESCRICAO.AsString := FrmProaterCusto.DbLkpCmbBxCustoTipo.Text;
+        QryCusto.Post;
+      end
+    else
+      QryCusto.Cancel;
+  finally
+    FrmProaterCusto.Release;
+    FrmProaterCusto := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnCusExcluirClick(Sender: TObject);
+begin
+  if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryCusto, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
+end;
+
+procedure TFrmProaterPrincipal.BtnCusIncluirClick(Sender: TObject);
+begin
+  FrmProaterCusto := TFrmProaterCusto.Create(Self);
+  try
+    QryCusto.Insert;
+    if (FrmProaterCusto.ShowModal = mrOK) then
+      begin
+        QryCustoPCT_DESCRICAO.AsString := FrmProaterCusto.DbLkpCmbBxCustoTipo.Text;
+        QryCusto.Post;
+      end
+    else
+      QryCusto.Cancel;
+  finally
+    FrmProaterCusto.Release;
+    FrmProaterCusto := nil;
+  end;
+end;
+
 procedure TFrmProaterPrincipal.BtnDemExcluirClick(Sender: TObject);
 begin
   if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
@@ -713,6 +767,96 @@ begin
   finally
     FrmProaterPotencial.Release;
     FrmProaterPotencial := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnQuaEditarClick(Sender: TObject);
+begin
+  FrmProaterQualificacao := TFrmProaterQualificacao.Create(Self);
+  try
+    QryQualificacao.Edit;
+    if (FrmProaterQualificacao.ShowModal = mrOK) then
+      begin
+        QryQualificacaoMET_DESCRICAO.AsString := FrmProaterQualificacao.DbLkpCmbBxMetodologia.Text;
+        QryQualificacao.Post;
+      end
+    else
+      QryQualificacao.Cancel;
+  finally
+    FrmProaterQualificacao.Release;
+    FrmProaterQualificacao := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnQuaExcluirClick(Sender: TObject);
+begin
+  if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryQualificacao, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
+end;
+
+procedure TFrmProaterPrincipal.BtnQuaIncluirClick(Sender: TObject);
+begin
+  FrmProaterQualificacao := TFrmProaterQualificacao.Create(Self);
+  try
+    QryQualificacao.Insert;
+    if (FrmProaterQualificacao.ShowModal = mrOK) then
+      begin
+        QryQualificacaoMET_DESCRICAO.AsString := FrmProaterQualificacao.DbLkpCmbBxMetodologia.Text;
+        QryQualificacao.Post;
+      end
+    else
+      QryQualificacao.Cancel;
+  finally
+    FrmProaterQualificacao.Release;
+    FrmProaterQualificacao := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnVeiEditarClick(Sender: TObject);
+begin
+  FrmProaterVeiculo := TFrmProaterVeiculo.Create(Self);
+  try
+    QryVeiculo.Edit;
+    if (FrmProaterVeiculo.ShowModal = mrOK) then
+      begin
+        QryVeiculoVTP_DESCRICAO.AsString := FrmProaterVeiculo.DbLkpCmbBxVeiculoTipo.Text;
+        QryVeiculo.Post;
+      end
+    else
+      QryVeiculo.Cancel;
+  finally
+    FrmProaterVeiculo.Release;
+    FrmProaterVeiculo := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnVeiExcluirClick(Sender: TObject);
+begin
+  if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
+    begin
+      DtmSistemaModulo.GravarAuditoriaExclusao(QryVeiculo, False);
+      DtSrcPrincipalStateChange(Sender);
+    end;
+end;
+
+procedure TFrmProaterPrincipal.BtnVeiIncluirClick(Sender: TObject);
+begin
+  FrmProaterVeiculo := TFrmProaterVeiculo.Create(Self);
+  try
+    QryVeiculo.Insert;
+    if (FrmProaterVeiculo.ShowModal = mrOK) then
+      begin
+        QryVeiculoVTP_DESCRICAO.AsString := FrmProaterVeiculo.DbLkpCmbBxVeiculoTipo.Text;
+        QryVeiculo.Post;
+      end
+    else
+      QryVeiculo.Cancel;
+  finally
+    FrmProaterVeiculo.Release;
+    FrmProaterVeiculo := nil;
   end;
 end;
 

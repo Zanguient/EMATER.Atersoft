@@ -19,7 +19,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   inherited PgCntrlMain: TcxPageControl
     Width = 791
     Height = 544
-    Properties.ActivePage = TbShtPlano
     ExplicitWidth = 791
     ExplicitHeight = 544
     ClientRectBottom = 542
@@ -155,7 +154,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
         TabOrder = 3
-        Width = 369
+        Width = 357
       end
       object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8
@@ -601,7 +600,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Width = 769
         Height = 497
         TabOrder = 0
-        Properties.ActivePage = TbShtNecessidades
+        Properties.ActivePage = TbShtRecursos
         Properties.CustomButtons.Buttons = <>
         ClientRectBottom = 495
         ClientRectLeft = 2
@@ -923,10 +922,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               end
               object GrdMobTblPRM_QTDE_EXISTENTE: TcxGridDBColumn
                 DataBinding.FieldName = 'PRM_QTDE_EXISTENTE'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 141
               end
               object GrdMobTblPRM_QTDE_NECESSARIA: TcxGridDBColumn
                 DataBinding.FieldName = 'PRM_QTDE_NECESSARIA'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 140
               end
             end
@@ -1036,10 +1037,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               end
               object GrdEqpTblPRE_QTDE_EXISTENTE: TcxGridDBColumn
                 DataBinding.FieldName = 'PRE_QTDE_EXISTENTE'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 155
               end
               object GrdEqpTblPRE_QTDE_NECESSARIA: TcxGridDBColumn
                 DataBinding.FieldName = 'PRE_QTDE_NECESSARIA'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 155
               end
             end
@@ -1153,10 +1156,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               end
               object GrdVeiTblVEI_QTDE_EXISTENTE: TcxGridDBColumn
                 DataBinding.FieldName = 'VEI_QTDE_EXISTENTE'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 155
               end
               object GrdVeiTblVEI_QTDE_NECESSARIA: TcxGridDBColumn
                 DataBinding.FieldName = 'VEI_QTDE_NECESSARIA'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 155
               end
             end
@@ -1266,6 +1271,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               end
               object GrdCusTblPRC_CUSTO: TcxGridDBColumn
                 DataBinding.FieldName = 'PRC_CUSTO'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 156
               end
             end
@@ -1400,6 +1406,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         TabOrder = 0
         Properties.ActivePage = TbShtProjetos
         Properties.CustomButtons.Buttons = <>
+        OnChange = PgCntrlPlanoChange
         ClientRectBottom = 495
         ClientRectLeft = 2
         ClientRectRight = 767
@@ -1417,6 +1424,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnSubIncluirClick
           end
           object BtnSubEditar: TcxButton
             Left = 88
@@ -1425,6 +1433,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnSubEditarClick
           end
           object BtnSubExcluir: TcxButton
             Left = 168
@@ -1433,6 +1442,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnSubExcluirClick
           end
           object GrdSub: TcxGrid
             Left = 8
@@ -1499,28 +1509,32 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               object GrdSubTblSPR_ANO_MES_INICIO: TcxGridDBColumn
                 Caption = 'Ref. inicial (ano/m'#234's)'
                 DataBinding.FieldName = 'SPR_ANO_MES_INICIO'
-                Width = 119
+                MinWidth = 108
+                Options.HorzSizing = False
+                Width = 108
               end
               object GrdSubTblSPR_ANO_MES_FIM: TcxGridDBColumn
                 Caption = 'Ref. final (ano/m'#234's)'
                 DataBinding.FieldName = 'SPR_ANO_MES_FIM'
-                Width = 118
+                MinWidth = 104
+                Options.HorzSizing = False
+                Width = 104
               end
               object GrdSubTblSPR_NOME: TcxGridDBColumn
                 DataBinding.FieldName = 'SPR_NOME'
-                Width = 143
+                Width = 140
               end
               object GrdSubTblPRJ_NOME: TcxGridDBColumn
                 DataBinding.FieldName = 'PRJ_NOME'
-                Width = 140
+                Width = 145
               end
               object GrdSubTblPRG_NOME: TcxGridDBColumn
                 DataBinding.FieldName = 'PRG_NOME'
-                Width = 144
+                Width = 124
               end
               object GrdSubTblFUN_RESPONSAVEL: TcxGridDBColumn
                 DataBinding.FieldName = 'FUN_RESPONSAVEL'
-                Width = 81
+                Width = 124
               end
             end
             object GrdSubLvl: TcxGridLevel
@@ -1541,6 +1555,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnMetaIncluirClick
           end
           object BtnMetaEditar: TcxButton
             Left = 88
@@ -1549,6 +1564,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnMetaEditarClick
           end
           object BtnMetaExcluir: TcxButton
             Left = 168
@@ -1557,6 +1573,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnMetaExcluirClick
           end
           object GrdMeta: TcxGrid
             Left = 8
@@ -1626,6 +1643,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               end
               object GrdMetaTblMET_QUANTIDADE: TcxGridDBColumn
                 DataBinding.FieldName = 'MET_QUANTIDADE'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 103
               end
               object GrdMetaTblMET_UNIDADE: TcxGridDBColumn
@@ -1753,6 +1771,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnMetIncluirClick
           end
           object BtnMetEditar: TcxButton
             Left = 88
@@ -1761,6 +1780,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnMetEditarClick
           end
           object BtnMetExcluir: TcxButton
             Left = 168
@@ -1769,6 +1789,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnMetExcluirClick
           end
           object GrdMet: TcxGrid
             Left = 8
@@ -1838,10 +1859,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               end
               object GrdMetTblMET_ANO: TcxGridDBColumn
                 DataBinding.FieldName = 'MET_ANO'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 70
               end
               object GrdMetTblMET_QUANTIDADE: TcxGridDBColumn
                 DataBinding.FieldName = 'MET_QUANTIDADE'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 246
               end
             end
@@ -1863,6 +1886,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnBenIncluirClick
           end
           object BtnBenEditar: TcxButton
             Left = 88
@@ -1871,6 +1895,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnBenEditarClick
           end
           object BtnBenExcluir: TcxButton
             Left = 168
@@ -1879,6 +1904,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnBenExcluirClick
           end
           object GrdBen: TcxGrid
             Left = 8
@@ -1956,10 +1982,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               end
               object GrdBenTblPLC_ANO: TcxGridDBColumn
                 DataBinding.FieldName = 'PLC_ANO'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 72
               end
               object GrdBenTblPLC_QUANTIDADE: TcxGridDBColumn
                 DataBinding.FieldName = 'PLC_QUANTIDADE'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 126
               end
             end
@@ -1981,6 +2009,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Incluir'
             TabOrder = 0
+            OnClick = BtnOrcIncluirClick
           end
           object BtnOrcEditar: TcxButton
             Left = 88
@@ -1989,6 +2018,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Editar'
             TabOrder = 1
+            OnClick = BtnOrcEditarClick
           end
           object BtnOrcExcluir: TcxButton
             Left = 168
@@ -1997,6 +2027,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Height = 25
             Caption = 'Excluir'
             TabOrder = 2
+            OnClick = BtnOrcExcluirClick
           end
           object GrdOrc: TcxGrid
             Left = 8
@@ -2070,10 +2101,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               end
               object GrdOrcTblORC_ANO: TcxGridDBColumn
                 DataBinding.FieldName = 'ORC_ANO'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 86
               end
               object GrdOrcTblORC_VALOR: TcxGridDBColumn
                 DataBinding.FieldName = 'ORC_VALOR'
+                HeaderAlignmentHorz = taRightJustify
                 Width = 158
               end
             end
@@ -3391,6 +3424,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       Required = True
     end
     object QryCustoPCT_ID: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'PCT_ID'
       Origin = 'PCT_ID'
       Required = True
@@ -3649,14 +3683,20 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       Origin = 'SPR_DATA'
     end
     object QrySubProjetoSPR_ANO_MES_INICIO: TIntegerField
+      Alignment = taLeftJustify
       DisplayLabel = 'Refer'#234'ncia inicial (ano/m'#234's)'
       FieldName = 'SPR_ANO_MES_INICIO'
       Origin = 'SPR_ANO_MES_INICIO'
+      OnGetText = QrySubProjetoSPR_ANO_MES_INICIOGetText
+      OnSetText = QrySubProjetoSPR_ANO_MES_INICIOSetText
     end
     object QrySubProjetoSPR_ANO_MES_FIM: TIntegerField
+      Alignment = taLeftJustify
       DisplayLabel = 'Refer'#234'ncia final (ano/m'#234's)'
       FieldName = 'SPR_ANO_MES_FIM'
       Origin = 'SPR_ANO_MES_FIM'
+      OnGetText = QrySubProjetoSPR_ANO_MES_INICIOGetText
+      OnSetText = QrySubProjetoSPR_ANO_MES_INICIOSetText
     end
     object QrySubProjetoSPR_NOME: TStringField
       DisplayLabel = 'Subprojeto'
@@ -3936,8 +3976,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       '  b.met_descricao'
       'from'
       
-        '  tab_prd_subprojeto_metodo a join tab_prd_metodo b on (a.met_id' +
-        ' = b.met_id)'
+        '  tab_prd_subprojeto_metodo a join tab_prd_proater_metodologia b' +
+        ' on (a.met_id = b.met_id)'
       'where'
       '  (a.spr_id = :spr_id) and'
       '  (a.reg_excluido = 0)'
@@ -4002,7 +4042,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       FieldName = 'MET_DESCRICAO'
       Origin = 'MET_DESCRICAO'
       ProviderFlags = []
-      Size = 100
+      Size = 50
     end
   end
   object UpdtSubMetodo: TFDUpdateSQL

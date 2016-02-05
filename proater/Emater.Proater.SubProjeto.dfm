@@ -4,6 +4,7 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
   Caption = 'Subprojeto'
   ClientHeight = 494
   ClientWidth = 565
+  OnShow = FormShow
   ExplicitLeft = 482
   ExplicitTop = 143
   ExplicitWidth = 581
@@ -13,13 +14,14 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
   inherited PgCntrlPrincipal: TcxPageControl
     Width = 549
     Height = 448
+    ExplicitWidth = 549
+    ExplicitHeight = 448
     ClientRectBottom = 446
     ClientRectRight = 547
     inherited TbShtPrincipal: TcxTabSheet
       Caption = 'Geral'
-      ExplicitLeft = 10
-      ExplicitWidth = 550
-      ExplicitHeight = 422
+      ExplicitWidth = 545
+      ExplicitHeight = 418
       object Label12: TLabel
         Tag = 2
         Left = 8
@@ -132,7 +134,11 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
         Properties.ListColumns = <
           item
             FieldName = 'PRJ_NOME'
+          end
+          item
+            FieldName = 'PRG_NOME'
           end>
+        Properties.ListOptions.ShowHeader = False
         Properties.ListSource = DtSrcProjeto
         TabOrder = 3
         Width = 529
@@ -147,6 +153,7 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
           item
             FieldName = 'FUN_NOME'
           end>
+        Properties.ListOptions.ShowHeader = False
         TabOrder = 5
         Width = 265
       end
@@ -160,6 +167,7 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
           item
             FieldName = 'FUN_NOME'
           end>
+        Properties.ListOptions.ShowHeader = False
         TabOrder = 6
         Width = 257
       end
@@ -178,8 +186,6 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
         object TbShtJustificativa: TcxTabSheet
           Caption = 'Justificativa'
           ImageIndex = 0
-          ExplicitWidth = 285
-          ExplicitHeight = 163
           object BtnJustificativa: TcxButton
             Left = 8
             Top = 8
@@ -211,8 +217,6 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
         object TbShtGeral: TcxTabSheet
           Caption = 'Objetivo geral'
           ImageIndex = 1
-          ExplicitWidth = 285
-          ExplicitHeight = 163
           object BtnGeral: TcxButton
             Left = 8
             Top = 8
@@ -244,8 +248,6 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
         object TbShtEspecifico: TcxTabSheet
           Caption = 'Objetivos espec'#237'ficos'
           ImageIndex = 2
-          ExplicitWidth = 285
-          ExplicitHeight = 163
           object BtnEspecifico: TcxButton
             Left = 8
             Top = 8
@@ -280,10 +282,14 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
   inherited BtnOK: TcxButton
     Left = 401
     Top = 462
+    ExplicitLeft = 401
+    ExplicitTop = 462
   end
   inherited BtnCancelar: TcxButton
     Left = 482
     Top = 462
+    ExplicitLeft = 482
+    ExplicitTop = 462
   end
   object DtSrcSubprojeto: TDataSource
     DataSet = FrmProaterPrincipal.QrySubProjeto
@@ -295,15 +301,22 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
     SQL.Strings = (
-      'select prj_id, prj_nome from stp_prd_projeto_por_cidade(:cidade)')
+      'select'
+      '  a.prj_id,'
+      '  a.prj_nome,'
+      '  b.prg_id,'
+      '  b.prg_nome'
+      'from'
+      
+        '  tab_prd_projeto a left join tab_prd_programa b on (a.prg_id = ' +
+        'b.prg_id)'
+      'where'
+      '  (a.reg_excluido = 0) and'
+      '  (b.reg_excluido = 0)'
+      'order by'
+      '  a.prj_nome, b.prg_nome')
     Left = 408
     Top = 88
-    ParamData = <
-      item
-        Name = 'CIDADE'
-        DataType = ftInteger
-        ParamType = ptInput
-      end>
     object DtStProjetoPRJ_ID: TIntegerField
       FieldName = 'PRJ_ID'
       Origin = 'PRJ_ID'
@@ -311,6 +324,21 @@ inherited FrmProaterSubprojeto: TFrmProaterSubprojeto
     object DtStProjetoPRJ_NOME: TStringField
       FieldName = 'PRJ_NOME'
       Origin = 'PRJ_NOME'
+      Size = 500
+    end
+    object DtStProjetoPRG_ID: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'PRG_ID'
+      Origin = 'PRG_ID'
+      ProviderFlags = []
+      ReadOnly = True
+    end
+    object DtStProjetoPRG_NOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'PRG_NOME'
+      Origin = 'PRG_NOME'
+      ProviderFlags = []
+      ReadOnly = True
       Size = 500
     end
   end

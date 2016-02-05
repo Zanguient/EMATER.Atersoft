@@ -1,7 +1,7 @@
 inherited FrmProaterVeiculo: TFrmProaterVeiculo
   Left = 433
   Top = 175
-  ActiveControl = DbMemoDescricao
+  ActiveControl = DbLkpCmbBxVeiculoTipo
   Caption = 'Ve'#237'culos'
   ClientHeight = 420
   ClientWidth = 461

@@ -1,6 +1,7 @@
 inherited FrmProaterCusto: TFrmProaterCusto
   Left = 433
   Top = 175
+  ActiveControl = DbLkpCmbBxCustoTipo
   Caption = 'Despesas de Custeio'
   ClientHeight = 420
   ClientWidth = 461
@@ -41,7 +42,7 @@ inherited FrmProaterCusto: TFrmProaterCusto
       object DbLkpCmbBxCustoTipo: TcxDBLookupComboBox
         Left = 8
         Top = 48
-        DataBinding.DataField = 'PRC_ID'
+        DataBinding.DataField = 'PCT_ID'
         DataBinding.DataSource = DtSrcCusto
         Properties.ImmediatePost = True
         Properties.KeyFieldNames = 'PCT_ID'
@@ -50,7 +51,6 @@ inherited FrmProaterCusto: TFrmProaterCusto
             FieldName = 'PCT_DESCRICAO'
           end>
         Properties.ListOptions.ShowHeader = False
-        Properties.ListSource = DtmProaterModulo.DtSrcCustoTipo
         Properties.PostPopupValueOnTab = True
         TabOrder = 0
         Width = 425

@@ -9,7 +9,7 @@ uses
   dxSkinsdxBarPainter, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet, dxBar, cxClasses, FIBDataSet, pFIBDataSet, cxTextEdit, Vcl.StdCtrls, cxButtons,
   cxMaskEdit, cxDropDownEdit, cxImageComboBox, Vcl.ExtCtrls, cxGridLevel, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
-  cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxVGrid, cxDBVGrid, cxInplaceContainer, cxSplitter;
+  cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxVGrid, cxDBVGrid, cxInplaceContainer, cxSplitter, cxTL, cxTLdxBarBuiltInMenu, cxDBTL, cxTLData;
 
 type
   TFrmProaterConsulta = class(TFrmBaseConsulta)
@@ -54,6 +54,17 @@ type
     GrdResumoPRO_QTDE_QUALIFICACAO: TcxDBEditorRow;
     GrdResumoPRO_QTDE_SUBPROJETO: TcxDBEditorRow;
     SplitterPrincipal: TSplitter;
+    QrySubProjetos: TFDQuery;
+    DtSrcSubProjetos: TDataSource;
+    DbTrLstSubprojeto: TcxDBTreeList;
+    QrySubProjetosID: TLargeintField;
+    QrySubProjetosPARENT: TLargeintField;
+    QrySubProjetosDESCRICAO: TStringField;
+    QrySubProjetosQTDE: TIntegerField;
+    QrySubProjetosIMAGE: TIntegerField;
+    DbTrLstSubprojetoDESCRICAO: TcxDBTreeListColumn;
+    DbTrLstSubprojetoQTDE: TcxDBTreeListColumn;
+    SplitterTop: TSplitter;
     procedure FormShow(Sender: TObject);
     procedure BtnConsultarClick(Sender: TObject);
     procedure LkpCmbBxUnidadeKeyPress(Sender: TObject; var Key: Char);
@@ -64,6 +75,10 @@ type
     procedure GrdResumoPRO_QTDE_COMUNIDADEPropertiesGetDisplayText(Sender: TcxCustomEditorRowProperties; ARecord: Integer; var AText: string);
     procedure QryConsultaPRO_PERIODO_INICIOGetText(Sender: TField; var Text: string; DisplayText: Boolean);
     procedure QryConsultaPRO_PERIODO_INICIOSetText(Sender: TField; const Text: string);
+    procedure DbVGrdSubprojetoSPR_NOMEPropertiesValidateDrawValue(Sender: TcxCustomEditorRowProperties; ARecordIndex: Integer; const [Ref] AValue: Variant;
+      AData: TcxEditValidateInfo);
+    procedure QryConsultaAfterRefresh(DataSet: TDataSet);
+    procedure QrySubProjetosMasterSetValues(DataSet: TFDDataSet);
   private
     procedure DefinirFiltros;
   public
@@ -131,6 +146,13 @@ begin
     end;
 end;
 
+procedure TFrmProaterConsulta.QryConsultaAfterRefresh(DataSet: TDataSet);
+begin
+  QrySubProjetos.Close;
+  QrySubProjetos.Open;
+  DbTrLstSubprojeto.FullExpand;
+end;
+
 procedure TFrmProaterConsulta.QryConsultaPRO_PERIODO_INICIOGetText(Sender: TField; var Text: string; DisplayText: Boolean);
 var
   Ano, Mes: string;
@@ -149,6 +171,11 @@ begin
     Sender.AsInteger := StrToInt(Copy(Text, 3, 4) + Copy(Text, 1 ,2));
 end;
 
+procedure TFrmProaterConsulta.QrySubProjetosMasterSetValues(DataSet: TFDDataSet);
+begin
+  DbTrLstSubprojeto.FullExpand;
+end;
+
 procedure TFrmProaterConsulta.BtnConsultarClick(Sender: TObject);
 var
   CanLoad: Boolean;
@@ -159,6 +186,7 @@ begin
 
   CodeSite.EnterMethod(Self.Name + '.BtnConsultarClick().');
   try
+    QrySubProjetos.Close;
     QryConsulta.Close;
     QryConsulta.SQL.Clear;
     QryConsulta.SQL.AddStrings(DefaultSQL);
@@ -178,6 +206,7 @@ begin
       begin
         QryConsulta.SQL.Add('order by a.pro_periodo_inicio, a.pro_periodo_fim, b.und_nome');
         QryConsulta.Open;
+        QrySubProjetos.Open;
 
         if QryConsulta.IsEmpty then
           begin
@@ -200,6 +229,15 @@ procedure TFrmProaterConsulta.BtnLimparParametrosClick(Sender: TObject);
 begin
   inherited;
   if LkpCmbBxUnidade.CanFocus then LkpCmbBxUnidade.SetFocus;
+end;
+
+procedure TFrmProaterConsulta.DbVGrdSubprojetoSPR_NOMEPropertiesValidateDrawValue(Sender: TcxCustomEditorRowProperties; ARecordIndex: Integer;
+  const [Ref] AValue: Variant; AData: TcxEditValidateInfo);
+begin
+  if VarIsNull(AValue) or (AValue = 0) then
+    Sender.ImageIndex := 43
+  else
+    Sender.ImageIndex := 97;
 end;
 
 procedure TFrmProaterConsulta.DefinirFiltros;

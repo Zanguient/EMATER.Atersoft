@@ -1,37 +1,38 @@
 inherited FrmProaterConsulta: TFrmProaterConsulta
-  Left = 367
-  Top = 190
+  Left = 314
+  Top = 85
   ActiveControl = nil
   Caption = 'FrmProaterConsulta'
-  ClientWidth = 805
-  ExplicitLeft = 367
-  ExplicitTop = 190
-  ExplicitWidth = 821
+  ClientHeight = 570
+  ClientWidth = 855
+  ExplicitLeft = 314
+  ExplicitTop = 85
+  ExplicitWidth = 871
+  ExplicitHeight = 609
   PixelsPerInch = 96
   TextHeight = 13
   inherited LblTitulo: TLabel
-    Width = 805
+    Width = 855
     ExplicitWidth = 805
   end
   object SplitterPrincipal: TSplitter [2]
-    Left = 534
+    Left = 584
     Top = 113
     Width = 5
-    Height = 360
+    Height = 457
     Align = alRight
     AutoSnap = False
     Color = clBtnFace
     MinSize = 266
     ParentColor = False
     ResizeStyle = rsUpdate
-    ExplicitLeft = 521
-    ExplicitTop = 225
-    ExplicitHeight = 248
+    ExplicitLeft = 592
+    ExplicitHeight = 458
   end
   inherited GrdConsulta: TcxGrid
     Top = 113
-    Width = 534
-    Height = 360
+    Width = 584
+    Height = 457
     ExplicitTop = 113
     ExplicitWidth = 553
     ExplicitHeight = 360
@@ -72,7 +73,7 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
     end
   end
   inherited PnlMain: TPanel
-    Width = 805
+    Width = 855
     Height = 58
     BevelEdges = [beTop]
     BevelKind = bkTile
@@ -109,7 +110,7 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       Width = 155
     end
     inherited BtnConsultar: TcxButton
-      Left = 624
+      Left = 674
       Top = 22
       Anchors = [akTop, akRight]
       TabOrder = 1
@@ -118,7 +119,7 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       ExplicitTop = 22
     end
     inherited BtnLimparParametros: TcxButton
-      Left = 712
+      Left = 762
       Top = 22
       Anchors = [akTop, akRight]
       TabOrder = 2
@@ -145,21 +146,40 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       Properties.ListOptions.ShowHeader = False
       TabOrder = 0
       OnKeyPress = LkpCmbBxUnidadeKeyPress
-      Width = 609
+      ExplicitWidth = 609
+      Width = 659
     end
   end
   inherited BarDockControl: TdxBarDockControl
-    Width = 805
+    Width = 855
     ExplicitWidth = 805
   end
   object PnlResumo: TPanel [6]
-    Left = 539
+    Left = 589
     Top = 113
     Width = 266
-    Height = 360
+    Height = 457
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 7
+    ExplicitLeft = 547
+    ExplicitTop = 121
+    ExplicitHeight = 360
+    object SplitterTop: TSplitter
+      Left = 0
+      Top = 200
+      Width = 266
+      Height = 5
+      Cursor = crVSplit
+      Align = alTop
+      AutoSnap = False
+      Color = clBtnFace
+      MinSize = 266
+      ParentColor = False
+      ResizeStyle = rsUpdate
+      ExplicitLeft = 261
+      ExplicitWidth = 258
+    end
     object GrdResumo: TcxDBVerticalGrid
       Left = 0
       Top = 0
@@ -301,6 +321,60 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
         Version = 1
       end
     end
+    object DbTrLstSubprojeto: TcxDBTreeList
+      Left = 0
+      Top = 205
+      Width = 266
+      Height = 252
+      Align = alClient
+      Bands = <
+        item
+        end>
+      DataController.DataSource = DtSrcSubProjetos
+      DataController.ImageIndexField = 'IMAGE'
+      DataController.ParentField = 'PARENT'
+      DataController.KeyField = 'ID'
+      DataController.StateIndexField = 'IMAGE'
+      Images = DtmRecursoModulo.ImgLstPequenas
+      Navigator.Buttons.CustomButtons = <>
+      OptionsBehavior.CellHints = True
+      OptionsBehavior.HeaderHints = True
+      OptionsData.Editing = False
+      OptionsData.Deleting = False
+      OptionsSelection.CellSelect = False
+      OptionsSelection.HideSelection = True
+      OptionsView.CellEndEllipsis = True
+      OptionsView.Buttons = False
+      OptionsView.ColumnAutoWidth = True
+      OptionsView.Headers = False
+      OptionsView.ShowRoot = False
+      RootValue = -1
+      Styles.Selection = DtmRecursoModulo.cxStyleSelection
+      Styles.ContentEven = DtmRecursoModulo.cxStyleEven
+      TabOrder = 1
+      ExplicitLeft = 8
+      ExplicitTop = 208
+      ExplicitWidth = 241
+      ExplicitHeight = 241
+      object DbTrLstSubprojetoDESCRICAO: TcxDBTreeListColumn
+        DataBinding.FieldName = 'DESCRICAO'
+        Width = 201
+        Position.ColIndex = 0
+        Position.RowIndex = 0
+        Position.BandIndex = 0
+        Summary.FooterSummaryItems = <>
+        Summary.GroupFooterSummaryItems = <>
+      end
+      object DbTrLstSubprojetoQTDE: TcxDBTreeListColumn
+        DataBinding.FieldName = 'QTDE'
+        Width = 58
+        Position.ColIndex = 1
+        Position.RowIndex = 0
+        Position.BandIndex = 0
+        Summary.FooterSummaryItems = <>
+        Summary.GroupFooterSummaryItems = <>
+      end
+    end
   end
   inherited BarManager: TdxBarManager
     DockControlHeights = (
@@ -326,6 +400,7 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
     end
   end
   inherited QryConsulta: TFDQuery
+    AfterRefresh = QryConsultaAfterRefresh
     SQL.Strings = (
       'select'
       '  a.pro_id,'
@@ -517,5 +592,52 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       '  REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_PRD_PROATER'
       'WHERE PRO_ID = :PRO_ID')
+  end
+  object QrySubProjetos: TFDQuery
+    MasterSource = DtSrcConsulta
+    MasterFields = 'PRO_ID'
+    OnMasterSetValues = QrySubProjetosMasterSetValues
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select * from stp_prd_subprojeto_validacao (:pro_id)')
+    Left = 80
+    Top = 240
+    ParamData = <
+      item
+        Name = 'PRO_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Size = 8
+        Value = 100000000017
+      end>
+    object QrySubProjetosID: TLargeintField
+      FieldName = 'ID'
+      Origin = 'ID'
+    end
+    object QrySubProjetosPARENT: TLargeintField
+      FieldName = 'PARENT'
+      Origin = 'PARENT'
+    end
+    object QrySubProjetosDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Origin = 'DESCRICAO'
+      Size = 500
+    end
+    object QrySubProjetosQTDE: TIntegerField
+      FieldName = 'QTDE'
+      Origin = 'QTDE'
+    end
+    object QrySubProjetosIMAGE: TIntegerField
+      FieldName = 'IMAGE'
+      Origin = 'IMAGE'
+    end
+  end
+  object DtSrcSubProjetos: TDataSource
+    DataSet = QrySubProjetos
+    Left = 144
+    Top = 240
   end
 end

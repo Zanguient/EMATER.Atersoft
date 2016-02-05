@@ -40,10 +40,13 @@ type
     DtStProjetoPRJ_ID: TIntegerField;
     DtStProjetoPRJ_NOME: TStringField;
     DtSrcProjeto: TDataSource;
+    DtStProjetoPRG_ID: TIntegerField;
+    DtStProjetoPRG_NOME: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure BtnJustificativaClick(Sender: TObject);
     procedure BtnGeralClick(Sender: TObject);
     procedure BtnEspecificoClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     procedure VisualizarTexto(const FieldName: string);
   public
@@ -97,6 +100,12 @@ begin
   DtSrcSubprojeto.DataSet := FrmProaterPrincipal.QrySubProjeto;
   DbLkpCmbBxResponsavel.Properties.ListSource := DtmPessoalModulo.DtSrcFuncionario;
   DbLkpCmbBxSubstituto.Properties.ListSource := DtmPessoalModulo.DtSrcFuncionario;
+end;
+
+procedure TFrmProaterSubprojeto.FormShow(Sender: TObject);
+begin
+  inherited;
+  DtStProjeto.Open;
 end;
 
 end.

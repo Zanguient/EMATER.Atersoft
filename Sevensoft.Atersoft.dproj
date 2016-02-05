@@ -442,8 +442,8 @@
             <Form>FrmProaterAcordo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="proater\Emater.Proater.Demanda.pas">
-            <Form>FrmProaterDemanda</Form>
+        <DCCReference Include="proater\Emater.Proater.Orcamento.pas">
+            <Form>FrmProaterOrcamento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="proater\Emater.Proater.Custo.pas">
@@ -464,6 +464,26 @@
         </DCCReference>
         <DCCReference Include="proater\Emater.Proater.Veiculo.pas">
             <Form>FrmProaterVeiculo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.SubProjeto.pas">
+            <Form>FrmProaterSubprojeto</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Beneficiario.pas">
+            <Form>FrmProaterBeneficiario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Demanda.pas">
+            <Form>FrmProaterDemanda</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Metodo.pas">
+            <Form>FrmProaterMetodo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="proater\Emater.Proater.Meta.pas">
+            <Form>FrmProaterMeta</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -550,27 +570,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployClass Name="DependencyModule">
-                    <Platform Name="Win32">
-                        <Operation>0</Operation>
-                        <Extensions>.dll;.bpl</Extensions>
-                    </Platform>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="OSX32">
-                        <RemoteDir>Contents\MacOS</RemoteDir>
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="iOSSimulator">
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
@@ -934,12 +939,27 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>

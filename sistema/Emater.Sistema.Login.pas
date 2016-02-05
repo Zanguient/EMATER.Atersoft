@@ -207,6 +207,9 @@ begin
   if (Application.MainForm <> nil) then
     if not Application.MainForm.Showing then
       Params.WndParent := 0;
+
+  Params.ExStyle := Params.ExStyle or WS_EX_APPWINDOW;
+  Params.WndParent := 0;
 end;
 
 procedure TFrmSistemaLogin.FormShow(Sender: TObject);

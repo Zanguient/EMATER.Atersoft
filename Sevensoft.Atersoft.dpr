@@ -113,12 +113,17 @@ uses
   Emater.Proater.Potencial in 'proater\Emater.Proater.Potencial.pas' {FrmProaterPotencial},
   Emater.Proater.Modulo in 'proater\Emater.Proater.Modulo.pas' {DtmProaterModulo: TDataModule},
   Emater.Proater.Acordo in 'proater\Emater.Proater.Acordo.pas' {FrmProaterAcordo},
-  Emater.Proater.Demanda in 'proater\Emater.Proater.Demanda.pas' {FrmProaterDemanda},
+  Emater.Proater.Orcamento in 'proater\Emater.Proater.Orcamento.pas' {FrmProaterOrcamento},
   Emater.Proater.Custo in 'proater\Emater.Proater.Custo.pas' {FrmProaterCusto},
   Emater.Proater.Mobiliario in 'proater\Emater.Proater.Mobiliario.pas' {FrmProaterMobiliario},
   Emater.Proater.Equipamento in 'proater\Emater.Proater.Equipamento.pas' {FrmProaterEquipamento},
   Emater.Proater.Qualificacao in 'proater\Emater.Proater.Qualificacao.pas' {FrmProaterQualificacao},
-  Emater.Proater.Veiculo in 'proater\Emater.Proater.Veiculo.pas' {FrmProaterVeiculo};
+  Emater.Proater.Veiculo in 'proater\Emater.Proater.Veiculo.pas' {FrmProaterVeiculo},
+  Emater.Proater.SubProjeto in 'proater\Emater.Proater.SubProjeto.pas' {FrmProaterSubprojeto},
+  Emater.Proater.Beneficiario in 'proater\Emater.Proater.Beneficiario.pas' {FrmProaterBeneficiario},
+  Emater.Proater.Demanda in 'proater\Emater.Proater.Demanda.pas' {FrmProaterDemanda},
+  Emater.Proater.Metodo in 'proater\Emater.Proater.Metodo.pas' {FrmProaterMetodo},
+  Emater.Proater.Meta in 'proater\Emater.Proater.Meta.pas' {FrmProaterMeta};
 
 {$R *.res}
 

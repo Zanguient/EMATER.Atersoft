@@ -123,7 +123,8 @@ uses
   Emater.Proater.Beneficiario in 'proater\Emater.Proater.Beneficiario.pas' {FrmProaterBeneficiario},
   Emater.Proater.Demanda in 'proater\Emater.Proater.Demanda.pas' {FrmProaterDemanda},
   Emater.Proater.Metodo in 'proater\Emater.Proater.Metodo.pas' {FrmProaterMetodo},
-  Emater.Proater.Meta in 'proater\Emater.Proater.Meta.pas' {FrmProaterMeta};
+  Emater.Proater.Meta in 'proater\Emater.Proater.Meta.pas' {FrmProaterMeta},
+  Emater.Indicador.Editor in 'indicador\Emater.Indicador.Editor.pas' {FrmIndicadorEditor};
 
 {$R *.res}
 

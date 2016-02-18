@@ -3109,7 +3109,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 1
     end
     object RbnTbPROATER: TdxRibbonTab
-      Active = True
       Caption = 'PROATER'
       Groups = <
         item
@@ -3125,13 +3124,22 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         end>
       Index = 3
     end
+    object RbnTbIndicador: TdxRibbonTab
+      Active = True
+      Caption = 'Indicadores'
+      Groups = <
+        item
+          ToolbarName = 'BrIndicador'
+        end>
+      Index = 4
+    end
     object RbnTbRelatorios: TdxRibbonTab
       Caption = 'Relat'#243'rios'
       Groups = <
         item
           ToolbarName = 'BrRelatorios'
         end>
-      Index = 4
+      Index = 5
     end
     object RbnTbSistema: TdxRibbonTab
       Caption = 'Sistema'
@@ -3148,7 +3156,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         item
           ToolbarName = 'BrConfiguracoes'
         end>
-      Index = 5
+      Index = 6
     end
   end
   object dxRibbonBackstageView: TdxRibbonBackstageView
@@ -3416,8 +3424,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       'Sistema'
       'Cr'#233'dito Rural'
       'Agenda'
-      'PROATER')
+      'PROATER'
+      'Indicadores')
     Categories.ItemsVisibles = (
+      2
       2
       2
       2
@@ -3432,6 +3442,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       2
       2)
     Categories.Visibles = (
+      True
       True
       True
       True
@@ -3818,6 +3829,26 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         item
           Visible = True
           ItemName = 'BtnPROATER'
+        end>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object BrIndicador: TdxBar
+      Caption = 'INDICADORES'
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 229
+      FloatTop = 118
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'BtnIndicador'
         end>
       OneOnRow = True
       Row = 0
@@ -4632,6 +4663,16 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Visible = ivAlways
       LargeImageIndex = 2
       OnClick = BtnPROATERClick
+      SyncImageIndex = False
+      ImageIndex = 151
+    end
+    object BtnIndicador: TdxBarLargeButton
+      Caption = 'Indicadores'
+      Category = 13
+      Hint = 'Indicadores'
+      Visible = ivAlways
+      LargeImageIndex = 2
+      OnClick = BtnIndicadorClick
       SyncImageIndex = False
       ImageIndex = 151
     end

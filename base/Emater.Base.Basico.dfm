@@ -1,6 +1,6 @@
 object FrmBaseBasico: TFrmBaseBasico
-  Left = 297
-  Top = 184
+  Left = 445
+  Top = 235
   Caption = 'FrmBaseBasico'
   ClientHeight = 259
   ClientWidth = 378

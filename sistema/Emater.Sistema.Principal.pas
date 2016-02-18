@@ -112,6 +112,9 @@ type
     BrAgenda: TdxBar;
     BrPROATER: TdxBar;
     BtnPROATER: TdxBarLargeButton;
+    RbnTbIndicador: TdxRibbonTab;
+    BrIndicador: TdxBar;
+    BtnIndicador: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnBeneficiarioNovoClick(Sender: TObject);
     procedure BtnComunidadesClick(Sender: TObject);
@@ -174,6 +177,7 @@ type
     procedure BtnCreditoRacaClick(Sender: TObject);
     procedure BtnAgendaClick(Sender: TObject);
     procedure BtnPROATERClick(Sender: TObject);
+    procedure BtnIndicadorClick(Sender: TObject);
   public
     procedure AtualizarBarraStatus(const BD, Usuario, Local: string);
     procedure RecenteRemover(const Controle: TdxRibbonBackstageViewGalleryControl; const ID: Int64);
@@ -203,7 +207,8 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Relatorio.Fater.Quadrimestre, Emater.Classe.Log, Emater.Sistema.Sobre, Emater.Relatorio.Fater.Comunidade,
   Emater.Cadastro.Beneficiario.Busca, Emater.Sistema.Consts, Emater.Sistema.Ajuda, Emater.Credito.Consulta, Emater.Credito,
   Emater.Credito.Financeira, Emater.Credito.Linha, Emater.Credito.Tipo, Emater.Credito.Publico, Emater.Credito.Situacao,
-  Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal, Emater.Proater.Consulta;
+  Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal, Emater.Proater.Consulta,
+  Emater.Indicador.Editor;
 
 { TForm1 }
 
@@ -632,6 +637,19 @@ end;
 procedure TFrmSistemaPrincipal.BtnImpressoUPFClick(Sender: TObject);
 begin
   TArquivo.Abrir(ExtractFilePath(Application.ExeName) + 'upf.pdf');
+end;
+
+procedure TFrmSistemaPrincipal.BtnIndicadorClick(Sender: TObject);
+begin
+  FrmIndicadorEditor := TFrmIndicadorEditor.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmIndicadorEditor.ShowModal;
+  finally
+    FrmIndicadorEditor.Release;
+    FrmIndicadorEditor := nil;
+    Screen.Cursor := crDefault;
+  end;
 end;
 
 procedure TFrmSistemaPrincipal.BtnMetodologiaFuncionarioClick(Sender: TObject);

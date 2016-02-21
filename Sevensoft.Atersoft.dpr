@@ -124,7 +124,9 @@ uses
   Emater.Proater.Demanda in 'proater\Emater.Proater.Demanda.pas' {FrmProaterDemanda},
   Emater.Proater.Metodo in 'proater\Emater.Proater.Metodo.pas' {FrmProaterMetodo},
   Emater.Proater.Meta in 'proater\Emater.Proater.Meta.pas' {FrmProaterMeta},
-  Emater.Indicador.Editor in 'indicador\Emater.Indicador.Editor.pas' {FrmIndicadorEditor};
+  Emater.Indicador.Editor in 'indicador\Emater.Indicador.Editor.pas' {FrmIndicadorEditor},
+  Emater.Indicador.Selecao in 'indicador\Emater.Indicador.Selecao.pas' {FrmIndicadorSelecao},
+  Emater.Indicador.Consts in 'indicador\Emater.Indicador.Consts.pas';
 
 {$R *.res}
 
@@ -163,6 +165,7 @@ begin
   //
   CodeSite.SendMsg('Criando o módulo de conexão com o banco de dados.');
   Application.CreateForm(TDtmConexaoModulo, DtmConexaoModulo);
+  Application.CreateForm(TFrmIndicadorSelecao, FrmIndicadorSelecao);
   CodeSite.SendMsg('Módulo de conexão com o banco de dados criado com sucesso.');
   //
   // Inibindo a abertura.

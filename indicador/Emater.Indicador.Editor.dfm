@@ -1,24 +1,44 @@
 inherited FrmIndicadorEditor: TFrmIndicadorEditor
-  Left = 475
-  Top = 165
+  Left = 331
+  Top = 111
+  BorderStyle = bsDialog
   Caption = 'Editor do Indicador'
-  ClientHeight = 532
+  ClientHeight = 580
   ClientWidth = 580
-  ExplicitLeft = 475
-  ExplicitTop = 165
+  Position = poScreenCenter
+  ExplicitLeft = 331
+  ExplicitTop = 111
   ExplicitWidth = 596
-  ExplicitHeight = 571
+  ExplicitHeight = 619
   PixelsPerInch = 96
   TextHeight = 13
   object cxScrollBox: TcxScrollBox
     Left = 8
     Top = 72
     Width = 561
-    Height = 449
+    Height = 465
     TabOrder = 0
+    VertScrollBar.Tracking = True
+  end
+  object BtnOK: TcxButton
+    Left = 408
+    Top = 544
+    Width = 75
+    Height = 25
+    Caption = 'OK'
+    TabOrder = 1
+  end
+  object BtnCancelar: TcxButton
+    Left = 494
+    Top = 544
+    Width = 75
+    Height = 25
+    Cancel = True
+    Caption = 'Cancelar'
+    ModalResult = 2
+    TabOrder = 2
   end
   object QryIndicador: TFDQuery
-    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
@@ -38,7 +58,8 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
       '  b.atr_sql_lista,'
       '  b.atr_sql_padrao,'
       '  b.atr_obrigatorio,'
-      '  b.atr_somente_leitura'
+      '  b.atr_somente_leitura,'
+      '  b.atr_ordem'
       'from'
       
         '  tab_ind_registro_atributo a join tab_ind_indicador_atributo b ' +
@@ -47,8 +68,8 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
       '  (a.reg_id = :reg_id)'
       'order by'
       '  b.atr_ordem')
-    Left = 96
-    Top = 80
+    Left = 40
+    Top = 104
     ParamData = <
       item
         Name = 'REG_ID'
@@ -141,6 +162,13 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
       ProviderFlags = []
       ReadOnly = True
     end
+    object QryIndicadorATR_ORDEM: TSmallintField
+      AutoGenerateValue = arDefault
+      FieldName = 'ATR_ORDEM'
+      Origin = 'ATR_ORDEM'
+      ProviderFlags = []
+      ReadOnly = True
+    end
   end
   object UpdtIndicador: TFDUpdateSQL
     Connection = DtmConexaoModulo.FDConnection
@@ -173,12 +201,12 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
       '  REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_IND_REGISTRO_ATRIBUTO'
       'WHERE RGA_ID = :RGA_ID')
-    Left = 128
-    Top = 80
+    Left = 72
+    Top = 104
   end
   object DtSrcIndicador: TDataSource
     DataSet = QryIndicador
-    Left = 160
-    Top = 80
+    Left = 104
+    Top = 104
   end
 end

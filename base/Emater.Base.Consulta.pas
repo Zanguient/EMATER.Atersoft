@@ -291,6 +291,9 @@ begin
     try
       DtSrcConsulta.DataSet.Edit;
       DtSrcConsulta.DataSet.FieldByName('REG_EXCLUIDO').AsBoolean := True;
+      DtSrcConsulta.DataSet.FieldByName('REG_REPLICADO').Value := 0;
+      DtSrcConsulta.DataSet.FieldByName('REG_USUARIO').AsString := DtmConexaoModulo.UsuarioLogin;
+      DtSrcConsulta.DataSet.FieldByName('REG_MODIFICADO').Value := Now;
       DtSrcConsulta.DataSet.Post;
       DtSrcConsulta.DataSet.Close;
       DtSrcConsulta.DataSet.Open;

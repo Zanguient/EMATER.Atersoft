@@ -541,10 +541,6 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
       end
     end
   end
-  object DtSrcComunidade: TDataSource [7]
-    Left = 128
-    Top = 376
-  end
   inherited DtSrcConsulta: TDataSource
     Left = 128
     Top = 280
@@ -1285,6 +1281,10 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
     Left = 96
     Top = 280
   end
+  object DtSrcComunidade: TDataSource
+    Left = 128
+    Top = 376
+  end
   object DtSrcCategoria: TDataSource
     DataSet = QryCategoria
     Left = 128
@@ -1304,7 +1304,6 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
     object dxComponentPrinterLink: TdxGridReportLink
       Active = True
       Component = GrdConsulta
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.GrayShading = True
@@ -1333,8 +1332,7 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = 'Listagem de Benefici'#225'rios de ATER'
-      ReportDocument.CreationDate = 42378.826117060180000000
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
+      ReportDocument.CreationDate = 42421.682611226850000000
       OptionsSize.AutoWidth = True
       OptionsView.FilterBar = False
       BuiltInReportLink = True

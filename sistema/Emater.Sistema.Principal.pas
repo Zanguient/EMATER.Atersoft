@@ -114,7 +114,8 @@ type
     BtnPROATER: TdxBarLargeButton;
     RbnTbIndicador: TdxRibbonTab;
     BrIndicador: TdxBar;
-    BtnIndicador: TdxBarLargeButton;
+    BtnIndicadorConsulta: TdxBarLargeButton;
+    BtnIndicadorAdicionar: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnBeneficiarioNovoClick(Sender: TObject);
     procedure BtnComunidadesClick(Sender: TObject);
@@ -177,7 +178,8 @@ type
     procedure BtnCreditoRacaClick(Sender: TObject);
     procedure BtnAgendaClick(Sender: TObject);
     procedure BtnPROATERClick(Sender: TObject);
-    procedure BtnIndicadorClick(Sender: TObject);
+    procedure BtnIndicadorConsultaClick(Sender: TObject);
+    procedure BtnIndicadorAdicionarClick(Sender: TObject);
   public
     procedure AtualizarBarraStatus(const BD, Usuario, Local: string);
     procedure RecenteRemover(const Controle: TdxRibbonBackstageViewGalleryControl; const ID: Int64);
@@ -208,7 +210,7 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Cadastro.Beneficiario.Busca, Emater.Sistema.Consts, Emater.Sistema.Ajuda, Emater.Credito.Consulta, Emater.Credito,
   Emater.Credito.Financeira, Emater.Credito.Linha, Emater.Credito.Tipo, Emater.Credito.Publico, Emater.Credito.Situacao,
   Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal, Emater.Proater.Consulta,
-  Emater.Indicador.Editor;
+  Emater.Indicador.Editor, Emater.Indicador.Selecao, Emater.Indicador.Consulta;
 
 { TForm1 }
 
@@ -639,17 +641,25 @@ begin
   TArquivo.Abrir(ExtractFilePath(Application.ExeName) + 'upf.pdf');
 end;
 
-procedure TFrmSistemaPrincipal.BtnIndicadorClick(Sender: TObject);
+procedure TFrmSistemaPrincipal.BtnIndicadorAdicionarClick(Sender: TObject);
 begin
   FrmIndicadorEditor := TFrmIndicadorEditor.Create(Self);
   try
     Screen.Cursor := crHourglass;
-    FrmIndicadorEditor.ShowModal;
+    FrmIndicadorEditor.Novo;
   finally
     FrmIndicadorEditor.Release;
     FrmIndicadorEditor := nil;
     Screen.Cursor := crDefault;
   end;
+end;
+
+procedure TFrmSistemaPrincipal.BtnIndicadorConsultaClick(Sender: TObject);
+begin
+  if FindFormByName('FrmIndicadorConsulta') then
+    GetFormByName('FrmIndicadorConsulta').BringToFront
+  else
+    FrmIndicadorConsulta := TFrmIndicadorConsulta.Create(Self);
 end;
 
 procedure TFrmSistemaPrincipal.BtnMetodologiaFuncionarioClick(Sender: TObject);

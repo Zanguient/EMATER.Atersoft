@@ -1,7 +1,7 @@
 object FrmSistemaPrincipal: TFrmSistemaPrincipal
   Tag = 1
-  Left = 279
-  Top = 118
+  Left = 291
+  Top = 96
   Hint = 'Janela principal do sistema.'
   Caption = 'SISATER Desktop'
   ClientHeight = 522
@@ -3081,6 +3081,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
+      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3125,7 +3126,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 3
     end
     object RbnTbIndicador: TdxRibbonTab
-      Active = True
       Caption = 'Indicadores'
       Groups = <
         item
@@ -3848,7 +3848,11 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'BtnIndicador'
+          ItemName = 'BtnIndicadorConsulta'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnIndicadorAdicionar'
         end>
       OneOnRow = True
       Row = 0
@@ -4666,15 +4670,25 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       SyncImageIndex = False
       ImageIndex = 151
     end
-    object BtnIndicador: TdxBarLargeButton
-      Caption = 'Indicadores'
+    object BtnIndicadorConsulta: TdxBarLargeButton
+      Caption = 'Consulta'
       Category = 13
-      Hint = 'Indicadores'
+      Hint = 'Consulta'
       Visible = ivAlways
-      LargeImageIndex = 2
-      OnClick = BtnIndicadorClick
+      LargeImageIndex = 30
+      OnClick = BtnIndicadorConsultaClick
       SyncImageIndex = False
-      ImageIndex = 151
+      ImageIndex = 186
+    end
+    object BtnIndicadorAdicionar: TdxBarLargeButton
+      Caption = 'Novo'
+      Category = 13
+      Hint = 'Novo'
+      Visible = ivAlways
+      LargeImageIndex = 31
+      OnClick = BtnIndicadorAdicionarClick
+      SyncImageIndex = False
+      ImageIndex = 187
     end
   end
   object dxSkinController: TdxSkinController

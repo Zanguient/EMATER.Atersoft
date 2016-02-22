@@ -2,9 +2,11 @@ inherited FrmIndicadorSelecao: TFrmIndicadorSelecao
   Left = 377
   Top = 166
   ActiveControl = DtEdtRegistro
+  BorderStyle = bsDialog
   Caption = 'Novo Indicador'
   ClientHeight = 453
   ClientWidth = 370
+  Position = poMainFormCenter
   OnShow = FormShow
   ExplicitLeft = 377
   ExplicitTop = 166
@@ -201,6 +203,12 @@ inherited FrmIndicadorSelecao: TFrmIndicadorSelecao
         DataType = ftString
         ParamType = ptInput
         Size = 50
+      end
+      item
+        Position = 4
+        Name = 'REGISTRO'
+        DataType = ftLargeint
+        ParamType = ptOutput
       end>
   end
 end

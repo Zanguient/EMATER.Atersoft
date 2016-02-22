@@ -33,7 +33,7 @@ end;
 function TMensagem.Confirmacao(const Msg: string): Boolean;
 begin
   Result := MessageBox(FHandle, PWideChar(Msg), PWideChar(CLASSE_LEGENDA_CONFIRMACAO),
-    MB_ICONQUESTION + MB_YESNO + MB_DEFBUTTON1) = IDYES;
+    MB_ICONEXCLAMATION + MB_YESNO + MB_DEFBUTTON1) = IDYES;
 end;
 
 function TMensagem.Confirmacao(const Msg: string; const NoIsDefault: Boolean): Boolean;

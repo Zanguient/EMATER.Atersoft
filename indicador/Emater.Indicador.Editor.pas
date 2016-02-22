@@ -8,7 +8,7 @@ uses
   FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.Client, FireDAC.Comp.DataSet, cxGraphics,
   cxControls, cxLookAndFeels, cxLookAndFeelPainters, dxSkinsCore, dxSkinOffice2013White, Vcl.ComCtrls, cxContainer, cxEdit, cxTreeView, cxScrollBox, cxTextEdit,
   Vcl.StdCtrls, cxDBEdit, cxCurrencyEdit, cxMaskEdit, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, dxCore, cxDateUtils, cxCalendar, cxMemo,
-  cxCheckBox, cxSpinEdit, cxTimeEdit, cxFormats, Vcl.Menus, cxButtons;
+  cxCheckBox, cxSpinEdit, cxTimeEdit, cxFormats, Vcl.Menus, cxButtons, dxSkinscxPCPainter, dxBarBuiltInMenu, cxPC;
 
 type
   TAtributoTipo = (atNenhum, atTextoLongo, atInteiro, atMoeda, atLogico, atReferencia, atData, atHora, atDataHora, atTextoCurto);
@@ -35,7 +35,29 @@ type
     QryIndicadorATR_ORDEM: TSmallintField;
     BtnOK: TcxButton;
     BtnCancelar: TcxButton;
-    procedure FormCreate(Sender: TObject);
+    PgCntrRegistro: TcxPageControl;
+    TbShtRegistro: TcxTabSheet;
+    QryRegistro: TFDQuery;
+    QryRegistroREG_ID: TLargeintField;
+    QryRegistroREG_DATA: TDateField;
+    QryRegistroIND_ID: TIntegerField;
+    QryRegistroUND_ID: TIntegerField;
+    QryRegistroREG_EXCLUIDO: TSmallintField;
+    QryRegistroREG_REPLICADO: TSmallintField;
+    QryRegistroREG_USUARIO: TStringField;
+    QryRegistroREG_MODIFICADO: TSQLTimeStampField;
+    QryRegistroUND_NOME: TStringField;
+    QryRegistroIND_DESCRICAO: TStringField;
+    QryRegistroIND_CHAVE: TStringField;
+    DtSrcRegistro: TDataSource;
+    Label1: TLabel;
+    DbEdtData: TcxDBTextEdit;
+    Label2: TLabel;
+    DbEdtIndicador: TcxDBTextEdit;
+    DbEdtEscritorio: TcxDBTextEdit;
+    Label3: TLabel;
+    DbEdtChave: TcxDBTextEdit;
+    Label4: TLabel;
   private
     FTopo: Integer;
     procedure CriarLegenda(const ACaption: string);
@@ -48,6 +70,10 @@ type
     procedure CriarLogico(const ID: Integer; ACaption: TCaption; AValue: Variant);
     procedure CriarHora(const ID: Integer; AValue: Variant);
     procedure CriarDataHora(const ID: Integer; AValue: Variant);
+  public
+    procedure Editar(const IDRegistro: Largeint);
+    procedure Novo;
+    procedure Visualizar(const ID: Largeint);
   const
     FEspaco = 5;
   end;
@@ -59,7 +85,7 @@ implementation
 
 {$R *.dfm}
 
-uses Emater.Conexao.Modulo;
+uses Emater.Conexao.Modulo, Emater.Indicador.Selecao;
 
 procedure TFrmIndicadorEditor.CriarData(const ID: Integer; AValue: Variant);
 var
@@ -237,11 +263,16 @@ begin
   FTopo := FTopo + TextoLongo.Height;
 end;
 
-procedure TFrmIndicadorEditor.FormCreate(Sender: TObject);
+procedure TFrmIndicadorEditor.Editar(const IDRegistro: Largeint);
 begin
-  inherited;
+  QryRegistro.Close;
+  QryRegistro.ParamByName('REG_ID').AsLargeInt := IDRegistro;
+  QryRegistro.Open;
 
+  QryIndicador.Close;
+  QryIndicador.ParamByName('REG_ID').AsLargeInt := IDRegistro;
   QryIndicador.Open;
+
   FTopo := 0;
   while not QryIndicador.EOF do
   begin
@@ -295,7 +326,33 @@ begin
 
     QryIndicador.Next;
   end;
+  ShowModal;
+end;
 
+procedure TFrmIndicadorEditor.Novo;
+begin
+  FrmIndicadorSelecao := TFrmIndicadorSelecao.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    if (FrmIndicadorSelecao.ShowModal = mrOk) then
+      Editar(FrmIndicadorSelecao.StrdPrcRegistrar.ParamByName('REGISTRO').AsLargeInt);
+  finally
+    FrmIndicadorSelecao.Release;
+    FrmIndicadorSelecao := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmIndicadorEditor.Visualizar(const ID: Largeint);
+var
+  I: Integer;
+begin
+  Editar(ID);
+  for I := 0 to ComponentCount - 1 do
+  begin
+    if (Components[I]  is TcxControl) then
+      TcxControl(Components[I]).Enabled := False;
+  end;
 end;
 
 initialization

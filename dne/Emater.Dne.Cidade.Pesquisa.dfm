@@ -28,7 +28,7 @@ inherited FrmDneCidadePesquisa: TFrmDneCidadePesquisa
     Caption = 'OK'
     Default = True
     OptionsImage.NumGlyphs = 2
-    TabOrder = 1
+    TabOrder = 2
     OnClick = BtnOKClick
   end
   object BtnCancelar: TcxButton
@@ -41,7 +41,7 @@ inherited FrmDneCidadePesquisa: TFrmDneCidadePesquisa
     Caption = 'Cancelar'
     ModalResult = 2
     OptionsImage.NumGlyphs = 2
-    TabOrder = 2
+    TabOrder = 3
   end
   object LkpCmbBxUF: TcxLookupComboBox
     Left = 8
@@ -71,7 +71,7 @@ inherited FrmDneCidadePesquisa: TFrmDneCidadePesquisa
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 1
     LookAndFeel.Kind = lfFlat
     LookAndFeel.NativeStyle = True
     object GrdMunicipioTbl: TcxGridDBTableView

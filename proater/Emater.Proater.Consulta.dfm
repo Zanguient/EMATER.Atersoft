@@ -146,7 +146,6 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       Properties.ListOptions.ShowHeader = False
       TabOrder = 0
       OnKeyPress = LkpCmbBxUnidadeKeyPress
-      ExplicitWidth = 609
       Width = 659
     end
   end
@@ -162,9 +161,6 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 7
-    ExplicitLeft = 547
-    ExplicitTop = 121
-    ExplicitHeight = 360
     object SplitterTop: TSplitter
       Left = 0
       Top = 200
@@ -352,10 +348,6 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       Styles.Selection = DtmRecursoModulo.cxStyleSelection
       Styles.ContentEven = DtmRecursoModulo.cxStyleEven
       TabOrder = 1
-      ExplicitLeft = 8
-      ExplicitTop = 208
-      ExplicitWidth = 241
-      ExplicitHeight = 241
       object DbTrLstSubprojetoDESCRICAO: TcxDBTreeListColumn
         DataBinding.FieldName = 'DESCRICAO'
         Width = 201
@@ -382,6 +374,49 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       0
       0
       0)
+    inherited BrFerramentas: TdxBar
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'BtnNovo'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnEditar'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnVisualizar'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnExcluir'
+        end
+        item
+          BeginGroup = True
+          Visible = True
+          ItemName = 'BtnImprimir'
+        end
+        item
+          BeginGroup = True
+          Visible = True
+          ItemName = 'BtnLimparResultado'
+        end
+        item
+          BeginGroup = True
+          Visible = True
+          ItemName = 'BtnAgrupamento'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnResumo'
+        end
+        item
+          BeginGroup = True
+          Visible = True
+          ItemName = 'BtnFechar'
+        end>
+    end
     inherited BtnNovo: TdxBarButton
       Description = 'Abre a janela e cria um novo registro de PROATER'
       Hint = 'Novo PROATER'
@@ -398,6 +433,53 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       Description = 'Exclui o PROATER atualmente selecionado'
       Hint = 'Excluir PROATER'
     end
+    object BtnImprimir: TdxBarButton [5]
+      Caption = 'Imprimir PROATER'
+      Category = 0
+      Hint = 'Imprimir PROATER'
+      Visible = ivAlways
+      ImageIndex = 156
+      PaintStyle = psCaptionGlyph
+      OnClick = BtnImprimirClick
+    end
+  end
+  inherited PopupMenuConsulta: TdxBarPopupMenu
+    ItemLinks = <
+      item
+        Visible = True
+        ItemName = 'BtnNovo'
+      end
+      item
+        Visible = True
+        ItemName = 'BtnEditar'
+      end
+      item
+        Visible = True
+        ItemName = 'BtnVisualizar'
+      end
+      item
+        Visible = True
+        ItemName = 'BtnExcluir'
+      end
+      item
+        BeginGroup = True
+        Visible = True
+        ItemName = 'BtnImprimir'
+      end
+      item
+        BeginGroup = True
+        Visible = True
+        ItemName = 'BtnLimparResultado'
+      end
+      item
+        BeginGroup = True
+        Visible = True
+        ItemName = 'BtnAgrupamento'
+      end
+      item
+        Visible = True
+        ItemName = 'BtnResumo'
+      end>
   end
   inherited QryConsulta: TFDQuery
     AfterRefresh = QryConsultaAfterRefresh

@@ -637,6 +637,7 @@ begin
           QryBeneficiarioCategoria.Last;
           QryBeneficiarioCategoria.Append;
           QryBeneficiarioCategoriaCAT_ID.Value := QryCategoriaDisponivelCAT_ID.Value;
+          QryBeneficiarioCategoriaCAT_MARCADO.Value := 140;
           QryBeneficiarioCategoriaCAT_DESCRICAO.Value := QryCategoriaDisponivelCAT_DESCRICAO.Value;
 
           DtmSistemaModulo.GravarAuditoriaInclusao(QryBeneficiarioCategoria, 'TAB_CAD_BENEFICIARIO_CATEGORIA', 'BCA_ID');
@@ -734,6 +735,7 @@ begin
       QryBeneficiarioDivisao.Last;
       QryBeneficiarioDivisao.Append;
       QryBeneficiarioDivisaoDIV_ID.Value := QryDivisaoDisponivelDIV_ID.Value;
+      QryBeneficiarioDivisaoDIV_MARCADO.Value := 140;
       QryBeneficiarioDivisaoDIV_DESCRICAO.Value := QryDivisaoDisponivelDIV_DESCRICAO.Value;
 
       DtmSistemaModulo.GravarAuditoriaInclusao(QryBeneficiarioDivisao, 'TAB_CAD_BENEFICIARIO_DIVISAO', 'BDI_ID');
@@ -1384,7 +1386,7 @@ end;
 procedure TFrmCadastroBeneficiario.QryBeneficiarioDivisaoAfterPost(DataSet: TDataSet);
 begin
   inherited;
-AplicarUltimaAlteracao;
+  AplicarUltimaAlteracao;
 end;
 
 procedure TFrmCadastroBeneficiario.QryBeneficiarioDivisaoNewRecord(DataSet: TDataSet);

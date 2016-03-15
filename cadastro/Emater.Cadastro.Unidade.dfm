@@ -344,7 +344,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui CAR (Cadastro de Ambiente Rural):'
             DataBinding.DataField = 'PRO_CAR'
             DataBinding.DataSource = DtSrcPrincipal
-            ParentBackground = False
             ParentColor = False
             Properties.ImmediatePost = True
             Properties.ValueChecked = '1'
@@ -380,7 +379,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui sistema de energia el'#233'trica:'
             DataBinding.DataField = 'PRO_ENERGIA_SITUACAO'
             DataBinding.DataSource = DtSrcPrincipal
-            ParentBackground = False
             ParentColor = False
             Properties.Alignment = taLeftJustify
             Properties.ImmediatePost = True
@@ -399,7 +397,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_ENERGIA_CONCESSIONARIA'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -415,7 +412,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_ENERGIA_OUTRAS'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -441,7 +437,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui sistema de abastecimento de '#225'gua:'
             DataBinding.DataField = 'PRO_AGUA_SITUACAO'
             DataBinding.DataSource = DtSrcPrincipal
-            ParentBackground = False
             ParentColor = False
             Properties.ImmediatePost = True
             Properties.ValueChecked = '1'
@@ -459,7 +454,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_CONCESSIONARIA'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -475,7 +469,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_POCO_ARTESIANO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -491,7 +484,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_POCO_AMAZONICO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -507,7 +499,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_RIO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -523,7 +514,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_OUTRAS'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -687,7 +677,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label13: TLabel
-          Tag = 2
           Left = 8
           Top = 67
           Width = 39
@@ -817,7 +806,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 8
-          Width = 277
+          Width = 281
         end
       end
       object GrpBxTerra: TcxGroupBox
@@ -1221,10 +1210,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benefici'#225'rios'
       ImageIndex = 6
       OnShow = TbShtBeneficiariosShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 511
       DesignSize = (
         801
         528)
@@ -1354,10 +1339,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benfeitorias'
       ImageIndex = 2
       OnShow = TbShtBenfeitoriasShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 511
       DesignSize = (
         801
         528)
@@ -1482,7 +1463,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
-        ExplicitWidth = 785
         DesignSize = (
           781
           74)
@@ -1547,7 +1527,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          ExplicitWidth = 401
           Width = 397
         end
         object DbEdtQuantidade: TcxDBSpinEdit
@@ -1686,7 +1665,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 6
-        ExplicitWidth = 785
         DesignSize = (
           781
           52)
@@ -1727,7 +1705,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Style.Font.Style = []
           Style.IsFontAssigned = True
           TabOrder = 1
-          ExplicitWidth = 495
           Width = 491
         end
         object DbEdtCPF: TcxDBTextEdit
@@ -1760,10 +1737,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ImageIndex = 3
       ParentFont = False
       OnShow = TbShtMaquinasShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 511
       DesignSize = (
         801
         528)
@@ -1888,7 +1861,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
-        ExplicitWidth = 785
         DesignSize = (
           781
           74)
@@ -1953,7 +1925,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          ExplicitWidth = 401
           Width = 397
         end
         object DbEdtMaquinaQtde: TcxDBSpinEdit
@@ -2081,10 +2052,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Semoventes'
       ImageIndex = 4
       OnShow = TbShtSemoventesShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 511
       DesignSize = (
         801
         528)
@@ -2184,7 +2151,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
-        ExplicitWidth = 785
         DesignSize = (
           781
           74)
@@ -2232,7 +2198,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcSemovente
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          ExplicitWidth = 673
           Width = 669
         end
         object DbEdtSemoventeQtde: TcxDBSpinEdit
@@ -3160,7 +3125,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       FieldName = 'PRO_ID'
       Origin = 'PRO_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalPRO_DENOMINACAO: TStringField
       DisplayLabel = 'Denomina'#231#227'o'
@@ -3338,46 +3302,52 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       DisplayLabel = #193'rea legal (ha)'
       FieldName = 'PRO_AREA_LEGAL'
       Origin = 'PRO_AREA_LEGAL'
+      DisplayFormat = ',##0.000'
     end
     object QryPrincipalPRO_AREA_REAL: TCurrencyField
       DisplayLabel = #193'rea real (ha)'
       FieldName = 'PRO_AREA_REAL'
       Origin = 'PRO_AREA_REAL'
       Required = True
+      DisplayFormat = ',##0.000'
     end
     object QryPrincipalPRO_AREA_NUA: TCurrencyField
       FieldName = 'PRO_AREA_NUA'
       Origin = 'PRO_AREA_NUA'
+      DisplayFormat = ',##0.000'
     end
     object QryPrincipalPRO_AREA_PASTAGEM: TCurrencyField
       FieldName = 'PRO_AREA_PASTAGEM'
       Origin = 'PRO_AREA_PASTAGEM'
+      DisplayFormat = ',##0.000'
     end
     object QryPrincipalPRO_AREA_PERMANENTE: TCurrencyField
       FieldName = 'PRO_AREA_PERMANENTE'
       Origin = 'PRO_AREA_PERMANENTE'
+      DisplayFormat = ',##0.000'
     end
     object QryPrincipalPRO_AREA_TEMPORARIA: TCurrencyField
       FieldName = 'PRO_AREA_TEMPORARIA'
       Origin = 'PRO_AREA_TEMPORARIA'
+      DisplayFormat = ',##0.000'
     end
     object QryPrincipalPRO_AREA_RESERVA: TCurrencyField
       FieldName = 'PRO_AREA_RESERVA'
       Origin = 'PRO_AREA_RESERVA'
+      DisplayFormat = ',##0.000'
     end
     object QryPrincipalPRO_AREA_OUTROS: TCurrencyField
       FieldName = 'PRO_AREA_OUTROS'
       Origin = 'PRO_AREA_OUTROS'
+      DisplayFormat = ',##0.000'
     end
     object QryPrincipalREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryPrincipalREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
       Origin = 'REG_REPLICADO'
-      Required = True
     end
     object QryPrincipalREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
@@ -3414,8 +3384,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     end
     object QryPrincipalOCT_ID: TIntegerField
       Alignment = taLeftJustify
+      DisplayLabel = 'Caracteriza'#231#227'o de dom'#237'nio'
       FieldName = 'OCT_ID'
       Origin = 'OCT_ID'
+      Required = True
     end
     object QryPrincipalDCT_ID: TIntegerField
       Alignment = taLeftJustify

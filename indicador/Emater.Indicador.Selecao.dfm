@@ -24,6 +24,7 @@ inherited FrmIndicadorSelecao: TFrmIndicadorSelecao
       'Para registrar um novo indicador, informe a data e selecione o i' +
       'ndicador desejado. Utilize o campo de filtro para localizar um i' +
       'ndicador mais rapidamente na lista.'
+    Transparent = True
     WordWrap = True
   end
   object Label2: TLabel

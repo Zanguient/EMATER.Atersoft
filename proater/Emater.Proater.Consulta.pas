@@ -65,6 +65,7 @@ type
     DbTrLstSubprojetoDESCRICAO: TcxDBTreeListColumn;
     DbTrLstSubprojetoQTDE: TcxDBTreeListColumn;
     SplitterTop: TSplitter;
+    BtnImprimir: TdxBarButton;
     procedure FormShow(Sender: TObject);
     procedure BtnConsultarClick(Sender: TObject);
     procedure LkpCmbBxUnidadeKeyPress(Sender: TObject; var Key: Char);
@@ -79,6 +80,7 @@ type
       AData: TcxEditValidateInfo);
     procedure QryConsultaAfterRefresh(DataSet: TDataSet);
     procedure QrySubProjetosMasterSetValues(DataSet: TFDDataSet);
+    procedure BtnImprimirClick(Sender: TObject);
   private
     procedure DefinirFiltros;
   public
@@ -93,7 +95,7 @@ implementation
 {$R *.dfm}
 
 uses Emater.Conexao.Modulo, Emater.Sistema.Consts, Emater.Sistema.Modulo, Emater.Recurso.Modulo, Emater.Classe.Log, Emater.Base.Consts,
-  Emater.Proater.Principal;
+  Emater.Proater.Principal, Emater.Relatorio.Proater;
 
 procedure TFrmProaterConsulta.FormCreate(Sender: TObject);
 begin
@@ -223,6 +225,23 @@ begin
     Screen.Cursor := crDefault;
     CodeSite.ExitMethod(Self.Name + '.BtnConsultarClick().');
   end;
+end;
+
+procedure TFrmProaterConsulta.BtnImprimirClick(Sender: TObject);
+var
+  S: string;
+begin
+  Screen.Cursor := crHourGlass;
+  FrmRelatorioProater := TFrmRelatorioProater.Create(Self);
+  try
+    S := QryConsultaPRO_PERIODO_INICIO.Text + ' a ' + QryConsultaPRO_PERIODO_FIM.Text + ' do município de ' + QryConsultaUND_NOME.Value;
+    FrmRelatorioProater.Preparar(QryConsultaPRO_ID.Value, S);
+  finally
+    FrmRelatorioProater.Release;
+    FrmRelatorioProater := nil;
+    Screen.Cursor := crDefault;
+  end;
+
 end;
 
 procedure TFrmProaterConsulta.BtnLimparParametrosClick(Sender: TObject);

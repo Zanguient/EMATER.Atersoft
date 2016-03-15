@@ -6,11 +6,15 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
   TextHeight = 13
   inherited LblTitulo: TLabel
     Width = 697
+    ExplicitWidth = 697
   end
   inherited GrdConsulta: TcxGrid
     Top = 150
     Width = 697
     Height = 323
+    ExplicitTop = 150
+    ExplicitWidth = 697
+    ExplicitHeight = 323
     inherited GrdConsultaTbl: TcxGridDBTableView
       DataController.KeyFieldNames = 'REG_ID'
       object GrdConsultaTblREG_DATA: TcxGridDBColumn
@@ -36,7 +40,8 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
   inherited PnlMain: TPanel
     Width = 697
     Height = 95
-    ExplicitWidth = 798
+    ExplicitLeft = 8
+    ExplicitWidth = 697
     ExplicitHeight = 95
     inherited LblValor: TLabel
       Width = 73
@@ -87,7 +92,7 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
       Left = 160
       Anchors = [akTop, akRight]
       EditValue = 2
-      ExplicitLeft = 262
+      ExplicitLeft = 160
     end
     inherited BtnConsultar: TcxButton
       Left = 606
@@ -95,7 +100,7 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
       Anchors = [akRight, akBottom]
       TabOrder = 6
       OnClick = BtnConsultarClick
-      ExplicitLeft = 708
+      ExplicitLeft = 606
       ExplicitTop = 28
     end
     inherited BtnLimparParametros: TcxButton
@@ -103,12 +108,12 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
       Top = 60
       Anchors = [akRight, akBottom]
       TabOrder = 7
-      ExplicitLeft = 708
+      ExplicitLeft = 606
       ExplicitTop = 60
     end
     inherited EdtValor: TcxTextEdit
       Anchors = [akLeft, akTop, akRight]
-      ExplicitWidth = 249
+      ExplicitWidth = 147
       Width = 147
     end
     object EdtDataInicio: TcxDateEdit
@@ -116,7 +121,6 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
       Top = 24
       Anchors = [akTop, akRight]
       TabOrder = 2
-      ExplicitLeft = 445
       Width = 113
     end
     object EdtDataFim: TcxDateEdit
@@ -124,7 +128,6 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
       Top = 24
       Anchors = [akTop, akRight]
       TabOrder = 3
-      ExplicitLeft = 565
       Width = 121
     end
     object LkpCmbBxUnidade: TcxLookupComboBox
@@ -151,12 +154,12 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
       Properties.ListOptions.ShowHeader = False
       Properties.ListSource = DtSrcIndicador
       TabOrder = 5
-      ExplicitWidth = 425
       Width = 323
     end
   end
   inherited BarDockControl: TdxBarDockControl
     Width = 697
+    ExplicitWidth = 697
   end
   inherited BarManager: TdxBarManager
     DockControlHeights = (

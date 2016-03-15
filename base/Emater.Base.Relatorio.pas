@@ -114,7 +114,11 @@ begin
   FSQLDetalhe := TStringList.Create;
   FBloqueado := False;
 
-  ActiveControl := CmbBxCampo;
+  if CmbBxCampo.CanFocus then
+    ActiveControl := CmbBxCampo
+  else
+    if BtnImprimir.CanFocus then
+      ActiveControl := BtnImprimir;
 end;
 
 procedure TFrmBaseRelatorio.FormDestroy(Sender: TObject);

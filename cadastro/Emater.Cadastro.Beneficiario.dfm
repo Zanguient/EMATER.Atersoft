@@ -2135,7 +2135,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 end>
               Properties.ListOptions.ShowHeader = False
               TabOrder = 1
-              ExplicitWidth = 413
               Width = 409
             end
             object DbLkpCmbBxOrigem: TcxDBLookupComboBox
@@ -2151,7 +2150,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 end>
               Properties.ListOptions.ShowHeader = False
               TabOrder = 5
-              ExplicitWidth = 205
               Width = 201
             end
             object DbEdtNIS: TcxDBMaskEdit
@@ -2317,6 +2315,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     object TbShtSecundaria: TcxTabSheet
       Caption = 'Unidade de Produ'#231#227'o Familiar'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         717
         512)
@@ -2343,6 +2345,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Integrante familiar'
           ImageIndex = 0
           OnShow = TbShtFamiliaShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2491,7 +2497,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               DataBinding.DataField = 'FAM_NOME'
               DataBinding.DataSource = DtSrcFamilia
               TabOrder = 1
-              ExplicitWidth = 415
               Width = 411
             end
             object DbEdtFamiliaRGNumero: TcxDBTextEdit
@@ -2609,7 +2614,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Properties.ListOptions.ShowHeader = False
               Properties.PostPopupValueOnTab = True
               TabOrder = 6
-              ExplicitWidth = 151
               Width = 147
             end
             object DbEdtFamiliaCPF: TcxDBMaskEdit
@@ -2960,6 +2964,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Caracteriza'#231#227'o da produ'#231#227'o'
           ImageIndex = 2
           OnShow = TbShtProducaoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -3938,6 +3946,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     Top = 232
   end
   object DtSrcDivisaoDisponivel: TDataSource [17]
+    DataSet = QryDivisaoDisponivel
     Left = 360
     Top = 264
   end
@@ -4040,7 +4049,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'BEN_ID'
       Origin = 'BEN_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalBEN_DATA: TDateField
       DisplayLabel = 'Data de registro:'
@@ -4183,7 +4191,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     object QryPrincipalREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryPrincipalREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
@@ -4193,7 +4200,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     object QryPrincipalREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
       Origin = 'REG_REPLICADO'
-      Required = True
     end
     object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
       FieldName = 'REG_MODIFICADO'
@@ -4268,7 +4274,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'BEN_MODIFICADO_USUARIO_NOME'
       Origin = 'BEN_MODIFICADO_USUARIO_NOME'
       ProviderFlags = []
-      ReadOnly = True
       Size = 153
     end
     object QryPrincipalCID_NOME_NATURALIDADE: TStringField
@@ -4276,7 +4281,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'CID_NOME_NATURALIDADE'
       Origin = 'CID_NOME_NATURALIDADE'
       ProviderFlags = []
-      ReadOnly = True
       Size = 85
     end
   end
@@ -4746,16 +4750,13 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     end
     object QryBeneficiarioCategoriaCAT_DESCRICAO: TStringField
       FieldName = 'CAT_DESCRICAO'
-      ReadOnly = True
       Size = 50
     end
     object QryBeneficiarioCategoriaREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryBeneficiarioCategoriaREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
-      Required = True
     end
     object QryBeneficiarioCategoriaREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
@@ -4766,7 +4767,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     end
     object QryBeneficiarioCategoriaCAT_MARCADO: TIntegerField
       FieldName = 'CAT_MARCADO'
-      ReadOnly = True
     end
   end
   object QryCategoriaDisponivel: TFDQuery
@@ -4901,7 +4901,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'DIV_DESCRICAO'
       Origin = 'DIV_DESCRICAO'
       ProviderFlags = []
-      ReadOnly = True
       Size = 50
     end
     object QryBeneficiarioDivisaoDIV_TIPO: TStringField
@@ -4909,7 +4908,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'DIV_TIPO'
       Origin = 'DIV_TIPO'
       ProviderFlags = []
-      ReadOnly = True
       FixedChar = True
       Size = 17
     end
@@ -4920,105 +4918,40 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'DIV_MARCADO'
       Origin = 'DIV_MARCADO'
       ProviderFlags = []
-      ReadOnly = True
     end
   end
   object UpdtBeneficiarioDivisao: TFDUpdateSQL
     Connection = DtmConexaoModulo.FDConnection
     InsertSQL.Strings = (
-      'INSERT INTO TAB_CAD_BENEFICIARIO'
-      '(BEN_ID, BEN_DATA, BEN_SITUACAO, BEN_NOME, '
-      '  BEN_NOME_MAE, BEN_APELIDO, BEN_MEMBROS, BEN_SEXO, '
-      '  BEN_NASCIMENTO, BEN_NACIONALIDADE, BEN_CPF, '
-      '  BEN_RG_NUMERO, BEN_RG_ORGAO, BEN_RG_DATA, '
-      '  BEN_RIBEIRINHO, BEN_ENDERECO, BEN_NUMERO, '
-      '  BEN_COMPLEMENTO, BEN_BAIRRO, BEN_CEP, BEN_TELEFONE, '
-      '  BEN_CELULAR, BEN_EMAIL, CID_ID_NATURALIDADE, '
-      '  CID_ID_ENDERECO, ECV_ID, ESC_ID, COM_ID, '
-      '  ORG_ID, FUN_ID, UND_ID, MOT_ID, REG_EXCLUIDO, '
-      '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO)'
+      'INSERT INTO TAB_CAD_BENEFICIARIO_DIVISAO'
+      '(BDI_ID, BEN_ID, DIV_ID, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
       
-        'VALUES (:NEW_BEN_ID, :NEW_BEN_DATA, :NEW_BEN_SITUACAO, :NEW_BEN_' +
-        'NOME, '
-      
-        '  :NEW_BEN_NOME_MAE, :NEW_BEN_APELIDO, :NEW_BEN_MEMBROS, :NEW_BE' +
-        'N_SEXO, '
-      '  :NEW_BEN_NASCIMENTO, :NEW_BEN_NACIONALIDADE, :NEW_BEN_CPF, '
-      '  :NEW_BEN_RG_NUMERO, :NEW_BEN_RG_ORGAO, :NEW_BEN_RG_DATA, '
-      '  :NEW_BEN_RIBEIRINHO, :NEW_BEN_ENDERECO, :NEW_BEN_NUMERO, '
-      
-        '  :NEW_BEN_COMPLEMENTO, :NEW_BEN_BAIRRO, :NEW_BEN_CEP, :NEW_BEN_' +
-        'TELEFONE, '
-      '  :NEW_BEN_CELULAR, :NEW_BEN_EMAIL, :NEW_CID_ID_NATURALIDADE, '
-      '  :NEW_CID_ID_ENDERECO, :NEW_ECV_ID, :NEW_ESC_ID, :NEW_COM_ID, '
-      
-        '  :NEW_ORG_ID, :NEW_FUN_ID, :NEW_UND_ID, :NEW_MOT_ID, :NEW_REG_E' +
-        'XCLUIDO, '
-      '  :NEW_REG_REPLICADO, :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+        'VALUES (:NEW_BDI_ID, :NEW_BEN_ID, :NEW_DIV_ID, :NEW_REG_EXCLUIDO' +
+        ', :NEW_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
     ModifySQL.Strings = (
-      'UPDATE TAB_CAD_BENEFICIARIO'
+      'UPDATE TAB_CAD_BENEFICIARIO_DIVISAO'
       
-        'SET BEN_ID = :NEW_BEN_ID, BEN_DATA = :NEW_BEN_DATA, BEN_SITUACAO' +
-        ' = :NEW_BEN_SITUACAO, '
-      '  BEN_NOME = :NEW_BEN_NOME, BEN_NOME_MAE = :NEW_BEN_NOME_MAE, '
+        'SET BDI_ID = :NEW_BDI_ID, BEN_ID = :NEW_BEN_ID, DIV_ID = :NEW_DI' +
+        'V_ID, '
       
-        '  BEN_APELIDO = :NEW_BEN_APELIDO, BEN_MEMBROS = :NEW_BEN_MEMBROS' +
-        ', '
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
       
-        '  BEN_SEXO = :NEW_BEN_SEXO, BEN_NASCIMENTO = :NEW_BEN_NASCIMENTO' +
-        ', '
-      
-        '  BEN_NACIONALIDADE = :NEW_BEN_NACIONALIDADE, BEN_CPF = :NEW_BEN' +
-        '_CPF, '
-      
-        '  BEN_RG_NUMERO = :NEW_BEN_RG_NUMERO, BEN_RG_ORGAO = :NEW_BEN_RG' +
-        '_ORGAO, '
-      
-        '  BEN_RG_DATA = :NEW_BEN_RG_DATA, BEN_RIBEIRINHO = :NEW_BEN_RIBE' +
-        'IRINHO, '
-      
-        '  BEN_ENDERECO = :NEW_BEN_ENDERECO, BEN_NUMERO = :NEW_BEN_NUMERO' +
-        ', '
-      
-        '  BEN_COMPLEMENTO = :NEW_BEN_COMPLEMENTO, BEN_BAIRRO = :NEW_BEN_' +
-        'BAIRRO, '
-      '  BEN_CEP = :NEW_BEN_CEP, BEN_TELEFONE = :NEW_BEN_TELEFONE, '
-      '  BEN_CELULAR = :NEW_BEN_CELULAR, BEN_EMAIL = :NEW_BEN_EMAIL, '
-      
-        '  CID_ID_NATURALIDADE = :NEW_CID_ID_NATURALIDADE, CID_ID_ENDEREC' +
-        'O = :NEW_CID_ID_ENDERECO, '
-      
-        '  ECV_ID = :NEW_ECV_ID, ESC_ID = :NEW_ESC_ID, COM_ID = :NEW_COM_' +
-        'ID, '
-      
-        '  ORG_ID = :NEW_ORG_ID, FUN_ID = :NEW_FUN_ID, UND_ID = :NEW_UND_' +
-        'ID, '
-      '  MOT_ID = :NEW_MOT_ID, REG_EXCLUIDO = :NEW_REG_EXCLUIDO, '
-      
-        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
-        'ARIO, '
-      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
-      'WHERE BEN_ID = :OLD_BEN_ID')
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
+      'WHERE BDI_ID = :OLD_BDI_ID')
     DeleteSQL.Strings = (
-      'DELETE FROM TAB_CAD_BENEFICIARIO'
-      'WHERE BEN_ID = :OLD_BEN_ID')
+      'DELETE FROM TAB_CAD_BENEFICIARIO_DIVISAO'
+      'WHERE BDI_ID = :OLD_BDI_ID')
     FetchRowSQL.Strings = (
       
-        'SELECT BEN_ID, BEN_DATA, BEN_SITUACAO, BEN_NOME, BEN_NOME_MAE, B' +
-        'EN_APELIDO, '
-      '  BEN_MEMBROS, BEN_SEXO, BEN_NASCIMENTO, BEN_NACIONALIDADE, '
-      
-        '  BEN_CPF, BEN_RG_NUMERO, BEN_RG_ORGAO, BEN_RG_DATA, BEN_RIBEIRI' +
-        'NHO, '
-      
-        '  BEN_ENDERECO, BEN_NUMERO, BEN_COMPLEMENTO, BEN_BAIRRO, BEN_CEP' +
-        ', '
-      '  BEN_TELEFONE, BEN_CELULAR, BEN_EMAIL, CID_ID_NATURALIDADE, '
-      '  CID_ID_ENDERECO, ECV_ID, ESC_ID, COM_ID, ORG_ID, FUN_ID, '
-      '  UND_ID, MOT_ID, REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
+        'SELECT BDI_ID, BEN_ID, DIV_ID, REG_EXCLUIDO, REG_REPLICADO, REG_' +
+        'USUARIO, '
       '  REG_MODIFICADO'
-      'FROM TAB_CAD_BENEFICIARIO'
-      'WHERE BEN_ID = :BEN_ID')
+      'FROM TAB_CAD_BENEFICIARIO_DIVISAO'
+      'WHERE BDI_ID = :BDI_ID')
     Left = 264
     Top = 264
   end
@@ -5321,7 +5254,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       end>
     object QryBeneficiarioDAPBDP_ID: TLargeintField
       FieldName = 'BDP_ID'
-      Required = True
     end
     object QryBeneficiarioDAPBDP_NIS: TStringField
       DisplayLabel = 'NIS'
@@ -5359,11 +5291,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     end
     object QryBeneficiarioDAPREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryBeneficiarioDAPREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
-      Required = True
     end
     object QryBeneficiarioDAPREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
@@ -5375,7 +5305,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     object QryBeneficiarioDAPDTP_DESCRICAO: TStringField
       DisplayLabel = 'Tipo de DAP'
       FieldName = 'DTP_DESCRICAO'
-      ReadOnly = True
       Size = 150
     end
   end

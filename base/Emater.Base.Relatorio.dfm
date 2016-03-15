@@ -12,7 +12,7 @@ inherited FrmBaseRelatorio: TFrmBaseRelatorio
   ExplicitLeft = 300
   ExplicitTop = 135
   ExplicitWidth = 594
-  ExplicitHeight = 472
+  ExplicitHeight = 473
   PixelsPerInch = 96
   TextHeight = 13
   object BtnImprimir: TcxButton
@@ -628,6 +628,7 @@ inherited FrmBaseRelatorio: TFrmBaseRelatorio
           Height = 13
           Caption = '&Modo de impress'#227'o:'
           FocusControl = CmbBxModo
+          Transparent = True
         end
         object LblCampo: TLabel
           Left = 8
@@ -636,6 +637,7 @@ inherited FrmBaseRelatorio: TFrmBaseRelatorio
           Height = 13
           Caption = '&Ordenar registros por:'
           FocusControl = CmbBxCampo
+          Transparent = True
         end
         object CmbBxModo: TcxComboBox
           Left = 304

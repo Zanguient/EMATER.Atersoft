@@ -75,6 +75,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtApresentacao: TcxTabSheet
           Caption = 'Apresenta'#231#227'o'
           ImageIndex = 0
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object DbMemoApresentacao: TcxDBMemo
             Left = 8
             Top = 48
@@ -106,6 +110,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtObservacao: TcxTabSheet
           Caption = 'Observa'#231#245'es'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object DbMemoObservacao: TcxDBMemo
             Left = 8
             Top = 48
@@ -196,6 +204,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtDiagnostico: TcxTabSheet
       Caption = 'Diagn'#243'stico do munic'#237'pio'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PgCntrlDiagnostico: TcxPageControl
         Left = 8
         Top = 8
@@ -211,6 +223,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtEstatistica: TcxTabSheet
           Caption = 'Estat'#237'sticas'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object BtnEstatistica: TcxButton
             Left = 8
             Top = 24
@@ -594,6 +610,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtCapacidade: TcxTabSheet
       Caption = 'Capacidade operacional do ESLOC'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PgCntrlCapacidade: TcxPageControl
         Left = 8
         Top = 8
@@ -1398,6 +1418,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtPlano: TcxTabSheet
       Caption = 'Plano de ATER do ESLOC'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PgCntrlPlano: TcxPageControl
         Left = 8
         Top = 8
@@ -3501,8 +3525,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       '  b.met_descricao'
       'from'
       
-        '  tab_prd_proater_qualificacao a join tab_prd_proater_metodologi' +
-        'a b on (a.met_id = b.met_id)'
+        '  tab_prd_proater_qualificacao a join tab_prd_metodo b on (a.met' +
+        '_id = b.met_id)'
       'where'
       '  (a.pro_id = :pro_id) and'
       '  (a.reg_excluido = 0)'
@@ -3968,7 +3992,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       '  a.spr_id, '
       '  a.met_id, '
       '  a.met_ano, '
-      '  a.met_quantidade, '
+      '  a.met_quantidade,'
       '  a.reg_excluido, '
       '  a.reg_replicado, '
       '  a.reg_usuario, '
@@ -3976,8 +4000,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       '  b.met_descricao'
       'from'
       
-        '  tab_prd_subprojeto_metodo a join tab_prd_proater_metodologia b' +
-        ' on (a.met_id = b.met_id)'
+        '  tab_prd_subprojeto_metodo a join tab_prd_metodo b on (a.met_id' +
+        ' = b.met_id)'
       'where'
       '  (a.spr_id = :spr_id) and'
       '  (a.reg_excluido = 0)'
@@ -4223,6 +4247,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     BeforePost = QrySubOrcamentoBeforePost
     OnNewRecord = QrySubOrcamentoNewRecord
     CachedUpdates = True
+    MasterSource = DtSrcSubProjeto
+    MasterFields = 'SPR_ID'
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
@@ -4282,6 +4308,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       FieldName = 'ORC_VALOR'
       Origin = 'ORC_VALOR'
       Required = True
+      DisplayFormat = ',##0.00'
+      EditFormat = '0.00'
       Precision = 18
       Size = 2
     end

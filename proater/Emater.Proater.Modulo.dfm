@@ -204,6 +204,7 @@ object DtmProaterModulo: TDtmProaterModulo
     Top = 112
   end
   object QryMetodologia: TFDQuery
+    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
@@ -217,7 +218,7 @@ object DtmProaterModulo: TDtmProaterModulo
       '  a.reg_usuario, '
       '  a.reg_modificado'
       'from'
-      '  tab_prd_proater_metodologia a'
+      '  tab_prd_metodo a'
       'where'
       '  (a.reg_excluido = 0)'
       'order by'
@@ -228,7 +229,7 @@ object DtmProaterModulo: TDtmProaterModulo
   object UpdtMetodologia: TFDUpdateSQL
     Connection = DtmConexaoModulo.FDConnection
     InsertSQL.Strings = (
-      'INSERT INTO TAB_PRD_PROATER_METODOLOGIA'
+      'INSERT INTO TAB_PRD_METODO'
       '(MET_ID, MET_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
       '  REG_USUARIO, REG_MODIFICADO)'
       
@@ -236,7 +237,7 @@ object DtmProaterModulo: TDtmProaterModulo
         '_REG_REPLICADO, '
       '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
     ModifySQL.Strings = (
-      'UPDATE TAB_PRD_PROATER_METODOLOGIA'
+      'UPDATE TAB_PRD_METODO'
       
         'SET MET_ID = :NEW_MET_ID, MET_DESCRICAO = :NEW_MET_DESCRICAO, RE' +
         'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
@@ -246,14 +247,14 @@ object DtmProaterModulo: TDtmProaterModulo
       '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
       'WHERE MET_ID = :OLD_MET_ID')
     DeleteSQL.Strings = (
-      'DELETE FROM TAB_PRD_PROATER_METODOLOGIA'
+      'DELETE FROM TAB_PRD_METODO'
       'WHERE MET_ID = :OLD_MET_ID')
     FetchRowSQL.Strings = (
       
-        'SELECT MET_ID, MET_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
-        'SUARIO, '
-      '  REG_MODIFICADO'
-      'FROM TAB_PRD_PROATER_METODOLOGIA'
+        'SELECT MET_ID, MET_DESCRICAO, MET_DETALHE, MET_TIPO, REG_EXCLUID' +
+        'O, '
+      '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
+      'FROM TAB_PRD_METODO'
       'WHERE MET_ID = :MET_ID')
     Left = 312
     Top = 64

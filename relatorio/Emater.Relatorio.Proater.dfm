@@ -5,6 +5,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
   ClientHeight = 433
   ExplicitLeft = 389
   ExplicitTop = 186
+  ExplicitHeight = 472
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
@@ -14,7 +15,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       end
       inherited GrpBxFiltro: TcxGroupBox
         Caption = 'PROATER'
-        ParentBackground = True
         object LblProater: TLabel
           Left = 32
           Top = 32
@@ -59,9 +59,24 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Visible = False
   end
   inherited FrxPrincipal: TfrxReport
-    ReportOptions.LastChange = 42444.478556134260000000
-    Left = 184
-    Top = 160
+    ReportOptions.LastChange = 42451.951545312500000000
+    ScriptText.Strings = (
+      'var'
+      '  N1: Integer;'
+      ''
+      'procedure MemoProgramaOnBeforePrint(Sender: TfrxComponent);'
+      'begin'
+      
+        '  if Engine.FinalPass then                                      ' +
+        '       '
+      '    N1 := N1 + 1;                              '
+      'end;'
+      ''
+      'begin'
+      ''
+      'end.')
+    Left = 24
+    Top = 208
     Datasets = <
       item
         DataSet = FrxDtStEmaterComissao
@@ -72,8 +87,28 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         DataSetName = 'Corpo da EMATER'
       end
       item
+        DataSet = FrxDtStProaterAcordo
+        DataSetName = 'PROATER - Acordo'
+      end
+      item
         DataSet = FrxDtStProaterComunidade
         DataSetName = 'PROATER - Comunidade'
+      end
+      item
+        DataSet = FrxDtStProaterCusto
+        DataSetName = 'PROATER - Despesa de custeio'
+      end
+      item
+        DataSet = FrxDtStProaterEquipamento
+        DataSetName = 'PROATER - Equipamento'
+      end
+      item
+        DataSet = FrxDtStProaterFuncionario
+        DataSetName = 'PROATER - Funcion'#225'rio'
+      end
+      item
+        DataSet = FrxDtStProaterMobiliario
+        DataSetName = 'PROATER - Mobili'#225'rio'
       end
       item
         DataSet = FrxDtStPotencial
@@ -82,6 +117,34 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       item
         DataSet = FrxDtStProater
         DataSetName = 'PROATER - Principal'
+      end
+      item
+        DataSet = FrxDtStQualificacao
+        DataSetName = 'PROATER - Qualifica'#231#227'o'
+      end
+      item
+        DataSet = FrxDtStSubProjeto
+        DataSetName = 'PROATER - Subprojeto'
+      end
+      item
+        DataSet = FrxDtStSubComunidade
+        DataSetName = 'PROATER - Subprojeto - Comunidade'
+      end
+      item
+        DataSet = FrxDtStSubMeta
+        DataSetName = 'PROATER - Subprojeto - Metas'
+      end
+      item
+        DataSet = FrxDtStSubMetodo
+        DataSetName = 'PROATER - Subprojeto - M'#233'todo'
+      end
+      item
+        DataSet = FrxDtStSubOrcamento
+        DataSetName = 'PROATER - Subprojeto - Or'#231'amento'
+      end
+      item
+        DataSet = FrxDtStProaterVeiculo
+        DataSetName = 'PROATER - Ve'#237'culo'
       end>
     Variables = <
       item
@@ -207,7 +270,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         end
       end
     end
-    object PageCorpo: TfrxReportPage
+    object PageOrgao: TfrxReportPage
       PaperWidth = 210.000000000000000000
       PaperHeight = 297.000000000000000000
       PaperSize = 9
@@ -215,7 +278,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       RightMargin = 15.000000000000000000
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
-      object MasterDataCorpo: TfrxMasterData
+      object MasterDataOrgao: TfrxMasterData
         FillType = ftBrush
         Height = 173.858380000000000000
         Top = 151.181200000000000000
@@ -3204,7 +3267,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           TransparentColor = clWhite
         end
       end
-      object PageHeaderCorpo: TfrxPageHeader
+      object PageHeaderOrgao: TfrxPageHeader
         FillType = ftBrush
         Height = 71.811070000000000000
         Top = 18.897650000000000000
@@ -3733,7 +3796,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           ParentFont = False
         end
       end
-      object PageFooterCorpo: TfrxPageFooter
+      object PageFooterOrgao: TfrxPageFooter
         FillType = ftBrush
         Height = 15.118120000000000000
         Top = 385.512060000000000000
@@ -4352,7 +4415,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       object PageFooterComissao: TfrxPageFooter
         FillType = ftBrush
         Height = 15.118120000000000000
-        Top = 257.008040000000000000
+        Top = 272.126160000000000000
         Width = 680.315400000000000000
         object Memo14: TfrxMemoView
           Width = 181.417440000000000000
@@ -4429,7 +4492,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       end
       object MasterDataComissao: TfrxMasterData
         FillType = ftBrush
-        Height = 45.354360000000000000
+        Height = 60.472440944881900000
         Top = 151.181200000000000000
         Width = 680.315400000000000000
         DataSet = FrxDtStEmaterComissao
@@ -4437,8 +4500,8 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         RowCount = 0
         Stretched = True
         object ComissodeelaboraoPAR_VALOR: TfrxMemoView
-          Top = 26.456710000000000000
-          Width = 718.110700000000000000
+          Top = 41.574803150000000000
+          Width = 680.315400000000000000
           Height = 18.897650000000000000
           StretchMode = smActualHeight
           DataField = 'PAR_VALOR'
@@ -4447,6 +4510,19 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           LineSpacing = 8.000000000000000000
           Memo.UTF8W = (
             '[Comiss'#227'o de elabora'#231#227'o."PAR_VALOR"]')
+        end
+        object Memo75: TfrxMemoView
+          Width = 136.063080000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 8.000000000000000000
+          Memo.UTF8W = (
+            'COMISS'#195'O')
+          ParentFont = False
         end
       end
     end
@@ -5073,12 +5149,17 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         RowCount = 1
         Stretched = True
         object Memo25: TfrxMemoView
-          Top = 26.456710000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
           LineSpacing = 8.000000000000000000
           Memo.UTF8W = (
             'SUM'#193'RIO')
+          ParentFont = False
         end
       end
     end
@@ -5739,7 +5820,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         end
       end
     end
-    object PageDiagnostico: TfrxReportPage
+    object PageCorpo: TfrxReportPage
       PaperWidth = 210.000000000000000000
       PaperHeight = 297.000000000000000000
       PaperSize = 9
@@ -5747,7 +5828,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       RightMargin = 15.000000000000000000
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
-      object PageHeaderDiagnostico: TfrxPageHeader
+      object PageHeaderCorpo: TfrxPageHeader
         FillType = ftBrush
         Height = 71.811070000000000000
         Top = 18.897650000000000000
@@ -6276,10 +6357,10 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           ParentFont = False
         end
       end
-      object PageFooterDiagnostico: TfrxPageFooter
+      object PageFooterCorpo: TfrxPageFooter
         FillType = ftBrush
         Height = 15.118120000000000000
-        Top = 351.496290000000000000
+        Top = 997.795920000000000000
         Width = 680.315400000000000000
         object Memo36: TfrxMemoView
           Width = 181.417440000000000000
@@ -6362,6 +6443,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Child = FrxPrincipal.ChildDiagnostico
         DataSet = FrxDtStProater
         DataSetName = 'PROATER - Principal'
+        KeepChild = True
         RowCount = 0
         Stretched = True
         object Memo40: TfrxMemoView
@@ -6412,7 +6494,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       end
       object ChildDiagnostico: TfrxChild
         FillType = ftBrush
-        Height = 18.897650000000000000
+        Height = 41.574830000000000000
         Top = 272.126160000000000000
         Width = 680.315400000000000000
         Stretched = True
@@ -6420,6 +6502,362 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 680.315400000000000000
           Height = 18.897650000000000000
           Page = FrxPrincipal.PageSubreportDiagnostico
+        end
+      end
+      object ChildCapacidade: TfrxChild
+        FillType = ftBrush
+        Height = 41.574803150000000000
+        Top = 430.866420000000000000
+        Width = 680.315400000000000000
+        Stretched = True
+        object SubreportCapacidade: TfrxSubreport
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Page = FrxPrincipal.PageSubreportCapacidade
+        end
+      end
+      object MasterDataCapacidade: TfrxMasterData
+        FillType = ftBrush
+        Height = 71.811038270000000000
+        Top = 336.378170000000000000
+        Width = 680.315400000000000000
+        Child = FrxPrincipal.ChildCapacidade
+        DataSet = FrxDtStProaterFuncionario
+        DataSetName = 'PROATER - Funcion'#225'rio'
+        KeepChild = True
+        RowCount = 0
+        Stretched = True
+        object Memo71: TfrxMemoView
+          Width = 680.315400000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            '2. CAPACIDADE OPERACIONAL DO ESCRIT'#211'RIO LOCAL DA EMATER - PAR'#193)
+          ParentFont = False
+        end
+        object Memo72: TfrxMemoView
+          Top = 49.133858267716500000
+          Width = 332.598640000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            '2.1. Recursos humanos')
+          ParentFont = False
+        end
+      end
+      object MasterDataPlano: TfrxMasterData
+        FillType = ftBrush
+        Height = 332.598613150000000000
+        Top = 540.472790000000000000
+        Width = 680.315400000000000000
+        Child = FrxPrincipal.ChildPlano
+        DataSet = FrxDtStSubProjeto
+        DataSetName = 'PROATER - Subprojeto'
+        KeepChild = True
+        KeepHeader = True
+        RowCount = 0
+        Stretched = True
+        object MemoPrograma: TfrxMemoView
+          Top = 30.236208270000000000
+          Width = 52.913420000000000000
+          Height = 113.385885350000000000
+          OnBeforePrint = 'MemoProgramaOnBeforePrint'
+          AllowHTMLTags = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapY = 11.000000000000000000
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '<b>3.[N1].</b>')
+          ParentFont = False
+          WordWrap = False
+          Formats = <
+            item
+            end
+            item
+            end>
+        end
+        object Memo123: TfrxMemoView
+          Left = 52.913420000000000000
+          Top = 68.031540000000000000
+          Width = 90.708720000000000000
+          Height = 37.795300000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            'Projeto')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo124: TfrxMemoView
+          Left = 143.622140000000000000
+          Top = 68.031540000000000000
+          Width = 536.693260000000000000
+          Height = 37.795275590000000000
+          DataField = 'PRJ_NOME'
+          DataSet = FrxDtStSubProjeto
+          DataSetName = 'PROATER - Subprojeto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Subprojeto."PRJ_NOME"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo125: TfrxMemoView
+          Left = 52.913420000000000000
+          Top = 105.826840000000000000
+          Width = 90.708720000000000000
+          Height = 37.795300000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            'Subprojeto')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo126: TfrxMemoView
+          Left = 143.622140000000000000
+          Top = 105.826840000000000000
+          Width = 536.693260000000000000
+          Height = 37.795300000000000000
+          DataField = 'SPR_NOME'
+          DataSet = FrxDtStSubProjeto
+          DataSetName = 'PROATER - Subprojeto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Subprojeto."SPR_NOME"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo127: TfrxMemoView
+          Left = 52.913420000000000000
+          Top = 30.236240000000000000
+          Width = 90.708720000000000000
+          Height = 37.795300000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            'Programa')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo128: TfrxMemoView
+          Left = 143.622140000000000000
+          Top = 30.236240000000000000
+          Width = 536.693260000000000000
+          Height = 37.795275590551200000
+          DataField = 'PRG_NOME'
+          DataSet = FrxDtStSubProjeto
+          DataSetName = 'PROATER - Subprojeto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Subprojeto."PRG_NOME"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo136: TfrxMemoView
+          Top = 181.417413150000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          StretchMode = smActualHeight
+          DataField = 'SPR_JUSTIFICATIVA'
+          DataSet = FrxDtStSubProjeto
+          DataSetName = 'PROATER - Subprojeto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haBlock
+          LineSpacing = 8.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Subprojeto."SPR_JUSTIFICATIVA"]')
+          ParentFont = False
+        end
+        object Memo137: TfrxMemoView
+          Top = 154.960730000000000000
+          Width = 136.063080000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 8.000000000000000000
+          Memo.UTF8W = (
+            'a) Justificativa')
+          ParentFont = False
+        end
+        object Memo138: TfrxMemoView
+          Top = 264.567073150000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          StretchMode = smActualHeight
+          DataField = 'SPR_OBJETIVO_GERAL'
+          DataSet = FrxDtStSubProjeto
+          DataSetName = 'PROATER - Subprojeto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haBlock
+          LineSpacing = 8.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Subprojeto."SPR_OBJETIVO_GERAL"]')
+          ParentFont = False
+        end
+        object Memo139: TfrxMemoView
+          Top = 211.653680000000000000
+          Width = 136.063080000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 8.000000000000000000
+          Memo.UTF8W = (
+            'b) Objetivos:')
+          ParentFont = False
+        end
+        object Memo140: TfrxMemoView
+          Top = 241.889920000000000000
+          Width = 136.063080000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 8.000000000000000000
+          Memo.UTF8W = (
+            'b.1) Geral')
+          ParentFont = False
+        end
+        object Memo141: TfrxMemoView
+          Top = 313.700963150000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          StretchMode = smActualHeight
+          DataField = 'SPR_OBJETIVO_ESPECIFICO'
+          DataSet = FrxDtStSubProjeto
+          DataSetName = 'PROATER - Subprojeto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haBlock
+          LineSpacing = 8.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Subprojeto."SPR_OBJETIVO_ESPECIFICO"]')
+          ParentFont = False
+        end
+        object Memo142: TfrxMemoView
+          Top = 291.023810000000000000
+          Width = 136.063080000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 8.000000000000000000
+          Memo.UTF8W = (
+            'b.2) Espec'#237'ficos')
+          ParentFont = False
+        end
+      end
+      object ChildPlano: TfrxChild
+        FillType = ftBrush
+        Height = 41.574803150000000000
+        Top = 895.748610000000000000
+        Width = 680.315400000000000000
+        object SubreportPlano: TfrxSubreport
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Page = FrxPrincipal.Page2
+        end
+      end
+      object HeaderPlano: TfrxHeader
+        FillType = ftBrush
+        Height = 22.677180000000000000
+        Top = 495.118430000000000000
+        Width = 680.315400000000000000
+        object Memo122: TfrxMemoView
+          Width = 680.315400000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            '3. PLANO DE ASSIT'#202'NCIA T'#201'CNICA E EXTENS'#195'O RURAL DO ESLOC')
+          ParentFont = False
         end
       end
     end
@@ -6438,6 +6876,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Width = 680.315400000000000000
         DataSet = FrxDtStProaterComunidade
         DataSetName = 'PROATER - Comunidade'
+        KeepHeader = True
         RowCount = 0
         object PROATERComunidadeCOM_NOME: TfrxMemoView
           Width = 226.771800000000000000
@@ -6641,6 +7080,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Width = 680.315400000000000000
         DataSet = FrxDtStPotencial
         DataSetName = 'PROATER - Potencial'
+        KeepHeader = True
         RowCount = 0
         Stretched = True
         object Memo51: TfrxMemoView
@@ -6794,45 +7234,1772 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           VAlign = vaCenter
         end
       end
+      object MasterDataAcordo: TfrxMasterData
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 457.323130000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStProaterAcordo
+        DataSetName = 'PROATER - Acordo'
+        KeepFooter = True
+        KeepHeader = True
+        RowCount = 0
+        Stretched = True
+        object Memo59: TfrxMemoView
+          Width = 71.811070000000000000
+          Height = 30.236240000000000000
+          StretchMode = smMaxHeight
+          AllowHTMLTags = True
+          DataField = 'PRA_TIPO'
+          DataSet = FrxDtStProaterAcordo
+          DataSetName = 'PROATER - Acordo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Acordo."PRA_TIPO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo60: TfrxMemoView
+          Left = 283.464750000000000000
+          Width = 143.622140000000000000
+          Height = 30.236240000000000000
+          StretchMode = smMaxHeight
+          DataField = 'PRA_OBJETIVO'
+          DataSet = FrxDtStProaterAcordo
+          DataSetName = 'PROATER - Acordo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Acordo."PRA_OBJETIVO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo61: TfrxMemoView
+          Left = 427.086890000000000000
+          Width = 170.078850000000000000
+          Height = 30.236240000000000000
+          StretchMode = smMaxHeight
+          DataField = 'PRA_ACAO'
+          DataSet = FrxDtStProaterAcordo
+          DataSetName = 'PROATER - Acordo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Acordo."PRA_ACAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo67: TfrxMemoView
+          Left = 71.811070000000000000
+          Width = 211.653680000000000000
+          Height = 30.236240000000000000
+          StretchMode = smMaxHeight
+          AllowHTMLTags = True
+          DataField = 'PRA_DESCRICAO'
+          DataSet = FrxDtStProaterAcordo
+          DataSetName = 'PROATER - Acordo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Acordo."PRA_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo69: TfrxMemoView
+          Left = 597.165740000000000000
+          Width = 83.149660000000000000
+          Height = 30.236240000000000000
+          StretchMode = smMaxHeight
+          AllowHTMLTags = True
+          DataField = 'PRA_SITUACAO'
+          DataSet = FrxDtStProaterAcordo
+          DataSetName = 'PROATER - Acordo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Acordo."PRA_SITUACAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object HeaderAcordo: TfrxHeader
+        FillType = ftBrush
+        Height = 83.149660000000000000
+        Top = 351.496290000000000000
+        Width = 680.315400000000000000
+        object Memo62: TfrxMemoView
+          Top = 18.897650000000000000
+          Width = 680.315400000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            '1.4. Acordos, conv'#234'nios e parcerias')
+          ParentFont = False
+        end
+        object Memo63: TfrxMemoView
+          Top = 52.913420000000000000
+          Width = 71.811070000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            'Tipo')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo64: TfrxMemoView
+          Left = 283.464750000000000000
+          Top = 52.913420000000000000
+          Width = 143.622140000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Objetivos')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo65: TfrxMemoView
+          Left = 427.086890000000000000
+          Top = 52.913420000000000000
+          Width = 170.078850000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'A'#231#245'es previstas')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo66: TfrxMemoView
+          Left = 71.811070000000000000
+          Top = 52.913420000000000000
+          Width = 211.653680000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            'Descri'#231#227'o')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo68: TfrxMemoView
+          Left = 597.165740000000000000
+          Top = 52.913420000000000000
+          Width = 83.149660000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            'Situa'#231#227'o')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object FooterAcordo: TfrxFooter
+        FillType = ftBrush
+        Height = 22.677180000000000000
+        Top = 510.236550000000000000
+        Width = 680.315400000000000000
+      end
+    end
+    object PageSubreportCapacidade: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 15.000000000000000000
+      RightMargin = 15.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object MasterDataFuncionario: TfrxMasterData
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 102.047310000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStProaterFuncionario
+        DataSetName = 'PROATER - Funcion'#225'rio'
+        KeepHeader = True
+        RowCount = 0
+        object Memo70: TfrxMemoView
+          Width = 105.826840000000000000
+          Height = 30.236240000000000000
+          DataField = 'FUN_MATRICULA'
+          DataSet = FrxDtStProaterFuncionario
+          DataSetName = 'PROATER - Funcion'#225'rio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Funcion'#225'rio."FUN_MATRICULA"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo73: TfrxMemoView
+          Left = 105.826840000000000000
+          Width = 377.953000000000000000
+          Height = 30.236240000000000000
+          DataField = 'FUN_NOME'
+          DataSet = FrxDtStProaterFuncionario
+          DataSetName = 'PROATER - Funcion'#225'rio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Funcion'#225'rio."FUN_NOME"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo74: TfrxMemoView
+          Left = 483.779840000000000000
+          Width = 196.535560000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterFuncionario
+          DataSetName = 'PROATER - Funcion'#225'rio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Funcion'#225'rio."FST_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object HeaderFuncionario: TfrxHeader
+        FillType = ftBrush
+        Height = 60.472458030000000000
+        Top = 18.897650000000000000
+        Width = 680.315400000000000000
+        object Memo76: TfrxMemoView
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            '2.1.1. For'#231'a de trabalho atual')
+          ParentFont = False
+        end
+        object Memo77: TfrxMemoView
+          Top = 30.236218030000000000
+          Width = 105.826840000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            'Matr'#237'cula')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo78: TfrxMemoView
+          Left = 105.826840000000000000
+          Top = 30.236218030000000000
+          Width = 377.953000000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Nome')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo79: TfrxMemoView
+          Left = 483.779840000000000000
+          Top = 30.236218030000000000
+          Width = 196.535560000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Situa'#231#227'o funcional')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterDataDemanda: TfrxMasterData
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 253.228510000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStProaterFuncionario
+        DataSetName = 'PROATER - Funcion'#225'rio'
+        KeepHeader = True
+        RowCount = 0
+        object Memo80: TfrxMemoView
+          Width = 105.826840000000000000
+          Height = 30.236240000000000000
+          DataField = 'FUN_MATRICULA'
+          DataSet = FrxDtStProaterFuncionario
+          DataSetName = 'PROATER - Funcion'#225'rio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Funcion'#225'rio."FUN_MATRICULA"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo81: TfrxMemoView
+          Left = 105.826840000000000000
+          Width = 377.953000000000000000
+          Height = 30.236240000000000000
+          DataField = 'FUN_NOME'
+          DataSet = FrxDtStProaterFuncionario
+          DataSetName = 'PROATER - Funcion'#225'rio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Funcion'#225'rio."FUN_NOME"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo82: TfrxMemoView
+          Left = 483.779840000000000000
+          Width = 196.535560000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterFuncionario
+          DataSetName = 'PROATER - Funcion'#225'rio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Funcion'#225'rio."FST_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object HeaderDemanda: TfrxHeader
+        FillType = ftBrush
+        Height = 75.590565830000000000
+        Top = 154.960730000000000000
+        Width = 680.315400000000000000
+        object Memo83: TfrxMemoView
+          Top = 15.118107800000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            '2.1.2. Demanda de pessoal')
+          ParentFont = False
+        end
+        object Memo84: TfrxMemoView
+          Top = 45.354325830000000000
+          Width = 105.826840000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            'Matr'#237'cula')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo85: TfrxMemoView
+          Left = 105.826840000000000000
+          Top = 45.354325830000000000
+          Width = 377.953000000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Nome')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo86: TfrxMemoView
+          Left = 483.779840000000000000
+          Top = 45.354325830000000000
+          Width = 196.535560000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Situa'#231#227'o funcional')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterDataMobiliario: TfrxMasterData
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 404.409710000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStProaterMobiliario
+        DataSetName = 'PROATER - Mobili'#225'rio'
+        KeepHeader = True
+        RowCount = 0
+        object Memo88: TfrxMemoView
+          Width = 483.779840000000000000
+          Height = 30.236240000000000000
+          DataField = 'PRM_DESCRICAO'
+          DataSet = FrxDtStProaterMobiliario
+          DataSetName = 'PROATER - Mobili'#225'rio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Mobili'#225'rio."PRM_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo89: TfrxMemoView
+          Left = 483.779840000000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataField = 'PRM_QTDE_EXISTENTE'
+          DataSet = FrxDtStProaterMobiliario
+          DataSetName = 'PROATER - Mobili'#225'rio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[PROATER - Mobili'#225'rio."PRM_QTDE_EXISTENTE"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo87: TfrxMemoView
+          Left = 582.047620000000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataField = 'PRM_QTDE_NECESSARIA'
+          DataSet = FrxDtStProaterMobiliario
+          DataSetName = 'PROATER - Mobili'#225'rio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[PROATER - Mobili'#225'rio."PRM_QTDE_NECESSARIA"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object HeaderMobiliario: TfrxHeader
+        FillType = ftBrush
+        Height = 75.590600000000000000
+        Top = 306.141930000000000000
+        Width = 680.315400000000000000
+        object Memo90: TfrxMemoView
+          Top = 15.118107800000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            '2.2. Mobili'#225'rio')
+          ParentFont = False
+        end
+        object Memo92: TfrxMemoView
+          Top = 45.354325830000000000
+          Width = 483.779840000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Descri'#231#227'o')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo93: TfrxMemoView
+          Left = 483.779840000000000000
+          Top = 45.354325830000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Quantidade existente')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo94: TfrxMemoView
+          Left = 582.047620000000000000
+          Top = 45.354360000000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Quantidade necess'#225'ria')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterDataEquipamento: TfrxMasterData
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 555.590910000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStProaterEquipamento
+        DataSetName = 'PROATER - Equipamento'
+        KeepHeader = True
+        RowCount = 0
+        object Memo91: TfrxMemoView
+          Width = 483.779840000000000000
+          Height = 30.236240000000000000
+          DataField = 'PRE_DESCRICAO'
+          DataSet = FrxDtStProaterEquipamento
+          DataSetName = 'PROATER - Equipamento'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Equipamento."PRE_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo95: TfrxMemoView
+          Left = 483.779840000000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataField = 'PRE_QTDE_EXISTENTE'
+          DataSet = FrxDtStProaterEquipamento
+          DataSetName = 'PROATER - Equipamento'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[PROATER - Equipamento."PRE_QTDE_EXISTENTE"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo96: TfrxMemoView
+          Left = 582.047620000000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataField = 'PRE_QTDE_NECESSARIA'
+          DataSet = FrxDtStProaterEquipamento
+          DataSetName = 'PROATER - Equipamento'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[PROATER - Equipamento."PRE_QTDE_NECESSARIA"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object HeaderEquipamento: TfrxHeader
+        FillType = ftBrush
+        Height = 75.590600000000000000
+        Top = 457.323130000000000000
+        Width = 680.315400000000000000
+        object Memo97: TfrxMemoView
+          Top = 15.118107800000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            '2.3. Equipamentos')
+          ParentFont = False
+        end
+        object Memo98: TfrxMemoView
+          Top = 45.354325830000000000
+          Width = 483.779840000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Descri'#231#227'o')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo99: TfrxMemoView
+          Left = 483.779840000000000000
+          Top = 45.354325830000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Quantidade existente')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo100: TfrxMemoView
+          Left = 582.047620000000000000
+          Top = 45.354360000000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Quantidade necess'#225'ria')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterDataVeiculo: TfrxMasterData
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 706.772110000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStProaterVeiculo
+        DataSetName = 'PROATER - Ve'#237'culo'
+        KeepHeader = True
+        RowCount = 0
+        object Memo101: TfrxMemoView
+          Width = 325.039580000000000000
+          Height = 30.236240000000000000
+          DataField = 'VEI_DESCRICAO'
+          DataSet = FrxDtStProaterVeiculo
+          DataSetName = 'PROATER - Ve'#237'culo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Ve'#237'culo."VEI_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo102: TfrxMemoView
+          Left = 483.779840000000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataField = 'VEI_QTDE_EXISTENTE'
+          DataSet = FrxDtStProaterVeiculo
+          DataSetName = 'PROATER - Ve'#237'culo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[PROATER - Ve'#237'culo."VEI_QTDE_EXISTENTE"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo103: TfrxMemoView
+          Left = 582.047620000000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataField = 'VEI_QTDE_NECESSARIA'
+          DataSet = FrxDtStProaterVeiculo
+          DataSetName = 'PROATER - Ve'#237'culo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[PROATER - Ve'#237'culo."VEI_QTDE_NECESSARIA"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo109: TfrxMemoView
+          Left = 325.039580000000000000
+          Width = 158.740260000000000000
+          Height = 30.236240000000000000
+          DataField = 'VTP_DESCRICAO'
+          DataSet = FrxDtStProaterVeiculo
+          DataSetName = 'PROATER - Ve'#237'culo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Ve'#237'culo."VTP_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object HeaderVeiculo: TfrxHeader
+        FillType = ftBrush
+        Height = 75.590600000000000000
+        Top = 608.504330000000000000
+        Width = 680.315400000000000000
+        object Memo104: TfrxMemoView
+          Top = 15.118107800000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            '2.4. Ve'#237'culos')
+          ParentFont = False
+        end
+        object Memo105: TfrxMemoView
+          Top = 45.354325830000000000
+          Width = 325.039580000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Descri'#231#227'o')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo106: TfrxMemoView
+          Left = 483.779840000000000000
+          Top = 45.354325830000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Quantidade existente')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo107: TfrxMemoView
+          Left = 582.047620000000000000
+          Top = 45.354360000000000000
+          Width = 98.267780000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Quantidade necess'#225'ria')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo108: TfrxMemoView
+          Left = 325.039580000000000000
+          Top = 45.354360000000000000
+          Width = 158.740260000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Tipo')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterDataDespesa: TfrxMasterData
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 857.953310000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStProaterCusto
+        DataSetName = 'PROATER - Despesa de custeio'
+        KeepHeader = True
+        RowCount = 0
+        object Memo110: TfrxMemoView
+          Width = 521.575140000000000000
+          Height = 30.236240000000000000
+          DataField = 'PCT_DESCRICAO'
+          DataSet = FrxDtStProaterCusto
+          DataSetName = 'PROATER - Despesa de custeio'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Despesa de custeio."PCT_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo112: TfrxMemoView
+          Left = 521.575140000000000000
+          Width = 158.740260000000000000
+          Height = 30.236240000000000000
+          DataField = 'PRC_CUSTO'
+          DataSet = FrxDtStProaterCusto
+          DataSetName = 'PROATER - Despesa de custeio'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[PROATER - Despesa de custeio."PRC_CUSTO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object HeaderDespesa: TfrxHeader
+        FillType = ftBrush
+        Height = 75.590565830000000000
+        Top = 759.685530000000000000
+        Width = 680.315400000000000000
+        object Memo114: TfrxMemoView
+          Top = 15.118107800000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            
+              '2.5. Despesas de custeio do escrit'#243'rio local (m'#233'dia do 3'#186'. quadr' +
+              'imestre)')
+          ParentFont = False
+        end
+        object Memo115: TfrxMemoView
+          Top = 45.354325830000000000
+          Width = 521.575140000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Descri'#231#227'o fixo')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo116: TfrxMemoView
+          Left = 521.575140000000000000
+          Top = 45.354325830000000000
+          Width = 158.740260000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Valor mensal (R$)'
+            'M'#233'dia do 3'#186'. quadrimestre')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterDataQualificacao: TfrxMasterData
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 1009.134510000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStQualificacao
+        DataSetName = 'PROATER - Qualifica'#231#227'o'
+        KeepFooter = True
+        KeepHeader = True
+        RowCount = 0
+        object Memo111: TfrxMemoView
+          Width = 393.071120000000000000
+          Height = 30.236240000000000000
+          StretchMode = smMaxHeight
+          DataField = 'QUA_TEMATICA'
+          DataSet = FrxDtStQualificacao
+          DataSetName = 'PROATER - Qualifica'#231#227'o'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Qualifica'#231#227'o."QUA_TEMATICA"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo113: TfrxMemoView
+          Left = 574.488560000000000000
+          Width = 105.826840000000000000
+          Height = 30.236240000000000000
+          StretchMode = smMaxHeight
+          DataField = 'QUA_QTDE_TECNICO'
+          DataSet = FrxDtStQualificacao
+          DataSetName = 'PROATER - Qualifica'#231#227'o'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[PROATER - Qualifica'#231#227'o."QUA_QTDE_TECNICO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo121: TfrxMemoView
+          Left = 393.071120000000000000
+          Width = 181.417440000000000000
+          Height = 30.236240000000000000
+          StretchMode = smMaxHeight
+          DataField = 'MET_DESCRICAO'
+          DataSet = FrxDtStQualificacao
+          DataSetName = 'PROATER - Qualifica'#231#227'o'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Qualifica'#231#227'o."MET_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object HeaderQualificacao: TfrxHeader
+        FillType = ftBrush
+        Height = 75.590565830000000000
+        Top = 910.866730000000000000
+        Width = 680.315400000000000000
+        object Memo117: TfrxMemoView
+          Top = 15.118107800000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            '2.6. Necessidade de qualifica'#231#227'o pessoal')
+          ParentFont = False
+        end
+        object Memo118: TfrxMemoView
+          Top = 45.354325830000000000
+          Width = 393.071120000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Descri'#231#227'o fixo')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo119: TfrxMemoView
+          Left = 574.488560000000000000
+          Top = 45.354325830000000000
+          Width = 105.826840000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'N'#186'. de t'#233'cnicos')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo120: TfrxMemoView
+          Left = 393.071120000000000000
+          Top = 45.354360000000000000
+          Width = 181.417440000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Metodologia')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object FooterQualificacao: TfrxFooter
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 1062.047930000000000000
+        Width = 680.315400000000000000
+      end
+    end
+    object Page2: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 15.000000000000000000
+      RightMargin = 15.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object MasterDataMeta: TfrxMasterData
+        FillType = ftBrush
+        Height = 30.236240000000000000
+        Top = 113.385900000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStSubMeta
+        DataSetName = 'PROATER - Subprojeto - Metas'
+        KeepHeader = True
+        RowCount = 0
+        object Memo129: TfrxMemoView
+          Width = 461.102660000000000000
+          Height = 30.236240000000000000
+          DataField = 'MET_DESCRICAO'
+          DataSet = FrxDtStSubMeta
+          DataSetName = 'PROATER - Subprojeto - Metas'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Subprojeto - Metas."MET_DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo130: TfrxMemoView
+          Left = 461.102660000000000000
+          Width = 83.149660000000000000
+          Height = 30.236240000000000000
+          DataField = 'MET_QUANTIDADE'
+          DataSet = FrxDtStSubMeta
+          DataSetName = 'PROATER - Subprojeto - Metas'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[PROATER - Subprojeto - Metas."MET_QUANTIDADE"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo131: TfrxMemoView
+          Left = 544.252320000000000000
+          Width = 136.063080000000000000
+          Height = 30.236240000000000000
+          DataField = 'MET_UNIDADE'
+          DataSet = FrxDtStSubMeta
+          DataSetName = 'PROATER - Subprojeto - Metas'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            '[PROATER - Subprojeto - Metas."MET_UNIDADE"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object HeaderMeta: TfrxHeader
+        FillType = ftBrush
+        Height = 71.811048030000000000
+        Top = 18.897650000000000000
+        Width = 680.315400000000000000
+        object Memo132: TfrxMemoView
+          Top = 11.338590000000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            'c) Metas')
+          ParentFont = False
+        end
+        object Memo133: TfrxMemoView
+          Top = 41.574808030000000000
+          Width = 461.102660000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          Memo.UTF8W = (
+            'Descri'#231#227'o')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo134: TfrxMemoView
+          Left = 461.102660000000000000
+          Top = 41.574808030000000000
+          Width = 83.149660000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Quantidade')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo135: TfrxMemoView
+          Left = 544.252320000000000000
+          Top = 41.574808030000000000
+          Width = 136.063080000000000000
+          Height = 30.236240000000000000
+          DataSet = FrxDtStProaterComunidade
+          DataSetName = 'PROATER - Comunidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 4.000000000000000000
+          GapY = 2.000000000000000000
+          Memo.UTF8W = (
+            'Unidade de medida')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterDataMetodologia: TfrxMasterData
+        FillType = ftBrush
+        Height = 118.000000000000000000
+        Top = 230.551330000000000000
+        Width = 680.315400000000000000
+        DataSet = FrxDtStSubMetodo
+        DataSetName = 'PROATER - Subprojeto - M'#233'todo'
+        KeepHeader = True
+        RowCount = 0
+        object DBCross1: TfrxDBCrossView
+          Width = 385.000000000000000000
+          Height = 118.000000000000000000
+          AutoSize = False
+          DownThenAcross = True
+          ShowRowTotal = False
+          CellFields.Strings = (
+            'MET_QUANTIDADE')
+          ColumnFields.Strings = (
+            'MET_ANO')
+          DataSet = FrxDtStSubMetodo
+          DataSetName = 'PROATER - Subprojeto - M'#233'todo'
+          RowFields.Strings = (
+            'MET_DESCRICAO')
+          Memos = {
+            3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D227574
+            662D3822207374616E64616C6F6E653D226E6F223F3E3C63726F73733E3C6365
+            6C6C6D656D6F733E3C546672784D656D6F56696577204C6566743D2232323022
+            20546F703D223239382C3535313333222057696474683D223830222048656967
+            68743D22333022205265737472696374696F6E733D2232342220416C6C6F7745
+            787072657373696F6E733D2246616C73652220466F6E742E436861727365743D
+            22312220466F6E742E436F6C6F723D22302220466F6E742E4865696768743D22
+            2D31312220466F6E742E4E616D653D22417269616C2220466F6E742E5374796C
+            653D223022204672616D652E5479703D2231352220476170583D223322204761
+            70593D2233222048416C69676E3D22686152696768742220506172656E74466F
+            6E743D2246616C7365222056416C69676E3D22766143656E7465722220546578
+            743D2230222F3E3C546672784D656D6F56696577204C6566743D223132392220
+            546F703D223636222057696474683D22373822204865696768743D2232322220
+            5265737472696374696F6E733D2232342220416C6C6F7745787072657373696F
+            6E733D2246616C736522204672616D652E5479703D2231352220476170583D22
+            332220476170593D2233222048416C69676E3D2268615269676874222056416C
+            69676E3D22766143656E7465722220546578743D2230222F3E3C546672784D65
+            6D6F56696577204C6566743D223330302220546F703D223239382C3535313333
+            222057696474683D22363522204865696768743D223330222052657374726963
+            74696F6E733D2232342220416C6C6F7745787072657373696F6E733D2246616C
+            73652220466F6E742E436861727365743D22312220466F6E742E436F6C6F723D
+            22302220466F6E742E4865696768743D222D31312220466F6E742E4E616D653D
+            22417269616C2220466F6E742E5374796C653D223022204672616D652E547970
+            3D2231352220476170583D22332220476170593D2233222048416C69676E3D22
+            686152696768742220506172656E74466F6E743D2246616C7365222056416C69
+            676E3D22766143656E7465722220546578743D2230222F3E3C546672784D656D
+            6F56696577204C6566743D223230372220546F703D223636222057696474683D
+            22383122204865696768743D22323222205265737472696374696F6E733D2232
+            342220416C6C6F7745787072657373696F6E733D2246616C736522204672616D
+            652E5479703D2231352220476170583D22332220476170593D2233222048416C
+            69676E3D2268615269676874222056416C69676E3D22766143656E7465722220
+            546578743D2230222F3E3C2F63656C6C6D656D6F733E3C63656C6C6865616465
+            726D656D6F733E3C546672784D656D6F56696577204C6566743D22302220546F
+            703D2230222057696474683D223022204865696768743D223022205265737472
+            696374696F6E733D22382220416C6C6F7745787072657373696F6E733D224661
+            6C736522204672616D652E5479703D2231352220476170583D22332220476170
+            593D2233222056416C69676E3D22766143656E7465722220546578743D224D45
+            545F5155414E544944414445222F3E3C546672784D656D6F56696577204C6566
+            743D22302220546F703D2230222057696474683D223022204865696768743D22
+            3022205265737472696374696F6E733D22382220416C6C6F7745787072657373
+            696F6E733D2246616C736522204672616D652E5479703D223135222047617058
+            3D22332220476170593D2233222056416C69676E3D22766143656E7465722220
+            546578743D224D45545F5155414E544944414445222F3E3C2F63656C6C686561
+            6465726D656D6F733E3C636F6C756D6E6D656D6F733E3C546672784D656D6F56
+            696577204C6566743D223232302220546F703D223237372C3535313333222057
+            696474683D22383022204865696768743D22323122205265737472696374696F
+            6E733D2232342220416C6C6F7745787072657373696F6E733D2246616C736522
+            20466F6E742E436861727365743D22312220466F6E742E436F6C6F723D223022
+            20466F6E742E4865696768743D222D31312220466F6E742E4E616D653D224172
+            69616C2220466F6E742E5374796C653D223122204672616D652E5479703D2231
+            35222046696C6C2E4261636B436F6C6F723D2231343231313238382220476170
+            583D22332220476170593D2233222048416C69676E3D22686143656E74657222
+            20506172656E74466F6E743D2246616C7365222056416C69676E3D2276614365
+            6E7465722220546578743D22222F3E3C2F636F6C756D6E6D656D6F733E3C636F
+            6C756D6E746F74616C6D656D6F733E3C546672784D656D6F56696577204C6566
+            743D223330302220546F703D223237372C3535313333222057696474683D2236
+            3522204865696768743D22323122205265737472696374696F6E733D22382220
+            416C6C6F7745787072657373696F6E733D2246616C73652220466F6E742E4368
+            61727365743D22312220466F6E742E436F6C6F723D22302220466F6E742E4865
+            696768743D222D31312220466F6E742E4E616D653D22417269616C2220466F6E
+            742E5374796C653D223122204672616D652E5479703D223135222046696C6C2E
+            4261636B436F6C6F723D2231343231313238382220476170583D223322204761
+            70593D2233222048416C69676E3D22686143656E7465722220506172656E7446
+            6F6E743D2246616C7365222056416C69676E3D22766143656E74657222205465
+            78743D22546F74616C222F3E3C2F636F6C756D6E746F74616C6D656D6F733E3C
+            636F726E65726D656D6F733E3C546672784D656D6F56696577204C6566743D22
+            32302220546F703D223235302C3535313333222057696474683D223230302220
+            4865696768743D22323722205265737472696374696F6E733D22382220416C6C
+            6F7745787072657373696F6E733D2246616C73652220466F6E742E4368617273
+            65743D22312220466F6E742E436F6C6F723D22302220466F6E742E4865696768
+            743D222D31312220466F6E742E4E616D653D22417269616C2220466F6E742E53
+            74796C653D22312220466F6E742E5175616C6974793D22667150726F6F662220
+            4672616D652E5479703D223135222046696C6C2E4261636B436F6C6F723D2231
+            343231313238382220476170583D22332220476170593D2233222048416C6967
+            6E3D22686143656E7465722220506172656E74466F6E743D2246616C73652220
+            56416C69676E3D227661426F74746F6D2220546578743D224DC3A9746F646F73
+            2F54C3A9636E69636173222F3E3C546672784D656D6F56696577204C6566743D
+            223232302220546F703D223235302C3535313333222057696474683D22313435
+            22204865696768743D22323722205265737472696374696F6E733D2238222041
+            6C6C6F7745787072657373696F6E733D2246616C73652220466F6E742E436861
+            727365743D22312220466F6E742E436F6C6F723D22302220466F6E742E486569
+            6768743D222D31312220466F6E742E4E616D653D22417269616C2220466F6E74
+            2E5374796C653D223122204672616D652E5479703D223135222046696C6C2E42
+            61636B436F6C6F723D2231343231313238382220476170583D22332220476170
+            593D2233222048416C69676E3D22686143656E7465722220506172656E74466F
+            6E743D2246616C7365222056416C69676E3D22766143656E7465722220546578
+            743D225175616E746964616465222F3E3C546672784D656D6F56696577204C65
+            66743D22302220546F703D2230222057696474683D223022204865696768743D
+            223022205265737472696374696F6E733D2238222056697369626C653D224661
+            6C73652220416C6C6F7745787072657373696F6E733D2246616C736522204672
+            616D652E5479703D2231352220476170583D22332220476170593D2233222048
+            416C69676E3D22686143656E746572222056416C69676E3D22766143656E7465
+            722220546578743D22222F3E3C546672784D656D6F56696577204C6566743D22
+            32302220546F703D223237372C3535313333222057696474683D223230302220
+            4865696768743D22323122205265737472696374696F6E733D22382220416C6C
+            6F7745787072657373696F6E733D2246616C73652220466F6E742E4368617273
+            65743D22312220466F6E742E436F6C6F723D22302220466F6E742E4865696768
+            743D222D31332220466F6E742E4E616D653D22417269616C2220466F6E742E53
+            74796C653D223022204672616D652E5479703D22313122204672616D652E5769
+            6474683D22302C35222046696C6C2E4261636B436F6C6F723D22313432313132
+            38382220476170583D22332220476170593D2233222048416C69676E3D226861
+            43656E7465722220506172656E74466F6E743D2246616C7365222056416C6967
+            6E3D22766143656E7465722220546578743D22222F3E3C2F636F726E65726D65
+            6D6F733E3C726F776D656D6F733E3C546672784D656D6F56696577204C656674
+            3D2232302220546F703D223239382C3535313333222057696474683D22323030
+            22204865696768743D22333022205265737472696374696F6E733D2232342220
+            416C6C6F7745787072657373696F6E733D2246616C73652220466F6E742E4368
+            61727365743D22312220466F6E742E436F6C6F723D22302220466F6E742E4865
+            696768743D222D31312220466F6E742E4E616D653D22417269616C2220466F6E
+            742E5374796C653D223022204672616D652E5479703D2231352220476170583D
+            22332220476170593D22332220506172656E74466F6E743D2246616C73652220
+            56416C69676E3D22766143656E7465722220546578743D22222F3E3C2F726F77
+            6D656D6F733E3C726F77746F74616C6D656D6F733E3C546672784D656D6F5669
+            6577204C6566743D22302220546F703D223636222057696474683D2231323922
+            204865696768743D22323222205265737472696374696F6E733D223822205669
+            7369626C653D2246616C73652220416C6C6F7745787072657373696F6E733D22
+            46616C73652220466F6E742E436861727365743D22312220466F6E742E436F6C
+            6F723D22302220466F6E742E4865696768743D222D31332220466F6E742E4E61
+            6D653D22417269616C2220466F6E742E5374796C653D223122204672616D652E
+            5479703D2231352220476170583D22332220476170593D2233222048416C6967
+            6E3D22686143656E7465722220506172656E74466F6E743D2246616C73652220
+            56416C69676E3D22766143656E7465722220546578743D224772616E6420546F
+            74616C222F3E3C2F726F77746F74616C6D656D6F733E3C63656C6C66756E6374
+            696F6E733E3C6974656D20312F3E3C2F63656C6C66756E6374696F6E733E3C63
+            6F6C756D6E736F72743E3C6974656D20302F3E3C2F636F6C756D6E736F72743E
+            3C726F77736F72743E3C6974656D20302F3E3C2F726F77736F72743E3C2F6372
+            6F73733E}
+        end
+      end
+      object HeaderMetodologia: TfrxHeader
+        FillType = ftBrush
+        Height = 41.574808030000000000
+        Top = 166.299320000000000000
+        Width = 680.315400000000000000
+        object Memo146: TfrxMemoView
+          Top = 11.338590000000000000
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          LineSpacing = 6.000000000000000000
+          Memo.UTF8W = (
+            'd) Metodologias de ATER/Cronograma f'#237'sico de execu'#231#227'o')
+          ParentFont = False
+        end
+      end
     end
   end
   object QryEmaterCorpo: TFDQuery
+    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     SQL.Strings = (
       'select par_valor'
       'from tab_prd_proater_parametro'
       'where par_nome = '#39'EMATER_CORPO'#39)
-    Left = 248
-    Top = 160
+    Left = 88
+    Top = 208
   end
   object FrxDtStEmaterCorpo: TfrxDBDataset
     UserName = 'Corpo da EMATER'
     CloseDataSource = False
     DataSet = QryEmaterCorpo
     BCDToCurrency = False
-    Left = 216
-    Top = 160
+    Left = 56
+    Top = 208
   end
   object QryEmaterComissao: TFDQuery
+    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     SQL.Strings = (
       'select par_valor'
       'from tab_prd_proater_parametro'
       'where par_nome = '#39'EMATER_COMISSAO'#39)
-    Left = 248
-    Top = 192
+    Left = 88
+    Top = 240
   end
   object FrxDtStEmaterComissao: TfrxDBDataset
     UserName = 'Comiss'#227'o de elabora'#231#227'o'
     CloseDataSource = False
     DataSet = QryEmaterComissao
     BCDToCurrency = False
-    Left = 216
-    Top = 192
+    Left = 56
+    Top = 240
   end
   object QryProaterPrincipal: TFDQuery
+    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     SQL.Strings = (
@@ -6857,8 +9024,8 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       'where'
       '  (a.pro_id = :pro_id) and'
       '  (a.reg_excluido = 0)')
-    Left = 248
-    Top = 224
+    Left = 88
+    Top = 272
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -6872,10 +9039,11 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     CloseDataSource = False
     DataSet = QryProaterPrincipal
     BCDToCurrency = False
-    Left = 216
-    Top = 224
+    Left = 56
+    Top = 272
   end
   object QryProaterComunidade: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -6901,8 +9069,8 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       '  (a.reg_excluido = 0)'
       'order by'
       '  b.com_nome')
-    Left = 376
-    Top = 160
+    Left = 216
+    Top = 208
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -6917,25 +9085,27 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     CloseDataSource = False
     DataSet = QryProaterComunidade
     BCDToCurrency = False
-    Left = 344
-    Top = 160
+    Left = 184
+    Top = 208
   end
   object DtSrcProaterPrincipal: TDataSource
     DataSet = QryProaterPrincipal
-    Left = 280
-    Top = 224
+    Left = 120
+    Top = 272
   end
   object FrxDtStPotencial: TfrxDBDataset
     UserName = 'PROATER - Potencial'
     CloseDataSource = False
     DataSet = QryProaterPotencial
     BCDToCurrency = False
-    Left = 344
-    Top = 192
+    Left = 184
+    Top = 240
   end
   object QryProaterPotencial: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
+    DetailFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     FetchOptions.AssignedValues = [evCache]
@@ -6965,8 +9135,8 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       'where'
       '  (a.pro_id = :pro_id) and'
       '  (a.reg_excluido = 0)')
-    Left = 376
-    Top = 192
+    Left = 216
+    Top = 240
     ParamData = <
       item
         Name = 'PRO_ID'
@@ -6975,5 +9145,564 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Size = 8
         Value = 100000000017
       end>
+  end
+  object FrxDtStProaterAcordo: TfrxDBDataset
+    UserName = 'PROATER - Acordo'
+    CloseDataSource = False
+    DataSet = QryProaterAcordo
+    BCDToCurrency = False
+    Left = 184
+    Top = 272
+  end
+  object QryProaterAcordo: TFDQuery
+    Active = True
+    MasterSource = DtSrcProaterPrincipal
+    MasterFields = 'PRO_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.pra_id,'
+      '  case a.pra_tipo'
+      '    when 1 then '#39'Acordo'#39
+      '    when 2 then '#39'Conv'#234'nio'#39
+      '    when 3 then '#39'Parceria'#39
+      '  end as pra_tipo,'
+      '  a.pra_descricao, '
+      '  a.pra_objetivo, '
+      '  a.pra_acao, '
+      '  case a.pra_situacao'
+      '    when 1 then '#39'Previsto'#39
+      '    when 2 then '#39'Em andamento'#39
+      '  end as pra_situacao'
+      'from'
+      '  tab_prd_proater_acordo a'
+      'where'
+      '  (a.pro_id = :pro_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.pra_tipo, a.pra_descricao')
+    Left = 216
+    Top = 272
+    ParamData = <
+      item
+        Name = 'PRO_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Size = 8
+        Value = 100000000017
+      end>
+  end
+  object FrxDtStProaterFuncionario: TfrxDBDataset
+    UserName = 'PROATER - Funcion'#225'rio'
+    CloseDataSource = False
+    DataSet = QryProaterFuncionario
+    BCDToCurrency = False
+    Left = 280
+    Top = 208
+  end
+  object QryProaterFuncionario: TFDQuery
+    Active = True
+    MasterSource = DtSrcProaterPrincipal
+    MasterFields = 'PRO_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.prf_id,'
+      '  a.fun_id,'
+      '  b.fun_matricula,'
+      '  b.fun_nome,'
+      '  c.fst_descricao'
+      'from'
+      
+        '  tab_prd_proater_funcionario a join tab_pes_funcionario b on (a' +
+        '.fun_id = b.fun_id) left join'
+      '  tab_pes_funcao_situacao c on (b.fst_id = c.fst_id)'
+      'where'
+      '  (a.pro_id = :pro_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  b.fun_nome')
+    Left = 312
+    Top = 208
+    ParamData = <
+      item
+        Name = 'PRO_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Size = 8
+        Value = 100000000017
+      end>
+  end
+  object FrxDtStProaterMobiliario: TfrxDBDataset
+    UserName = 'PROATER - Mobili'#225'rio'
+    CloseDataSource = False
+    DataSet = QryProaterMobiliario
+    BCDToCurrency = False
+    Left = 280
+    Top = 240
+  end
+  object QryProaterMobiliario: TFDQuery
+    Active = True
+    MasterSource = DtSrcProaterPrincipal
+    MasterFields = 'PRO_ID'
+    DetailFields = 'PRO_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.prm_id,'
+      '  a.prm_descricao, '
+      '  a.prm_qtde_existente, '
+      '  a.prm_qtde_necessaria, '
+      '  a.pro_id'
+      'from'
+      '  tab_prd_proater_mobiliario a'
+      'where'
+      '  (a.pro_id = :pro_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.prm_descricao')
+    Left = 312
+    Top = 240
+    ParamData = <
+      item
+        Name = 'PRO_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Size = 8
+        Value = 100000000017
+      end>
+  end
+  object FrxDtStProaterEquipamento: TfrxDBDataset
+    UserName = 'PROATER - Equipamento'
+    CloseDataSource = False
+    DataSet = QryProaterEquipamento
+    BCDToCurrency = False
+    Left = 280
+    Top = 272
+  end
+  object QryProaterEquipamento: TFDQuery
+    Active = True
+    MasterSource = DtSrcProaterPrincipal
+    MasterFields = 'PRO_ID'
+    DetailFields = 'PRO_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.pre_id,'
+      '  a.pre_descricao, '
+      '  a.pre_qtde_existente, '
+      '  a.pre_qtde_necessaria, '
+      '  a.pro_id'
+      'from tab_prd_proater_equipamento a'
+      'where'
+      '  (a.pro_id = :pro_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.pre_descricao')
+    Left = 312
+    Top = 272
+    ParamData = <
+      item
+        Name = 'PRO_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Size = 8
+        Value = 100000000017
+      end>
+  end
+  object FrxDtStProaterVeiculo: TfrxDBDataset
+    UserName = 'PROATER - Ve'#237'culo'
+    CloseDataSource = False
+    DataSet = QryProaterVeiculo
+    BCDToCurrency = False
+    Left = 280
+    Top = 304
+  end
+  object QryProaterVeiculo: TFDQuery
+    Active = True
+    MasterSource = DtSrcProaterPrincipal
+    MasterFields = 'PRO_ID'
+    DetailFields = 'PRO_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.vei_id,'
+      '  a.vei_descricao, '
+      '  a.vei_qtde_existente, '
+      '  a.vei_qtde_necessaria, '
+      '  a.pro_id, '
+      '  a.vtp_id,'
+      '  b.vtp_descricao'
+      'from'
+      
+        '  tab_prd_proater_veiculo a join tab_prd_proater_veiculo_tipo  b' +
+        ' on (a.vtp_id = b.vtp_id)'
+      'where'
+      '  (a.pro_id = :pro_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.vei_descricao,'
+      '  b.vtp_descricao')
+    Left = 312
+    Top = 304
+    ParamData = <
+      item
+        Name = 'PRO_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Size = 8
+        Value = 100000000017
+      end>
+  end
+  object FrxDtStProaterCusto: TfrxDBDataset
+    UserName = 'PROATER - Despesa de custeio'
+    CloseDataSource = False
+    DataSet = QryProaterCusto
+    BCDToCurrency = False
+    Left = 280
+    Top = 336
+  end
+  object QryProaterCusto: TFDQuery
+    Active = True
+    MasterSource = DtSrcProaterPrincipal
+    MasterFields = 'PRO_ID'
+    DetailFields = 'PRO_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.prc_id,'
+      '  a.pro_id, '
+      '  a.pct_id, '
+      '  a.prc_custo,'
+      '  b.pct_descricao'
+      'from'
+      
+        '  tab_prd_proater_custo a join tab_prd_proater_custo_tipo b on (' +
+        'a.pct_id = b.pct_id)'
+      'where'
+      '  (a.pro_id = :pro_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  b.pct_descricao')
+    Left = 312
+    Top = 336
+    ParamData = <
+      item
+        Name = 'PRO_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Size = 8
+        Value = 100000000017
+      end>
+  end
+  object FrxDtStQualificacao: TfrxDBDataset
+    UserName = 'PROATER - Qualifica'#231#227'o'
+    CloseDataSource = False
+    DataSet = QryProaterQualificacao
+    BCDToCurrency = False
+    Left = 280
+    Top = 368
+  end
+  object QryProaterQualificacao: TFDQuery
+    Active = True
+    MasterSource = DtSrcProaterPrincipal
+    MasterFields = 'PRO_ID'
+    DetailFields = 'PRO_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.qua_id,'
+      '  a.qua_tematica, '
+      '  a.qua_qtde_tecnico, '
+      '  a.pro_id, '
+      '  a.met_id,'
+      '  b.met_descricao'
+      'from'
+      
+        '  tab_prd_proater_qualificacao a join tab_prd_metodo b on (a.met' +
+        '_id = b.met_id)'
+      'where'
+      '  (a.pro_id = :pro_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  b.met_descricao')
+    Left = 312
+    Top = 368
+    ParamData = <
+      item
+        Name = 'PRO_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Size = 8
+        Value = 100000000017
+      end>
+  end
+  object QrySubProjeto: TFDQuery
+    Active = True
+    CachedUpdates = True
+    MasterSource = DtSrcProaterPrincipal
+    MasterFields = 'PRO_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.spr_id,'
+      '  a.spr_data, '
+      '  a.spr_ano_mes_inicio, '
+      '  a.spr_ano_mes_fim, '
+      '  a.spr_nome, '
+      '  a.spr_justificativa, '
+      '  a.spr_objetivo_geral, '
+      '  a.spr_objetivo_especifico, '
+      '  a.prj_id, '
+      '  a.fun_id_responsavel, '
+      '  a.fun_id_substituto, '
+      '  a.pro_id,'
+      '  b.prj_nome, '
+      '  c.prg_nome, '
+      '  d.fun_nome as fun_responsavel,'
+      '  e.fun_nome as fun_substituto'
+      'from'
+      
+        '  tab_prd_subprojeto a join tab_prd_projeto b on (a.prj_id = b.p' +
+        'rj_id) join'
+      '  tab_prd_programa c on (b.prg_id = c.prg_id) left join'
+      
+        '  tab_pes_funcionario d on (a.fun_id_responsavel = d.fun_id) lef' +
+        't join'
+      '  tab_pes_funcionario e on (a.fun_id_substituto = e.fun_id)'
+      'where'
+      '  (a.pro_id = :pro_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  c.prg_nome, b.prj_nome, a.spr_nome')
+    Left = 408
+    Top = 208
+    ParamData = <
+      item
+        Name = 'PRO_ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+        Size = 8
+        Value = 100000000017
+      end>
+  end
+  object FrxDtStSubProjeto: TfrxDBDataset
+    UserName = 'PROATER - Subprojeto'
+    CloseDataSource = False
+    DataSet = QrySubProjeto
+    BCDToCurrency = False
+    Left = 376
+    Top = 208
+  end
+  object DtSrcSubProjeto: TDataSource
+    DataSet = QrySubProjeto
+    Left = 440
+    Top = 208
+  end
+  object QrySubMeta: TFDQuery
+    Active = True
+    CachedUpdates = True
+    MasterSource = DtSrcSubProjeto
+    MasterFields = 'SPR_ID'
+    DetailFields = 'SPR_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.met_id,'
+      '  a.met_descricao, '
+      '  a.met_quantidade, '
+      '  a.met_unidade, '
+      '  a.spr_id'
+      'from'
+      '  tab_prd_subprojeto_meta a'
+      'where'
+      '  (a.spr_id = :spr_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.met_descricao')
+    Left = 408
+    Top = 240
+    ParamData = <
+      item
+        Name = 'SPR_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = 100004792
+      end>
+  end
+  object QrySubMetodo: TFDQuery
+    Active = True
+    CachedUpdates = True
+    MasterSource = DtSrcSubProjeto
+    MasterFields = 'SPR_ID'
+    DetailFields = 'SPR_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
+      'select'
+      '  a.psm_id,'
+      '  a.spr_id, '
+      '  a.met_id, '
+      '  a.met_ano, '
+      '  a.met_quantidade,'
+      '  b.met_descricao'
+      'from'
+      
+        '  tab_prd_subprojeto_metodo a join tab_prd_metodo b on (a.met_id' +
+        ' = b.met_id)'
+      'where'
+      '  (a.spr_id = :spr_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  b.met_descricao, a.met_ano')
+    Left = 408
+    Top = 272
+    ParamData = <
+      item
+        Name = 'SPR_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = 100004792
+      end>
+  end
+  object QrySubComunidade: TFDQuery
+    CachedUpdates = True
+    MasterSource = DtSrcSubProjeto
+    MasterFields = 'SPR_ID'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
+      'select'
+      '  a.plc_id,'
+      '  a.plc_ano, '
+      '  a.plc_quantidade, '
+      '  a.com_id, '
+      '  a.cat_id, '
+      '  a.prd_id, '
+      '  a.spr_id,'
+      '  b.com_nome,'
+      '  c.cat_descricao,'
+      '  d.prd_descricao'
+      'from'
+      
+        '  tab_prd_subprojeto_comunidade a left join tab_cad_comunidade b' +
+        ' on (a.com_id = b.com_id) left join'
+      '  tab_cad_categoria c on (a.cat_id = c.cat_id) left join'
+      '  tab_cad_produto d on (a.prd_id = d.prd_id)'
+      'where'
+      '  (a.spr_id = :spr_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  b.com_nome, c.cat_descricao, d.prd_descricao, a.plc_ano')
+    Left = 408
+    Top = 304
+    ParamData = <
+      item
+        Name = 'SPR_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = 100004791
+      end>
+  end
+  object QrySubOrcamento: TFDQuery
+    CachedUpdates = True
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
+      'select'
+      '  a.orc_id,'
+      '  a.orc_fonte, '
+      '  a.orc_elemento, '
+      '  a.orc_ano, '
+      '  a.orc_valor, '
+      '  a.spr_id, '
+      '  a.reg_excluido, '
+      '  a.reg_replicado, '
+      '  a.reg_usuario, '
+      '  a.reg_modificado'
+      'from'
+      '  tab_prd_subprojeto_orcamento a'
+      'where'
+      '  (a.spr_id = :spr_id) and'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.orc_fonte, a.orc_elemento, a.orc_ano')
+    Left = 408
+    Top = 336
+    ParamData = <
+      item
+        Name = 'SPR_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+  end
+  object FrxDtStSubMeta: TfrxDBDataset
+    UserName = 'PROATER - Subprojeto - Metas'
+    CloseDataSource = False
+    DataSet = QrySubMeta
+    BCDToCurrency = False
+    Left = 376
+    Top = 240
+  end
+  object FrxDtStSubMetodo: TfrxDBDataset
+    UserName = 'PROATER - Subprojeto - M'#233'todo'
+    CloseDataSource = False
+    DataSet = QrySubMetodo
+    BCDToCurrency = False
+    Left = 376
+    Top = 272
+  end
+  object FrxDtStSubComunidade: TfrxDBDataset
+    UserName = 'PROATER - Subprojeto - Comunidade'
+    CloseDataSource = False
+    DataSet = QrySubComunidade
+    BCDToCurrency = False
+    Left = 376
+    Top = 304
+  end
+  object FrxDtStSubOrcamento: TfrxDBDataset
+    UserName = 'PROATER - Subprojeto - Or'#231'amento'
+    CloseDataSource = False
+    DataSet = QrySubOrcamento
+    BCDToCurrency = False
+    Left = 376
+    Top = 336
   end
 end

@@ -1,7 +1,7 @@
 inherited FrmProaterQualificacao: TFrmProaterQualificacao
   Left = 433
   Top = 175
-  ActiveControl = DbMemoDescricao
+  ActiveControl = DbLkpCmbBxMetodologia
   Caption = 'Necessidade de Qualifica'#231#227'o'
   ClientHeight = 420
   ClientWidth = 461
@@ -59,7 +59,7 @@ inherited FrmProaterQualificacao: TFrmProaterQualificacao
         Width = 425
       end
       object DbEdtQtdeExistente: TcxDBTextEdit
-        Left = 168
+        Left = 120
         Top = 204
         DataBinding.DataField = 'QUA_QTDE_TECNICO'
         DataBinding.DataSource = DtSrcQualificacao

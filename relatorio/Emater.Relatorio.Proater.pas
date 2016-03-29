@@ -48,6 +48,8 @@ type
     FrxDtStSubMetodo: TfrxDBDataset;
     FrxDtStSubComunidade: TfrxDBDataset;
     FrxDtStSubOrcamento: TfrxDBDataset;
+    FrxDtStResponsavel: TfrxDBDataset;
+    QrySubResponsavel: TFDQuery;
     procedure BtnImprimirClick(Sender: TObject);
   public
     procedure Preparar(const ID: Int64; const Periodo: string);

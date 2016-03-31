@@ -59,11 +59,14 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Visible = False
   end
   inherited FrxPrincipal: TfrxReport
-    ReportOptions.LastChange = 42458.483439062500000000
+    ReportOptions.LastChange = 42458.961084039400000000
     ScriptText.Strings = (
       'var'
       '  N1, N2: Integer;'
       '  SumarioPontos, SumarioTexto, SumarioPagina: String;'
+      
+        '  Lista: TStringList;                                           ' +
+        '     '
       ''
       'function StringOfChar(C: Char; Count: Integer): String;'
       'var'
@@ -81,30 +84,42 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         '                                       '
       'begin'
       '  if (Engine.FinalPass = False) then'
-      '    begin                                             '
+      '    begin'
+      '      if not (Lista.IndexOf(Texto) >= 0) then'
       
-        '      SumarioPontos := StringOfChar('#39'.'#39', 80 - Length(Texto));   ' +
-        '      '
-      '      if Negrito then                                        '
+        '        begin                                                   ' +
+        '                                                               '
       
-        '        SumarioTexto := SumarioTexto + '#39'<b>'#39' + Texto + '#39'</b>'#39' + ' +
-        'SumarioPontos + #13#10'
-      '      else'
+        '          Lista.Add(Texto);                                     ' +
+        '              '
       
-        '        SumarioTexto := SumarioTexto + Texto + SumarioPontos + #' +
-        '13#10;    '
+        '          SumarioPontos := StringOfChar('#39'.'#39', 80 - Length(Texto))' +
+        ';         '
+      
+        '          if Negrito then                                       ' +
+        ' '
+      
+        '            SumarioTexto := SumarioTexto + '#39'<b>'#39' + Texto + '#39'</b>' +
+        #39' + SumarioPontos + #13#10'
+      '          else'
+      
+        '            SumarioTexto := SumarioTexto + Texto + SumarioPontos' +
+        ' + #13#10;    '
       '                '
-      '      SumarioPontos := StringOfChar('#39'.'#39', 12 - Length(<Page>));'
-      '      if Negrito then            '
       
-        '        SumarioPagina := SumarioPagina + SumarioPontos + '#39'<b>'#39' +' +
-        ' IntToStr(<Page#>) + '#39'</b>'#39' + #13#10'
-      '      else'
+        '          SumarioPontos := StringOfChar('#39'.'#39', 12 - Length(<Page>)' +
+        ');'
+      '          if Negrito then            '
       
-        '        SumarioPagina := SumarioPagina + SumarioPontos + IntToSt' +
-        'r(<Page>) + #13#10;                             '
+        '            SumarioPagina := SumarioPagina + SumarioPontos + '#39'<b' +
+        '>'#39' + IntToStr(<Page#>) + '#39'</b>'#39' + #13#10'
+      '          else'
+      
+        '            SumarioPagina := SumarioPagina + SumarioPontos + Int' +
+        'ToStr(<Page#>) + #13#10;'
+      '        end;                                            '
       '    end;'
-      'end;              '
+      'end;'
       ''
       'procedure MemoProgramaOnBeforePrint(Sender: TfrxComponent);'
       'begin'
@@ -259,6 +274,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       '      MemoSumarioPagina.Text := '#39#39';         '
       '      SumarioTexto := '#39#39';'
       '      SumarioPagina := '#39#39';'
+      '      Lista.Clear;                                '
       '      N2 := 0;                          '
       '    end'
       '  else'
@@ -284,7 +300,9 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         'procedure MemoEstatisticasMunicipaisOnAfterPrint(Sender: TfrxCom' +
         'ponent);'
       'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
+      
+        '  InserirSumario('#39'   '#39' + TfrxMemoView(Sender).Lines[0], False); ' +
+        ' '
       'end;'
       ''
       'procedure MemoCapacidadeOnAfterPrint(Sender: TfrxComponent);'
@@ -296,7 +314,9 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         'procedure MemoRecursosHumanosOnAfterPrint(Sender: TfrxComponent)' +
         ';'
       'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
+      
+        '  InserirSumario('#39'   '#39' + TfrxMemoView(Sender).Lines[0], False); ' +
+        ' '
       'end;'
       ''
       'procedure MemoPlanoOnAfterPrint(Sender: TfrxComponent);'
@@ -304,69 +324,95 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       '  InserirSumario(TfrxMemoView(Sender).Lines[0], True);  '
       'end;'
       ''
-      
-        'procedure MemoBeneficiariosComunidadeOnAfterPrint(Sender: TfrxCo' +
-        'mponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
-      'procedure MemoProblemaOnAfterPrint(Sender: TfrxComponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
-      'procedure MemoAcordoOnAfterPrint(Sender: TfrxComponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
-      'procedure MemoForcaTrabalhoOnAfterPrint(Sender: TfrxComponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
-      'procedure MemoDemandaOnAfterPrint(Sender: TfrxComponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
-      'procedure MemoMobiliarioOnAfterPrint(Sender: TfrxComponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
-      'procedure MemoEquipamentosOnAfterPrint(Sender: TfrxComponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
-      'procedure MemoVeiculosOnAfterPrint(Sender: TfrxComponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
-      'procedure MemodespesasOnAfterPrint(Sender: TfrxComponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
-      'procedure MemoNecessidadeOnAfterPrint(Sender: TfrxComponent);'
-      'begin'
-      '  InserirSumario(TfrxMemoView(Sender).Lines[0], False);  '
-      'end;'
-      ''
       'procedure MemoProgramaOnAfterPrint(Sender: TfrxComponent);'
       'begin'
       '  N2 := N2 + 1;                                    '
       
-        '  InserirSumario('#39'3.'#39' + IntToStr(N2) + '#39'. Programa: '#39' + <PROATER' +
-        ' - Subprojeto."PRG_NOME">, False);         '
+        '  InserirSumario('#39'   3.'#39' + IntToStr(N2) + '#39'. Programa: '#39' + <PROA' +
+        'TER - Subprojeto."PRG_NOME">, False);         '
+      'end;'
+      ''
+      'procedure MasterDataDespesaOnAfterPrint(Sender: TfrxComponent);'
+      'begin'
+      '  InserirSumario('#39'   '#39' + MemoDespesas.Lines[0], False);  '
+      'end;'
+      ''
+      
+        'procedure FrxPrincipalOnReportPrint_inherited(Sender: TfrxCompon' +
+        'ent);'
+      'begin'
+      '  Lista.Free;                      '
+      'end;'
+      ''
+      'procedure MasterDataVeiculoOnAfterPrint(Sender: TfrxComponent);'
+      'begin'
+      '  InserirSumario('#39'   '#39' + MemoVeiculos.Lines[0], False);  '
+      'end;'
+      ''
+      
+        'procedure MasterDataQualificacaoOnAfterPrint(Sender: TfrxCompone' +
+        'nt);'
+      'begin'
+      '  InserirSumario('#39'   '#39' + MemoNecessidade.Lines[0], False);  '
+      'end;'
+      ''
+      
+        'procedure MasterDataEquipamentoOnAfterPrint(Sender: TfrxComponen' +
+        't);'
+      'begin'
+      '  InserirSumario('#39'   '#39' + MemoEquipamentos.Lines[0], False);  '
+      'end;'
+      ''
+      
+        'procedure MasterDataMobiliarioOnAfterPrint(Sender: TfrxComponent' +
+        ');'
+      'begin'
+      '  InserirSumario('#39'   '#39' + MemoMobiliario.Lines[0], False);  '
+      'end;'
+      ''
+      'procedure MasterDataDemandaOnAfterPrint(Sender: TfrxComponent);'
+      'begin'
+      '  InserirSumario('#39'        '#39' + MemoDemanda.Lines[0], False);  '
+      'end;'
+      ''
+      
+        'procedure MasterDataFuncionarioOnAfterPrint(Sender: TfrxComponen' +
+        't);'
+      'begin'
+      
+        '  InserirSumario('#39'        '#39' + MemoForcaTrabalho.Lines[0], False)' +
+        ';  '
+      'end;'
+      ''
+      'procedure MasterDataAcordoOnAfterPrint(Sender: TfrxComponent);'
+      'begin'
+      '  InserirSumario('#39'   '#39' + MemoAcordo.Lines[0], False);  '
+      'end;'
+      ''
+      
+        'procedure MasterDataPotencialOnAfterPrint(Sender: TfrxComponent)' +
+        ';'
+      'begin'
+      '  InserirSumario('#39'   '#39' + MemoProblema.Lines[0], False);  '
+      'end;'
+      ''
+      
+        'procedure MasterDataProaterComunidadeOnAfterPrint(Sender: TfrxCo' +
+        'mponent);'
+      'begin'
+      
+        '  InserirSumario('#39'   '#39' + MemoBeneficiariosComunidade.Lines[0], F' +
+        'alse);  '
       'end;'
       ''
       'begin'
-      ''
+      
+        '  Lista := TStringList.Create;                                  ' +
+        '                                                                ' +
+        '                                                                ' +
+        '                                        '
       'end.')
+    OnReportPrint = 'FrxPrincipalOnReportPrint_inherited'
     Left = 24
     Top = 208
     Datasets = <
@@ -474,8 +520,10 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
               ' Estado do Par'#225)
         end
         inherited MemoUnidade: TfrxMemoView
-          Top = 22.543299760000000000
+          Top = 18.763769760000000000
+          Height = 37.795290240000000000
           Visible = False
+          LineSpacing = 5.000000000000000000
           Memo.UTF8W = (
             'SISATER Dektop '#8211' Sistema de Acompanhamento de ATER'
             '[unidade]')
@@ -4064,14 +4112,15 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         end
         object Memo5: TfrxMemoView
           Left = 68.031540000000000000
-          Top = 21.677180000000000000
+          Top = 18.897637800000000000
           Width = 612.283860000000000000
-          Height = 34.015760240000000000
+          Height = 37.795290240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 5.000000000000000000
           Memo.UTF8W = (
             'SISATER Dektop '#8211' Sistema de Acompanhamento de ATER'
             '[unidade]')
@@ -4665,7 +4714,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         object Memo3: TfrxMemoView
           Left = 68.031540000000000000
           Width = 612.283860000000000000
-          Height = 15.118120000000000000
+          Height = 18.897637795275600000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -4680,14 +4729,15 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         end
         object Memo12: TfrxMemoView
           Left = 68.031540000000000000
-          Top = 21.677180000000000000
+          Top = 18.897637800000000000
           Width = 612.283860000000000000
-          Height = 34.015760240000000000
+          Height = 37.795290240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 5.000000000000000000
           Memo.UTF8W = (
             'SISATER Dektop '#8211' Sistema de Acompanhamento de ATER'
             '[unidade]')
@@ -4736,7 +4786,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Left = 585.827150000000000000
           Width = 94.488250000000000000
           Height = 15.118120000000000000
-          DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -8
@@ -4750,6 +4799,11 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           ParentFont = False
           WordWrap = False
           VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         object Memo16: TfrxMemoView
           Left = 181.417440000000000000
@@ -5331,14 +5385,15 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         end
         object Memo19: TfrxMemoView
           Left = 68.031540000000000000
-          Top = 21.677180000000000000
+          Top = 18.897637800000000000
           Width = 612.283860000000000000
-          Height = 34.015760240000000000
+          Height = 37.795290240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 5.000000000000000000
           Memo.UTF8W = (
             'SISATER Dektop '#8211' Sistema de Acompanhamento de ATER'
             '[unidade]')
@@ -5363,6 +5418,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         FillType = ftBrush
         Height = 15.118120000000000000
         Top = 272.126160000000000000
+        Visible = False
         Width = 680.315400000000000000
         object Memo21: TfrxMemoView
           Width = 181.417440000000000000
@@ -6002,14 +6058,15 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         end
         object Memo27: TfrxMemoView
           Left = 68.031540000000000000
-          Top = 21.677180000000000000
+          Top = 18.897637800000000000
           Width = 612.283860000000000000
-          Height = 34.015760240000000000
+          Height = 37.795290240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 5.000000000000000000
           Memo.UTF8W = (
             'SISATER Dektop '#8211' Sistema de Acompanhamento de ATER'
             '[unidade]')
@@ -6058,7 +6115,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Left = 585.827150000000000000
           Width = 94.488250000000000000
           Height = 15.118120000000000000
-          DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -8
@@ -6072,6 +6128,11 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           ParentFont = False
           WordWrap = False
           VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         object Memo31: TfrxMemoView
           Left = 181.417440000000000000
@@ -6106,6 +6167,11 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           ParentFont = False
           WordWrap = False
           VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end>
         end
       end
       object MasterDataApresentacao: TfrxMasterData
@@ -6660,14 +6726,15 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         end
         object Memo34: TfrxMemoView
           Left = 68.031540000000000000
-          Top = 21.677180000000000000
+          Top = 18.897637800000000000
           Width = 612.283860000000000000
-          Height = 34.015760240000000000
+          Height = 37.795290240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 5.000000000000000000
           Memo.UTF8W = (
             'SISATER Dektop '#8211' Sistema de Acompanhamento de ATER'
             '[unidade]')
@@ -7402,14 +7469,15 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         end
         object Memo42: TfrxMemoView
           Left = 68.031540000000000000
-          Top = 21.677180000000000000
+          Top = 18.897637800000000000
           Width = 612.283860000000000000
-          Height = 34.015760240000000000
+          Height = 37.795290240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 5.000000000000000000
           Memo.UTF8W = (
             'SISATER Dektop '#8211' Sistema de Acompanhamento de ATER'
             '[unidade]')
@@ -8326,14 +8394,15 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         end
         object Memo55: TfrxMemoView
           Left = 68.031540000000000000
-          Top = 21.677180000000000000
+          Top = 18.897637800000000000
           Width = 612.283860000000000000
-          Height = 34.015760240000000000
+          Height = 37.795290240000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 5.000000000000000000
           Memo.UTF8W = (
             'SISATER Dektop '#8211' Sistema de Acompanhamento de ATER'
             '[unidade]')
@@ -8450,6 +8519,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 139.842610000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataProaterComunidadeOnAfterPrint'
         DataSet = FrxDtStProaterComunidade
         DataSetName = 'PROATER - Comunidade'
         KeepHeader = True
@@ -8548,7 +8618,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Top = 18.897650000000000000
           Width = 680.315400000000000000
           Height = 37.795300000000000000
-          OnAfterPrint = 'MemoBeneficiariosComunidadeOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -8656,6 +8725,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 298.582870000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataPotencialOnAfterPrint'
         DataSet = FrxDtStPotencial
         DataSetName = 'PROATER - Potencial'
         KeepHeader = True
@@ -8736,7 +8806,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Top = 18.897650000000000000
           Width = 680.315400000000000000
           Height = 22.677180000000000000
-          OnAfterPrint = 'MemoProblemaOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -8818,6 +8887,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 457.323130000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataAcordoOnAfterPrint'
         DataSet = FrxDtStProaterAcordo
         DataSetName = 'PROATER - Acordo'
         KeepFooter = True
@@ -8943,7 +9013,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Top = 18.897650000000000000
           Width = 680.315400000000000000
           Height = 22.677180000000000000
-          OnAfterPrint = 'MemoAcordoOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -9081,6 +9150,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 102.047310000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataFuncionarioOnAfterPrint'
         DataSet = FrxDtStProaterFuncionario
         DataSetName = 'PROATER - Funcion'#225'rio'
         KeepHeader = True
@@ -9154,7 +9224,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         object MemoForcaTrabalho: TfrxMemoView
           Width = 680.315400000000000000
           Height = 18.897650000000000000
-          OnAfterPrint = 'MemoForcaTrabalhoOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -9235,6 +9304,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 253.228510000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataDemandaOnAfterPrint'
         DataSet = FrxDtStProaterFuncionario
         DataSetName = 'PROATER - Funcion'#225'rio'
         KeepHeader = True
@@ -9309,7 +9379,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Top = 15.118107800000000000
           Width = 680.315400000000000000
           Height = 18.897650000000000000
-          OnAfterPrint = 'MemoDemandaOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -9390,6 +9459,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 404.409710000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataMobiliarioOnAfterPrint'
         DataSet = FrxDtStProaterMobiliario
         DataSetName = 'PROATER - Mobili'#225'rio'
         KeepHeader = True
@@ -9468,7 +9538,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Top = 15.118107800000000000
           Width = 680.315400000000000000
           Height = 18.897650000000000000
-          OnAfterPrint = 'MemoMobiliarioOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -9552,6 +9621,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 555.590910000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataEquipamentoOnAfterPrint'
         DataSet = FrxDtStProaterEquipamento
         DataSetName = 'PROATER - Equipamento'
         KeepHeader = True
@@ -9630,7 +9700,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Top = 15.118107800000000000
           Width = 680.315400000000000000
           Height = 18.897650000000000000
-          OnAfterPrint = 'MemoEquipamentosOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -9714,6 +9783,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 706.772110000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataVeiculoOnAfterPrint'
         DataSet = FrxDtStProaterVeiculo
         DataSetName = 'PROATER - Ve'#237'culo'
         KeepHeader = True
@@ -9813,7 +9883,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Top = 15.118107800000000000
           Width = 680.315400000000000000
           Height = 18.897650000000000000
-          OnAfterPrint = 'MemoVeiculosOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -9919,6 +9988,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 857.953310000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataDespesaOnAfterPrint'
         DataSet = FrxDtStProaterCusto
         DataSetName = 'PROATER - Despesa de custeio'
         KeepHeader = True
@@ -9977,7 +10047,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Top = 15.118107800000000000
           Width = 680.315400000000000000
           Height = 18.897650000000000000
-          OnAfterPrint = 'MemodespesasOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -10041,6 +10110,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         Height = 30.236240000000000000
         Top = 1009.134510000000000000
         Width = 680.315400000000000000
+        OnAfterPrint = 'MasterDataQualificacaoOnAfterPrint'
         DataSet = FrxDtStQualificacao
         DataSetName = 'PROATER - Qualifica'#231#227'o'
         KeepFooter = True
@@ -10122,7 +10192,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Top = 15.118107800000000000
           Width = 680.315400000000000000
           Height = 18.897650000000000000
-          OnAfterPrint = 'MemoNecessidadeOnAfterPrint'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -15
@@ -11345,6 +11414,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     end
   end
   object QryEmaterCorpo: TFDQuery
+    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     SQL.Strings = (
@@ -11363,6 +11433,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 208
   end
   object QryEmaterComissao: TFDQuery
+    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     SQL.Strings = (
@@ -11381,6 +11452,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 240
   end
   object QryProaterPrincipal: TFDQuery
+    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     SQL.Strings = (
@@ -11424,6 +11496,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 272
   end
   object QryProaterComunidade: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11482,6 +11555,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 240
   end
   object QryProaterPotencial: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11534,6 +11608,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 272
   end
   object QryProaterAcordo: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -11582,6 +11657,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 208
   end
   object QryProaterFuncionario: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -11625,6 +11701,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 240
   end
   object QryProaterMobiliario: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11666,6 +11743,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 272
   end
   object QryProaterEquipamento: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11706,6 +11784,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 304
   end
   object QryProaterVeiculo: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11752,6 +11831,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 336
   end
   object QryProaterCusto: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11795,6 +11875,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 368
   end
   object QryProaterQualificacao: TFDQuery
+    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11831,6 +11912,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       end>
   end
   object QrySubProjeto: TFDQuery
+    Active = True
     CachedUpdates = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
@@ -11896,6 +11978,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 208
   end
   object QrySubMeta: TFDQuery
+    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
@@ -11931,6 +12014,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       end>
   end
   object QrySubMetodo: TFDQuery
+    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
@@ -11954,6 +12038,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       end>
   end
   object QrySubComunidade: TFDQuery
+    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
@@ -11977,6 +12062,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       end>
   end
   object QrySubOrcamento: TFDQuery
+    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
@@ -12039,6 +12125,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 368
   end
   object QrySubResponsavel: TFDQuery
+    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'

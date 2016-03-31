@@ -6,6 +6,7 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
   TextHeight = 13
   inherited LblTitulo: TLabel
     Width = 697
+    Caption = '      Consulta de Indicadores'
     ExplicitWidth = 697
   end
   inherited GrdConsulta: TcxGrid
@@ -40,7 +41,6 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
   inherited PnlMain: TPanel
     Width = 697
     Height = 95
-    ExplicitLeft = 8
     ExplicitWidth = 697
     ExplicitHeight = 95
     inherited LblValor: TLabel

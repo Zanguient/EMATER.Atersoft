@@ -8,7 +8,8 @@ uses
   FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.Client, FireDAC.Comp.DataSet, cxGraphics,
   cxControls, cxLookAndFeels, cxLookAndFeelPainters, dxSkinsCore, dxSkinOffice2013White, Vcl.ComCtrls, cxContainer, cxEdit, cxTreeView, cxScrollBox, cxTextEdit,
   Vcl.StdCtrls, cxDBEdit, cxCurrencyEdit, cxMaskEdit, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, dxCore, cxDateUtils, cxCalendar, cxMemo,
-  cxCheckBox, cxSpinEdit, cxTimeEdit, cxFormats, Vcl.Menus, cxButtons, dxSkinscxPCPainter, dxBarBuiltInMenu, cxPC;
+  cxCheckBox, cxSpinEdit, cxTimeEdit, cxFormats, Vcl.Menus, cxButtons, dxSkinscxPCPainter, dxBarBuiltInMenu, cxPC, Vcl.ExtCtrls, cxLabel, cxDBLabel,
+  dxGDIPlusClasses;
 
 type
   TAtributoTipo = (atNenhum, atTextoLongo, atInteiro, atMoeda, atLogico, atReferencia, atData, atHora, atDataHora, atTextoCurto);
@@ -51,15 +52,19 @@ type
     QryRegistroIND_CHAVE: TStringField;
     DtSrcRegistro: TDataSource;
     Label1: TLabel;
-    DbEdtData: TcxDBTextEdit;
     Label2: TLabel;
-    DbEdtIndicador: TcxDBTextEdit;
-    DbEdtEscritorio: TcxDBTextEdit;
     Label3: TLabel;
-    DbEdtChave: TcxDBTextEdit;
     Label4: TLabel;
+    LblTitulo: TLabel;
+    cxDBLabel1: TcxDBLabel;
+    cxDBLabel2: TcxDBLabel;
+    cxDBLabel3: TcxDBLabel;
+    cxDBLabel4: TcxDBLabel;
+    procedure QryRegistroAfterOpen(DataSet: TDataSet);
+    procedure FormShow(Sender: TObject);
   private
     FTopo: Integer;
+    FPrimeiroControle: TcxCustomEditContainer;
     procedure CriarLegenda(const ACaption: string);
     procedure CriarTextoCurto(const ID: Integer; AValue: Variant);
     procedure CriarMoeda(const ID: Integer; AValue: Variant);
@@ -70,12 +75,14 @@ type
     procedure CriarLogico(const ID: Integer; ACaption: TCaption; AValue: Variant);
     procedure CriarHora(const ID: Integer; AValue: Variant);
     procedure CriarDataHora(const ID: Integer; AValue: Variant);
+    procedure DefinirFoco(const FControle: TcxCustomEditContainer);
   public
     procedure Editar(const IDRegistro: Largeint);
     procedure Novo;
     procedure Visualizar(const ID: Largeint);
   const
     FEspaco = 5;
+    FLeft = 170;
   end;
 
 var
@@ -94,7 +101,7 @@ begin
   Data := TcxDateEdit.Create(Self);
   Data.Parent := cxScrollBox;
   Data.Top := FTopo;
-  Data.Left := 150;
+  Data.Left := FLeft;
   Data.Width := 120;
   Data.Tag := ID;
   Data.Properties.ShowTime := False;
@@ -102,6 +109,7 @@ begin
   if (AValue <> '') then
     Data.Date := AValue;
   FTopo := FTopo + Data.Height;
+  DefinirFoco(Data);
 end;
 
 procedure TFrmIndicadorEditor.CriarDataHora(const ID: Integer; AValue: Variant);
@@ -111,13 +119,14 @@ begin
   DataHora := TcxDateEdit.Create(Self);
   DataHora.Parent := cxScrollBox;
   DataHora.Top := FTopo;
-  DataHora.Left := 150;
+  DataHora.Left := FLeft;
   DataHora.Width := 120;
   DataHora.Tag := ID;
   DataHora.Properties.Kind := ckDateTime;
   if (AValue <> '') then
     DataHora.Date := AValue;
   FTopo := FTopo + DataHora.Height;
+  DefinirFoco(DataHora);
 end;
 
 procedure TFrmIndicadorEditor.CriarHora(const ID: Integer; AValue: Variant);
@@ -127,13 +136,14 @@ begin
   Hora := TcxTimeEdit.Create(Self);
   Hora.Parent := cxScrollBox;
   Hora.Top := FTopo;
-  Hora.Left := 150;
+  Hora.Left := FLeft;
   Hora.Width := 120;
   Hora.Tag := ID;
   Hora.Properties.TimeFormat := tfHourMin;
   if (AValue <> '') then
     Hora.Time := AValue;
   FTopo := FTopo + Hora.Height;
+  DefinirFoco(Hora);
 end;
 
 procedure TFrmIndicadorEditor.CriarLegenda(const ACaption: string);
@@ -156,12 +166,13 @@ begin
   Moeda := TcxCurrencyEdit.Create(Self);
   Moeda.Parent := cxScrollBox;
   Moeda.Top := FTopo;
-  Moeda.Left := 150;
+  Moeda.Left := FLeft;
   Moeda.Width := 120;
   Moeda.Tag := ID;
   if (AValue <> '') then
     Moeda.Value := AValue;
   FTopo := FTopo + Moeda.Height;
+  DefinirFoco(Moeda);
 end;
 
 procedure TFrmIndicadorEditor.CriarInteiro(const ID: Integer; AValue: Variant);
@@ -171,7 +182,7 @@ begin
   Inteiro := TcxCurrencyEdit.Create(Self);
   Inteiro.Parent := cxScrollBox;
   Inteiro.Top := FTopo;
-  Inteiro.Left := 150;
+  Inteiro.Left := FLeft;
   Inteiro.Width := 120;
   Inteiro.Tag := ID;
   Inteiro.Properties.DisplayFormat := ',0;-,0';
@@ -180,6 +191,7 @@ begin
   if (AValue <> '') then
     Inteiro.Value := AValue;
   FTopo := FTopo + Inteiro.Height;
+  DefinirFoco(Inteiro);
 end;
 
 procedure TFrmIndicadorEditor.CriarReferencia(const ID: Integer; ASQL: string; AValue: Variant);
@@ -201,7 +213,7 @@ begin
   Referencia := TcxLookupComboBox.Create(Self);
   Referencia.Parent := cxScrollBox;
   Referencia.Top := FTopo;
-  Referencia.Left := 150;
+  Referencia.Left := FLeft;
   Referencia.Width := 350;
   Referencia.Tag := ID;
   Referencia.Text := Avalue;
@@ -222,11 +234,12 @@ begin
   TextoCurto := TcxTextEdit.Create(Self);
   TextoCurto.Parent := cxScrollBox;
   TextoCurto.Top := FTopo;
-  TextoCurto.Left := 150;
+  TextoCurto.Left := FLeft;
   TextoCurto.Width := 350;
   TextoCurto.Tag := ID;
   TextoCurto.Text := Avalue;
   FTopo := FTopo + TextoCurto.Height;
+  DefinirFoco(TextoCurto);
 end;
 
 procedure TFrmIndicadorEditor.CriarLogico(const ID: Integer; ACaption: TCaption; AValue: Variant);
@@ -236,7 +249,7 @@ begin
   Logico := TcxCheckBox.Create(Self);
   Logico.Parent := cxScrollBox;
   Logico.Top := FTopo + 2;
-  Logico.Left := 150;
+  Logico.Left := FLeft;
   Logico.Width := 350;
   Logico.Tag := ID;
   Logico.Caption := ACaption;
@@ -244,6 +257,7 @@ begin
   if (not VarIsNull(AValue)) and (AValue <> '') and (AValue = 1) then
     Logico.Checked := True;
   FTopo := FTopo + Logico.Height;
+  DefinirFoco(Logico);
 end;
 
 procedure TFrmIndicadorEditor.CriarTextoLongo(const ID: Integer; AValue: Variant);
@@ -253,7 +267,7 @@ begin
   TextoLongo := TcxMemo.Create(Self);
   TextoLongo.Parent := cxScrollBox;
   TextoLongo.Top := FTopo;
-  TextoLongo.Left := 150;
+  TextoLongo.Left := FLeft;
   TextoLongo.Width := 350;
   TextoLongo.Height := 90;
 
@@ -261,9 +275,18 @@ begin
   TextoLongo.Properties.ScrollBars := ssVertical;
   TextoLongo.Text := Avalue;
   FTopo := FTopo + TextoLongo.Height;
+  DefinirFoco(TextoLongo);
+end;
+
+procedure TFrmIndicadorEditor.DefinirFoco(const FControle: TcxCustomEditContainer);
+begin
+  if (QryIndicador.RecNo = 1) then
+    FPrimeiroControle := FControle;
 end;
 
 procedure TFrmIndicadorEditor.Editar(const IDRegistro: Largeint);
+var
+  FirstControl: TcxCustomEdit;
 begin
   QryRegistro.Close;
   QryRegistro.ParamByName('REG_ID').AsLargeInt := IDRegistro;
@@ -329,6 +352,14 @@ begin
   ShowModal;
 end;
 
+procedure TFrmIndicadorEditor.FormShow(Sender: TObject);
+begin
+  inherited;
+  if Assigned(FPrimeiroControle) then
+    FPrimeiroControle.SetFocus;
+
+end;
+
 procedure TFrmIndicadorEditor.Novo;
 begin
   FrmIndicadorSelecao := TFrmIndicadorSelecao.Create(Self);
@@ -343,6 +374,13 @@ begin
   end;
 end;
 
+procedure TFrmIndicadorEditor.QryRegistroAfterOpen(DataSet: TDataSet);
+begin
+  inherited;
+  LblTitulo.Caption := (' ' + QryRegistroIND_DESCRICAO.AsString);
+  LblTitulo.Refresh;
+end;
+
 procedure TFrmIndicadorEditor.Visualizar(const ID: Largeint);
 var
   I: Integer;
@@ -350,7 +388,7 @@ begin
   Editar(ID);
   for I := 0 to ComponentCount - 1 do
   begin
-    if (Components[I]  is TcxControl) then
+    if (Components[I] is TcxControl) then
       TcxControl(Components[I]).Enabled := False;
   end;
 end;

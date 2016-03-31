@@ -3,36 +3,58 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
   Top = 170
   BorderStyle = bsDialog
   Caption = 'Registro do Indicador'
-  ClientHeight = 580
-  ClientWidth = 582
+  ClientHeight = 583
+  ClientWidth = 548
   Position = poScreenCenter
+  OnShow = FormShow
   ExplicitLeft = 386
   ExplicitTop = 170
-  ExplicitWidth = 598
-  ExplicitHeight = 619
+  ExplicitWidth = 564
+  ExplicitHeight = 622
   PixelsPerInch = 96
   TextHeight = 13
+  object LblTitulo: TLabel
+    Left = 0
+    Top = 0
+    Width = 548
+    Height = 30
+    Align = alTop
+    AutoSize = False
+    Caption = ' Consulta'
+    Color = 4551200
+    EllipsisPosition = epEndEllipsis
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    Layout = tlCenter
+    ExplicitWidth = 605
+  end
   object cxScrollBox: TcxScrollBox
     Left = 8
-    Top = 128
-    Width = 564
-    Height = 409
+    Top = 148
+    Width = 529
+    Height = 389
     TabOrder = 1
     VertScrollBar.Tracking = True
   end
   object BtnOK: TcxButton
-    Left = 411
-    Top = 544
+    Left = 377
+    Top = 546
     Width = 75
-    Height = 25
+    Height = 26
     Caption = 'OK'
     TabOrder = 2
   end
   object BtnCancelar: TcxButton
-    Left = 497
-    Top = 544
+    Left = 462
+    Top = 546
     Width = 75
-    Height = 25
+    Height = 26
     Cancel = True
     Caption = 'Cancelar'
     ModalResult = 2
@@ -40,29 +62,31 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
   end
   object PgCntrRegistro: TcxPageControl
     Left = 8
-    Top = 8
-    Width = 564
-    Height = 121
+    Top = 40
+    Width = 529
+    Height = 109
     TabOrder = 0
     Properties.ActivePage = TbShtRegistro
     Properties.CustomButtons.Buttons = <>
-    ClientRectBottom = 119
+    ClientRectBottom = 107
     ClientRectLeft = 2
-    ClientRectRight = 562
+    ClientRectRight = 527
     ClientRectTop = 28
     object TbShtRegistro: TcxTabSheet
       Caption = 'Registro'
       ImageIndex = 0
+      ExplicitWidth = 543
+      ExplicitHeight = 91
       object Label1: TLabel
-        Left = 8
-        Top = 8
+        Left = 16
+        Top = 24
         Width = 27
         Height = 13
         Caption = 'Data:'
         Transparent = True
       end
       object Label2: TLabel
-        Left = 88
+        Left = 16
         Top = 8
         Width = 49
         Height = 13
@@ -70,56 +94,65 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
         Transparent = True
       end
       object Label3: TLabel
-        Left = 336
-        Top = 8
+        Left = 16
+        Top = 40
         Width = 48
         Height = 13
         Caption = 'Escrit'#243'rio:'
         Transparent = True
       end
       object Label4: TLabel
-        Left = 8
-        Top = 48
+        Left = 16
+        Top = 56
         Width = 78
         Height = 13
         Caption = 'Palavras-chave:'
         Transparent = True
       end
-      object DbEdtData: TcxDBTextEdit
-        Left = 8
-        Top = 24
-        DataBinding.DataField = 'REG_DATA'
-        DataBinding.DataSource = DtSrcRegistro
-        Enabled = False
-        TabOrder = 0
-        Width = 73
-      end
-      object DbEdtIndicador: TcxDBTextEdit
-        Left = 88
-        Top = 24
+      object cxDBLabel1: TcxDBLabel
+        Left = 170
+        Top = 6
         DataBinding.DataField = 'IND_DESCRICAO'
         DataBinding.DataSource = DtSrcRegistro
-        Enabled = False
-        TabOrder = 1
-        Width = 241
+        ParentColor = False
+        Properties.ShowEndEllipsis = True
+        Style.TextStyle = [fsBold]
+        Transparent = True
+        Height = 17
+        Width = 343
       end
-      object DbEdtEscritorio: TcxDBTextEdit
-        Left = 336
-        Top = 24
+      object cxDBLabel2: TcxDBLabel
+        Left = 170
+        Top = 22
+        AutoSize = True
+        DataBinding.DataField = 'REG_DATA'
+        DataBinding.DataSource = DtSrcRegistro
+        ParentColor = False
+        Properties.ShowEndEllipsis = True
+        Style.TextStyle = [fsBold]
+        Transparent = True
+      end
+      object cxDBLabel3: TcxDBLabel
+        Left = 170
+        Top = 38
+        AutoSize = True
         DataBinding.DataField = 'UND_NOME'
         DataBinding.DataSource = DtSrcRegistro
-        Enabled = False
-        TabOrder = 2
-        Width = 217
+        ParentColor = False
+        Properties.ShowEndEllipsis = True
+        Style.TextStyle = [fsBold]
+        Transparent = True
       end
-      object DbEdtChave: TcxDBTextEdit
-        Left = 8
-        Top = 64
+      object cxDBLabel4: TcxDBLabel
+        Left = 170
+        Top = 54
+        AutoSize = True
         DataBinding.DataField = 'IND_CHAVE'
         DataBinding.DataSource = DtSrcRegistro
-        Enabled = False
-        TabOrder = 3
-        Width = 545
+        ParentColor = False
+        Properties.ShowEndEllipsis = True
+        Style.TextStyle = [fsBold]
+        Transparent = True
       end
     end
   end
@@ -152,8 +185,8 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
       '  (a.reg_id = :reg_id)'
       'order by'
       '  b.atr_ordem')
-    Left = 56
-    Top = 176
+    Left = 80
+    Top = 216
     ParamData = <
       item
         Name = 'REG_ID'
@@ -285,15 +318,17 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
       '  REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_IND_REGISTRO_ATRIBUTO'
       'WHERE RGA_ID = :RGA_ID')
-    Left = 88
-    Top = 176
+    Left = 112
+    Top = 216
   end
   object DtSrcIndicador: TDataSource
     DataSet = QryIndicador
-    Left = 120
-    Top = 176
+    Left = 144
+    Top = 216
   end
   object QryRegistro: TFDQuery
+    Active = True
+    AfterOpen = QryRegistroAfterOpen
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
@@ -318,8 +353,8 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
       '  tab_ind_indicador c on (a.ind_id = c.ind_id)'
       'where'
       '  (a.reg_excluido = 0) and  (a.reg_id = :reg_id)')
-    Left = 56
-    Top = 144
+    Left = 80
+    Top = 184
     ParamData = <
       item
         Name = 'REG_ID'
@@ -394,7 +429,7 @@ inherited FrmIndicadorEditor: TFrmIndicadorEditor
   end
   object DtSrcRegistro: TDataSource
     DataSet = QryRegistro
-    Left = 120
-    Top = 144
+    Left = 144
+    Top = 184
   end
 end

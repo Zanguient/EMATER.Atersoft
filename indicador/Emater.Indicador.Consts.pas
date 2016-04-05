@@ -5,6 +5,7 @@ interface
 resourcestring
   INDICADOR_CONFIRMAR_REGISTRO = 'Deseja realmente registrar o indicador "%s"?';
   INDICADOR_REGISTRO_ERRO = 'Ocorreu um erro ao registrar o indicador. Verifique se a data está preenchida e se um indicador está selecionado.';
+  INDICADOR_ATRIBUTO_OBRIGATORIO = 'O atributo "%s" do indicador deve ser preenchido.';
 
 implementation
 

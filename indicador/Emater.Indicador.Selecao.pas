@@ -30,6 +30,7 @@ type
     Label2: TLabel;
     procedure FormShow(Sender: TObject);
     procedure BtnOKClick(Sender: TObject);
+    procedure GrdIndTblDblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,10 +53,23 @@ begin
   if Msg.Confirmacao(Format(INDICADOR_CONFIRMAR_REGISTRO, [QryIndicadorIND_DESCRICAO.AsString])) then
     begin
       try
+        if not DtmConexaoModulo.FDWriteTransaction.Active then
+          DtmConexaoModulo.FDWriteTransaction.StartTransaction;
+
+        if not DtmConexaoModulo.FDReadTransaction.Active then
+          DtmConexaoModulo.FDReadTransaction.StartTransaction;
+
         StrdPrcRegistrar.ParamByName('INDICADOR').AsString := QryIndicadorIND_NOME.AsString;
         StrdPrcRegistrar.ParamByName('DATA').AsDate := DtEdtRegistro.Date;
         StrdPrcRegistrar.ParamByName('USUARIO').AsString := DtmConexaoModulo.UsuarioLogin;
         StrdPrcRegistrar.ExecProc;
+
+        if DtmConexaoModulo.FDWriteTransaction.Active then
+          DtmConexaoModulo.FDWriteTransaction.CommitRetaining;
+
+        if DtmConexaoModulo.FDReadTransaction.Active then
+          DtmConexaoModulo.FDReadTransaction.CommitRetaining;
+
         ModalResult := mrOk;
       except
         on E: Exception do
@@ -75,6 +89,11 @@ begin
 
   DtEdtRegistro.Date := Date;
   QryIndicador.Open;
+end;
+
+procedure TFrmIndicadorSelecao.GrdIndTblDblClick(Sender: TObject);
+begin
+  if (QryIndicador.RecordCount > 0) then BtnOK.Click;
 end;
 
 end.

@@ -5,20 +5,20 @@ inherited FrmIndicadorSelecao: TFrmIndicadorSelecao
   BorderStyle = bsDialog
   Caption = 'Novo Indicador'
   ClientHeight = 453
-  ClientWidth = 370
+  ClientWidth = 566
   Position = poMainFormCenter
   OnShow = FormShow
   ExplicitLeft = 377
   ExplicitTop = 166
-  ExplicitWidth = 386
+  ExplicitWidth = 582
   ExplicitHeight = 492
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 8
     Top = 16
-    Width = 353
-    Height = 41
+    Width = 537
+    Height = 26
     AutoSize = False
     Caption = 
       'Para registrar um novo indicador, informe a data e selecione o i' +
@@ -35,7 +35,7 @@ inherited FrmIndicadorSelecao: TFrmIndicadorSelecao
     Caption = 'Data de registro:'
   end
   object BtnOK: TcxButton
-    Left = 204
+    Left = 396
     Top = 418
     Width = 75
     Height = 25
@@ -45,7 +45,7 @@ inherited FrmIndicadorSelecao: TFrmIndicadorSelecao
     OnClick = BtnOKClick
   end
   object BtnCancelar: TcxButton
-    Left = 286
+    Left = 478
     Top = 418
     Width = 75
     Height = 25
@@ -57,7 +57,7 @@ inherited FrmIndicadorSelecao: TFrmIndicadorSelecao
   object GrdInd: TcxGrid
     Left = 8
     Top = 120
-    Width = 353
+    Width = 545
     Height = 289
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -69,6 +69,7 @@ inherited FrmIndicadorSelecao: TFrmIndicadorSelecao
     LookAndFeel.Kind = lfFlat
     LookAndFeel.NativeStyle = True
     object GrdIndTbl: TcxGridDBTableView
+      OnDblClick = GrdIndTblDblClick
       Navigator.Buttons.CustomButtons = <>
       Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
       Navigator.Buttons.PriorPage.Visible = False
@@ -179,7 +180,6 @@ inherited FrmIndicadorSelecao: TFrmIndicadorSelecao
   end
   object StrdPrcRegistrar: TFDStoredProc
     Connection = DtmConexaoModulo.FDConnection
-    Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
     StoredProcName = 'STP_IND_REGISTRAR'
     Left = 72

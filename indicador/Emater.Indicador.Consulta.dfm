@@ -1,6 +1,10 @@
 inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
+  Left = 392
+  Top = 212
   Caption = 'Consulta de Registros de Indicadores'
   ClientWidth = 697
+  ExplicitLeft = 392
+  ExplicitTop = 212
   ExplicitWidth = 713
   PixelsPerInch = 96
   TextHeight = 13
@@ -26,15 +30,15 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
       end
       object GrdConsultaTblIND_DESCRICAO: TcxGridDBColumn
         DataBinding.FieldName = 'IND_DESCRICAO'
-        Width = 292
+        Width = 444
       end
       object GrdConsultaTblIND_CHAVE: TcxGridDBColumn
         DataBinding.FieldName = 'IND_CHAVE'
-        Width = 309
+        Width = 248
       end
       object GrdConsultaTblUND_NOME: TcxGridDBColumn
         DataBinding.FieldName = 'UND_NOME'
-        Width = 846
+        Width = 755
       end
     end
   end

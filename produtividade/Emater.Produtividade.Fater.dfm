@@ -284,6 +284,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtTematica: TcxTabSheet
             Caption = 'Tem'#225'tica'
             ImageIndex = 0
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -319,6 +323,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtOrientacao: TcxTabSheet
             Caption = 'Orienta'#231#227'o t'#233'cnica'
             ImageIndex = 1
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -348,6 +356,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtResumo: TcxTabSheet
             Caption = 'Resumo da a'#231#227'o'
             ImageIndex = 2
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -377,6 +389,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtParceria: TcxTabSheet
             Caption = 'Parcerias'
             ImageIndex = 3
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -406,6 +422,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtTecnologia: TcxTabSheet
             Caption = 'Tecnologia inovadora'
             ImageIndex = 4
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -450,6 +470,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtPratica: TcxTabSheet
             Caption = 'Boas pr'#225'ticas'
             ImageIndex = 5
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -1113,7 +1137,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         TabOrder = 4
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitHeight = 139
         object GrdFerDisTbl: TcxGridDBTableView
           OnDblClick = GrdFerDisTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -1196,7 +1219,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         TabOrder = 5
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitHeight = 139
         object GrdFerTbl: TcxGridDBTableView
           OnDblClick = GrdFerTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -1290,6 +1312,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
     object TbShtDetalhes: TcxTabSheet
       Caption = 'Mais detalhes'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         831
         508)
@@ -1791,8 +1817,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             TabOrder = 2
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
-            ExplicitWidth = 787
-            ExplicitHeight = 405
             object GrdComTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'

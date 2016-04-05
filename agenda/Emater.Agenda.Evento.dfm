@@ -1,11 +1,10 @@
 inherited FrmAgendaEvento: TFrmAgendaEvento
-  Left = 399
-  Top = 175
+  Top = 137
+  ActiveControl = DbDtEdtInicio
   Caption = 'Compromisso'
   ClientHeight = 520
   ClientWidth = 512
-  ExplicitLeft = 399
-  ExplicitTop = 175
+  ExplicitTop = 137
   ExplicitWidth = 528
   ExplicitHeight = 559
   PixelsPerInch = 96
@@ -14,7 +13,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
     Width = 496
     Height = 474
     ExplicitWidth = 496
-    ExplicitHeight = 474
+    ExplicitHeight = 501
     ClientRectBottom = 472
     ClientRectRight = 494
     inherited TbShtPrincipal: TcxTabSheet
@@ -265,7 +264,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         object DbEdtModificadoUsuario: TcxDBTextEdit
           Left = 152
           Top = 73
-          DataBinding.DataField = 'CRD_MODIFICADO_USUARIO_NOME'
+          DataBinding.DataField = 'AGN_MODIFICADO_USUARIO_NOME'
           DataBinding.DataSource = DtSrcAgenda
           Enabled = False
           TabOrder = 3
@@ -280,7 +279,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
           TabOrder = 2
           Width = 129
         end
-        object cxDBLookupComboBox3: TcxDBLookupComboBox
+        object DbLkpCmbBxUnidade: TcxDBLookupComboBox
           Left = 16
           Top = 33
           TabStop = False
@@ -354,8 +353,8 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       object GrdFnc: TcxGrid
         Left = 96
         Top = 16
-        Width = 381
-        Height = 140
+        Width = 373
+        Height = 128
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -366,8 +365,6 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         TabOrder = 2
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 385
-        ExplicitHeight = 146
         object GrdFncTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -440,8 +437,8 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       object GrdCom: TcxGrid
         Left = 96
         Top = 168
-        Width = 381
-        Height = 140
+        Width = 373
+        Height = 128
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -452,8 +449,6 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         TabOrder = 5
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 385
-        ExplicitHeight = 146
         object GrdComTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -515,6 +510,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         Height = 25
         Caption = 'Incluir'
         TabOrder = 0
+        OnClick = BtnFncIncluirClick
       end
       object BtnFncRemover: TcxButton
         Left = 16
@@ -523,6 +519,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         Height = 25
         Caption = 'Remover'
         TabOrder = 1
+        OnClick = BtnFncRemoverClick
       end
       object BtnComRemover: TcxButton
         Left = 16
@@ -531,6 +528,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         Height = 25
         Caption = 'Remover'
         TabOrder = 4
+        OnClick = BtnComRemoverClick
       end
       object BtnComIncluir: TcxButton
         Left = 16
@@ -539,6 +537,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         Height = 25
         Caption = 'Incluir'
         TabOrder = 3
+        OnClick = BtnComIncluirClick
       end
     end
   end
@@ -615,11 +614,12 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
         DataType = ftLargeint
         ParamType = ptInput
       end>
-    object QryAgendaAGN_ID: TLargeintField
+    object QryAgendaAGN_ID: TIntegerField
       Alignment = taLeftJustify
       FieldName = 'AGN_ID'
       Origin = 'AGN_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
     end
     object QryAgendaAGN_DATA_HORA_INICIO: TSQLTimeStampField
       FieldName = 'AGN_DATA_HORA_INICIO'
@@ -674,22 +674,27 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       Origin = 'SIT_ID'
     end
     object QryAgendaAGN_ACTUAL_FINISH: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_ACTUAL_FINISH'
       Origin = 'AGN_ACTUAL_FINISH'
     end
     object QryAgendaAGN_ACTUAL_START: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_ACTUAL_START'
       Origin = 'AGN_ACTUAL_START'
     end
     object QryAgendaAGN_TASK_COMPLETE_FIELD: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_TASK_COMPLETE_FIELD'
       Origin = 'AGN_TASK_COMPLETE_FIELD'
     end
     object QryAgendaAGN_TASK_INDEX_FIELD: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_TASK_INDEX_FIELD'
       Origin = 'AGN_TASK_INDEX_FIELD'
     end
     object QryAgendaAGN_TASK_STATUS_FIELD: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_TASK_STATUS_FIELD'
       Origin = 'AGN_TASK_STATUS_FIELD'
     end
@@ -698,26 +703,32 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       Origin = 'AGN_TASK_LINKS_FIELD'
     end
     object QryAgendaAGN_OPTIONS: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_OPTIONS'
       Origin = 'AGN_OPTIONS'
     end
     object QryAgendaAGN_STATE: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_STATE'
       Origin = 'AGN_STATE'
     end
     object QryAgendaAGN_EVENT_TYPE: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_EVENT_TYPE'
       Origin = 'AGN_EVENT_TYPE'
     end
     object QryAgendaAGN_LABEL_COLOR: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_LABEL_COLOR'
       Origin = 'AGN_LABEL_COLOR'
     end
     object QryAgendaAGN_RESOURCE_ID: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_RESOURCE_ID'
       Origin = 'AGN_RESOURCE_ID'
     end
     object QryAgendaAGN_PARENT_ID: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'AGN_PARENT_ID'
       Origin = 'AGN_PARENT_ID'
     end
@@ -810,11 +821,14 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
   end
   object DtSrcTecnico: TDataSource
     DataSet = QryTecnico
+    OnStateChange = DtSrcTecnicoStateChange
     Left = 208
     Top = 280
   end
   object QryTecnico: TFDQuery
-    Active = True
+    Filtered = True
+    Filter = 'REG_EXCLUIDO = 0'
+    CachedUpdates = True
     MasterSource = DtSrcAgenda
     MasterFields = 'AGN_ID'
     DetailFields = 'AGN_ID'
@@ -822,7 +836,6 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
     FetchOptions.AssignedValues = [evCache]
-    FetchOptions.Cache = [fiBlobs, fiMeta]
     UpdateObject = UpdtTecnico
     SQL.Strings = (
       'select'
@@ -849,9 +862,9 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
     ParamData = <
       item
         Name = 'AGN_ID'
-        DataType = ftLargeint
+        DataType = ftInteger
         ParamType = ptInput
-        Size = 8
+        Size = 4
         Value = Null
       end>
     object QryTecnicoAGF_ID: TLargeintField
@@ -860,7 +873,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
-    object QryTecnicoAGN_ID: TLargeintField
+    object QryTecnicoAGN_ID: TIntegerField
       FieldName = 'AGN_ID'
       Origin = 'AGN_ID'
       Required = True
@@ -942,6 +955,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
   end
   object DtSrcComunidade: TDataSource
     DataSet = QryComunidade
+    OnStateChange = DtSrcComunidadeStateChange
     Left = 208
     Top = 312
   end
@@ -981,12 +995,16 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
     Top = 312
   end
   object QryComunidade: TFDQuery
-    Active = True
+    Filtered = True
+    Filter = 'REG_EXCLUIDO = 0'
+    CachedUpdates = True
     MasterSource = DtSrcAgenda
     MasterFields = 'AGN_ID'
+    DetailFields = 'AGN_ID'
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
     UpdateObject = UpdtComunidade
     SQL.Strings = (
       'select'
@@ -1012,9 +1030,9 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
     ParamData = <
       item
         Name = 'AGN_ID'
-        DataType = ftLargeint
+        DataType = ftInteger
         ParamType = ptInput
-        Size = 8
+        Size = 4
         Value = Null
       end>
     object QryComunidadeAGC_ID: TLargeintField
@@ -1023,7 +1041,7 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
-    object QryComunidadeAGN_ID: TLargeintField
+    object QryComunidadeAGN_ID: TIntegerField
       FieldName = 'AGN_ID'
       Origin = 'AGN_ID'
       Required = True
@@ -1058,7 +1076,6 @@ inherited FrmAgendaEvento: TFrmAgendaEvento
       FieldName = 'COM_NOME'
       Origin = 'COM_NOME'
       ProviderFlags = []
-      ReadOnly = True
       Size = 100
     end
   end

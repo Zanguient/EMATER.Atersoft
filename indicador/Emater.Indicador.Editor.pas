@@ -52,18 +52,20 @@ type
     QryRegistroIND_CHAVE: TStringField;
     DtSrcRegistro: TDataSource;
     Label1: TLabel;
-    Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    LblTitulo: TLabel;
-    cxDBLabel1: TcxDBLabel;
-    cxDBLabel2: TcxDBLabel;
-    cxDBLabel3: TcxDBLabel;
-    cxDBLabel4: TcxDBLabel;
-    procedure QryRegistroAfterOpen(DataSet: TDataSet);
+    DbLblIndicador: TcxDBLabel;
+    DbLblData: TcxDBLabel;
+    DbLblEscritorio: TcxDBLabel;
+    DbLblChave: TcxDBLabel;
+    ShpIndicador: TShape;
     procedure FormShow(Sender: TObject);
+    procedure BtnOKClick(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
+    procedure AtributoAlterar(Sender: TObject);
   private
     FTopo: Integer;
+    FAtributoAlteradoLista: array of Integer;
     FPrimeiroControle: TcxCustomEditContainer;
     procedure CriarLegenda(const ACaption: string);
     procedure CriarTextoCurto(const ID: Integer; AValue: Variant);
@@ -76,12 +78,13 @@ type
     procedure CriarHora(const ID: Integer; AValue: Variant);
     procedure CriarDataHora(const ID: Integer; AValue: Variant);
     procedure DefinirFoco(const FControle: TcxCustomEditContainer);
+    function AtributoAlterado(ID: Integer): Boolean;
   public
     procedure Editar(const IDRegistro: Largeint);
     procedure Novo;
     procedure Visualizar(const ID: Largeint);
   const
-    FEspaco = 5;
+    FEspaco = 6;
     FLeft = 170;
   end;
 
@@ -92,7 +95,153 @@ implementation
 
 {$R *.dfm}
 
-uses Emater.Conexao.Modulo, Emater.Indicador.Selecao;
+uses Emater.Conexao.Modulo, Emater.Indicador.Selecao, Emater.Indicador.Consts;
+
+procedure TFrmIndicadorEditor.BtnCancelarClick(Sender: TObject);
+begin
+  ModalResult := mrCancel;
+end;
+
+procedure TFrmIndicadorEditor.BtnOKClick(Sender: TObject);
+var
+  I, ID: Integer;
+  Pendente: Boolean;
+
+  procedure MsgAtributoObrigatorio;
+  begin
+    Msg.Aviso(Format(INDICADOR_ATRIBUTO_OBRIGATORIO, [QryIndicadorATR_DESCRICAO.AsString]));
+    TcxCustomEditContainer(Components[I]).SetFocus;
+    Pendente := True;
+  end;
+
+begin
+  Pendente := False;
+
+  if not DtmConexaoModulo.FDWriteTransaction.Active then
+    DtmConexaoModulo.FDWriteTransaction.StartTransaction;
+
+  if not DtmConexaoModulo.FDReadTransaction.Active then
+    DtmConexaoModulo.FDReadTransaction.StartTransaction;
+
+  for I := 0 to ComponentCount - 1 do
+    begin
+      if (Components[I] is TcxCustomEditContainer)  then
+        begin
+
+          ID := TcxCustomEditContainer(Components[I]).Tag;
+
+          if (ID > 0) and (QryIndicador.Locate('ATR_ORDEM', ID, [])) then
+            begin
+
+              QryIndicador.Edit;
+              case QryIndicadorATR_TIPO.Value of
+                Ord(atTextoLongo):
+                  begin
+                    if (QryIndicadorATR_OBRIGATORIO.Value = 1) and (TcxMemo(Components[I]).Text = '') then
+                      begin
+                        MsgAtributoObrigatorio;
+                        Break;
+                      end
+                    else
+                      if (TcxMemo(Components[I]).Text <> '') then
+                        QryIndicadorRGA_VALOR.AsString := TcxMemo(Components[I]).Text;
+                  end;
+                Ord(atInteiro), Ord(atMoeda):
+                  begin
+                    if (QryIndicadorATR_OBRIGATORIO.Value = 1) and (TcxCurrencyEdit(Components[I]).Text = '') then
+                      begin
+                        MsgAtributoObrigatorio;
+                        Break;
+                      end
+                    else
+                      if (TcxCurrencyEdit(Components[I]).Text <> '') then
+                        QryIndicadorRGA_VALOR.AsString := FloatToStr(TcxCurrencyEdit(Components[I]).Value);
+                  end;
+                Ord(atLogico):
+                  begin
+                    if (TcxCheckBox(Components[I]).Checked) then
+                      QryIndicadorRGA_VALOR.AsString := '1'
+                    else
+                      QryIndicadorRGA_VALOR.AsString := '0';
+                  end;
+                Ord(atReferencia):
+                  begin
+                    if (QryIndicadorATR_OBRIGATORIO.Value = 1) and (TcxLookupComboBox(Components[I]).Text = '') then
+                      begin
+                        MsgAtributoObrigatorio;
+                        Break;
+                      end
+                    else
+                      if (TcxLookupComboBox(Components[I]).Text <> '') then
+                        QryIndicadorRGA_VALOR.AsString := TcxLookupComboBox(Components[I]).EditValue;
+                  end;
+                Ord(atData), Ord(atDataHora):
+                  begin
+                    if (QryIndicadorATR_OBRIGATORIO.Value = 1) and (TcxDateEdit(Components[I]).Text = '') then
+                      begin
+                        MsgAtributoObrigatorio;
+                        Break;
+                      end
+                    else
+                      if (TcxDateEdit(Components[I]).Text <> '') then
+                        QryIndicadorRGA_VALOR.AsString := TcxDateEdit(Components[I]).Text;
+                  end;
+                Ord(atHora):
+                  begin
+                    if (QryIndicadorATR_OBRIGATORIO.Value = 1) and (TcxTimeEdit(Components[I]).Text = '') then
+                      begin
+                        MsgAtributoObrigatorio;
+                        Break;
+                      end
+                    else
+                      if (TcxTimeEdit(Components[I]).Text <> '') then
+                        QryIndicadorRGA_VALOR.AsString := TcxTimeEdit(Components[I]).Text;
+                  end;
+                Ord(atTextoCurto):
+                  begin
+                    if (QryIndicadorATR_OBRIGATORIO.Value = 1) and (TcxTextEdit(Components[I]).Text = '') then
+                      begin
+                        MsgAtributoObrigatorio;
+                        Break;
+                      end
+                    else
+                      if (TcxTextEdit(Components[I]).Text <> '') then
+                        QryIndicadorRGA_VALOR.AsString := TcxTextEdit(Components[I]).Text;
+                  end;
+              end;
+
+              if AtributoAlterado(ID) then
+                begin
+                  QryIndicadorREG_REPLICADO.Value := 0;
+                  QryIndicadorREG_USUARIO.AsString := DtmConexaoModulo.UsuarioLogin;
+                  QryIndicadorREG_MODIFICADO.AsDateTime := Now;
+                  QryIndicador.Post;
+                end
+              else
+                QryIndicador.Cancel;
+            end;
+        end;
+    end;
+
+  if not Pendente then
+    begin
+      if DtmConexaoModulo.FDWriteTransaction.Active then
+        DtmConexaoModulo.FDWriteTransaction.CommitRetaining;
+
+      if DtmConexaoModulo.FDReadTransaction.Active then
+        DtmConexaoModulo.FDReadTransaction.CommitRetaining;
+
+      ModalResult := mrOk;
+    end
+  else
+    begin
+      if DtmConexaoModulo.FDWriteTransaction.Active then
+        DtmConexaoModulo.FDWriteTransaction.RollbackRetaining;
+
+      if DtmConexaoModulo.FDReadTransaction.Active then
+        DtmConexaoModulo.FDReadTransaction.RollbackRetaining;
+    end;
+end;
 
 procedure TFrmIndicadorEditor.CriarData(const ID: Integer; AValue: Variant);
 var
@@ -107,9 +256,10 @@ begin
   Data.Properties.ShowTime := False;
   Data.Properties.SaveTime := False;
   if (AValue <> '') then
-    Data.Date := AValue;
+    Data.Date := StrToDate(AValue);
   FTopo := FTopo + Data.Height;
   DefinirFoco(Data);
+  Data.Properties.OnChange := AtributoAlterar;
 end;
 
 procedure TFrmIndicadorEditor.CriarDataHora(const ID: Integer; AValue: Variant);
@@ -124,9 +274,10 @@ begin
   DataHora.Tag := ID;
   DataHora.Properties.Kind := ckDateTime;
   if (AValue <> '') then
-    DataHora.Date := AValue;
+    DataHora.Date := StrToDateTime(AValue);
   FTopo := FTopo + DataHora.Height;
   DefinirFoco(DataHora);
+  DataHora.Properties.OnChange := AtributoAlterar;
 end;
 
 procedure TFrmIndicadorEditor.CriarHora(const ID: Integer; AValue: Variant);
@@ -141,9 +292,10 @@ begin
   Hora.Tag := ID;
   Hora.Properties.TimeFormat := tfHourMin;
   if (AValue <> '') then
-    Hora.Time := AValue;
+    Hora.Time := StrToTime(AValue);
   FTopo := FTopo + Hora.Height;
   DefinirFoco(Hora);
+  Hora.Properties.OnChange := AtributoAlterar;
 end;
 
 procedure TFrmIndicadorEditor.CriarLegenda(const ACaption: string);
@@ -157,6 +309,15 @@ begin
   Legenda.Top := FTopo + 3;
   Legenda.Caption := ACaption + ':';
   Legenda.Transparent := True;
+  if (Legenda.Width > 150) then
+    begin
+      //FTopo := FTopo + 8;
+      Legenda.AutoSize := False;
+      Legenda.WordWrap := True;
+      Legenda.Width := 150;
+      Legenda.Height := 26;
+      Legenda.Top := FTopo - 3;
+    end;
 end;
 
 procedure TFrmIndicadorEditor.CriarMoeda(const ID: Integer; AValue: Variant);
@@ -170,9 +331,10 @@ begin
   Moeda.Width := 120;
   Moeda.Tag := ID;
   if (AValue <> '') then
-    Moeda.Value := AValue;
+    Moeda.Value := StrToCurr(AValue);
   FTopo := FTopo + Moeda.Height;
   DefinirFoco(Moeda);
+  Moeda.Properties.OnChange := AtributoAlterar;
 end;
 
 procedure TFrmIndicadorEditor.CriarInteiro(const ID: Integer; AValue: Variant);
@@ -192,6 +354,7 @@ begin
     Inteiro.Value := AValue;
   FTopo := FTopo + Inteiro.Height;
   DefinirFoco(Inteiro);
+  Inteiro.Properties.OnChange := AtributoAlterar;
 end;
 
 procedure TFrmIndicadorEditor.CriarReferencia(const ID: Integer; ASQL: string; AValue: Variant);
@@ -216,13 +379,16 @@ begin
   Referencia.Left := FLeft;
   Referencia.Width := 350;
   Referencia.Tag := ID;
-  Referencia.Text := Avalue;
+  if (AValue <> '') then
+    Referencia.EditValue := AValue;
 
   Referencia.Properties.ListSource := Ds;
   Referencia.Properties.ListFieldNames := 'DESCRICAO';
   Referencia.Properties.KeyFieldNames := 'ID';
   Referencia.Properties.ListOptions.ShowHeader := False;
   Referencia.Properties.DropDownRows := 12;
+  Referencia.Properties.OnChange := AtributoAlterar;
+  DefinirFoco(Referencia);
 
   FTopo := FTopo + Referencia.Height;
 end;
@@ -240,6 +406,7 @@ begin
   TextoCurto.Text := Avalue;
   FTopo := FTopo + TextoCurto.Height;
   DefinirFoco(TextoCurto);
+  TextoCurto.Properties.OnChange := AtributoAlterar;
 end;
 
 procedure TFrmIndicadorEditor.CriarLogico(const ID: Integer; ACaption: TCaption; AValue: Variant);
@@ -254,10 +421,12 @@ begin
   Logico.Tag := ID;
   Logico.Caption := ACaption;
   Logico.Transparent := True;
+  Logico.Checked := False;
   if (not VarIsNull(AValue)) and (AValue <> '') and (AValue = 1) then
     Logico.Checked := True;
   FTopo := FTopo + Logico.Height;
   DefinirFoco(Logico);
+  Logico.Properties.OnChange := AtributoAlterar;
 end;
 
 procedure TFrmIndicadorEditor.CriarTextoLongo(const ID: Integer; AValue: Variant);
@@ -276,6 +445,45 @@ begin
   TextoLongo.Text := Avalue;
   FTopo := FTopo + TextoLongo.Height;
   DefinirFoco(TextoLongo);
+  TextoLongo.Properties.OnChange := AtributoAlterar;
+end;
+
+function TFrmIndicadorEditor.AtributoAlterado(ID: Integer): Boolean;
+var
+  I: Integer;
+begin
+  Result := False;
+  for I := Low(FAtributoAlteradoLista) to High(FAtributoAlteradoLista) do
+    if (FAtributoAlteradoLista[I] = ID) then
+      begin
+        Result := True;
+        Break;
+      end;
+end;
+
+procedure TFrmIndicadorEditor.AtributoAlterar(Sender: TObject);
+var
+  Tamanho, I: Integer;
+  Existe: Boolean;
+begin
+  if (TcxCustomEditContainer(Sender).Tag > 0) then
+  begin
+    Existe := False;
+
+    for I := Low(FAtributoAlteradoLista) to High(FAtributoAlteradoLista) do
+      if (FAtributoAlteradoLista[I] = TcxCustomEditContainer(Sender).Tag) then
+        begin
+          Existe := True;
+          Break;
+        end;
+
+    if not Existe then
+      begin
+        Tamanho := Length(FAtributoAlteradoLista) + 1;
+        SetLength(FAtributoAlteradoLista, Tamanho);
+        FAtributoAlteradoLista[Tamanho - 1] := TcxCustomEditContainer(Sender).Tag;
+      end;
+  end;
 end;
 
 procedure TFrmIndicadorEditor.DefinirFoco(const FControle: TcxCustomEditContainer);
@@ -285,8 +493,6 @@ begin
 end;
 
 procedure TFrmIndicadorEditor.Editar(const IDRegistro: Largeint);
-var
-  FirstControl: TcxCustomEdit;
 begin
   QryRegistro.Close;
   QryRegistro.ParamByName('REG_ID').AsLargeInt := IDRegistro;
@@ -357,28 +563,25 @@ begin
   inherited;
   if Assigned(FPrimeiroControle) then
     FPrimeiroControle.SetFocus;
-
 end;
 
 procedure TFrmIndicadorEditor.Novo;
+var
+  ID: Largeint;
 begin
   FrmIndicadorSelecao := TFrmIndicadorSelecao.Create(Self);
   try
     Screen.Cursor := crHourglass;
     if (FrmIndicadorSelecao.ShowModal = mrOk) then
-      Editar(FrmIndicadorSelecao.StrdPrcRegistrar.ParamByName('REGISTRO').AsLargeInt);
+      begin
+        ID := FrmIndicadorSelecao.StrdPrcRegistrar.ParamByName('REGISTRO').AsLargeInt;
+        Editar(ID);
+      end;
   finally
     FrmIndicadorSelecao.Release;
     FrmIndicadorSelecao := nil;
     Screen.Cursor := crDefault;
   end;
-end;
-
-procedure TFrmIndicadorEditor.QryRegistroAfterOpen(DataSet: TDataSet);
-begin
-  inherited;
-  LblTitulo.Caption := (' ' + QryRegistroIND_DESCRICAO.AsString);
-  LblTitulo.Refresh;
 end;
 
 procedure TFrmIndicadorEditor.Visualizar(const ID: Largeint);
@@ -390,6 +593,7 @@ begin
   begin
     if (Components[I] is TcxControl) then
       TcxControl(Components[I]).Enabled := False;
+
   end;
 end;
 

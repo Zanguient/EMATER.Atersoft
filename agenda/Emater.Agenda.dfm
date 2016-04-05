@@ -1,9 +1,12 @@
 inherited FrmAgenda: TFrmAgenda
+  Tag = 1
   Left = 322
   Top = 152
-  Caption = 'Agenda'
+  Hint = 'Agenda do Escrit'#243'rio'
+  Caption = 'Agenda do Escrit'#243'rio'
   ClientHeight = 581
   ClientWidth = 826
+  WindowState = wsNormal
   OnShow = FormShow
   ExplicitLeft = 322
   ExplicitTop = 152
@@ -12,13 +15,14 @@ inherited FrmAgenda: TFrmAgenda
   PixelsPerInch = 96
   TextHeight = 13
   object LblTitulo: TLabel
+    Tag = 1
     Left = 0
     Top = 0
     Width = 826
     Height = 29
     Align = alTop
     AutoSize = False
-    Caption = '      Agenda'
+    Caption = '      Agenda do Escrit'#243'rio'
     Color = 4551200
     Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
@@ -121,31 +125,259 @@ inherited FrmAgenda: TFrmAgenda
   end
   object cxScheduler: TcxScheduler
     Left = 0
-    Top = 29
+    Top = 55
     Width = 826
-    Height = 552
-    DateNavigator.RowCount = 2
-    ViewWeeks.Active = True
+    Height = 526
+    DateNavigator.ColCount = 2
+    DateNavigator.ShowDatesContainingHolidaysInColor = True
+    ViewDay.Active = True
+    ViewWeek.CompressWeekEnd = False
     ViewWeeks.CompressWeekEnd = False
     Align = alClient
-    BorderStyle = cxcbsNone
+    ControlBox.Control = PnlResumo
+    EventOperations.InplaceEditing = False
+    EventOperations.Recurrence = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    LookAndFeel.NativeStyle = True
     OptionsBehavior.SelectOnRightClick = True
     OptionsView.StartOfWeek = swSunday
     OptionsView.ViewPosition = vpRight
     Storage = cxSchedulerDBStorage
     TabOrder = 0
+    OnBeforeDeleting = cxSchedulerBeforeDeleting
     OnBeforeEditing = cxSchedulerBeforeEditing
-    ExplicitTop = 0
-    ExplicitHeight = 581
-    Selection = 35
+    OnEventSelectionChanged = cxSchedulerEventSelectionChanged
+    ExplicitTop = 29
+    ExplicitHeight = 552
     Splitters = {
-      00000000FA0000008F000000FF0000008F000000000000009400000028020000}
-    StoredClientBounds = {00000000000000003A03000028020000}
+      010000007E0000001F010000830000001F01000001000000240100000D020000}
+    StoredClientBounds = {0100000001000000390300000D020000}
+    object PnlResumo: TPanel
+      Left = 0
+      Top = 0
+      Width = 286
+      Height = 394
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 0
+      ExplicitTop = -8
+      ExplicitHeight = 422
+      object Label1: TLabel
+        Left = 8
+        Top = 97
+        Width = 43
+        Height = 13
+        Caption = 'Assunto:'
+        Transparent = True
+      end
+      object Label4: TLabel
+        Left = 8
+        Top = 60
+        Width = 20
+        Height = 13
+        Caption = 'Fim:'
+        Transparent = True
+      end
+      object Label3: TLabel
+        Left = 8
+        Top = 36
+        Width = 29
+        Height = 13
+        Caption = 'In'#237'cio:'
+        Transparent = True
+      end
+      object Bevel1: TBevel
+        Left = 8
+        Top = 85
+        Width = 273
+        Height = 9
+        Shape = bsTopLine
+      end
+      object Label2: TLabel
+        Left = 8
+        Top = 121
+        Width = 46
+        Height = 13
+        Caption = 'Detalhes:'
+        Transparent = True
+        WordWrap = True
+      end
+      object Label5: TLabel
+        Left = 8
+        Top = 185
+        Width = 28
+        Height = 13
+        Caption = 'Local:'
+        Transparent = True
+        WordWrap = True
+      end
+      object Label6: TLabel
+        Left = 0
+        Top = 0
+        Width = 286
+        Height = 25
+        Align = alTop
+        AutoSize = False
+        Caption = '  Detalhes do compromisso'
+        Color = 4551200
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object Label7: TLabel
+        Left = 8
+        Top = 273
+        Width = 45
+        Height = 13
+        Caption = 'Situa'#231#227'o:'
+        Transparent = True
+      end
+      object Label8: TLabel
+        Left = 8
+        Top = 297
+        Width = 38
+        Height = 13
+        Caption = 'Evento:'
+        Transparent = True
+      end
+      object Label9: TLabel
+        Left = 8
+        Top = 249
+        Width = 24
+        Height = 13
+        Caption = 'Tipo:'
+        Transparent = True
+      end
+      object DbEdtAssunto: TcxDBTextEdit
+        Left = 64
+        Top = 93
+        DataBinding.DataField = 'AGN_ASSUNTO'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.ReadOnly = True
+        TabOrder = 4
+        Width = 217
+      end
+      object DbEdtTmFim: TcxDBTimeEdit
+        Left = 192
+        Top = 56
+        DataBinding.DataField = 'AGN_DATA_HORA_FIM'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.ReadOnly = True
+        Style.ButtonTransparency = ebtHideInactive
+        TabOrder = 3
+        Width = 89
+      end
+      object DbDtEdtFim: TcxDBDateEdit
+        Left = 64
+        Top = 56
+        DataBinding.DataField = 'AGN_DATA_HORA_FIM'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.ReadOnly = True
+        Properties.ShowTime = False
+        Style.ButtonTransparency = ebtHideInactive
+        TabOrder = 2
+        Width = 121
+      end
+      object DbEdtTmInicio: TcxDBTimeEdit
+        Left = 192
+        Top = 32
+        DataBinding.DataField = 'AGN_DATA_HORA_INICIO'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.ReadOnly = True
+        Style.ButtonTransparency = ebtHideInactive
+        TabOrder = 1
+        Width = 89
+      end
+      object DbDtEdtInicio: TcxDBDateEdit
+        Left = 64
+        Top = 32
+        DataBinding.DataField = 'AGN_DATA_HORA_INICIO'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.ReadOnly = True
+        Properties.ShowTime = False
+        Style.ButtonTransparency = ebtHideInactive
+        TabOrder = 0
+        Width = 121
+      end
+      object DbMemoDetalhes: TcxDBMemo
+        Left = 64
+        Top = 117
+        DataBinding.DataField = 'AGN_DETALHE'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.ReadOnly = True
+        Properties.ScrollBars = ssVertical
+        TabOrder = 5
+        Height = 60
+        Width = 217
+      end
+      object DbMemoLocal: TcxDBMemo
+        Left = 64
+        Top = 181
+        DataBinding.DataField = 'AGN_LOCAL'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.ReadOnly = True
+        Properties.ScrollBars = ssVertical
+        TabOrder = 6
+        Height = 60
+        Width = 217
+      end
+      object DbEdtsituacao: TcxDBTextEdit
+        Left = 64
+        Top = 269
+        DataBinding.DataField = 'SIT_DESCRICAO'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.ReadOnly = True
+        TabOrder = 8
+        Width = 217
+      end
+      object DbEdtEvento: TcxDBTextEdit
+        Left = 64
+        Top = 293
+        DataBinding.DataField = 'EVE_DESCRICAO'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.ReadOnly = True
+        TabOrder = 9
+        Width = 217
+      end
+      object DbImgCmbBxTipo: TcxDBImageComboBox
+        Left = 64
+        Top = 245
+        DataBinding.DataField = 'AGN_EVENTO_TIPO'
+        DataBinding.DataSource = DtSrcAgendaPainel
+        Properties.Items = <
+          item
+            Description = 'Interno'
+            ImageIndex = 0
+            Value = 1
+          end
+          item
+            Description = 'Externo'
+            Value = 2
+          end>
+        Properties.ReadOnly = True
+        Style.ButtonTransparency = ebtHideInactive
+        TabOrder = 7
+        Width = 217
+      end
+    end
+  end
+  object BarDockControl: TdxBarDockControl
+    Left = 0
+    Top = 29
+    Width = 826
+    Height = 26
+    Align = dalTop
+    BarManager = BarManager
   end
   object cxSchedulerDBStorage: TcxSchedulerDBStorage
     Reminders.Active = False
@@ -171,21 +403,21 @@ inherited FrmAgenda: TFrmAgenda
     FieldNames.TaskIndexField = 'AGN_TASK_INDEX_FIELD'
     FieldNames.TaskLinksField = 'AGN_TASK_LINKS_FIELD'
     FieldNames.TaskStatusField = 'AGN_TASK_STATUS_FIELD'
-    Left = 408
-    Top = 296
+    Left = 688
+    Top = 192
   end
   object cxSchedulerHolidays: TcxSchedulerHolidays
     Locations = <>
-    Left = 440
-    Top = 296
+    Left = 720
+    Top = 192
   end
   object DtSrcAgenda: TDataSource
     DataSet = QryAgenda
-    Left = 376
-    Top = 296
+    Left = 656
+    Top = 192
   end
   object QryAgenda: TFDQuery
-    Active = True
+    AfterOpen = QryAgendaAfterOpen
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
@@ -219,16 +451,23 @@ inherited FrmAgenda: TFrmAgenda
       '  a.reg_excluido, '
       '  a.reg_replicado, '
       '  a.reg_usuario, '
-      '  a.reg_modificado'
+      '  a.reg_modificado,'
+      '  b.eve_descricao,'
+      '  c.sit_descricao'
       'from'
-      '  tab_agn_agenda a')
-    Left = 312
-    Top = 296
-    object QryAgendaAGN_ID: TLargeintField
-      Alignment = taLeftJustify
+      
+        '  tab_agn_agenda a left join tab_agn_evento b on (a.eve_id = b.e' +
+        've_id) left join'
+      '  tab_agn_situacao c on (a.sit_id = c.sit_id)'
+      'where'
+      '  (a.reg_excluido = 0)')
+    Left = 592
+    Top = 192
+    object QryAgendaAGN_ID: TIntegerField
       FieldName = 'AGN_ID'
       Origin = 'AGN_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
     end
     object QryAgendaAGN_DATA_HORA_INICIO: TSQLTimeStampField
       FieldName = 'AGN_DATA_HORA_INICIO'
@@ -349,6 +588,22 @@ inherited FrmAgenda: TFrmAgenda
       FieldName = 'REG_MODIFICADO'
       Origin = 'REG_MODIFICADO'
     end
+    object QryAgendaEVE_DESCRICAO: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EVE_DESCRICAO'
+      Origin = 'EVE_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
+    object QryAgendaSIT_DESCRICAO: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'SIT_DESCRICAO'
+      Origin = 'SIT_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
   end
   object UpdtAgenda: TFDUpdateSQL
     Connection = DtmConexaoModulo.FDConnection
@@ -446,7 +701,343 @@ inherited FrmAgenda: TFrmAgenda
       '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_AGN_AGENDA'
       'WHERE AGN_ID = :AGN_ID')
-    Left = 344
-    Top = 296
+    Left = 624
+    Top = 192
+  end
+  object BarManager: TdxBarManager
+    AllowReset = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    Categories.Strings = (
+      'Ferramentas')
+    Categories.ItemsVisibles = (
+      2)
+    Categories.Visibles = (
+      True)
+    ImageOptions.Images = DtmRecursoModulo.ImgLstPequenas
+    ImageOptions.StretchGlyphs = False
+    PopupMenuLinks = <>
+    Style = bmsUseLookAndFeel
+    UseSystemFont = True
+    Left = 592
+    Top = 224
+    DockControlHeights = (
+      0
+      0
+      0
+      0)
+    object BrFerramentas: TdxBar
+      AllowClose = False
+      AllowCustomizing = False
+      AllowQuickCustomizing = False
+      AllowReset = False
+      Caption = 'Ferramentas'
+      CaptionButtons = <>
+      DockControl = BarDockControl
+      DockedDockControl = BarDockControl
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 527
+      FloatTop = 265
+      FloatClientWidth = 116
+      FloatClientHeight = 197
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'BtnNovo'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnEditar'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnExcluir'
+        end
+        item
+          BeginGroup = True
+          Visible = True
+          ItemName = 'BtnDia'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnSemana'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnSemanaTrabalho'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnMes'
+        end
+        item
+          BeginGroup = True
+          Visible = True
+          ItemName = 'BtnImprimirDia'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnImprimirMes'
+        end
+        item
+          BeginGroup = True
+          Visible = True
+          ItemName = 'BtnFechar'
+        end>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
+      UseRestSpace = True
+      Visible = True
+      WholeRow = False
+    end
+    object BtnNovo: TdxBarButton
+      Tag = 1
+      Caption = '&Novo...'
+      Category = 0
+      Description = 'Cria um novo compromisso na agenda'
+      Hint = 'Inserir novo compromisso'
+      Visible = ivAlways
+      ImageIndex = 100
+      PaintStyle = psCaptionGlyph
+      UnclickAfterDoing = False
+      OnClick = BtnNovoClick
+    end
+    object BtnEditar: TdxBarButton
+      Tag = 1
+      Caption = '&Editar...'
+      Category = 0
+      Description = 'Altera o compromisso atualmente selecionado'
+      Enabled = False
+      Hint = 'Alterar compromisso selecionado'
+      Visible = ivAlways
+      ImageIndex = 19
+      PaintStyle = psCaptionGlyph
+      UnclickAfterDoing = False
+      OnClick = BtnEditarClick
+    end
+    object BtnExcluir: TdxBarButton
+      Tag = 1
+      Caption = 'E&xcluir'
+      Category = 0
+      Description = 'Exclui o compromisso selecionado'
+      Enabled = False
+      Hint = 'Excluir compromisso'
+      Visible = ivAlways
+      ImageIndex = 96
+      PaintStyle = psCaptionGlyph
+      UnclickAfterDoing = False
+      OnClick = BtnExcluirClick
+    end
+    object BtnImprimirDia: TdxBarButton
+      Tag = 1
+      Caption = 'Imprimir &dia'
+      Category = 0
+      Description = 'Imprime a agenda do dia'
+      Hint = 'Imprimir agenda do dia'
+      Visible = ivAlways
+      ImageIndex = 156
+      PaintStyle = psCaptionGlyph
+    end
+    object BtnImprimirMes: TdxBarButton
+      Tag = 1
+      Caption = 'Imprimir &m'#234's'
+      Category = 0
+      Description = 'Imprime a agenda do m'#234's'
+      Hint = 'Imprimir agenda do m'#234's'
+      Visible = ivAlways
+      ImageIndex = 156
+      PaintStyle = psCaptionGlyph
+    end
+    object BtnFechar: TdxBarButton
+      Caption = 'Fechar'
+      Category = 0
+      Hint = 'Fechar'
+      Visible = ivAlways
+      ImageIndex = 87
+      PaintStyle = psCaptionGlyph
+      UnclickAfterDoing = False
+      OnClick = BtnFecharClick
+    end
+    object BtnDia: TdxBarButton
+      Caption = 'Dia'
+      Category = 0
+      Hint = 'Dia'
+      Visible = ivAlways
+      ButtonStyle = bsChecked
+      GroupIndex = 1
+      ImageIndex = 188
+      PaintStyle = psCaptionGlyph
+      OnClick = BtnDiaClick
+    end
+    object BtnSemana: TdxBarButton
+      Caption = 'Semana'
+      Category = 0
+      Hint = 'Semana'
+      Visible = ivAlways
+      ButtonStyle = bsChecked
+      GroupIndex = 1
+      ImageIndex = 191
+      PaintStyle = psCaptionGlyph
+      OnClick = BtnSemanaClick
+    end
+    object BtnSemanaTrabalho: TdxBarButton
+      Caption = 'Semana '#250'til'
+      Category = 0
+      Hint = 'Semana '#250'til'
+      Visible = ivAlways
+      ButtonStyle = bsChecked
+      GroupIndex = 1
+      ImageIndex = 190
+      PaintStyle = psCaptionGlyph
+      OnClick = BtnSemanaTrabalhoClick
+    end
+    object BtnMes: TdxBarButton
+      Caption = 'M'#234's'
+      Category = 0
+      Hint = 'M'#234's'
+      Visible = ivAlways
+      ButtonStyle = bsChecked
+      GroupIndex = 1
+      ImageIndex = 189
+      PaintStyle = psCaptionGlyph
+      OnClick = BtnMesClick
+    end
+  end
+  object DtSrcAgendaPainel: TDataSource
+    DataSet = QryAgendaPainel
+    Left = 656
+    Top = 256
+  end
+  object QryAgendaPainel: TFDQuery
+    Active = True
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    UpdateObject = UpdtAgendaPainel
+    SQL.Strings = (
+      'select'
+      '  a.agn_id,'
+      '  a.agn_data_hora_inicio, '
+      '  a.agn_data_hora_fim, '
+      '  a.agn_evento_tipo, '
+      '  a.agn_assunto,'
+      '  a.agn_detalhe, '
+      '  a.agn_local, '
+      '  b.eve_descricao,'
+      '  c.sit_descricao'
+      'from'
+      
+        '  tab_agn_agenda a left join tab_agn_evento b on (a.eve_id = b.e' +
+        've_id) left join'
+      '  tab_agn_situacao c on (a.sit_id = c.sit_id)'
+      'where'
+      '  (a.reg_excluido = 0)'
+      '')
+    Left = 592
+    Top = 256
+    object QryAgendaPainelAGN_ID: TIntegerField
+      FieldName = 'AGN_ID'
+      Origin = 'AGN_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryAgendaPainelAGN_DATA_HORA_INICIO: TSQLTimeStampField
+      FieldName = 'AGN_DATA_HORA_INICIO'
+      Origin = 'AGN_DATA_HORA_INICIO'
+    end
+    object QryAgendaPainelAGN_DATA_HORA_FIM: TSQLTimeStampField
+      FieldName = 'AGN_DATA_HORA_FIM'
+      Origin = 'AGN_DATA_HORA_FIM'
+    end
+    object QryAgendaPainelAGN_EVENTO_TIPO: TSmallintField
+      Alignment = taLeftJustify
+      FieldName = 'AGN_EVENTO_TIPO'
+      Origin = 'AGN_EVENTO_TIPO'
+    end
+    object QryAgendaPainelAGN_ASSUNTO: TStringField
+      FieldName = 'AGN_ASSUNTO'
+      Origin = 'AGN_ASSUNTO'
+      Size = 100
+    end
+    object QryAgendaPainelAGN_DETALHE: TMemoField
+      FieldName = 'AGN_DETALHE'
+      Origin = 'AGN_DETALHE'
+      BlobType = ftMemo
+    end
+    object QryAgendaPainelAGN_LOCAL: TMemoField
+      FieldName = 'AGN_LOCAL'
+      Origin = 'AGN_LOCAL'
+      BlobType = ftMemo
+    end
+    object QryAgendaPainelEVE_DESCRICAO: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EVE_DESCRICAO'
+      Origin = 'EVE_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
+    object QryAgendaPainelSIT_DESCRICAO: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'SIT_DESCRICAO'
+      Origin = 'SIT_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
+    end
+  end
+  object UpdtAgendaPainel: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_AGN_AGENDA'
+      '(AGN_ID, AGN_DATA_HORA_INICIO, AGN_DATA_HORA_FIM, '
+      '  AGN_EVENTO_TIPO, AGN_ASSUNTO, AGN_DETALHE, '
+      '  AGN_LOCAL)'
+      
+        'VALUES (:NEW_AGN_ID, :NEW_AGN_DATA_HORA_INICIO, :NEW_AGN_DATA_HO' +
+        'RA_FIM, '
+      '  :NEW_AGN_EVENTO_TIPO, :NEW_AGN_ASSUNTO, :NEW_AGN_DETALHE, '
+      '  :NEW_AGN_LOCAL)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_AGN_AGENDA'
+      
+        'SET AGN_ID = :NEW_AGN_ID, AGN_DATA_HORA_INICIO = :NEW_AGN_DATA_H' +
+        'ORA_INICIO, '
+      
+        '  AGN_DATA_HORA_FIM = :NEW_AGN_DATA_HORA_FIM, AGN_EVENTO_TIPO = ' +
+        ':NEW_AGN_EVENTO_TIPO, '
+      
+        '  AGN_ASSUNTO = :NEW_AGN_ASSUNTO, AGN_DETALHE = :NEW_AGN_DETALHE' +
+        ', '
+      '  AGN_LOCAL = :NEW_AGN_LOCAL'
+      'WHERE AGN_ID = :OLD_AGN_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_AGN_AGENDA'
+      'WHERE AGN_ID = :OLD_AGN_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT AGN_ID, AGN_DATA_HORA_INICIO, AGN_DATA_HORA_FIM, AGN_DATA' +
+        '_HORA_REGISTRO, '
+      
+        '  AGN_EVENTO_TIPO, AGN_ASSUNTO, AGN_DETALHE, AGN_LOCAL, AGN_PART' +
+        'ICIPANTE, '
+      '  UND_ID, EVE_ID, SIT_ID, AGN_ACTUAL_FINISH, AGN_ACTUAL_START, '
+      
+        '  AGN_TASK_COMPLETE_FIELD, AGN_TASK_INDEX_FIELD, AGN_TASK_STATUS' +
+        '_FIELD, '
+      '  AGN_TASK_LINKS_FIELD, AGN_OPTIONS, AGN_STATE, AGN_EVENT_TYPE, '
+      
+        '  AGN_LABEL_COLOR, AGN_RESOURCE_ID, AGN_PARENT_ID, REG_EXCLUIDO,' +
+        ' '
+      '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
+      'FROM TAB_AGN_AGENDA'
+      'WHERE AGN_ID = :AGN_ID')
+    Left = 624
+    Top = 256
   end
 end

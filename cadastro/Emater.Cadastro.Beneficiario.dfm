@@ -1286,6 +1286,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
         object TbShtIdentificacao: TcxTabSheet
           Caption = 'Categoria e atividade produtiva'
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -1777,6 +1781,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
         object TbShtProgramas: TcxTabSheet
           Caption = 'Programas governamentais'
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2029,6 +2037,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'NIS/DAP'
           ImageIndex = 2
           OnShow = TbShtDAPShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2788,6 +2800,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Unidade de produ'#231#227'o'
           ImageIndex = 1
           OnShow = TbShtUnidadeShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -3090,6 +3106,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Benfeitorias'
               ImageIndex = 0
               OnShow = TbShtBenfeitoriasShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               DesignSize = (
                 667
                 286)
@@ -3210,6 +3230,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'M'#225'quinas e equipamentos'
               ImageIndex = 1
               OnShow = TbShtMaquinasShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               DesignSize = (
                 667
                 286)
@@ -3332,6 +3356,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Semoventes'
               ImageIndex = 2
               OnShow = TbShtSemoventesShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               DesignSize = (
                 667
                 286)
@@ -3428,6 +3456,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Atividades produtivas e comercializa'#231#227'o'
               ImageIndex = 3
               OnShow = TbShtAtividadesShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               DesignSize = (
                 667
                 286)

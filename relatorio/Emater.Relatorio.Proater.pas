@@ -87,6 +87,19 @@ begin
   QryProaterPrincipal.Open;
   QryProaterComunidade.Open;
   QryProaterPotencial.Open;
+  QryProaterAcordo.Open;
+  QryProaterFuncionario.Open;
+  QryProaterMobiliario.Open;
+  QryProaterEquipamento.Open;
+  QryProaterVeiculo.Open;
+  QryProaterCusto.Open;
+  QryProaterQualificacao.Open;
+  QrySubProjeto.Open;
+  QrySubMeta.Open;
+  QrySubMetodo.Open;
+  QrySubComunidade.Open;
+  QrySubOrcamento.Open;
+  QrySubResponsavel.Open;
 
   ShowModal;
 end;

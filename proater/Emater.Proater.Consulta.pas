@@ -234,7 +234,7 @@ begin
   Screen.Cursor := crHourGlass;
   FrmRelatorioProater := TFrmRelatorioProater.Create(Self);
   try
-    S := QryConsultaPRO_PERIODO_INICIO.Text + ' a ' + QryConsultaPRO_PERIODO_FIM.Text + ' do município de ' + QryConsultaUND_NOME.Value;
+    S := QryConsultaPRO_PERIODO_INICIO.Text + ' a ' + QryConsultaPRO_PERIODO_FIM.Text + ' do município de ' + QryConsultaUND_NOME.AsString;
     FrmRelatorioProater.Preparar(QryConsultaPRO_ID.Value, S);
   finally
     FrmRelatorioProater.Release;

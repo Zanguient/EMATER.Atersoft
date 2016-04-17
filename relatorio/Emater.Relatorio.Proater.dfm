@@ -1,10 +1,10 @@
 inherited FrmRelatorioProater: TFrmRelatorioProater
-  Left = 389
-  Top = 186
+  Left = 615
+  Top = 156
   Caption = 'PROATER'
   ClientHeight = 433
-  ExplicitLeft = 389
-  ExplicitTop = 186
+  ExplicitLeft = 615
+  ExplicitTop = 156
   ExplicitHeight = 472
   PixelsPerInch = 96
   TextHeight = 13
@@ -59,7 +59,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Visible = False
   end
   inherited FrxPrincipal: TfrxReport
-    ReportOptions.LastChange = 42458.961084039400000000
+    ReportOptions.LastChange = 42474.982642777800000000
     ScriptText.Strings = (
       'var'
       '  N1, N2: Integer;'
@@ -10370,6 +10370,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Height = 30.236220470000000000
           OnBeforePrint = 'PROATERSubprojetoMtodoMET_DESCRICAOOnBeforePrint'
           StretchMode = smMaxHeight
+          DataField = 'MET_DESCRICAO'
           DataSet = FrxDtStSubMetodo
           DataSetName = 'PROATER - Subprojeto - M'#233'todo'
           Font.Charset = DEFAULT_CHARSET
@@ -10402,6 +10403,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 79.370130000000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
+          DataField = 'MET_ANO_1'
           DataSet = FrxDtStSubMetodo
           DataSetName = 'PROATER - Subprojeto - M'#233'todo'
           Font.Charset = DEFAULT_CHARSET
@@ -10432,6 +10434,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 79.370130000000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
+          DataField = 'MET_ANO_2'
           DataSet = FrxDtStSubMetodo
           DataSetName = 'PROATER - Subprojeto - M'#233'todo'
           Font.Charset = DEFAULT_CHARSET
@@ -10462,6 +10465,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 79.370130000000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
+          DataField = 'MET_ANO_3'
           DataSet = FrxDtStSubMetodo
           DataSetName = 'PROATER - Subprojeto - M'#233'todo'
           Font.Charset = DEFAULT_CHARSET
@@ -10492,6 +10496,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 79.370130000000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
+          DataField = 'MET_ANO_4'
           DataSet = FrxDtStSubMetodo
           DataSetName = 'PROATER - Subprojeto - M'#233'todo'
           Font.Charset = DEFAULT_CHARSET
@@ -10522,6 +10527,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 79.370130000000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
+          DataField = 'MET_TOTAL'
           DataSet = FrxDtStSubMetodo
           DataSetName = 'PROATER - Subprojeto - M'#233'todo'
           Font.Charset = DEFAULT_CHARSET
@@ -10562,6 +10568,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Height = 30.236220470000000000
           OnBeforePrint = 'MemoComunidadeOnBeforePrint'
           StretchMode = smMaxHeight
+          DataField = 'REL_COMUNIDADE'
           DataSet = FrxDtStSubComunidade
           DataSetName = 'PROATER - Subprojeto - Comunidade'
           Font.Charset = DEFAULT_CHARSET
@@ -10594,6 +10601,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 68.031496060000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
+          DataField = 'REL_ANO_1'
           DataSet = FrxDtStSubComunidade
           DataSetName = 'PROATER - Subprojeto - Comunidade'
           Font.Charset = DEFAULT_CHARSET
@@ -10624,6 +10632,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 68.031496060000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
+          DataField = 'REL_ANO_2'
           DataSet = FrxDtStSubComunidade
           DataSetName = 'PROATER - Subprojeto - Comunidade'
           Font.Charset = DEFAULT_CHARSET
@@ -10654,6 +10663,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 68.031540000000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
+          DataField = 'REL_ANO_3'
           DataSet = FrxDtStSubComunidade
           DataSetName = 'PROATER - Subprojeto - Comunidade'
           Font.Charset = DEFAULT_CHARSET
@@ -10684,6 +10694,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 68.031540000000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
+          DataField = 'REL_ANO_4'
           DataSet = FrxDtStSubComunidade
           DataSetName = 'PROATER - Subprojeto - Comunidade'
           Font.Charset = DEFAULT_CHARSET
@@ -10715,6 +10726,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Height = 30.236220470000000000
           OnBeforePrint = 'MemoCategoriaOnBeforePrint'
           StretchMode = smMaxHeight
+          DataField = 'REL_CATEGORIA'
           DataSet = FrxDtStSubComunidade
           DataSetName = 'PROATER - Subprojeto - Comunidade'
           Font.Charset = DEFAULT_CHARSET
@@ -10748,6 +10760,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Height = 30.236220470000000000
           OnBeforePrint = 'MemoAtividadeOnBeforePrint'
           StretchMode = smMaxHeight
+          DataField = 'REL_ATIVIDADE'
           DataSet = FrxDtStSubComunidade
           DataSetName = 'PROATER - Subprojeto - Comunidade'
           Font.Charset = DEFAULT_CHARSET
@@ -10991,11 +11004,8 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Width = 90.708720000000000000
           Height = 30.236220470000000000
           StretchMode = smMaxHeight
-          DataField = 'REL_TOTAL'
           DataSet = FrxDtStSubOrcamento
           DataSetName = 'PROATER - Subprojeto - Or'#231'amento'
-          DisplayFormat.FormatStr = '%2.2n'
-          DisplayFormat.Kind = fkNumeric
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -11
@@ -11015,7 +11025,13 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
           Highlight.FillType = ftBrush
           Highlight.Fill.BackColor = 14211288
           Memo.UTF8W = (
-            '[PROATER - Subprojeto - Or'#231'amento."REL_TOTAL"]')
+            '[IIF('
+            '  <PROATER - Subprojeto - Or'#231'amento."REL_TOTAL"> = '#39'Total'#39','
+            '  <PROATER - Subprojeto - Or'#231'amento."REL_TOTAL">,'
+            
+              '  FormatFloat('#39',##0.00'#39',<PROATER - Subprojeto - Or'#231'amento."REL_T' +
+              'OTAL">)'
+            ')]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -11916,6 +11932,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     CachedUpdates = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
+    DetailFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction

@@ -1,14 +1,14 @@
 inherited FrmCredito: TFrmCredito
   Tag = 1
-  Left = 309
-  Top = 137
+  Left = 313
+  Top = 131
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
   Caption = 'Projeto de Cr'#233'dito Rural'
   ClientHeight = 499
   ClientWidth = 839
-  ExplicitLeft = 309
-  ExplicitTop = 137
+  ExplicitLeft = 313
+  ExplicitTop = 131
   ExplicitWidth = 855
   ExplicitHeight = 538
   DesignSize = (
@@ -897,6 +897,10 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Proponentes'
       ImageIndex = 2
       OnShow = TbShtProponentesShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -1246,6 +1250,10 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Itens'
       ImageIndex = 3
       OnShow = TbShtItensShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -2193,7 +2201,6 @@ inherited FrmCredito: TFrmCredito
     object QryPrincipalCRD_DATA_INTERNALIZACAO: TDateField
       FieldName = 'CRD_DATA_INTERNALIZACAO'
       Origin = 'CRD_DATA_INTERNALIZACAO'
-      Required = True
       DisplayFormat = 'dd/mm/yyyy'
     end
     object QryPrincipalCRD_DATA_CONTRATACAO: TDateField

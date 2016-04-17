@@ -7373,10 +7373,16 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
     SQL.Strings = (
-      '--select * from stp_rel_base_beneficiario_01(:beneficiario)'
-      'select * from stp_rel_base_beneficiario_01(100000000001)')
+      'select * from stp_rel_base_beneficiario_01(:beneficiario)')
     Left = 128
     Top = 72
+    ParamData = <
+      item
+        Name = 'BENEFICIARIO'
+        DataType = ftString
+        ParamType = ptInput
+        Value = '100000000001'
+      end>
   end
   object DtStPesquisar: TFDQuery
     Connection = DtmConexaoModulo.FDConnection

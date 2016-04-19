@@ -176,6 +176,7 @@ inherited FrmCadastroUnidadeConsulta: TFrmCadastroUnidadeConsulta
       Height = 13
       Anchors = [akTop, akRight]
       Caption = 'Possui CAR:'
+      Transparent = True
     end
     inherited ImgCmbBxOpcao: TcxImageComboBox
       Left = 400
@@ -388,8 +389,6 @@ inherited FrmCadastroUnidadeConsulta: TFrmCadastroUnidadeConsulta
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 7
-    ExplicitTop = 201
-    ExplicitHeight = 272
     object GrdBen: TcxGrid
       Left = 0
       Top = 0
@@ -405,7 +404,6 @@ inherited FrmCadastroUnidadeConsulta: TFrmCadastroUnidadeConsulta
       TabOrder = 0
       LookAndFeel.Kind = lfFlat
       LookAndFeel.NativeStyle = True
-      ExplicitHeight = 272
       object GrdBenTbl: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1029,7 +1027,8 @@ inherited FrmCadastroUnidadeConsulta: TFrmCadastroUnidadeConsulta
         '  tab_cad_beneficiario_producao a join tab_cad_beneficiario b on' +
         ' (a.ben_id = b.ben_id)'
       'where'
-      '  (a.pro_id = :pro_id)'
+      '  (a.pro_id = :pro_id) and'
+      '  (a.reg_excluido = 0)'
       'order by'
       '  b.ben_nome')
     Left = 200

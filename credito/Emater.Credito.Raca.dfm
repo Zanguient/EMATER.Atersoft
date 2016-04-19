@@ -262,7 +262,6 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
       FieldName = 'RAC_ID'
       Origin = 'RAC_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalRAC_DESCRICAO: TStringField
       DisplayLabel = 'Nome da ra'#231'a'

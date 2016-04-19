@@ -737,6 +737,8 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Enabled = False
           ParentColor = False
           Properties.ImmediatePost = True
+          Properties.ValueChecked = '1'
+          Properties.ValueUnchecked = '0'
           Style.StyleController = DtmRecursoModulo.cxEditStyleController
           TabOrder = 2
           Transparent = True
@@ -751,6 +753,8 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Enabled = False
           ParentColor = False
           Properties.ImmediatePost = True
+          Properties.ValueChecked = '1'
+          Properties.ValueUnchecked = '0'
           Style.StyleController = DtmRecursoModulo.cxEditStyleController
           TabOrder = 3
           Transparent = True

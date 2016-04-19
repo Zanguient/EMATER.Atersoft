@@ -264,7 +264,6 @@ inherited FrmCreditoVariedade: TFrmCreditoVariedade
       FieldName = 'VAR_ID'
       Origin = 'VAR_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalVAR_DESCRICAO: TStringField
       DisplayLabel = 'Descri'#231#227'o da variedade'

@@ -170,19 +170,9 @@ inherited FrmProdutividadeFaterParticipante: TFrmProdutividadeFaterParticipante
       end
       item
         Name = 'PRT_CPF'
+        DataType = ftString
         ParamType = ptInput
+        Size = 11
       end>
-    object DtStCPFExisteTEC_ID: TIntegerField
-      FieldName = 'TEC_ID'
-      Origin = 'TEC_ID'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
-    end
-    object DtStCPFExisteTEC_DESCRICAO: TStringField
-      FieldName = 'TEC_DESCRICAO'
-      Origin = 'TEC_DESCRICAO'
-      Required = True
-      Size = 50
-    end
   end
 end

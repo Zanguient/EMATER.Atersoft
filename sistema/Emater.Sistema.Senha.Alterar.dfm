@@ -1,7 +1,6 @@
 inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   Left = 474
   Top = 198
-  ActiveControl = EdtSenhaAtual
   BorderStyle = bsDialog
   Caption = 'Alterar Senha do Usu'#225'rio'
   ClientHeight = 269
@@ -10,7 +9,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   ExplicitLeft = 474
   ExplicitTop = 198
   ExplicitWidth = 460
-  ExplicitHeight = 307
+  ExplicitHeight = 308
   PixelsPerInch = 96
   TextHeight = 13
   object LblUsuarioLegenda: TLabel
@@ -19,6 +18,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     Width = 67
     Height = 13
     Caption = 'Usu'#225'rio atual:'
+    Transparent = True
   end
   object LblUsuario: TLabel
     Left = 120
@@ -40,6 +40,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     Width = 310
     Height = 13
     Caption = 'Somente o usu'#225'rio autenticado no sistema pode alterar a senha.'
+    Transparent = True
   end
   object ImgLocked: TImage
     Left = 8
@@ -224,7 +225,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     Width = 61
     Height = 13
     Caption = 'Senha &atual:'
-    FocusControl = EdtSenhaAtual
+    Transparent = True
   end
   object LblNovaSenha: TLabel
     Left = 48
@@ -232,7 +233,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     Width = 61
     Height = 13
     Caption = '&Nova senha:'
-    FocusControl = EdtNovaSenha
+    Transparent = True
   end
   object LblRepetirSenha: TLabel
     Left = 48
@@ -240,7 +241,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     Width = 98
     Height = 13
     Caption = '&Repetir nova senha:'
-    FocusControl = EdtRepetirSenha
+    Transparent = True
   end
   object BvlBottom: TBevel
     Left = 0
@@ -298,7 +299,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     Caption = 'OK'
     Default = True
     OptionsImage.NumGlyphs = 2
-    TabOrder = 3
+    TabOrder = 6
     OnClick = BtnOKClick
   end
   object BtnCancelar: TcxButton
@@ -310,34 +311,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     Caption = 'Cancelar'
     ModalResult = 2
     OptionsImage.NumGlyphs = 2
-    TabOrder = 4
-  end
-  object EdtSenhaAtual: TEdit
-    Left = 152
-    Top = 141
-    Width = 201
-    Height = 21
-    MaxLength = 80
-    PasswordChar = '*'
-    TabOrder = 0
-  end
-  object EdtNovaSenha: TEdit
-    Left = 152
-    Top = 165
-    Width = 201
-    Height = 21
-    MaxLength = 80
-    PasswordChar = '*'
-    TabOrder = 1
-  end
-  object EdtRepetirSenha: TEdit
-    Left = 152
-    Top = 189
-    Width = 201
-    Height = 21
-    MaxLength = 80
-    PasswordChar = '*'
-    TabOrder = 2
+    TabOrder = 7
   end
   object cxLabel1: TcxLabel
     Left = 80
@@ -418,5 +392,30 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     StyleHot.LookAndFeel.Kind = lfUltraFlat
     StyleHot.LookAndFeel.NativeStyle = True
     Transparent = True
+  end
+  object EdtSenhaAtual: TcxTextEdit
+    Left = 152
+    Top = 141
+    ParentFont = False
+    Properties.EchoMode = eemPassword
+    Properties.PasswordChar = '*'
+    TabOrder = 1
+    Width = 225
+  end
+  object EdtNovaSenha: TcxTextEdit
+    Left = 152
+    Top = 165
+    Properties.EchoMode = eemPassword
+    Properties.PasswordChar = '*'
+    TabOrder = 3
+    Width = 225
+  end
+  object EdtRepetirSenha: TcxTextEdit
+    Left = 152
+    Top = 189
+    Properties.EchoMode = eemPassword
+    Properties.PasswordChar = '*'
+    TabOrder = 5
+    Width = 225
   end
 end

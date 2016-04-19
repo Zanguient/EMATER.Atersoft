@@ -223,9 +223,9 @@ object DtmConexaoModulo: TDtmConexaoModulo
       'update tab_sis_usuario set'
       '  usr_senha = :senha,'
       '  usr_expirada = 0,'
-      '  usr_replicado = :replicado,'
-      '  usr_usuario = :usuario,'
-      '  usr_modificado = :modificado'
+      '  reg_replicado = :replicado,'
+      '  reg_usuario = :usuario,'
+      '  reg_modificado = :modificado'
       'where'
       '  usr_login = :login')
     ParamData = <

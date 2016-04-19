@@ -553,7 +553,7 @@ implementation
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Produtividade.Fater.Editor, Emater.Proater.Comunidade, Emater.Base.Consts, Emater.Proater.Potencial,
   Emater.Proater.Modulo, Emater.Recurso.Modulo, Emater.Proater.Acordo, Emater.Pessoal.Funcionario.Busca, Emater.Proater.Demanda, Emater.Proater.Mobiliario,
   Emater.Proater.Equipamento, Emater.Proater.Veiculo, Emater.Proater.Custo, Emater.Proater.Qualificacao, Emater.Proater.SubProjeto, Emater.Proater.Meta,
-  Emater.Proater.Metodo, Emater.Proater.Beneficiario, Emater.Proater.Orcamento;
+  Emater.Proater.Metodo, Emater.Proater.Beneficiario, Emater.Proater.Orcamento, Emater.Proater.Consts;
 
 procedure TFrmProaterPrincipal.BtnAcrEditarClick(Sender: TObject);
 begin
@@ -657,17 +657,29 @@ begin
 end;
 
 procedure TFrmProaterPrincipal.BtnComEditarClick(Sender: TObject);
+var
+  Lista: TStringList;
 begin
   FrmProaterComunidade := TFrmProaterComunidade.Create(Self);
   try
+    Lista := DtmSistemaModulo.CriarListaChave(QryComunidade, 'COM_ID', QryComunidadeCOM_ID.AsString);
     QryComunidade.Edit;
     if (FrmProaterComunidade.ShowModal = mrOK) then
       begin
-        QryComunidadeCOM_NOME.AsString := FrmProaterComunidade.DbLkpCmbBxComunidade.Text;
-        QryComunidade.Post;
+        if DtmSistemaModulo.RegistroDuplicadoNaLista(Lista, FrmProaterComunidade.DbLkpCmbBxComunidade.EditValue) then
+          begin
+            Msg.Aviso(PROATER_COMUNIDADE_DUPLICADA);
+            QryComunidade.Cancel;
+          end
+        else
+          begin
+            QryComunidadeCOM_NOME.AsString := FrmProaterComunidade.DbLkpCmbBxComunidade.Text;
+            QryComunidade.Post;
+          end;
       end
     else
       QryComunidade.Cancel;
+    Lista.Free;
   finally
     FrmProaterComunidade.Release;
     FrmProaterComunidade := nil;
@@ -684,17 +696,29 @@ begin
 end;
 
 procedure TFrmProaterPrincipal.BtnComIncluirClick(Sender: TObject);
+var
+  Lista: TStringList;
 begin
   FrmProaterComunidade := TFrmProaterComunidade.Create(Self);
   try
+    Lista := DtmSistemaModulo.CriarListaChave(QryComunidade, 'COM_ID');
     QryComunidade.Insert;
     if (FrmProaterComunidade.ShowModal = mrOK) then
       begin
-        QryComunidadeCOM_NOME.AsString := FrmProaterComunidade.DbLkpCmbBxComunidade.Text;
-        QryComunidade.Post;
+        if DtmSistemaModulo.RegistroDuplicadoNaLista(Lista, FrmProaterComunidade.DbLkpCmbBxComunidade.EditValue) then
+          begin
+            Msg.Aviso(PROATER_COMUNIDADE_DUPLICADA);
+            QryComunidade.Cancel;
+          end
+        else
+          begin
+            QryComunidadeCOM_NOME.AsString := FrmProaterComunidade.DbLkpCmbBxComunidade.Text;
+            QryComunidade.Post;
+          end;
       end
     else
       QryComunidade.Cancel;
+    Lista.Free;
   finally
     FrmProaterComunidade.Release;
     FrmProaterComunidade := nil;
@@ -1076,23 +1100,31 @@ begin
 end;
 
 procedure TFrmProaterPrincipal.BtnFncIncluirClick(Sender: TObject);
+var
+  Lista: TStringList;
 begin
   FrmPessoalFuncionarioBusca := TFrmPessoalFuncionarioBusca.Create(Self);
   try
     Screen.Cursor := crHourGlass;
-
+    Lista := DtmSistemaModulo.CriarListaChave(QryFuncionario, 'FUN_ID');
     if (FrmPessoalFuncionarioBusca.ShowModal = mrOk) then
       try
-        QryFuncionario.Insert;
-        QryFuncionarioFUN_ID.Value := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.Value;
-        QryFuncionarioFUN_NOME.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
-        QryFuncionarioFUN_MATRICULA.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_MATRICULA.AsString;
-        QryFuncionario.Post;
+        if DtmSistemaModulo.RegistroDuplicadoNaLista(Lista, FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.AsString) then
+            Msg.Aviso(PROATER_TECNICO_DUPLICADO)
+        else
+          begin
+            QryFuncionario.Insert;
+            QryFuncionarioFUN_ID.Value := FrmPessoalFuncionarioBusca.QryConsultaFUN_ID.Value;
+            QryFuncionarioFUN_NOME.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_NOME.AsString;
+            QryFuncionarioFUN_MATRICULA.AsString := FrmPessoalFuncionarioBusca.QryConsultaFUN_MATRICULA.AsString;
+            QryFuncionario.Post;
+          end;
       except
         on E: Exception do
           if QryFuncionario.State = dsInsert then
             QryFuncionario.Cancel;
       end;
+    Lista.Free;
   finally
     FrmPessoalFuncionarioBusca.Release;
     FrmPessoalFuncionarioBusca := nil;

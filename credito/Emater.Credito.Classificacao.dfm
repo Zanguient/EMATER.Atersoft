@@ -266,7 +266,6 @@ inherited FrmCreditoClassificacao: TFrmCreditoClassificacao
       FieldName = 'CLS_ID'
       Origin = 'CLS_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalCLS_DESCRICAO: TStringField
       DisplayLabel = 'Descri'#231#227'o da classifica'#231#227'o'

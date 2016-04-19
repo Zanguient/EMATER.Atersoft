@@ -8,8 +8,9 @@ uses
   cxLookAndFeelPainters, cxStyles, dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, dxSkinscxPCPainter,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, Data.DB, cxDBData, cxImageComboBox, cxPCdxBarPopupMenu, cxPC,
   cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid, cxTL,
-  cxTLdxBarBuiltInMenu, cxInplaceContainer, cxTLData, cxDBTL, dxSkinsdxBarPainter, dxBar, cxCheckBox, FIBDataSet, pFIBDataSet, cxContainer,
-  cxTextEdit;
+  cxTLdxBarBuiltInMenu, cxInplaceContainer, cxTLData, cxDBTL, dxSkinsdxBarPainter, dxBar, cxCheckBox, cxContainer,
+  cxTextEdit, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
   TFrmSistemaPermissao = class(TFrmBaseFilha)
@@ -44,39 +45,41 @@ type
     GrdPrfTblPER_ATIVO: TcxGridDBColumn;
     GrdUsrTblUSR_LOGIN: TcxGridDBColumn;
     GrdUsrTblUSR_ATIVO: TcxGridDBColumn;
-    DtStPermissaoPerfil: TpFIBDataSet;
     DtSrcPermissao: TDataSource;
-    DtStPermissaoUsuario: TpFIBDataSet;
     GrdPrm: TcxGrid;
     GrdPrmTbl: TcxGridDBTableView;
     GrdPrmLvl: TcxGridLevel;
-    DtStPermissaoPerfilAPL_ID: TFIBIntegerField;
-    DtStPermissaoPerfilAPL_LEGENDA: TFIBStringField;
-    DtStPermissaoPerfilAPL_DESCRICAO: TFIBStringField;
-    DtStPermissaoPerfilPER_ID: TFIBIntegerField;
-    DtStPermissaoPerfilCTR_ID: TFIBIntegerField;
-    DtStPermissaoPerfilCTR_ATIVO: TFIBBooleanField;
-    DtStPermissaoPerfilCTR_LEGENDA: TFIBStringField;
-    DtStPermissaoPerfilCTR_DESCRICAO: TFIBStringField;
-    DtStPermissaoPerfilCTR_NOME: TFIBStringField;
-    DtStPermissaoPerfilAPL_NOME: TFIBStringField;
     GrdPrmTblAPL_LEGENDA: TcxGridDBColumn;
     GrdPrmTblCTR_ATIVO: TcxGridDBColumn;
     GrdPrmTblCTR_LEGENDA: TcxGridDBColumn;
     GrdPrmTblCTR_DESCRICAO: TcxGridDBColumn;
-    DtStPermissaoUsuarioAPL_ID: TFIBIntegerField;
-    DtStPermissaoUsuarioAPL_LEGENDA: TFIBStringField;
-    DtStPermissaoUsuarioAPL_DESCRICAO: TFIBStringField;
-    DtStPermissaoUsuarioUSR_ID: TFIBIntegerField;
-    DtStPermissaoUsuarioCTR_ID: TFIBIntegerField;
-    DtStPermissaoUsuarioCTR_ATIVO: TFIBBooleanField;
-    DtStPermissaoUsuarioCTR_LEGENDA: TFIBStringField;
-    DtStPermissaoUsuarioCTR_DESCRICAO: TFIBStringField;
-    DtStPermissaoUsuarioCTR_NOME: TFIBStringField;
     EdtFiltro: TcxTextEdit;
     Bevel1: TBevel;
     BtnExpandir: TdxBarButton;
     BtnContrair: TdxBarButton;
+    DtStPermissaoPerfil: TFDQuery;
+    UpdtPermissaoPerfil: TFDUpdateSQL;
+    UpdtPermissaoUsuario: TFDUpdateSQL;
+    DtStPermissaoUsuario: TFDQuery;
+    DtStPermissaoPerfilAPL_ID: TIntegerField;
+    DtStPermissaoPerfilAPL_LEGENDA: TStringField;
+    DtStPermissaoPerfilAPL_DESCRICAO: TStringField;
+    DtStPermissaoPerfilAPL_NOME: TStringField;
+    DtStPermissaoPerfilPER_ID: TIntegerField;
+    DtStPermissaoPerfilCTR_ID: TIntegerField;
+    DtStPermissaoPerfilCTR_ATIVO: TSmallintField;
+    DtStPermissaoPerfilCTR_LEGENDA: TStringField;
+    DtStPermissaoPerfilCTR_DESCRICAO: TStringField;
+    DtStPermissaoPerfilCTR_NOME: TStringField;
+    DtStPermissaoUsuarioAPL_ID: TIntegerField;
+    DtStPermissaoUsuarioAPL_LEGENDA: TStringField;
+    DtStPermissaoUsuarioAPL_DESCRICAO: TStringField;
+    DtStPermissaoUsuarioUSR_ID: TIntegerField;
+    DtStPermissaoUsuarioCTR_ID: TIntegerField;
+    DtStPermissaoUsuarioCTR_ATIVO: TSmallintField;
+    DtStPermissaoUsuarioCTR_LEGENDA: TStringField;
+    DtStPermissaoUsuarioCTR_DESCRICAO: TStringField;
+    DtStPermissaoUsuarioCTR_NOME: TStringField;
     procedure BtnFecharClick(Sender: TObject);
     procedure BtnPerfisClick(Sender: TObject);
     procedure BtnUsuariosClick(Sender: TObject);
@@ -86,7 +89,6 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure BtnAcessoPermitirClick(Sender: TObject);
     procedure BtnAcessoRevogarClick(Sender: TObject);
-    procedure DtStPermissaoPerfilAfterScroll(DataSet: TDataSet);
     procedure BtnAcessoPermitirTodosClick(Sender: TObject);
     procedure BtnAcessoRevogarTodosClick(Sender: TObject);
     procedure GrdPrmTblCTR_ATIVOPropertiesEditValueChanged(Sender: TObject);
@@ -95,8 +97,9 @@ type
     procedure EdtFiltroPropertiesChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure EdtFiltroEnter(Sender: TObject);
+    procedure DtStPermissaoPerfilAfterScroll(DataSet: TDataSet);
   private
-    procedure TodosAcessosPermitir(AConceder: Boolean);
+    procedure TodosAcessosPermitir(AConceder: Integer);
   end;
 
 var
@@ -106,15 +109,15 @@ implementation
 
 {$R *.dfm}
 
-uses Emater.Recurso.Modulo, Emater.Sistema.Modulo, Emater.Sistema.Perfil, Emater.Sistema.Usuario, Emater.Sistema.Consts;
+uses Emater.Recurso.Modulo, Emater.Sistema.Modulo, Emater.Sistema.Perfil, Emater.Sistema.Usuario, Emater.Sistema.Consts, Emater.Conexao.Modulo;
 
 procedure TFrmSistemaPermissao.BtnAcessoPermitirClick(Sender: TObject);
 begin
   inherited;
-  if (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean = False) then
+  if (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger = 0) then
     begin
       DtSrcPermissao.DataSet.Edit;
-      DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean := True;
+      DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger := 1;
       DtSrcPermissao.DataSet.Post;
     end;
 end;
@@ -122,16 +125,16 @@ end;
 procedure TFrmSistemaPermissao.BtnAcessoPermitirTodosClick(Sender: TObject);
 begin
   if MSG.Confirmacao(SISTEMA_MSG_CONCEDER_TUDO) then
-    TodosAcessosPermitir(True);
+    TodosAcessosPermitir(1);
 end;
 
 procedure TFrmSistemaPermissao.BtnAcessoRevogarClick(Sender: TObject);
 begin
   inherited;
-  if (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean) then
+  if (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger = 1) then
     begin
       DtSrcPermissao.DataSet.Edit;
-      DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean := False;
+      DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger := 0;
       DtSrcPermissao.DataSet.Post;
     end;
 end;
@@ -139,7 +142,7 @@ end;
 procedure TFrmSistemaPermissao.BtnAcessoRevogarTodosClick(Sender: TObject);
 begin
   if MSG.Confirmacao(SISTEMA_MSG_REVOGAR_TUDO) then
-    TodosAcessosPermitir(False);
+    TodosAcessosPermitir(0);
 end;
 
 procedure TFrmSistemaPermissao.BtnContrairClick(Sender: TObject);
@@ -183,21 +186,6 @@ begin
   end;
 end;
 
-procedure TFrmSistemaPermissao.DtStPermissaoPerfilAfterScroll(DataSet: TDataSet);
-begin
-  inherited;
-  BtnAcessoPermitir.Enabled := (not DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean);
-  BtnAcessoRevogar.Enabled := (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean);
-
-  if DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean then
-    GrdPrmTblCTR_ATIVO.Properties.ReadOnly := (not (BtnAcessoRevogar.Visible = ivAlways)) and (not (BtnAcessoRevogarTodos.Visible = ivAlways))
-  else
-    if not DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean then
-      GrdPrmTblCTR_ATIVO.Properties.ReadOnly := (not (BtnAcessoPermitir.Visible = ivAlways)) and (not (BtnAcessoPermitirTodos.Visible = ivAlways))
-    else
-      GrdPrmTblCTR_ATIVO.Properties.ReadOnly := False;
-end;
-
 procedure TFrmSistemaPermissao.EdtFiltroEnter(Sender: TObject);
 begin
   EdtFiltro.SelectAll;
@@ -222,6 +210,21 @@ begin
   finally
     GrdPrmTbl.DataController.Filter.EndUpdate;
   end;
+end;
+
+procedure TFrmSistemaPermissao.DtStPermissaoPerfilAfterScroll(DataSet: TDataSet);
+begin
+  inherited;
+  BtnAcessoPermitir.Enabled := (not (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger = 1));
+  BtnAcessoRevogar.Enabled := (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger = 1);
+
+  if (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger = 1) then
+    GrdPrmTblCTR_ATIVO.Properties.ReadOnly := (not (BtnAcessoRevogar.Visible = ivAlways)) and (not (BtnAcessoRevogarTodos.Visible = ivAlways))
+  else
+    if not (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger = 1) then
+      GrdPrmTblCTR_ATIVO.Properties.ReadOnly := (not (BtnAcessoPermitir.Visible = ivAlways)) and (not (BtnAcessoPermitirTodos.Visible = ivAlways))
+    else
+      GrdPrmTblCTR_ATIVO.Properties.ReadOnly := False;
 end;
 
 procedure TFrmSistemaPermissao.FormCreate(Sender: TObject);
@@ -269,7 +272,7 @@ begin
   DtSrcPermissao.DataSet := DtStPermissaoUsuario;
 end;
 
-procedure TFrmSistemaPermissao.TodosAcessosPermitir(AConceder: Boolean);
+procedure TFrmSistemaPermissao.TodosAcessosPermitir(AConceder: Integer);
 var
   B: TBookmark;
 begin
@@ -279,11 +282,11 @@ begin
     DtSrcPermissao.DataSet.First;
     while not DtSrcPermissao.DataSet.Eof do
     begin
-      if (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean and (not AConceder)) or
-        ((not DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean) and (AConceder)) then
+      if ((DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger = 1) and (not (AConceder = 1))) or
+        ((not (DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger = 1)) and (AConceder = 1)) then
         begin
           DtSrcPermissao.DataSet.Edit;
-          DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsBoolean := AConceder;
+          DtSrcPermissao.DataSet.FieldByName('ctr_ativo').AsInteger := AConceder;
           DtSrcPermissao.DataSet.Post;
         end;
       DtSrcPermissao.DataSet.Next;

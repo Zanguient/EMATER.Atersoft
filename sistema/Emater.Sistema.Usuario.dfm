@@ -7,10 +7,10 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
   ClientHeight = 602
   ClientWidth = 616
   Scaled = False
-  ExplicitLeft = 8
-  ExplicitTop = 8
-  ExplicitWidth = 622
-  ExplicitHeight = 631
+  ExplicitLeft = 301
+  ExplicitTop = 82
+  ExplicitWidth = 632
+  ExplicitHeight = 641
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
@@ -24,8 +24,8 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
     Height = 556
     ExplicitWidth = 601
     ExplicitHeight = 556
-    ClientRectBottom = 556
-    ClientRectRight = 601
+    ClientRectBottom = 554
+    ClientRectRight = 599
     inherited TbShtPrincipal: TcxTabSheet
       ExplicitWidth = 601
       ExplicitHeight = 532
@@ -35,6 +35,7 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
         Width = 57
         Height = 13
         Caption = 'Filtrar login:'
+        Transparent = True
       end
       object Label3: TLabel
         Left = 230
@@ -42,6 +43,7 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
         Width = 132
         Height = 13
         Caption = 'Filtrar nome do funcion'#225'rio:'
+        Transparent = True
       end
       object GrpBxUsuario: TcxGroupBox
         Left = 8
@@ -53,7 +55,7 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
         TabOrder = 0
         DesignSize = (
           580
-          257)
+          250)
         Height = 257
         Width = 580
         object Label1: TLabel
@@ -64,6 +66,7 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
           Caption = 'Data de cadastro:'
           Enabled = False
           FocusControl = DbEdtData
+          Transparent = True
         end
         object LblLogin: TLabel
           Left = 8
@@ -73,6 +76,7 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
           Caption = 'Login:'
           Enabled = False
           FocusControl = DbEdtLogin
+          Transparent = True
         end
         object LblSenha: TLabel
           Left = 8
@@ -81,6 +85,7 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
           Height = 13
           Caption = 'Senha:'
           FocusControl = DbEdtSenha
+          Transparent = True
         end
         object Label4: TLabel
           Left = 8
@@ -89,6 +94,7 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
           Height = 13
           Caption = 'Observa'#231#245'es:'
           FocusControl = DmMemoObs
+          Transparent = True
         end
         object Label5: TLabel
           Left = 8
@@ -96,6 +102,7 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
           Width = 28
           Height = 13
           Caption = 'Perfil:'
+          Transparent = True
         end
         object LblSenhaRepetir: TLabel
           Left = 8
@@ -104,6 +111,7 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
           Height = 13
           Caption = 'Repetir senha:'
           FocusControl = DbEdtSenha
+          Transparent = True
         end
         object DbEdtData: TcxDBDateEdit
           Left = 112
@@ -142,11 +150,13 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
           Caption = 'O usu'#225'rio est'#225' ativo.'
           DataBinding.DataField = 'USR_ATIVO'
           DataBinding.DataSource = DtSrcPrincipal
-          ParentBackground = False
           ParentColor = False
           Properties.ImmediatePost = True
+          Properties.ValueChecked = '1'
+          Properties.ValueUnchecked = '0'
           Style.StyleController = DtmRecursoModulo.cxEditStyleController
           TabOrder = 6
+          Transparent = True
           Width = 153
         end
         object DbChckBxExpirada: TcxDBCheckBox
@@ -155,11 +165,13 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
           Caption = 'A senha est'#225' expirada.'
           DataBinding.DataField = 'USR_EXPIRADA'
           DataBinding.DataSource = DtSrcPrincipal
-          ParentBackground = False
           ParentColor = False
           Properties.ImmediatePost = True
+          Properties.ValueChecked = '1'
+          Properties.ValueUnchecked = '0'
           Style.StyleController = DtmRecursoModulo.cxEditStyleController
           TabOrder = 5
+          Transparent = True
           Width = 161
         end
         object DmMemoObs: TcxDBMemo
@@ -278,6 +290,8 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
             DataBinding.FieldName = 'USR_EXPIRADA'
             PropertiesClassName = 'TcxCheckBoxProperties'
             Properties.Alignment = taCenter
+            Properties.ValueChecked = '1'
+            Properties.ValueUnchecked = '0'
             HeaderAlignmentHorz = taCenter
             Width = 75
           end
@@ -286,6 +300,8 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
             DataBinding.FieldName = 'USR_ATIVO'
             PropertiesClassName = 'TcxCheckBoxProperties'
             Properties.Alignment = taCenter
+            Properties.ValueChecked = '1'
+            Properties.ValueUnchecked = '0'
             HeaderAlignmentHorz = taCenter
             Width = 33
           end
@@ -460,8 +476,6 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
     AutoUpdateOptions.AutoReWriteSqls = True
     AutoUpdateOptions.CanChangeSQLs = True
     AutoUpdateOptions.UpdateOnlyModifiedFields = True
-    AfterPost = DtStPrincipalAfterPost
-    AfterScroll = DtStPrincipalAfterScroll
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
@@ -549,13 +563,127 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
       DisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
     end
   end
-  inherited DtSrcPrincipal: TDataSource
-    Left = 400
+  inherited QryPrincipal: TFDQuery
+    AfterPost = QryPrincipalAfterPost
+    AfterScroll = QryPrincipalAfterScroll
+    SQL.Strings = (
+      'select'
+      '  a.usr_id,'
+      '  a.usr_data, '
+      '  a.usr_login, '
+      '  a.usr_senha, '
+      '  a.usr_expirada, '
+      '  a.usr_ativo, '
+      '  a.usr_observacao, '
+      '  a.per_id,'
+      '  a.reg_excluido, '
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado,'
+      '  b.per_nome,'
+      '  upper(c.fun_nome) as fun_nome'
+      'from'
+      
+        '  tab_sis_usuario a join tab_sis_perfil b on (a.per_id = b.per_i' +
+        'd) left join'
+      '  tab_pes_funcionario c on (a.usr_id = c.usr_id)'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.usr_login')
+    object QryPrincipalUSR_ID: TIntegerField
+      FieldName = 'USR_ID'
+      Origin = 'USR_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QryPrincipalUSR_DATA: TDateField
+      DisplayLabel = 'Data de cadastro:'
+      FieldName = 'USR_DATA'
+      Origin = 'USR_DATA'
+      Required = True
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object QryPrincipalUSR_LOGIN: TStringField
+      DisplayLabel = 'Login'
+      FieldName = 'USR_LOGIN'
+      Origin = 'USR_LOGIN'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalUSR_SENHA: TStringField
+      DisplayLabel = 'Senha'
+      FieldName = 'USR_SENHA'
+      Origin = 'USR_SENHA'
+      Required = True
+      Size = 80
+    end
+    object QryPrincipalUSR_EXPIRADA: TSmallintField
+      Alignment = taLeftJustify
+      DefaultExpression = '1'
+      DisplayLabel = 'A senha est'#225' expirada'
+      FieldName = 'USR_EXPIRADA'
+      Origin = 'USR_EXPIRADA'
+      Required = True
+    end
+    object QryPrincipalUSR_ATIVO: TSmallintField
+      Alignment = taLeftJustify
+      DefaultExpression = '1'
+      DisplayLabel = 'O usu'#225'rio est'#225' ativo'
+      FieldName = 'USR_ATIVO'
+      Origin = 'USR_ATIVO'
+      Required = True
+    end
+    object QryPrincipalUSR_OBSERVACAO: TMemoField
+      DisplayLabel = 'Observa'#231#245'es'
+      FieldName = 'USR_OBSERVACAO'
+      Origin = 'USR_OBSERVACAO'
+      BlobType = ftMemo
+    end
+    object QryPrincipalPER_ID: TIntegerField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Perfil'
+      FieldName = 'PER_ID'
+      Origin = 'PER_ID'
+      Required = True
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+    object QryPrincipalPER_NOME: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Perfil'
+      FieldName = 'PER_NOME'
+      Origin = 'PER_NOME'
+      ProviderFlags = []
+      Size = 50
+    end
+    object QryPrincipalFUN_NOME: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Funcion'#225'rio'
+      FieldName = 'FUN_NOME'
+      Origin = 'FUN_NOME'
+      ProviderFlags = []
+      Size = 100
+    end
   end
   object DtSrcPerfil: TDataSource
     DataSet = DtmSistemaModulo.DtStPerfil
     OnStateChange = DtSrcPrincipalStateChange
-    Left = 400
+    Left = 280
     Top = 120
   end
 end

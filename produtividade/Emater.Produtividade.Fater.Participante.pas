@@ -25,8 +25,6 @@ type
     DBImgCmbBxSexo: TcxDBImageComboBox;
     DbEdtCPF: TcxDBMaskEdit;
     DtStCPFExiste: TFDQuery;
-    DtStCPFExisteTEC_ID: TIntegerField;
-    DtStCPFExisteTEC_DESCRICAO: TStringField;
     procedure FormShow(Sender: TObject);
     procedure BtnOKClick(Sender: TObject);
   end;

@@ -502,7 +502,7 @@ inherited FrmCredito: TFrmCredito
           Properties.KeyFieldNames = 'COM_ID'
           Properties.ListColumns = <
             item
-              FieldName = 'CID_NOME'
+              FieldName = 'COM_NOME'
             end>
           Properties.ListOptions.ShowHeader = False
           Properties.ListSource = DtmCadastroModulo.DtSrcComunidade
@@ -1108,7 +1108,6 @@ inherited FrmCredito: TFrmCredito
         Description = 'Cria um novo proponente.'
         TabOrder = 1
         OnClick = BtnPropNovoClick
-        ExplicitTop = 352
       end
       object BtnPropSalvar: TcxButton
         Tag = 1
@@ -1122,7 +1121,6 @@ inherited FrmCredito: TFrmCredito
         Description = 'Salva as altera'#231#245'es realizadas no proponente.'
         TabOrder = 2
         OnClick = BtnPropSalvarClick
-        ExplicitTop = 352
       end
       object BtnPropCancelar: TcxButton
         Tag = 1
@@ -1136,7 +1134,6 @@ inherited FrmCredito: TFrmCredito
         Description = 'Cancela as altera'#231#245'es realizadas no proponente.'
         TabOrder = 3
         OnClick = BtnPropCancelarClick
-        ExplicitTop = 352
       end
       object BtnPropExcluir: TcxButton
         Tag = 1
@@ -1150,7 +1147,6 @@ inherited FrmCredito: TFrmCredito
         Description = 'Exclui o proponente atualmente selecionado.'
         TabOrder = 4
         OnClick = BtnPropExcluirClick
-        ExplicitTop = 352
       end
       object GrdProp: TcxGrid
         Left = 352
@@ -1167,8 +1163,6 @@ inherited FrmCredito: TFrmCredito
         TabOrder = 5
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 457
-        ExplicitHeight = 353
         object GrdPropTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1250,10 +1244,6 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Itens'
       ImageIndex = 3
       OnShow = TbShtItensShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -2899,7 +2889,6 @@ inherited FrmCredito: TFrmCredito
       FieldName = 'PRO_ID'
       Origin = 'PRO_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryProponentePRO_TIPO: TStringField
       DisplayLabel = 'Tipo pessoa'
@@ -2931,12 +2920,10 @@ inherited FrmCredito: TFrmCredito
     object QryProponenteREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryProponenteREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
       Origin = 'REG_REPLICADO'
-      Required = True
     end
     object QryProponenteREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'

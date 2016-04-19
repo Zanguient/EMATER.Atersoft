@@ -370,7 +370,6 @@ inherited FrmCadastroComunidade: TFrmCadastroComunidade
       FieldName = 'COM_ID'
       Origin = 'COM_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalCOM_NOME: TStringField
       DisplayLabel = 'Nome da comunidade'
@@ -388,12 +387,10 @@ inherited FrmCadastroComunidade: TFrmCadastroComunidade
     object QryPrincipalREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryPrincipalREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
       Origin = 'REG_REPLICADO'
-      Required = True
     end
     object QryPrincipalREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'

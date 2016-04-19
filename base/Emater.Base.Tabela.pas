@@ -474,7 +474,7 @@ begin
     begin
 
       Editando := (DtSrcPrincipal.DataSet.State in [dsEdit, dsInsert]);
-      Vazio := (DtSrcPrincipal.DataSet.RecordCount > 0);
+      Vazio := (DtSrcPrincipal.DataSet.RecordCount = 0);
 
       if FIsCachedUpdates then
         begin

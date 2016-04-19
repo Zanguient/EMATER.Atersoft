@@ -117,11 +117,11 @@ var
 begin
   Pendente := False;
 
+  if not DtmConexaoModulo.FDConnection.InTransaction then
+    DtmConexaoModulo.FDConnection.StartTransaction;
+
   if not DtmConexaoModulo.FDWriteTransaction.Active then
     DtmConexaoModulo.FDWriteTransaction.StartTransaction;
-
-  if not DtmConexaoModulo.FDReadTransaction.Active then
-    DtmConexaoModulo.FDReadTransaction.StartTransaction;
 
   for I := 0 to ComponentCount - 1 do
     begin
@@ -225,21 +225,15 @@ begin
 
   if not Pendente then
     begin
-      if DtmConexaoModulo.FDWriteTransaction.Active then
-        DtmConexaoModulo.FDWriteTransaction.CommitRetaining;
-
-      if DtmConexaoModulo.FDReadTransaction.Active then
-        DtmConexaoModulo.FDReadTransaction.CommitRetaining;
+      if DtmConexaoModulo.FDConnection.InTransaction and DtmConexaoModulo.FDWriteTransaction.Active then
+        DtmConexaoModulo.FDConnection.Commit;
 
       ModalResult := mrOk;
     end
   else
     begin
-      if DtmConexaoModulo.FDWriteTransaction.Active then
-        DtmConexaoModulo.FDWriteTransaction.RollbackRetaining;
-
-      if DtmConexaoModulo.FDReadTransaction.Active then
-        DtmConexaoModulo.FDReadTransaction.RollbackRetaining;
+       if DtmConexaoModulo.FDConnection.InTransaction and DtmConexaoModulo.FDWriteTransaction.Active then
+        DtmConexaoModulo.FDConnection.Rollback;
     end;
 end;
 

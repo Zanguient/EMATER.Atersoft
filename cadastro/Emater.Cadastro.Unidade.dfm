@@ -690,7 +690,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_LATITUDE_GRAUS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
-          TabOrder = 0
+          TabOrder = 1
           Width = 49
         end
         object DbEdtLatMinutos: TcxDBTextEdit
@@ -699,7 +699,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_LATITUDE_MINUTOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
-          TabOrder = 1
+          TabOrder = 2
           Width = 49
         end
         object DbEdtLatSegundos: TcxDBTextEdit
@@ -708,7 +708,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_LATITUDE_SEGUNDOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 5
-          TabOrder = 2
+          TabOrder = 3
           Width = 49
         end
         object DbEdtLongGraus: TcxDBTextEdit
@@ -717,7 +717,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_LONGITUDE_GRAUS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
-          TabOrder = 4
+          TabOrder = 5
           Width = 49
         end
         object DbEdtLongMinutos: TcxDBTextEdit
@@ -726,7 +726,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_LONGITUDE_MINUTOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 2
-          TabOrder = 5
+          TabOrder = 6
           Width = 49
         end
         object DbEdtLongSegundos: TcxDBTextEdit
@@ -735,7 +735,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_LONGITUDE_SEGUNDOS'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.MaxLength = 5
-          TabOrder = 6
+          TabOrder = 7
           Width = 49
         end
         object DbImgCmbBxLatHemisferio: TcxDBImageComboBox
@@ -761,7 +761,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Description = 'W - Oeste'
               Value = 'W'
             end>
-          TabOrder = 3
+          TabOrder = 0
           Width = 73
         end
         object DbImgCmbBxHemisferio: TcxDBImageComboBox
@@ -787,7 +787,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Description = 'W - Oeste'
               Value = 'W'
             end>
-          TabOrder = 7
+          TabOrder = 4
           Width = 73
         end
         object DbLkpCmbBxDatum: TcxDBLookupComboBox
@@ -1188,7 +1188,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         object DbEdtModificadoData: TcxDBTextEdit
           Left = 8
           Top = 80
-          DataBinding.DataField = 'PRO_MODIFICADO_DATA'
+          DataBinding.DataField = 'REG_MODIFICADO'
           DataBinding.DataSource = DtSrcPrincipal
           Enabled = False
           TabOrder = 2
@@ -1228,8 +1228,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 3
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 785
-        ExplicitHeight = 465
         object GrdBenTbl: TcxGridDBTableView
           OnDblClick = GrdBenTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -1357,8 +1355,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 5
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 785
-        ExplicitHeight = 321
         object GrdPrdBemTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1379,7 +1375,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Navigator.Buttons.Filter.Visible = False
           FilterBox.CustomizeDialog = False
           DataController.DataSource = DtSrcProducaoBem
-          DataController.KeyFieldNames = 'BEM_ID;BEM_ESTADO'
+          DataController.KeyFieldNames = 'PBE_ID'
           DataController.Summary.DefaultGroupSummaryItems = <>
           DataController.Summary.FooterSummaryItems = <>
           DataController.Summary.SummaryGroups = <>
@@ -1536,7 +1532,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
-          ExplicitLeft = 664
           Width = 113
         end
         object DbImgCmbBxEstado: TcxDBImageComboBox
@@ -1568,7 +1563,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
-          ExplicitLeft = 416
           Width = 137
         end
         object EdtDataBem: TcxDBDateEdit
@@ -1581,7 +1575,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
-          ExplicitLeft = 560
           Width = 97
         end
       end
@@ -1722,7 +1715,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Style.Font.Style = []
           Style.IsFontAssigned = True
           TabOrder = 2
-          ExplicitLeft = 608
           Width = 169
         end
       end
@@ -1755,8 +1747,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 785
-        ExplicitHeight = 321
         object GrdPrdMaqTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1777,7 +1767,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Navigator.Buttons.Filter.Visible = False
           FilterBox.CustomizeDialog = False
           DataController.DataSource = DtSrcProducaoBem
-          DataController.KeyFieldNames = 'BEM_ID;BEM_ESTADO'
+          DataController.KeyFieldNames = 'PBE_ID'
           DataController.Summary.DefaultGroupSummaryItems = <>
           DataController.Summary.FooterSummaryItems = <>
           DataController.Summary.SummaryGroups = <>
@@ -1934,7 +1924,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
-          ExplicitLeft = 664
           Width = 113
         end
         object DbImgCmbBxMaquinaEstado: TcxDBImageComboBox
@@ -1966,7 +1955,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
-          ExplicitLeft = 416
           Width = 137
         end
         object EdtDataEquipamento: TcxDBDateEdit
@@ -1979,7 +1967,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
-          ExplicitLeft = 560
           Width = 97
         end
       end
@@ -2070,8 +2057,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 785
-        ExplicitHeight = 321
         object GrdPrdSemTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -2092,7 +2077,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Navigator.Buttons.Filter.Visible = False
           FilterBox.CustomizeDialog = False
           DataController.DataSource = DtSrcProducaoSemovente
-          DataController.KeyFieldNames = 'PRD_ID'
+          DataController.KeyFieldNames = 'PSE_ID'
           DataController.Summary.DefaultGroupSummaryItems = <>
           DataController.Summary.FooterSummaryItems = <>
           DataController.Summary.SummaryGroups = <>
@@ -2207,7 +2192,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRD_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoSemovente
           TabOrder = 1
-          ExplicitLeft = 688
           Width = 89
         end
       end
@@ -4007,35 +3991,35 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     Connection = DtmConexaoModulo.FDConnection
     InsertSQL.Strings = (
       'INSERT INTO TAB_CAD_PRODUCAO_SEMOVENTE'
-      '(PSE_ID, PRO_ID, PRD_ID, PRD_QUANTIDADE, '
+      '(PSE_ID, BEN_ID, PRO_ID, PRD_ID, PRD_QUANTIDADE, '
       '  REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
       '  REG_MODIFICADO)'
       
-        'VALUES (:NEW_PSE_ID, :NEW_PRO_ID, :NEW_PRD_ID, :NEW_PRD_QUANTIDA' +
-        'DE, '
+        'VALUES (:NEW_PSE_ID, :NEW_BEN_ID, :NEW_PRO_ID, :NEW_PRD_ID, :NEW' +
+        '_PRD_QUANTIDADE, '
       '  :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, :NEW_REG_USUARIO, '
       '  :NEW_REG_MODIFICADO)')
     ModifySQL.Strings = (
       'UPDATE TAB_CAD_PRODUCAO_SEMOVENTE'
       
-        'SET PSE_ID = :NEW_PSE_ID, PRO_ID = :NEW_PRO_ID, PRD_ID = :NEW_PR' +
-        'D_ID, '
+        'SET PSE_ID = :NEW_PSE_ID, BEN_ID = :NEW_BEN_ID, PRO_ID = :NEW_PR' +
+        'O_ID, '
+      '  PRD_ID = :NEW_PRD_ID, PRD_QUANTIDADE = :NEW_PRD_QUANTIDADE, '
       
-        '  PRD_QUANTIDADE = :NEW_PRD_QUANTIDADE, REG_EXCLUIDO = :NEW_REG_' +
-        'EXCLUIDO, '
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
       
-        '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
-        'ARIO, '
-      '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
       'WHERE PSE_ID = :OLD_PSE_ID')
     DeleteSQL.Strings = (
       'DELETE FROM TAB_CAD_PRODUCAO_SEMOVENTE'
       'WHERE PSE_ID = :OLD_PSE_ID')
     FetchRowSQL.Strings = (
       
-        'SELECT PSE_ID, PRO_ID, PRD_ID, PRD_QUANTIDADE, REG_EXCLUIDO, REG' +
-        '_REPLICADO, '
-      '  REG_USUARIO, REG_MODIFICADO'
+        'SELECT PSE_ID, BEN_ID, PRO_ID, PRD_ID, PRD_QUANTIDADE, REG_EXCLU' +
+        'IDO, '
+      '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_CAD_PRODUCAO_SEMOVENTE'
       'WHERE PSE_ID = :PSE_ID')
     Left = 408

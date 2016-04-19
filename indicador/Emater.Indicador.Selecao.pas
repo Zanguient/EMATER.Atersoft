@@ -53,27 +53,27 @@ begin
   if Msg.Confirmacao(Format(INDICADOR_CONFIRMAR_REGISTRO, [QryIndicadorIND_DESCRICAO.AsString])) then
     begin
       try
+        if not DtmConexaoModulo.FDConnection.InTransaction then
+          DtmConexaoModulo.FDConnection.StartTransaction;
+
         if not DtmConexaoModulo.FDWriteTransaction.Active then
           DtmConexaoModulo.FDWriteTransaction.StartTransaction;
-
-        if not DtmConexaoModulo.FDReadTransaction.Active then
-          DtmConexaoModulo.FDReadTransaction.StartTransaction;
 
         StrdPrcRegistrar.ParamByName('INDICADOR').AsString := QryIndicadorIND_NOME.AsString;
         StrdPrcRegistrar.ParamByName('DATA').AsDate := DtEdtRegistro.Date;
         StrdPrcRegistrar.ParamByName('USUARIO').AsString := DtmConexaoModulo.UsuarioLogin;
         StrdPrcRegistrar.ExecProc;
 
-        if DtmConexaoModulo.FDWriteTransaction.Active then
-          DtmConexaoModulo.FDWriteTransaction.CommitRetaining;
-
-        if DtmConexaoModulo.FDReadTransaction.Active then
-          DtmConexaoModulo.FDReadTransaction.CommitRetaining;
+        if DtmConexaoModulo.FDConnection.InTransaction and DtmConexaoModulo.FDWriteTransaction.Active then
+          DtmConexaoModulo.FDConnection.Commit;
 
         ModalResult := mrOk;
       except
         on E: Exception do
           begin
+            if DtmConexaoModulo.FDConnection.InTransaction and DtmConexaoModulo.FDWriteTransaction.Active then
+              DtmConexaoModulo.FDConnection.Rollback;
+
             CodeSite.SendError(INDICADOR_REGISTRO_ERRO);
             CodeSite.SendError('Erro original: [' + E.Message + '].');
             Msg.Erro(INDICADOR_REGISTRO_ERRO);

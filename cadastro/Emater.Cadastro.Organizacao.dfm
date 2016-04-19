@@ -967,7 +967,6 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
       end>
     object QryPrincipalORG_ID: TIntegerField
       FieldName = 'ORG_ID'
-      Required = True
     end
     object QryPrincipalORG_DATA: TDateField
       FieldName = 'ORG_DATA'
@@ -1070,11 +1069,9 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
     end
     object QryPrincipalREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryPrincipalREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
-      Required = True
     end
     object QryPrincipalREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
@@ -1166,6 +1163,7 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
     OnNewRecord = QryFiliacaoNewRecord
     MasterSource = DtSrcPrincipal
     MasterFields = 'ORG_ID'
+    DetailFields = 'ORG_ID'
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction

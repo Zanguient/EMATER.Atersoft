@@ -129,7 +129,7 @@ object DtmSistemaModulo: TDtmSistemaModulo
         Name = 'DESCRICAO'
         DataType = ftString
         ParamType = ptInput
-        Size = 200
+        Size = 300
       end>
   end
   object StrdPrcControleRegistrar: TFDStoredProc
@@ -171,7 +171,7 @@ object DtmSistemaModulo: TDtmSistemaModulo
         Name = 'DESCRICAO'
         DataType = ftString
         ParamType = ptInput
-        Size = 200
+        Size = 300
       end>
   end
   object StrdPrcRecenteRegistrar: TFDStoredProc
@@ -204,14 +204,14 @@ object DtmSistemaModulo: TDtmSistemaModulo
         Name = 'LEGENDA'
         DataType = ftString
         ParamType = ptInput
-        Size = 100
+        Size = 300
       end
       item
         Position = 5
         Name = 'DESCRICAO'
         DataType = ftString
         ParamType = ptInput
-        Size = 100
+        Size = 300
       end
       item
         Position = 6
@@ -451,5 +451,12 @@ object DtmSistemaModulo: TDtmSistemaModulo
         Name = 'GRUPO'
         ParamType = ptInput
       end>
+  end
+  object DtStRegistroDuplicado: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    Left = 48
+    Top = 168
   end
 end

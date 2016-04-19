@@ -318,7 +318,7 @@ uses Emater.Conexao.Modulo, Emater.Credito.Modulo, Emater.Recurso.Modulo, Emater
 procedure TFrmCredito.AplicarUltimaAlteracao;
 begin
   if not (DtStPrincipal.State in [dsEdit, dsInsert]) then
-    DtStPrincipal.Edit;
+    QryPrincipal.Edit;
   QryPrincipalREG_MODIFICADO.AsDateTime := Now;
   QryPrincipalREG_USUARIO.AsString := DtmConexaoModulo.UsuarioLogin;
   if (QryPrincipal.State in [dsEdit, dsInsert]) then
@@ -655,8 +655,8 @@ begin
                   QryProponente.Edit;
 
                 LimparProponente;
-                QryProponentePRO_DOCUMENTO.AsString := FrmCadastroBeneficiarioBusca.DtStConsultaBEN_CPF.AsString;
-                QryProponentePRO_NOME.AsString := FrmCadastroBeneficiarioBusca.DtStConsultaBEN_NOME.AsString;
+                QryProponentePRO_DOCUMENTO.AsString := FrmCadastroBeneficiarioBusca.QryConsultaBEN_CPF.AsString;
+                QryProponentePRO_NOME.AsString := FrmCadastroBeneficiarioBusca.QryConsultaBEN_NOME.AsString;
                 AtualizarDAP;
 
                 AtualizarReplicacaoPendente;
@@ -952,7 +952,10 @@ end;
 procedure TFrmCredito.QryProponenteBeforePost(DataSet: TDataSet);
 begin
   inherited;
-  DtmSistemaModulo.GravarAuditoriaInclusao(QryProponente, 'TAB_CRD_PROPONENTE', 'PRO_ID');
+  if (QryProponente.State = dsinsert) then
+    DtmSistemaModulo.GravarAuditoriaInclusao(QryProponente, 'TAB_CRD_PROPONENTE', 'PRO_ID')
+  else
+    DtmSistemaModulo.GravarAuditoriaAlteracao(QryProponente);
 end;
 
 procedure TFrmCredito.QryProponenteNewRecord(DataSet: TDataSet);
@@ -1038,7 +1041,12 @@ begin
     100000005: QryItemPRD_ID.Clear; // Benfeitorias.
   end;
 
-  DtmSistemaModulo.GravarAuditoriaInclusao(QryItem, 'TAB_CRD_ITEM', 'ITM_ID');
+  QryItemITM_DESCRICAO.AsString := DbLkpCmbBxProduto.Text;
+
+  if (QryItem.State = dsInsert) then
+    DtmSistemaModulo.GravarAuditoriaInclusao(QryItem, 'TAB_CRD_ITEM', 'ITM_ID')
+  else
+    DtmSistemaModulo.GravarAuditoriaAlteracao(QryItem);
 end;
 
 procedure TFrmCredito.QryItemNewRecord(DataSet: TDataSet);
@@ -1068,8 +1076,10 @@ end;
 
 procedure TFrmCredito.QryVisitaBeforePost(DataSet: TDataSet);
 begin
-  inherited;
-  DtmSistemaModulo.GravarAuditoriaInclusao(QryVisita, 'TAB_CRD_VISITA', 'REG_ID');
+  if (QryVisita.State = dsInsert) then
+    DtmSistemaModulo.GravarAuditoriaInclusao(QryVisita, 'TAB_CRD_VISITA', 'REG_ID')
+  else
+    DtmSistemaModulo.GravarAuditoriaAlteracao(QryVisita);
 end;
 
 procedure TFrmCredito.QryVisitaNewRecord(DataSet: TDataSet);

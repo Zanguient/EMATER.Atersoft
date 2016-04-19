@@ -262,7 +262,6 @@ inherited FrmCreditoPublico: TFrmCreditoPublico
       FieldName = 'PUB_ID'
       Origin = 'PUB_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalPUB_DESCRICAO: TStringField
       DisplayLabel = 'Descri'#231#227'o do p'#250'blico benefici'#225'rio'

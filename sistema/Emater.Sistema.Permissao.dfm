@@ -1,15 +1,16 @@
 inherited FrmSistemaPermissao: TFrmSistemaPermissao
   Tag = 1
-  Left = 423
-  Top = 188
+  Left = 308
+  Top = 145
   Hint = 'Permiss'#245'es de acesso'
   ActiveControl = EdtFiltro
   Caption = 'Permiss'#245'es de Acesso'
   ClientHeight = 441
   ClientWidth = 650
+  WindowState = wsNormal
   OnShow = FormShow
-  ExplicitLeft = 423
-  ExplicitTop = 188
+  ExplicitLeft = 308
+  ExplicitTop = 145
   ExplicitWidth = 666
   ExplicitHeight = 480
   PixelsPerInch = 96
@@ -123,9 +124,9 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
   end
   object SplitterPrincipal: TSplitter
     Left = 225
-    Top = 62
+    Top = 57
     Width = 5
-    Height = 379
+    Height = 384
     Color = clWhite
     ParentColor = False
     ResizeStyle = rsUpdate
@@ -135,18 +136,19 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
   end
   object BvlPrincipal: TBevel
     Left = 0
-    Top = 60
+    Top = 55
     Width = 650
     Height = 2
     Align = alTop
     Shape = bsTopLine
+    ExplicitTop = 60
     ExplicitWidth = 578
   end
   object dxBrDckCntrlPermissoes: TdxBarDockControl
     Left = 0
     Top = 29
     Width = 650
-    Height = 31
+    Height = 26
     Align = dalTop
     BarManager = BarManager
     SunkenBorder = False
@@ -154,15 +156,17 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
   end
   object PgCntrlPermissoes: TcxPageControl
     Left = 230
-    Top = 62
+    Top = 57
     Width = 420
-    Height = 379
+    Height = 384
     Align = alClient
     TabOrder = 1
     Properties.ActivePage = TbShtPermissoes
     Properties.CustomButtons.Buttons = <>
     Properties.Style = 5
-    ClientRectBottom = 379
+    ExplicitTop = 62
+    ExplicitHeight = 379
+    ClientRectBottom = 384
     ClientRectRight = 420
     ClientRectTop = 24
     object TbShtPermissoes: TcxTabSheet
@@ -180,7 +184,7 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
         Left = 0
         Top = 23
         Width = 420
-        Height = 332
+        Height = 337
         Align = alClient
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -243,6 +247,8 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
             DataBinding.FieldName = 'CTR_ATIVO'
             PropertiesClassName = 'TcxCheckBoxProperties'
             Properties.ImmediatePost = True
+            Properties.ValueChecked = '1'
+            Properties.ValueUnchecked = '0'
             Properties.OnEditValueChanged = GrdPrmTblCTR_ATIVOPropertiesEditValueChanged
             MinWidth = 30
             Options.HorzSizing = False
@@ -281,15 +287,17 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
   end
   object PgCntrlPrincipal: TcxPageControl
     Left = 0
-    Top = 62
+    Top = 57
     Width = 225
-    Height = 379
+    Height = 384
     Align = alLeft
     TabOrder = 6
     Properties.ActivePage = TbShtPerfis
     Properties.CustomButtons.Buttons = <>
     Properties.Style = 5
-    ClientRectBottom = 379
+    ExplicitTop = 62
+    ExplicitHeight = 379
+    ClientRectBottom = 384
     ClientRectRight = 225
     ClientRectTop = 24
     object TbShtPerfis: TcxTabSheet
@@ -300,7 +308,7 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
         Left = 0
         Top = 0
         Width = 225
-        Height = 355
+        Height = 360
         Align = alClient
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -366,6 +374,8 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
             Caption = 'Ativo'
             DataBinding.FieldName = 'PER_ATIVO'
             PropertiesClassName = 'TcxCheckBoxProperties'
+            Properties.ValueChecked = '1'
+            Properties.ValueUnchecked = '0'
             MinWidth = 25
             Width = 37
           end
@@ -379,11 +389,14 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
       Caption = 'Usu'#225'rios'
       ImageIndex = 1
       OnShow = TbShtUsuariosShow
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GrdUsr: TcxGrid
         Left = 0
         Top = 0
         Width = 225
-        Height = 355
+        Height = 360
         Align = alClient
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -449,6 +462,8 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
             Caption = 'Ativo'
             DataBinding.FieldName = 'USR_ATIVO'
             PropertiesClassName = 'TcxCheckBoxProperties'
+            Properties.ValueChecked = '1'
+            Properties.ValueUnchecked = '0'
             MinWidth = 25
             Width = 37
           end
@@ -639,59 +654,19 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
     Left = 32
     Top = 168
   end
-  object DtStPermissaoPerfil: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_SIS_CONTROLE_PERFIL'
-      'SET '
-      '    PER_ID = :PER_ID,'
-      '    CTR_ID = :CTR_ID,'
-      '    CTR_ATIVO = :CTR_ATIVO'
-      'WHERE'
-      '    PER_ID = :OLD_PER_ID'
-      '    and CTR_ID = :OLD_CTR_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_SIS_CONTROLE_PERFIL'
-      'WHERE'
-      '        PER_ID = :OLD_PER_ID'
-      '    and CTR_ID = :OLD_CTR_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_SIS_CONTROLE_PERFIL('
-      '    PER_ID,'
-      '    CTR_ID,'
-      '    CTR_ATIVO'
-      ')'
-      'VALUES('
-      '    :PER_ID,'
-      '    :CTR_ID,'
-      '    :CTR_ATIVO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  c.apl_id,'
-      '  c.apl_legenda,'
-      '  c.apl_descricao,'
-      '  c.apl_nome,'
-      '  a.per_id,'
-      '  a.ctr_id,'
-      '  a.ctr_ativo,'
-      '  b.ctr_legenda,'
-      '  b.ctr_descricao,'
-      '  b.ctr_nome'
-      'from'
-      
-        '  tab_sis_controle_perfil a join tab_sis_controle b on (a.ctr_id' +
-        ' = b.ctr_id) join'
-      '  tab_sis_aplicacao c on (b.apl_id = c.apl_id)'
-      'where( '
-      '  (a.per_id = :per_id)'
-      '     ) and (     A.PER_ID = :OLD_PER_ID'
-      '    and A.CTR_ID = :OLD_CTR_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
+  object DtSrcPermissao: TDataSource
+    DataSet = DtStPermissaoPerfil
+    Left = 128
+    Top = 136
+  end
+  object DtStPermissaoPerfil: TFDQuery
+    AfterScroll = DtStPermissaoPerfilAfterScroll
+    MasterSource = DtSrcPerfil
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    UpdateObject = UpdtPermissaoPerfil
+    SQL.Strings = (
       'select'
       '  c.apl_id,'
       '  c.apl_legenda,'
@@ -713,129 +688,102 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
       'order by'
       '  c.apl_legenda,'
       '  b.ctr_legenda')
-    AfterScroll = DtStPermissaoPerfilAfterScroll
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcPerfil
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
     Left = 64
     Top = 136
-    object DtStPermissaoPerfilAPL_ID: TFIBIntegerField
+    ParamData = <
+      item
+        Name = 'PER_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object DtStPermissaoPerfilAPL_ID: TIntegerField
       FieldName = 'APL_ID'
+      Origin = 'APL_ID'
     end
-    object DtStPermissaoPerfilAPL_LEGENDA: TFIBStringField
+    object DtStPermissaoPerfilAPL_LEGENDA: TStringField
       DisplayLabel = 'Aplica'#231#227'o'
       FieldName = 'APL_LEGENDA'
+      Origin = 'APL_LEGENDA'
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStPermissaoPerfilAPL_DESCRICAO: TFIBStringField
+    object DtStPermissaoPerfilAPL_DESCRICAO: TStringField
       DisplayLabel = 'Descri'#231#227'o da aplica'#231#227'o'
       FieldName = 'APL_DESCRICAO'
+      Origin = 'APL_DESCRICAO'
       Size = 200
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStPermissaoPerfilAPL_NOME: TFIBStringField
+    object DtStPermissaoPerfilAPL_NOME: TStringField
       FieldName = 'APL_NOME'
+      Origin = 'APL_NOME'
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStPermissaoPerfilPER_ID: TFIBIntegerField
+    object DtStPermissaoPerfilPER_ID: TIntegerField
       FieldName = 'PER_ID'
+      Origin = 'PER_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object DtStPermissaoPerfilCTR_ID: TFIBIntegerField
+    object DtStPermissaoPerfilCTR_ID: TIntegerField
       FieldName = 'CTR_ID'
+      Origin = 'CTR_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object DtStPermissaoPerfilCTR_ATIVO: TFIBBooleanField
-      DefaultExpression = 'True'
+    object DtStPermissaoPerfilCTR_ATIVO: TSmallintField
       DisplayLabel = 'Permitido'
       FieldName = 'CTR_ATIVO'
+      Origin = 'CTR_ATIVO'
     end
-    object DtStPermissaoPerfilCTR_LEGENDA: TFIBStringField
+    object DtStPermissaoPerfilCTR_LEGENDA: TStringField
       DisplayLabel = 'Opera'#231#227'o'
       FieldName = 'CTR_LEGENDA'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
+      Origin = 'CTR_LEGENDA'
+      Size = 100
     end
-    object DtStPermissaoPerfilCTR_DESCRICAO: TFIBStringField
+    object DtStPermissaoPerfilCTR_DESCRICAO: TStringField
       DisplayLabel = 'Descri'#231#227'o da opera'#231#227'o'
       FieldName = 'CTR_DESCRICAO'
+      Origin = 'CTR_DESCRICAO'
       Size = 200
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStPermissaoPerfilCTR_NOME: TFIBStringField
+    object DtStPermissaoPerfilCTR_NOME: TStringField
       FieldName = 'CTR_NOME'
+      Origin = 'CTR_NOME'
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
   end
-  object DtSrcPermissao: TDataSource
-    DataSet = DtStPermissaoPerfil
+  object UpdtPermissaoPerfil: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_SIS_CONTROLE_PERFIL'
+      '(PER_ID, CTR_ID, CTR_ATIVO)'
+      'VALUES (:NEW_PER_ID, :NEW_CTR_ID, :NEW_CTR_ATIVO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_SIS_CONTROLE_PERFIL'
+      
+        'SET PER_ID = :NEW_PER_ID, CTR_ID = :NEW_CTR_ID, CTR_ATIVO = :NEW' +
+        '_CTR_ATIVO'
+      'WHERE PER_ID = :OLD_PER_ID AND CTR_ID = :OLD_CTR_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_SIS_CONTROLE_PERFIL'
+      'WHERE PER_ID = :OLD_PER_ID AND CTR_ID = :OLD_CTR_ID')
+    FetchRowSQL.Strings = (
+      'SELECT PER_ID, CTR_ID, CTR_ATIVO'
+      'FROM TAB_SIS_CONTROLE_PERFIL'
+      'WHERE PER_ID = :PER_ID AND CTR_ID = :CTR_ID')
     Left = 96
     Top = 136
   end
-  object DtStPermissaoUsuario: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_SIS_CONTROLE_USUARIO'
-      'SET '
-      '    USR_ID = :USR_ID,'
-      '    CTR_ID = :CTR_ID,'
-      '    CTR_ATIVO = :CTR_ATIVO'
-      'WHERE'
-      '    USR_ID = :OLD_USR_ID'
-      '    and CTR_ID = :OLD_CTR_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_SIS_CONTROLE_USUARIO'
-      'WHERE'
-      '        USR_ID = :OLD_USR_ID'
-      '    and CTR_ID = :OLD_CTR_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_SIS_CONTROLE_USUARIO('
-      '    USR_ID,'
-      '    CTR_ID,'
-      '    CTR_ATIVO'
-      ')'
-      'VALUES('
-      '    :USR_ID,'
-      '    :CTR_ID,'
-      '    :CTR_ATIVO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  c.apl_id,'
-      '  c.apl_legenda,'
-      '  c.apl_descricao,'
-      '  a.usr_id,'
-      '  a.ctr_id,'
-      '  a.ctr_ativo,'
-      '  b.ctr_legenda,'
-      '  b.ctr_descricao,'
-      '  b.ctr_nome'
-      'from'
-      
-        '  tab_sis_controle_usuario a join tab_sis_controle b on (a.ctr_i' +
-        'd = b.ctr_id) join'
-      '  tab_sis_aplicacao c on (b.apl_id = c.apl_id)'
-      'where( '
-      '  (a.usr_id = :usr_id)'
-      '     ) and (     A.USR_ID = :OLD_USR_ID'
-      '    and A.CTR_ID = :OLD_CTR_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
+  object UpdtPermissaoUsuario: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    Left = 96
+    Top = 168
+  end
+  object DtStPermissaoUsuario: TFDQuery
+    MasterSource = DtSrcUsuario
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    UpdateObject = UpdtPermissaoUsuario
+    SQL.Strings = (
       'select'
       '  c.apl_id,'
       '  c.apl_legenda,'
@@ -856,63 +804,61 @@ inherited FrmSistemaPermissao: TFrmSistemaPermissao
       'order by'
       '  c.apl_legenda,'
       '  b.ctr_legenda')
-    AfterScroll = DtStPermissaoPerfilAfterScroll
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcUsuario
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
     Left = 64
     Top = 168
-    object DtStPermissaoUsuarioAPL_ID: TFIBIntegerField
+    ParamData = <
+      item
+        Name = 'USR_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object DtStPermissaoUsuarioAPL_ID: TIntegerField
       FieldName = 'APL_ID'
+      Origin = 'APL_ID'
     end
-    object DtStPermissaoUsuarioAPL_LEGENDA: TFIBStringField
+    object DtStPermissaoUsuarioAPL_LEGENDA: TStringField
       DisplayLabel = 'Aplica'#231#227'o'
       FieldName = 'APL_LEGENDA'
+      Origin = 'APL_LEGENDA'
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStPermissaoUsuarioAPL_DESCRICAO: TFIBStringField
+    object DtStPermissaoUsuarioAPL_DESCRICAO: TStringField
       DisplayLabel = 'Descri'#231#227'o da aplica'#231#227'o'
       FieldName = 'APL_DESCRICAO'
+      Origin = 'APL_DESCRICAO'
       Size = 200
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStPermissaoUsuarioUSR_ID: TFIBIntegerField
+    object DtStPermissaoUsuarioUSR_ID: TIntegerField
       FieldName = 'USR_ID'
+      Origin = 'USR_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object DtStPermissaoUsuarioCTR_ID: TFIBIntegerField
+    object DtStPermissaoUsuarioCTR_ID: TIntegerField
       FieldName = 'CTR_ID'
+      Origin = 'CTR_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object DtStPermissaoUsuarioCTR_ATIVO: TFIBBooleanField
+    object DtStPermissaoUsuarioCTR_ATIVO: TSmallintField
       DisplayLabel = 'Permitido'
       FieldName = 'CTR_ATIVO'
+      Origin = 'CTR_ATIVO'
     end
-    object DtStPermissaoUsuarioCTR_LEGENDA: TFIBStringField
+    object DtStPermissaoUsuarioCTR_LEGENDA: TStringField
       DisplayLabel = 'Opera'#231#227'o'
       FieldName = 'CTR_LEGENDA'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
+      Origin = 'CTR_LEGENDA'
+      Size = 100
     end
-    object DtStPermissaoUsuarioCTR_DESCRICAO: TFIBStringField
+    object DtStPermissaoUsuarioCTR_DESCRICAO: TStringField
       DisplayLabel = 'Descri'#231#227'o da opera'#231#227'o'
       FieldName = 'CTR_DESCRICAO'
+      Origin = 'CTR_DESCRICAO'
       Size = 200
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStPermissaoUsuarioCTR_NOME: TFIBStringField
+    object DtStPermissaoUsuarioCTR_NOME: TStringField
       FieldName = 'CTR_NOME'
+      Origin = 'CTR_NOME'
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
   end
 end

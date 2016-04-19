@@ -8,38 +8,24 @@ uses
   Vcl.Menus, dxSkinsCore, dxSkinOffice2013White, Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, cxControls, cxStyles, dxSkinscxPCPainter,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, Data.DB, cxDBData, cxGridLevel, cxClasses, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, FIBDataSet, pFIBDataSet, cxImageComboBox, FIBQuery,
-  pFIBQuery, pFIBStoredProc, Datasnap.Provider, Datasnap.DBClient, {$WARNINGS OFF} FileCtrl, dxSkinSeven, dxSkinSevenClassic {$WARNINGS ON};
+  pFIBQuery, pFIBStoredProc, Datasnap.Provider, Datasnap.DBClient, {$WARNINGS OFF} FileCtrl, dxSkinSeven, dxSkinSevenClassic, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client {$WARNINGS ON};
 
 type
   TFrmLogExportar = class(TFrmBaseBasico)
     LblTitulo: TLabel;
     DtSrcConsulta: TDataSource;
-    DtStConsulta: TpFIBDataSet;
     GrdConsulta: TcxGrid;
     GrdConsultaTbl: TcxGridDBTableView;
     GrdConsultaLvl: TcxGridLevel;
-    DtStPentendes: TpFIBDataSet;
-    DtStPentendesTOTAL: TFIBIntegerField;
-    DtStConsultaREP_ID: TFIBBCDField;
-    DtStConsultaREP_DATA: TFIBDateField;
-    DtStConsultaREP_HORA: TFIBTimeField;
-    DtStConsultaREP_USUARIO: TFIBStringField;
-    DtStConsultaREP_TIPO: TFIBSmallIntField;
-    DtStConsultaREP_SITUACAO: TFIBSmallIntField;
-    DtStConsultaREP_VERSAO: TFIBIntegerField;
-    DtStConsultaREP_QUANTIDADE: TFIBIntegerField;
-    DtStConsultaUND_ID: TFIBIntegerField;
-    DtStConsultaUND_NOME: TFIBStringField;
     GrdConsultaTblREP_ID: TcxGridDBColumn;
-    GrdConsultaTblREP_DATA: TcxGridDBColumn;
-    GrdConsultaTblREP_HORA: TcxGridDBColumn;
-    GrdConsultaTblREP_USUARIO: TcxGridDBColumn;
+    GrdConsultaTblREP_DATA_HORA_INICIO: TcxGridDBColumn;
+    GrdConsultaTblREP_DATA_HORA_FIM: TcxGridDBColumn;
+    GrdConsultaTblUSR_LOGIN: TcxGridDBColumn;
     GrdConsultaTblREP_SITUACAO: TcxGridDBColumn;
-    GrdConsultaTblREP_VERSAO: TcxGridDBColumn;
-    GrdConsultaTblREP_QUANTIDADE: TcxGridDBColumn;
+    GrdConsultaTblREP_TOTAL: TcxGridDBColumn;
     GrdConsultaTblUND_NOME: TcxGridDBColumn;
-    StrdPrcReplicacaoExportar: TpFIBStoredProc;
-    DtStArquivo: TpFIBDataSet;
     DspArquivo: TDataSetProvider;
     CdsArquivo: TClientDataSet;
     LblQtde: TLabel;
@@ -47,13 +33,30 @@ type
     BtnGerarArquivo: TcxButton;
     BtnPrepararExportacao: TcxButton;
     Label1: TLabel;
+    DtStConsulta: TFDQuery;
+    DtStConsultaREP_ID: TIntegerField;
+    DtStConsultaREP_DATA_HORA_INICIO: TSQLTimeStampField;
+    DtStConsultaREP_DATA_HORA_FIM: TSQLTimeStampField;
+    DtStConsultaUSR_LOGIN: TStringField;
+    DtStConsultaREP_TIPO: TStringField;
+    DtStConsultaREP_SITUACAO: TSmallintField;
+    DtStConsultaREP_TOTAL: TIntegerField;
+    DtStConsultaREP_ARQUIVO: TBlobField;
+    DtStConsultaUND_ID: TIntegerField;
+    DtStConsultaUND_NOME: TStringField;
+    StrdPrcReplicacaoExportar: TFDStoredProc;
+    DtStPendentes: TFDQuery;
+    DtStPendentesTOTAL: TIntegerField;
+    DtStArquivo: TFDQuery;
+    UpdtConsulta: TFDUpdateSQL;
+    DtStConsultaUSR_ID: TIntegerField;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure DtStConsultaAfterOpen(DataSet: TDataSet);
     procedure BtnPrepararExportacaoClick(Sender: TObject);
     procedure BtnGerarArquivoClick(Sender: TObject);
-    procedure DtStPentendesAfterOpen(DataSet: TDataSet);
+    procedure DtStConsultaAfterOpen(DataSet: TDataSet);
+    procedure DtStPendentesAfterOpen(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -82,12 +85,29 @@ begin
           try
             FileName := FilePath + '\' + DtStConsultaREP_ID.AsString + '.emater.tmp';
             FileNameCompressed := FilePath + '\' + DtStConsultaREP_ID.AsString + '.emater';
-            CdsArquivo.Close;
-            DtStArquivo.Close;
-            DtStArquivo.ParamByName('rep_id').AsInt64 := DtStConsultaREP_ID.AsInt64;
-            CdsArquivo.Open;
-            CdsArquivo.SaveToFile(FileName, dfBinary);
-            CdsArquivo.Close;
+
+            if not DtmConexaoModulo.FDConnection.InTransaction then
+              DtmConexaoModulo.FDConnection.StartTransaction;
+
+            if not DtmConexaoModulo.FDWriteTransaction.Active then
+              DtmConexaoModulo.FDWriteTransaction.StartTransaction;
+
+            if (DtStConsultaREP_ARQUIVO.IsNull) then
+              begin
+                // Carregando as linhas que serão geradas para o arquivo:
+                CdsArquivo.Close;
+                DtStArquivo.Close;
+                DtStArquivo.ParamByName('rep_id').AsLArgeInt := DtStConsultaREP_ID.AsLargeInt;
+                CdsArquivo.Open;
+                CdsArquivo.SaveToFile(FileName, dfBinary);
+                CdsArquivo.Close;
+
+                DtStConsulta.Edit;
+                DtStConsultaREP_ARQUIVO.LoadFromFile(FileName);
+                DtStConsulta.Post;
+              end
+            else
+              DtStConsultaREP_ARQUIVO.SaveToFile(FileName);
 
             // Compactando o arquivo gerado:
             if TArquivo.Comprimir(FileNameCompressed, [FileName]) then
@@ -104,9 +124,15 @@ begin
                 CodeSite.SendError(LOG_MSG_EXPORTACAO_COMPACTAR_ERRO);
                 MSG.Erro(LOG_MSG_EXPORTACAO_COMPACTAR_ERRO);
               end;
+
+            if DtmConexaoModulo.FDConnection.InTransaction and DtmConexaoModulo.FDWriteTransaction.Active then
+              DtmConexaoModulo.FDConnection.Commit;
           except
             on E: Exception do
               begin
+                if DtmConexaoModulo.FDConnection.InTransaction and DtmConexaoModulo.FDWriteTransaction.Active then
+                  DtmConexaoModulo.FDConnection.Rollback;
+
                 CodeSite.SendError(LOG_MSG_EXPORTACAO_GERAR_ERRO);
                 CodeSite.SendError('Erro original: [' + E.Message + '].');
                 MSG.Erro(LOG_MSG_EXPORTACAO_GERAR_ERRO);
@@ -134,14 +160,31 @@ begin
   try
     if MSG.Confirmacao(LOG_MSG_EXPORTACAO_PREPARAR) then
       try
+        if not DtmConexaoModulo.FDConnection.InTransaction then
+          DtmConexaoModulo.FDConnection.StartTransaction;
+
+        if not DtmConexaoModulo.FDWriteTransaction.Active then
+          DtmConexaoModulo.FDWriteTransaction.StartTransaction;
+
+        StrdPrcReplicacaoExportar.ParamByName('usuario').AsInteger := DtmConexaoModulo.UsuarioID;
         StrdPrcReplicacaoExportar.ExecProc;
+
         CodeSite.SendMsg(LOG_MSG_EXPORTACAO_PREPARAR_SUCESSO);
         MSG.Informacao(LOG_MSG_EXPORTACAO_PREPARAR_SUCESSO);
-        DtStConsulta.CloseOpen(True);
-        DtStPentendes.CloseOpen(True);
+        DtStConsulta.Close;
+        DtStConsulta.Open;
+
+        DtStPendentes.Close;
+        DtStPendentes.Open;
+
+        if DtmConexaoModulo.FDConnection.InTransaction and DtmConexaoModulo.FDWriteTransaction.Active then
+          DtmConexaoModulo.FDConnection.Commit;
       except
         on E: Exception do
           begin
+            if DtmConexaoModulo.FDConnection.InTransaction and DtmConexaoModulo.FDWriteTransaction.Active then
+              DtmConexaoModulo.FDConnection.Rollback;
+
             CodeSite.SendError(LOG_MSG_EXPORTACAO_PREPARAR_ERRO);
             CodeSite.SendError('Erro original: [' + E.Message + '].');
             MSG.Erro(LOG_MSG_EXPORTACAO_PREPARAR_ERRO);
@@ -160,17 +203,21 @@ begin
   BtnGerarArquivo.Enabled := (not DtStConsulta.IsEmpty);
 end;
 
-procedure TFrmLogExportar.DtStPentendesAfterOpen(DataSet: TDataSet);
+procedure TFrmLogExportar.DtStPendentesAfterOpen(DataSet: TDataSet);
 begin
-  LblQtde.Caption := DtStPentendesTOTAL.AsString;
-  if (DtStPentendesTOTAL.Value = 0) then
+  inherited;
+  if (DtStPendentesTOTAL.AsLargeInt = 0) then
+    LblQtde.Caption := '0'
+  else
+    LblQtde.Caption := FormatFloat(',##0', DtStPendentesTOTAL.AsLargeInt + 1);
+  if (DtStPendentesTOTAL.Value = 0) then
     BtnPrepararExportacao.Enabled := False;
 end;
 
 procedure TFrmLogExportar.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
-  DtStPentendes.Close;
+  DtStPendentes.Close;
   DtStConsulta.Close;
 end;
 
@@ -192,7 +239,7 @@ procedure TFrmLogExportar.FormShow(Sender: TObject);
 begin
   inherited;
 
-  DtStPentendes.Open;
+  DtStPendentes.Open;
   DtStConsulta.Open;
 end;
 

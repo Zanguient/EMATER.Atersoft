@@ -724,7 +724,10 @@ begin
     FrmCadastroUnidadeComercio.DtSrcProducaoProduto.DataSet := QryProducaoProduto;
 
     if (FrmCadastroUnidadeComercio.ShowModal = mrOk) then
-      QryProducaoProduto.Post
+      begin
+        QryProducaoProduto.Post;
+        QryProducaoProduto.Refresh;
+      end
     else
       QryProducaoProduto.Cancel;
     AtualizarReplicacaoPendente;

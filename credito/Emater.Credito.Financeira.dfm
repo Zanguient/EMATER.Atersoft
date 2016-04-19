@@ -289,7 +289,6 @@ inherited FrmCreditoFinanceira: TFrmCreditoFinanceira
       FieldName = 'FIN_ID'
       Origin = 'FIN_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalFIN_DESCRICAO: TStringField
       DisplayLabel = 'Nome do agente financeiro'

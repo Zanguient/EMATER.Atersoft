@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, ExtCtrls, IB_Services, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Menus, cxButtons, dxGDIPlusClasses, Emater.Base.Basico,
-  dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, cxContainer, cxEdit, cxLabel;
+  dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, cxContainer, cxEdit, cxLabel, cxTextEdit;
 
 type
   TFrmSistemaSenhaAlterar = class(TFrmBaseBasico)
@@ -19,9 +19,6 @@ type
     LblSenhaAtual: TLabel;
     LblNovaSenha: TLabel;
     LblRepetirSenha: TLabel;
-    EdtSenhaAtual: TEdit;
-    EdtNovaSenha: TEdit;
-    EdtRepetirSenha: TEdit;
     BvlBottom: TBevel;
     Shape1: TShape;
     Shape3: TShape;
@@ -30,6 +27,9 @@ type
     cxLabel1: TcxLabel;
     cxLabel2: TcxLabel;
     cxLabel3: TcxLabel;
+    EdtSenhaAtual: TcxTextEdit;
+    EdtNovaSenha: TcxTextEdit;
+    EdtRepetirSenha: TcxTextEdit;
     procedure BtnOKClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -44,7 +44,7 @@ var
 
 implementation
 
-uses Emater.Conexao.Modulo, Emater.Recurso.Consts, Emater.Sistema.Consts, Emater.Base.Consts;
+uses Emater.Conexao.Modulo, Emater.Recurso.Consts, Emater.Sistema.Consts, Emater.Base.Consts, Emater.Recurso.Modulo;
 
 {$R *.dfm}
 

@@ -262,7 +262,6 @@ inherited FrmCreditoTipo: TFrmCreditoTipo
       FieldName = 'TIP_ID'
       Origin = 'TIP_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalTIP_DESCRICAO: TStringField
       DisplayLabel = 'Nome do tipo de cr'#233'dito'

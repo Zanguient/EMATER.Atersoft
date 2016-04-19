@@ -204,7 +204,6 @@ begin
             Exit;
           end;
 
-
       if (QryPrincipal.State = dsInsert) then
         begin
 
@@ -262,7 +261,7 @@ begin
 
       if FTransferirFuncionario then
         begin
-          if Msg.Confirmacao(Format(CADASTRO_FUNCIOINARIO_TRANSFERIR, [FTransferirFuncionarioNome, FTransferirUnidadeOrigem, DtmSistemaModulo.UnidadeLocalNome])) then
+          if Msg.Confirmacao(Format(CADASTRO_FUNCIONARIO_TRANSFERIR, [FTransferirFuncionarioNome, FTransferirUnidadeOrigem, DtmSistemaModulo.UnidadeLocalNome])) then
             FTransferirFuncionario := False
           else
             Exit;

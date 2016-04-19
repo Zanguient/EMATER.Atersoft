@@ -150,7 +150,7 @@ end;
 procedure TFrmBaseConsulta.GrdConsultaTblKeyDown(Sender: TObject;
   var Key: Word; Shift: TShiftState);
 begin
-  if (Key = VK_RETURN) then
+  if (Key = VK_RETURN) and (not QryConsulta.IsEmpty) then
     begin
       if GrdConsultaTbl.Controller.FocusedRow.Expandable then
         begin

@@ -9,7 +9,8 @@ uses
   Vcl.StdCtrls, cxButtons, cxContainer, cxEdit, cxCheckBox, cxDBEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxCalendar,
   cxGroupBox, cxMemo, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData, cxLookupEdit,
   cxDBLookupEdit, cxDBLookupComboBox, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGridLevel, cxClasses,
-  cxGridCustomView, cxGrid, dxSkinSeven, dxSkinSevenClassic, dxBarBuiltInMenu;
+  cxGridCustomView, cxGrid, dxSkinSeven, dxSkinSevenClassic, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
+  FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
   TFrmSistemaUsuario = class(TFrmBaseTabela)
@@ -55,18 +56,32 @@ type
     DtStPrincipalREG_REPLICADO: TFIBBooleanField;
     DtStPrincipalREG_USUARIO: TFIBStringField;
     DtStPrincipalREG_MODIFICADO: TFIBDateTimeField;
+    QryPrincipalUSR_ID: TIntegerField;
+    QryPrincipalUSR_DATA: TDateField;
+    QryPrincipalUSR_LOGIN: TStringField;
+    QryPrincipalUSR_SENHA: TStringField;
+    QryPrincipalUSR_EXPIRADA: TSmallintField;
+    QryPrincipalUSR_ATIVO: TSmallintField;
+    QryPrincipalUSR_OBSERVACAO: TMemoField;
+    QryPrincipalPER_ID: TIntegerField;
+    QryPrincipalREG_EXCLUIDO: TSmallintField;
+    QryPrincipalREG_REPLICADO: TSmallintField;
+    QryPrincipalREG_USUARIO: TStringField;
+    QryPrincipalREG_MODIFICADO: TSQLTimeStampField;
+    QryPrincipalPER_NOME: TStringField;
+    QryPrincipalFUN_NOME: TStringField;
     procedure FormCreate(Sender: TObject);
-    procedure DtStPrincipalAfterPost(DataSet: TDataSet);
     procedure DtSrcPrincipalStateChange(Sender: TObject);
     procedure BtnNovoClick(Sender: TObject);
-    procedure DtStPrincipalNewRecord(DataSet: TDataSet);
-    procedure DtStPrincipalAfterScroll(DataSet: TDataSet);
     procedure DtStPrincipalUSR_SENHAGetText(Sender: TField; var Text: string; DisplayText: Boolean);
     procedure BtnSalvarClick(Sender: TObject);
     procedure DbEdtLoginKeyPress(Sender: TObject; var Key: Char);
     procedure FormShow(Sender: TObject);
     procedure EdtFiltrarLoginPropertiesChange(Sender: TObject);
     procedure EdtFiltrarNomePropertiesChange(Sender: TObject);
+    procedure QryPrincipalAfterPost(DataSet: TDataSet);
+    procedure QryPrincipalAfterScroll(DataSet: TDataSet);
+    procedure QryPrincipalNewRecord(DataSet: TDataSet);
   public
     procedure Filtrar(const Campo, Filtro: string);
     procedure Editar(const Login: string);
@@ -94,7 +109,7 @@ end;
 
 procedure TFrmSistemaUsuario.BtnSalvarClick(Sender: TObject);
 begin
-  if (DtStPrincipal.State in [dsEdit, dsInsert]) then
+  if (QryPrincipal.State in [dsEdit, dsInsert]) then
     begin
       if ((DbEdtSenha.Text <> EdtSenhaRepetir.Text) or (DbEdtSenha.Text = '')) then
         begin
@@ -102,8 +117,8 @@ begin
           Abort;
         end;
 
-      if (DtStPrincipal.State = dsInsert) then
-        DtStPrincipalUSR_SENHA.AsString := Str.MD5(DtStPrincipalUSR_SENHA.AsString);
+      if (QryPrincipal.State = dsInsert) then
+        QryPrincipalUSR_SENHA.AsString := Str.MD5(QryPrincipalUSR_SENHA.AsString);
     end;
   inherited;
 end;
@@ -117,38 +132,17 @@ end;
 procedure TFrmSistemaUsuario.DtSrcPrincipalStateChange(Sender: TObject);
 begin
   inherited;
-  LblLogin.Enabled := (DtStPrincipal.State in [dsInsert]);
-  DbEdtLogin.Enabled := (DtStPrincipal.State in [dsInsert]);
-  DbEdtSenha.Enabled := (DtStPrincipal.State in [dsInsert]);
-  LblSenha.Enabled := (DtStPrincipal.State in [dsInsert]);
-  EdtSenhaRepetir.Enabled := (DtStPrincipal.State in [dsInsert]);
-  LblSenhaRepetir.Enabled := (DtStPrincipal.State in [dsInsert]);
-end;
-
-procedure TFrmSistemaUsuario.DtStPrincipalAfterPost(DataSet: TDataSet);
-begin
-  inherited;
-  DtmSistemaModulo.DtStUsuario.Close;
-  DtmSistemaModulo.DtStUsuario.Open;
-end;
-
-procedure TFrmSistemaUsuario.DtStPrincipalAfterScroll(DataSet: TDataSet);
-begin
-  inherited;
-  EdtSenhaRepetir.Text := DbEdtSenha.Text;
-end;
-
-procedure TFrmSistemaUsuario.DtStPrincipalNewRecord(DataSet: TDataSet);
-begin
-  inherited;
-  DtStPrincipalUSR_DATA.Value := Date;
-  DtStPrincipalUSR_EXPIRADA.Value := True;
-  DtStPrincipalUSR_ATIVO.Value := True;
+  LblLogin.Enabled := (QryPrincipal.State in [dsInsert]);
+  DbEdtLogin.Enabled := (QryPrincipal.State in [dsInsert]);
+  DbEdtSenha.Enabled := (QryPrincipal.State in [dsInsert]);
+  LblSenha.Enabled := (QryPrincipal.State in [dsInsert]);
+  EdtSenhaRepetir.Enabled := (QryPrincipal.State in [dsInsert]);
+  LblSenhaRepetir.Enabled := (QryPrincipal.State in [dsInsert]);
 end;
 
 procedure TFrmSistemaUsuario.DtStPrincipalUSR_SENHAGetText(Sender: TField; var Text: string; DisplayText: Boolean);
 begin
-  Text := Copy(DtStPrincipalUSR_SENHA.AsString, 1, 8);
+  Text := Copy(QryPrincipalUSR_SENHA.AsString, 1, 8);
 end;
 
 procedure TFrmSistemaUsuario.Editar(const Login: string);
@@ -189,8 +183,8 @@ end;
 
 procedure TFrmSistemaUsuario.Filtrar(const Campo, Filtro: string);
 begin
-  DtStPrincipal.Filter := Campo + ' like ' + QuotedStr(Filtro);
-  DtStPrincipal.Filtered := (Filtro <> '') and (Filtro <> '%%');
+  QryPrincipal.Filter := Campo + ' like ' + QuotedStr(Filtro);
+  QryPrincipal.Filtered := (Filtro <> '') and (Filtro <> '%%');
 end;
 
 procedure TFrmSistemaUsuario.FormCreate(Sender: TObject);
@@ -208,6 +202,27 @@ begin
   else
     if DbLkpCmbBxPerfil.CanFocus then
       DbLkpCmbBxPerfil.SetFocus;
+end;
+
+procedure TFrmSistemaUsuario.QryPrincipalAfterPost(DataSet: TDataSet);
+begin
+  inherited;
+  DtmSistemaModulo.DtStUsuario.Close;
+  DtmSistemaModulo.DtStUsuario.Open;
+end;
+
+procedure TFrmSistemaUsuario.QryPrincipalAfterScroll(DataSet: TDataSet);
+begin
+  inherited;
+  EdtSenhaRepetir.Text := DbEdtSenha.Text;
+end;
+
+procedure TFrmSistemaUsuario.QryPrincipalNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  QryPrincipalUSR_DATA.Value := Date;
+  QryPrincipalUSR_EXPIRADA.Value := 1;
+  QryPrincipalUSR_ATIVO.Value := 1;
 end;
 
 end.

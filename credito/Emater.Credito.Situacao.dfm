@@ -262,7 +262,6 @@ inherited FrmCreditoSituacao: TFrmCreditoSituacao
       FieldName = 'SIT_ID'
       Origin = 'SIT_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalSIT_DESCRICAO: TStringField
       DisplayLabel = 'Descri'#231#227'o da situa'#231#227'o'

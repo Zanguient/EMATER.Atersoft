@@ -262,7 +262,6 @@ inherited FrmCreditoLinha: TFrmCreditoLinha
       FieldName = 'LIN_ID'
       Origin = 'LIN_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryPrincipalLIN_DESCRICAO: TStringField
       DisplayLabel = 'Nome da linha de cr'#233'dito'

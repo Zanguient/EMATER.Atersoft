@@ -29,6 +29,7 @@ type
     DtStUsuario: TFDQuery;
     DtStControleAtivo: TFDQuery;
     DtStRecenteCarregar: TFDQuery;
+    DtStRegistroDuplicado: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private
@@ -54,6 +55,9 @@ type
     procedure RecenteRegistrar(Grupo: Integer; Identificador: Int64; Ordem: SmallInt; Legenda, Descricao: string; Pino: Boolean);
     procedure RecenteCarregar(Grupo: Integer);
     procedure RecenteLimpar;
+    function RegistroDuplicado(const Tabela, ChaveNome, ChaveValor, CampoNome, CampoValor: string): Boolean;
+    function CriarListaChave(const Qry: TFDQuery; const Campo: string; const ValorExcecao: string = ''): TStringList;
+    function RegistroDuplicadoNaLista(const Lista: TStringList; const Valor: string): Boolean;
   end;
 
 var
@@ -193,6 +197,34 @@ begin
   StrdPrcRecenteRegistrar.ExecProc;
 end;
 
+function TDtmSistemaModulo.RegistroDuplicado(const Tabela, ChaveNome, ChaveValor, CampoNome, CampoValor: string): Boolean;
+var
+  SQL: string;
+begin
+  SQL := 'select count(*) as existe from %s where (%s = ''%s'') and (%s = ''%s'') and (reg_excluido = 0)';
+  SQL := Format(SQL, [Tabela, ChaveNome, ChaveValor, CampoNome, CampoValor]);
+
+  DtStRegistroDuplicado.Close;
+  DtStRegistroDuplicado.SQL.Clear;
+  DtStRegistroDuplicado.SQL.Add(SQL);
+  DtStRegistroDuplicado.Open;
+
+  Result := (DtStRegistroDuplicado.FieldByName('existe').AsInteger > 0);
+end;
+
+function TDtmSistemaModulo.RegistroDuplicadoNaLista(const Lista: TStringList; const Valor: string): Boolean;
+var
+  I: Integer;
+begin
+  Result := False;
+  for I := 0 to Lista.Count - 1 do
+    if (Lista[I] = Valor) then
+      begin
+        Result := True;
+        Break;
+      end;
+end;
+
 function TDtmSistemaModulo.AplicacaoRegistrar(const AModulo: Integer; const ANome, ALegenda, ADescricao: string): Boolean;
 begin
   if not StrdPrcAplicacaoRegistrar.Prepared then
@@ -318,6 +350,28 @@ begin
 
   DtStUsuario.Close;
   DtStUsuario.Open;
+end;
+
+function TDtmSistemaModulo.CriarListaChave(const Qry: TFDQuery; const Campo: string; const ValorExcecao: string = ''): TStringList;
+var
+  B: TBookmark;
+begin
+  Result := TStringList.Create;
+  Qry.DisableControls;
+  B := Qry.GetBookmark;
+  try
+    Qry.First;
+    while not Qry.Eof do
+      begin
+        if (Qry.FieldByName(Campo).AsString <> ValorExcecao) then
+          Result.Add(Qry.FieldByName(Campo).AsString);
+        Qry.Next;
+      end;
+  finally
+    Qry.GotoBookmark(B);
+    Qry.FreeBookmark(B);
+    Qry.EnableControls;
+  end;
 end;
 
 end.

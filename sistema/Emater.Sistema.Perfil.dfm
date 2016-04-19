@@ -24,8 +24,8 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
     Height = 442
     ExplicitWidth = 477
     ExplicitHeight = 442
-    ClientRectBottom = 442
-    ClientRectRight = 477
+    ClientRectBottom = 440
+    ClientRectRight = 475
     inherited TbShtPrincipal: TcxTabSheet
       object GrdPrincipal: TcxGrid
         Left = 8
@@ -92,6 +92,11 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
           end
           object GrdPrincipalTblPER_ATIVO: TcxGridDBColumn
             DataBinding.FieldName = 'PER_ATIVO'
+            PropertiesClassName = 'TcxCheckBoxProperties'
+            Properties.Alignment = taCenter
+            Properties.ValueChecked = '1'
+            Properties.ValueUnchecked = '0'
+            HeaderAlignmentHorz = taCenter
           end
         end
         object GrdPrincipalLvl: TcxGridLevel
@@ -114,6 +119,7 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
           Height = 13
           Caption = 'Nome do perfil:'
           FocusControl = DbEdtNome
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8
@@ -129,10 +135,12 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
           Caption = 'O perfil est'#225' ativo.'
           DataBinding.DataField = 'PER_ATIVO'
           DataBinding.DataSource = DtSrcPrincipal
-          ParentBackground = False
           ParentColor = False
+          Properties.ValueChecked = '1'
+          Properties.ValueUnchecked = '0'
           Style.StyleController = DtmRecursoModulo.cxEditStyleController
           TabOrder = 1
+          Transparent = True
           Width = 129
         end
       end
@@ -252,7 +260,6 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
     AutoUpdateOptions.AutoReWriteSqls = True
     AutoUpdateOptions.CanChangeSQLs = True
     AutoUpdateOptions.UpdateOnlyModifiedFields = True
-    AfterPost = DtStPrincipalAfterPost
     Transaction = DtmConexaoModulo.ReadTransaction
     Database = DtmConexaoModulo.pFIBDatabase
     UpdateTransaction = DtmConexaoModulo.WriteTransaction
@@ -292,8 +299,90 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
       FieldName = 'PER_ATIVO'
     end
   end
-  inherited DtSrcPrincipal: TDataSource
-    Left = 128
-    Top = 280
+  inherited QryPrincipal: TFDQuery
+    AfterPost = QryPrincipalAfterPost
+    SQL.Strings = (
+      'select'
+      '  a.per_id,'
+      '  a.per_nome,'
+      '  a.per_ativo,'
+      '  a.reg_excluido,'
+      '  a.reg_replicado,'
+      '  a.reg_usuario,'
+      '  a.reg_modificado'
+      'from'
+      '  tab_sis_perfil a'
+      'where'
+      '  (a.reg_excluido = 0)'
+      'order by'
+      '  a.per_nome')
+    object QryPrincipalPER_ID: TIntegerField
+      FieldName = 'PER_ID'
+      Origin = 'PER_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QryPrincipalPER_NOME: TStringField
+      DisplayLabel = 'Nome do perfil'
+      FieldName = 'PER_NOME'
+      Origin = 'PER_NOME'
+      Required = True
+      Size = 50
+    end
+    object QryPrincipalPER_ATIVO: TSmallintField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Ativo'
+      FieldName = 'PER_ATIVO'
+      Origin = 'PER_ATIVO'
+      Required = True
+    end
+    object QryPrincipalREG_EXCLUIDO: TSmallintField
+      FieldName = 'REG_EXCLUIDO'
+      Origin = 'REG_EXCLUIDO'
+    end
+    object QryPrincipalREG_REPLICADO: TSmallintField
+      FieldName = 'REG_REPLICADO'
+      Origin = 'REG_REPLICADO'
+    end
+    object QryPrincipalREG_USUARIO: TStringField
+      FieldName = 'REG_USUARIO'
+      Origin = 'REG_USUARIO'
+      Size = 50
+    end
+    object QryPrincipalREG_MODIFICADO: TSQLTimeStampField
+      FieldName = 'REG_MODIFICADO'
+      Origin = 'REG_MODIFICADO'
+    end
+  end
+  inherited UpdtPrincipal: TFDUpdateSQL
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_SIS_PERFIL'
+      '(PER_ID, PER_NOME, PER_ATIVO, REG_EXCLUIDO, '
+      '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO)'
+      
+        'VALUES (:NEW_PER_ID, :NEW_PER_NOME, :NEW_PER_ATIVO, :NEW_REG_EXC' +
+        'LUIDO, '
+      '  :NEW_REG_REPLICADO, :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_SIS_PERFIL'
+      
+        'SET PER_ID = :NEW_PER_ID, PER_NOME = :NEW_PER_NOME, PER_ATIVO = ' +
+        ':NEW_PER_ATIVO, '
+      
+        '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
+        'LICADO, '
+      
+        '  REG_USUARIO = :NEW_REG_USUARIO, REG_MODIFICADO = :NEW_REG_MODI' +
+        'FICADO'
+      'WHERE PER_ID = :OLD_PER_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_SIS_PERFIL'
+      'WHERE PER_ID = :OLD_PER_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT PER_ID, PER_NOME, PER_ATIVO, REG_EXCLUIDO, REG_REPLICADO,' +
+        ' REG_USUARIO, '
+      '  REG_MODIFICADO'
+      'FROM TAB_SIS_PERFIL'
+      'WHERE PER_ID = :PER_ID')
   end
 end

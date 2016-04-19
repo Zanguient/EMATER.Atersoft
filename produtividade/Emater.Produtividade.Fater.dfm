@@ -1488,7 +1488,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             TabOrder = 2
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
-            ExplicitWidth = 787
             object GrdBenTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1595,8 +1594,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             TabOrder = 5
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
-            ExplicitWidth = 787
-            ExplicitHeight = 157
             object GrdBenParTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'

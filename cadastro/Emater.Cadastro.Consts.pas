@@ -25,7 +25,7 @@ resourcestring
   CADASTRO_AVISO_AREA_REAL = 'É necessário informar um valor válido para a área real.';
   CADASTRO_MATRICULA_FUNCIONARIO_EXISTENTE = 'Já existe um funcionário cadastrado com esta matrícula. O mesmo está lotado em %s. O registro será automaticamente carregado para atualização das informações. ';
   CADASTRO_CPF_FUNCIONARIO_EXISTENTE = 'Já existe um funcionário cadastrado com este CPF. O mesmo está lotado em %s. O registro será automaticamente carregado para atualização das informações.';
-  CADASTRO_FUNCIOINARIO_TRANSFERIR = 'A lotação do funcionário %s será alterada de %s para %s. Confirma essa alteração?';
+  CADASTRO_FUNCIONARIO_TRANSFERIR = 'A lotação do funcionário %s será alterada de %s para %s. Confirma essa alteração?';
 
 
 implementation

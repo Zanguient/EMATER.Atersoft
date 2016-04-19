@@ -128,7 +128,8 @@ uses
   Emater.Indicador.Selecao in 'indicador\Emater.Indicador.Selecao.pas' {FrmIndicadorSelecao},
   Emater.Indicador.Consts in 'indicador\Emater.Indicador.Consts.pas',
   Emater.Indicador.Consulta in 'indicador\Emater.Indicador.Consulta.pas' {FrmIndicadorConsulta},
-  Emater.Relatorio.Proater in 'relatorio\Emater.Relatorio.Proater.pas' {FrmRelatorioProater};
+  Emater.Relatorio.Proater in 'relatorio\Emater.Relatorio.Proater.pas' {FrmRelatorioProater},
+  Emater.Proater.Consts in 'proater\Emater.Proater.Consts.pas';
 
 {$R *.res}
 

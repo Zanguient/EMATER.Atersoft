@@ -7,37 +7,22 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Relatorio, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,
   dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, cxContainer, cxEdit, frxClass,
   cxTextEdit, cxMaskEdit, cxDropDownEdit, cxGroupBox, Vcl.Imaging.jpeg, Vcl.ExtCtrls, cxPC, Vcl.StdCtrls, cxButtons, frxDBSet,
-  Data.DB, FIBDataSet, pFIBDataSet, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
-  DateUtils, Emater.Relatorio.Filtro.UnidadeFuncionario, cxSpinEdit, Emater.Relatorio.Filtro.Metodologia, Emater.Relatorio.Filtro.Comunidade;
+  Data.DB, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
+  DateUtils, Emater.Relatorio.Filtro.UnidadeFuncionario, cxSpinEdit, Emater.Relatorio.Filtro.Metodologia, Emater.Relatorio.Filtro.Comunidade,
+  dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TFrmRelatorioFaterComunidade = class(TFrmBaseRelatorio)
-    DtStPrincipal: TpFIBDataSet;
     FrxDtStPrincipal: TfrxDBDataset;
     LblAno: TLabel;
     FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionario;
     FrmFiltroMetodologia: TFrmRelatorioFiltroMetodologia;
     EdtAno: TcxTextEdit;
-    DtStPrincipalCOMUNIDADE_NOME: TFIBStringField;
-    DtStPrincipalBENEFICIARIO_CPF: TFIBStringField;
-    DtStPrincipalBENEFICIARIO_NOME: TFIBStringField;
-    DtStPrincipalMETODOLOGIA_NOME: TFIBStringField;
-    DtStPrincipalMES_JANEIRO: TFIBIntegerField;
-    DtStPrincipalMES_FEVEREIRO: TFIBIntegerField;
-    DtStPrincipalMES_MARCO: TFIBIntegerField;
-    DtStPrincipalMES_ABRIL: TFIBIntegerField;
-    DtStPrincipalMES_MAIO: TFIBIntegerField;
-    DtStPrincipalMES_JUNHO: TFIBIntegerField;
-    DtStPrincipalMES_JULHO: TFIBIntegerField;
-    DtStPrincipalMES_AGOSTO: TFIBIntegerField;
-    DtStPrincipalMES_SETEMBRO: TFIBIntegerField;
-    DtStPrincipalMES_OUTUBRO: TFIBIntegerField;
-    DtStPrincipalMES_NOVEMBRO: TFIBIntegerField;
-    DtStPrincipalMES_DEZEMBRO: TFIBIntegerField;
-    DtStPrincipalMES_TOTAL: TFIBIntegerField;
     FrmFiltroComunidade: TFrmRelatorioFiltroComunidade;
     LblComunidade: TLabel;
     CmbBxQuantidade: TcxComboBox;
+    DtStPrincipal: TFDQuery;
     procedure BtnImprimirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FrxPrincipalGetValue(const VarName: string; var Value: Variant);
@@ -73,7 +58,7 @@ begin
       else
         begin
           // Período:
-          DtStPrincipal.ParamByName('ano').AsShort := StrToInt(EdtAno.Text);
+          DtStPrincipal.ParamByName('ano').AsSmallint := StrToInt(EdtAno.Text);
 
           // Unidade (escritório):
           if not VarIsNull(FrmFiltro.LkpCmbBxUnidade.EditValue) then
@@ -105,7 +90,8 @@ begin
           else
             DtStPrincipal.ParamByName('atendimentos').AsInteger := 0;
 
-          DtStPrincipal.CloseOpen(True);
+          DtStPrincipal.Close;
+          DtStPrincipal.Open;
           FrxPrincipal.PrepareReport;
           if (CmbBxModo.ItemIndex = 0) then
             FrxPrincipal.ShowPreparedReport

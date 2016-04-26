@@ -7,83 +7,89 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Relatorio, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,
   dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, cxContainer, cxEdit, frxClass,
   cxTextEdit, cxMaskEdit, cxDropDownEdit, cxGroupBox, Vcl.Imaging.jpeg, Vcl.ExtCtrls, cxPC, Vcl.StdCtrls, cxButtons, frxDBSet,
-  Data.DB, FIBDataSet, pFIBDataSet, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
-  DateUtils, Emater.Relatorio.Filtro.Producao, Emater.Relatorio.Filtro.UnidadeFuncionario, Vcl.Grids, Vcl.DBGrids;
+  Data.DB, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
+  DateUtils, Emater.Relatorio.Filtro.Producao, Emater.Relatorio.Filtro.UnidadeFuncionario, Vcl.Grids, Vcl.DBGrids,
+  dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TFrmRelatorioProducaoBeneficiario = class(TFrmBaseRelatorio)
-    DtStPrincipal: TpFIBDataSet;
     FrxDtStPrincipal: TfrxDBDataset;
-    DtStResumo: TpFIBDataSet;
     FrxDtStResumo: TfrxDBDataset;
-    DtStResumoCULTURA_NOME: TFIBStringField;
-    DtStResumoBENEFICIARIOS: TFIBIntegerField;
-    DtStResumoTOTAL_QUANTIDADE: TFIBBCDField;
-    DtStResumoUNIDADE_MEDIDA: TFIBStringField;
-    DtStResumoTOTAL_AREA_PLANTADA: TFIBBCDField;
     FrmFiltroProducao: TFrmRelatorioFiltroProducao;
     FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionario;
     LblSafra: TLabel;
     EdtAnoInicio: TcxTextEdit;
     EdtAnoFim: TcxTextEdit;
     LblBarra: TLabel;
-    DtStComercio: TpFIBDataSet;
     FrxDtStComercio: TfrxDBDataset;
-    DtStComercioSAFRA_INICIO_FIM: TFIBStringField;
-    DtStGrafico: TpFIBDataSet;
-    FIBStringField1: TFIBStringField;
-    FIBIntegerField1: TFIBIntegerField;
-    FIBBCDField1: TFIBBCDField;
-    FIBStringField2: TFIBStringField;
-    FIBBCDField2: TFIBBCDField;
     FrxDtStGrafico: TfrxDBDataset;
     FrxDtStBeneficiario: TfrxDBDataset;
-    DtStBeneficiario: TpFIBDataSet;
     DtSrcPrincipal: TDataSource;
     FrxDtStProducao: TfrxDBDataset;
-    DtStProducao: TpFIBDataSet;
-    DtStPrincipalID: TFIBIntegerField;
-    DtStPrincipalUPF: TFIBStringField;
-    DtStPrincipalCATEGORIA_INICIO: TFIBIntegerField;
-    DtStPrincipalCATEGORIA_FIM: TFIBIntegerField;
-    DtStPrincipalANO_INICIO: TFIBIntegerField;
-    DtStPrincipalANO_FIM: TFIBIntegerField;
-    DtStPrincipalDIVISAO_INICIO: TFIBIntegerField;
-    DtStPrincipalDIVISAO_FIM: TFIBIntegerField;
-    DtStPrincipalGRUPO_INICIO: TFIBIntegerField;
-    DtStPrincipalGRUPO_FIM: TFIBIntegerField;
-    DtStPrincipalCLASSE_INICIO: TFIBIntegerField;
-    DtStPrincipalCLASSE_FIM: TFIBIntegerField;
-    DtStPrincipalPRODUTO_INICIO: TFIBIntegerField;
-    DtStPrincipalPRODUTO_FIM: TFIBIntegerField;
-    DtStPrincipalSISTEMA_INICIO: TFIBIntegerField;
-    DtStPrincipalSISTEMA_FIM: TFIBIntegerField;
-    DtStBeneficiarioCPF: TFIBStringField;
-    DtStBeneficiarioNOME: TFIBStringField;
-    DtStBeneficiarioCATEGORIA: TFIBStringField;
-    DtStProducaoSAFRA_INICIO: TFIBIntegerField;
-    DtStProducaoSAFRA_FIM: TFIBIntegerField;
-    DtStProducaoPRODUTO: TFIBStringField;
-    DtStProducaoAREA_PLANTADA: TFIBFloatField;
-    DtStProducaoAREA_COLHIDA: TFIBFloatField;
-    DtStProducaoQUANTIDADE: TFIBFloatField;
-    DtStProducaoUNIDADE: TFIBStringField;
-    DtStProducaoSAFRA_INICIO_FIM: TFIBStringField;
-    DtStComercioSAFRA_INICIO: TFIBIntegerField;
-    DtStComercioSAFRA_FIM: TFIBIntegerField;
-    DtStComercioCOMERCIO_DESCRICAO: TFIBStringField;
-    DtStComercioCOMERCIO_QUANTIDADE: TFIBFloatField;
-    DtStComercioCOMERCIO_UNIDADE: TFIBStringField;
-    DtStComercioCOMERCIO_VALOR: TFIBBCDField;
-    DtStComercioCOMERCIO_TOTAL: TFIBBCDField;
-    DtStComercioCOMERCIO_DESTINOS: TFIBStringField;
+    DtStPrincipal: TFDQuery;
+    DtStComercio: TFDQuery;
+    DtStBeneficiario: TFDQuery;
+    DtStProducao: TFDQuery;
+    DtStResumo: TFDQuery;
+    DtStGrafico: TFDQuery;
+    DtStPrincipalID: TIntegerField;
+    DtStPrincipalUPF: TStringField;
+    DtStPrincipalCATEGORIA_INICIO: TIntegerField;
+    DtStPrincipalCATEGORIA_FIM: TIntegerField;
+    DtStPrincipalANO_INICIO: TIntegerField;
+    DtStPrincipalANO_FIM: TIntegerField;
+    DtStPrincipalDIVISAO_INICIO: TIntegerField;
+    DtStPrincipalDIVISAO_FIM: TIntegerField;
+    DtStPrincipalGRUPO_INICIO: TIntegerField;
+    DtStPrincipalGRUPO_FIM: TIntegerField;
+    DtStPrincipalCLASSE_INICIO: TIntegerField;
+    DtStPrincipalCLASSE_FIM: TIntegerField;
+    DtStPrincipalPRODUTO_INICIO: TIntegerField;
+    DtStPrincipalPRODUTO_FIM: TIntegerField;
+    DtStPrincipalSISTEMA_INICIO: TIntegerField;
+    DtStPrincipalSISTEMA_FIM: TIntegerField;
+    DtStPrincipalSAFRA_INICIO_FIM: TStringField;
+    DtStComercioPRO_ID: TIntegerField;
+    DtStComercioATV_ID: TLargeintField;
+    DtStComercioPRP_ID: TIntegerField;
+    DtStComercioSAFRA_INICIO: TIntegerField;
+    DtStComercioSAFRA_FIM: TIntegerField;
+    DtStComercioCOMERCIO_DESCRICAO: TStringField;
+    DtStComercioCOMERCIO_QUANTIDADE: TCurrencyField;
+    DtStComercioCOMERCIO_UNIDADE: TStringField;
+    DtStComercioCOMERCIO_VALOR: TBCDField;
+    DtStComercioCOMERCIO_TOTAL: TFMTBCDField;
+    DtStComercioCOMERCIO_DESTINOS: TStringField;
+    DtStComercioSAFRA_INICIO_FIM: TStringField;
+    DtStBeneficiarioCPF: TStringField;
+    DtStBeneficiarioNOME: TStringField;
+    DtStBeneficiarioCATEGORIA: TStringField;
+    DtStProducaoSAFRA_INICIO: TIntegerField;
+    DtStProducaoSAFRA_FIM: TIntegerField;
+    DtStProducaoPRODUTO: TStringField;
+    DtStProducaoAREA_PLANTADA: TCurrencyField;
+    DtStProducaoAREA_COLHIDA: TCurrencyField;
+    DtStProducaoQUANTIDADE: TCurrencyField;
+    DtStProducaoUNIDADE: TStringField;
+    DtStResumoCULTURA_NOME: TStringField;
+    DtStResumoBENEFICIARIOS: TIntegerField;
+    DtStResumoTOTAL_QUANTIDADE: TBCDField;
+    DtStResumoTOTAL_AREA_PLANTADA: TBCDField;
+    DtStResumoUNIDADE_MEDIDA: TStringField;
+    DtStGraficoCULTURA_NOME: TStringField;
+    DtStGraficoBENEFICIARIOS: TIntegerField;
+    DtStGraficoTOTAL_QUANTIDADE: TBCDField;
+    DtStGraficoTOTAL_AREA_PLANTADA: TBCDField;
+    DtStGraficoUNIDADE_MEDIDA: TStringField;
+    DtStProducaoSAFRA_INICIO_FIM: TStringField;
     procedure BtnImprimirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FrxPrincipalGetValue(const VarName: string; var Value: Variant);
-    procedure DtStPrincipalCalcFields(DataSet: TDataSet);
-    procedure DtStComercioCalcFields(DataSet: TDataSet);
     procedure BtnLimparClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure DtStComercioCalcFields(DataSet: TDataSet);
+    procedure DtStProducaoCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -238,10 +244,14 @@ begin
               DtStGrafico.ParamByName('id_sistema').AsInteger := 0;
             end;
 
-          DtStPrincipal.CloseOpen(True);
-          DtStBeneficiario.CloseOpen(True);
-          DtStProducao.CloseOpen(True);
-          DtStComercio.CloseOpen(True);
+          DtStPrincipal.Close;
+          DtStPrincipal.Open;
+          DtStBeneficiario.Close;
+          DtStBeneficiario.Open;
+          DtStProducao.Close;
+          DtStProducao.Open;
+          DtStComercio.Close;
+          DtStComercio.Open;
 
           DtStResumo.Close;
           DtStGrafico.Close;
@@ -276,8 +286,10 @@ begin
           DtStGrafico.ParamByName('categoria_inicio').AsInteger := DtStPrincipalCATEGORIA_INICIO.Value;
           DtStGrafico.ParamByName('categoria_fim').AsInteger := DtStPrincipalCATEGORIA_FIM.Value;
 
-          DtStResumo.CloseOpen(True);
-          DtStGrafico.CloseOpen(True);
+          DtStResumo.Close;
+          DtStResumo.Open;
+          DtStGrafico.Close;
+          DtStGrafico.Close;
           FrxPrincipal.PrepareReport;
           if (CmbBxModo.ItemIndex = 0) then
             FrxPrincipal.ShowPreparedReport
@@ -317,7 +329,7 @@ begin
       DtStComercioSAFRA_FIM.AsString;
 end;
 
-procedure TFrmRelatorioProducaoBeneficiario.DtStPrincipalCalcFields(DataSet: TDataSet);
+procedure TFrmRelatorioProducaoBeneficiario.DtStProducaoCalcFields(DataSet: TDataSet);
 begin
   if not DtStProducaoSAFRA_INICIO.IsNull then
     DtStProducaoSAFRA_INICIO_FIM.AsString := DtStProducaoSAFRA_INICIO.AsString + '/';

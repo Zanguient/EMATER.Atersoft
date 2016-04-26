@@ -17,6 +17,7 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Width = 23
           Height = 13
           Caption = 'Ano:'
+          Transparent = True
         end
         object LblComunidade: TLabel
           Left = 8
@@ -24,6 +25,7 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Width = 178
           Height = 13
           Caption = 'Quantidade m'#237'nima de atendimentos:'
+          Transparent = True
         end
         inline FrmFiltroMetodologia: TFrmRelatorioFiltroMetodologia
           Left = 8
@@ -288,7 +290,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 26.456710000000000000
           Width = 1046.929810000000000000
           Height = 41.574830000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
@@ -304,7 +305,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488250000000000000
           Width = 204.094620000000000000
           Height = 56.692950000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -325,7 +325,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488250000000000000
           Width = 90.708720000000000000
           Height = 56.692950000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -346,7 +345,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488250000000000000
           Width = 268.346630000000000000
           Height = 56.692950000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -367,7 +365,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488250000000000000
           Width = 34.015770000000000000
           Height = 56.692950000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -390,7 +387,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488250000000000000
           Width = 34.015748030000000000
           Height = 56.692950000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -413,7 +409,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488250000000000000
           Width = 34.015748030000000000
           Height = 56.692950000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -436,7 +431,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488250000000000000
           Width = 34.015748030000000000
           Height = 56.692950000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -459,7 +453,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488176770000000000
           Width = 34.015748030000000000
           Height = 56.692913390000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -482,7 +475,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488176770000000000
           Width = 34.015748030000000000
           Height = 56.692913390000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -505,7 +497,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488176770000000000
           Width = 34.015748030000000000
           Height = 56.692913390000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -528,7 +519,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488176770000000000
           Width = 34.015748030000000000
           Height = 56.692913390000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -551,7 +541,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488176770000000000
           Width = 34.015748030000000000
           Height = 56.692913390000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -574,7 +563,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488176770000000000
           Width = 34.015748030000000000
           Height = 56.692913390000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -597,7 +585,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488176770000000000
           Width = 34.015748030000000000
           Height = 56.692913390000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -620,7 +607,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488176770000000000
           Width = 34.015748030000000000
           Height = 56.692913390000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -643,7 +629,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 94.488176770000000000
           Width = 75.590578030000000000
           Height = 56.692913390000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -664,7 +649,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 71.811070000000000000
           Width = 563.149970000000000000
           Height = 22.677180000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -685,7 +669,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Top = 71.811070000000000000
           Width = 563.149970000000000000
           Height = 22.677180000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -703,6 +686,7 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
         end
       end
       object MasterData: TfrxMasterData
+        FillType = ftBrush
         Height = 18.897650000000000000
         Top = 325.039580000000000000
         Width = 1046.929810000000000000
@@ -712,7 +696,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
         object DtStPrincipalCOMUNIDADE_NOME: TfrxMemoView
           Width = 204.094620000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'COMUNIDADE_NOME'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -733,7 +716,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 204.094620000000000000
           Width = 90.708720000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -754,7 +736,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 294.803340000000000000
           Width = 268.346630000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'BENEFICIARIO_NOME'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -774,7 +755,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 563.149970000000000000
           Width = 34.015770000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_JANEIRO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -796,7 +776,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 597.165740000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_FEVEREIRO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -818,7 +797,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 631.181510000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_MARCO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -840,7 +818,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 665.197280000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_ABRIL'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -862,7 +839,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 699.213050000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_MAIO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -884,7 +860,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 733.228820000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_JUNHO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -906,7 +881,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 767.244590000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_JULHO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -928,7 +902,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 801.260360000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_AGOSTO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -950,7 +923,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 835.276130000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_SETEMBRO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -972,7 +944,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 869.291900000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_OUTUBRO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -994,7 +965,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 903.307670000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_NOVEMBRO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -1016,7 +986,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 937.323440000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_DEZEMBRO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -1038,7 +1007,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 971.339210000000000000
           Width = 75.590578030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'MES_TOTAL'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -1058,13 +1026,13 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
         end
       end
       object Footer: TfrxFooter
+        FillType = ftBrush
         Height = 18.897650000000000000
         Top = 366.614410000000000000
         Width = 1046.929810000000000000
         object Memo30: TfrxMemoView
           Width = 563.149970000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1084,7 +1052,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 563.149970000000000000
           Width = 34.015770000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1105,7 +1072,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 597.165740000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1126,7 +1092,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 631.181510000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1147,7 +1112,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 665.197280000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1168,7 +1132,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 699.213050000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1189,7 +1152,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 733.228820000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1210,7 +1172,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 767.244590000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1231,7 +1192,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 801.260360000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1252,7 +1212,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 835.276130000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1273,7 +1232,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 869.291900000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1294,7 +1252,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 903.307670000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1315,7 +1272,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 937.323440000000000000
           Width = 34.015748030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1336,7 +1292,6 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 971.339210000000000000
           Width = 75.590578030000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -1356,8 +1311,19 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
       end
     end
   end
-  object DtStPrincipal: TpFIBDataSet
-    SelectSQL.Strings = (
+  object FrxDtStPrincipal: TfrxDBDataset
+    UserName = 'DtStPrincipal'
+    CloseDataSource = False
+    DataSet = DtStPrincipal
+    BCDToCurrency = False
+    Left = 80
+    Top = 328
+  end
+  object DtStPrincipal: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
       'select'
       '  comunidade_nome,'
       '  beneficiario_cpf,'
@@ -1382,89 +1348,41 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
       '    :funcionario,'
       '    :metodologia,'
       '    :comunidade,'
-      '    :atendimentos)'
-      ''
-      '--select * from stp_rel_comunidade_01(2014, 113)')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
+      '    :atendimentos)')
     Left = 112
     Top = 328
-    poSQLINT64ToBCD = True
-    object DtStPrincipalCOMUNIDADE_NOME: TFIBStringField
-      FieldName = 'COMUNIDADE_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalBENEFICIARIO_CPF: TFIBStringField
-      FieldName = 'BENEFICIARIO_CPF'
-      Size = 11
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalBENEFICIARIO_NOME: TFIBStringField
-      FieldName = 'BENEFICIARIO_NOME'
-      Size = 150
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalMETODOLOGIA_NOME: TFIBStringField
-      FieldName = 'METODOLOGIA_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalMES_JANEIRO: TFIBIntegerField
-      FieldName = 'MES_JANEIRO'
-    end
-    object DtStPrincipalMES_FEVEREIRO: TFIBIntegerField
-      FieldName = 'MES_FEVEREIRO'
-    end
-    object DtStPrincipalMES_MARCO: TFIBIntegerField
-      FieldName = 'MES_MARCO'
-    end
-    object DtStPrincipalMES_ABRIL: TFIBIntegerField
-      FieldName = 'MES_ABRIL'
-    end
-    object DtStPrincipalMES_MAIO: TFIBIntegerField
-      FieldName = 'MES_MAIO'
-    end
-    object DtStPrincipalMES_JUNHO: TFIBIntegerField
-      FieldName = 'MES_JUNHO'
-    end
-    object DtStPrincipalMES_JULHO: TFIBIntegerField
-      FieldName = 'MES_JULHO'
-    end
-    object DtStPrincipalMES_AGOSTO: TFIBIntegerField
-      FieldName = 'MES_AGOSTO'
-    end
-    object DtStPrincipalMES_SETEMBRO: TFIBIntegerField
-      FieldName = 'MES_SETEMBRO'
-    end
-    object DtStPrincipalMES_OUTUBRO: TFIBIntegerField
-      FieldName = 'MES_OUTUBRO'
-    end
-    object DtStPrincipalMES_NOVEMBRO: TFIBIntegerField
-      FieldName = 'MES_NOVEMBRO'
-    end
-    object DtStPrincipalMES_DEZEMBRO: TFIBIntegerField
-      FieldName = 'MES_DEZEMBRO'
-    end
-    object DtStPrincipalMES_TOTAL: TFIBIntegerField
-      FieldName = 'MES_TOTAL'
-    end
-  end
-  object FrxDtStPrincipal: TfrxDBDataset
-    UserName = 'DtStPrincipal'
-    CloseDataSource = False
-    DataSet = DtStPrincipal
-    BCDToCurrency = False
-    Left = 80
-    Top = 328
+    ParamData = <
+      item
+        Name = 'ANO'
+        DataType = ftString
+        ParamType = ptInput
+        Value = '2014'
+      end
+      item
+        Name = 'UNIDADE'
+        DataType = ftString
+        ParamType = ptInput
+        Value = '113'
+      end
+      item
+        Name = 'FUNCIONARIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'METODOLOGIA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'COMUNIDADE'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ATENDIMENTOS'
+        DataType = ftSmallint
+        ParamType = ptInput
+      end>
   end
 end

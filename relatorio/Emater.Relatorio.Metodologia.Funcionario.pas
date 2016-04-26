@@ -7,24 +7,19 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Relatorio, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,
   dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, cxContainer, cxEdit, frxClass,
   cxTextEdit, cxMaskEdit, cxDropDownEdit, cxGroupBox, Vcl.Imaging.jpeg, Vcl.ExtCtrls, cxPC, Vcl.StdCtrls, cxButtons, frxDBSet,
-  Data.DB, FIBDataSet, pFIBDataSet, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
-  DateUtils, Emater.Relatorio.Filtro.Metodologia, frxChart;
+  Data.DB, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
+  DateUtils, Emater.Relatorio.Filtro.Metodologia, frxChart, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TFrmRelatorioMetodologiaFuncionario = class(TFrmBaseRelatorio)
-    DtStPrincipal: TpFIBDataSet;
     FrxDtStPrincipal: TfrxDBDataset;
     FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionarioPeriodo;
-    DtStPrincipalTECNICO: TFIBStringField;
-    DtStPrincipalCATEGORIA: TFIBStringField;
-    DtStPrincipalMETODOLOGIA: TFIBStringField;
-    DtStPrincipalTOTAL: TFIBIntegerField;
     FrmFiltroMetodologia: TFrmRelatorioFiltroMetodologia;
     FrxDtStGrafico: TfrxDBDataset;
-    DtStGrafico: TpFIBDataSet;
-    DtStGraficoTECNICO: TFIBStringField;
-    DtStGraficoTOTAL: TFIBIntegerField;
-    DtStPrincipalORDEM: TFIBBCDField;
+    DtStPrincipal: TFDQuery;
+    DtStGrafico: TFDQuery;
     procedure BtnImprimirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FrxPrincipalGetValue(const VarName: string; var Value: Variant);
@@ -116,8 +111,10 @@ begin
               ChartView.Chart.Title.Text.Add('DESEMPENHO DO ESCRITÓRIO (TODAS METODOLOGIAS)');
             end;
 
-          DtStPrincipal.CloseOpen(True);
-          DtStGrafico.CloseOpen(True);
+          DtStPrincipal.Close;
+          DtStPrincipal.Open;
+          DtStGrafico.Close;
+          DtStGrafico.Open;
           FrxPrincipal.PrepareReport;
           if (CmbBxModo.ItemIndex = 0) then
             FrxPrincipal.ShowPreparedReport

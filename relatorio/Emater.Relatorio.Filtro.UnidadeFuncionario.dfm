@@ -1,8 +1,8 @@
 object FrmRelatorioFiltroUnidadeFuncionario: TFrmRelatorioFiltroUnidadeFuncionario
   Left = 0
   Top = 0
-  Width = 459
-  Height = 67
+  Width = 443
+  Height = 64
   TabOrder = 0
   object LblUnidade: TLabel
     Left = 8
@@ -10,6 +10,7 @@ object FrmRelatorioFiltroUnidadeFuncionario: TFrmRelatorioFiltroUnidadeFuncionar
     Width = 48
     Height = 13
     Caption = 'Escrit'#243'rio:'
+    Transparent = True
   end
   object LblFuncionario: TLabel
     Left = 8
@@ -17,6 +18,7 @@ object FrmRelatorioFiltroUnidadeFuncionario: TFrmRelatorioFiltroUnidadeFuncionar
     Width = 40
     Height = 13
     Caption = 'T'#233'cnico:'
+    Transparent = True
   end
   object LkpCmbBxUnidade: TcxLookupComboBox
     Left = 88

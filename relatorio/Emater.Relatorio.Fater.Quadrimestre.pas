@@ -7,22 +7,21 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Relatorio, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,
   dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, cxContainer, cxEdit, frxClass,
   cxTextEdit, cxMaskEdit, cxDropDownEdit, cxGroupBox, Vcl.Imaging.jpeg, Vcl.ExtCtrls, cxPC, Vcl.StdCtrls, cxButtons, frxDBSet,
-  Data.DB, FIBDataSet, pFIBDataSet, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
-  DateUtils, Emater.Relatorio.Filtro.UnidadeFuncionario, cxSpinEdit, Emater.Relatorio.Filtro.Metodologia;
+  Data.DB, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
+  DateUtils, Emater.Relatorio.Filtro.UnidadeFuncionario, cxSpinEdit, Emater.Relatorio.Filtro.Metodologia,
+  dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TFrmRelatorioFaterQuadrimestre = class(TFrmBaseRelatorio)
-    DtStPrincipal: TpFIBDataSet;
     FrxDtStPrincipal: TfrxDBDataset;
     LblAno: TLabel;
     LblQuadrimestre: TLabel;
     CmbBxQuadrimestre: TcxComboBox;
     FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionario;
     FrmFiltroMetodologia: TFrmRelatorioFiltroMetodologia;
-    DtStPrincipalTECNICO: TFIBStringField;
-    DtStPrincipalREFERENCIA: TFIBStringField;
-    DtStPrincipalTOTAL: TFIBFloatField;
     EdtAno: TcxTextEdit;
+    DtStPrincipal: TFDQuery;
     procedure BtnImprimirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FrxPrincipalGetValue(const VarName: string; var Value: Variant);
@@ -57,8 +56,8 @@ begin
       else
         begin
           // Período:
-          DtStPrincipal.ParamByName('ano').AsShort := StrToInt(EdtAno.Text);
-          DtStPrincipal.ParamByName('quadrimestre').AsShort := CmbBxQuadrimestre.ItemIndex + 1;
+          DtStPrincipal.ParamByName('ano').AsSmallInt := StrToInt(EdtAno.Text);
+          DtStPrincipal.ParamByName('quadrimestre').AsSmallint := CmbBxQuadrimestre.ItemIndex + 1;
 
           // Unidade (escritório):
           if not VarIsNull(FrmFiltro.LkpCmbBxUnidade.EditValue) then
@@ -86,7 +85,8 @@ begin
           else
             DtStPrincipal.ParamByName('metodo').AsInteger := 0;
 
-          DtStPrincipal.CloseOpen(True);
+          DtStPrincipal.Close;
+          DtStPrincipal.Open;
           FrxPrincipal.PrepareReport;
           if (CmbBxModo.ItemIndex = 0) then
             FrxPrincipal.ShowPreparedReport

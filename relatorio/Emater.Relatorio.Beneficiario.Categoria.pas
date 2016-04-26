@@ -7,31 +7,18 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Relatorio, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,
   dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, cxContainer, cxEdit, frxClass,
   cxTextEdit, cxMaskEdit, cxDropDownEdit, cxGroupBox, Vcl.Imaging.jpeg, Vcl.ExtCtrls, cxPC, Vcl.StdCtrls, cxButtons, frxDBSet,
-  Data.DB, FIBDataSet, pFIBDataSet, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
-  DateUtils;
+  Data.DB, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
+  DateUtils, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
+  FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TFrmRelatorioBeneficiarioCategoria = class(TFrmBaseRelatorio)
-    DtStPrincipal: TpFIBDataSet;
-    DtStPrincipalCATEGORIA: TFIBStringField;
     FrxDtStPrincipal: TfrxDBDataset;
     FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionarioPeriodo;
-    DtStPrincipalESCRITORIO: TFIBStringField;
-    DtStPrincipalTOTAL_BEN: TFIBIntegerField;
-    DtStPrincipalTOTAL_BEN_MASCULINO: TFIBIntegerField;
-    DtStPrincipalTOTAL_BEN_FEMININO: TFIBIntegerField;
-    DtStPrincipalTOTAL_BEN_JOVEM_MASCULINO: TFIBIntegerField;
-    DtStPrincipalTOTAL_BEN_JOVEM_FEMININO: TFIBIntegerField;
-    DtStPrincipalTOTAL_RIB: TFIBIntegerField;
-    DtStPrincipalTOTAL_RIB_MASCULINO: TFIBIntegerField;
-    DtStPrincipalTOTAL_RIB_FEMININO: TFIBIntegerField;
-    DtStPrincipalTOTAL_RIB_JOVEM_MASCULINO: TFIBIntegerField;
-    DtStPrincipalTOTAL_RIB_JOVEM_FEMININO: TFIBIntegerField;
     FrxDtStResumo: TfrxDBDataset;
-    DtStResumo: TpFIBDataSet;
-    DtStResumoESCRITORIO: TFIBStringField;
-    DtStResumoCATEGORIA: TFIBStringField;
-    DtStResumoTOTAL_BEN: TFIBIntegerField;
+    DtStPrincipal: TFDQuery;
+    DtStResumo: TFDQuery;
     procedure BtnImprimirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FrxPrincipalGetValue(const VarName: string; var Value: Variant);
@@ -101,8 +88,10 @@ begin
               DtStResumo.ParamByName('funcionario').AsInteger := 0;
             end;
 
-          DtStPrincipal.CloseOpen(True);
-          DtStResumo.CloseOpen(True);
+          DtStPrincipal.Close;
+          DtStPrincipal.Open;
+          DtStResumo.Close;
+          DtStResumo.Open;
           FrxPrincipal.PrepareReport;
           if (CmbBxModo.ItemIndex = 0) then
             FrxPrincipal.ShowPreparedReport

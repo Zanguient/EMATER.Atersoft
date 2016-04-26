@@ -7,18 +7,16 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Relatorio, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,
   dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, cxContainer, cxEdit, frxClass,
   cxTextEdit, cxMaskEdit, cxDropDownEdit, cxGroupBox, Vcl.Imaging.jpeg, Vcl.ExtCtrls, cxPC, Vcl.StdCtrls, cxButtons, frxDBSet,
-  Data.DB, FIBDataSet, pFIBDataSet, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
-  DateUtils;
+  Data.DB, dxSkinSeven, dxSkinSevenClassic, Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo,
+  DateUtils, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
+  FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TFrmRelatorioBeneficiarioAtividade = class(TFrmBaseRelatorio)
-    DtStPrincipal: TpFIBDataSet;
     FrxDtStPrincipal: TfrxDBDataset;
     FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionarioPeriodo;
-    DtStPrincipalTECNICO: TFIBStringField;
-    DtStPrincipalATIVIDADE: TFIBStringField;
-    DtStPrincipalCATEGORIA: TFIBStringField;
-    DtStPrincipalTOTAL: TFIBIntegerField;
+    DtStPrincipal: TFDQuery;
     procedure BtnImprimirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FrxPrincipalGetValue(const VarName: string; var Value: Variant);
@@ -82,7 +80,8 @@ begin
               DtStPrincipal.ParamByName('funcionario').AsInteger := 0;
             end;
 
-          DtStPrincipal.CloseOpen(True);
+          DtStPrincipal.Close;
+          DtStPrincipal.Open;
           FrxPrincipal.PrepareReport;
           if (CmbBxModo.ItemIndex = 0) then
             FrxPrincipal.ShowPreparedReport

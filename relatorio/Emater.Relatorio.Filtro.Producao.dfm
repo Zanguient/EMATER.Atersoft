@@ -1,8 +1,8 @@
 object FrmRelatorioFiltroProducao: TFrmRelatorioFiltroProducao
   Left = 0
   Top = 0
-  Width = 418
-  Height = 116
+  Width = 438
+  Height = 162
   TabOrder = 0
   object LblGrupo: TLabel
     Left = 8
@@ -10,6 +10,7 @@ object FrmRelatorioFiltroProducao: TFrmRelatorioFiltroProducao
     Width = 33
     Height = 13
     Caption = 'Grupo:'
+    Transparent = True
   end
   object LblClasse: TLabel
     Left = 8
@@ -17,6 +18,7 @@ object FrmRelatorioFiltroProducao: TFrmRelatorioFiltroProducao
     Width = 35
     Height = 13
     Caption = 'Classe:'
+    Transparent = True
   end
   object LblCultura: TLabel
     Left = 8
@@ -24,6 +26,7 @@ object FrmRelatorioFiltroProducao: TFrmRelatorioFiltroProducao
     Width = 115
     Height = 13
     Caption = 'Cultura/cria'#231#227'o/servi'#231'o:'
+    Transparent = True
   end
   object LblSistema: TLabel
     Left = 8
@@ -31,6 +34,7 @@ object FrmRelatorioFiltroProducao: TFrmRelatorioFiltroProducao
     Width = 90
     Height = 13
     Caption = 'Sistema produtivo:'
+    Transparent = True
   end
   object LblCategoria: TLabel
     Left = 8
@@ -38,6 +42,7 @@ object FrmRelatorioFiltroProducao: TFrmRelatorioFiltroProducao
     Width = 51
     Height = 13
     Caption = 'Categoria:'
+    Transparent = True
   end
   object LblAtividade: TLabel
     Left = 8
@@ -45,6 +50,7 @@ object FrmRelatorioFiltroProducao: TFrmRelatorioFiltroProducao
     Width = 98
     Height = 13
     Caption = 'Atividade produtiva:'
+    Transparent = True
   end
   object LkpCmbBxGrupo: TcxLookupComboBox
     Left = 128

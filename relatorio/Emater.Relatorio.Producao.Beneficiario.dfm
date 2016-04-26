@@ -4,7 +4,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
   ClientHeight = 523
   ExplicitLeft = 275
   ExplicitTop = 97
-  ExplicitHeight = 561
+  ExplicitHeight = 562
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnImprimir: TcxButton
@@ -34,9 +34,10 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         object LblSafra: TLabel
           Left = 8
           Top = 28
-          Width = 81
+          Width = 95
           Height = 13
-          Caption = 'Safra (ano/ano):'
+          Caption = 'Per'#237'odo da colheita:'
+          Transparent = True
         end
         object LblBarra: TLabel
           Left = 172
@@ -183,7 +184,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
             Top = 112
           end
           inherited DtSrcCategoria: TDataSource
-            Top = 65528
+            Left = 360
           end
           inherited DtSrcAtividade: TDataSource
             Top = 16
@@ -346,7 +347,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 26.456710000000000000
           Width = 718.110700000000000000
           Height = 52.913420000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -360,6 +360,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object MasterDataPrincipal: TfrxMasterData
+        FillType = ftBrush
         Height = 30.236240000000000000
         Top = 302.362400000000000000
         Width = 718.110700000000000000
@@ -370,7 +371,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         object Memo5: TfrxMemoView
           Width = 718.110700000000000000
           Height = 30.236240000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -9
@@ -387,7 +387,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 11.338590000000000000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'UPF'
           DataSet = FrxDtStPrincipal
           DataSetName = 'DtStPrincipal'
@@ -408,6 +407,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object GroupHeaderPrincipal: TfrxGroupHeader
+        FillType = ftBrush
         Height = 26.456710000000000000
         Top = 253.228510000000000000
         Width = 718.110700000000000000
@@ -416,7 +416,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         object Memo30: TfrxMemoView
           Width = 718.110700000000000000
           Height = 26.456692910000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -17
@@ -432,13 +431,13 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object GroupFooterComercio: TfrxGroupFooter
+        FillType = ftBrush
         Height = 18.897650000000000000
         Top = 661.417750000000000000
         Width = 718.110700000000000000
         object Memo24: TfrxMemoView
           Width = 718.110700000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -451,6 +450,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object DetailDataBeneficiarioUPF: TfrxDetailData
+        FillType = ftBrush
         Height = 18.897650000000000000
         Top = 396.850650000000000000
         Width = 718.110700000000000000
@@ -460,7 +460,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         object DtStPrincipalCPF: TfrxMemoView
           Width = 94.488250000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStBeneficiario
           DataSetName = 'DtStBeneficiario'
           Font.Charset = DEFAULT_CHARSET
@@ -481,7 +480,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 94.488250000000000000
           Width = 264.567100000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'NOME'
           DataSet = FrxDtStBeneficiario
           DataSetName = 'DtStBeneficiario'
@@ -502,7 +500,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 359.055350000000000000
           Width = 359.055350000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'CATEGORIA'
           DataSet = FrxDtStBeneficiario
           DataSetName = 'DtStBeneficiario'
@@ -519,13 +516,13 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object HeaderBeneficiarioUPF: TfrxHeader
+        FillType = ftBrush
         Height = 18.897650000000000000
         Top = 355.275820000000000000
         Width = 718.110700000000000000
         object Memo3: TfrxMemoView
           Width = 94.488250000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -9
@@ -542,7 +539,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 94.488250000000000000
           Width = 264.567100000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -9
@@ -559,7 +555,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 359.055350000000000000
           Width = 359.055350000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -9
@@ -574,6 +569,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object DetailDataBeneficiarioProducao: TfrxDetailData
+        FillType = ftBrush
         Height = 18.897650000000000000
         Top = 495.118430000000000000
         Width = 718.110700000000000000
@@ -583,7 +579,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         object DtStPrincipalSAFRA_INICIO_FIM: TfrxMemoView
           Width = 94.488250000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'SAFRA_INICIO_FIM'
           DataSet = FrxDtStProducao
           DataSetName = 'DtStProducao'
@@ -602,7 +597,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 94.488250000000000000
           Width = 264.567100000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'PRODUTO'
           DataSet = FrxDtStProducao
           DataSetName = 'DtStProducao'
@@ -623,7 +617,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 359.055350000000000000
           Width = 75.590600000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'AREA_PLANTADA'
           DataSet = FrxDtStProducao
           DataSetName = 'DtStProducao'
@@ -644,7 +637,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 434.645950000000000000
           Width = 68.031540000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'AREA_COLHIDA'
           DataSet = FrxDtStProducao
           DataSetName = 'DtStProducao'
@@ -665,7 +657,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 502.677490000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'QUANTIDADE'
           DataSet = FrxDtStProducao
           DataSetName = 'DtStProducao'
@@ -686,7 +677,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 600.945270000000000000
           Width = 117.165430000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'UNIDADE'
           DataSet = FrxDtStProducao
           DataSetName = 'DtStProducao'
@@ -703,13 +693,13 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object HeaderBeneficiarioProducao: TfrxHeader
+        FillType = ftBrush
         Height = 34.015770000000000000
         Top = 438.425480000000000000
         Width = 718.110700000000000000
         object Memo2: TfrxMemoView
           Width = 94.488250000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -727,7 +717,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 94.488250000000000000
           Width = 264.567100000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -745,7 +734,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 359.055350000000000000
           Width = 75.590600000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -764,7 +752,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 434.645950000000000000
           Width = 68.031491180000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -783,7 +770,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 502.677490000000000000
           Width = 94.488250000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -801,7 +787,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 597.165740000000000000
           Width = 120.944960000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -817,6 +802,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object GroupHeaderComercio: TfrxGroupHeader
+        FillType = ftBrush
         Height = 60.472480000000000000
         Top = 536.693260000000000000
         Width = 718.110700000000000000
@@ -827,7 +813,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 26.456710000000000000
           Width = 94.488250000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -846,7 +831,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 26.456710000000000000
           Width = 264.567100000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -865,7 +849,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 26.456710000000000000
           Width = 75.590600000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -885,7 +868,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 26.456710000000000000
           Width = 68.031491180000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -905,7 +887,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 26.456710000000000000
           Width = 94.488250000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -924,7 +905,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 26.456710000000000000
           Width = 120.944960000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -941,7 +921,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         object Memo22: TfrxMemoView
           Width = 718.110700000000000000
           Height = 26.456692910000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -17
@@ -957,6 +936,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object DetailDataComercio: TfrxDetailData
+        FillType = ftBrush
         Height = 18.897650000000000000
         Top = 619.842920000000000000
         Width = 718.110700000000000000
@@ -966,7 +946,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         object DtStComercioSAFRA_INICIO_FIM: TfrxMemoView
           Width = 94.488250000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'SAFRA_INICIO_FIM'
           DataSet = FrxDtStComercio
           DataSetName = 'DtStComercio'
@@ -986,7 +965,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 94.488250000000000000
           Width = 264.567100000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'COMERCIO_DESCRICAO'
           DataSet = FrxDtStComercio
           DataSetName = 'DtStComercio'
@@ -1005,7 +983,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 359.055350000000000000
           Width = 75.590600000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'COMERCIO_QUANTIDADE'
           DataSet = FrxDtStComercio
           DataSetName = 'DtStComercio'
@@ -1026,7 +1003,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 438.425480000000000000
           Width = 117.165430000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'COMERCIO_UNIDADE'
           DataSet = FrxDtStComercio
           DataSetName = 'DtStComercio'
@@ -1044,7 +1020,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 555.590910000000000000
           Width = 68.031540000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'COMERCIO_VALOR'
           DataSet = FrxDtStComercio
           DataSetName = 'DtStComercio'
@@ -1065,7 +1040,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 623.622450000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'COMERCIO_TOTAL'
           DataSet = FrxDtStComercio
           DataSetName = 'DtStComercio'
@@ -1093,13 +1067,13 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
       object PageHeaderResumo: TfrxPageHeader
+        FillType = ftBrush
         Height = 71.811070000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Picture1: TfrxPictureView
           Width = 64.251936770000000000
           Height = 56.559060000000000000
-          ShowHint = False
           Center = True
           DataSetName = 'Empresa'
           Picture.Data = {
@@ -1579,7 +1553,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 68.031540000000000000
           Width = 650.079160000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
@@ -1597,7 +1570,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 21.677180000000000000
           Width = 650.079160000000000000
           Height = 34.015760240000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -1613,7 +1585,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 56.692950000000000000
           Width = 1046.929810000000000000
           Height = 15.118120000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -1625,6 +1596,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object HeaderResumo: TfrxHeader
+        FillType = ftBrush
         Height = 79.370130000000000000
         Top = 151.181200000000000000
         Width = 718.110700000000000000
@@ -1632,14 +1604,13 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         object Memo34: TfrxMemoView
           Width = 718.110700000000000000
           Height = 26.456692910000000000
-          ShowHint = False
-          Color = clGray
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
           Font.Height = -16
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Width = 0.500000000000000000
+          Fill.BackColor = clGray
           HAlign = haCenter
           Memo.UTF8W = (
             'Relat'#243'rio de produ'#231#227'o e comercializa'#231#227'o por benefici'#225'rio')
@@ -1650,7 +1621,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 26.456710000000000000
           Width = 718.110700000000000000
           Height = 41.574830000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
@@ -1664,6 +1634,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object MasterDataREsumo: TfrxMasterData
+        FillType = ftBrush
         Height = 18.897650000000000000
         Top = 343.937230000000000000
         Width = 718.110700000000000000
@@ -1674,7 +1645,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 56.692950000000000000
           Width = 226.771800000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'CULTURA_NOME'
           DataSet = FrxDtStResumo
           DataSetName = 'DtStResumo'
@@ -1693,7 +1663,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 283.464750000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'BENEFICIARIOS'
           DataSet = FrxDtStResumo
           DataSetName = 'DtStResumo'
@@ -1713,7 +1682,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 362.834880000000000000
           Width = 83.149660000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataSet = FrxDtStResumo
           DataSetName = 'DtStResumo'
           Font.Charset = DEFAULT_CHARSET
@@ -1732,7 +1700,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 445.984540000000000000
           Width = 120.944960000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'UNIDADE_MEDIDA'
           DataSet = FrxDtStResumo
           DataSetName = 'DtStResumo'
@@ -1751,7 +1718,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 566.929500000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
-          ShowHint = False
           DataField = 'TOTAL_AREA_PLANTADA'
           DataSet = FrxDtStResumo
           DataSetName = 'DtStResumo'
@@ -1770,6 +1736,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object GroupHeaderResumo: TfrxGroupHeader
+        FillType = ftBrush
         Height = 68.031540000000000000
         Top = 253.228510000000000000
         Width = 718.110700000000000000
@@ -1780,7 +1747,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 56.692950000000000000
           Width = 604.724800000000000000
           Height = 26.456692910000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
@@ -1799,7 +1765,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 34.015770000000000000
           Width = 226.771800000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -1818,7 +1783,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 34.015770000000000000
           Width = 79.370130000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -1837,7 +1801,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 34.015770000000000000
           Width = 204.094620000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -1857,7 +1820,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 34.015770000000000000
           Width = 94.488250000000000000
           Height = 34.015770000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -1873,13 +1835,13 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object PageFooterResumo: TfrxPageFooter
+        FillType = ftBrush
         Height = 15.118120000000000000
         Top = 729.449290000000000000
         Width = 718.110700000000000000
         object Memo36: TfrxMemoView
           Width = 181.417440000000000000
           Height = 15.118120000000000000
-          ShowHint = False
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1900,7 +1862,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 623.622450000000000000
           Width = 94.488250000000000000
           Height = 15.118120000000000000
-          ShowHint = False
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1920,7 +1881,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 181.417440000000000000
           Width = 158.740260000000000000
           Height = 15.118120000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -8
@@ -1938,7 +1898,6 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Left = 340.157700000000000000
           Width = 283.464750000000000000
           Height = 15.118120000000000000
-          ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -8
@@ -1954,6 +1913,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
       end
       object GroupFooterResumo: TfrxGroupFooter
+        FillType = ftBrush
         Height = 283.464750000000000000
         Top = 385.512060000000000000
         Width = 718.110700000000000000
@@ -1962,7 +1922,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Top = 3.779530000000000000
           Width = 604.724800000000000000
           Height = 279.685220000000000000
-          ShowHint = False
+          HighlightColor = clBlack
           Chart = {
             5450463006544368617274054368617274044C656674020003546F7002000557
             696474680390010648656967687403FA00144261636B57616C6C2E50656E2E56
@@ -1971,33 +1931,26 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
             53697A650201104C6567656E642E416C69676E6D656E7407086C61426F74746F
             6D115469746C652E466F6E742E48656967687402F3125469746C652E54657874
             2E537472696E6773011414000000524553554D4F2044412050524F4455C387C3
-            834F0016426F74746F6D417869732E4C6162656C73416E676C65025A25426F74
-            746F6D417869732E4C6162656C73466F726D61742E54657874416C69676E6D65
-            6E740708746143656E74657217426F74746F6D417869732E4C6162656C734F6E
-            417869730812426F74746F6D417869732E56697369626C650824446570746841
-            7869732E4C6162656C73466F726D61742E54657874416C69676E6D656E740708
-            746143656E746572274465707468546F70417869732E4C6162656C73466F726D
-            61742E54657874416C69676E6D656E740708746143656E7465720D4672616D65
-            2E56697369626C6508234C656674417869732E4C6162656C73466F726D61742E
-            54657874416C69676E6D656E740708746143656E746572245269676874417869
-            732E4C6162656C73466F726D61742E54657874416C69676E6D656E7407087461
-            43656E74657222546F70417869732E4C6162656C73466F726D61742E54657874
-            416C69676E6D656E740708746143656E74657206566965773344081656696577
-            33444F7074696F6E732E526F746174696F6E02000B56696577334457616C6C73
-            080D5A6F6F6D2E50656E2E4D6F64650708706D4E6F74586F720A426576656C4F
-            75746572070662764E6F6E6505436F6C6F720707636C57686974650D44656661
-            756C7443616E766173060E54474449506C757343616E76617311436F6C6F7250
-            616C65747465496E646578020D000A5442617253657269657307536572696573
-            310B4C6567656E645469746C65140900000054C3A9636E69636F730E436F6C6F
-            7245616368506F696E74090D4D61726B732E56697369626C65080B4D61726B73
-            2E416E676C65025A0B56616C7565466F726D61740605232C2323300D4D61726B
-            734C6F636174696F6E07086D6C43656E7465720C5856616C7565732E4E616D65
-            0601580D5856616C7565732E4F72646572070B6C6F417363656E64696E670C59
-            56616C7565732E4E616D6506034261720D5956616C7565732E4F726465720706
-            6C6F4E6F6E65000000}
+            834F0016426F74746F6D417869732E4C6162656C73416E676C65025A17426F74
+            746F6D417869732E4C6162656C734F6E417869730812426F74746F6D41786973
+            2E56697369626C65080D4672616D652E56697369626C65080656696577334408
+            165669657733444F7074696F6E732E526F746174696F6E02000B566965773344
+            57616C6C73080D5A6F6F6D2E50656E2E4D6F64650708706D4E6F74586F720A42
+            6576656C4F75746572070662764E6F6E6505436F6C6F720707636C5768697465
+            0D44656661756C7443616E766173060E54474449506C757343616E7661731143
+            6F6C6F7250616C65747465496E646578020D000A544261725365726965730753
+            6572696573310B4C6567656E642E54657874140900000054C3A9636E69636F73
+            0B4C6567656E645469746C65140900000054C3A9636E69636F730E436F6C6F72
+            45616368506F696E74090D4D61726B732E56697369626C65080B4D61726B732E
+            416E676C65025A0B56616C7565466F726D61740605232C2323300D4D61726B73
+            4C6F636174696F6E07086D6C43656E7465720C5856616C7565732E4E616D6506
+            01580D5856616C7565732E4F72646572070B6C6F417363656E64696E670C5956
+            616C7565732E4E616D6506034261720D5956616C7565732E4F7264657207066C
+            6F4E6F6E65000000}
           ChartElevation = 345
           SeriesData = <
             item
+              InheritedName = 'TfrxSeriesItem2'
               DataType = dtDBData
               DataSet = FrxDtStGrafico
               DataSetName = 'DtStGrafico'
@@ -2013,8 +1966,64 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       end
     end
   end
-  object DtStPrincipal: TpFIBDataSet
-    SelectSQL.Strings = (
+  object FrxDtStPrincipal: TfrxDBDataset
+    UserName = 'DtStPrincipal'
+    CloseDataSource = False
+    DataSet = DtStPrincipal
+    BCDToCurrency = False
+    Left = 80
+    Top = 376
+  end
+  object FrxDtStResumo: TfrxDBDataset
+    UserName = 'DtStResumo'
+    CloseDataSource = False
+    DataSet = DtStResumo
+    BCDToCurrency = False
+    Left = 80
+    Top = 440
+  end
+  object FrxDtStComercio: TfrxDBDataset
+    UserName = 'DtStComercio'
+    CloseDataSource = False
+    DataSet = DtStComercio
+    BCDToCurrency = False
+    Left = 80
+    Top = 408
+  end
+  object FrxDtStGrafico: TfrxDBDataset
+    UserName = 'DtStGrafico'
+    CloseDataSource = False
+    DataSet = DtStGrafico
+    BCDToCurrency = False
+    Left = 80
+    Top = 472
+  end
+  object FrxDtStBeneficiario: TfrxDBDataset
+    UserName = 'DtStBeneficiario'
+    CloseDataSource = False
+    DataSet = DtStBeneficiario
+    BCDToCurrency = False
+    Left = 176
+    Top = 376
+  end
+  object DtSrcPrincipal: TDataSource
+    DataSet = DtStPrincipal
+    Left = 144
+    Top = 376
+  end
+  object FrxDtStProducao: TfrxDBDataset
+    UserName = 'DtStProducao'
+    CloseDataSource = False
+    DataSet = DtStProducao
+    BCDToCurrency = False
+    Left = 240
+    Top = 376
+  end
+  object DtStPrincipal: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
       'select'
       '  id,'
       '  upf,'
@@ -2043,225 +2052,148 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  :ID_CLASSE,'
       '  :ID_PRODUTO,'
       '  :ID_SISTEMA) '
-      'order by upf'
-      '/*'
-      'select'
-      '  id,'
-      '  upf,'
-      '  categoria_inicio,'
-      '  categoria_fim,'
-      '  ano_inicio,'
-      '  ano_fim,'
-      '  divisao_inicio,'
-      '  divisao_fim,'
-      '  grupo_inicio,'
-      '  grupo_fim,'
-      '  classe_inicio,'
-      '  classe_fim,'
-      '  produto_inicio,'
-      '  produto_fim,'
-      '  sistema_inicio,'
-      '  sistema_fim'
-      'from stp_rel_producao_01(2014, 2014, 111)'
-      'order by upf'
-      '*/')
-    OnCalcFields = DtStPrincipalCalcFields
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
+      'order by upf')
     Left = 112
     Top = 376
-    poSQLINT64ToBCD = True
-    object DtStPrincipalID: TFIBIntegerField
+    ParamData = <
+      item
+        Name = 'ID_ANO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_ANO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_UNIDADE'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_TECNICO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_CATEGORIA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_DIVISAO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_GRUPO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_CLASSE'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_PRODUTO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_SISTEMA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object DtStPrincipalID: TIntegerField
       FieldName = 'ID'
+      Origin = 'ID'
     end
-    object DtStPrincipalUPF: TFIBStringField
+    object DtStPrincipalUPF: TStringField
       FieldName = 'UPF'
+      Origin = 'UPF'
       Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStPrincipalCATEGORIA_INICIO: TFIBIntegerField
+    object DtStPrincipalCATEGORIA_INICIO: TIntegerField
       FieldName = 'CATEGORIA_INICIO'
+      Origin = 'CATEGORIA_INICIO'
     end
-    object DtStPrincipalCATEGORIA_FIM: TFIBIntegerField
+    object DtStPrincipalCATEGORIA_FIM: TIntegerField
       FieldName = 'CATEGORIA_FIM'
+      Origin = 'CATEGORIA_FIM'
     end
-    object DtStPrincipalANO_INICIO: TFIBIntegerField
+    object DtStPrincipalANO_INICIO: TIntegerField
       FieldName = 'ANO_INICIO'
+      Origin = 'ANO_INICIO'
     end
-    object DtStPrincipalANO_FIM: TFIBIntegerField
+    object DtStPrincipalANO_FIM: TIntegerField
       FieldName = 'ANO_FIM'
+      Origin = 'ANO_FIM'
     end
-    object DtStPrincipalDIVISAO_INICIO: TFIBIntegerField
+    object DtStPrincipalDIVISAO_INICIO: TIntegerField
       FieldName = 'DIVISAO_INICIO'
+      Origin = 'DIVISAO_INICIO'
     end
-    object DtStPrincipalDIVISAO_FIM: TFIBIntegerField
+    object DtStPrincipalDIVISAO_FIM: TIntegerField
       FieldName = 'DIVISAO_FIM'
+      Origin = 'DIVISAO_FIM'
     end
-    object DtStPrincipalGRUPO_INICIO: TFIBIntegerField
+    object DtStPrincipalGRUPO_INICIO: TIntegerField
       FieldName = 'GRUPO_INICIO'
+      Origin = 'GRUPO_INICIO'
     end
-    object DtStPrincipalGRUPO_FIM: TFIBIntegerField
+    object DtStPrincipalGRUPO_FIM: TIntegerField
       FieldName = 'GRUPO_FIM'
+      Origin = 'GRUPO_FIM'
     end
-    object DtStPrincipalCLASSE_INICIO: TFIBIntegerField
+    object DtStPrincipalCLASSE_INICIO: TIntegerField
       FieldName = 'CLASSE_INICIO'
+      Origin = 'CLASSE_INICIO'
     end
-    object DtStPrincipalCLASSE_FIM: TFIBIntegerField
+    object DtStPrincipalCLASSE_FIM: TIntegerField
       FieldName = 'CLASSE_FIM'
+      Origin = 'CLASSE_FIM'
     end
-    object DtStPrincipalPRODUTO_INICIO: TFIBIntegerField
+    object DtStPrincipalPRODUTO_INICIO: TIntegerField
       FieldName = 'PRODUTO_INICIO'
+      Origin = 'PRODUTO_INICIO'
     end
-    object DtStPrincipalPRODUTO_FIM: TFIBIntegerField
+    object DtStPrincipalPRODUTO_FIM: TIntegerField
       FieldName = 'PRODUTO_FIM'
+      Origin = 'PRODUTO_FIM'
     end
-    object DtStPrincipalSISTEMA_INICIO: TFIBIntegerField
+    object DtStPrincipalSISTEMA_INICIO: TIntegerField
       FieldName = 'SISTEMA_INICIO'
+      Origin = 'SISTEMA_INICIO'
     end
-    object DtStPrincipalSISTEMA_FIM: TFIBIntegerField
+    object DtStPrincipalSISTEMA_FIM: TIntegerField
       FieldName = 'SISTEMA_FIM'
+      Origin = 'SISTEMA_FIM'
+    end
+    object DtStPrincipalSAFRA_INICIO_FIM: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'SAFRA_INICIO_FIM'
+      Size = 50
+      Calculated = True
     end
   end
-  object FrxDtStPrincipal: TfrxDBDataset
-    UserName = 'DtStPrincipal'
-    CloseDataSource = False
-    DataSet = DtStPrincipal
-    BCDToCurrency = False
-    Left = 80
-    Top = 376
-  end
-  object DtStResumo: TpFIBDataSet
-    SelectSQL.Strings = (
-      'select'
-      '  g.sip_descricao || '#39' - '#39' || e.prd_descricao as cultura_nome,'
-      '  (select count(*) from ('
-      '    select distinct a.ben_id'
-      
-        '    from tab_cad_beneficiario_producao a join tab_cad_beneficiar' +
-        'io b on (a.ben_id = b.ben_id)'
-      '    where'
-      '      (a.pro_id  in ('
-      '        select id'
-      '        from stp_rel_producao_01('
-      '          :id_ano_inicio,'
-      '          :id_ano_fim,'
-      '          :id_unidade,'
-      '          :id_tecnico,'
-      '          :id_categoria,'
-      '          :id_divisao,'
-      '          :id_grupo,'
-      '          :id_classe,'
-      '          :id_produto,'
-      '          :id_sistema) '
-      '        )'
-      '      ) and'
-      '      (b.ben_situacao in (1, 2)) and'
-      '      (b.ben_excluido = 0) and'
-      '      exists ('
-      '        select 1'
-      '        from tab_cad_beneficiario_categoria c'
-      
-        '        where (c.ben_id = a.ben_id) and (c.cat_id between :categ' +
-        'oria_inicio and :categoria_fim)'
-      '    )'
-      '  )) as beneficiarios,'
-      '  sum(d.atv_quantidade) as total_quantidade,'
-      '  sum(d.atv_area_plantada) as total_area_plantada,'
-      
-        '  f.uni_descricao || '#39' ('#39' || f.uni_sigla || '#39')'#39' as unidade_medid' +
-        'a'
-      'from'
-      
-        '  tab_cad_producao_atividade d join tab_cad_produto e on (d.prd_' +
-        'id = e.prd_id) join'
-      '  tab_cad_unidade_medida f on (f.uni_id = d.uni_id) join'
-      '  tab_cad_sistema_produtivo g on (g.sip_id = d.sip_id)'
-      'where'
-      '  (d.pro_id in ('
-      '    select id'
-      '    from stp_rel_producao_01('
-      '      :id_ano_inicio,'
-      '      :id_ano_fim,'
-      '      :id_unidade,'
-      '      :id_tecnico,'
-      '      :id_categoria,'
-      '      :id_divisao,'
-      '      :id_grupo,'
-      '      :id_classe,'
-      '      :id_produto,'
-      '      :id_sistema) '
-      '    )'
-      '  ) and'
-      
-        '  (d.atv_safra_inicio >= :ano_inicio) and (d.atv_safra_fim <= :a' +
-        'no_fim) and'
-      '  (d.atv_excluido = 0) and'
-      '  (d.sip_id between :sistema_inicio and :sistema_fim) and'
-      '  (d.prd_id between :produto_inicio and :produto_fim) and'
-      '  (e.div_id between :divisao_inicio and :divisao_fim) and'
-      '  (e.grp_id between :grupo_inicio and :grupo_fim) and'
-      '  (e.cls_id between :classe_inicio and :classe_fim)'
-      'group by'
-      '  cultura_nome, unidade_medida'
-      'order by'
-      '  total_quantidade desc, cultura_nome')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 112
-    Top = 440
-    poSQLINT64ToBCD = True
-    object DtStResumoCULTURA_NOME: TFIBStringField
-      FieldName = 'CULTURA_NOME'
-      Size = 103
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStResumoBENEFICIARIOS: TFIBIntegerField
-      FieldName = 'BENEFICIARIOS'
-    end
-    object DtStResumoTOTAL_QUANTIDADE: TFIBBCDField
-      FieldName = 'TOTAL_QUANTIDADE'
-      DisplayFormat = '#,##0.###'
-      EditFormat = '0.###'
-      Size = 3
-    end
-    object DtStResumoUNIDADE_MEDIDA: TFIBStringField
-      FieldName = 'UNIDADE_MEDIDA'
-      Size = 63
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStResumoTOTAL_AREA_PLANTADA: TFIBBCDField
-      FieldName = 'TOTAL_AREA_PLANTADA'
-      DisplayFormat = '#,##0.###'
-      EditFormat = '0.###'
-      Size = 3
-    end
-  end
-  object FrxDtStResumo: TfrxDBDataset
-    UserName = 'DtStResumo'
-    CloseDataSource = False
-    DataSet = DtStResumo
-    BCDToCurrency = False
-    Left = 80
-    Top = 440
-  end
-  object DtStComercio: TpFIBDataSet
-    SelectSQL.Strings = (
+  object DtStComercio: TFDQuery
+    OnCalcFields = DtStComercioCalcFields
+    MasterSource = DtSrcPrincipal
+    MasterFields = 
+      'ID;ANO_INICIO;ANO_FIM;SISTEMA_INICIO;SISTEMA_FIM;PRODUTO_INICIO;' +
+      'PRODUTO_FIM;DIVISAO_INICIO;DIVISAO_FIM;GRUPO_INICIO;GRUPO_FIM;CL' +
+      'ASSE_INICIO;CLASSE_FIM'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
       'select d.pro_id, d.atv_id, g.prp_id,'
-      '  d.atv_safra_inicio as safra_inicio,'
-      '  d.atv_safra_fim as safra_fim,'
+      '  d.atv_periodo_plantio as safra_inicio,'
+      '  d.atv_periodo_colheita as safra_fim,'
       
         '  coalesce(i.prd_descricao, coalesce(h.dev_descricao, g.prp_desc' +
         'ricao)) as comercio_descricao,'
@@ -2271,9 +2203,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         'ade,'
       '  g.prp_valor as comercio_valor,'
       '  (g.prp_qtde_comercializada * g.prp_valor) as comercio_total,'
-      
-        '  (select destinos from stp_rel_base_destino_01(g.prp_id)) as co' +
-        'mercio_destinos'
+      '  l.des_descricao as comercio_destinos'
       'from'
       
         '  tab_cad_producao_atividade d join tab_cad_produto e on (d.prd_' +
@@ -2283,222 +2213,206 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  tab_cad_derivado h on (h.dev_id = g.dev_id) left join'
       '  tab_cad_produto i on (i.prd_id = g.prd_id) left join'
       '  tab_cad_sistema_produtivo j on (j.sip_id = d.sip_id) left join'
-      '  tab_cad_unidade_medida k on (k.uni_id = g.uni_id)'
+      '  tab_cad_unidade_medida k on (k.uni_id = g.uni_id) left join'
+      '  tab_cad_destino l on (g.des_id = l.des_id)'
       'where'
       '  (d.pro_id = :id) and'
       
-        '  (d.atv_safra_inicio >= :ano_inicio) and (d.atv_safra_fim <= :a' +
-        'no_fim) and'
-      '  (d.atv_excluido = 0) and'
+        '  (d.atv_periodo_colheita >= :ano_inicio) and (d.atv_periodo_col' +
+        'heita <= :ano_fim) and'
+      '  (d.reg_excluido = 0) and'
       '  (d.sip_id between :sistema_inicio and :sistema_fim) and'
       '  (d.prd_id between :produto_inicio and :produto_fim) and'
       '  (e.div_id between :divisao_inicio and :divisao_fim) and'
       '  (e.grp_id between :grupo_inicio and :grupo_fim) and'
       '  (e.cls_id between :classe_inicio and :classe_fim) and'
-      '  (g.prp_excluido = 0)'
+      '  (g.reg_excluido = 0)'
       'order by comercio_descricao')
-    OnCalcFields = DtStComercioCalcFields
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcPrincipal
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
     Left = 112
     Top = 408
-    poSQLINT64ToBCD = True
-    object DtStComercioSAFRA_INICIO: TFIBIntegerField
+    ParamData = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'ANO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'ANO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'SISTEMA_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'SISTEMA_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'PRODUTO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'PRODUTO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'DIVISAO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'DIVISAO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'GRUPO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'GRUPO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'CLASSE_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'CLASSE_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end>
+    object DtStComercioPRO_ID: TIntegerField
+      FieldName = 'PRO_ID'
+      Origin = 'PRO_ID'
+      Required = True
+    end
+    object DtStComercioATV_ID: TLargeintField
+      FieldName = 'ATV_ID'
+      Origin = 'ATV_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object DtStComercioPRP_ID: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'PRP_ID'
+      Origin = 'PRP_ID'
+      ProviderFlags = []
+      ReadOnly = True
+    end
+    object DtStComercioSAFRA_INICIO: TIntegerField
       FieldName = 'SAFRA_INICIO'
+      Origin = 'ATV_PERIODO_PLANTIO'
     end
-    object DtStComercioSAFRA_FIM: TFIBIntegerField
+    object DtStComercioSAFRA_FIM: TIntegerField
       FieldName = 'SAFRA_FIM'
+      Origin = 'ATV_PERIODO_COLHEITA'
     end
-    object DtStComercioCOMERCIO_DESCRICAO: TFIBStringField
+    object DtStComercioCOMERCIO_DESCRICAO: TStringField
+      AutoGenerateValue = arDefault
       FieldName = 'COMERCIO_DESCRICAO'
+      Origin = 'COMERCIO_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStComercioCOMERCIO_QUANTIDADE: TFIBFloatField
+    object DtStComercioCOMERCIO_QUANTIDADE: TCurrencyField
+      AutoGenerateValue = arDefault
       FieldName = 'COMERCIO_QUANTIDADE'
-      DisplayFormat = '#,##0.###'
-      EditFormat = '0.###'
+      Origin = 'PRP_QTDE_COMERCIALIZADA'
+      ProviderFlags = []
+      ReadOnly = True
     end
-    object DtStComercioCOMERCIO_UNIDADE: TFIBStringField
+    object DtStComercioCOMERCIO_UNIDADE: TStringField
+      AutoGenerateValue = arDefault
       FieldName = 'COMERCIO_UNIDADE'
+      Origin = 'COMERCIO_UNIDADE'
+      ProviderFlags = []
+      ReadOnly = True
       Size = 63
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStComercioCOMERCIO_VALOR: TFIBBCDField
-      DefaultExpression = '0'
+    object DtStComercioCOMERCIO_VALOR: TBCDField
+      AutoGenerateValue = arDefault
       FieldName = 'COMERCIO_VALOR'
-      DisplayFormat = '#,##0.00'
-      EditFormat = '0.00'
+      Origin = 'PRP_VALOR'
+      ProviderFlags = []
+      ReadOnly = True
+      Precision = 18
       Size = 2
     end
-    object DtStComercioCOMERCIO_TOTAL: TFIBBCDField
+    object DtStComercioCOMERCIO_TOTAL: TFMTBCDField
+      AutoGenerateValue = arDefault
       FieldName = 'COMERCIO_TOTAL'
-      DisplayFormat = '#,##0.00'
-      EditFormat = '0.00'
+      Origin = 'COMERCIO_TOTAL'
+      ProviderFlags = []
+      ReadOnly = True
+      Precision = 18
       Size = 5
     end
-    object DtStComercioCOMERCIO_DESTINOS: TFIBStringField
+    object DtStComercioCOMERCIO_DESTINOS: TStringField
+      AutoGenerateValue = arDefault
       FieldName = 'COMERCIO_DESTINOS'
-      Size = 2000
-      Transliterate = False
-      EmptyStrToNull = True
+      Origin = 'DES_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 50
     end
-    object DtStComercioSAFRA_INICIO_FIM: TFIBStringField
+    object DtStComercioSAFRA_INICIO_FIM: TStringField
       FieldKind = fkCalculated
       FieldName = 'SAFRA_INICIO_FIM'
-      Size = 10
-      Transliterate = False
-      EmptyStrToNull = True
+      Size = 50
       Calculated = True
     end
   end
-  object FrxDtStComercio: TfrxDBDataset
-    UserName = 'DtStComercio'
-    CloseDataSource = False
-    DataSet = DtStComercio
-    BCDToCurrency = False
-    Left = 80
-    Top = 408
-  end
-  object DtStGrafico: TpFIBDataSet
-    SelectSQL.Strings = (
-      'select'
-      '  g.sip_descricao || '#39' - '#39' || e.prd_descricao as cultura_nome,'
-      '  (select count(*) from ('
-      '    select distinct a.ben_id'
-      
-        '    from tab_cad_beneficiario_producao a join tab_cad_beneficiar' +
-        'io b on (a.ben_id = b.ben_id)'
-      '    where'
-      '      (a.pro_id  in ('
-      '        select id'
-      '        from stp_rel_producao_01('
-      '          :id_ano_inicio,'
-      '          :id_ano_fim,'
-      '          :id_unidade,'
-      '          :id_tecnico,'
-      '          :id_categoria,'
-      '          :id_divisao,'
-      '          :id_grupo,'
-      '          :id_classe,'
-      '          :id_produto,'
-      '          :id_sistema) '
-      '        )'
-      '      ) and'
-      '      (b.ben_situacao in (1, 2)) and'
-      '      (b.ben_excluido = 0) and'
-      '      exists ('
-      '        select 1'
-      '        from tab_cad_beneficiario_categoria c'
-      
-        '        where (c.ben_id = a.ben_id) and (c.cat_id between :categ' +
-        'oria_inicio and :categoria_fim)'
-      '    )'
-      '  )) as beneficiarios,'
-      '  sum(d.atv_quantidade) as total_quantidade,'
-      '  sum(d.atv_area_plantada) as total_area_plantada,'
-      
-        '  f.uni_descricao || '#39' ('#39' || f.uni_sigla || '#39')'#39' as unidade_medid' +
-        'a'
-      'from'
-      
-        '  tab_cad_producao_atividade d join tab_cad_produto e on (d.prd_' +
-        'id = e.prd_id) join'
-      '  tab_cad_unidade_medida f on (f.uni_id = d.uni_id) join'
-      '  tab_cad_sistema_produtivo g on (g.sip_id = d.sip_id)'
-      'where'
-      '  (d.pro_id in ('
-      '    select id'
-      '    from stp_rel_producao_01('
-      '      :id_ano_inicio,'
-      '      :id_ano_fim,'
-      '      :id_unidade,'
-      '      :id_tecnico,'
-      '      :id_categoria,'
-      '      :id_divisao,'
-      '      :id_grupo,'
-      '      :id_classe,'
-      '      :id_produto,'
-      '      :id_sistema) '
-      '    )'
-      '  ) and'
-      
-        '  (d.atv_safra_inicio >= :ano_inicio) and (d.atv_safra_fim <= :a' +
-        'no_fim) and'
-      '  (d.atv_excluido = 0) and'
-      '  (d.sip_id between :sistema_inicio and :sistema_fim) and'
-      '  (d.prd_id between :produto_inicio and :produto_fim) and'
-      '  (e.div_id between :divisao_inicio and :divisao_fim) and'
-      '  (e.grp_id between :grupo_inicio and :grupo_fim) and'
-      '  (e.cls_id between :classe_inicio and :classe_fim)'
-      'group by'
-      '  cultura_nome, unidade_medida'
-      'order by'
-      '  total_quantidade desc, cultura_nome')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 112
-    Top = 472
-    poSQLINT64ToBCD = True
-    object FIBStringField1: TFIBStringField
-      FieldName = 'CULTURA_NOME'
-      Size = 103
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object FIBIntegerField1: TFIBIntegerField
-      FieldName = 'BENEFICIARIOS'
-    end
-    object FIBBCDField1: TFIBBCDField
-      FieldName = 'TOTAL_QUANTIDADE'
-      DisplayFormat = '#,##0.###'
-      EditFormat = '0.###'
-      Size = 3
-    end
-    object FIBStringField2: TFIBStringField
-      FieldName = 'UNIDADE_MEDIDA'
-      Size = 63
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object FIBBCDField2: TFIBBCDField
-      FieldName = 'TOTAL_AREA_PLANTADA'
-      DisplayFormat = '#,##0.###'
-      EditFormat = '0.###'
-      Size = 3
-    end
-  end
-  object FrxDtStGrafico: TfrxDBDataset
-    UserName = 'DtStGrafico'
-    CloseDataSource = False
-    DataSet = DtStGrafico
-    BCDToCurrency = False
-    Left = 80
-    Top = 472
-  end
-  object FrxDtStBeneficiario: TfrxDBDataset
-    UserName = 'DtStBeneficiario'
-    CloseDataSource = False
-    DataSet = DtStBeneficiario
-    BCDToCurrency = False
-    Left = 176
-    Top = 376
-  end
-  object DtStBeneficiario: TpFIBDataSet
-    SelectSQL.Strings = (
+  object DtStBeneficiario: TFDQuery
+    MasterSource = DtSrcPrincipal
+    MasterFields = 'ID;CATEGORIA_INICIO;CATEGORIA_FIM'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
       'select'
       '  b.ben_cpf as cpf,'
       '  b.ben_nome as nome,'
@@ -2512,7 +2426,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       'where'
       '  (a.pro_id = :id) and'
       '  (b.ben_situacao in (1, 2)) and'
-      '  (b.ben_excluido = 0) and'
+      '  (b.reg_excluido = 0) and'
       '  exists ('
       '    select 1'
       '    from tab_cad_beneficiario_categoria c'
@@ -2522,54 +2436,62 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  )'
       'order by'
       '  b.ben_nome')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcPrincipal
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
     Left = 208
     Top = 376
-    poSQLINT64ToBCD = True
-    object DtStBeneficiarioCPF: TFIBStringField
+    ParamData = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'CATEGORIA_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'CATEGORIA_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end>
+    object DtStBeneficiarioCPF: TStringField
       FieldName = 'CPF'
+      Origin = 'CPF'
       Size = 11
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStBeneficiarioNOME: TFIBStringField
+    object DtStBeneficiarioNOME: TStringField
       FieldName = 'NOME'
+      Origin = 'NOME'
       Size = 150
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStBeneficiarioCATEGORIA: TFIBStringField
+    object DtStBeneficiarioCATEGORIA: TStringField
       FieldName = 'CATEGORIA'
+      Origin = 'CATEGORIA'
       Size = 2000
-      Transliterate = False
-      EmptyStrToNull = True
     end
   end
-  object DtSrcPrincipal: TDataSource
-    DataSet = DtStPrincipal
-    Left = 144
-    Top = 376
-  end
-  object FrxDtStProducao: TfrxDBDataset
-    UserName = 'DtStProducao'
-    CloseDataSource = False
-    DataSet = DtStProducao
-    BCDToCurrency = False
-    Left = 240
-    Top = 376
-  end
-  object DtStProducao: TpFIBDataSet
-    SelectSQL.Strings = (
+  object DtStProducao: TFDQuery
+    OnCalcFields = DtStProducaoCalcFields
+    MasterSource = DtSrcPrincipal
+    MasterFields = 
+      'ID;ANO_INICIO;ANO_FIM;SISTEMA_INICIO;SISTEMA_FIM;PRODUTO_INICIO;' +
+      'PRODUTO_FIM;DIVISAO_INICIO;DIVISAO_FIM;GRUPO_INICIO;GRUPO_FIM;CL' +
+      'ASSE_INICIO;CLASSE_FIM'
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    SQL.Strings = (
       'select'
-      '  d.atv_safra_inicio as safra_inicio,'
-      '  d.atv_safra_fim as safra_fim,'
+      '  d.atv_periodo_plantio as safra_inicio,'
+      '  d.atv_periodo_colheita as safra_fim,'
       '  e.prd_descricao as produto,'
       '  d.atv_area_plantada as area_plantada,'
       '  d.atv_area_colhida as area_colhida,'
@@ -2583,9 +2505,9 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       'where'
       '  (d.pro_id = :id) and'
       
-        '  (d.atv_safra_inicio >= :ano_inicio) and (d.atv_safra_fim <= :a' +
-        'no_fim) and'
-      '  (d.atv_excluido = 0) and'
+        '  (d.atv_periodo_colheita >= :ano_inicio) and (d.atv_periodo_col' +
+        'heita <= :ano_fim) and'
+      '  (d.reg_excluido = 0) and'
       '  (d.sip_id between :sistema_inicio and :sistema_fim) and'
       '  (d.prd_id between :produto_inicio and :produto_fim) and'
       '  (e.div_id between :divisao_inicio and :divisao_fim) and'
@@ -2593,57 +2515,627 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  (e.cls_id between :classe_inicio and :classe_fim)'
       'order by'
       '  safra_inicio, safra_fim, produto')
-    OnCalcFields = DtStPrincipalCalcFields
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DataSource = DtSrcPrincipal
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
     Left = 272
     Top = 376
-    poSQLINT64ToBCD = True
-    object DtStProducaoSAFRA_INICIO: TFIBIntegerField
+    ParamData = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'ANO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'ANO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'SISTEMA_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'SISTEMA_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'PRODUTO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'PRODUTO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'DIVISAO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'DIVISAO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'GRUPO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'GRUPO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'CLASSE_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'CLASSE_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Size = 4
+        Value = Null
+      end>
+    object DtStProducaoSAFRA_INICIO: TIntegerField
       FieldName = 'SAFRA_INICIO'
+      Origin = 'ATV_PERIODO_PLANTIO'
     end
-    object DtStProducaoSAFRA_FIM: TFIBIntegerField
+    object DtStProducaoSAFRA_FIM: TIntegerField
       FieldName = 'SAFRA_FIM'
+      Origin = 'ATV_PERIODO_COLHEITA'
     end
-    object DtStProducaoPRODUTO: TFIBStringField
+    object DtStProducaoPRODUTO: TStringField
+      AutoGenerateValue = arDefault
       FieldName = 'PRODUTO'
+      Origin = 'PRD_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStProducaoAREA_PLANTADA: TFIBFloatField
+    object DtStProducaoAREA_PLANTADA: TCurrencyField
       FieldName = 'AREA_PLANTADA'
-      DisplayFormat = '#,##0.###'
-      EditFormat = '0.###'
+      Origin = 'ATV_AREA_PLANTADA'
     end
-    object DtStProducaoAREA_COLHIDA: TFIBFloatField
+    object DtStProducaoAREA_COLHIDA: TCurrencyField
       FieldName = 'AREA_COLHIDA'
-      DisplayFormat = '#,##0.###'
-      EditFormat = '0.###'
+      Origin = 'ATV_AREA_COLHIDA'
     end
-    object DtStProducaoQUANTIDADE: TFIBFloatField
+    object DtStProducaoQUANTIDADE: TCurrencyField
       FieldName = 'QUANTIDADE'
-      DisplayFormat = '#,##0.###'
-      EditFormat = '0.###'
+      Origin = 'ATV_QUANTIDADE'
     end
-    object DtStProducaoUNIDADE: TFIBStringField
+    object DtStProducaoUNIDADE: TStringField
+      AutoGenerateValue = arDefault
       FieldName = 'UNIDADE'
+      Origin = 'UNIDADE'
+      ProviderFlags = []
+      ReadOnly = True
       Size = 63
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStProducaoSAFRA_INICIO_FIM: TFIBStringField
+    object DtStProducaoSAFRA_INICIO_FIM: TStringField
       FieldKind = fkCalculated
       FieldName = 'SAFRA_INICIO_FIM'
-      Transliterate = False
-      EmptyStrToNull = True
+      Size = 50
       Calculated = True
+    end
+  end
+  object DtStResumo: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
+      'select'
+      '  g.sip_descricao || '#39' - '#39' || e.prd_descricao as cultura_nome,'
+      '  (select count(*) from ('
+      '    select distinct a.ben_id'
+      
+        '    from tab_cad_beneficiario_producao a join tab_cad_beneficiar' +
+        'io b on (a.ben_id = b.ben_id)'
+      '    where'
+      '      (a.pro_id  in ('
+      '        select id'
+      '        from stp_rel_producao_01('
+      '          :id_ano_inicio,'
+      '          :id_ano_fim,'
+      '          :id_unidade,'
+      '          :id_tecnico,'
+      '          :id_categoria,'
+      '          :id_divisao,'
+      '          :id_grupo,'
+      '          :id_classe,'
+      '          :id_produto,'
+      '          :id_sistema) '
+      '        )'
+      '      ) and'
+      '      (b.ben_situacao in (1, 2)) and'
+      '      (b.reg_excluido = 0) and'
+      '      exists ('
+      '        select 1'
+      '        from tab_cad_beneficiario_categoria c'
+      
+        '        where (c.ben_id = a.ben_id) and (c.cat_id between :categ' +
+        'oria_inicio and :categoria_fim)'
+      '    )'
+      '  )) as beneficiarios,'
+      '  sum(d.atv_quantidade) as total_quantidade,'
+      '  sum(d.atv_area_plantada) as total_area_plantada,'
+      
+        '  f.uni_descricao || '#39' ('#39' || f.uni_sigla || '#39')'#39' as unidade_medid' +
+        'a'
+      'from'
+      
+        '  tab_cad_producao_atividade d join tab_cad_produto e on (d.prd_' +
+        'id = e.prd_id) join'
+      '  tab_cad_unidade_medida f on (f.uni_id = d.uni_id) join'
+      '  tab_cad_sistema_produtivo g on (g.sip_id = d.sip_id)'
+      'where'
+      '  (d.pro_id in ('
+      '    select id'
+      '    from stp_rel_producao_01('
+      '      :id_ano_inicio,'
+      '      :id_ano_fim,'
+      '      :id_unidade,'
+      '      :id_tecnico,'
+      '      :id_categoria,'
+      '      :id_divisao,'
+      '      :id_grupo,'
+      '      :id_classe,'
+      '      :id_produto,'
+      '      :id_sistema) '
+      '    )'
+      '  ) and'
+      
+        '  (d.atv_periodo_colheita >= :ano_inicio) and (d.atv_periodo_col' +
+        'heita <= :ano_fim) and'
+      '  (d.reg_excluido = 0) and'
+      '  (d.sip_id between :sistema_inicio and :sistema_fim) and'
+      '  (d.prd_id between :produto_inicio and :produto_fim) and'
+      '  (e.div_id between :divisao_inicio and :divisao_fim) and'
+      '  (e.grp_id between :grupo_inicio and :grupo_fim) and'
+      '  (e.cls_id between :classe_inicio and :classe_fim)'
+      'group by'
+      '  cultura_nome, unidade_medida'
+      'order by'
+      '  total_quantidade desc, cultura_nome')
+    Left = 112
+    Top = 440
+    ParamData = <
+      item
+        Name = 'ID_ANO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_ANO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_UNIDADE'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_TECNICO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_CATEGORIA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_DIVISAO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_GRUPO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_CLASSE'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_PRODUTO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_SISTEMA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'CATEGORIA_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'CATEGORIA_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ANO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ANO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'SISTEMA_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'SISTEMA_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'PRODUTO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'PRODUTO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'DIVISAO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'DIVISAO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'GRUPO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'GRUPO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'CLASSE_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'CLASSE_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object DtStResumoCULTURA_NOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CULTURA_NOME'
+      Origin = 'CULTURA_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 103
+    end
+    object DtStResumoBENEFICIARIOS: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'BENEFICIARIOS'
+      Origin = 'BENEFICIARIOS'
+      ProviderFlags = []
+      ReadOnly = True
+    end
+    object DtStResumoTOTAL_QUANTIDADE: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'TOTAL_QUANTIDADE'
+      Origin = 'TOTAL_QUANTIDADE'
+      ProviderFlags = []
+      ReadOnly = True
+      Precision = 18
+      Size = 3
+    end
+    object DtStResumoTOTAL_AREA_PLANTADA: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'TOTAL_AREA_PLANTADA'
+      Origin = 'TOTAL_AREA_PLANTADA'
+      ProviderFlags = []
+      ReadOnly = True
+      Precision = 18
+      Size = 3
+    end
+    object DtStResumoUNIDADE_MEDIDA: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'UNIDADE_MEDIDA'
+      Origin = 'UNIDADE_MEDIDA'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 63
+    end
+  end
+  object DtStGrafico: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
+      'select'
+      '  g.sip_descricao || '#39' - '#39' || e.prd_descricao as cultura_nome,'
+      '  (select count(*) from ('
+      '    select distinct a.ben_id'
+      
+        '    from tab_cad_beneficiario_producao a join tab_cad_beneficiar' +
+        'io b on (a.ben_id = b.ben_id)'
+      '    where'
+      '      (a.pro_id  in ('
+      '        select id'
+      '        from stp_rel_producao_01('
+      '          :id_ano_inicio,'
+      '          :id_ano_fim,'
+      '          :id_unidade,'
+      '          :id_tecnico,'
+      '          :id_categoria,'
+      '          :id_divisao,'
+      '          :id_grupo,'
+      '          :id_classe,'
+      '          :id_produto,'
+      '          :id_sistema) '
+      '        )'
+      '      ) and'
+      '      (b.ben_situacao in (1, 2)) and'
+      '      (b.reg_excluido = 0) and'
+      '      exists ('
+      '        select 1'
+      '        from tab_cad_beneficiario_categoria c'
+      
+        '        where (c.ben_id = a.ben_id) and (c.cat_id between :categ' +
+        'oria_inicio and :categoria_fim)'
+      '    )'
+      '  )) as beneficiarios,'
+      '  sum(d.atv_quantidade) as total_quantidade,'
+      '  sum(d.atv_area_plantada) as total_area_plantada,'
+      
+        '  f.uni_descricao || '#39' ('#39' || f.uni_sigla || '#39')'#39' as unidade_medid' +
+        'a'
+      'from'
+      
+        '  tab_cad_producao_atividade d join tab_cad_produto e on (d.prd_' +
+        'id = e.prd_id) join'
+      '  tab_cad_unidade_medida f on (f.uni_id = d.uni_id) join'
+      '  tab_cad_sistema_produtivo g on (g.sip_id = d.sip_id)'
+      'where'
+      '  (d.pro_id in ('
+      '    select id'
+      '    from stp_rel_producao_01('
+      '      :id_ano_inicio,'
+      '      :id_ano_fim,'
+      '      :id_unidade,'
+      '      :id_tecnico,'
+      '      :id_categoria,'
+      '      :id_divisao,'
+      '      :id_grupo,'
+      '      :id_classe,'
+      '      :id_produto,'
+      '      :id_sistema) '
+      '    )'
+      '  ) and'
+      
+        '  (d.atv_periodo_colheita >= :ano_inicio) and (d.atv_periodo_col' +
+        'heita <= :ano_fim) and'
+      '  (d.reg_excluido = 0) and'
+      '  (d.sip_id between :sistema_inicio and :sistema_fim) and'
+      '  (d.prd_id between :produto_inicio and :produto_fim) and'
+      '  (e.div_id between :divisao_inicio and :divisao_fim) and'
+      '  (e.grp_id between :grupo_inicio and :grupo_fim) and'
+      '  (e.cls_id between :classe_inicio and :classe_fim)'
+      'group by'
+      '  cultura_nome, unidade_medida'
+      'order by'
+      '  total_quantidade desc, cultura_nome')
+    Left = 112
+    Top = 472
+    ParamData = <
+      item
+        Name = 'ID_ANO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_ANO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_UNIDADE'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_TECNICO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_CATEGORIA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_DIVISAO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_GRUPO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_CLASSE'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_PRODUTO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID_SISTEMA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'CATEGORIA_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'CATEGORIA_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ANO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'ANO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'SISTEMA_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'SISTEMA_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'PRODUTO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'PRODUTO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'DIVISAO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'DIVISAO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'GRUPO_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'GRUPO_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'CLASSE_INICIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'CLASSE_FIM'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object DtStGraficoCULTURA_NOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CULTURA_NOME'
+      Origin = 'CULTURA_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 103
+    end
+    object DtStGraficoBENEFICIARIOS: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'BENEFICIARIOS'
+      Origin = 'BENEFICIARIOS'
+      ProviderFlags = []
+      ReadOnly = True
+    end
+    object DtStGraficoTOTAL_QUANTIDADE: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'TOTAL_QUANTIDADE'
+      Origin = 'TOTAL_QUANTIDADE'
+      ProviderFlags = []
+      ReadOnly = True
+      Precision = 18
+      Size = 3
+    end
+    object DtStGraficoTOTAL_AREA_PLANTADA: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'TOTAL_AREA_PLANTADA'
+      Origin = 'TOTAL_AREA_PLANTADA'
+      ProviderFlags = []
+      ReadOnly = True
+      Precision = 18
+      Size = 3
+    end
+    object DtStGraficoUNIDADE_MEDIDA: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'UNIDADE_MEDIDA'
+      Origin = 'UNIDADE_MEDIDA'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 63
     end
   end
 end

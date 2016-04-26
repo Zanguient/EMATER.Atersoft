@@ -1,8 +1,8 @@
 object FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrmRelatorioFiltroUnidadeFuncionarioPeriodo
   Left = 0
   Top = 0
-  Width = 450
-  Height = 94
+  Width = 434
+  Height = 106
   TabOrder = 0
   object LblUnidade: TLabel
     Left = 8
@@ -10,6 +10,7 @@ object FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrmRelatorioFiltroUnidadeFu
     Width = 48
     Height = 13
     Caption = 'Escrit'#243'rio:'
+    Transparent = True
   end
   object LblFuncionario: TLabel
     Left = 8
@@ -17,6 +18,7 @@ object FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrmRelatorioFiltroUnidadeFu
     Width = 40
     Height = 13
     Caption = 'T'#233'cnico:'
+    Transparent = True
   end
   object LblPeriodoDe: TLabel
     Left = 8
@@ -24,6 +26,7 @@ object FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrmRelatorioFiltroUnidadeFu
     Width = 55
     Height = 13
     Caption = 'Per'#237'odo de:'
+    Transparent = True
   end
   object LblPeriodoAte: TLabel
     Left = 248
@@ -31,6 +34,7 @@ object FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrmRelatorioFiltroUnidadeFu
     Width = 21
     Height = 13
     Caption = 'At'#233':'
+    Transparent = True
   end
   object LkpCmbBxUnidade: TcxLookupComboBox
     Left = 88

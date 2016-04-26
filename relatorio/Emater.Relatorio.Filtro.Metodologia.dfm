@@ -1,8 +1,8 @@
 object FrmRelatorioFiltroMetodologia: TFrmRelatorioFiltroMetodologia
   Left = 0
   Top = 0
-  Width = 458
-  Height = 52
+  Width = 442
+  Height = 53
   TabOrder = 0
   object LblMetodologia: TLabel
     Left = 8
@@ -10,6 +10,7 @@ object FrmRelatorioFiltroMetodologia: TFrmRelatorioFiltroMetodologia
     Width = 62
     Height = 13
     Caption = 'Metodologia:'
+    Transparent = True
   end
   object LkpCmbBxMetodologia: TcxLookupComboBox
     Left = 88

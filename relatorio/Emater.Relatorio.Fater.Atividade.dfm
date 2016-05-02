@@ -1,41 +1,57 @@
 inherited FrmRelatorioFaterAtividade: TFrmRelatorioFaterAtividade
   Left = 362
   Top = 152
-  ExplicitLeft = 8
-  ExplicitTop = 8
-  ExplicitWidth = 584
-  ExplicitHeight = 462
+  ExplicitLeft = 362
+  ExplicitTop = 152
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
     inherited TbShtFiltros: TcxTabSheet
       inherited LblTitulo: TLabel
         Caption = 
-          ' Relat'#243'rio de quantidade de atendimentos por atividade produtiva' +
-          ' segundo a categoria'
+          ' Quantidade de atendimentos por atividade produtiva segundo a ca' +
+          'tegoria'
       end
       inherited GrpBxFiltro: TcxGroupBox
         inline FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionarioPeriodo
           Left = 8
           Top = 16
           Width = 441
-          Height = 85
+          Height = 105
           TabOrder = 0
           ExplicitLeft = 8
           ExplicitTop = 16
           ExplicitWidth = 441
-          ExplicitHeight = 85
+          ExplicitHeight = 105
           inherited LblUnidade: TLabel
             Left = 0
+            Top = 44
             ExplicitLeft = 0
+            ExplicitTop = 44
           end
           inherited LblFuncionario: TLabel
             Left = 0
+            Top = 76
             ExplicitLeft = 0
+            ExplicitTop = 76
           end
           inherited LblPeriodoDe: TLabel
             Left = 0
             ExplicitLeft = 0
+          end
+          inherited LkpCmbBxUnidade: TcxLookupComboBox
+            Top = 40
+            ExplicitTop = 40
+          end
+          inherited LkpCmbBxFuncionario: TcxLookupComboBox
+            Top = 72
+            ExplicitTop = 72
+          end
+          inherited DtSrcUnidadeLocal: TDataSource
+            Top = 32
+          end
+          inherited DtSrcFuncionarioLocal: TDataSource
+            Top = 64
           end
         end
       end
@@ -58,7 +74,7 @@ inherited FrmRelatorioFaterAtividade: TFrmRelatorioFaterAtividade
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
     ReportOptions.Name = 'Quantidade de benefici'#225'rios por categoria'
-    ReportOptions.LastChange = 41954.540387696760000000
+    ReportOptions.LastChange = 42491.752880810190000000
     ScriptText.Strings = (
       'begin'
       '    '
@@ -116,9 +132,12 @@ inherited FrmRelatorioFaterAtividade: TFrmRelatorioFaterAtividade
         Top = 461.102660000000000000
         inherited MemoDataHora: TfrxMemoView
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         inherited MemoPagina: TfrxMemoView
           Memo.UTF8W = (
@@ -140,8 +159,8 @@ inherited FrmRelatorioFaterAtividade: TFrmRelatorioFaterAtividade
           DisplayFormat.DecimalSeparator = ''
           Memo.UTF8W = (
             
-              'Relat'#243'rio de quantidade de atendimentos por atividade produtiva ' +
-              'segundo a categoria')
+              'Quantidade de atendimentos por atividade produtiva segundo a cat' +
+              'egoria')
         end
         object Memo15: TfrxMemoView
           Top = 26.456710000000000000

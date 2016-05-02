@@ -19,6 +19,7 @@ type
     FrxDtStResumo: TfrxDBDataset;
     DtStPrincipal: TFDQuery;
     DtStResumo: TFDQuery;
+    Label1: TLabel;
     procedure BtnImprimirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FrxPrincipalGetValue(const VarName: string; var Value: Variant);

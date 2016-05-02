@@ -16,6 +16,7 @@ resourcestring
   RELATORIO_AVISO_INFORMAR_PERIODO = 'É necessário informar um período com data inicial e final antes de gerar o relatório.';
   RELATORIO_AVISO_INFORMAR_ANO = 'É necessário informar um período com ano inicial e final antes de gerar o relatório.';
   RELATORIO_AVISO_INFORMAR_UNIDADE = 'É necessário informar um escritório antes de gerar o relatório.';
+  RELATORIO_AVISO_INFORMAR_METODOLOGIA = 'É necessário informar uma metodologia antes de gerar o relatório.';
   RELATORIO_AVISO_INFORMAR_BENEFICIARIO = 'É necessário informar um beneficiário antes de gerar o relatório.';
   RELATORIO_AVISO_INFORMAR_CPF_NAO_LOCALIZADO = 'O CPF informado não foi localizado na base de dados.';
   RELATORIO_AVISO_INFORMAR_CPF_INVALIDO = 'O CPF informado está incorreto.';

@@ -1,4 +1,8 @@
 inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
+  Left = 383
+  Top = 196
+  ExplicitLeft = 383
+  ExplicitTop = 196
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
@@ -18,6 +22,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
             ' bot'#227'o "Pesquisar cadastro" ou informe o seu CPF e pressione a t' +
             'ecla "Enter".'
           FocusControl = EdtNome
+          Transparent = True
           WordWrap = True
         end
         object Label1: TLabel
@@ -89,7 +94,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
   end
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
-    ReportOptions.LastChange = 42373.641598449100000000
+    ReportOptions.LastChange = 42491.731182812500000000
     Left = 64
     Top = 72
     Datasets = <
@@ -198,9 +203,12 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         Top = 1028.032160000000000000
         inherited MemoDataHora: TfrxMemoView
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         inherited MemoPagina: TfrxMemoView
           Memo.UTF8W = (
@@ -2144,9 +2152,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         Top = 374.173470000000000000
         Width = 980.410082000000000000
         object Memo225: TfrxMemoView
-          Width = 181.417440000000000000
+          Width = 71.811023622047240000
           Height = 15.118120000000000000
-          DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -8
@@ -2155,16 +2162,19 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
           ParentFont = False
           WordWrap = False
           VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         object Memo226: TfrxMemoView
-          Left = 884.410020000000000000
-          Width = 94.488250000000000000
+          Left = 899.528140000000000000
+          Width = 79.370078740000000000
           Height = 15.118120000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
@@ -2182,8 +2192,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           VAlign = vaCenter
         end
         object Memo227: TfrxMemoView
-          Left = 181.417440000000000000
-          Width = 158.740260000000000000
+          Left = 71.811070000000000000
+          Width = 196.535433070000000000
           Height = 15.118120000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -2199,8 +2209,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           VAlign = vaCenter
         end
         object Memo228: TfrxMemoView
-          Left = 340.157700000000000000
-          Width = 544.252320000000000000
+          Left = 268.346630000000000000
+          Width = 631.181510000000000000
           Height = 15.118120000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -2735,6 +2745,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 6.000000000000000000
           Memo.UTF8W = (
             'ATER Par'#225' - Sistema de acompanhamento de ATER'
             '[unidade]')
@@ -2783,12 +2794,11 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       object PageFooterUnidade: TfrxPageFooter
         FillType = ftBrush
         Height = 15.118120000000000000
-        Top = 997.795920000000000000
+        Top = 986.457330000000000000
         Width = 718.110700000000000000
         object Memo91: TfrxMemoView
-          Width = 181.417440000000000000
+          Width = 71.811023622047240000
           Height = 15.118120000000000000
-          DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -8
@@ -2797,16 +2807,19 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
           ParentFont = False
           WordWrap = False
           VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         object Memo92: TfrxMemoView
-          Left = 623.622450000000000000
-          Width = 94.488250000000000000
+          Left = 638.740570000000000000
+          Width = 79.370130000000000000
           Height = 15.118120000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
@@ -2824,8 +2837,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           VAlign = vaCenter
         end
         object Memo93: TfrxMemoView
-          Left = 181.417440000000000000
-          Width = 158.740260000000000000
+          Left = 71.811070000000000000
+          Width = 196.535433070000000000
           Height = 15.118120000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -2841,8 +2854,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           VAlign = vaCenter
         end
         object Memo94: TfrxMemoView
-          Left = 340.157700000000000000
-          Width = 283.464750000000000000
+          Left = 268.346630000000000000
+          Width = 370.393940000000000000
           Height = 15.118120000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -2860,7 +2873,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       end
       object MasterDataProducaoFamiliar: TfrxMasterData
         FillType = ftBrush
-        Height = 687.874440470000000000
+        Height = 676.535850470000000000
         Top = 207.874150000000000000
         Width = 718.110700000000000000
         DataSet = FrxDtStProducaoFamiliar
@@ -2872,7 +2885,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Left = 241.889920000000000000
           Top = 404.409710000000000000
           Width = 476.220780000000000000
-          Height = 41.574810470000000000
+          Height = 30.236220470000000000
           DataSet = FrxDtStProducaoFamiliar
           DataSetName = 'DtStProducaoFamiliar'
           Font.Charset = DEFAULT_CHARSET
@@ -2889,7 +2902,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         object Memo117: TfrxMemoView
           Top = 404.409710000000000000
           Width = 238.110390000000000000
-          Height = 41.574810470000000000
+          Height = 30.236220470000000000
           DataSet = FrxDtStProducaoFamiliar
           DataSetName = 'DtStProducaoFamiliar'
           Font.Charset = DEFAULT_CHARSET
@@ -3419,54 +3432,14 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
             '1.17. Possui sistema de energia el'#233'trica:')
           ParentFont = False
         end
-        object CheckBox3: TfrxCheckBoxView
-          Left = 3.779530000000000000
-          Top = 410.189240000000000000
-          Width = 11.338590000000000000
-          Height = 11.338590000000000000
-          CheckColor = clBlack
-          Checked = False
-          CheckStyle = csCheck
-          DataField = 'PRO_ENERGIA_CONCESSIONARIA'
-          DataSet = FrxDtStProducaoFamiliar
-          DataSetName = 'DtStProducaoFamiliar'
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.500000000000000000
-        end
         object Memo124: TfrxMemoView
-          Left = 19.677180000000000000
-          Top = 408.189240000000000000
+          Left = 4.559060000000000000
+          Top = 411.968770000000000000
           Width = 90.708720000000000000
           Height = 15.118120000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Width = 0.500000000000000000
-          Memo.UTF8W = (
-            'Concession'#225'ria')
-          ParentFont = False
-        end
-        object CheckBox4: TfrxCheckBoxView
-          Left = 124.724490000000000000
-          Top = 410.189240000000000000
-          Width = 11.338590000000000000
-          Height = 11.338590000000000000
-          CheckColor = clBlack
-          Checked = False
-          CheckStyle = csCheck
-          DataField = 'PRO_ENERGIA_OUTRAS'
+          DataField = 'PRO_ENERGIA'
           DataSet = FrxDtStProducaoFamiliar
           DataSetName = 'DtStProducaoFamiliar'
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.500000000000000000
-        end
-        object Memo125: TfrxMemoView
-          Left = 140.622140000000000000
-          Top = 408.189240000000000000
-          Width = 79.370130000000000000
-          Height = 15.118120000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -3474,7 +3447,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Font.Style = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
-            'Outras fontes')
+            '[DtStProducaoFamiliar."PRO_ENERGIA"]')
           ParentFont = False
         end
         object Memo126: TfrxMemoView
@@ -3492,54 +3465,14 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
             '1.18. Possui sistema de abastecimento de '#225'gua:')
           ParentFont = False
         end
-        object CheckBox6: TfrxCheckBoxView
-          Left = 247.669450000000000000
-          Top = 410.189240000000000000
-          Width = 11.338590000000000000
-          Height = 11.338590000000000000
-          CheckColor = clBlack
-          Checked = False
-          CheckStyle = csCheck
-          DataField = 'PRO_AGUA_CONCESSIONARIA'
-          DataSet = FrxDtStProducaoFamiliar
-          DataSetName = 'DtStProducaoFamiliar'
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.500000000000000000
-        end
         object Memo128: TfrxMemoView
-          Left = 264.567100000000000000
-          Top = 408.189240000000000000
-          Width = 105.826840000000000000
+          Left = 249.448980000000000000
+          Top = 411.968770000000000000
+          Width = 464.882190000000000000
           Height = 15.118120000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Width = 0.500000000000000000
-          Memo.UTF8W = (
-            'Concession'#225'ria')
-          ParentFont = False
-        end
-        object CheckBox7: TfrxCheckBoxView
-          Left = 383.732530000000000000
-          Top = 410.189240000000000000
-          Width = 11.338590000000000000
-          Height = 11.338590000000000000
-          CheckColor = clBlack
-          Checked = False
-          CheckStyle = csCheck
-          DataField = 'PRO_AGUA_POCO_ARTESIANO'
+          DataField = 'PRO_AGUA'
           DataSet = FrxDtStProducaoFamiliar
           DataSetName = 'DtStProducaoFamiliar'
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.500000000000000000
-        end
-        object Memo129: TfrxMemoView
-          Left = 400.630180000000000000
-          Top = 408.189240000000000000
-          Width = 86.929190000000000000
-          Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -3547,98 +3480,11 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Font.Style = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
-            'Po'#231'o artesiano')
-          ParentFont = False
-        end
-        object CheckBox8: TfrxCheckBoxView
-          Left = 247.669450000000000000
-          Top = 429.086890000000000000
-          Width = 11.338590000000000000
-          Height = 11.338590000000000000
-          CheckColor = clBlack
-          Checked = False
-          CheckStyle = csCheck
-          DataField = 'PRO_AGUA_POCO_AMAZONICO'
-          DataSet = FrxDtStProducaoFamiliar
-          DataSetName = 'DtStProducaoFamiliar'
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.500000000000000000
-        end
-        object Memo130: TfrxMemoView
-          Left = 264.567100000000000000
-          Top = 427.086890000000000000
-          Width = 105.826840000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Width = 0.500000000000000000
-          Memo.UTF8W = (
-            'Po'#231'o amaz'#244'nico')
-          ParentFont = False
-        end
-        object CheckBox9: TfrxCheckBoxView
-          Left = 383.732530000000000000
-          Top = 429.086890000000000000
-          Width = 11.338590000000000000
-          Height = 11.338590000000000000
-          CheckColor = clBlack
-          Checked = False
-          CheckStyle = csCheck
-          DataField = 'PRO_AGUA_RIO'
-          DataSet = FrxDtStProducaoFamiliar
-          DataSetName = 'DtStProducaoFamiliar'
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.500000000000000000
-        end
-        object Memo131: TfrxMemoView
-          Left = 400.630180000000000000
-          Top = 427.086890000000000000
-          Width = 86.929190000000000000
-          Height = 15.118120000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Width = 0.500000000000000000
-          Memo.UTF8W = (
-            'Rio ou igarap'#233)
-          ParentFont = False
-        end
-        object CheckBox10: TfrxCheckBoxView
-          Left = 504.677490000000000000
-          Top = 410.189240000000000000
-          Width = 11.338590000000000000
-          Height = 11.338590000000000000
-          CheckColor = clBlack
-          Checked = False
-          CheckStyle = csCheck
-          DataField = 'PRO_AGUA_OUTRAS'
-          DataSet = FrxDtStProducaoFamiliar
-          DataSetName = 'DtStProducaoFamiliar'
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.500000000000000000
-        end
-        object Memo132: TfrxMemoView
-          Left = 521.575140000000000000
-          Top = 408.189240000000000000
-          Width = 86.929190000000000000
-          Height = 15.118120000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Width = 0.500000000000000000
-          Memo.UTF8W = (
-            'Outras fontes')
+            '[DtStProducaoFamiliar."PRO_AGUA"]')
           ParentFont = False
         end
         object Memo135: TfrxMemoView
-          Top = 464.882190000000000000
+          Top = 453.543600000000000000
           Width = 181.417440000000000000
           Height = 34.015770000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3653,7 +3499,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           ParentFont = False
         end
         object Memo136: TfrxMemoView
-          Top = 480.000310000000000000
+          Top = 468.661720000000000000
           Width = 181.417440000000000000
           Height = 18.897650000000000000
           DataField = 'PRO_LATITUDE'
@@ -3673,7 +3519,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo137: TfrxMemoView
           Left = 185.196970000000000000
-          Top = 464.882190000000000000
+          Top = 453.543600000000000000
           Width = 181.417366770000000000
           Height = 34.015770000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3689,7 +3535,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo138: TfrxMemoView
           Left = 185.196970000000000000
-          Top = 480.000310000000000000
+          Top = 468.661720000000000000
           Width = 181.417366770000000000
           Height = 18.897650000000000000
           DataField = 'PRO_LONGITUDE'
@@ -3708,7 +3554,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           ParentFont = False
         end
         object Memo145: TfrxMemoView
-          Top = 502.677490000000000000
+          Top = 491.338900000000000000
           Width = 102.047310000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3722,7 +3568,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           ParentFont = False
         end
         object Memo146: TfrxMemoView
-          Top = 517.795610000000000000
+          Top = 506.457020000000000000
           Width = 113.385900000000000000
           Height = 30.236220470000000000
           DataField = 'PRO_AREA_LEGAL'
@@ -3744,7 +3590,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           VAlign = vaCenter
         end
         object Memo147: TfrxMemoView
-          Top = 551.811380000000000000
+          Top = 540.472790000000000000
           Width = 94.488250000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3758,7 +3604,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           ParentFont = False
         end
         object Memo148: TfrxMemoView
-          Top = 566.929500000000000000
+          Top = 555.590910000000000000
           Width = 113.385900000000000000
           Height = 30.236220470000000000
           DataField = 'PRO_AREA_REAL'
@@ -3781,7 +3627,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo149: TfrxMemoView
           Left = 173.858380000000000000
-          Top = 502.677490000000000000
+          Top = 491.338900000000000000
           Width = 170.078850000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3798,7 +3644,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo150: TfrxMemoView
           Left = 173.858380000000000000
-          Top = 517.795610000000000000
+          Top = 506.457020000000000000
           Width = 170.078850000000000000
           Height = 30.236220470000000000
           DataField = 'PRO_AREA_NUA'
@@ -3821,7 +3667,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo151: TfrxMemoView
           Left = 173.858380000000000000
-          Top = 551.811380000000000000
+          Top = 540.472790000000000000
           Width = 90.708720000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3836,7 +3682,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo152: TfrxMemoView
           Left = 173.858380000000000000
-          Top = 566.929500000000000000
+          Top = 555.590910000000000000
           Width = 170.078850000000000000
           Height = 30.236220470000000000
           DataField = 'PRO_AREA_PASTAGEM'
@@ -3859,7 +3705,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo153: TfrxMemoView
           Left = 347.716760000000000000
-          Top = 502.677490000000000000
+          Top = 491.338900000000000000
           Width = 132.283550000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3876,8 +3722,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo154: TfrxMemoView
           Left = 347.716760000000000000
-          Top = 517.795610000000000000
-          Width = 170.078740157480000000
+          Top = 506.457020000000000000
+          Width = 170.078740160000000000
           Height = 30.236220470000000000
           DataField = 'PRO_AREA_PERMANENTE'
           DataSet = FrxDtStProducaoFamiliar
@@ -3899,7 +3745,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo155: TfrxMemoView
           Left = 347.716760000000000000
-          Top = 551.811380000000000000
+          Top = 540.472790000000000000
           Width = 132.283550000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3914,8 +3760,8 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo156: TfrxMemoView
           Left = 347.716760000000000000
-          Top = 566.929500000000000000
-          Width = 170.078740157480000000
+          Top = 555.590910000000000000
+          Width = 170.078740160000000000
           Height = 30.236220470000000000
           DataField = 'PRO_AREA_TEMPORARIA'
           DataSet = FrxDtStProducaoFamiliar
@@ -3937,7 +3783,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo157: TfrxMemoView
           Left = 521.575140000000000000
-          Top = 502.677490000000000000
+          Top = 491.338900000000000000
           Width = 132.283550000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3954,7 +3800,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo158: TfrxMemoView
           Left = 521.575140000000000000
-          Top = 517.795610000000000000
+          Top = 506.457020000000000000
           Width = 196.535450160000000000
           Height = 30.236220470000000000
           DataField = 'PRO_AREA_RESERVA'
@@ -3977,7 +3823,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo159: TfrxMemoView
           Left = 521.575140000000000000
-          Top = 551.811380000000000000
+          Top = 540.472790000000000000
           Width = 90.708720000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3992,7 +3838,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo160: TfrxMemoView
           Left = 521.575140000000000000
-          Top = 566.929500000000000000
+          Top = 555.590910000000000000
           Width = 196.535450160000000000
           Height = 30.236220470000000000
           DataField = 'PRO_AREA_OUTROS'
@@ -4104,7 +3950,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           VAlign = vaCenter
         end
         object Memo127: TfrxMemoView
-          Top = 449.764070000000000000
+          Top = 438.425480000000000000
           Width = 185.196970000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -4119,7 +3965,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo133: TfrxMemoView
           Left = 370.393940000000000000
-          Top = 464.882190000000000000
+          Top = 453.543600000000000000
           Width = 347.716686770000000000
           Height = 34.015770000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -4135,7 +3981,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo134: TfrxMemoView
           Left = 132.283550000000000000
-          Top = 517.795610000000000000
+          Top = 506.457020000000000000
           Width = 26.456710000000000000
           Height = 79.370120240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -4151,14 +3997,14 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Line1: TfrxLineView
           Left = 132.283550000000000000
-          Top = 518.575140000000000000
+          Top = 507.236550000000000000
           Height = 79.370130000000000000
           Color = clBlack
           Frame.Width = 0.500000000000000000
           Diagonal = True
         end
         object Memo163: TfrxMemoView
-          Top = 604.724800000000000000
+          Top = 593.386210000000000000
           Width = 718.110236220000000000
           Height = 30.236240000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -4177,7 +4023,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           VAlign = vaCenter
         end
         object Memo164: TfrxMemoView
-          Top = 642.520100000000000000
+          Top = 631.181510000000000000
           Width = 56.692950000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -4191,7 +4037,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           ParentFont = False
         end
         object Memo165: TfrxMemoView
-          Top = 657.638220000000000000
+          Top = 646.299630000000000000
           Width = 158.740260000000000000
           Height = 30.236220470000000000
           DataSet = FrxDtStProducaoFamiliar
@@ -4213,7 +4059,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo166: TfrxMemoView
           Left = 162.519790000000000000
-          Top = 642.520100000000000000
+          Top = 631.181510000000000000
           Width = 117.165430000000000000
           Height = 15.118110240000000000
           Font.Charset = DEFAULT_CHARSET
@@ -4228,7 +4074,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         object Memo167: TfrxMemoView
           Left = 162.519790000000000000
-          Top = 657.638220000000000000
+          Top = 646.299630000000000000
           Width = 555.590910000000000000
           Height = 30.236220470000000000
           DataField = 'BEN_NOME'
@@ -4251,7 +4097,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
       object DetailDataSubBenfeitoria: TfrxDetailData
         FillType = ftBrush
         Height = 18.897650000000000000
-        Top = 918.425790000000000000
+        Top = 907.087200000000000000
         Width = 718.110700000000000000
         DataSet = FrxDtStBem
         DataSetName = 'DtStBem'
@@ -6202,6 +6048,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 6.000000000000000000
           Memo.UTF8W = (
             'ATER Par'#225' - Sistema de acompanhamento de ATER'
             '[unidade]')
@@ -6644,7 +6491,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         object Memo281: TfrxMemoView
           Top = 453.543600000000000000
           Width = 718.110700000000000000
-          Height = 98.267760470000000000
+          Height = 98.267716535433070000
           DataField = 'FAT_RESUMO'
           DataSet = FrxDtStFater
           DataSetName = 'DtStFater'
@@ -6712,7 +6559,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         object Memo285: TfrxMemoView
           Top = 657.638220000000000000
           Width = 718.110700000000000000
-          Height = 68.031520470000000000
+          Height = 68.031496060000000000
           DataField = 'FAT_RESUMO'
           DataSet = FrxDtStFater
           DataSetName = 'DtStFater'
@@ -6762,6 +6609,86 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Memo.UTF8W = (
             '[DtStFater."FAT_PARCERIA"]')
           ParentFont = False
+        end
+      end
+      object PageFooterFater: TfrxPageFooter
+        FillType = ftBrush
+        Height = 15.118120000000000000
+        Top = 1096.063700000000000000
+        Width = 718.110700000000000000
+        object Memo125: TfrxMemoView
+          Width = 71.811023622047200000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Memo.UTF8W = (
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end>
+        end
+        object Memo129: TfrxMemoView
+          Left = 638.740570000000000000
+          Width = 79.370130000000000000
+          Height = 15.118120000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'P'#225'gina [Page] de [TotalPages]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo130: TfrxMemoView
+          Left = 71.811070000000000000
+          Width = 196.535433070000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Memo.UTF8W = (
+            'Usu'#225'rio: [usuario]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo131: TfrxMemoView
+          Left = 268.346630000000000000
+          Width = 370.393940000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Memo.UTF8W = (
+            '[titulo]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
         end
       end
     end
@@ -7562,7 +7489,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         DataType = ftInteger
         ParamType = ptInput
         Size = 4
-        Value = 100000004
+        Value = 100000005
       end
       item
         Name = 'BEN_ID'
@@ -7608,7 +7535,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         DataType = ftInteger
         ParamType = ptInput
         Size = 4
-        Value = 100000004
+        Value = 100000005
       end
       item
         Name = 'BEN_ID'
@@ -8023,7 +7950,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         DataType = ftInteger
         ParamType = ptInput
         Size = 4
-        Value = 100000004
+        Value = 100000005
       end
       item
         Name = 'BEN_ID'

@@ -17,6 +17,7 @@ type
     FrxDtStPrincipal: TfrxDBDataset;
     FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionarioPeriodo;
     DtStPrincipal: TFDQuery;
+    Label1: TLabel;
     procedure BtnImprimirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FrxPrincipalGetValue(const VarName: string; var Value: Variant);

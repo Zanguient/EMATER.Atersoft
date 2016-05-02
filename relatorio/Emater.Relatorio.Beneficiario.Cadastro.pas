@@ -220,9 +220,9 @@ begin
 
     if (FrmCadastroBeneficiarioBusca.ShowModal = mrOk) then
       begin
-        FBeneficiarioID := FrmCadastroBeneficiarioBusca.DtStConsultaBEN_ID.AsInt64;
-        EdtCPF.Text := FrmCadastroBeneficiarioBusca.DtStConsultaBEN_CPF.AsString;
-        EdtNome.Text := FrmCadastroBeneficiarioBusca.DtStConsultaBEN_NOME.AsString;
+        FBeneficiarioID := FrmCadastroBeneficiarioBusca.QryConsultaBEN_ID.AsLargeInt;
+        EdtCPF.Text := FrmCadastroBeneficiarioBusca.QryConsultaBEN_CPF.AsString;
+        EdtNome.Text := FrmCadastroBeneficiarioBusca.QryConsultaBEN_NOME.AsString;
       end;
   finally
     FrmCadastroBeneficiarioBusca.Release;

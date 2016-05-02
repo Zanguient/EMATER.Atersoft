@@ -1,57 +1,53 @@
 inherited FrmLogImportarDetalhe: TFrmLogImportarDetalhe
-  Left = 264
-  Top = 137
+  Left = 320
+  Top = 227
   BorderStyle = bsDialog
   Caption = 'Detalhes da importa'#231#227'o'
-  ClientHeight = 506
+  ClientHeight = 451
   ClientWidth = 786
   Position = poOwnerFormCenter
-  ExplicitLeft = 264
-  ExplicitTop = 137
+  ExplicitLeft = 320
+  ExplicitTop = 227
   ExplicitWidth = 802
-  ExplicitHeight = 545
+  ExplicitHeight = 490
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 470
-    Top = 16
+    Top = 8
     Width = 45
     Height = 13
     Caption = 'Situa'#231#227'o:'
+    Transparent = True
   end
   object Label2: TLabel
     Left = 8
-    Top = 16
+    Top = 8
     Width = 98
     Height = 13
     Caption = 'Escrit'#243'rio de origem:'
-  end
-  object Label3: TLabel
-    Left = 296
-    Top = 16
-    Width = 37
-    Height = 13
-    Caption = 'Vers'#227'o:'
+    Transparent = True
   end
   object Label4: TLabel
     Left = 360
-    Top = 16
+    Top = 8
     Width = 99
     Height = 13
     Caption = 'Total de transa'#231#245'es:'
+    Transparent = True
   end
   object GrdConsulta: TcxGrid
     Left = 8
-    Top = 56
+    Top = 48
     Width = 770
-    Height = 273
+    Height = 239
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
     LookAndFeel.Kind = lfFlat
     LookAndFeel.NativeStyle = True
     object GrdConsultaTbl: TcxGridDBTableView
@@ -100,19 +96,15 @@ inherited FrmLogImportarDetalhe: TFrmLogImportarDetalhe
       Styles.Inactive = DtmRecursoModulo.cxStyleSelection
       Styles.Selection = DtmRecursoModulo.cxStyleSelection
       object GrdConsultaTblREP_TRANSACAO: TcxGridDBColumn
-        DataBinding.FieldName = 'REP_TRANSACAO'
-        Width = 84
-      end
-      object GrdConsultaTblREP_USUARIO: TcxGridDBColumn
-        DataBinding.FieldName = 'REP_USUARIO'
-        Width = 168
+        DataBinding.FieldName = 'TRN_ID'
+        Width = 86
       end
       object GrdConsultaTblREP_SQL: TcxGridDBColumn
-        DataBinding.FieldName = 'REP_SQL'
-        Width = 275
+        DataBinding.FieldName = 'TRN_SQL'
+        Width = 356
       end
       object GrdConsultaTblREP_SITUACAO: TcxGridDBColumn
-        DataBinding.FieldName = 'REP_SITUACAO'
+        DataBinding.FieldName = 'TRN_SITUACAO'
         PropertiesClassName = 'TcxImageComboBoxProperties'
         Properties.Images = DtmRecursoModulo.ImgLstPequenas
         Properties.Items = <
@@ -131,142 +123,124 @@ inherited FrmLogImportarDetalhe: TFrmLogImportarDetalhe
             ImageIndex = 47
             Value = 3
           end>
-        Width = 114
+        Width = 147
       end
       object GrdConsultaTblREP_ERRO: TcxGridDBColumn
-        DataBinding.FieldName = 'REP_ERRO'
-        Width = 115
+        DataBinding.FieldName = 'TRN_ERRO'
+        Width = 150
       end
     end
     object GrdConsultaLvl: TcxGridLevel
       GridView = GrdConsultaTbl
     end
   end
-  object MemoUsuario: TcxDBMemo
-    Left = 8
-    Top = 336
-    DataBinding.DataField = 'REP_USUARIO'
-    DataBinding.DataSource = DtSrcConsulta
-    Properties.ReadOnly = True
-    Properties.ScrollBars = ssVertical
-    TabOrder = 5
-    Height = 129
-    Width = 153
-  end
   object MemoSQL: TcxDBMemo
-    Left = 169
-    Top = 336
-    DataBinding.DataField = 'REP_SQL'
+    Left = 8
+    Top = 296
+    DataBinding.DataField = 'TRN_SQL'
     DataBinding.DataSource = DtSrcConsulta
     Properties.ReadOnly = True
     Properties.ScrollBars = ssVertical
-    TabOrder = 6
-    Height = 129
-    Width = 609
+    TabOrder = 4
+    Height = 116
+    Width = 770
   end
   object BtnFechar: TcxButton
     Left = 697
-    Top = 472
+    Top = 419
     Width = 81
     Height = 25
-    Anchors = [akRight, akBottom]
+    Anchors = [akTop, akRight]
     Cancel = True
     Caption = 'Fechar'
     ModalResult = 2
     OptionsImage.ImageIndex = 87
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
-    TabOrder = 7
+    TabOrder = 5
   end
   object EdtEscritorio: TcxTextEdit
     Left = 8
-    Top = 32
+    Top = 24
     Properties.ReadOnly = True
     TabOrder = 0
-    Width = 281
-  end
-  object EdtVersao: TcxTextEdit
-    Left = 296
-    Top = 32
-    Properties.ReadOnly = True
-    TabOrder = 1
-    Width = 57
+    Width = 347
   end
   object EdtTotal: TcxTextEdit
     Left = 360
-    Top = 32
+    Top = 24
     Properties.ReadOnly = True
-    TabOrder = 2
+    TabOrder = 1
     Width = 105
   end
   object EdtSituacao: TcxTextEdit
     Left = 470
-    Top = 32
+    Top = 24
     Properties.ReadOnly = True
-    TabOrder = 3
+    TabOrder = 2
     Width = 308
-  end
-  object DtStConsulta: TpFIBDataSet
-    SelectSQL.Strings = (
-      'SELECT'
-      '    a.REP_ID,'
-      '    a.REP_TRANSACAO,'
-      '    a.REP_USUARIO,'
-      '    a.REP_SQL,'
-      '    a.REP_SITUACAO,'
-      '    a.REP_ERRO'
-      'FROM'
-      '    TAB_LOG_REPLICACAO_ENTRADA a'
-      'WHERE'
-      '    a.REP_ID = :ID'
-      'ORDER BY'
-      '    a.REP_TRANSACAO')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 88
-    Top = 208
-    object DtStConsultaREP_ID: TFIBBCDField
-      FieldName = 'REP_ID'
-      Size = 0
-    end
-    object DtStConsultaREP_TRANSACAO: TFIBBCDField
-      DisplayLabel = 'Transa'#231#227'o'
-      FieldName = 'REP_TRANSACAO'
-      DisplayFormat = '000"."000"."000'
-      Size = 0
-    end
-    object DtStConsultaREP_USUARIO: TFIBMemoField
-      DisplayLabel = 'Usu'#225'rio'
-      FieldName = 'REP_USUARIO'
-      BlobType = ftMemo
-      Size = 8
-    end
-    object DtStConsultaREP_SQL: TFIBMemoField
-      DisplayLabel = 'Comando'
-      FieldName = 'REP_SQL'
-      BlobType = ftMemo
-      Size = 8
-    end
-    object DtStConsultaREP_SITUACAO: TFIBSmallIntField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Situa'#231#227'o'
-      FieldName = 'REP_SITUACAO'
-    end
-    object DtStConsultaREP_ERRO: TFIBStringField
-      DisplayLabel = 'Erro'
-      FieldName = 'REP_ERRO'
-      Size = 10
-      Transliterate = False
-      EmptyStrToNull = True
-    end
   end
   object DtSrcConsulta: TDataSource
     DataSet = DtStConsulta
     Left = 120
-    Top = 208
+    Top = 168
+  end
+  object DtStConsulta: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
+      'select'
+      '  a.rep_id,'
+      '  a.trn_id,'
+      '  a.trn_sql,'
+      '  a.trn_situacao,'
+      '  a.trn_erro'
+      'from'
+      '  tab_sis_replicacao_transacao a'
+      'where'
+      '  (a.rep_id = :id)'
+      'order by'
+      '  a.trn_id')
+    Left = 88
+    Top = 168
+    ParamData = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = '100000020'
+      end>
+    object DtStConsultaREP_ID: TIntegerField
+      FieldName = 'REP_ID'
+      Origin = 'REP_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object DtStConsultaTRN_ID: TIntegerField
+      Alignment = taCenter
+      DisplayLabel = 'Transa'#231#227'o'
+      FieldName = 'TRN_ID'
+      Origin = 'TRN_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+      DisplayFormat = '000"."000"."000'
+    end
+    object DtStConsultaTRN_SQL: TMemoField
+      DisplayLabel = 'Comando'
+      FieldName = 'TRN_SQL'
+      Origin = 'TRN_SQL'
+      BlobType = ftMemo
+    end
+    object DtStConsultaTRN_SITUACAO: TSmallintField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Situa'#231#227'o'
+      FieldName = 'TRN_SITUACAO'
+      Origin = 'TRN_SITUACAO'
+    end
+    object DtStConsultaTRN_ERRO: TStringField
+      DisplayLabel = 'Erro'
+      FieldName = 'TRN_ERRO'
+      Origin = 'TRN_ERRO'
+    end
   end
 end

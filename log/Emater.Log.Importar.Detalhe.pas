@@ -7,42 +7,38 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Basico, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   cxStyles, dxSkinsCore, dxSkinOffice2013White, dxSkinscxPCPainter, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit,
   cxNavigator, Data.DB, cxDBData, cxImageComboBox, cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
-  cxClasses, cxGridCustomView, cxGrid, FIBDataSet, pFIBDataSet, Vcl.StdCtrls, cxContainer, cxTextEdit, cxMemo, cxDBEdit,
-  Vcl.Menus, cxButtons, dxSkinSeven, dxSkinSevenClassic;
+  cxClasses, cxGridCustomView, cxGrid, Vcl.StdCtrls, cxContainer, cxTextEdit, cxMemo, cxDBEdit,
+  Vcl.Menus, cxButtons, dxSkinSeven, dxSkinSevenClassic, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TFrmLogImportarDetalhe = class(TFrmBaseBasico)
-    DtStConsulta: TpFIBDataSet;
     DtSrcConsulta: TDataSource;
     GrdConsulta: TcxGrid;
     GrdConsultaTbl: TcxGridDBTableView;
     GrdConsultaLvl: TcxGridLevel;
-    DtStConsultaREP_ID: TFIBBCDField;
-    DtStConsultaREP_TRANSACAO: TFIBBCDField;
-    DtStConsultaREP_USUARIO: TFIBMemoField;
-    DtStConsultaREP_SQL: TFIBMemoField;
-    DtStConsultaREP_SITUACAO: TFIBSmallIntField;
-    DtStConsultaREP_ERRO: TFIBStringField;
     GrdConsultaTblREP_TRANSACAO: TcxGridDBColumn;
-    GrdConsultaTblREP_USUARIO: TcxGridDBColumn;
     GrdConsultaTblREP_SQL: TcxGridDBColumn;
     GrdConsultaTblREP_SITUACAO: TcxGridDBColumn;
     GrdConsultaTblREP_ERRO: TcxGridDBColumn;
     Label1: TLabel;
-    MemoUsuario: TcxDBMemo;
     MemoSQL: TcxDBMemo;
     BtnFechar: TcxButton;
     EdtEscritorio: TcxTextEdit;
-    EdtVersao: TcxTextEdit;
     EdtTotal: TcxTextEdit;
     Label2: TLabel;
-    Label3: TLabel;
     Label4: TLabel;
     EdtSituacao: TcxTextEdit;
+    DtStConsulta: TFDQuery;
+    DtStConsultaREP_ID: TIntegerField;
+    DtStConsultaTRN_ID: TIntegerField;
+    DtStConsultaTRN_SQL: TMemoField;
+    DtStConsultaTRN_SITUACAO: TSmallintField;
+    DtStConsultaTRN_ERRO: TStringField;
   private
     { Private declarations }
   public
-    procedure Visualizar(const ID: Int64; const Origem, Versao, Situacao: string; const Total: Integer);
+    procedure Visualizar(const ID: Int64; const Origem, Situacao: string; const Total: Integer);
   end;
 
 var
@@ -56,14 +52,13 @@ uses Emater.Conexao.Modulo, Emater.Recurso.Modulo;
 
 { TFrmLogImportarDetalhe }
 
-procedure TFrmLogImportarDetalhe.Visualizar(const ID: Int64; const Origem, Versao, Situacao: string; const Total: Integer);
+procedure TFrmLogImportarDetalhe.Visualizar(const ID: Int64; const Origem, Situacao: string; const Total: Integer);
 begin
   DtStConsulta.Close;
-  DtStConsulta.ParamByName('id').AsInt64 := ID;
+  DtStConsulta.ParamByName('id').AsLargeInt := ID;
   DtStConsulta.Open;
 
   EdtEscritorio.Text := Origem;
-  EdtVersao.Text := Versao;
   EdtSituacao.Text := Situacao;
   EdtTotal.Text := Total.ToString();
 

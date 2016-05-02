@@ -57,12 +57,13 @@ inherited FrmLogExportar: TFrmLogExportar
     Width = 162
     Height = 13
     Caption = 'Exporta'#231#245'es de dados realizadas:'
+    Transparent = True
   end
   object GrdConsulta: TcxGrid
     Left = 8
     Top = 64
     Width = 770
-    Height = 346
+    Height = 347
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -258,7 +259,7 @@ inherited FrmLogExportar: TFrmLogExportar
       'where'
       '  (a.rep_tipo = '#39'E'#39')'
       'order by'
-      '  a.rep_id')
+      '  a.rep_data_hora_inicio desc')
     Left = 80
     Top = 168
     object DtStConsultaREP_ID: TIntegerField

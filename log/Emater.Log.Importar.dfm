@@ -1,24 +1,25 @@
 inherited FrmLogImportar: TFrmLogImportar
   Tag = 1
-  Left = 282
-  Top = 158
+  Left = 358
+  Top = 183
   Hint = 'Janela de importa'#231#227'o de dados da replica'#231#227'o.'
+  BorderStyle = bsDialog
   Caption = 'Importa'#231#227'o de dados'
-  ClientHeight = 482
-  ClientWidth = 860
+  ClientHeight = 451
+  ClientWidth = 786
   Position = poMainFormCenter
   OnClose = FormClose
   OnShow = FormShow
-  ExplicitLeft = 282
-  ExplicitTop = 158
-  ExplicitWidth = 876
-  ExplicitHeight = 521
+  ExplicitLeft = 358
+  ExplicitTop = 183
+  ExplicitWidth = 802
+  ExplicitHeight = 490
   PixelsPerInch = 96
   TextHeight = 13
   object LblTitulo: TLabel
     Left = 0
     Top = 0
-    Width = 860
+    Width = 786
     Height = 33
     Align = alTop
     AutoSize = False
@@ -34,7 +35,6 @@ inherited FrmLogImportar: TFrmLogImportar
     Transparent = False
     Layout = tlCenter
     ExplicitLeft = -133
-    ExplicitWidth = 786
   end
   object Label1: TLabel
     Left = 8
@@ -42,6 +42,7 @@ inherited FrmLogImportar: TFrmLogImportar
     Width = 162
     Height = 13
     Caption = 'Importa'#231#245'es de dados realizadas:'
+    Transparent = True
   end
   object LblQtde: TLabel
     Left = 326
@@ -56,13 +57,14 @@ inherited FrmLogImportar: TFrmLogImportar
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
+    Transparent = True
     Layout = tlCenter
   end
   object GrdConsulta: TcxGrid
     Left = 8
     Top = 120
-    Width = 844
-    Height = 320
+    Width = 770
+    Height = 289
     Anchors = [akLeft, akTop, akRight, akBottom]
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -73,6 +75,8 @@ inherited FrmLogImportar: TFrmLogImportar
     TabOrder = 1
     LookAndFeel.Kind = lfFlat
     LookAndFeel.NativeStyle = True
+    ExplicitWidth = 844
+    ExplicitHeight = 320
     object GrdConsultaTbl: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -123,23 +127,16 @@ inherited FrmLogImportar: TFrmLogImportar
         Width = 84
       end
       object GrdConsultaTblREP_DATA: TcxGridDBColumn
-        DataBinding.FieldName = 'REP_DATA'
-        MinWidth = 70
+        DataBinding.FieldName = 'REP_DATA_HORA_REGISTRO'
+        MinWidth = 130
         Options.Filtering = False
         Options.HorzSizing = False
-        Width = 70
-      end
-      object GrdConsultaTblREP_HORA: TcxGridDBColumn
-        DataBinding.FieldName = 'REP_HORA'
-        MinWidth = 45
-        Options.Filtering = False
-        Options.HorzSizing = False
-        Width = 45
+        Width = 130
       end
       object GrdConsultaTblREP_USUARIO: TcxGridDBColumn
         DataBinding.FieldName = 'REP_USUARIO'
         Options.Filtering = False
-        Width = 110
+        Width = 174
       end
       object GrdConsultaTblREP_SITUACAO: TcxGridDBColumn
         DataBinding.FieldName = 'REP_SITUACAO'
@@ -152,33 +149,27 @@ inherited FrmLogImportar: TFrmLogImportar
             Value = 3
           end
           item
-            Description = 'Importa'#231#227'o n'#227'o realizada, existe transa'#231#245'es com erros.'
+            Description = 'Importa'#231#227'o realizada com erros.'
             ImageIndex = 47
-            Value = 4
+            Value = 5
           end
           item
-            Description = 'Importa'#231#227'o realizada com sucesso.'
+            Description = 'Importa'#231#227'o realizada.'
             ImageIndex = 48
-            Value = 5
+            Value = 4
           end>
         Options.Filtering = False
-        Width = 233
+        Width = 212
       end
       object GrdConsultaTblUND_NOME: TcxGridDBColumn
         DataBinding.FieldName = 'UND_NOME'
         Options.Filtering = False
-        Width = 190
-      end
-      object GrdConsultaTblREP_VERSAO: TcxGridDBColumn
-        DataBinding.FieldName = 'REP_VERSAO'
-        HeaderAlignmentHorz = taCenter
-        Options.Filtering = False
-        Width = 56
+        Width = 160
       end
       object GrdConsultaTblREP_QUANTIDADE: TcxGridDBColumn
-        DataBinding.FieldName = 'REP_QUANTIDADE'
+        DataBinding.FieldName = 'REP_TOTAL'
         Options.Filtering = False
-        Width = 54
+        Width = 80
       end
     end
     object GrdConsultaLvl: TcxGridLevel
@@ -187,8 +178,8 @@ inherited FrmLogImportar: TFrmLogImportar
   end
   object BtnIniciarImportacao: TcxButton
     Tag = 1
-    Left = 497
-    Top = 448
+    Left = 423
+    Top = 417
     Width = 122
     Height = 25
     Hint = 'Iniciar impota'#231#227'o'
@@ -201,11 +192,13 @@ inherited FrmLogImportar: TFrmLogImportar
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     TabOrder = 3
     OnClick = BtnIniciarImportacaoClick
+    ExplicitLeft = 497
+    ExplicitTop = 448
   end
   object BtnCarregarArquivo: TcxButton
     Tag = 1
-    Left = 370
-    Top = 448
+    Left = 296
+    Top = 417
     Width = 121
     Height = 25
     Hint = 'Carregar arquivo'
@@ -218,10 +211,12 @@ inherited FrmLogImportar: TFrmLogImportar
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     TabOrder = 2
     OnClick = BtnCarregarArquivoClick
+    ExplicitLeft = 370
+    ExplicitTop = 448
   end
   object BtnFechar: TcxButton
-    Left = 769
-    Top = 448
+    Left = 695
+    Top = 417
     Width = 82
     Height = 25
     Anchors = [akRight, akBottom]
@@ -232,11 +227,13 @@ inherited FrmLogImportar: TFrmLogImportar
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     OptionsImage.NumGlyphs = 2
     TabOrder = 5
+    ExplicitLeft = 769
+    ExplicitTop = 448
   end
   object BtnVisualizarImportacao: TcxButton
     Tag = 1
-    Left = 626
-    Top = 448
+    Left = 552
+    Top = 417
     Width = 137
     Height = 25
     Hint = 'Visualizar transa'#231#227'o'
@@ -249,30 +246,33 @@ inherited FrmLogImportar: TFrmLogImportar
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     TabOrder = 4
     OnClick = BtnVisualizarImportacaoClick
+    ExplicitLeft = 626
+    ExplicitTop = 448
   end
   object GrpBxFiltros: TcxGroupBox
     Left = 8
     Top = 40
     Anchors = [akLeft, akTop, akRight]
     Caption = 'Filtros'
-    ParentBackground = False
-    ParentColor = False
     TabOrder = 0
+    Transparent = True
     Height = 57
-    Width = 844
+    Width = 770
     object Label2: TLabel
       Left = 16
       Top = 20
       Width = 45
       Height = 13
       Caption = 'Situa'#231#227'o:'
+      Transparent = True
     end
     object Label3: TLabel
-      Left = 400
+      Left = 336
       Top = 20
       Width = 98
       Height = 13
       Caption = 'Escrit'#243'rio de origem:'
+      Transparent = True
     end
     object ImgCmbBxSituacao: TcxImageComboBox
       Left = 72
@@ -287,22 +287,22 @@ inherited FrmLogImportar: TFrmLogImportar
           Value = 3
         end
         item
-          Description = 'Importa'#231#227'o n'#227'o realizada, existe transa'#231#245'es com erros.'
+          Description = 'Importa'#231#227'o realizada com erros.'
           ImageIndex = 47
-          Value = 4
+          Value = 5
         end
         item
-          Description = 'Importa'#231#227'o realizada com sucesso.'
+          Description = 'Importa'#231#227'o realizada.'
           ImageIndex = 48
-          Value = 5
+          Value = 4
         end>
       Properties.PostPopupValueOnTab = True
       Properties.OnEditValueChanged = ImgCmbBxSituacaoPropertiesEditValueChanged
       TabOrder = 0
-      Width = 321
+      Width = 257
     end
     object LkpCmbBxUnidade: TcxLookupComboBox
-      Left = 504
+      Left = 440
       Top = 16
       Properties.ClearKey = 46
       Properties.DropDownListStyle = lsFixedList
@@ -318,10 +318,10 @@ inherited FrmLogImportar: TFrmLogImportar
       Properties.ListSource = DtSrcUnidade
       Properties.OnEditValueChanged = LkpCmbBxUnidadePropertiesEditValueChanged
       TabOrder = 1
-      Width = 249
+      Width = 241
     end
     object BtnLimpar: TcxButton
-      Left = 760
+      Left = 688
       Top = 14
       Width = 75
       Height = 25
@@ -330,163 +330,10 @@ inherited FrmLogImportar: TFrmLogImportar
       OnClick = BtnLimparClick
     end
   end
-  object DtStConsulta: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_LOG_REPLICACAO'
-      'SET '
-      '    REP_DATA = :REP_DATA,'
-      '    REP_HORA = :REP_HORA,'
-      '    REP_USUARIO = :REP_USUARIO,'
-      '    REP_TIPO = :REP_TIPO,'
-      '    REP_SITUACAO = :REP_SITUACAO,'
-      '    REP_VERSAO = :REP_VERSAO,'
-      '    REP_QUANTIDADE = :REP_QUANTIDADE,'
-      '    UND_ID = :UND_ID'
-      'WHERE'
-      '    REP_ID = :OLD_REP_ID'
-      '    ')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.rep_id,'
-      '  a.rep_data, '
-      '  a.rep_hora, '
-      '  a.rep_usuario, '
-      '  a.rep_tipo, '
-      '  a.rep_situacao, '
-      '  a.rep_versao, '
-      '  a.rep_quantidade, '
-      '  a.und_id,'
-      '  c.unt_descricao || '#39' '#39' || b.und_nome as und_nome,'
-      '  case a.rep_situacao '
-      '    when 3 then '#39'Arquivo de importa'#231#227'o carregado.'#39
-      
-        '    when 4 then '#39'Importa'#231#227'o n'#227'o realizada, existe transa'#231#245'es com' +
-        ' erros.'#39
-      '    when 5 then '#39'Importa'#231#227'o realizada com sucesso.'#39
-      '  end as rep_situacao_descricao'
-      'from'
-      
-        '  tab_log_replicacao a join tab_sis_unidade b on (a.und_id = b.u' +
-        'nd_id) join'
-      '  tab_sis_unidade_tipo c on (b.unt_id = c.unt_id)'
-      'where( '
-      '  (a.rep_tipo = 1)'
-      '     ) and (     A.REP_ID = :OLD_REP_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.rep_id,'
-      '  a.rep_data, '
-      '  a.rep_hora, '
-      '  a.rep_usuario, '
-      '  a.rep_tipo, '
-      '  a.rep_situacao, '
-      '  a.rep_versao, '
-      '  a.rep_quantidade, '
-      '  a.und_id,'
-      '  c.unt_descricao || '#39' '#39' || b.und_nome as und_nome,'
-      '  case a.rep_situacao '
-      '    when 3 then '#39'Arquivo de importa'#231#227'o carregado.'#39
-      
-        '    when 4 then '#39'Importa'#231#227'o n'#227'o realizada, existe transa'#231#245'es com' +
-        ' erros.'#39
-      '    when 5 then '#39'Importa'#231#227'o realizada com sucesso.'#39
-      '  end as rep_situacao_descricao'
-      'from'
-      
-        '  tab_log_replicacao a join tab_sis_unidade b on (a.und_id = b.u' +
-        'nd_id) join'
-      '  tab_sis_unidade_tipo c on (b.unt_id = c.unt_id)'
-      'where'
-      '  (a.rep_tipo = 1)'
-      'order by'
-      '  a.rep_id')
-    AfterScroll = DtStConsultaAfterScroll
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 80
-    Top = 168
-    object DtStConsultaREP_ID: TFIBBCDField
-      Alignment = taCenter
-      DisplayLabel = 'ID'
-      FieldName = 'REP_ID'
-      Size = 0
-    end
-    object DtStConsultaREP_DATA: TFIBDateField
-      DisplayLabel = 'Data'
-      FieldName = 'REP_DATA'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStConsultaREP_HORA: TFIBTimeField
-      DisplayLabel = 'Hora'
-      FieldName = 'REP_HORA'
-      DisplayFormat = 'hh:mm'
-    end
-    object DtStConsultaREP_USUARIO: TFIBStringField
-      DisplayLabel = 'Usu'#225'rio'
-      FieldName = 'REP_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaREP_TIPO: TFIBSmallIntField
-      DisplayLabel = 'Tipo'
-      FieldName = 'REP_TIPO'
-    end
-    object DtStConsultaREP_SITUACAO: TFIBSmallIntField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Situa'#231#227'o'
-      FieldName = 'REP_SITUACAO'
-    end
-    object DtStConsultaREP_VERSAO: TFIBIntegerField
-      Alignment = taCenter
-      DisplayLabel = 'Vers'#227'o'
-      FieldName = 'REP_VERSAO'
-    end
-    object DtStConsultaREP_QUANTIDADE: TFIBIntegerField
-      DisplayLabel = 'Quantidade'
-      FieldName = 'REP_QUANTIDADE'
-    end
-    object DtStConsultaUND_ID: TFIBIntegerField
-      FieldName = 'UND_ID'
-    end
-    object DtStConsultaUND_NOME: TFIBStringField
-      DisplayLabel = 'Escrit'#243'rio de origem'
-      FieldName = 'UND_NOME'
-      Size = 151
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaREP_SITUACAO_DESCRICAO: TFIBStringField
-      FieldName = 'REP_SITUACAO_DESCRICAO'
-      Size = 54
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-  end
   object DtSrcConsulta: TDataSource
     DataSet = DtStConsulta
-    Left = 112
+    Left = 144
     Top = 168
-  end
-  object StrdPrcReplicacaoEntrada: TpFIBStoredProc
-    Transaction = DtmConexaoModulo.WriteTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    SQL.Strings = (
-      
-        'EXECUTE PROCEDURE STP_LOG_REPLICACAO_ENTRADA (?USUARIO, ?UNIDADE' +
-        ', ?VERSAO)')
-    StoredProcName = 'STP_LOG_REPLICACAO_ENTRADA'
-    Left = 80
-    Top = 232
-    qoAutoCommit = True
-    qoStartTransaction = True
   end
   object CdsArquivo: TClientDataSet
     Aggregates = <>
@@ -502,66 +349,309 @@ inherited FrmLogImportar: TFrmLogImportar
     Left = 112
     Top = 200
   end
-  object StrdPrcReplicacaoCarregar: TpFIBStoredProc
-    Transaction = DtmConexaoModulo.WriteTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    SQL.Strings = (
-      
-        'EXECUTE PROCEDURE STP_LOG_REPLICACAO_CARREGAR (?ID, ?TRANSACAO_I' +
-        'D, ?TRANSACAO_USUARIO, ?TRANSACAO_SQL)')
-    StoredProcName = 'STP_LOG_REPLICACAO_CARREGAR'
-    Left = 80
-    Top = 264
-    qoStartTransaction = True
-  end
-  object DtStPentendes: TpFIBDataSet
-    SelectSQL.Strings = (
-      'select count(*) as total'
-      'from tab_log_replicacao a'
-      'where '
-      '  (a.rep_tipo = 1) and'
-      '  (a.rep_situacao in (3,4));')
-    AfterOpen = DtStPentendesAfterOpen
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 80
-    Top = 136
-    object DtStPentendesTOTAL: TFIBIntegerField
-      FieldName = 'TOTAL'
-    end
-  end
-  object StrdPrcReplicacaoImportar: TpFIBStoredProc
-    Transaction = DtmConexaoModulo.WriteTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    SQL.Strings = (
-      'EXECUTE PROCEDURE STP_LOG_REPLICACAO_IMPORTAR'
-      '(:ID)')
-    StoredProcName = 'STP_LOG_REPLICACAO_IMPORTAR'
-    Left = 80
-    Top = 296
-    qoStartTransaction = True
-  end
-  object QryReplicacaoTotal: TpFIBQuery
-    Transaction = DtmConexaoModulo.WriteTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    SQL.Strings = (
-      'update tab_log_replicacao set '
-      
-        '  rep_quantidade = (select count(*) from tab_log_replicacao_entr' +
-        'ada where rep_id = :id)'
-      'where (rep_id = :id)')
-    Left = 80
-    Top = 328
-    qoStartTransaction = True
-  end
   object DtSrcUnidade: TDataSource
     DataSet = DtmSistemaModulo.DtStUnidade
-    Left = 424
-    Top = 248
+    Left = 144
+    Top = 200
+  end
+  object DtStPendentes: TFDQuery
+    AfterOpen = DtStPendentesAfterOpen
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
+      'select count(*) as total'
+      'from tab_sis_replicacao a'
+      'where '
+      '  (a.rep_tipo = '#39'I'#39') and'
+      '  (a.rep_situacao in (3,5));')
+    Left = 80
+    Top = 136
+    object DtStPendentesTOTAL: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'TOTAL'
+      Origin = 'TOTAL'
+      ProviderFlags = []
+      ReadOnly = True
+    end
+  end
+  object DtStConsulta: TFDQuery
+    AfterScroll = DtStConsultaAfterScroll
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    UpdateObject = UpdtConsulta
+    SQL.Strings = (
+      'select'
+      '  a.rep_id,'
+      '  a.rep_data_hora_registro,'
+      
+        '  '#39'('#39' || d.usr_login || '#39') '#39' || coalesce(e.fun_nome, d.usr_login' +
+        ') as rep_usuario,'
+      '  a.rep_tipo, '
+      '  a.rep_situacao, '
+      '  a.rep_total,'
+      '  a.rep_arquivo,'
+      '  a.rep_data_hora_inicio,'
+      '  a.rep_data_hora_fim,'
+      '  a.und_id,'
+      '  a.usr_id,'
+      '  c.unt_descricao || '#39' '#39' || b.und_nome as und_nome,'
+      '  case a.rep_situacao '
+      '    when 3 then '#39'Arquivo de importa'#231#227'o carregado.'#39
+      '    when 4 then '#39'Importa'#231#227'o realizada.'#39
+      '    when 5 then '#39'Importa'#231#227'o realizada com erros.'#39
+      '  end as rep_situacao_descricao'
+      'from'
+      
+        '  tab_sis_replicacao a join tab_sis_unidade b on (a.und_id = b.u' +
+        'nd_id) join'
+      '  tab_sis_unidade_tipo c on (b.unt_id = c.unt_id) left join'
+      '  tab_sis_usuario d on (a.usr_id = d.usr_id) left join'
+      '  tab_pes_funcionario e on (d.usr_id = e.usr_id)'
+      'where'
+      '  (a.rep_tipo = '#39'I'#39')'
+      'order by'
+      '  a.rep_data_hora_registro desc')
+    Left = 80
+    Top = 168
+    object DtStConsultaREP_ID: TIntegerField
+      DisplayLabel = 'ID'
+      FieldName = 'REP_ID'
+      Origin = 'REP_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+      DisplayFormat = '0000'
+      EditFormat = '0000'
+    end
+    object DtStConsultaREP_DATA_HORA_REGISTRO: TSQLTimeStampField
+      DisplayLabel = 'Data/hora da importa'#231#227'o'
+      FieldName = 'REP_DATA_HORA_REGISTRO'
+      Origin = 'REP_DATA_HORA_REGISTRO'
+    end
+    object DtStConsultaREP_USUARIO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Usu'#225'rio'
+      FieldName = 'REP_USUARIO'
+      Origin = 'REP_USUARIO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 153
+    end
+    object DtStConsultaREP_TIPO: TStringField
+      FieldName = 'REP_TIPO'
+      Origin = 'REP_TIPO'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object DtStConsultaREP_SITUACAO: TSmallintField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Situa'#231#227'o'
+      FieldName = 'REP_SITUACAO'
+      Origin = 'REP_SITUACAO'
+      Required = True
+    end
+    object DtStConsultaREP_TOTAL: TIntegerField
+      DisplayLabel = 'Quantidade'
+      FieldName = 'REP_TOTAL'
+      Origin = 'REP_TOTAL'
+      Required = True
+    end
+    object DtStConsultaUND_ID: TIntegerField
+      FieldName = 'UND_ID'
+      Origin = 'UND_ID'
+      Required = True
+    end
+    object DtStConsultaUND_NOME: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Escrit'#243'rio de origem'
+      FieldName = 'UND_NOME'
+      Origin = 'UND_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 151
+    end
+    object DtStConsultaREP_SITUACAO_DESCRICAO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Situa'#231#227'o'
+      FieldName = 'REP_SITUACAO_DESCRICAO'
+      Origin = 'REP_SITUACAO_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      FixedChar = True
+      Size = 32
+    end
+    object DtStConsultaREP_ARQUIVO: TBlobField
+      FieldName = 'REP_ARQUIVO'
+      Origin = 'REP_ARQUIVO'
+    end
+    object DtStConsultaREP_DATA_HORA_INICIO: TSQLTimeStampField
+      FieldName = 'REP_DATA_HORA_INICIO'
+      Origin = 'REP_DATA_HORA_INICIO'
+    end
+    object DtStConsultaREP_DATA_HORA_FIM: TSQLTimeStampField
+      FieldName = 'REP_DATA_HORA_FIM'
+      Origin = 'REP_DATA_HORA_FIM'
+    end
+    object DtStConsultaUSR_ID: TIntegerField
+      FieldName = 'USR_ID'
+      Origin = 'USR_ID'
+      Required = True
+    end
+  end
+  object UpdtConsulta: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_SIS_REPLICACAO'
+      
+        '(REP_ID, REP_TIPO, REP_DATA_HORA_REGISTRO, REP_DATA_HORA_INICIO,' +
+        ' '
+      '  REP_DATA_HORA_FIM, REP_SITUACAO, REP_TOTAL, '
+      '  REP_ARQUIVO, USR_ID, UND_ID)'
+      
+        'VALUES (:NEW_REP_ID, :NEW_REP_TIPO, :NEW_REP_DATA_HORA_REGISTRO,' +
+        ' :NEW_REP_DATA_HORA_INICIO, '
+      '  :NEW_REP_DATA_HORA_FIM, :NEW_REP_SITUACAO, :NEW_REP_TOTAL, '
+      '  :NEW_REP_ARQUIVO, :NEW_USR_ID, :NEW_UND_ID)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_SIS_REPLICACAO'
+      
+        'SET REP_ID = :NEW_REP_ID, REP_TIPO = :NEW_REP_TIPO, REP_DATA_HOR' +
+        'A_REGISTRO = :NEW_REP_DATA_HORA_REGISTRO, '
+      
+        '  REP_DATA_HORA_INICIO = :NEW_REP_DATA_HORA_INICIO, REP_DATA_HOR' +
+        'A_FIM = :NEW_REP_DATA_HORA_FIM, '
+      '  REP_SITUACAO = :NEW_REP_SITUACAO, REP_TOTAL = :NEW_REP_TOTAL, '
+      
+        '  REP_ARQUIVO = :NEW_REP_ARQUIVO, USR_ID = :NEW_USR_ID, UND_ID =' +
+        ' :NEW_UND_ID'
+      'WHERE REP_ID = :OLD_REP_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_SIS_REPLICACAO'
+      'WHERE REP_ID = :OLD_REP_ID')
+    FetchRowSQL.Strings = (
+      
+        'SELECT REP_ID, REP_TIPO, REP_DATA_HORA_REGISTRO, REP_DATA_HORA_I' +
+        'NICIO, '
+      '  REP_DATA_HORA_FIM, REP_SITUACAO, REP_TOTAL, REP_ARQUIVO, '
+      '  USR_ID, UND_ID'
+      'FROM TAB_SIS_REPLICACAO'
+      'WHERE REP_ID = :REP_ID')
+    Left = 112
+    Top = 168
+  end
+  object StrdPrcReplicacaoImportar: TFDStoredProc
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    StoredProcName = 'STP_SIS_REPLICACAO_IMPORTAR'
+    Left = 80
+    Top = 232
+    ParamData = <
+      item
+        Position = 1
+        Name = 'ID'
+        DataType = ftLargeint
+        ParamType = ptInput
+      end
+      item
+        Position = 2
+        Name = 'ERRO'
+        DataType = ftBoolean
+        ParamType = ptOutput
+      end>
+  end
+  object QryInserirImportacao: TFDCommand
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDWriteTransaction
+    CommandKind = skInsert
+    CommandText.Strings = (
+      'insert into tab_sis_replicacao ('
+      '  rep_id,'
+      '  rep_tipo, '
+      '  rep_data_hora_registro, '
+      '  rep_data_hora_inicio, '
+      '  rep_data_hora_fim, '
+      '  rep_situacao, '
+      '  rep_total, '
+      '  rep_arquivo, '
+      '  usr_id, '
+      '  und_id)'
+      'values ('
+      '  :rep_id,'
+      '  '#39'I'#39','
+      '  current_timestamp,'
+      '  null,'
+      '  null,'
+      '  3,'
+      '  :rep_total, '
+      '  :rep_arquivo, '
+      '  :usr_id, '
+      '  :und_id)')
+    ParamData = <
+      item
+        Name = 'REP_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'REP_TOTAL'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'REP_ARQUIVO'
+        DataType = ftBlob
+        ParamType = ptInput
+      end
+      item
+        Name = 'USR_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'UND_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    Left = 80
+    Top = 264
+  end
+  object QryInserirTransacao: TFDCommand
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDWriteTransaction
+    CommandKind = skUpdate
+    CommandText.Strings = (
+      'insert into tab_sis_replicacao_transacao ('
+      '  rep_id,'
+      '  trn_id, '
+      '  trn_sql, '
+      '  trn_situacao, '
+      '  trn_erro)'
+      'values ('
+      '  :rep_id,'
+      '  :trn_id, '
+      '  :trn_sql, '
+      '  1,'
+      '  null)')
+    ParamData = <
+      item
+        Name = 'REP_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'TRN_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'TRN_SQL'
+        DataType = ftMemo
+        ParamType = ptInput
+      end>
+    Left = 80
+    Top = 296
   end
 end

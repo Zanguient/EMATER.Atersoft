@@ -7,8 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Basico, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters,
   Vcl.Menus, dxSkinsCore, dxSkinOffice2013White, Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, cxControls, cxStyles, dxSkinscxPCPainter,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, Data.DB, cxDBData, cxGridLevel, cxClasses, cxGridCustomView,
-  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, FIBDataSet, pFIBDataSet, cxImageComboBox, FIBQuery,
-  pFIBQuery, pFIBStoredProc, Datasnap.Provider, Datasnap.DBClient, {$WARNINGS OFF} FileCtrl, dxSkinSeven, dxSkinSevenClassic, FireDAC.Stan.Intf,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxImageComboBox,
+  Datasnap.Provider, Datasnap.DBClient, {$WARNINGS OFF} FileCtrl, dxSkinSeven, dxSkinSevenClassic, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client {$WARNINGS ON};
 
@@ -102,28 +102,25 @@ begin
                 CdsArquivo.SaveToFile(FileName, dfBinary);
                 CdsArquivo.Close;
 
-                DtStConsulta.Edit;
-                DtStConsultaREP_ARQUIVO.LoadFromFile(FileName);
-                DtStConsulta.Post;
+                // Compactando o arquivo gerado:
+                if TArquivo.Comprimir(FileNameCompressed, [FileName]) then
+                  begin
+                    DeleteFile(FileName);
+                    DtStConsulta.Edit;
+                    DtStConsultaREP_SITUACAO.Value := 2;
+                    DtStConsultaREP_ARQUIVO.LoadFromFile(FileNameCompressed);
+                    DtStConsulta.Post;
+                    CodeSite.SendMsg(LOG_MSG_EXPORTACAO_GERAR_SUCESSO);
+                    MSG.Informacao(LOG_MSG_EXPORTACAO_GERAR_SUCESSO);
+                  end
+                else
+                  begin
+                    CodeSite.SendError(LOG_MSG_EXPORTACAO_COMPACTAR_ERRO);
+                    MSG.Erro(LOG_MSG_EXPORTACAO_COMPACTAR_ERRO);
+                  end;
               end
             else
               DtStConsultaREP_ARQUIVO.SaveToFile(FileName);
-
-            // Compactando o arquivo gerado:
-            if TArquivo.Comprimir(FileNameCompressed, [FileName]) then
-              begin
-                DeleteFile(FileName);
-                DtStConsulta.Edit;
-                DtStConsultaREP_SITUACAO.Value := 2;
-                DtStConsulta.Post;
-                CodeSite.SendMsg(LOG_MSG_EXPORTACAO_GERAR_SUCESSO);
-                MSG.Informacao(LOG_MSG_EXPORTACAO_GERAR_SUCESSO);
-              end
-            else
-              begin
-                CodeSite.SendError(LOG_MSG_EXPORTACAO_COMPACTAR_ERRO);
-                MSG.Erro(LOG_MSG_EXPORTACAO_COMPACTAR_ERRO);
-              end;
 
             if DtmConexaoModulo.FDConnection.InTransaction and DtmConexaoModulo.FDWriteTransaction.Active then
               DtmConexaoModulo.FDConnection.Commit;

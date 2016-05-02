@@ -3459,6 +3459,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       True)
     ImageOptions.Images = DtmRecursoModulo.ImgLstPequenas
     ImageOptions.LargeImages = DtmRecursoModulo.ImgLstGrandes
+    MenusShowRecentItemsFirst = False
     PopupMenuLinks = <>
     UseSystemFont = True
     Left = 344
@@ -4016,10 +4017,16 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     end
     object BtnBeneficiarioCategoria: TdxBarLargeButton
       Tag = 1
-      Caption = 'Benefici'#225'rios de ATER segundo a categoria'
+      Caption = 
+        'Benefici'#225'rios de ATER cadastrados segundo a categoria, sexo e fa' +
+        'ixa et'#225'ria de jovens'
       Category = 5
-      Description = 'Relat'#243'rio de benefici'#225'rios segundo a categoria'
-      Hint = 'Benefici'#225'rios de ATER segundo a categoria'
+      Description = 
+        'Relat'#243'rio de benefici'#225'rio de ATER cadastrados segundo a categori' +
+        'a, sexo e faixa et'#225'ria de jovens'
+      Hint = 
+        'Benefici'#225'rios de ATER cadastrados segundo a categoria, sexo e fa' +
+        'ixa et'#225'ria de jovens'
       Visible = ivAlways
       LargeImageIndex = 20
       UnclickAfterDoing = False
@@ -4029,12 +4036,16 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     end
     object BtnBeneficiarioAtividade: TdxBarLargeButton
       Tag = 1
-      Caption = 'Benefici'#225'rios de ATER por atividade segundo a categoria'
+      Caption = 
+        'Benefici'#225'rios de ATER cadastrados por atividade produtiva segund' +
+        'o a categoria'
       Category = 5
       Description = 
-        'Relat'#243'rio de benefici'#225'rios por atividade produtiva segundo a cat' +
-        'egoria'
-      Hint = 'Benefici'#225'rios de ATER por atividade segundo a categoria'
+        'Relat'#243'rio de benefici'#225'rios de ATER cadastrados por atividade pro' +
+        'dutiva segundo a categoria'
+      Hint = 
+        'Benefici'#225'rios de ATER cadastrados por atividade produtiva segund' +
+        'o a categoria'
       Visible = ivAlways
       LargeImageIndex = 20
       UnclickAfterDoing = False

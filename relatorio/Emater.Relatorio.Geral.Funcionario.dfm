@@ -1,10 +1,8 @@
 inherited FrmRelatorioGeralFuncionario: TFrmRelatorioGeralFuncionario
   Left = 362
   Top = 152
-  ExplicitLeft = 8
-  ExplicitTop = 8
-  ExplicitWidth = 584
-  ExplicitHeight = 462
+  ExplicitLeft = 362
+  ExplicitTop = 152
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
@@ -17,23 +15,41 @@ inherited FrmRelatorioGeralFuncionario: TFrmRelatorioGeralFuncionario
           Left = 8
           Top = 16
           Width = 441
-          Height = 81
+          Height = 97
           TabOrder = 0
           ExplicitLeft = 8
           ExplicitTop = 16
           ExplicitWidth = 441
-          ExplicitHeight = 81
+          ExplicitHeight = 97
           inherited LblUnidade: TLabel
             Left = 0
+            Top = 44
             ExplicitLeft = 0
+            ExplicitTop = 44
           end
           inherited LblFuncionario: TLabel
             Left = 0
+            Top = 76
             ExplicitLeft = 0
+            ExplicitTop = 76
           end
           inherited LblPeriodoDe: TLabel
             Left = 0
             ExplicitLeft = 0
+          end
+          inherited LkpCmbBxUnidade: TcxLookupComboBox
+            Top = 40
+            ExplicitTop = 40
+          end
+          inherited LkpCmbBxFuncionario: TcxLookupComboBox
+            Top = 72
+            ExplicitTop = 72
+          end
+          inherited DtSrcUnidadeLocal: TDataSource
+            Top = 24
+          end
+          inherited DtSrcFuncionarioLocal: TDataSource
+            Top = 64
           end
         end
       end
@@ -56,7 +72,7 @@ inherited FrmRelatorioGeralFuncionario: TFrmRelatorioGeralFuncionario
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
     ReportOptions.Name = ''
-    ReportOptions.LastChange = 41967.634445717590000000
+    ReportOptions.LastChange = 42491.791676539350000000
     ScriptText.Strings = (
       'begin'
       '    '
@@ -121,16 +137,19 @@ inherited FrmRelatorioGeralFuncionario: TFrmRelatorioGeralFuncionario
         end
       end
       inherited PageFooter: TfrxPageFooter
-        Top = 619.842920000000000000
+        Top = 631.181510000000000000
         Width = 1046.929810000000000000
         inherited MemoDataHora: TfrxMemoView
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         inherited MemoPagina: TfrxMemoView
-          Left = 952.441560000000000000
+          Left = 967.559680000000000000
           Memo.UTF8W = (
             'P'#225'gina [Page] de [TotalPages]')
         end
@@ -139,7 +158,7 @@ inherited FrmRelatorioGeralFuncionario: TFrmRelatorioGeralFuncionario
             'Usu'#225'rio: [usuario]')
         end
         inherited MemoRelatorio: TfrxMemoView
-          Width = 612.283860000000000000
+          Width = 699.213050000000000000
           Memo.UTF8W = (
             '[titulo]')
         end
@@ -172,7 +191,7 @@ inherited FrmRelatorioGeralFuncionario: TFrmRelatorioGeralFuncionario
       end
       object MasterData: TfrxMasterData
         FillType = ftBrush
-        Height = 316.000000000000000000
+        Height = 328.000000000000000000
         Top = 241.889920000000000000
         Width = 1046.929810000000000000
         DataSet = FrxDtStPrincipal

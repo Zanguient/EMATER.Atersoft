@@ -1,19 +1,61 @@
 inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
   Left = 362
   Top = 152
+  ClientHeight = 420
+  ClientWidth = 620
   ExplicitLeft = 362
   ExplicitTop = 152
+  ExplicitWidth = 636
+  ExplicitHeight = 459
   PixelsPerInch = 96
   TextHeight = 13
+  inherited BtnImprimir: TcxButton
+    Left = 448
+    Top = 384
+    ExplicitLeft = 448
+    ExplicitTop = 384
+  end
+  inherited BtnCancelar: TcxButton
+    Left = 534
+    Top = 384
+    ExplicitLeft = 534
+    ExplicitTop = 384
+  end
   inherited PgCntrlRelatorio: TcxPageControl
+    Width = 601
+    Height = 369
+    ExplicitWidth = 601
+    ExplicitHeight = 369
+    ClientRectBottom = 367
+    ClientRectRight = 599
     inherited TbShtFiltros: TcxTabSheet
+      inherited ShpTitulo: TShape
+        Width = 577
+        Anchors = [akLeft, akTop, akRight]
+        ExplicitWidth = 577
+      end
       inherited LblTitulo: TLabel
-        Caption = ' Relat'#243'rio de atendimentos por comunidade'
+        Width = 575
+        Anchors = [akLeft, akTop, akRight]
+        Caption = ' Atendimentos por comunidade'
+        ExplicitWidth = 575
       end
       inherited GrpBxFiltro: TcxGroupBox
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        ExplicitWidth = 577
+        ExplicitHeight = 217
+        Height = 217
+        Width = 577
+        inherited ImgMain: TImage
+          Left = 438
+          Top = 102
+          Anchors = [akRight, akBottom]
+          ExplicitLeft = 438
+          ExplicitTop = 102
+        end
         object LblAno: TLabel
           Left = 8
-          Top = 28
+          Top = 20
           Width = 23
           Height = 13
           Caption = 'Ano:'
@@ -21,7 +63,7 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
         end
         object LblComunidade: TLabel
           Left = 8
-          Top = 148
+          Top = 180
           Width = 178
           Height = 13
           Caption = 'Quantidade m'#237'nima de atendimentos:'
@@ -29,12 +71,12 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
         end
         inline FrmFiltroMetodologia: TFrmRelatorioFiltroMetodologia
           Left = 8
-          Top = 96
+          Top = 112
           Width = 425
           Height = 33
           TabOrder = 2
           ExplicitLeft = 8
-          ExplicitTop = 96
+          ExplicitTop = 112
           ExplicitWidth = 425
           ExplicitHeight = 33
           inherited LblMetodologia: TLabel
@@ -57,12 +99,12 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Left = 8
           Top = 48
           Width = 425
-          Height = 47
+          Height = 65
           TabOrder = 1
           ExplicitLeft = 8
           ExplicitTop = 48
           ExplicitWidth = 425
-          ExplicitHeight = 47
+          ExplicitHeight = 65
           inherited LblUnidade: TLabel
             Left = 0
             Top = 4
@@ -71,9 +113,7 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           end
           inherited LblFuncionario: TLabel
             Left = 0
-            Top = 28
             ExplicitLeft = 0
-            ExplicitTop = 28
           end
           inherited LkpCmbBxUnidade: TcxLookupComboBox
             Left = 80
@@ -84,21 +124,19 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           end
           inherited LkpCmbBxFuncionario: TcxLookupComboBox
             Left = 80
-            Top = 24
             ExplicitLeft = 80
-            ExplicitTop = 24
           end
           inherited DtSrcUnidadeLocal: TDataSource
             Left = 304
           end
           inherited DtSrcFuncionarioLocal: TDataSource
             Left = 248
-            Top = 16
+            Top = 24
           end
         end
         object EdtAno: TcxTextEdit
           Left = 88
-          Top = 24
+          Top = 16
           Properties.Alignment.Horz = taCenter
           Properties.MaxLength = 4
           TabOrder = 0
@@ -107,11 +145,11 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
         end
         inline FrmFiltroComunidade: TFrmRelatorioFiltroComunidade
           Left = 0
-          Top = 120
+          Top = 144
           Width = 442
           Height = 28
           TabOrder = 3
-          ExplicitTop = 120
+          ExplicitTop = 144
           ExplicitWidth = 442
           ExplicitHeight = 28
           inherited LblComunidade: TLabel
@@ -129,7 +167,7 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
         end
         object CmbBxQuantidade: TcxComboBox
           Left = 192
-          Top = 144
+          Top = 176
           Properties.DropDownListStyle = lsEditFixedList
           Properties.DropDownRows = 12
           Properties.ImmediatePost = True
@@ -163,9 +201,12 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
       end
       inherited GrpBxOpcoes: TcxGroupBox
         Top = 34
+        Anchors = [akLeft, akTop, akRight]
         ExplicitTop = 34
+        ExplicitWidth = 577
         ExplicitHeight = 76
         Height = 76
+        Width = 577
         inherited CmbBxCampo: TcxComboBox
           Properties.Items.Strings = (
             'Comunidade e benefici'#225'rio')
@@ -175,12 +216,14 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
     end
   end
   inherited BtnLimpar: TcxButton
+    Top = 384
     OnClick = BtnLimparClick
+    ExplicitTop = 384
   end
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
     ReportOptions.Name = 'Quantidade de benefici'#225'rios por categoria'
-    ReportOptions.LastChange = 41954.541176180560000000
+    ReportOptions.LastChange = 42491.790758125000000000
     ScriptText.Strings = (
       'begin'
       '    '
@@ -257,12 +300,15 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
         Width = 1046.929810000000000000
         inherited MemoDataHora: TfrxMemoView
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         inherited MemoPagina: TfrxMemoView
-          Left = 952.441560000000000000
+          Left = 967.559680000000000000
           Memo.UTF8W = (
             'P'#225'gina [Page] de [TotalPages]')
         end
@@ -271,7 +317,7 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
             'Usu'#225'rio: [usuario]')
         end
         inherited MemoRelatorio: TfrxMemoView
-          Width = 612.283860000000000000
+          Width = 699.213050000000000000
           Memo.UTF8W = (
             '[titulo]')
         end
@@ -284,7 +330,7 @@ inherited FrmRelatorioFaterComunidade: TFrmRelatorioFaterComunidade
           Height = 26.456692910000000000
           DisplayFormat.DecimalSeparator = ''
           Memo.UTF8W = (
-            'Relat'#243'rio de atendimentos por comunidade')
+            'Atendimentos por comunidade')
         end
         object Memo15: TfrxMemoView
           Top = 26.456710000000000000

@@ -1,8 +1,8 @@
 object FrmRelatorioFiltroComunidade: TFrmRelatorioFiltroComunidade
   Left = 0
   Top = 0
-  Width = 442
-  Height = 37
+  Width = 426
+  Height = 84
   TabOrder = 0
   object LblComunidade: TLabel
     Left = 8
@@ -10,6 +10,7 @@ object FrmRelatorioFiltroComunidade: TFrmRelatorioFiltroComunidade
     Width = 63
     Height = 13
     Caption = 'Comunidade:'
+    Transparent = True
   end
   object LkpCmbBxComunidade: TcxLookupComboBox
     Left = 88

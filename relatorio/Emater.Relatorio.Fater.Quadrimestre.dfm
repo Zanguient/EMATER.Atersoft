@@ -8,7 +8,7 @@ inherited FrmRelatorioFaterQuadrimestre: TFrmRelatorioFaterQuadrimestre
   inherited PgCntrlRelatorio: TcxPageControl
     inherited TbShtFiltros: TcxTabSheet
       inherited LblTitulo: TLabel
-        Caption = ' Relat'#243'rio de atendimentos de t'#233'cnicos por quadrimestre'
+        Caption = ' Atendimentos de t'#233'cnicos por quadrimestre'
       end
       inherited GrpBxFiltro: TcxGroupBox
         object LblAno: TLabel
@@ -29,28 +29,21 @@ inherited FrmRelatorioFaterQuadrimestre: TFrmRelatorioFaterQuadrimestre
         end
         inline FrmFiltroMetodologia: TFrmRelatorioFiltroMetodologia
           Left = 8
-          Top = 96
+          Top = 112
           Width = 425
           Height = 33
           TabOrder = 3
           ExplicitLeft = 8
-          ExplicitTop = 96
+          ExplicitTop = 112
           ExplicitWidth = 425
           ExplicitHeight = 33
           inherited LblMetodologia: TLabel
             Left = 0
-            Top = 4
             ExplicitLeft = 0
-            ExplicitTop = 4
           end
           inherited LkpCmbBxMetodologia: TcxLookupComboBox
             Left = 80
-            Top = 0
             ExplicitLeft = 80
-            ExplicitTop = 0
-          end
-          inherited DtSrcMetodologia: TDataSource
-            Top = 0
           end
         end
         object CmbBxQuadrimestre: TcxComboBox
@@ -67,14 +60,14 @@ inherited FrmRelatorioFaterQuadrimestre: TFrmRelatorioFaterQuadrimestre
         end
         inline FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionario
           Left = 8
-          Top = 48
+          Top = 56
           Width = 425
-          Height = 47
+          Height = 65
           TabOrder = 2
           ExplicitLeft = 8
-          ExplicitTop = 48
+          ExplicitTop = 56
           ExplicitWidth = 425
-          ExplicitHeight = 47
+          ExplicitHeight = 65
           inherited LblUnidade: TLabel
             Left = 0
             Top = 4
@@ -83,9 +76,7 @@ inherited FrmRelatorioFaterQuadrimestre: TFrmRelatorioFaterQuadrimestre
           end
           inherited LblFuncionario: TLabel
             Left = 0
-            Top = 28
             ExplicitLeft = 0
-            ExplicitTop = 28
           end
           inherited LkpCmbBxUnidade: TcxLookupComboBox
             Left = 80
@@ -95,16 +86,14 @@ inherited FrmRelatorioFaterQuadrimestre: TFrmRelatorioFaterQuadrimestre
           end
           inherited LkpCmbBxFuncionario: TcxLookupComboBox
             Left = 80
-            Top = 24
             ExplicitLeft = 80
-            ExplicitTop = 24
           end
           inherited DtSrcUnidadeLocal: TDataSource
             Left = 304
           end
           inherited DtSrcFuncionarioLocal: TDataSource
             Left = 248
-            Top = 16
+            Top = 24
           end
         end
         object EdtAno: TcxTextEdit
@@ -136,7 +125,7 @@ inherited FrmRelatorioFaterQuadrimestre: TFrmRelatorioFaterQuadrimestre
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
     ReportOptions.Name = 'Quantidade de benefici'#225'rios por categoria'
-    ReportOptions.LastChange = 41954.545179965280000000
+    ReportOptions.LastChange = 42491.791227997690000000
     ScriptText.Strings = (
       'begin'
       '    '
@@ -209,12 +198,15 @@ inherited FrmRelatorioFaterQuadrimestre: TFrmRelatorioFaterQuadrimestre
         Width = 1046.929810000000000000
         inherited MemoDataHora: TfrxMemoView
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         inherited MemoPagina: TfrxMemoView
-          Left = 952.441560000000000000
+          Left = 967.559680000000000000
           Memo.UTF8W = (
             'P'#225'gina [Page] de [TotalPages]')
         end
@@ -223,7 +215,7 @@ inherited FrmRelatorioFaterQuadrimestre: TFrmRelatorioFaterQuadrimestre
             'Usu'#225'rio: [usuario]')
         end
         inherited MemoRelatorio: TfrxMemoView
-          Width = 612.283860000000000000
+          Width = 699.213050000000000000
           Memo.UTF8W = (
             '[titulo]')
         end
@@ -236,7 +228,7 @@ inherited FrmRelatorioFaterQuadrimestre: TFrmRelatorioFaterQuadrimestre
           Height = 26.456692910000000000
           DisplayFormat.DecimalSeparator = ''
           Memo.UTF8W = (
-            'Relat'#243'rio de atendimentos de t'#233'cnicos por quadrimestre')
+            'Atendimentos de t'#233'cnicos por quadrimestre')
         end
         object Memo15: TfrxMemoView
           Top = 26.456710000000000000

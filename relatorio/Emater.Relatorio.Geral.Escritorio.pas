@@ -17,6 +17,8 @@ type
     FrxDtStPrincipal: TfrxDBDataset;
     FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionarioPeriodo;
     DtStPrincipal: TFDQuery;
+    FrxDtStSecundario: TfrxDBDataset;
+    DtStSecundario: TFDQuery;
     procedure BtnImprimirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FrxPrincipalGetValue(const VarName: string; var Value: Variant);
@@ -56,22 +58,35 @@ begin
         end
       else
         begin
+          DtStPrincipal.Close;
+          DtStSecundario.Close;
+
+          // Tipo:
+          DtStPrincipal.ParamByName('tipo').AsSmallInt := 1;
+          DtStSecundario.ParamByName('tipo').AsSmallInt := 2;
+
           // Período:
           DtStPrincipal.ParamByName('data_inicio').AsDate := FrmFiltro.EdtDataInicio.Date;
           DtStPrincipal.ParamByName('data_fim').AsDate := FrmFiltro.EdtDataFim.Date;
+
+          DtStSecundario.ParamByName('data_inicio').AsDate := FrmFiltro.EdtDataInicio.Date;
+          DtStSecundario.ParamByName('data_fim').AsDate := FrmFiltro.EdtDataFim.Date;
 
           // Unidade (escritório):
           if not VarIsNull(FrmFiltro.LkpCmbBxUnidade.EditValue) then
             begin
               DtStPrincipal.ParamByName('unidade').AsInteger := FrmFiltro.LkpCmbBxUnidade.EditValue;
+              DtStSecundario.ParamByName('unidade').AsInteger := FrmFiltro.LkpCmbBxUnidade.EditValue;
             end
           else
             begin
               DtStPrincipal.ParamByName('unidade').AsInteger := 0;
+              DtStSecundario.ParamByName('unidade').AsInteger := 0;
             end;
 
-          DtStPrincipal.Close;
           DtStPrincipal.Open;
+          DtStSecundario.Open;
+
           FrxPrincipal.PrepareReport;
           if (CmbBxModo.ItemIndex = 0) then
             FrxPrincipal.ShowPreparedReport

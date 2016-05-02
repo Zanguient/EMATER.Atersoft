@@ -1,39 +1,62 @@
 inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
   Left = 275
   Top = 97
-  ClientHeight = 523
+  ClientHeight = 516
+  ClientWidth = 627
   ExplicitLeft = 275
   ExplicitTop = 97
-  ExplicitHeight = 562
+  ExplicitWidth = 643
+  ExplicitHeight = 555
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnImprimir: TcxButton
-    Top = 488
-    ExplicitTop = 488
+    Left = 456
+    Top = 480
+    ExplicitLeft = 456
+    ExplicitTop = 480
   end
   inherited BtnCancelar: TcxButton
-    Top = 488
-    ExplicitTop = 488
+    Left = 542
+    Top = 480
+    ExplicitLeft = 542
+    ExplicitTop = 480
   end
   inherited PgCntrlRelatorio: TcxPageControl
-    Height = 473
-    ExplicitHeight = 473
-    ClientRectBottom = 471
+    Width = 609
+    Height = 465
+    ExplicitWidth = 609
+    ExplicitHeight = 465
+    ClientRectBottom = 463
+    ClientRectRight = 607
     inherited TbShtFiltros: TcxTabSheet
       ExplicitHeight = 443
+      inherited ShpTitulo: TShape
+        Width = 585
+        Anchors = [akLeft, akTop, akRight]
+        ExplicitWidth = 569
+      end
       inherited LblTitulo: TLabel
-        Caption = ' Relat'#243'rio de produ'#231#227'o por benefici'#225'rio'
+        Width = 583
+        Anchors = [akLeft, akTop, akRight]
+        Caption = ' Produ'#231#227'o por benefici'#225'rio'
+        ExplicitWidth = 583
       end
       inherited GrpBxFiltro: TcxGroupBox
-        ExplicitHeight = 321
-        Height = 321
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        ExplicitWidth = 585
+        ExplicitHeight = 313
+        Height = 313
+        Width = 585
         inherited ImgMain: TImage
-          Top = 206
-          ExplicitTop = 206
+          Left = 446
+          Top = 198
+          Anchors = [akRight, akBottom]
+          ExplicitLeft = 446
+          ExplicitTop = 238
         end
         object LblSafra: TLabel
           Left = 8
-          Top = 28
+          Top = 20
           Width = 95
           Height = 13
           Caption = 'Per'#237'odo da colheita:'
@@ -41,7 +64,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
         object LblBarra: TLabel
           Left = 172
-          Top = 28
+          Top = 20
           Width = 4
           Height = 13
           Caption = '/'
@@ -62,7 +85,9 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           end
           inherited LblFuncionario: TLabel
             Left = 0
+            Top = 44
             ExplicitLeft = 0
+            ExplicitTop = 44
           end
           inherited LkpCmbBxUnidade: TcxLookupComboBox
             Left = 120
@@ -72,66 +97,58 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           end
           inherited LkpCmbBxFuncionario: TcxLookupComboBox
             Left = 120
+            Top = 40
             ExplicitLeft = 120
+            ExplicitTop = 40
             ExplicitWidth = 305
             Width = 305
           end
         end
         inline FrmFiltroProducao: TFrmRelatorioFiltroProducao
           Left = 8
-          Top = 96
+          Top = 104
           Width = 441
-          Height = 145
+          Height = 193
           TabOrder = 3
           ExplicitLeft = 8
-          ExplicitTop = 96
+          ExplicitTop = 104
           ExplicitWidth = 441
-          ExplicitHeight = 145
+          ExplicitHeight = 193
           inherited LblGrupo: TLabel
-            Left = 0
-            Top = 52
-            ExplicitLeft = 0
-            ExplicitTop = 52
-          end
-          inherited LblClasse: TLabel
             Left = 0
             Top = 76
             ExplicitLeft = 0
             ExplicitTop = 76
           end
+          inherited LblClasse: TLabel
+            Left = 0
+            Top = 108
+            ExplicitLeft = 0
+            ExplicitTop = 108
+          end
           inherited LblCultura: TLabel
             Left = 0
-            Top = 100
+            Top = 140
             ExplicitLeft = 0
-            ExplicitTop = 100
+            ExplicitTop = 140
           end
           inherited LblSistema: TLabel
             Left = 0
-            Top = 124
+            Top = 172
             ExplicitLeft = 0
-            ExplicitTop = 124
+            ExplicitTop = 172
           end
           inherited LblCategoria: TLabel
             Left = 0
-            Top = 4
             ExplicitLeft = 0
-            ExplicitTop = 4
           end
           inherited LblAtividade: TLabel
             Left = 0
-            Top = 28
+            Top = 44
             ExplicitLeft = 0
-            ExplicitTop = 28
+            ExplicitTop = 44
           end
           inherited LkpCmbBxGrupo: TcxLookupComboBox
-            Left = 120
-            Top = 48
-            ExplicitLeft = 120
-            ExplicitTop = 48
-            ExplicitWidth = 305
-            Width = 305
-          end
-          inherited LkpCmbBxClasse: TcxLookupComboBox
             Left = 120
             Top = 72
             ExplicitLeft = 120
@@ -139,60 +156,69 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
             ExplicitWidth = 305
             Width = 305
           end
+          inherited LkpCmbBxClasse: TcxLookupComboBox
+            Left = 120
+            Top = 104
+            ExplicitLeft = 120
+            ExplicitTop = 104
+            ExplicitWidth = 305
+            Width = 305
+          end
           inherited LkpCmbBxCultura: TcxLookupComboBox
             Left = 120
-            Top = 96
+            Top = 136
             ExplicitLeft = 120
-            ExplicitTop = 96
+            ExplicitTop = 136
             ExplicitWidth = 305
             Width = 305
           end
           inherited LkpCmbBxSistema: TcxLookupComboBox
             Left = 120
-            Top = 120
+            Top = 168
             ExplicitLeft = 120
-            ExplicitTop = 120
+            ExplicitTop = 168
             ExplicitWidth = 305
             Width = 305
           end
           inherited LkpCmbBxCategoria: TcxLookupComboBox
             Left = 120
-            Top = 0
             ExplicitLeft = 120
-            ExplicitTop = 0
             ExplicitWidth = 305
             Width = 305
           end
           inherited LkpCmbBxAtividade: TcxLookupComboBox
             Left = 120
-            Top = 24
+            Top = 40
             ExplicitLeft = 120
-            ExplicitTop = 24
+            ExplicitTop = 40
             ExplicitWidth = 305
             Width = 305
           end
           inherited DtSrcGrupo: TDataSource
-            Top = 40
-          end
-          inherited DtSrcClasse: TDataSource
             Top = 64
           end
-          inherited DtSrcCultura: TDataSource
+          inherited DtSrcClasse: TDataSource
             Top = 96
           end
+          inherited DtSrcCultura: TDataSource
+            Top = 136
+          end
           inherited DtSrcSistema: TDataSource
-            Top = 112
+            Left = 216
+            Top = 160
           end
           inherited DtSrcCategoria: TDataSource
-            Left = 360
+            Left = 352
+            Top = 8
           end
           inherited DtSrcAtividade: TDataSource
-            Top = 16
+            Left = 288
+            Top = 32
           end
         end
         object EdtAnoInicio: TcxTextEdit
           Left = 128
-          Top = 24
+          Top = 16
           Properties.Alignment.Horz = taCenter
           Properties.MaxLength = 4
           TabOrder = 0
@@ -201,7 +227,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         end
         object EdtAnoFim: TcxTextEdit
           Left = 179
-          Top = 24
+          Top = 16
           Properties.Alignment.Horz = taCenter
           Properties.MaxLength = 4
           TabOrder = 1
@@ -211,9 +237,12 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       end
       inherited GrpBxOpcoes: TcxGroupBox
         Top = 34
+        Anchors = [akLeft, akTop, akRight]
         ExplicitTop = 34
+        ExplicitWidth = 585
         ExplicitHeight = 76
         Height = 76
+        Width = 585
         inherited CmbBxCampo: TcxComboBox
           Properties.Items.Strings = (
             'Unidade de produ'#231#227'o familiar e benefici'#225'rio')
@@ -223,19 +252,20 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
     end
   end
   inherited BtnLimpar: TcxButton
-    Top = 488
+    Top = 480
     OnClick = BtnLimparClick
-    ExplicitTop = 488
+    ExplicitTop = 480
   end
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
     ReportOptions.Name = 'Quantidade de benefici'#225'rios por categoria'
-    ReportOptions.LastChange = 41967.803307361110000000
+    ReportOptions.LastChange = 42491.753490196760000000
     ScriptText.Strings = (
       'begin'
       '    '
       'end.')
-    Top = 376
+    Left = 264
+    Top = 64
     Datasets = <
       item
         DataSet = FrxDtStBeneficiario
@@ -318,9 +348,12 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         Top = 740.787880000000000000
         inherited MemoDataHora: TfrxMemoView
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         inherited MemoPagina: TfrxMemoView
           Memo.UTF8W = (
@@ -341,7 +374,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
           Height = 26.456692910000000000
           DisplayFormat.DecimalSeparator = ''
           Memo.UTF8W = (
-            'Relat'#243'rio de produ'#231#227'o e comercializa'#231#227'o por benefici'#225'rio')
+            'Produ'#231#227'o e comercializa'#231#227'o por benefici'#225'rio')
         end
         object Memo15: TfrxMemoView
           Top = 26.456710000000000000
@@ -1971,53 +2004,53 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
     CloseDataSource = False
     DataSet = DtStPrincipal
     BCDToCurrency = False
-    Left = 80
-    Top = 376
+    Left = 296
+    Top = 64
   end
   object FrxDtStResumo: TfrxDBDataset
     UserName = 'DtStResumo'
     CloseDataSource = False
     DataSet = DtStResumo
     BCDToCurrency = False
-    Left = 80
-    Top = 440
+    Left = 296
+    Top = 128
   end
   object FrxDtStComercio: TfrxDBDataset
     UserName = 'DtStComercio'
     CloseDataSource = False
     DataSet = DtStComercio
     BCDToCurrency = False
-    Left = 80
-    Top = 408
+    Left = 296
+    Top = 96
   end
   object FrxDtStGrafico: TfrxDBDataset
     UserName = 'DtStGrafico'
     CloseDataSource = False
     DataSet = DtStGrafico
     BCDToCurrency = False
-    Left = 80
-    Top = 472
+    Left = 424
+    Top = 128
   end
   object FrxDtStBeneficiario: TfrxDBDataset
     UserName = 'DtStBeneficiario'
     CloseDataSource = False
     DataSet = DtStBeneficiario
     BCDToCurrency = False
-    Left = 176
-    Top = 376
+    Left = 392
+    Top = 64
   end
   object DtSrcPrincipal: TDataSource
     DataSet = DtStPrincipal
-    Left = 144
-    Top = 376
+    Left = 360
+    Top = 64
   end
   object FrxDtStProducao: TfrxDBDataset
     UserName = 'DtStProducao'
     CloseDataSource = False
     DataSet = DtStProducao
     BCDToCurrency = False
-    Left = 240
-    Top = 376
+    Left = 456
+    Top = 64
   end
   object DtStPrincipal: TFDQuery
     Connection = DtmConexaoModulo.FDConnection
@@ -2053,8 +2086,8 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  :ID_PRODUTO,'
       '  :ID_SISTEMA) '
       'order by upf')
-    Left = 112
-    Top = 376
+    Left = 328
+    Top = 64
     ParamData = <
       item
         Name = 'ID_ANO_INICIO'
@@ -2228,8 +2261,8 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  (e.cls_id between :classe_inicio and :classe_fim) and'
       '  (g.reg_excluido = 0)'
       'order by comercio_descricao')
-    Left = 112
-    Top = 408
+    Left = 328
+    Top = 96
     ParamData = <
       item
         Name = 'ID'
@@ -2436,8 +2469,8 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  )'
       'order by'
       '  b.ben_nome')
-    Left = 208
-    Top = 376
+    Left = 424
+    Top = 64
     ParamData = <
       item
         Name = 'ID'
@@ -2515,8 +2548,8 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  (e.cls_id between :classe_inicio and :classe_fim)'
       'order by'
       '  safra_inicio, safra_fim, produto')
-    Left = 272
-    Top = 376
+    Left = 488
+    Top = 64
     ParamData = <
       item
         Name = 'ID'
@@ -2730,8 +2763,8 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  cultura_nome, unidade_medida'
       'order by'
       '  total_quantidade desc, cultura_nome')
-    Left = 112
-    Top = 440
+    Left = 328
+    Top = 128
     ParamData = <
       item
         Name = 'ID_ANO_INICIO'
@@ -2973,8 +3006,8 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '  cultura_nome, unidade_medida'
       'order by'
       '  total_quantidade desc, cultura_nome')
-    Left = 112
-    Top = 472
+    Left = 456
+    Top = 128
     ParamData = <
       item
         Name = 'ID_ANO_INICIO'

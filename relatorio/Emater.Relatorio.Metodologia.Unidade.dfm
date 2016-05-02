@@ -1,55 +1,64 @@
 inherited FrmRelatorioMetodologiaUnidade: TFrmRelatorioMetodologiaUnidade
   Left = 362
   Top = 152
-  ExplicitLeft = 8
-  ExplicitTop = 8
-  ExplicitWidth = 584
-  ExplicitHeight = 462
+  ExplicitLeft = 362
+  ExplicitTop = 152
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
     inherited TbShtFiltros: TcxTabSheet
       inherited LblTitulo: TLabel
-        Caption = 
-          ' Relat'#243'rio de desempenho de atendimento por metodologia e escrit' +
-          #243'rio'
+        Caption = ' Desempenho de atendimento por metodologia e escrit'#243'rio'
       end
       inherited GrpBxFiltro: TcxGroupBox
         inline FrmFiltro: TFrmRelatorioFiltroUnidadeFuncionarioPeriodo
           Left = 8
           Top = 16
           Width = 441
-          Height = 57
+          Height = 65
           TabOrder = 0
           ExplicitLeft = 8
           ExplicitTop = 16
           ExplicitWidth = 441
-          ExplicitHeight = 57
+          ExplicitHeight = 65
           inherited LblUnidade: TLabel
             Left = 0
+            Top = 44
             ExplicitLeft = 0
+            ExplicitTop = 44
           end
           inherited LblFuncionario: TLabel
             Left = 0
+            Top = 76
             Visible = False
             ExplicitLeft = 0
+            ExplicitTop = 76
           end
           inherited LblPeriodoDe: TLabel
             Left = 0
             ExplicitLeft = 0
           end
+          inherited LkpCmbBxUnidade: TcxLookupComboBox
+            Top = 40
+            ExplicitTop = 40
+          end
           inherited LkpCmbBxFuncionario: TcxLookupComboBox
+            Top = 72
             Visible = False
+            ExplicitTop = 72
+          end
+          inherited DtSrcFuncionarioLocal: TDataSource
+            Top = 72
           end
         end
         inline FrmFiltroMetodologia: TFrmRelatorioFiltroMetodologia
           Left = 8
-          Top = 72
+          Top = 88
           Width = 425
           Height = 33
           TabOrder = 1
           ExplicitLeft = 8
-          ExplicitTop = 72
+          ExplicitTop = 88
           ExplicitWidth = 425
           ExplicitHeight = 33
           inherited LblMetodologia: TLabel
@@ -86,7 +95,7 @@ inherited FrmRelatorioMetodologiaUnidade: TFrmRelatorioMetodologiaUnidade
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
     ReportOptions.Name = 'Quantidade de benefici'#225'rios por categoria'
-    ReportOptions.LastChange = 41954.543502500000000000
+    ReportOptions.LastChange = 42491.704777430550000000
     ScriptText.Strings = (
       'begin'
       '    '
@@ -148,9 +157,12 @@ inherited FrmRelatorioMetodologiaUnidade: TFrmRelatorioMetodologiaUnidade
         Top = 907.087200000000000000
         inherited MemoDataHora: TfrxMemoView
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         inherited MemoPagina: TfrxMemoView
           Memo.UTF8W = (
@@ -171,9 +183,7 @@ inherited FrmRelatorioMetodologiaUnidade: TFrmRelatorioMetodologiaUnidade
           Height = 26.456692910000000000
           DisplayFormat.DecimalSeparator = ''
           Memo.UTF8W = (
-            
-              'Relat'#243'rio de desempenho de atendimento por metodologia e escrit'#243 +
-              'rio')
+            'Desempenho de atendimento por metodologia e escrit'#243'rio')
         end
         object Memo15: TfrxMemoView
           Top = 26.456710000000000000
@@ -187,8 +197,16 @@ inherited FrmRelatorioMetodologiaUnidade: TFrmRelatorioMetodologiaUnidade
           HAlign = haCenter
           Memo.UTF8W = (
             '[filtro_periodo]'
-            '[filtro_unidade] [filtro_funcionario]')
+            '[filtro_unidade] [filtro_funcionario]'
+            '[filtro_metodologia]')
           ParentFont = False
+          Formats = <
+            item
+            end
+            item
+            end
+            item
+            end>
         end
       end
       object MasterData: TfrxMasterData

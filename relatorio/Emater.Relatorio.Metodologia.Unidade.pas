@@ -60,55 +60,61 @@ begin
           FrmFiltro.LkpCmbBxUnidade.SetFocus;
         end
       else
-        begin
-          // Período:
-          DtStPrincipal.ParamByName('data_inicio').AsDate := FrmFiltro.EdtDataInicio.Date;
-          DtStPrincipal.ParamByName('data_fim').AsDate := FrmFiltro.EdtDataFim.Date;
-          DtStGrafico.ParamByName('data_inicio').AsDate := FrmFiltro.EdtDataInicio.Date;
-          DtStGrafico.ParamByName('data_fim').AsDate := FrmFiltro.EdtDataFim.Date;
+        if VarIsNull(FrmFiltroMetodologia.LkpCmbBxMetodologia.EditValue) then
+          begin
+            MSG.Aviso(RELATORIO_AVISO_INFORMAR_METODOLOGIA);
+            FrmFiltroMetodologia.LkpCmbBxMetodologia.SetFocus;
+          end
+        else
+          begin
+            // Período:
+            DtStPrincipal.ParamByName('data_inicio').AsDate := FrmFiltro.EdtDataInicio.Date;
+            DtStPrincipal.ParamByName('data_fim').AsDate := FrmFiltro.EdtDataFim.Date;
+            DtStGrafico.ParamByName('data_inicio').AsDate := FrmFiltro.EdtDataInicio.Date;
+            DtStGrafico.ParamByName('data_fim').AsDate := FrmFiltro.EdtDataFim.Date;
 
-          // Unidade (escritório):
-          if not VarIsNull(FrmFiltro.LkpCmbBxUnidade.EditValue) then
-            begin
-              DtStPrincipal.ParamByName('unidade').AsInteger := FrmFiltro.LkpCmbBxUnidade.EditValue;
-              DtStGrafico.ParamByName('unidade').AsInteger := FrmFiltro.LkpCmbBxUnidade.EditValue;
-            end
-          else
-            begin
-              DtStPrincipal.ParamByName('unidade').AsInteger := 0;
-              DtStGrafico.ParamByName('unidade').AsInteger := 0;
-            end;
+            // Unidade (escritório):
+            if not VarIsNull(FrmFiltro.LkpCmbBxUnidade.EditValue) then
+              begin
+                DtStPrincipal.ParamByName('unidade').AsInteger := FrmFiltro.LkpCmbBxUnidade.EditValue;
+                DtStGrafico.ParamByName('unidade').AsInteger := FrmFiltro.LkpCmbBxUnidade.EditValue;
+              end
+            else
+              begin
+                DtStPrincipal.ParamByName('unidade').AsInteger := 0;
+                DtStGrafico.ParamByName('unidade').AsInteger := 0;
+              end;
 
-          // Metodologia:
-          if not VarIsNull(FrmFiltroMetodologia.LkpCmbBxMetodologia.EditValue) then
-            begin
-              DtStPrincipal.ParamByName('metodo').AsInteger := FrmFiltroMetodologia.LkpCmbBxMetodologia.EditValue;
-              DtStGrafico.ParamByName('metodo').AsInteger := FrmFiltroMetodologia.LkpCmbBxMetodologia.EditValue;
+            // Metodologia:
+            if not VarIsNull(FrmFiltroMetodologia.LkpCmbBxMetodologia.EditValue) then
+              begin
+                DtStPrincipal.ParamByName('metodo').AsInteger := FrmFiltroMetodologia.LkpCmbBxMetodologia.EditValue;
+                DtStGrafico.ParamByName('metodo').AsInteger := FrmFiltroMetodologia.LkpCmbBxMetodologia.EditValue;
 
-              ChartView := TfrxChartView(FrxPrincipal.FindComponent('Chart'));
-              ChartView.Chart.Title.Text.Clear;
-              ChartView.Chart.Title.Text.Add('DESEMPENHO DO ESCRITÓRIO POR ' + AnsiUpperCase(FrmFiltroMetodologia.LkpCmbBxMetodologia.Text));
-            end
-          else
-            begin
-              DtStPrincipal.ParamByName('metodo').AsInteger := 0;
-              DtStGrafico.ParamByName('metodo').AsInteger := 0;
+                ChartView := TfrxChartView(FrxPrincipal.FindComponent('Chart'));
+                ChartView.Chart.Title.Text.Clear;
+                ChartView.Chart.Title.Text.Add('DESEMPENHO DO ESCRITÓRIO POR ' + AnsiUpperCase(FrmFiltroMetodologia.LkpCmbBxMetodologia.Text));
+              end
+            else
+              begin
+                DtStPrincipal.ParamByName('metodo').AsInteger := 0;
+                DtStGrafico.ParamByName('metodo').AsInteger := 0;
 
-              ChartView := TfrxChartView(FrxPrincipal.FindComponent('Chart'));
-              ChartView.Chart.Title.Text.Clear;
-              ChartView.Chart.Title.Text.Add('DESEMPENHO DO ESCRITÓRIO (TODAS METODOLOGIAS)');
-            end;
+                ChartView := TfrxChartView(FrxPrincipal.FindComponent('Chart'));
+                ChartView.Chart.Title.Text.Clear;
+                ChartView.Chart.Title.Text.Add('DESEMPENHO DO ESCRITÓRIO (TODAS METODOLOGIAS)');
+              end;
 
-          DtStPrincipal.Close;
-          DtStPrincipal.Open;
-          DtStGrafico.Close;
-          DtStGrafico.Open;
-          FrxPrincipal.PrepareReport;
-          if (CmbBxModo.ItemIndex = 0) then
-            FrxPrincipal.ShowPreparedReport
-          else
-            FrxPrincipal.Print;
-        end;
+            DtStPrincipal.Close;
+            DtStPrincipal.Open;
+            DtStGrafico.Close;
+            DtStGrafico.Open;
+            FrxPrincipal.PrepareReport;
+            if (CmbBxModo.ItemIndex = 0) then
+              FrxPrincipal.ShowPreparedReport
+            else
+              FrxPrincipal.Print;
+          end;
   finally
     BtnImprimir.Enabled := True;
     Screen.Cursor := crDefault;
@@ -174,6 +180,15 @@ begin
         Value := Format(RELATORIO_INFO_FUNCIONARIO, [FrmFiltro.LkpCmbBxFuncionario.Text])
       else
         Value := '';
+    end;
+
+  // Filtro da metodologia:
+  if (VarName = RELATORIO_CONST_FILTRO_METODOLOGIA) then
+    begin
+      if (FrmFiltroMetodologia.LkpCmbBxMetodologia.Text <> '') then
+        Value := Format(RELATORIO_INFO_METODOLOGIA, [FrmFiltroMetodologia.LkpCmbBxMetodologia.Text])
+      else
+        Value := Format(RELATORIO_INFO_METODOLOGIA, ['(Todas)']);
     end;
 end;
 

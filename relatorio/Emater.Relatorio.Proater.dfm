@@ -542,6 +542,11 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
             
               'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
               '>)]')
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         inherited MemoPagina: TfrxMemoView
           Top = 34.015770000000000000
@@ -11430,7 +11435,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     end
   end
   object QryEmaterCorpo: TFDQuery
-    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     SQL.Strings = (
@@ -11449,7 +11453,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 208
   end
   object QryEmaterComissao: TFDQuery
-    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     SQL.Strings = (
@@ -11468,7 +11471,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 240
   end
   object QryProaterPrincipal: TFDQuery
-    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     SQL.Strings = (
@@ -11512,7 +11514,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 272
   end
   object QryProaterComunidade: TFDQuery
-    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11571,7 +11572,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 240
   end
   object QryProaterPotencial: TFDQuery
-    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11624,7 +11624,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 272
   end
   object QryProaterAcordo: TFDQuery
-    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -11673,7 +11672,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 208
   end
   object QryProaterFuncionario: TFDQuery
-    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     Connection = DtmConexaoModulo.FDConnection
@@ -11717,7 +11715,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 240
   end
   object QryProaterMobiliario: TFDQuery
-    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11759,7 +11756,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 272
   end
   object QryProaterEquipamento: TFDQuery
-    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11800,7 +11796,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 304
   end
   object QryProaterVeiculo: TFDQuery
-    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11847,7 +11842,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 336
   end
   object QryProaterCusto: TFDQuery
-    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11891,7 +11885,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 368
   end
   object QryProaterQualificacao: TFDQuery
-    Active = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -11928,7 +11921,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
       end>
   end
   object QrySubProjeto: TFDQuery
-    Active = True
     CachedUpdates = True
     MasterSource = DtSrcProaterPrincipal
     MasterFields = 'PRO_ID'
@@ -11995,7 +11987,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 208
   end
   object QrySubMeta: TFDQuery
-    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
@@ -12027,11 +12018,10 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         DataType = ftInteger
         ParamType = ptInput
         Size = 4
-        Value = 100004792
+        Value = 100004791
       end>
   end
   object QrySubMetodo: TFDQuery
-    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
@@ -12051,11 +12041,10 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         DataType = ftInteger
         ParamType = ptInput
         Size = 4
-        Value = 100004792
+        Value = 100004791
       end>
   end
   object QrySubComunidade: TFDQuery
-    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
@@ -12075,11 +12064,10 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         DataType = ftInteger
         ParamType = ptInput
         Size = 4
-        Value = 100004792
+        Value = 100004791
       end>
   end
   object QrySubOrcamento: TFDQuery
-    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
@@ -12098,7 +12086,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         DataType = ftInteger
         ParamType = ptInput
         Size = 4
-        Value = 100004792
+        Value = 100004791
       end>
   end
   object FrxDtStSubMeta: TfrxDBDataset
@@ -12142,7 +12130,6 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
     Top = 368
   end
   object QrySubResponsavel: TFDQuery
-    Active = True
     CachedUpdates = True
     MasterSource = DtSrcSubProjeto
     MasterFields = 'SPR_ID'
@@ -12169,7 +12156,7 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
         DataType = ftInteger
         ParamType = ptInput
         Size = 4
-        Value = 100004792
+        Value = 100004791
       end>
   end
 end

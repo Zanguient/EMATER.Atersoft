@@ -1,10 +1,8 @@
 inherited FrmRelatorioGeralProjeto: TFrmRelatorioGeralProjeto
   Left = 362
   Top = 152
-  ExplicitLeft = 8
-  ExplicitTop = 8
-  ExplicitWidth = 584
-  ExplicitHeight = 462
+  ExplicitLeft = 362
+  ExplicitTop = 152
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
@@ -25,9 +23,11 @@ inherited FrmRelatorioGeralProjeto: TFrmRelatorioGeralProjeto
           ExplicitHeight = 81
           inherited LblUnidade: TLabel
             Left = 0
+            Top = 44
             Enabled = False
             Visible = False
             ExplicitLeft = 0
+            ExplicitTop = 44
           end
           inherited LblFuncionario: TLabel
             Left = 0
@@ -40,15 +40,17 @@ inherited FrmRelatorioGeralProjeto: TFrmRelatorioGeralProjeto
             ExplicitLeft = 0
           end
           inherited LkpCmbBxUnidade: TcxLookupComboBox
+            Top = 40
             Enabled = False
             Visible = False
+            ExplicitTop = 40
           end
           inherited LkpCmbBxFuncionario: TcxLookupComboBox
             Enabled = False
             Visible = False
           end
           inherited DtSrcUnidadeLocal: TDataSource
-            Top = 32
+            Top = 40
           end
           inherited DtSrcFuncionarioLocal: TDataSource
             Top = 56
@@ -56,12 +58,12 @@ inherited FrmRelatorioGeralProjeto: TFrmRelatorioGeralProjeto
         end
         inline FrmFiltroProjeto: TFrmRelatorioFiltroProjeto
           Left = 8
-          Top = 48
+          Top = 56
           Width = 425
           Height = 57
           TabOrder = 1
           ExplicitLeft = 8
-          ExplicitTop = 48
+          ExplicitTop = 56
           ExplicitWidth = 425
           ExplicitHeight = 57
           inherited LblProjeto: TLabel
@@ -95,7 +97,7 @@ inherited FrmRelatorioGeralProjeto: TFrmRelatorioGeralProjeto
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
     ReportOptions.Name = 'Quantidade de benefici'#225'rios por categoria'
-    ReportOptions.LastChange = 41967.634702986110000000
+    ReportOptions.LastChange = 42491.792232986110000000
     ScriptText.Strings = (
       'begin'
       '    '
@@ -164,12 +166,15 @@ inherited FrmRelatorioGeralProjeto: TFrmRelatorioGeralProjeto
         Width = 1046.929810000000000000
         inherited MemoDataHora: TfrxMemoView
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         inherited MemoPagina: TfrxMemoView
-          Left = 952.441560000000000000
+          Left = 967.559680000000000000
           Memo.UTF8W = (
             'P'#225'gina [Page] de [TotalPages]')
         end
@@ -178,7 +183,7 @@ inherited FrmRelatorioGeralProjeto: TFrmRelatorioGeralProjeto
             'Usu'#225'rio: [usuario]')
         end
         inherited MemoRelatorio: TfrxMemoView
-          Width = 612.283860000000000000
+          Width = 699.213050000000000000
           Memo.UTF8W = (
             '[titulo]')
         end

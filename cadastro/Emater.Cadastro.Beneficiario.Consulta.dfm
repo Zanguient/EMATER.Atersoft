@@ -1332,7 +1332,7 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = 'Listagem de Benefici'#225'rios de ATER'
-      ReportDocument.CreationDate = 42421.682611226850000000
+      ReportDocument.CreationDate = 42489.003927002310000000
       OptionsSize.AutoWidth = True
       OptionsView.FilterBar = False
       BuiltInReportLink = True
@@ -1362,7 +1362,8 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
         '  tab_cad_beneficiario_categoria a join tab_cad_categoria b on (' +
         'a.cat_id = b.cat_id)'
       'where'
-      '  (a.ben_id = :ben_id)'
+      '  (a.ben_id = :ben_id) and'
+      '  (a.reg_excluido = 0)'
       'order by'
       '  b.cat_descricao')
     Left = 96
@@ -1424,7 +1425,8 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
         '  tab_cad_beneficiario_divisao a join tab_cad_divisao b on (a.di' +
         'v_id = b.div_id)'
       'where'
-      '  (a.ben_id = :ben_id)'
+      '  (a.ben_id = :ben_id) and'
+      '  (a.reg_excluido = 0)'
       'order by'
       '  b.div_descricao')
     Left = 96

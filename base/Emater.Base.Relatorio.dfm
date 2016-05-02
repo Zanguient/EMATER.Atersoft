@@ -690,7 +690,7 @@ inherited FrmBaseRelatorio: TFrmBaseRelatorio
     ReportOptions.Author = 'Cristovam dos Reis'
     ReportOptions.CreateDate = 39308.429587847200000000
     ReportOptions.Name = 'Relat'#243'rio'
-    ReportOptions.LastChange = 41954.494352037040000000
+    ReportOptions.LastChange = 42489.484075324070000000
     ReportOptions.VersionBuild = '0'
     ReportOptions.VersionMajor = '1'
     ReportOptions.VersionMinor = '0'
@@ -1219,14 +1219,15 @@ inherited FrmBaseRelatorio: TFrmBaseRelatorio
         end
         object MemoUnidade: TfrxMemoView
           Left = 68.031540000000000000
-          Top = 21.677180000000000000
+          Top = 20.677180000000000000
           Width = 650.079160000000000000
-          Height = 34.015760240000000000
+          Height = 35.905511810000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          LineSpacing = 6.000000000000000000
           Memo.UTF8W = (
             'SISATER Dektop '#8211' Sistema de Acompanhamento de ATER'
             '[unidade]')
@@ -1253,9 +1254,8 @@ inherited FrmBaseRelatorio: TFrmBaseRelatorio
         Top = 238.110390000000000000
         Width = 718.110700000000000000
         object MemoDataHora: TfrxMemoView
-          Width = 181.417440000000000000
+          Width = 71.811070000000000000
           Height = 15.118120000000000000
-          DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -8
@@ -1264,16 +1264,19 @@ inherited FrmBaseRelatorio: TFrmBaseRelatorio
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
-            
-              'Data e hora da impress'#227'o: [<Date>] [FormatDateTime('#39'hh:nn'#39',<Time' +
-              '>)]')
+            '[<Date>] [FormatDateTime('#39'hh:nn'#39',<Time>)]')
           ParentFont = False
           WordWrap = False
           VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end>
         end
         object MemoPagina: TfrxMemoView
-          Left = 623.622450000000000000
-          Width = 94.488250000000000000
+          Left = 638.740570000000000000
+          Width = 79.370130000000000000
           Height = 15.118120000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
@@ -1291,8 +1294,8 @@ inherited FrmBaseRelatorio: TFrmBaseRelatorio
           VAlign = vaCenter
         end
         object MemoUsuario: TfrxMemoView
-          Left = 181.417440000000000000
-          Width = 158.740260000000000000
+          Left = 71.811070000000000000
+          Width = 196.535560000000000000
           Height = 15.118120000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1308,8 +1311,8 @@ inherited FrmBaseRelatorio: TFrmBaseRelatorio
           VAlign = vaCenter
         end
         object MemoRelatorio: TfrxMemoView
-          Left = 340.157700000000000000
-          Width = 283.464750000000000000
+          Left = 268.346630000000000000
+          Width = 370.393940000000000000
           Height = 15.118120000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack

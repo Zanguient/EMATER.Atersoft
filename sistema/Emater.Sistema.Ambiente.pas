@@ -6,23 +6,25 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Dialogo, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Vcl.Menus, Vcl.StdCtrls,
-  cxButtons, cxPC, Data.DB, FIBDataSet, pFIBDataSet, cxContainer, cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLookupEdit,
-  cxDBLookupEdit, cxDBLookupComboBox;
+  cxButtons, cxPC, Data.DB, cxContainer, cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLookupEdit,
+  cxDBLookupEdit, cxDBLookupComboBox, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TFrmSistemaAmbiente = class(TFrmBaseDialogo)
-    DtStUnidade: TpFIBDataSet;
     DtSrcUnidade: TDataSource;
-    DtStUnidadeUND_ID: TFIBStringField;
-    DtStUnidadeUND_NOME_DESCRICAO: TFIBStringField;
-    DtStParametro: TpFIBDataSet;
     DtSrcParametro: TDataSource;
-    DtStParametroPAR_ID: TFIBIntegerField;
-    DtStParametroPAR_DESCRICAO: TFIBStringField;
-    DtStParametroPAR_NOME: TFIBStringField;
-    DtStParametroPAR_VALOR: TFIBStringField;
     Label5: TLabel;
     DbLkpCmbBxUnidade: TcxDBLookupComboBox;
+    QryUnidade: TFDQuery;
+    QryUnidadeUND_ID: TStringField;
+    QryUnidadeUND_NOME_DESCRICAO: TStringField;
+    QryParametro: TFDQuery;
+    UpdtParametro: TFDUpdateSQL;
+    QryParametroPAR_ID: TIntegerField;
+    QryParametroPAR_DESCRICAO: TStringField;
+    QryParametroPAR_NOME: TStringField;
+    QryParametroPAR_VALOR: TStringField;
     procedure FormShow(Sender: TObject);
     procedure BtnOKClick(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
@@ -45,8 +47,8 @@ uses Emater.Conexao.Modulo, Emater.Sistema.Modulo, Emater.Recurso.Modulo, Emater
 procedure TFrmSistemaAmbiente.BtnCancelarClick(Sender: TObject);
 begin
   inherited;
-  if (DtStParametro.State = dsEdit) then
-    DtStParametro.Cancel;
+  if (QryParametro.State = dsEdit) then
+    QryParametro.Cancel;
   ModalResult := mrOk;
 end;
 
@@ -55,9 +57,9 @@ begin
   inherited;
   Screen.Cursor := crHourGlass;
   try
-    if (DtStParametro.State = dsEdit) then
+    if (QryParametro.State = dsEdit) then
       begin
-        DtStParametro.Post;
+        QryParametro.Post;
 
         DtmSistemaModulo.RecarregarDados;
         DtmCadastroModulo.RecarregarDados;
@@ -80,8 +82,8 @@ end;
 procedure TFrmSistemaAmbiente.FormShow(Sender: TObject);
 begin
   inherited;
-  DtStParametro.Open;
-  DtStUnidade.Open;
+  QryParametro.Open;
+  QryUnidade.Open;
 end;
 
 end.

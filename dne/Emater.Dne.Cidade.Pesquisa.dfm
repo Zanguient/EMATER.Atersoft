@@ -108,6 +108,7 @@ inherited FrmDneCidadePesquisa: TFrmDneCidadePesquisa
       OptionsData.DeletingConfirmation = False
       OptionsData.Editing = False
       OptionsData.Inserting = False
+      OptionsSelection.CellSelect = False
       OptionsView.CellEndEllipsis = True
       OptionsView.NoDataToDisplayInfoText = '<Nenhuma informa'#231#227'o para exibir>'
       OptionsView.ColumnAutoWidth = True

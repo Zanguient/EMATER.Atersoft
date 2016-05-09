@@ -1,15 +1,15 @@
 inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
   Tag = 1
-  Left = 377
-  Top = 83
+  Left = 340
+  Top = 99
   Hint = 'Cadastro dos benefici'#225'rios.'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
   Caption = 'Benefici'#225'rio de ATER'
   ClientHeight = 618
   ClientWidth = 736
-  ExplicitLeft = 377
-  ExplicitTop = 83
+  ExplicitLeft = 340
+  ExplicitTop = 99
   ExplicitWidth = 752
   ExplicitHeight = 657
   DesignSize = (
@@ -341,7 +341,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Transparent = True
             end
             object Label11: TLabel
-              Tag = 2
               Left = 224
               Top = 99
               Width = 115
@@ -491,7 +490,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               DataBinding.DataField = 'BEN_MEMBROS'
               DataBinding.DataSource = DtSrcPrincipal
               Properties.AssignedValues.MinValue = True
-              Properties.CanEdit = False
               Properties.ImmediatePost = True
               Properties.MaxValue = 30.000000000000000000
               Properties.SpinButtons.Position = sbpHorzRight
@@ -1286,10 +1284,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
         object TbShtIdentificacao: TcxTabSheet
           Caption = 'Categoria e atividade produtiva'
           ImageIndex = 1
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
+          OnShow = TbShtIdentificacaoShow
           DesignSize = (
             690
             461)
@@ -1781,10 +1776,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
         object TbShtProgramas: TcxTabSheet
           Caption = 'Programas governamentais'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
+          OnShow = TbShtProgramasShow
           DesignSize = (
             690
             461)
@@ -1802,6 +1794,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Width = 258
             Height = 13
             Caption = 'Programas do governo que o benefici'#225'rio tem acesso:'
+            Transparent = True
           end
           object LblProgramas: TLabel
             Left = 8
@@ -2037,10 +2030,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'NIS/DAP'
           ImageIndex = 2
           OnShow = TbShtDAPShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2140,6 +2129,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Anchors = [akLeft, akTop, akRight]
               DataBinding.DataField = 'DTP_ID'
               DataBinding.DataSource = DtSrcBeneficiarioDAP
+              Properties.DropDownRows = 16
               Properties.KeyFieldNames = 'DTP_ID'
               Properties.ListColumns = <
                 item
@@ -2248,8 +2238,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             TabOrder = 5
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
-            ExplicitWidth = 677
-            ExplicitHeight = 266
             object GrdDAPTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -2322,37 +2310,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             end
           end
         end
-      end
-    end
-    object TbShtSecundaria: TcxTabSheet
-      Caption = 'Unidade de Produ'#231#227'o Familiar'
-      ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
-      DesignSize = (
-        717
-        512)
-      object PgCntrlUnidade: TcxPageControl
-        Left = 8
-        Top = 8
-        Width = 694
-        Height = 491
-        Anchors = [akLeft, akTop, akRight, akBottom]
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 0
-        Properties.ActivePage = TbShtFamilia
-        Properties.CustomButtons.Buttons = <>
-        ClientRectBottom = 489
-        ClientRectLeft = 2
-        ClientRectRight = 692
-        ClientRectTop = 28
         object TbShtFamilia: TcxTabSheet
           Caption = 'Integrante familiar'
           ImageIndex = 0
@@ -2499,7 +2456,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               DataBinding.DataField = 'FAM_NASCIMENTO'
               DataBinding.DataSource = DtSrcFamilia
               TabOrder = 2
-              ExplicitLeft = 566
               Width = 105
             end
             object DbedtFamiliaNome: TcxDBTextEdit
@@ -2667,11 +2623,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Font.Name = 'Tahoma'
             Font.Style = []
             ParentFont = False
-            TabOrder = 2
+            TabOrder = 5
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
-            ExplicitWidth = 679
-            ExplicitHeight = 162
             object GrdFamTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -2764,7 +2718,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Hint = 'Inserir novo integrante familiar'
             Caption = 'Novo'
             Description = 'Cria novo registro de integrante familiar'
-            TabOrder = 3
+            TabOrder = 2
             OnClick = BtnFamNovoClick
           end
           object BtnFamSalvar: TcxButton
@@ -2778,7 +2732,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Description = 
               'Salva as altera'#231#245'es realizadas no registro do integrante familia' +
               'r'
-            TabOrder = 4
+            TabOrder = 3
             OnClick = BtnFamSalvarClick
           end
           object BtnFamCancelar: TcxButton
@@ -2792,18 +2746,46 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Description = 
               'Cancela as altera'#231#245'es realizadas no registro do integrante famil' +
               'iar'
-            TabOrder = 5
+            TabOrder = 4
             OnClick = BtnFamCancelarClick
           end
         end
+      end
+    end
+    object TbShtSecundaria: TcxTabSheet
+      Caption = 'Unidade de Produ'#231#227'o Familiar'
+      ImageIndex = 4
+      OnShow = TbShtSecundariaShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      DesignSize = (
+        717
+        512)
+      object PgCntrlUnidade: TcxPageControl
+        Left = 8
+        Top = 8
+        Width = 694
+        Height = 491
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        Properties.ActivePage = TbShtUnidade
+        Properties.CustomButtons.Buttons = <>
+        ClientRectBottom = 489
+        ClientRectLeft = 2
+        ClientRectRight = 692
+        ClientRectTop = 28
         object TbShtUnidade: TcxTabSheet
           Caption = 'Unidade de produ'#231#227'o'
           ImageIndex = 1
           OnShow = TbShtUnidadeShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2819,7 +2801,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Left = 8
             Top = 56
             Width = 671
-            Height = 401
+            Height = 393
             Anchors = [akLeft, akTop, akRight]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -2830,7 +2812,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             TabOrder = 5
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
-            ExplicitWidth = 675
             object GrdBenPrdMnTbl: TcxGridDBTableView
               OnDblClick = GrdBenPrdMnTblDblClick
               Navigator.Buttons.CustomButtons = <>
@@ -2999,7 +2980,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Left = 8
             Top = 24
             Width = 671
-            Height = 105
+            Height = 95
             Anchors = [akLeft, akTop, akRight]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -3010,7 +2991,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             TabOrder = 0
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
-            ExplicitWidth = 675
             object GrdBenPrdTbl: TcxGridDBTableView
               OnDblClick = GrdBenPrdTblDblClick
               Navigator.Buttons.CustomButtons = <>
@@ -3085,9 +3065,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           end
           object PgCntrlCaracterizacao: TcxPageControl
             Left = 8
-            Top = 136
+            Top = 128
             Width = 671
-            Height = 316
+            Height = 321
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -3098,7 +3078,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             TabOrder = 1
             Properties.ActivePage = TbShtBenfeitorias
             Properties.CustomButtons.Buttons = <>
-            ClientRectBottom = 314
+            ClientRectBottom = 319
             ClientRectLeft = 2
             ClientRectRight = 669
             ClientRectTop = 28
@@ -3106,18 +3086,15 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Benfeitorias'
               ImageIndex = 0
               OnShow = TbShtBenfeitoriasShow
-              ExplicitLeft = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 0
+              ExplicitHeight = 286
               DesignSize = (
                 667
-                286)
+                291)
               object GrdPrdBem: TcxGrid
                 Left = 8
                 Top = 8
                 Width = 651
-                Height = 270
+                Height = 275
                 Anchors = [akLeft, akTop, akRight, akBottom]
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -3128,8 +3105,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 0
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
-                ExplicitWidth = 655
-                ExplicitHeight = 276
+                ExplicitHeight = 270
                 object GrdPrdBemTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3230,18 +3206,15 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'M'#225'quinas e equipamentos'
               ImageIndex = 1
               OnShow = TbShtMaquinasShow
-              ExplicitLeft = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 0
+              ExplicitHeight = 286
               DesignSize = (
                 667
-                286)
+                291)
               object GrdPrdMaq: TcxGrid
                 Left = 8
                 Top = 8
                 Width = 651
-                Height = 270
+                Height = 275
                 Anchors = [akLeft, akTop, akRight, akBottom]
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -3252,8 +3225,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 0
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
-                ExplicitWidth = 655
-                ExplicitHeight = 276
                 object GrdPrdMaqTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3356,18 +3327,15 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Semoventes'
               ImageIndex = 2
               OnShow = TbShtSemoventesShow
-              ExplicitLeft = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 0
+              ExplicitHeight = 286
               DesignSize = (
                 667
-                286)
+                291)
               object GrdPrdSem: TcxGrid
                 Left = 8
                 Top = 8
                 Width = 651
-                Height = 270
+                Height = 275
                 Anchors = [akLeft, akTop, akRight, akBottom]
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -3456,13 +3424,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Atividades produtivas e comercializa'#231#227'o'
               ImageIndex = 3
               OnShow = TbShtAtividadesShow
-              ExplicitLeft = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 0
+              ExplicitHeight = 286
               DesignSize = (
                 667
-                286)
+                291)
               object GrdPrdAtv: TcxGrid
                 Left = 8
                 Top = 8
@@ -3478,7 +3443,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 0
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
-                ExplicitWidth = 655
                 object GrdPrdAtvTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3526,7 +3490,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                   Styles.Inactive = DtmRecursoModulo.cxStyleSelection
                   Styles.Selection = DtmRecursoModulo.cxStyleSelection
                   object GrdPrdAtvTblATV_PERIODO_PLANTIO: TcxGridDBColumn
-                    DataBinding.FieldName = 'ATV_SAFRA_INICIO_FIM'
+                    DataBinding.FieldName = 'ATV_PERIODO'
                     Width = 89
                   end
                   object GrdPrdAtvTblSIP_DESCRICAO: TcxGridDBColumn
@@ -3554,7 +3518,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 Left = 8
                 Top = 157
                 Width = 651
-                Height = 121
+                Height = 126
                 Anchors = [akLeft, akTop, akRight, akBottom]
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -3565,8 +3529,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 1
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
-                ExplicitWidth = 655
-                ExplicitHeight = 127
+                ExplicitHeight = 121
                 object GrdPrdTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -4163,7 +4126,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       DisplayLabel = 'Data de emiss'#227'o do RG'
       FieldName = 'BEN_RG_DATA'
       Origin = 'BEN_RG_DATA'
-      Required = True
       DisplayFormat = 'dd/mm/yyyy'
     end
     object QryPrincipalBEN_RIBEIRINHO: TSmallintField
@@ -4465,7 +4427,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     end
   end
   object QryProducaoAtividade: TFDQuery
-    OnCalcFields = QryProducaoAtividadeCalcFields
     MasterSource = DtSrcBeneficiarioProducao
     MasterFields = 'PRO_ID'
     DetailFields = 'PRO_ID'
@@ -4478,9 +4439,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     SQL.Strings = (
       'select'
       '  a.atv_id,'
-      '  a.atv_safra_inicio,'
-      '  a.atv_safra_fim,'
       '  a.atv_periodo_plantio,'
+      '  a.atv_periodo_colheita,'
       '  a.atv_area_plantada,'
       '  a.atv_area_colhida,'
       '  a.atv_quantidade,'
@@ -4494,7 +4454,17 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       '  a.fun_id,'
       '  b.sip_descricao,'
       '  c.prd_descricao,'
-      '  d.uni_descricao'
+      '  d.uni_descricao,'
+      '  coalesce(cast(a.atv_ano as varchar(4)),'
+      
+        '    substring(cast(a.atv_periodo_colheita as varchar(6)) from 5 ' +
+        'for 2) || '#39'/'#39' ||'
+      
+        '    substring(cast(a.atv_periodo_colheita as varchar(6)) from 1 ' +
+        'for 4)'
+      '    )'
+      '  as atv_periodo'
+      ''
       'from'
       
         '  tab_cad_producao_atividade a left join tab_cad_sistema_produti' +
@@ -4505,7 +4475,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       '  (a.pro_id = :pro_id) and'
       '  (a.reg_excluido = 0)'
       'order by'
-      '   a.atv_periodo_plantio, c.prd_descricao')
+      
+        '   coalesce(a.atv_ano, cast(substring(a.atv_periodo_colheita fro' +
+        'm 1 for 4) as integer)) desc, c.prd_descricao')
     Left = 232
     Top = 488
     ParamData = <
@@ -4613,25 +4585,23 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       ReadOnly = True
       Size = 50
     end
-    object QryProducaoAtividadeATV_SAFRA_INICIO: TIntegerField
-      FieldName = 'ATV_SAFRA_INICIO'
-      Origin = 'ATV_SAFRA_INICIO'
-    end
-    object QryProducaoAtividadeATV_SAFRA_FIM: TIntegerField
-      FieldName = 'ATV_SAFRA_FIM'
-      Origin = 'ATV_SAFRA_FIM'
-    end
-    object QryProducaoAtividadeATV_SAFRA_INICIO_FIM: TStringField
-      DisplayLabel = 'Safra (in'#237'cio/fim)'
-      FieldKind = fkCalculated
-      FieldName = 'ATV_SAFRA_INICIO_FIM'
-      Size = 10
-      Calculated = True
-    end
     object QryProducaoAtividadeREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
       Required = True
+    end
+    object QryProducaoAtividadeATV_PERIODO_COLHEITA: TIntegerField
+      FieldName = 'ATV_PERIODO_COLHEITA'
+      Origin = 'ATV_PERIODO_COLHEITA'
+    end
+    object QryProducaoAtividadeATV_PERIODO: TStringField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'Ano/m'#234's'
+      FieldName = 'ATV_PERIODO'
+      Origin = 'ATV_PERIODO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 13
     end
   end
   object UpdtProducaoAtividade: TFDUpdateSQL
@@ -5504,7 +5474,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'FAM_ID'
       Origin = 'FAM_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QryFamiliaFAM_NOME: TStringField
       DisplayLabel = 'Nome do integrante'
@@ -5594,12 +5563,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     object QryFamiliaREG_EXCLUIDO: TSmallintField
       FieldName = 'REG_EXCLUIDO'
       Origin = 'REG_EXCLUIDO'
-      Required = True
     end
     object QryFamiliaREG_REPLICADO: TSmallintField
       FieldName = 'REG_REPLICADO'
       Origin = 'REG_REPLICADO'
-      Required = True
     end
     object QryFamiliaREG_USUARIO: TStringField
       FieldName = 'REG_USUARIO'
@@ -5616,7 +5583,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'PAR_DESCRICAO'
       Origin = 'PAR_DESCRICAO'
       ProviderFlags = []
-      ReadOnly = True
       Size = 50
     end
     object QryFamiliaCID_NOME_NATURALIDADE: TStringField
@@ -5624,7 +5590,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       FieldName = 'CID_NOME_NATURALIDADE'
       Origin = 'CID_NOME_NATURALIDADE'
       ProviderFlags = []
-      ReadOnly = True
       Size = 85
     end
   end
@@ -5838,6 +5803,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       Required = True
     end
     object QryProducaoBemBEM_ESTADO: TSmallintField
+      Alignment = taLeftJustify
       DisplayLabel = 'Estado'
       FieldName = 'BEM_ESTADO'
       Origin = 'BEM_ESTADO'
@@ -5974,6 +5940,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       Required = True
     end
     object QryProducaoSemoventePRD_QUANTIDADE: TCurrencyField
+      Alignment = taCenter
       DisplayLabel = 'Quantidade'
       FieldName = 'PRD_QUANTIDADE'
       Origin = 'PRD_QUANTIDADE'

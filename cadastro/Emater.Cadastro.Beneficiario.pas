@@ -464,8 +464,6 @@ type
     QryProducaoSemoventeGRP_DESCRICAO: TStringField;
     QryProducaoSemoventeCLS_DESCRICAO: TStringField;
     QryProducaoAtividadeATV_ID: TLargeintField;
-    QryProducaoAtividadeATV_SAFRA_INICIO: TIntegerField;
-    QryProducaoAtividadeATV_SAFRA_FIM: TIntegerField;
     QryProducaoAtividadeATV_PERIODO_PLANTIO: TIntegerField;
     QryProducaoAtividadeATV_AREA_PLANTADA: TCurrencyField;
     QryProducaoAtividadeATV_AREA_COLHIDA: TCurrencyField;
@@ -495,7 +493,6 @@ type
     QryProducaoProdutoPRP_DESCRICAO_PRODUTO_DERIVADO: TStringField;
     QryProducaoProdutoUNI_UNIDADE: TStringField;
     QryProducaoAtividadeATV_AREA_PERDIDA: TCurrencyField;
-    QryProducaoAtividadeATV_SAFRA_INICIO_FIM: TStringField;
     QryProducaoProdutoPRP_VALOR_TOTAL: TCurrencyField;
     QryBeneficiarioCategoriaBCA_ID: TLargeintField;
     QryBeneficiarioCategoriaBEN_ID: TLargeintField;
@@ -508,6 +505,8 @@ type
     QryBeneficiarioCategoriaCAT_MARCADO: TIntegerField;
     QryCategoriaDisponivelCAT_ID: TIntegerField;
     QryCategoriaDisponivelCAT_DESCRICAO: TStringField;
+    QryProducaoAtividadeATV_PERIODO_COLHEITA: TIntegerField;
+    QryProducaoAtividadeATV_PERIODO: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure DtSrcPrincipalStateChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -572,7 +571,6 @@ type
     procedure QryFamiliaBeforePost(DataSet: TDataSet);
     procedure QryFamiliaNewRecord(DataSet: TDataSet);
     procedure QryBeneficiarioProducaoAfterPost(DataSet: TDataSet);
-    procedure QryProducaoAtividadeCalcFields(DataSet: TDataSet);
     procedure QryProducaoProdutoCalcFields(DataSet: TDataSet);
     procedure QryPrincipalAfterPost(DataSet: TDataSet);
     procedure QryPrincipalAfterScroll(DataSet: TDataSet);
@@ -582,6 +580,9 @@ type
     procedure QryBeneficiarioCategoriaNewRecord(DataSet: TDataSet);
     procedure QryBeneficiarioDivisaoAfterPost(DataSet: TDataSet);
     procedure QryBeneficiarioDivisaoNewRecord(DataSet: TDataSet);
+    procedure TbShtSecundariaShow(Sender: TObject);
+    procedure TbShtIdentificacaoShow(Sender: TObject);
+    procedure TbShtProgramasShow(Sender: TObject);
   private
     procedure AtualizarReplicacaoPendente;
     function FamiliaExisteCPF(const ABeneficiarioID: Int64; const ACPF: string; const ID: Int64): Boolean;
@@ -713,11 +714,16 @@ begin
 end;
 
 procedure TFrmCadastroBeneficiario.BtnDAPSalvarClick(Sender: TObject);
+var
+  I: LargeInt;
 begin
   try
     if not DtmDialogoModulo.ExisteCamposPendentes(QryBeneficiarioDAP) then
       begin
         QryBeneficiarioDAP.Post;
+        I := QryBeneficiarioDAPBDP_ID.Value;
+        QryBeneficiarioDAP.Refresh;
+        QryBeneficiarioDAP.Locate('BDP_ID', I, []);
         AtualizarReplicacaoPendente;
       end;
   except on E: Exception do
@@ -804,6 +810,8 @@ begin
 end;
 
 procedure TFrmCadastroBeneficiario.BtnFamSalvarClick(Sender: TObject);
+var
+  I: LargeInt;
 begin
   try
     if not DtmDialogoModulo.ExisteCamposPendentes(QryFamilia) then
@@ -826,6 +834,9 @@ begin
           end;
 
         QryFamilia.Post;
+        I := QryFamiliaFAM_ID.Value;
+        QryFamilia.Refresh;
+        QryFamilia.Locate('FAM_ID', I, []);
         AtualizarReplicacaoPendente;
       end;
   except on E: Exception do
@@ -887,6 +898,7 @@ begin
             DtmSistemaModulo.GravarAuditoriaInclusao(QryBeneficiarioProducao, 'TAB_CAD_BENEFICIARIO_PRODUCAO', 'BPR_ID');
 
             QryBeneficiarioProducao.Post;
+            QryBeneficiarioProducao.Refresh;
             AtualizarReplicacaoPendente;
           except
             on E: Exception do
@@ -1055,6 +1067,12 @@ begin
   QryProducaoBem.Filtered := True;
 end;
 
+procedure TFrmCadastroBeneficiario.TbShtProgramasShow(Sender: TObject);
+begin
+  inherited;
+  DtSrcPrincipalStateChange(Sender);
+end;
+
 procedure TFrmCadastroBeneficiario.TbShtUnidadeShow(Sender: TObject);
 begin
   if not QryBeneficiarioProducao.Active then
@@ -1065,6 +1083,12 @@ procedure TFrmCadastroBeneficiario.TbShtFamiliaShow(Sender: TObject);
 begin
   if not QryFamilia.Active then
     QryFamilia.Open;
+end;
+
+procedure TFrmCadastroBeneficiario.TbShtIdentificacaoShow(Sender: TObject);
+begin
+  inherited;
+  DtSrcPrincipalStateChange(Sender);
 end;
 
 procedure TFrmCadastroBeneficiario.TbShtDAPShow(Sender: TObject);
@@ -1428,7 +1452,7 @@ end;
 procedure TFrmCadastroBeneficiario.QryFamiliaBeforePost(DataSet: TDataSet);
 begin
   if (QryFamilia.State = dsInsert) then
-    QryFamiliaFAM_ID.AsLargeInt := DtmSistemaModulo.GerarIdentificador('TAB_CAD_FAMILIA', 'FAM_ID')
+    DtmSistemaModulo.GravarAuditoriaInclusao(QryFamilia, 'TAB_CAD_FAMILIA', 'FAM_ID')
   else
     DtmSistemaModulo.GravarAuditoriaAlteracao(QryFamilia);
 
@@ -1474,16 +1498,6 @@ begin
     QryPrincipalFUN_ID.AsInteger := DtmConexaoModulo.FuncionarioID;
 end;
 
-procedure TFrmCadastroBeneficiario.QryProducaoAtividadeCalcFields(DataSet: TDataSet);
-begin
-  if not QryProducaoAtividadeATV_SAFRA_INICIO.IsNull then
-    QryProducaoAtividadeATV_SAFRA_INICIO_FIM.AsString := QryProducaoAtividadeATV_SAFRA_INICIO.AsString + '/';
-
-  if not QryProducaoAtividadeATV_SAFRA_FIM.IsNull then
-    QryProducaoAtividadeATV_SAFRA_INICIO_FIM.AsString := QryProducaoAtividadeATV_SAFRA_INICIO_FIM.AsString +
-      QryProducaoAtividadeATV_SAFRA_FIM.AsString;
-end;
-
 procedure TFrmCadastroBeneficiario.QryProducaoProdutoCalcFields(DataSet: TDataSet);
 begin
   QryProducaoProdutoPRP_VALOR_TOTAL.Value := (
@@ -1510,6 +1524,12 @@ begin
   QryProducaoBem.Filtered := False;
   QryProducaoBem.Filter := 'cls_id in (100000002, 100000003)';
   QryProducaoBem.Filtered := True;
+end;
+
+procedure TFrmCadastroBeneficiario.TbShtSecundariaShow(Sender: TObject);
+begin
+  if (PgCntrlUnidade.ActivePageIndex < 0) then
+    PgCntrlUnidade.ActivePageIndex := 0;
 end;
 
 procedure TFrmCadastroBeneficiario.TbShtSemoventesShow(Sender: TObject);

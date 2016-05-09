@@ -434,7 +434,7 @@ object FrmSistemaAbertura: TFrmSistemaAbertura
     Alignment = taCenter
     Anchors = [akLeft, akRight, akBottom]
     Caption = 
-      'Copyright'#169' 2012-2015, Sevensoft Tecnologia da Informa'#231#227'o. Todos ' +
+      'Copyright'#169' 2012-2016, Sevensoft Tecnologia da Informa'#231#227'o. Todos ' +
       'os direitos reservados.'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 3548188

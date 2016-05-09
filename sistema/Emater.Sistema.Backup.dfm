@@ -1,16 +1,16 @@
 inherited FrmSistemaBackup: TFrmSistemaBackup
   Left = 401
-  Top = 126
+  Top = 125
   BorderStyle = bsDialog
   Caption = 'Backup da Base de Dados'
-  ClientHeight = 457
+  ClientHeight = 458
   ClientWidth = 633
   Position = poScreenCenter
   OnClose = FormClose
   ExplicitLeft = 401
-  ExplicitTop = 126
+  ExplicitTop = 125
   ExplicitWidth = 649
-  ExplicitHeight = 495
+  ExplicitHeight = 497
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -19,6 +19,7 @@ inherited FrmSistemaBackup: TFrmSistemaBackup
     Width = 187
     Height = 13
     Caption = 'Local de destino no arquivo de backup:'
+    Transparent = True
   end
   object Label2: TLabel
     Left = 8
@@ -26,6 +27,7 @@ inherited FrmSistemaBackup: TFrmSistemaBackup
     Width = 107
     Height = 13
     Caption = 'Detalhes do processo:'
+    Transparent = True
   end
   object MmLog: TcxMemo
     Left = 8
@@ -92,19 +94,22 @@ inherited FrmSistemaBackup: TFrmSistemaBackup
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     TabOrder = 4
   end
-  object BackupService: TpFIBBackupService
-    ServerName = 'localhost'
-    LibraryName = 'fbclient.dll'
-    Protocol = TCP
-    Params.Strings = (
-      'user_name=sysdba'
-      'password=masterkey')
-    LoginPrompt = False
-    Verbose = True
-    BlockingFactor = 0
-    DatabaseName = 'Sevensoft.Atersoft'
-    Options = []
-    Left = 248
+  object BackupService: TFDFBNBackup
+    OnError = BackupServiceError
+    BeforeExecute = BackupServiceBeforeExecute
+    AfterExecute = BackupServiceAfterExecute
+    DriverLink = DtmConexaoModulo.FDPhysFBDriverLink
+    Protocol = ipTCPIP
+    Host = 'localhost'
+    UserName = 'sysdba'
+    Password = 'masterkey'
+    OnProgress = BackupServiceProgress
+    Database = 'Sevensoft.Atersoft'
+    Left = 280
+    Top = 136
+  end
+  object FDIBBackup1: TFDIBBackup
+    Left = 320
     Top = 136
   end
 end

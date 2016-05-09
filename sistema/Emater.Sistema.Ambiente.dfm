@@ -56,98 +56,108 @@ inherited FrmSistemaAmbiente: TFrmSistemaAmbiente
     OnClick = BtnCancelarClick
     ExplicitLeft = 289
   end
-  object DtStUnidade: TpFIBDataSet
-    RefreshSQL.Strings = (
+  object DtSrcUnidade: TDataSource
+    DataSet = QryUnidade
+    Left = 177
+    Top = 208
+  end
+  object DtSrcParametro: TDataSource
+    Left = 177
+    Top = 176
+  end
+  object QryUnidade: TFDQuery
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    SQL.Strings = (
       'select'
       '  cast(a.und_id as varchar(10)) as und_id,'
-      '  (b.unt_descricao || '#39': '#39' || a.und_nome) as und_nome_descricao'
-      'from'
       
-        '  tab_sis_unidade a left join tab_sis_unidade_tipo b on (a.unt_i' +
-        'd = b.unt_id)')
-    SelectSQL.Strings = (
-      'select'
-      '  cast(a.und_id as varchar(10)) as und_id,'
-      '  (b.unt_descricao || '#39': '#39' || a.und_nome) as und_nome_descricao'
+        '  (a.und_nome || '#39' ('#39' || b.unt_descricao || '#39')'#39' ) as und_nome_de' +
+        'scricao'
       'from'
       
         '  tab_sis_unidade a left join tab_sis_unidade_tipo b on (a.unt_i' +
         'd = b.unt_id)'
       'order by'
-      '  und_nome_descricao')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
+      '  b.unt_id, und_nome_descricao')
     Left = 144
     Top = 208
-    object DtStUnidadeUND_ID: TFIBStringField
+    object QryUnidadeUND_ID: TStringField
+      AutoGenerateValue = arDefault
       FieldName = 'UND_ID'
+      Origin = 'UND_ID'
+      ProviderFlags = [pfInKey]
+      ReadOnly = True
       Size = 10
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStUnidadeUND_NOME_DESCRICAO: TFIBStringField
+    object QryUnidadeUND_NOME_DESCRICAO: TStringField
+      AutoGenerateValue = arDefault
       FieldName = 'UND_NOME_DESCRICAO'
-      Size = 152
-      Transliterate = False
-      EmptyStrToNull = True
+      Origin = 'UND_NOME_DESCRICAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 153
     end
   end
-  object DtSrcUnidade: TDataSource
-    DataSet = DtStUnidade
-    Left = 177
-    Top = 208
-  end
-  object DtStParametro: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_SIS_PARAMETRO'
-      'SET '
-      '    PAR_VALOR = :PAR_VALOR'
-      'WHERE'
-      '    PAR_ID = :OLD_PAR_ID'
-      '    ')
-    SelectSQL.Strings = (
+  object QryParametro: TFDQuery
+    Active = True
+    Connection = DtmConexaoModulo.FDConnection
+    Transaction = DtmConexaoModulo.FDReadTransaction
+    UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
+    UpdateObject = UpdtParametro
+    SQL.Strings = (
       'select a.par_id, a.par_descricao, a.par_nome, a.par_valor'
       'from tab_sis_parametro a'
       'where (a.par_nome = '#39'UNIDADE_LOCAL'#39')')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 144
+    Left = 112
     Top = 176
-    object DtStParametroPAR_ID: TFIBIntegerField
+    object QryParametroPAR_ID: TIntegerField
       FieldName = 'PAR_ID'
+      Origin = 'PAR_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
     end
-    object DtStParametroPAR_DESCRICAO: TFIBStringField
+    object QryParametroPAR_DESCRICAO: TStringField
       FieldName = 'PAR_DESCRICAO'
+      Origin = 'PAR_DESCRICAO'
       Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStParametroPAR_NOME: TFIBStringField
+    object QryParametroPAR_NOME: TStringField
       FieldName = 'PAR_NOME'
+      Origin = 'PAR_NOME'
+      Required = True
       Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
     end
-    object DtStParametroPAR_VALOR: TFIBStringField
+    object QryParametroPAR_VALOR: TStringField
       FieldName = 'PAR_VALOR'
+      Origin = 'PAR_VALOR'
       Size = 500
-      Transliterate = False
-      EmptyStrToNull = True
     end
   end
-  object DtSrcParametro: TDataSource
-    DataSet = DtStParametro
-    Left = 177
+  object UpdtParametro: TFDUpdateSQL
+    Connection = DtmConexaoModulo.FDConnection
+    InsertSQL.Strings = (
+      'INSERT INTO TAB_SIS_PARAMETRO'
+      '(PAR_ID, PAR_DESCRICAO, PAR_NOME, PAR_VALOR)'
+      
+        'VALUES (:NEW_PAR_ID, :NEW_PAR_DESCRICAO, :NEW_PAR_NOME, :NEW_PAR' +
+        '_VALOR)')
+    ModifySQL.Strings = (
+      'UPDATE TAB_SIS_PARAMETRO'
+      
+        'SET PAR_ID = :NEW_PAR_ID, PAR_DESCRICAO = :NEW_PAR_DESCRICAO, PA' +
+        'R_NOME = :NEW_PAR_NOME, '
+      '  PAR_VALOR = :NEW_PAR_VALOR'
+      'WHERE PAR_ID = :OLD_PAR_ID')
+    DeleteSQL.Strings = (
+      'DELETE FROM TAB_SIS_PARAMETRO'
+      'WHERE PAR_ID = :OLD_PAR_ID')
+    FetchRowSQL.Strings = (
+      'SELECT PAR_ID, PAR_DESCRICAO, PAR_NOME, PAR_VALOR'
+      'FROM TAB_SIS_PARAMETRO'
+      'WHERE PAR_ID = :PAR_ID')
+    Left = 144
     Top = 176
   end
 end

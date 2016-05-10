@@ -1,14 +1,14 @@
 inherited FrmSistemaRestauracao: TFrmSistemaRestauracao
-  Left = 279
-  Top = 162
+  Left = 481
+  Top = 153
   BorderStyle = bsDialog
   Caption = 'Restaura'#231#227'o da Base de Dados'
   ClientHeight = 457
   ClientWidth = 633
   Position = poScreenCenter
   OnClose = FormClose
-  ExplicitLeft = 279
-  ExplicitTop = 162
+  ExplicitLeft = 481
+  ExplicitTop = 153
   ExplicitWidth = 649
   ExplicitHeight = 496
   PixelsPerInch = 96
@@ -19,24 +19,34 @@ inherited FrmSistemaRestauracao: TFrmSistemaRestauracao
     Width = 267
     Height = 13
     Caption = 'Arquivo de backup para restaura'#231#227'o da base de dados:'
+    Transparent = True
   end
   object Label2: TLabel
     Left = 8
-    Top = 96
+    Top = 128
     Width = 107
     Height = 13
     Caption = 'Detalhes do processo:'
+    Transparent = True
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 56
+    Width = 177
+    Height = 13
+    Caption = 'Banco de dados ser'#225' restaurado em:'
+    Transparent = True
   end
   object MmLog: TcxMemo
     Left = 8
-    Top = 112
+    Top = 144
     TabStop = False
     ParentFont = False
     Properties.ReadOnly = True
     Properties.ScrollBars = ssBoth
     Properties.WordWrap = False
-    TabOrder = 5
-    Height = 337
+    TabOrder = 6
+    Height = 305
     Width = 617
   end
   object EdtOrigem: TcxTextEdit
@@ -49,40 +59,40 @@ inherited FrmSistemaRestauracao: TFrmSistemaRestauracao
   end
   object BtnAbrir: TcxButton
     Left = 8
-    Top = 56
-    Width = 113
+    Top = 96
+    Width = 121
     Height = 25
     Caption = 'Abrir arquivo'
     OptionsImage.ImageIndex = 22
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
-    TabOrder = 1
+    TabOrder = 2
     OnClick = BtnAbrirClick
   end
   object BtnIniciar: TcxButton
-    Left = 128
-    Top = 56
+    Left = 136
+    Top = 96
     Width = 121
     Height = 25
     Caption = 'Iniciar restaura'#231#227'o'
     OptionsImage.ImageIndex = 102
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
-    TabOrder = 2
+    TabOrder = 3
     OnClick = BtnIniciarClick
   end
   object BtnDetalhes: TcxButton
-    Left = 256
-    Top = 56
+    Left = 264
+    Top = 96
     Width = 113
     Height = 25
     Caption = 'Ocultar detalhes'
     OptionsImage.ImageIndex = 9
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
-    TabOrder = 3
+    TabOrder = 4
     OnClick = BtnDetalhesClick
   end
   object BtnFechar: TcxButton
     Left = 544
-    Top = 56
+    Top = 96
     Width = 81
     Height = 25
     Cancel = True
@@ -90,29 +100,33 @@ inherited FrmSistemaRestauracao: TFrmSistemaRestauracao
     ModalResult = 2
     OptionsImage.ImageIndex = 87
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
-    TabOrder = 4
+    TabOrder = 5
   end
-  object RestoreService: TpFIBRestoreService
-    ServerName = 'localhost'
-    LibraryName = 'fbclient.dll'
-    Protocol = TCP
-    Params.Strings = (
-      'user_name=sysdba'
-      'password=masterkey')
-    LoginPrompt = False
-    Verbose = True
-    PageSize = 0
-    PageBuffers = 0
-    Options = [Replace, CreateNewDB]
-    Left = 280
-    Top = 136
+  object EdtDestino: TcxTextEdit
+    Left = 8
+    Top = 72
+    Properties.CharCase = ecLowerCase
+    Properties.ReadOnly = True
+    TabOrder = 1
+    Width = 617
   end
   object OpenDialogBackup: TOpenDialog
     DefaultExt = 'fbk'
     Filter = 'Arquivos de backup (*.fbk)|*.fbk|Todos arquivos (*.*)|*.*'
     Options = [ofHideReadOnly, ofFileMustExist, ofEnableSizing]
     Title = 'Selecionar arquivo de backup para restaura'#231#227'o'
-    Left = 312
-    Top = 136
+    Left = 304
+    Top = 168
+  end
+  object RestoreService: TFDIBRestore
+    OnError = RestoreServiceError
+    BeforeExecute = RestoreServiceBeforeExecute
+    AfterExecute = RestoreServiceAfterExecute
+    DriverLink = DtmConexaoModulo.FDPhysFBDriverLink
+    OnProgress = RestoreServiceProgress
+    Verbose = True
+    Options = [roReplace, roCreate]
+    Left = 304
+    Top = 200
   end
 end

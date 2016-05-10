@@ -3,10 +3,10 @@ unit Emater.Sistema.Restauracao;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Basico, IB_Services, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, StrUtils,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Basico, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   cxContainer, cxEdit, dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxTextEdit, cxMemo, Vcl.Menus,
-  Vcl.StdCtrls, cxButtons, {$WARNINGS OFF} FileCtrl {$WARNINGS ON};
+  Vcl.StdCtrls, cxButtons, {$WARNINGS OFF} FileCtrl, FireDAC.Stan.Def, FireDAC.Phys.IBWrapper, FireDAC.Stan.Intf, FireDAC.Phys, FireDAC.Phys.IBBase {$WARNINGS ON};
 
 type
   TFrmSistemaRestauracao = class(TFrmBaseBasico)
@@ -18,16 +18,21 @@ type
     BtnDetalhes: TcxButton;
     Label2: TLabel;
     BtnFechar: TcxButton;
-    RestoreService: TpFIBRestoreService;
     OpenDialogBackup: TOpenDialog;
+    RestoreService: TFDIBRestore;
+    EdtDestino: TcxTextEdit;
+    Label3: TLabel;
     procedure BtnDetalhesClick(Sender: TObject);
     procedure BtnAbrirClick(Sender: TObject);
     procedure BtnIniciarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure RestoreServiceBeforeExecute(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure RestoreServiceProgress(ASender: TFDPhysDriverService; const AMessage: string);
+    procedure RestoreServiceAfterExecute(Sender: TObject);
+    procedure RestoreServiceError(ASender, AInitiator: TObject; var AException: Exception);
   private
-    { Private declarations }
-  public
-    { Public declarations }
+    Executando: Boolean;
   end;
 
 var
@@ -42,23 +47,38 @@ uses Emater.Recurso.Modulo, Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater
   Emater.Log.Modulo, Emater.Relatorio.Modulo, Emater.Proater.Modulo;
 
 procedure TFrmSistemaRestauracao.BtnAbrirClick(Sender: TObject);
+var
+  Arquivo: string;
 begin
   if OpenDialogBackup.Execute then
-    Edtorigem.Text := OpenDialogBackup.FileName;
+    begin
+      EdtOrigem.Text := OpenDialogBackup.FileName;
+
+      Arquivo := ExtractFileName(OpenDialogBackup.FileName);
+      if (Pos('.', Arquivo) > 0) then
+        begin
+          Arquivo := ReverseString(Arquivo);
+          Arquivo := Copy(Arquivo, Pos('.', Arquivo) + 1);
+          Arquivo := ReverseString(Arquivo) + '.fdb';
+        end;
+
+      EdtDestino.Text := ExtractFilePath(OpenDialogBackup.FileName) + Arquivo;
+    end;
 end;
 
 procedure TFrmSistemaRestauracao.BtnDetalhesClick(Sender: TObject);
 begin
-  if (Height = 130) then
+  if (Height = 168) then
     begin
       BtnDetalhes.Caption := 'Ocultar detalhes';
-      Height := 495;
+      Height := 496;
       MmLog.SetFocus;
     end
   else
     begin
       BtnDetalhes.Caption := 'Exibir detalhes';
-      Height := 130;
+      Height := 168
+      ;
     end;
 end;
 
@@ -71,65 +91,29 @@ begin
           {$WARNINGS OFF}
           Screen.Cursor := crHourGlass;
           try
-            try
-              EdtOrigem.Enabled := False;
-              BtnIniciar.Enabled := False;
-              BtnAbrir.Enabled := False;
-              BtnFechar.Enabled := False;
+            EdtOrigem.Enabled := False;
+            EdtDestino.Enabled := False;
+            BtnIniciar.Enabled := False;
+            BtnAbrir.Enabled := False;
+            BtnFechar.Enabled := False;
 
-              RestoreService.Active := False;
-              RestoreService.Params.Clear;
-              RestoreService.Params.Add('user_name=sysdba');
+            RestoreService.UserName := 'sysdba';
 
-              {$IFDEF RELEASE}
-              RestoreService.Params.Add('password=3m@T3R_1');
-              {$ELSE}
-              RestoreService.Params.Add('password=masterkey');
-              {$ENDIF}
+            {$IFDEF RELEASE}
+            RestoreService.Password := '3m@T3R_1';
+            {$ELSE}
+            RestoreService.Password := 'masterkey';
+            {$ENDIF}
 
-              RestoreService.DatabaseName.Clear;
-              RestoreService.BackupFile.Clear;
+            RestoreService.Database := EdtDestino.Text;
+            RestoreService.Host := DtmConexaoModulo.Servidor;
+            RestoreService.BackupFiles.Clear;
+            RestoreService.BackupFiles.Add(EdtOrigem.Text);
 
-              RestoreService.ServerName := DtmConexaoModulo.Servidor;
+            DtmConexaoModulo.FDConnection.Connected := False;
 
-              MmLog.Clear;
-              MmLog.Lines.Add('===========================================================================');
-              MmLog.Lines.Add('Restauração do banco de dados: ' + DtmConexaoModulo.Servidor + ':' + DtmConexaoModulo.Base);
-              MmLog.Lines.Add('===========================================================================');
-              MmLog.Lines.Add('INÍCIO DO PROCESSO');
-              MmLog.Lines.Add('===========================================================================');
-
-              DtmConexaoModulo.pFIBDatabase.Connected := False;
-
-              RestoreService.DatabaseName.Add(DtmConexaoModulo.Base);
-              RestoreService.BackupFile.Add(EdtOrigem.Text);
-              RestoreService.Active := True;
-              RestoreService.ServiceStart;
-              while not (RestoreService.Eof) do
-                begin
-                  MmLog.Lines.Add(RestoreService.GetNextLine);
-                  Application.ProcessMessages;
-                end;
-              RestoreService.Active := False;
-              MmLog.Lines.Add('===========================================================================');
-              MmLog.Lines.Add('FIM DO PROCESSO');
-              MmLog.Lines.Add('===========================================================================');
-              MmLog.Lines.Add('Banco de dados restaurado: ' + DtmConexaoModulo.Base);
-              MmLog.Lines.Add('===========================================================================');
-
-              MSG.Informacao(SISTEMA_BD_RESTORE_SUCESSO);
-            except
-              on E: Exception do
-                begin
-                  RestoreService.Active := False;
-                  MmLog.Lines.Add(Format(SISTEMA_BD_RESTORE_ERRO, [e.Message]));
-                  MmLog.Lines.Add('Processo abortado.');
-                  MSG.Erro(Format(SISTEMA_BD_RESTORE_ERRO, [e.Message]));
-                end;
-            end;
+            RestoreService.Restore;
           finally
-            DtmConexaoModulo.pFIBDatabase.Connected := True;
-
             DtmSistemaModulo.RecarregarDados;
             DtmCadastroModulo.RecarregarDados;
             DtmPessoalModulo.RecarregarDados;
@@ -161,11 +145,72 @@ end;
 procedure TFrmSistemaRestauracao.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
-  if RestoreService.Active then
+  if Executando then
     begin
       MSG.Aviso(SISTEMA_BD_RESTORE_FECHAR);
       Action := caNone;
     end;
+end;
+
+procedure TFrmSistemaRestauracao.FormCreate(Sender: TObject);
+begin
+  inherited;
+  Executando := False;
+end;
+
+procedure TFrmSistemaRestauracao.RestoreServiceAfterExecute(Sender: TObject);
+begin
+  inherited;
+  MmLog.Lines.Add('===========================================================================');
+  MmLog.Lines.Add('FIM DO PROCESSO');
+  MmLog.Lines.Add('===========================================================================');
+  MmLog.Lines.Add('Banco de dados restaurado: ' + DtmConexaoModulo.Base);
+  MmLog.Lines.Add('===========================================================================');
+
+  MSG.Informacao(SISTEMA_BD_RESTORE_SUCESSO);
+
+  EdtOrigem.Enabled := True;
+  EdtDestino.Enabled := True;
+  BtnIniciar.Enabled := True;
+  BtnAbrir.Enabled := True;
+  BtnFechar.Enabled := True;
+
+  Executando := False;
+end;
+
+procedure TFrmSistemaRestauracao.RestoreServiceBeforeExecute(Sender: TObject);
+begin
+  Executando := True;
+
+  MmLog.Clear;
+  MmLog.Lines.Add('===========================================================================');
+  MmLog.Lines.Add('Restauração do banco de dados: ' + DtmConexaoModulo.Servidor + ':' + DtmConexaoModulo.Base);
+  MmLog.Lines.Add('===========================================================================');
+  MmLog.Lines.Add('INÍCIO DO PROCESSO');
+  MmLog.Lines.Add('===========================================================================');
+end;
+
+procedure TFrmSistemaRestauracao.RestoreServiceError(ASender, AInitiator: TObject; var AException: Exception);
+begin
+  inherited;
+  MmLog.Lines.Add(Format(SISTEMA_BD_RESTORE_ERRO, [AException.Message]));
+  MmLog.Lines.Add('Processo abortado.');
+  MSG.Erro(Format(SISTEMA_BD_RESTORE_ERRO, [AException.Message]));
+
+  EdtOrigem.Enabled := True;
+  EdtDestino.Enabled := True;
+  BtnIniciar.Enabled := True;
+  BtnAbrir.Enabled := True;
+  BtnFechar.Enabled := True;
+
+  Executando := False;
+end;
+
+procedure TFrmSistemaRestauracao.RestoreServiceProgress(ASender: TFDPhysDriverService; const AMessage: string);
+begin
+  inherited;
+  MmLog.Lines.Add(AMessage);
+  Application.ProcessMessages;
 end;
 
 end.

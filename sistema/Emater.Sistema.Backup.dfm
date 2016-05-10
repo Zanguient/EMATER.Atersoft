@@ -1,16 +1,16 @@
 inherited FrmSistemaBackup: TFrmSistemaBackup
-  Left = 401
-  Top = 125
+  Left = 398
+  Top = 181
   BorderStyle = bsDialog
   Caption = 'Backup da Base de Dados'
-  ClientHeight = 458
+  ClientHeight = 459
   ClientWidth = 633
   Position = poScreenCenter
   OnClose = FormClose
-  ExplicitLeft = 401
-  ExplicitTop = 125
+  ExplicitLeft = 398
+  ExplicitTop = 181
   ExplicitWidth = 649
-  ExplicitHeight = 497
+  ExplicitHeight = 498
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -94,21 +94,13 @@ inherited FrmSistemaBackup: TFrmSistemaBackup
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     TabOrder = 4
   end
-  object BackupService: TFDFBNBackup
+  object BackupService: TFDIBBackup
     OnError = BackupServiceError
     BeforeExecute = BackupServiceBeforeExecute
     AfterExecute = BackupServiceAfterExecute
     DriverLink = DtmConexaoModulo.FDPhysFBDriverLink
-    Protocol = ipTCPIP
-    Host = 'localhost'
-    UserName = 'sysdba'
-    Password = 'masterkey'
     OnProgress = BackupServiceProgress
-    Database = 'Sevensoft.Atersoft'
-    Left = 280
-    Top = 136
-  end
-  object FDIBBackup1: TFDIBBackup
+    Verbose = True
     Left = 320
     Top = 136
   end

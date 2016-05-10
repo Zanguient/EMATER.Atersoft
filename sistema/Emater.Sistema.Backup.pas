@@ -19,17 +19,16 @@ type
     BtnDetalhes: TcxButton;
     Label2: TLabel;
     BtnFechar: TcxButton;
-    BackupService: TFDFBNBackup;
-    FDIBBackup1: TFDIBBackup;
+    BackupService: TFDIBBackup;
     procedure BtnDetalhesClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure BtnAlterarClick(Sender: TObject);
     procedure BtnIniciarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure BackupServiceProgress(ASender: TFDPhysDriverService; const AMessage: string);
-    procedure BackupServiceBeforeExecute(Sender: TObject);
     procedure BackupServiceAfterExecute(Sender: TObject);
+    procedure BackupServiceBeforeExecute(Sender: TObject);
     procedure BackupServiceError(ASender, AInitiator: TObject; var AException: Exception);
+    procedure BackupServiceProgress(ASender: TFDPhysDriverService; const AMessage: string);
   private
     Executando: Boolean;
   public
@@ -50,10 +49,10 @@ begin
   MmLog.Lines.Add('===========================================================================');
   MmLog.Lines.Add('FIM DO PROCESSO');
   MmLog.Lines.Add('===========================================================================');
-  MmLog.Lines.Add('Arquivo de backup gerado: ' + BackupService.BackupFile);
+  MmLog.Lines.Add('Arquivo de backup gerado: ' + BackupService.BackupFiles[0]);
   MmLog.Lines.Add('===========================================================================');
 
-  MSG.Informacao(Format(SISTEMA_BD_BACKUP_SUCESSO, [ExtractFileName(BackupService.BackupFile), EdtDestino.Text]));
+  MSG.Informacao(Format(SISTEMA_BD_BACKUP_SUCESSO, [ExtractFileName(BackupService.BackupFiles[0]), EdtDestino.Text]));
 
   EdtDestino.Enabled := True;
   BtnIniciar.Enabled := True;
@@ -65,6 +64,7 @@ end;
 
 procedure TFrmSistemaBackup.BackupServiceBeforeExecute(Sender: TObject);
 begin
+  inherited;
   Executando := True;
 
   MmLog.Clear;
@@ -92,6 +92,7 @@ end;
 procedure TFrmSistemaBackup.BackupServiceProgress(ASender: TFDPhysDriverService; const AMessage: string);
 begin
   MmLog.Lines.Add(AMessage);
+  Application.ProcessMessages;
 end;
 
 procedure TFrmSistemaBackup.BtnAlterarClick(Sender: TObject);
@@ -128,40 +129,31 @@ begin
   {$WARNINGS OFF}
   Screen.Cursor := crHourGlass;
   try
-    try
-      EdtDestino.Enabled := False;
-      BtnIniciar.Enabled := False;
-      BtnAlterar.Enabled := False;
-      BtnFechar.Enabled := False;
+    EdtDestino.Enabled := False;
+    BtnIniciar.Enabled := False;
+    BtnAlterar.Enabled := False;
+    BtnFechar.Enabled := False;
 
+    BackupService.UserName := 'sysdba';
 
-      BackupService.UserName := 'sysdba';
+    {$IFDEF RELEASE}
+    BackupService.Password := '3m@T3R_1';
+    {$ELSE}
+    BackupService.Password := 'masterkey';
+    {$ENDIF}
 
-      {$IFDEF RELEASE}
-      BackupService.Password := '3m@T3R_1';
-      {$ELSE}
-      BackupService.Password := 'masterkey';
-      {$ENDIF}
+    BackupService.Database := DtmConexaoModulo.Base;
+    BackupService.Host := DtmConexaoModulo.Servidor;
 
-      BackupService.Database := DtmConexaoModulo.Base;
-      BackupService.Host := DtmConexaoModulo.Servidor;
+    if (EdtDestino.Text <> '') and (EdtDestino.Text[Length(EdtDestino.Text)] <> '\') then
+      FilePath := EdtDestino.Text + '\'
+    else
+      FilePath := EdtDestino.Text;
 
-      if (EdtDestino.Text <> '') and (EdtDestino.Text[Length(EdtDestino.Text)] <> '\') then
-        FilePath := EdtDestino.Text + '\'
-      else
-        FilePath := EdtDestino.Text;
-
-      BackupFileName := FilePath + 'BD_ATER_Para.' + FormatDateTime('yyyy.mm.dd.hh.nn.ss', Now) + '.fbk';
-      BackupService.BackupFile := BackupFileName;
-      BackupService.Backup;
-    except
-      on E: Exception do
-        begin
-          MmLog.Lines.Add(Format(SISTEMA_BD_BACKUP_ERRO, [e.Message]));
-          MmLog.Lines.Add('Processo abortado.');
-          MSG.Erro(Format(SISTEMA_BD_BACKUP_ERRO, [e.Message]));
-        end;
-    end;
+    BackupFileName := FilePath + 'BD_ATER_Para.' + FormatDateTime('yyyy.mm.dd.hh.nn.ss', Now) + '.fbk';
+    BackupService.BackupFiles.Clear;
+    BackupService.BackupFiles.Add(BackupFileName);
+    BackupService.Backup;
   finally
     Screen.Cursor := crDefault;
   end;

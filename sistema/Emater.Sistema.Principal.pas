@@ -116,6 +116,8 @@ type
     BrIndicador: TdxBar;
     BtnIndicadorConsulta: TdxBarLargeButton;
     BtnIndicadorAdicionar: TdxBarLargeButton;
+    BtnEstadoCivilBeneficiario: TdxBarLargeButton;
+    BtnEscolaridadeBeneficiario: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnBeneficiarioNovoClick(Sender: TObject);
     procedure BtnComunidadesClick(Sender: TObject);
@@ -180,6 +182,7 @@ type
     procedure BtnPROATERClick(Sender: TObject);
     procedure BtnIndicadorConsultaClick(Sender: TObject);
     procedure BtnIndicadorAdicionarClick(Sender: TObject);
+    procedure BtnEstadoCivilBeneficiarioClick(Sender: TObject);
   public
     procedure AtualizarBarraStatus(const BD, Usuario, Local: string);
     procedure RecenteRemover(const Controle: TdxRibbonBackstageViewGalleryControl; const ID: Int64);
@@ -210,7 +213,7 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Cadastro.Beneficiario.Busca, Emater.Sistema.Consts, Emater.Sistema.Ajuda, Emater.Credito.Consulta, Emater.Credito,
   Emater.Credito.Financeira, Emater.Credito.Linha, Emater.Credito.Tipo, Emater.Credito.Publico, Emater.Credito.Situacao,
   Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal, Emater.Proater.Consulta,
-  Emater.Indicador.Editor, Emater.Indicador.Selecao, Emater.Indicador.Consulta;
+  Emater.Indicador.Editor, Emater.Indicador.Selecao, Emater.Indicador.Consulta, Emater.Relatorio.Beneficiario.EstadoCivil;
 
 { TForm1 }
 
@@ -478,6 +481,19 @@ end;
 procedure TFrmSistemaPrincipal.BtnDocumentoManualClick(Sender: TObject);
 begin
   TArquivo.Abrir(ExtractFilePath(Application.ExeName) + 'manual.pdf');
+end;
+
+procedure TFrmSistemaPrincipal.BtnEstadoCivilBeneficiarioClick(Sender: TObject);
+begin
+  FrmRelatorioBeneficiarioEstadoCivil := TFrmRelatorioBeneficiarioEstadoCivil.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioBeneficiarioEstadoCivil.ShowModal;
+  finally
+    FrmRelatorioBeneficiarioEstadoCivil.Release;
+    FrmRelatorioBeneficiarioEstadoCivil := nil;
+    Screen.Cursor := crDefault;
+  end;
 end;
 
 procedure TFrmSistemaPrincipal.BtnExportacaoClick(Sender: TObject);

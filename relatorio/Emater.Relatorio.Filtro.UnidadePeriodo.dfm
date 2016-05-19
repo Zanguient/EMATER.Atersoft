@@ -1,28 +1,36 @@
-object FrmRelatorioFiltroUnidadeFuncionario: TFrmRelatorioFiltroUnidadeFuncionario
+object FrmRelatorioFiltroUnidadePeriodo: TFrmRelatorioFiltroUnidadePeriodo
   Left = 0
   Top = 0
-  Width = 427
-  Height = 75
+  Width = 450
+  Height = 102
   TabOrder = 0
   object LblUnidade: TLabel
     Left = 8
-    Top = 12
+    Top = 36
     Width = 48
     Height = 13
     Caption = 'Escrit'#243'rio:'
     Transparent = True
   end
-  object LblFuncionario: TLabel
+  object LblPeriodoDe: TLabel
     Left = 8
-    Top = 36
-    Width = 40
+    Top = 12
+    Width = 55
     Height = 13
-    Caption = 'T'#233'cnico:'
+    Caption = 'Per'#237'odo de:'
+    Transparent = True
+  end
+  object LblPeriodoAte: TLabel
+    Left = 248
+    Top = 12
+    Width = 21
+    Height = 13
+    Caption = 'At'#233':'
     Transparent = True
   end
   object LkpCmbBxUnidade: TcxLookupComboBox
     Left = 88
-    Top = 8
+    Top = 32
     Properties.ClearKey = 46
     Properties.ImmediatePost = True
     Properties.KeyFieldNames = 'UND_ID'
@@ -38,31 +46,26 @@ object FrmRelatorioFiltroUnidadeFuncionario: TFrmRelatorioFiltroUnidadeFuncionar
       end>
     Properties.ListOptions.ShowHeader = False
     Properties.ListSource = DtSrcUnidadeLocal
-    TabOrder = 0
+    TabOrder = 2
     Width = 337
   end
-  object LkpCmbBxFuncionario: TcxLookupComboBox
+  object EdtDataInicio: TcxDateEdit
     Left = 88
-    Top = 32
+    Top = 8
     Properties.ClearKey = 46
-    Properties.ImmediatePost = True
-    Properties.KeyFieldNames = 'FUN_ID'
-    Properties.ListColumns = <
-      item
-        FieldName = 'FUN_NOME'
-      end>
-    Properties.ListOptions.ShowHeader = False
-    Properties.ListSource = DtSrcFuncionarioLocal
+    TabOrder = 0
+    Width = 153
+  end
+  object EdtDataFim: TcxDateEdit
+    Left = 272
+    Top = 8
+    Properties.ClearKey = 46
     TabOrder = 1
-    Width = 337
+    Width = 153
   end
   object DtSrcUnidadeLocal: TDataSource
     DataSet = DtmRelatorioModulo.DtStUnidadeLocal
     Left = 312
-  end
-  object DtSrcFuncionarioLocal: TDataSource
-    DataSet = DtmRelatorioModulo.DtStFuncionarioLocal
-    Left = 312
-    Top = 32
+    Top = 16
   end
 end

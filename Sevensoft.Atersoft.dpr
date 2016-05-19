@@ -70,7 +70,7 @@ uses
   Emater.Log.Modulo in 'log\Emater.Log.Modulo.pas' {DtmLogModulo: TDataModule},
   Emater.Produtividade.Consts in 'produtividade\Emater.Produtividade.Consts.pas',
   Emater.Relatorio.Modulo in 'relatorio\Emater.Relatorio.Modulo.pas' {DtmRelatorioModulo: TDataModule},
-  Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo in 'relatorio\Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo.pas' {FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrame},
+  Emater.Relatorio.Filtro.UnidadePeriodo in 'relatorio\Emater.Relatorio.Filtro.UnidadePeriodo.pas' {FrmRelatorioFiltroUnidadePeriodo: TFrame},
   Emater.Relatorio.Consts in 'relatorio\Emater.Relatorio.Consts.pas',
   Emater.Produtividade.Fater.Produto in 'produtividade\Emater.Produtividade.Fater.Produto.pas' {FrmProdutividadeFaterProduto},
   Emater.Relatorio.Beneficiario.Categoria in 'relatorio\Emater.Relatorio.Beneficiario.Categoria.pas' {FrmRelatorioBeneficiarioCategoria},
@@ -129,7 +129,9 @@ uses
   Emater.Indicador.Consts in 'indicador\Emater.Indicador.Consts.pas',
   Emater.Indicador.Consulta in 'indicador\Emater.Indicador.Consulta.pas' {FrmIndicadorConsulta},
   Emater.Relatorio.Proater in 'relatorio\Emater.Relatorio.Proater.pas' {FrmRelatorioProater},
-  Emater.Proater.Consts in 'proater\Emater.Proater.Consts.pas';
+  Emater.Proater.Consts in 'proater\Emater.Proater.Consts.pas',
+  Emater.Relatorio.Beneficiario.EstadoCivil in 'relatorio\Emater.Relatorio.Beneficiario.EstadoCivil.pas' {FrmRelatorioBeneficiarioEstadoCivil},
+  Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo in 'relatorio\Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo.pas' {FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrame};
 
 {$R *.res}
 

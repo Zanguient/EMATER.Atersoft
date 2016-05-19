@@ -3081,7 +3081,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
-      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3134,6 +3133,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 4
     end
     object RbnTbRelatorios: TdxRibbonTab
+      Active = True
       Caption = 'Relat'#243'rios'
       Groups = <
         item
@@ -4001,6 +4001,14 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         item
           Visible = True
           ItemName = 'BtnBeneficiarioAtividade'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnEstadoCivilBeneficiario'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnEscolaridadeBeneficiario'
         end>
     end
     object BtnBeneficiarioIndividual: TdxBarLargeButton
@@ -4218,6 +4226,33 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnProducaoBeneficiarioClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnEstadoCivilBeneficiario: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Benefici'#225'rios de ATER cadastrados segundo o estado civil'
+      Category = 5
+      Description = 
+        'Relat'#243'rio da quantidade de benefici'#225'rio de ATER cadastrados e in' +
+        'tegrantes familiares, segundo o estado civil'
+      Hint = 'Benefici'#225'rios de ATER cadastrados segundo o estado civil'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnEstadoCivilBeneficiarioClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnEscolaridadeBeneficiario: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Benefici'#225'rios de ATER cadastrados segundo a escolaridade'
+      Category = 5
+      Description = 
+        'Relat'#243'rio da quantidade de benefici'#225'rio de ATER cadastrados e in' +
+        'tegrantes familiares, segundo a escolaridade'
+      Hint = 'Benefici'#225'rios de ATER cadastrados segundo a escolaridade'
+      Visible = ivAlways
+      LargeImageIndex = 20
       SyncImageIndex = False
       ImageIndex = 156
     end

@@ -780,55 +780,62 @@ object DtmCadastroModulo: TDtmCadastroModulo
     Top = 64
   end
   object DtStDocumentoTipo: TFDQuery
+    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
     UpdateObject = UpdtDocumentoTipo
     SQL.Strings = (
       'select'
-      '  a.oct_id,'
-      '  a.oct_descricao,'
+      '  a.dct_id,'
+      '  a.dct_descricao,'
       '  a.reg_excluido,'
       '  a.reg_replicado,'
       '  a.reg_usuario,'
       '  a.reg_modificado'
       'from'
-      '  tab_cad_ocupacao_tipo a'
+      '  tab_cad_documento_tipo a'
       'order by'
-      '  a.oct_descricao')
+      '  a.dct_descricao')
     Left = 688
     Top = 16
   end
   object UpdtDocumentoTipo: TFDUpdateSQL
     Connection = DtmConexaoModulo.FDConnection
     InsertSQL.Strings = (
-      'INSERT INTO TAB_CAD_OCUPACAO_TIPO'
-      '(OCT_ID, OCT_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
+      'INSERT INTO TAB_CAD_DOCUMENTO_TIPO'
+      '(DCT_ID, DCT_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, '
       '  REG_USUARIO, REG_MODIFICADO)'
       
-        'VALUES (:NEW_OCT_ID, :NEW_OCT_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
+        'VALUES (:NEW_DCT_ID, :NEW_DCT_DESCRICAO, :NEW_REG_EXCLUIDO, :NEW' +
         '_REG_REPLICADO, '
-      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
-    ModifySQL.Strings = (
-      'UPDATE TAB_CAD_OCUPACAO_TIPO'
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)'
       
-        'SET OCT_ID = :NEW_OCT_ID, OCT_DESCRICAO = :NEW_OCT_DESCRICAO, RE' +
+        'RETURNING DCT_ID, DCT_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, RE' +
+        'G_USUARIO, REG_MODIFICADO')
+    ModifySQL.Strings = (
+      'UPDATE TAB_CAD_DOCUMENTO_TIPO'
+      
+        'SET DCT_ID = :NEW_DCT_ID, DCT_DESCRICAO = :NEW_DCT_DESCRICAO, RE' +
         'G_EXCLUIDO = :NEW_REG_EXCLUIDO, '
       
         '  REG_REPLICADO = :NEW_REG_REPLICADO, REG_USUARIO = :NEW_REG_USU' +
         'ARIO, '
       '  REG_MODIFICADO = :NEW_REG_MODIFICADO'
-      'WHERE OCT_ID = :OLD_OCT_ID')
+      'WHERE DCT_ID = :OLD_DCT_ID'
+      
+        'RETURNING DCT_ID, DCT_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, RE' +
+        'G_USUARIO, REG_MODIFICADO')
     DeleteSQL.Strings = (
-      'DELETE FROM TAB_CAD_OCUPACAO_TIPO'
-      'WHERE OCT_ID = :OLD_OCT_ID')
+      'DELETE FROM TAB_CAD_DOCUMENTO_TIPO'
+      'WHERE DCT_ID = :OLD_DCT_ID')
     FetchRowSQL.Strings = (
       
-        'SELECT OCT_ID, OCT_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
+        'SELECT DCT_ID, DCT_DESCRICAO, REG_EXCLUIDO, REG_REPLICADO, REG_U' +
         'SUARIO, '
       '  REG_MODIFICADO'
-      'FROM TAB_CAD_OCUPACAO_TIPO'
-      'WHERE OCT_ID = :OCT_ID')
+      'FROM TAB_CAD_DOCUMENTO_TIPO'
+      'WHERE DCT_ID = :DCT_ID')
     Left = 688
     Top = 64
   end

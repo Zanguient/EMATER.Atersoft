@@ -3081,6 +3081,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
+      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3133,7 +3134,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 4
     end
     object RbnTbRelatorios: TdxRibbonTab
-      Active = True
       Caption = 'Relat'#243'rios'
       Groups = <
         item
@@ -4253,6 +4253,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Hint = 'Benefici'#225'rios de ATER cadastrados segundo a escolaridade'
       Visible = ivAlways
       LargeImageIndex = 20
+      OnClick = BtnEscolaridadeBeneficiarioClick
       SyncImageIndex = False
       ImageIndex = 156
     end

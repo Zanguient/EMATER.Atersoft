@@ -23,6 +23,7 @@ inherited FrmSistemaAmbiente: TFrmSistemaAmbiente
         Width = 191
         Height = 13
         Caption = 'Escrit'#243'rio local/regional deste ambiente:'
+        Transparent = True
       end
       object DbLkpCmbBxUnidade: TcxDBLookupComboBox
         Left = 8

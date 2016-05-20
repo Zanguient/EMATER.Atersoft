@@ -380,6 +380,7 @@ type
     procedure DtStFaterFuncionarioAfterPost(DataSet: TDataSet);
     procedure DtStFaterProdutoAfterPost(DataSet: TDataSet);
     procedure QryPrincipalNewRecord(DataSet: TDataSet);
+    procedure TbShtTecnicasShow(Sender: TObject);
   private
     procedure VisualizarTexto(const FieldName: string);
     procedure AtualizarReplicacaoPendente;
@@ -767,6 +768,16 @@ begin
   BtnPratica.Enabled := DbChckBxBoas.Checked;
 end;
 
+procedure TFrmProdutividadeFater.TbShtTecnicasShow(Sender: TObject);
+begin
+  inherited;
+  DtStFaterTecnica.Open;
+  DtStTecnica.Open;
+  DtStFaterFerramenta.Open;
+  DtStFerramenta.Open;
+  DtSrcPrincipal.OnStateChange(DtSrcPrincipal);
+end;
+
 procedure TFrmProdutividadeFater.TbShtTecnicoShow(Sender: TObject);
 begin
   if not DtStFaterFuncionario.Active then
@@ -940,11 +951,6 @@ end;
 procedure TFrmProdutividadeFater.FormShow(Sender: TObject);
 begin
   inherited;
-  DtStFaterTecnica.Open;
-  DtStTecnica.Open;
-  DtStFaterFerramenta.Open;
-  DtStFerramenta.Open;
-  DtSrcPrincipal.OnStateChange(DtSrcPrincipal);
 
   DbChckBxTecnologia.OnClick(DbChckBxTecnologia);
   DbChckBxBoas.OnClick(DbChckBxBoas);

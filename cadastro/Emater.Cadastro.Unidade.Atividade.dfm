@@ -1,7 +1,7 @@
 inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
   Left = 365
   Top = 183
-  ActiveControl = DbEdtDataVisita
+  ActiveControl = DbLkpCmbBxProduto
   Caption = 'Atividade produtiva'
   ClientHeight = 420
   ClientWidth = 616
@@ -145,8 +145,8 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
         Height = 233
         Width = 577
         object Label1: TLabel
-          Left = 8
-          Top = 16
+          Left = 232
+          Top = 96
           Width = 70
           Height = 13
           Caption = 'Data da visita:'
@@ -155,7 +155,7 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
         end
         object Label38: TLabel
           Left = 8
-          Top = 56
+          Top = 16
           Width = 177
           Height = 13
           Caption = 'Descri'#231#227'o da cultura/cria'#231#227'o/servi'#231'o:'
@@ -169,7 +169,7 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
         end
         object LblAreaPlantada: TLabel
           Left = 8
-          Top = 176
+          Top = 56
           Width = 95
           Height = 13
           Caption = #193'rea plantada (ha):'
@@ -177,8 +177,8 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object LblAreaColhida: TLabel
-          Left = 128
-          Top = 176
+          Left = 232
+          Top = 56
           Width = 86
           Height = 13
           Caption = #193'rea colhida (ha):'
@@ -186,8 +186,8 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object LblAreaPerdida: TLabel
-          Left = 248
-          Top = 176
+          Left = 464
+          Top = 56
           Width = 89
           Height = 13
           Caption = #193'rea perdida (ha):'
@@ -203,7 +203,7 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object Label7: TLabel
-          Left = 128
+          Left = 120
           Top = 96
           Width = 60
           Height = 13
@@ -212,11 +212,11 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object Label8: TLabel
-          Left = 120
+          Left = 352
           Top = 16
-          Width = 90
+          Width = 104
           Height = 13
-          Caption = 'Sistema produtivo:'
+          Caption = 'Sistema de produ'#231#227'o:'
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
           Font.Height = -11
@@ -226,23 +226,23 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object LblPeriodoPlantio: TLabel
-          Left = 8
-          Top = 136
+          Left = 120
+          Top = 56
           Width = 88
           Height = 13
           Caption = 'Plantio (m'#234's/ano):'
           Transparent = True
         end
         object LblPeriodoColheita: TLabel
-          Left = 128
-          Top = 136
+          Left = 352
+          Top = 56
           Width = 95
           Height = 13
           Caption = 'Colheita (m'#234's/ano):'
           Transparent = True
         end
         object LblAno: TLabel
-          Left = 248
+          Left = 352
           Top = 96
           Width = 23
           Height = 13
@@ -250,16 +250,16 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Transparent = True
         end
         object DbEdtDataVisita: TcxDBDateEdit
-          Left = 8
-          Top = 32
+          Left = 232
+          Top = 112
           DataBinding.DataField = 'ATV_DATA_VISITA'
           DataBinding.DataSource = DtSrcProducaoAtividade
-          TabOrder = 0
-          Width = 105
+          TabOrder = 9
+          Width = 113
         end
         object DbLkpCmbBxProduto: TcxDBLookupComboBox
           Left = 8
-          Top = 72
+          Top = 32
           DataBinding.DataField = 'PRD_ID'
           DataBinding.DataSource = DtSrcProducaoAtividade
           Properties.DropDownRows = 16
@@ -271,38 +271,29 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
             end
             item
               FieldName = 'DIV_DESCRICAO'
-            end
-            item
-              FieldName = 'GRP_DESCRICAO'
-            end
-            item
-              FieldName = 'CLS_DESCRICAO'
-            end
-            item
-              FieldName = 'UNI_DESCRICAO'
             end>
           Properties.ListOptions.ShowHeader = False
           Properties.ListSource = FrmCadastroUnidade.DtSrcProduto
           Properties.PostPopupValueOnTab = True
           Properties.OnChange = DbLkpCmbBxProdutoPropertiesChange
           Properties.OnEditValueChanged = DbLkpCmbBxProdutoPropertiesEditValueChanged
-          TabOrder = 2
-          Width = 561
+          TabOrder = 0
+          Width = 337
         end
         object DbEdtAreaPlantada: TcxDBCalcEdit
           Left = 8
-          Top = 192
+          Top = 72
           DataBinding.DataField = 'ATV_AREA_PLANTADA'
           DataBinding.DataSource = DtSrcProducaoAtividade
-          TabOrder = 8
-          Width = 113
+          TabOrder = 2
+          Width = 105
         end
         object DbEdtAreaColhida: TcxDBCalcEdit
-          Left = 128
-          Top = 192
+          Left = 232
+          Top = 72
           DataBinding.DataField = 'ATV_AREA_COLHIDA'
           DataBinding.DataSource = DtSrcProducaoAtividade
-          TabOrder = 9
+          TabOrder = 4
           Width = 113
         end
         object DbLkpCmbBxUnidadeMedida: TcxDBLookupComboBox
@@ -323,22 +314,21 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
               FieldName = 'UNI_SIGLA'
             end>
           Properties.ListOptions.ShowHeader = False
-          Properties.ListSource = DtmCadastroModulo.DtSrcUnidade
           Properties.PostPopupValueOnTab = True
           Properties.ReadOnly = True
-          TabOrder = 3
-          Width = 113
+          TabOrder = 7
+          Width = 105
         end
         object DbEdtQuantidade: TcxDBCalcEdit
-          Left = 128
+          Left = 120
           Top = 112
           DataBinding.DataField = 'ATV_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoAtividade
-          TabOrder = 4
-          Width = 113
+          TabOrder = 8
+          Width = 105
         end
         object DbLkpCmbBxSistema: TcxDBLookupComboBox
-          Left = 120
+          Left = 352
           Top = 32
           DataBinding.DataField = 'SIP_ID'
           DataBinding.DataSource = DtSrcProducaoAtividade
@@ -355,8 +345,8 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Width = 217
         end
         object DbEdtPeriodoPlantio: TcxDBMaskEdit
-          Left = 8
-          Top = 152
+          Left = 120
+          Top = 72
           DataBinding.DataField = 'ATV_PERIODO_PLANTIO'
           DataBinding.DataSource = DtSrcProducaoAtividade
           Properties.Alignment.Horz = taLeftJustify
@@ -366,20 +356,20 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Properties.MaxLength = 0
           Properties.ValidationOptions = []
           Properties.OnValidate = DbEdtAnoMesPropertiesValidate
-          TabOrder = 6
-          Width = 113
+          TabOrder = 3
+          Width = 105
         end
         object DbEdtAreaPerdida: TcxDBCalcEdit
-          Left = 248
-          Top = 192
+          Left = 464
+          Top = 72
           DataBinding.DataField = 'ATV_AREA_PERDIDA'
           DataBinding.DataSource = DtSrcProducaoAtividade
-          TabOrder = 10
-          Width = 113
+          TabOrder = 6
+          Width = 105
         end
         object DbEdtPeriodoColheita: TcxDBMaskEdit
-          Left = 128
-          Top = 152
+          Left = 352
+          Top = 72
           DataBinding.DataField = 'ATV_PERIODO_COLHEITA'
           DataBinding.DataSource = DtSrcProducaoAtividade
           Properties.Alignment.Horz = taLeftJustify
@@ -389,11 +379,11 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Properties.MaxLength = 0
           Properties.ValidationOptions = []
           Properties.OnValidate = DbEdtAnoMesPropertiesValidate
-          TabOrder = 7
-          Width = 113
+          TabOrder = 5
+          Width = 105
         end
         object DbEdtAno: TcxDBMaskEdit
-          Left = 248
+          Left = 352
           Top = 112
           DataBinding.DataField = 'ATV_ANO'
           DataBinding.DataSource = DtSrcProducaoAtividade
@@ -403,8 +393,8 @@ inherited FrmCadastroUnidadeAtividade: TFrmCadastroUnidadeAtividade
           Properties.EditMask = '!9999;0; '
           Properties.MaxLength = 0
           Properties.ValidationOptions = []
-          TabOrder = 5
-          Width = 113
+          TabOrder = 10
+          Width = 105
         end
       end
       object GrpBxRegistro: TcxGroupBox

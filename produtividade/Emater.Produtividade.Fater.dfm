@@ -27,6 +27,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
     Top = 37
     Width = 835
     Height = 538
+    Properties.ActivePage = TbShtTecnicas
     ExplicitTop = 37
     ExplicitWidth = 835
     ExplicitHeight = 538
@@ -845,6 +846,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
     object TbShtTecnicas: TcxTabSheet
       Caption = 'T'#233'cnicas e ferramentas'
       ImageIndex = 2
+      OnShow = TbShtTecnicasShow
       DesignSize = (
         831
         508)

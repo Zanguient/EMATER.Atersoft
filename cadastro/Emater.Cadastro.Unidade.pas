@@ -168,9 +168,6 @@ type
     BtnSemExcluir: TcxButton;
     GrdPrdSemTblPRD_QUANTIDADE: TcxGridDBColumn;
     GrdPrdSemTblPRD_DESCRICAO: TcxGridDBColumn;
-    GrdPrdSemTblDIV_DESCRICAO: TcxGridDBColumn;
-    GrdPrdSemTblGRP_DESCRICAO: TcxGridDBColumn;
-    GrdPrdSemTblCLS_DESCRICAO: TcxGridDBColumn;
     BtnAtvEditar: TcxButton;
     BtnPrdEditar: TcxButton;
     DtSrcProducaoAtividade: TDataSource;

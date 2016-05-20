@@ -504,14 +504,18 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="proater\Emater.Proater.Consts.pas"/>
-        <DCCReference Include="relatorio\Emater.Relatorio.Beneficiario.EstadoCivil.pas">
-            <Form>FrmRelatorioBeneficiarioEstadoCivil</Form>
+        <DCCReference Include="relatorio\Emater.Relatorio.Beneficiario.Escolaridade.pas">
+            <Form>FrmRelatorioBeneficiarioEscolaridade</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="relatorio\Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo.pas">
             <Form>FrmRelatorioFiltroUnidadeFuncionarioPeriodo</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="relatorio\Emater.Relatorio.Beneficiario.EstadoCivil.pas">
+            <Form>FrmRelatorioBeneficiarioEstadoCivil</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

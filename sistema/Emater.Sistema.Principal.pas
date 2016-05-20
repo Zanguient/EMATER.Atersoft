@@ -183,6 +183,7 @@ type
     procedure BtnIndicadorConsultaClick(Sender: TObject);
     procedure BtnIndicadorAdicionarClick(Sender: TObject);
     procedure BtnEstadoCivilBeneficiarioClick(Sender: TObject);
+    procedure BtnEscolaridadeBeneficiarioClick(Sender: TObject);
   public
     procedure AtualizarBarraStatus(const BD, Usuario, Local: string);
     procedure RecenteRemover(const Controle: TdxRibbonBackstageViewGalleryControl; const ID: Int64);
@@ -213,7 +214,8 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Cadastro.Beneficiario.Busca, Emater.Sistema.Consts, Emater.Sistema.Ajuda, Emater.Credito.Consulta, Emater.Credito,
   Emater.Credito.Financeira, Emater.Credito.Linha, Emater.Credito.Tipo, Emater.Credito.Publico, Emater.Credito.Situacao,
   Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal, Emater.Proater.Consulta,
-  Emater.Indicador.Editor, Emater.Indicador.Selecao, Emater.Indicador.Consulta, Emater.Relatorio.Beneficiario.EstadoCivil;
+  Emater.Indicador.Editor, Emater.Indicador.Selecao, Emater.Indicador.Consulta, Emater.Relatorio.Beneficiario.EstadoCivil,
+  Emater.Relatorio.Beneficiario.Escolaridade;
 
 { TForm1 }
 
@@ -481,6 +483,19 @@ end;
 procedure TFrmSistemaPrincipal.BtnDocumentoManualClick(Sender: TObject);
 begin
   TArquivo.Abrir(ExtractFilePath(Application.ExeName) + 'manual.pdf');
+end;
+
+procedure TFrmSistemaPrincipal.BtnEscolaridadeBeneficiarioClick(Sender: TObject);
+begin
+  FrmRelatorioBeneficiarioEscolaridade := TFrmRelatorioBeneficiarioEscolaridade.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioBeneficiarioEscolaridade.ShowModal;
+  finally
+    FrmRelatorioBeneficiarioEscolaridade.Release;
+    FrmRelatorioBeneficiarioEscolaridade := nil;
+    Screen.Cursor := crDefault;
+  end;
 end;
 
 procedure TFrmSistemaPrincipal.BtnEstadoCivilBeneficiarioClick(Sender: TObject);

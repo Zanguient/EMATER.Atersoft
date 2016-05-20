@@ -2105,23 +2105,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Styles.Selection = DtmRecursoModulo.cxStyleSelection
           object GrdPrdSemTblPRD_DESCRICAO: TcxGridDBColumn
             DataBinding.FieldName = 'PRD_DESCRICAO'
-            Width = 221
+            Width = 696
           end
           object GrdPrdSemTblPRD_QUANTIDADE: TcxGridDBColumn
             DataBinding.FieldName = 'PRD_QUANTIDADE'
-            Width = 66
-          end
-          object GrdPrdSemTblDIV_DESCRICAO: TcxGridDBColumn
-            DataBinding.FieldName = 'DIV_DESCRICAO'
-            Width = 152
-          end
-          object GrdPrdSemTblGRP_DESCRICAO: TcxGridDBColumn
-            DataBinding.FieldName = 'GRP_DESCRICAO'
-            Width = 152
-          end
-          object GrdPrdSemTblCLS_DESCRICAO: TcxGridDBColumn
-            DataBinding.FieldName = 'CLS_DESCRICAO'
-            Width = 152
+            Width = 83
           end
         end
         object GrdPrdSemLvl: TcxGridLevel
@@ -2172,12 +2160,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListColumns = <
             item
               FieldName = 'PRD_DESCRICAO'
-            end
-            item
-              FieldName = 'GRP_DESCRICAO'
-            end
-            item
-              FieldName = 'CLS_DESCRICAO'
             end>
           Properties.ListOptions.ShowHeader = False
           Properties.ListSource = DtSrcSemovente
@@ -4154,7 +4136,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     end
     object QryProducaoAtividadeSIP_ID: TIntegerField
       Alignment = taLeftJustify
-      DisplayLabel = 'Sistema produtivo'
+      DisplayLabel = 'Sistema de produ'#231#227'o'
       FieldName = 'SIP_ID'
       Origin = 'SIP_ID'
       Required = True
@@ -4183,7 +4165,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     end
     object QryProducaoAtividadeSIP_DESCRICAO: TStringField
       AutoGenerateValue = arDefault
-      DisplayLabel = 'Sistema produtivo'
+      DisplayLabel = 'Sistema de produ'#231#227'o'
       FieldName = 'SIP_DESCRICAO'
       Origin = 'SIP_DESCRICAO'
       ProviderFlags = []
@@ -4750,7 +4732,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       '  tab_cad_classe d on (a.cls_id = d.cls_id)'
       'where'
       '  (a.prd_semovente = 1) and'
-      '  (a.reg_excluido = 0)'
+      '  (a.reg_excluido = 0) and'
+      '  (d.cls_id <> 100000006)'
       'order by'
       '  a.prd_descricao')
     Left = 488

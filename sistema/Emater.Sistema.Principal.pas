@@ -118,6 +118,7 @@ type
     BtnIndicadorAdicionar: TdxBarLargeButton;
     BtnEstadoCivilBeneficiario: TdxBarLargeButton;
     BtnEscolaridadeBeneficiario: TdxBarLargeButton;
+    BtnRelatorioRibeirinho: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnBeneficiarioNovoClick(Sender: TObject);
     procedure BtnComunidadesClick(Sender: TObject);
@@ -184,6 +185,7 @@ type
     procedure BtnIndicadorAdicionarClick(Sender: TObject);
     procedure BtnEstadoCivilBeneficiarioClick(Sender: TObject);
     procedure BtnEscolaridadeBeneficiarioClick(Sender: TObject);
+    procedure BtnRelatorioRibeirinhoClick(Sender: TObject);
   public
     procedure AtualizarBarraStatus(const BD, Usuario, Local: string);
     procedure RecenteRemover(const Controle: TdxRibbonBackstageViewGalleryControl; const ID: Int64);
@@ -215,7 +217,7 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Credito.Financeira, Emater.Credito.Linha, Emater.Credito.Tipo, Emater.Credito.Publico, Emater.Credito.Situacao,
   Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal, Emater.Proater.Consulta,
   Emater.Indicador.Editor, Emater.Indicador.Selecao, Emater.Indicador.Consulta, Emater.Relatorio.Beneficiario.EstadoCivil,
-  Emater.Relatorio.Beneficiario.Escolaridade;
+  Emater.Relatorio.Beneficiario.Escolaridade, Emater.Relatorio.Beneficiario.Ribeirinho;
 
 { TForm1 }
 
@@ -780,6 +782,19 @@ begin
   finally
     FrmRelatorioProducaoBeneficiario.Release;
     FrmRelatorioProducaoBeneficiario := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmSistemaPrincipal.BtnRelatorioRibeirinhoClick(Sender: TObject);
+begin
+  FrmRelatorioBeneficiarioRibeirinho := TFrmRelatorioBeneficiarioRibeirinho.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioBeneficiarioRibeirinho.ShowModal;
+  finally
+    FrmRelatorioBeneficiarioRibeirinho.Release;
+    FrmRelatorioBeneficiarioRibeirinho := nil;
     Screen.Cursor := crDefault;
   end;
 end;

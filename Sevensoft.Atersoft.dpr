@@ -130,9 +130,10 @@ uses
   Emater.Indicador.Consulta in 'indicador\Emater.Indicador.Consulta.pas' {FrmIndicadorConsulta},
   Emater.Relatorio.Proater in 'relatorio\Emater.Relatorio.Proater.pas' {FrmRelatorioProater},
   Emater.Proater.Consts in 'proater\Emater.Proater.Consts.pas',
-  Emater.Relatorio.Beneficiario.Escolaridade in 'relatorio\Emater.Relatorio.Beneficiario.Escolaridade.pas' {FrmRelatorioBeneficiarioEscolaridade},
+  Emater.Relatorio.Beneficiario.Ribeirinho in 'relatorio\Emater.Relatorio.Beneficiario.Ribeirinho.pas' {FrmRelatorioBeneficiarioRibeirinho},
   Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo in 'relatorio\Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo.pas' {FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrame},
-  Emater.Relatorio.Beneficiario.EstadoCivil in 'relatorio\Emater.Relatorio.Beneficiario.EstadoCivil.pas' {FrmRelatorioBeneficiarioEstadoCivil};
+  Emater.Relatorio.Beneficiario.EstadoCivil in 'relatorio\Emater.Relatorio.Beneficiario.EstadoCivil.pas' {FrmRelatorioBeneficiarioEstadoCivil},
+  Emater.Relatorio.Beneficiario.Escolaridade in 'relatorio\Emater.Relatorio.Beneficiario.Escolaridade.pas' {FrmRelatorioBeneficiarioEscolaridade};
 
 {$R *.res}
 

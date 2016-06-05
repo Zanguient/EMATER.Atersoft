@@ -1,15 +1,15 @@
 inherited FrmCadastroUnidade: TFrmCadastroUnidade
   Tag = 1
-  Left = 358
-  Top = 78
+  Left = 423
+  Top = 114
   Hint = 'Cadastro de unidades de produ'#231#227'o familiar.'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
   Caption = 'Unidade de Produ'#231#227'o Familiar'
   ClientHeight = 630
   ClientWidth = 820
-  ExplicitLeft = 358
-  ExplicitTop = 78
+  ExplicitLeft = 423
+  ExplicitTop = 114
   ExplicitWidth = 836
   ExplicitHeight = 669
   DesignSize = (
@@ -45,10 +45,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentColor = False
         TabOrder = 0
         DesignSize = (
-          781
+          777
           296)
         Height = 303
-        Width = 781
+        Width = 777
         object Label1: TLabel
           Tag = 2
           Left = 104
@@ -69,7 +69,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label3: TLabel
-          Left = 724
+          Left = 720
           Top = 16
           Width = 41
           Height = 13
@@ -107,7 +107,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label18: TLabel
-          Left = 748
+          Left = 744
           Top = 56
           Width = 17
           Height = 13
@@ -194,10 +194,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_ENDERECO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 2
-          Width = 253
+          Width = 249
         end
         object DbEdtNumero: TcxDBTextEdit
-          Left = 724
+          Left = 720
           Top = 32
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'PRO_NUMERO'
@@ -237,10 +237,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 6
-          Width = 293
+          Width = 289
         end
         object DbEdtUF: TcxDBTextEdit
-          Left = 748
+          Left = 744
           Top = 72
           TabStop = False
           Anchors = [akTop, akRight]
@@ -257,7 +257,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRO_ACESSO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 8
-          Width = 765
+          Width = 761
         end
         object DbLkpCmbBxComunidade: TcxDBLookupComboBox
           Left = 8
@@ -344,6 +344,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui CAR (Cadastro de Ambiente Rural):'
             DataBinding.DataField = 'PRO_CAR'
             DataBinding.DataSource = DtSrcPrincipal
+            ParentBackground = False
             ParentColor = False
             Properties.ImmediatePost = True
             Properties.ValueChecked = '1'
@@ -379,6 +380,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui sistema de energia el'#233'trica:'
             DataBinding.DataField = 'PRO_ENERGIA_SITUACAO'
             DataBinding.DataSource = DtSrcPrincipal
+            ParentBackground = False
             ParentColor = False
             Properties.Alignment = taLeftJustify
             Properties.ImmediatePost = True
@@ -397,6 +399,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_ENERGIA_CONCESSIONARIA'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -412,6 +415,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_ENERGIA_OUTRAS'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -430,13 +434,14 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           ParentColor = False
           TabOrder = 16
           Height = 113
-          Width = 261
+          Width = 257
           object DbChckBxAgua: TcxDBCheckBox
             Left = 8
             Top = 16
             Caption = 'Possui sistema de abastecimento de '#225'gua:'
             DataBinding.DataField = 'PRO_AGUA_SITUACAO'
             DataBinding.DataSource = DtSrcPrincipal
+            ParentBackground = False
             ParentColor = False
             Properties.ImmediatePost = True
             Properties.ValueChecked = '1'
@@ -454,6 +459,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_CONCESSIONARIA'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -469,6 +475,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_POCO_ARTESIANO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -484,6 +491,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_POCO_AMAZONICO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -499,6 +507,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_RIO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -514,6 +523,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_OUTRAS'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
+            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -539,7 +549,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 12
-          Width = 181
+          Width = 177
         end
         object DbLkpCmbBxDocumento: TcxDBLookupComboBox
           Left = 368
@@ -586,10 +596,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentColor = False
         TabOrder = 1
         DesignSize = (
-          377
+          373
           92)
         Height = 99
-        Width = 377
+        Width = 373
         object Label15: TLabel
           Left = 8
           Top = 19
@@ -806,11 +816,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 8
-          Width = 281
+          Width = 277
         end
       end
       object GrpBxTerra: TcxGroupBox
-        Left = 392
+        Left = 388
         Top = 304
         Anchors = [akTop, akRight]
         Caption = 'Condi'#231#227'o da terra'
@@ -1105,10 +1115,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentColor = False
         TabOrder = 2
         DesignSize = (
-          377
+          373
           111)
         Height = 118
-        Width = 377
+        Width = 373
         object Label31: TLabel
           Left = 8
           Top = 44
@@ -1163,7 +1173,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 245
+          Width = 241
         end
         object DbLkpCmbBxUnidade: TcxDBLookupComboBox
           Left = 120
@@ -1183,7 +1193,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.PostPopupValueOnTab = True
           Properties.ReadOnly = True
           TabOrder = 1
-          Width = 245
+          Width = 241
         end
         object DbEdtModificadoData: TcxDBTextEdit
           Left = 8
@@ -1202,7 +1212,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataSource = DtSrcPrincipal
           Enabled = False
           TabOrder = 3
-          Width = 229
+          Width = 225
         end
       end
     end
@@ -1210,14 +1220,18 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benefici'#225'rios'
       ImageIndex = 6
       OnShow = TbShtBeneficiariosShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
       object GrdBen: TcxGrid
         Left = 8
         Top = 40
-        Width = 781
-        Height = 476
+        Width = 777
+        Height = 470
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1228,6 +1242,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 3
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 781
+        ExplicitHeight = 476
         object GrdBenTbl: TcxGridDBTableView
           OnDblClick = GrdBenTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -1337,14 +1353,18 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benfeitorias'
       ImageIndex = 2
       OnShow = TbShtBenfeitoriasShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
       object GrdPrdBem: TcxGrid
         Left = 8
         Top = 184
-        Width = 781
-        Height = 332
+        Width = 777
+        Height = 326
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1355,6 +1375,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 5
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 781
+        ExplicitHeight = 332
         object GrdPrdBemTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1459,11 +1481,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
+        ExplicitWidth = 781
         DesignSize = (
-          781
+          777
           74)
         Height = 81
-        Width = 781
+        Width = 777
         object Label10: TLabel
           Tag = 2
           Left = 8
@@ -1474,7 +1497,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label33: TLabel
-          Left = 660
+          Left = 656
           Top = 24
           Width = 60
           Height = 13
@@ -1486,7 +1509,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label34: TLabel
           Tag = 2
-          Left = 412
+          Left = 408
           Top = 24
           Width = 37
           Height = 13
@@ -1496,7 +1519,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           ExplicitLeft = 416
         end
         object Label46: TLabel
-          Left = 556
+          Left = 552
           Top = 24
           Width = 87
           Height = 13
@@ -1523,19 +1546,21 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 397
+          ExplicitWidth = 397
+          Width = 393
         end
         object DbEdtQuantidade: TcxDBSpinEdit
-          Left = 660
+          Left = 656
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
+          ExplicitLeft = 660
           Width = 113
         end
         object DbImgCmbBxEstado: TcxDBImageComboBox
-          Left = 412
+          Left = 408
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_ESTADO'
@@ -1563,10 +1588,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
+          ExplicitLeft = 412
           Width = 137
         end
         object EdtDataBem: TcxDBDateEdit
-          Left = 556
+          Left = 552
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_DATA'
@@ -1575,6 +1601,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
+          ExplicitLeft = 556
           Width = 97
         end
       end
@@ -1658,11 +1685,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 6
+        ExplicitWidth = 781
         DesignSize = (
-          781
+          777
           52)
         Height = 59
-        Width = 781
+        Width = 777
         object cxDBNavigator1: TcxDBNavigator
           Left = 8
           Top = 19
@@ -1698,10 +1726,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Style.Font.Style = []
           Style.IsFontAssigned = True
           TabOrder = 1
-          Width = 491
+          ExplicitWidth = 491
+          Width = 487
         end
         object DbEdtCPF: TcxDBTextEdit
-          Left = 604
+          Left = 600
           Top = 18
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEN_CPF'
@@ -1715,6 +1744,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Style.Font.Style = []
           Style.IsFontAssigned = True
           TabOrder = 2
+          ExplicitLeft = 604
           Width = 169
         end
       end
@@ -1729,14 +1759,18 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ImageIndex = 3
       ParentFont = False
       OnShow = TbShtMaquinasShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
       object GrdPrdMaq: TcxGrid
         Left = 8
         Top = 184
-        Width = 781
-        Height = 332
+        Width = 777
+        Height = 326
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1747,6 +1781,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 781
+        ExplicitHeight = 332
         object GrdPrdMaqTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1851,11 +1887,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
+        ExplicitWidth = 781
         DesignSize = (
-          781
+          777
           74)
         Height = 81
-        Width = 781
+        Width = 777
         object Label35: TLabel
           Tag = 2
           Left = 8
@@ -1866,7 +1903,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label36: TLabel
-          Left = 660
+          Left = 656
           Top = 24
           Width = 60
           Height = 13
@@ -1878,7 +1915,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         end
         object Label37: TLabel
           Tag = 2
-          Left = 412
+          Left = 408
           Top = 24
           Width = 37
           Height = 13
@@ -1888,7 +1925,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           ExplicitLeft = 416
         end
         object Label47: TLabel
-          Left = 556
+          Left = 552
           Top = 24
           Width = 87
           Height = 13
@@ -1915,19 +1952,21 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 397
+          ExplicitWidth = 397
+          Width = 393
         end
         object DbEdtMaquinaQtde: TcxDBSpinEdit
-          Left = 660
+          Left = 656
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
+          ExplicitLeft = 660
           Width = 113
         end
         object DbImgCmbBxMaquinaEstado: TcxDBImageComboBox
-          Left = 412
+          Left = 408
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_ESTADO'
@@ -1955,10 +1994,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
+          ExplicitLeft = 412
           Width = 137
         end
         object EdtDataEquipamento: TcxDBDateEdit
-          Left = 556
+          Left = 552
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'BEM_DATA'
@@ -1967,6 +2007,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
+          ExplicitLeft = 556
           Width = 97
         end
       end
@@ -2039,14 +2080,18 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Semoventes'
       ImageIndex = 4
       OnShow = TbShtSemoventesShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
       object GrdPrdSem: TcxGrid
         Left = 8
         Top = 184
-        Width = 781
-        Height = 332
+        Width = 777
+        Height = 326
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2057,6 +2102,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 781
+        ExplicitHeight = 332
         object GrdPrdSemTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -2124,11 +2171,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
+        ExplicitWidth = 781
         DesignSize = (
-          781
+          777
           74)
         Height = 81
-        Width = 781
+        Width = 777
         object Label38: TLabel
           Tag = 2
           Left = 8
@@ -2139,7 +2187,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Transparent = True
         end
         object Label39: TLabel
-          Left = 684
+          Left = 680
           Top = 24
           Width = 60
           Height = 13
@@ -2147,6 +2195,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Caption = 'Quantidade:'
           FocusControl = DbEdtSemoventeQtde
           Transparent = True
+          ExplicitLeft = 684
         end
         object DbLkpCmbBxSemovente: TcxDBLookupComboBox
           Left = 8
@@ -2165,15 +2214,17 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcSemovente
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          Width = 669
+          ExplicitWidth = 669
+          Width = 665
         end
         object DbEdtSemoventeQtde: TcxDBSpinEdit
-          Left = 684
+          Left = 680
           Top = 40
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'PRD_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoSemovente
           TabOrder = 1
+          ExplicitLeft = 684
           Width = 89
         end
       end
@@ -2230,13 +2281,17 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Atividades produtivas e comercializa'#231#227'o'
       ImageIndex = 5
       OnShow = TbShtAtividadesShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
       object GrdPrdAtv: TcxGrid
         Left = 8
         Top = 99
-        Width = 781
+        Width = 777
         Height = 193
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -2248,6 +2303,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 781
         object GrdPrdAtvTbl: TcxGridDBTableView
           OnDblClick = GrdPrdAtvTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -2357,8 +2413,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       object GrdPrd: TcxGrid
         Left = 8
         Top = 336
-        Width = 781
-        Height = 180
+        Width = 777
+        Height = 174
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2369,6 +2425,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 3
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 781
+        ExplicitHeight = 180
         object GrdPrdTbl: TcxGridDBTableView
           OnDblClick = GrdPrdTblDblClick
           Navigator.Buttons.CustomButtons = <>

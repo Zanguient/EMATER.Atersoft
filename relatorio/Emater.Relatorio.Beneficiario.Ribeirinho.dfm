@@ -1,21 +1,23 @@
-inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCivil
-  Left = 404
-  Top = 165
+inherited FrmRelatorioBeneficiarioRibeirinho: TFrmRelatorioBeneficiarioRibeirinho
+  Left = 517
+  Top = 152
   ActiveControl = FrmFiltro.EdtDataInicio
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
     inherited TbShtFiltros: TcxTabSheet
       inherited LblTitulo: TLabel
-        Caption = ' Benefici'#225'rios de ATER cadastrados segundo o estado civil'
+        Caption = ' Ribeirinhos cadastrados segundo a categoria e g'#234'nero'
       end
       inherited GrpBxFiltro: TcxGroupBox
         object Label1: TLabel
           Left = 9
           Top = 144
-          Width = 273
+          Width = 325
           Height = 13
-          Caption = 'Somente benefici'#225'rios com o cadastro ativo e atualizado.'
+          Caption = 
+            'Somente benefici'#225'rios ribeirinhos com o cadastro ativo e atualiz' +
+            'ado.'
           Transparent = True
         end
         inline FrmFiltro: TFrmRelatorioFiltroUnidadePeriodo
@@ -74,8 +76,8 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
         end
         inherited CmbBxCampo: TcxComboBox
           Properties.Items.Strings = (
-            'Descri'#231#227'o do estado civil')
-          Text = 'Descri'#231#227'o do estado civil'
+            'Descri'#231#227'o da categoria')
+          Text = 'Descri'#231#227'o da categoria'
         end
       end
     end
@@ -85,7 +87,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
   end
   inherited FrxPrincipal: TfrxReport
     ReportOptions.Name = 'Quantidade de benefici'#225'rios por categoria'
-    ReportOptions.LastChange = 42526.867858819450000000
+    ReportOptions.LastChange = 42526.869780358790000000
     ScriptText.Strings = (
       'begin'
       '    '
@@ -169,8 +171,8 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           Height = 45.354342910000000000
           DisplayFormat.DecimalSeparator = ''
           Memo.UTF8W = (
-            'Quantidade de benefici'#225'rio de ATER cadastrados e'
-            'integrantes familiares, segundo o estado civil')
+            'Quantidade de ribeirinhos cadastrados'
+            'segundo a categoria e g'#234'nero')
         end
         object Memo15: TfrxMemoView
           Top = 45.354360000000000000
@@ -209,7 +211,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           Fill.BackColor = 14211288
           GapX = 6.000000000000000000
           Memo.UTF8W = (
-            'Estado civil')
+            'Categoria')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -249,7 +251,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           GapX = 6.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            'Benefici'#225'rios cadastrados')
+            'Masculino')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -269,7 +271,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           GapX = 6.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            'Integrantes familiar')
+            'Feminino')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -286,7 +288,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           Left = 128.504020000000000000
           Width = 192.756030000000000000
           Height = 22.677180000000000000
-          DataField = 'ESTADO_CIVIL'
+          DataField = 'CATEGORIA'
           DataSet = FrxDtStPrincipal
           DataSetName = 'QryPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -298,7 +300,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
           Memo.UTF8W = (
-            '[QryPrincipal."ESTADO_CIVIL"]')
+            '[QryPrincipal."CATEGORIA"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -329,7 +331,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           Left = 400.630180000000000000
           Width = 94.488250000000000000
           Height = 22.677180000000000000
-          DataField = 'BENEFICIARIOS'
+          DataField = 'MASCULINO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'QryPrincipal'
           DisplayFormat.FormatStr = '%2.0n'
@@ -344,7 +346,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           GapX = 6.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            '[QryPrincipal."BENEFICIARIOS"]')
+            '[QryPrincipal."MASCULINO"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -352,7 +354,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           Left = 495.118430000000000000
           Width = 94.488250000000000000
           Height = 22.677180000000000000
-          DataField = 'INTEGRANTES'
+          DataField = 'FEMININO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'QryPrincipal'
           DisplayFormat.FormatStr = '%2.0n'
@@ -367,7 +369,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           GapX = 6.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            '[QryPrincipal."INTEGRANTES"]')
+            '[QryPrincipal."FEMININO"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -433,7 +435,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           GapX = 6.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            '[SUM(<QryPrincipal."BENEFICIARIOS">,MasterData)]')
+            '[SUM(<QryPrincipal."MASCULINO">,MasterData)]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -454,7 +456,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
           GapX = 6.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            '[SUM(<QryPrincipal."INTEGRANTES">,MasterData)]')
+            '[SUM(<QryPrincipal."FEMININO">,MasterData)]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -466,9 +468,10 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
     SQL.Strings = (
-      'select id, estado_civil, beneficiarios, integrantes, total'
-      'from stp_rel_estado_civil_01 (:data_inicio, :data_fim, :unidade)'
-      'order by estado_civil')
+      
+        'select * from stp_rel_ribeirinho_01 (:data_inicio, :data_fim, :u' +
+        'nidade)'
+      'order by categoria')
     Left = 112
     Top = 328
     ParamData = <
@@ -488,7 +491,7 @@ inherited FrmRelatorioBeneficiarioEstadoCivil: TFrmRelatorioBeneficiarioEstadoCi
         Name = 'UNIDADE'
         DataType = ftInteger
         ParamType = ptInput
-        Value = '113'
+        Value = '111'
       end>
   end
   object FrxDtStPrincipal: TfrxDBDataset

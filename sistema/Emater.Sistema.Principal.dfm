@@ -3081,7 +3081,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
-      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3134,6 +3133,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 4
     end
     object RbnTbRelatorios: TdxRibbonTab
+      Active = True
       Caption = 'Relat'#243'rios'
       Groups = <
         item
@@ -4009,6 +4009,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         item
           Visible = True
           ItemName = 'BtnEscolaridadeBeneficiario'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnRelatorioRibeirinho'
         end>
     end
     object BtnBeneficiarioIndividual: TdxBarLargeButton
@@ -4254,6 +4258,20 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnEscolaridadeBeneficiarioClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioRibeirinho: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Ribeirinhos cadastrados segundo a categoria e g'#234'nero'
+      Category = 5
+      Description = 
+        'Relat'#243'rio de ribeirinhos cadastrados segundo a categoria e g'#234'ner' +
+        'o'
+      Hint = 'Ribeirinhos cadastrados segundo a categoria e g'#234'nero'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnRelatorioRibeirinhoClick
       SyncImageIndex = False
       ImageIndex = 156
     end

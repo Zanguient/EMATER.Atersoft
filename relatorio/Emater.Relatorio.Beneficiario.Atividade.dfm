@@ -1,16 +1,12 @@
 inherited FrmRelatorioBeneficiarioAtividade: TFrmRelatorioBeneficiarioAtividade
   Left = 362
   Top = 152
-  ExplicitLeft = 362
-  ExplicitTop = 152
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
     inherited TbShtFiltros: TcxTabSheet
       inherited LblTitulo: TLabel
-        Caption = 
-          ' Benefici'#225'rios de ATER cadastrados por atividade produtiva segun' +
-          'do a categoria'
+        Caption = ' Benefici'#225'rios de ATER cadastrados segundo a atividade produtiva'
       end
       inherited GrpBxFiltro: TcxGroupBox
         object Label1: TLabel
@@ -120,7 +116,7 @@ inherited FrmRelatorioBeneficiarioAtividade: TFrmRelatorioBeneficiarioAtividade
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
     ReportOptions.Name = ''
-    ReportOptions.LastChange = 42489.500799212960000000
+    ReportOptions.LastChange = 42527.463031064810000000
     ScriptText.Strings = (
       'begin'
       '    '
@@ -216,9 +212,7 @@ inherited FrmRelatorioBeneficiarioAtividade: TFrmRelatorioBeneficiarioAtividade
           Height = 26.456692910000000000
           DisplayFormat.DecimalSeparator = ''
           Memo.UTF8W = (
-            
-              'Benefici'#225'rios de ATER cadastrados por atividade produtiva segund' +
-              'o a categoria')
+            'Benefici'#225'rios de ATER cadastrados segundo a atividade produtiva')
         end
         object Memo15: TfrxMemoView
           Top = 26.456710000000000000

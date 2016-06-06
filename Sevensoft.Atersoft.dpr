@@ -130,11 +130,13 @@ uses
   Emater.Indicador.Consulta in 'indicador\Emater.Indicador.Consulta.pas' {FrmIndicadorConsulta},
   Emater.Relatorio.Proater in 'relatorio\Emater.Relatorio.Proater.pas' {FrmRelatorioProater},
   Emater.Proater.Consts in 'proater\Emater.Proater.Consts.pas',
-  Emater.Relatorio.Beneficiario.Ribeirinho in 'relatorio\Emater.Relatorio.Beneficiario.Ribeirinho.pas' {FrmRelatorioBeneficiarioRibeirinho},
+  Emater.Relatorio.Producao.Cultura in 'relatorio\Emater.Relatorio.Producao.Cultura.pas' {FrmRelatorioProducaoCultura},
   Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo in 'relatorio\Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo.pas' {FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrame},
   Emater.Relatorio.Beneficiario.EstadoCivil in 'relatorio\Emater.Relatorio.Beneficiario.EstadoCivil.pas' {FrmRelatorioBeneficiarioEstadoCivil},
   Emater.Relatorio.Beneficiario.Faixa in 'relatorio\Emater.Relatorio.Beneficiario.Faixa.pas' {FrmRelatorioBeneficiarioFaixa},
-  Emater.Relatorio.Beneficiario.Escolaridade in 'relatorio\Emater.Relatorio.Beneficiario.Escolaridade.pas' {FrmRelatorioBeneficiarioEscolaridade};
+  Emater.Relatorio.Beneficiario.Escolaridade in 'relatorio\Emater.Relatorio.Beneficiario.Escolaridade.pas' {FrmRelatorioBeneficiarioEscolaridade},
+  Emater.Relatorio.Beneficiario.Ribeirinho in 'relatorio\Emater.Relatorio.Beneficiario.Ribeirinho.pas' {FrmRelatorioBeneficiarioRibeirinho},
+  Emater.Relatorio.Beneficiario.Genero in 'relatorio\Emater.Relatorio.Beneficiario.Genero.pas' {FrmRelatorioBeneficiarioGenero};
 
 {$R *.res}
 

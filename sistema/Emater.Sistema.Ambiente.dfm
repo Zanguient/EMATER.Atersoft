@@ -5,10 +5,10 @@ inherited FrmSistemaAmbiente: TFrmSistemaAmbiente
   Caption = 'Configura'#231#245'es do Ambiente'
   ClientWidth = 372
   OnShow = FormShow
-  ExplicitLeft = 381
-  ExplicitTop = 158
-  ExplicitWidth = 388
-  ExplicitHeight = 439
+  ExplicitLeft = 8
+  ExplicitTop = 8
+  ExplicitWidth = 378
+  ExplicitHeight = 429
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlPrincipal: TcxPageControl
@@ -63,6 +63,7 @@ inherited FrmSistemaAmbiente: TFrmSistemaAmbiente
     Top = 208
   end
   object DtSrcParametro: TDataSource
+    DataSet = QryParametro
     Left = 177
     Top = 176
   end
@@ -102,7 +103,6 @@ inherited FrmSistemaAmbiente: TFrmSistemaAmbiente
     end
   end
   object QryParametro: TFDQuery
-    Active = True
     Connection = DtmConexaoModulo.FDConnection
     Transaction = DtmConexaoModulo.FDReadTransaction
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction

@@ -3081,6 +3081,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
+      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3133,7 +3134,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 4
     end
     object RbnTbRelatorios: TdxRibbonTab
-      Active = True
       Caption = 'Relat'#243'rios'
       Groups = <
         item
@@ -4012,11 +4012,15 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         end
         item
           Visible = True
-          ItemName = 'BtnRelatorioRibeirinho'
+          ItemName = 'BtnRelatorioFaixaEtaria'
         end
         item
           Visible = True
-          ItemName = 'BtnRelatorioFaixaEtaria'
+          ItemName = 'BtnBeneficiarioGenero'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnRelatorioRibeirinho'
         end>
     end
     object BtnBeneficiarioIndividual: TdxBarLargeButton
@@ -4052,16 +4056,12 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     end
     object BtnBeneficiarioAtividade: TdxBarLargeButton
       Tag = 1
-      Caption = 
-        'Benefici'#225'rios de ATER cadastrados por atividade produtiva segund' +
-        'o a categoria'
+      Caption = 'Benefici'#225'rios de ATER cadastrados segundo a atividade produtiva'
       Category = 5
       Description = 
-        'Relat'#243'rio de benefici'#225'rios de ATER cadastrados por atividade pro' +
-        'dutiva segundo a categoria'
-      Hint = 
-        'Benefici'#225'rios de ATER cadastrados por atividade produtiva segund' +
-        'o a categoria'
+        'Relat'#243'rio de benefici'#225'rios de ATER cadastrados segundo a ativida' +
+        'de produtiva'
+      Hint = 'Benefici'#225'rios de ATER cadastrados segundo a atividade produtiva'
       Visible = ivAlways
       LargeImageIndex = 20
       UnclickAfterDoing = False
@@ -4223,6 +4223,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         item
           Visible = True
           ItemName = 'BtnProducaoBeneficiario'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnRelatorioProducaoCultura'
         end>
     end
     object BtnProducaoBeneficiario: TdxBarLargeButton
@@ -4283,10 +4287,40 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Benefici'#225'rios de ATER cadastrados segundo a faixa et'#225'ria'
       Category = 5
+      Description = 
+        'Relat'#243'rio de benefici'#225'rios de ATER cadastrados segundo a faixa e' +
+        't'#225'ria'
       Hint = 'Benefici'#225'rios de ATER cadastrados segundo a faixa et'#225'ria'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioFaixaEtariaClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnBeneficiarioGenero: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Benefici'#225'rios de ATER cadastrados segundo a categoria e g'#234'nero'
+      Category = 5
+      Description = 
+        'Relat'#243'rio de benefici'#225'rios de ATER cadastrados segundo a categor' +
+        'ia e g'#234'nero'
+      Hint = 'Benefici'#225'rios de ATER cadastrados segundo a categoria e g'#234'nero'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnBeneficiarioGeneroClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioProducaoCultura: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo a cultura'
+      Category = 5
+      Description = 
+        'Relat'#243'rio de produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo' +
+        ' a cultura'
+      Hint = 'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo a cultura'
+      Visible = ivAlways
+      LargeImageIndex = 20
       SyncImageIndex = False
       ImageIndex = 156
     end

@@ -20,6 +20,7 @@ resourcestring
   RELATORIO_AVISO_INFORMAR_BENEFICIARIO = 'É necessário informar um beneficiário antes de gerar o relatório.';
   RELATORIO_AVISO_INFORMAR_CPF_NAO_LOCALIZADO = 'O CPF informado não foi localizado na base de dados.';
   RELATORIO_AVISO_INFORMAR_CPF_INVALIDO = 'O CPF informado está incorreto.';
+  RELATORIO_AVISO_PERIODO_INVALIDO = 'O período %s está incorreto. Por favor, informe um período válido.';
 
   RELATORIO_INFO_PERIODO = 'Período de %s até %s';
   RELATORIO_INFO_SAFRA = 'Safra %s/%s';
@@ -29,6 +30,8 @@ resourcestring
   RELATORIO_INFO_FUNCIONARIO = '- Técnico responsável: %s';
   RELATORIO_INFO_ANO_QUADRIMESTRE = 'Ano: %s Quadrimestre: %s';
   RELATORIO_INFO_ANO = 'Ano: %s';
+  RELATORIO_INFO_PLANTIO = 'Plantio %s';
+  RELATORIO_INFO_COLHEITA = 'Colheita %s';
 
 implementation
 

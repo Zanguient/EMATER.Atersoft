@@ -82,8 +82,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>CompanyName=Sevensoft Tecnologia da Informação;FileDescription=Sevensoft Atersoft;FileVersion=1.0.0.102;InternalName=Sevensoft.Atersoft;LegalCopyright=Copyright© 2014, Sevensoft Tecnologia da Informação.;LegalTrademarks=O logotipo do sistema é marca da EMATER do Estado do Pará, Brasil. O nome Atersoft é marca da Sevensoft Tecnologia da Informação.;OriginalFilename=Sevensoft.Atersoft.exe;ProductName=ATER Pará;ProductVersion=1.0;Comments=Sistema desenvolvido e mantido pela Sevensoft Tecnlogia da Informação.</VerInfo_Keys>
-        <VerInfo_Build>102</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Sevensoft Tecnologia da Informação;FileDescription=Sevensoft Atersoft;FileVersion=1.0.0.103;InternalName=Sevensoft.Atersoft;LegalCopyright=Copyright© 2014, Sevensoft Tecnologia da Informação.;LegalTrademarks=O logotipo do sistema é marca da EMATER do Estado do Pará, Brasil. O nome Atersoft é marca da Sevensoft Tecnologia da Informação.;OriginalFilename=Sevensoft.Atersoft.exe;ProductName=ATER Pará;ProductVersion=1.0;Comments=Sistema desenvolvido e mantido pela Sevensoft Tecnlogia da Informação.</VerInfo_Keys>
+        <VerInfo_Build>103</VerInfo_Build>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -504,8 +504,8 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="proater\Emater.Proater.Consts.pas"/>
-        <DCCReference Include="relatorio\Emater.Relatorio.Beneficiario.Ribeirinho.pas">
-            <Form>FrmRelatorioBeneficiarioRibeirinho</Form>
+        <DCCReference Include="relatorio\Emater.Relatorio.Producao.Cultura.pas">
+            <Form>FrmRelatorioProducaoCultura</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="relatorio\Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo.pas">
@@ -523,6 +523,14 @@
         </DCCReference>
         <DCCReference Include="relatorio\Emater.Relatorio.Beneficiario.Escolaridade.pas">
             <Form>FrmRelatorioBeneficiarioEscolaridade</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="relatorio\Emater.Relatorio.Beneficiario.Ribeirinho.pas">
+            <Form>FrmRelatorioBeneficiarioRibeirinho</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="relatorio\Emater.Relatorio.Beneficiario.Genero.pas">
+            <Form>FrmRelatorioBeneficiarioGenero</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

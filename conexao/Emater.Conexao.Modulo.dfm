@@ -1,8 +1,6 @@
 object DtmConexaoModulo: TDtmConexaoModulo
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 489
-  Top = 173
   Height = 399
   Width = 674
   object ReadTransaction: TpFIBTransaction

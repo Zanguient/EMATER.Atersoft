@@ -119,6 +119,7 @@ type
     BtnEstadoCivilBeneficiario: TdxBarLargeButton;
     BtnEscolaridadeBeneficiario: TdxBarLargeButton;
     BtnRelatorioRibeirinho: TdxBarLargeButton;
+    BtnRelatorioFaixaEtaria: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnBeneficiarioNovoClick(Sender: TObject);
     procedure BtnComunidadesClick(Sender: TObject);
@@ -186,6 +187,7 @@ type
     procedure BtnEstadoCivilBeneficiarioClick(Sender: TObject);
     procedure BtnEscolaridadeBeneficiarioClick(Sender: TObject);
     procedure BtnRelatorioRibeirinhoClick(Sender: TObject);
+    procedure BtnRelatorioFaixaEtariaClick(Sender: TObject);
   public
     procedure AtualizarBarraStatus(const BD, Usuario, Local: string);
     procedure RecenteRemover(const Controle: TdxRibbonBackstageViewGalleryControl; const ID: Int64);
@@ -217,7 +219,7 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Credito.Financeira, Emater.Credito.Linha, Emater.Credito.Tipo, Emater.Credito.Publico, Emater.Credito.Situacao,
   Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal, Emater.Proater.Consulta,
   Emater.Indicador.Editor, Emater.Indicador.Selecao, Emater.Indicador.Consulta, Emater.Relatorio.Beneficiario.EstadoCivil,
-  Emater.Relatorio.Beneficiario.Escolaridade, Emater.Relatorio.Beneficiario.Ribeirinho;
+  Emater.Relatorio.Beneficiario.Escolaridade, Emater.Relatorio.Beneficiario.Ribeirinho, Emater.Relatorio.Beneficiario.Faixa;
 
 { TForm1 }
 
@@ -782,6 +784,19 @@ begin
   finally
     FrmRelatorioProducaoBeneficiario.Release;
     FrmRelatorioProducaoBeneficiario := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmSistemaPrincipal.BtnRelatorioFaixaEtariaClick(Sender: TObject);
+begin
+  FrmRelatorioBeneficiarioFaixa := TFrmRelatorioBeneficiarioFaixa.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioBeneficiarioFaixa.ShowModal;
+  finally
+    FrmRelatorioBeneficiarioFaixa.Release;
+    FrmRelatorioBeneficiarioFaixa := nil;
     Screen.Cursor := crDefault;
   end;
 end;

@@ -4013,6 +4013,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         item
           Visible = True
           ItemName = 'BtnRelatorioRibeirinho'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnRelatorioFaixaEtaria'
         end>
     end
     object BtnBeneficiarioIndividual: TdxBarLargeButton
@@ -4272,6 +4276,17 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioRibeirinhoClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioFaixaEtaria: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Benefici'#225'rios de ATER cadastrados segundo a faixa et'#225'ria'
+      Category = 5
+      Hint = 'Benefici'#225'rios de ATER cadastrados segundo a faixa et'#225'ria'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnRelatorioFaixaEtariaClick
       SyncImageIndex = False
       ImageIndex = 156
     end

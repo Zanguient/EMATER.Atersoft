@@ -122,6 +122,9 @@ type
     BtnRelatorioFaixaEtaria: TdxBarLargeButton;
     BtnBeneficiarioGenero: TdxBarLargeButton;
     BtnRelatorioProducaoCultura: TdxBarLargeButton;
+    BtnRelatorioProducaoCriacao: TdxBarLargeButton;
+    BtnRelatorioProducaoServico: TdxBarLargeButton;
+    BtnRelatorioFaterCategoria: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnBeneficiarioNovoClick(Sender: TObject);
     procedure BtnComunidadesClick(Sender: TObject);
@@ -191,6 +194,10 @@ type
     procedure BtnRelatorioRibeirinhoClick(Sender: TObject);
     procedure BtnRelatorioFaixaEtariaClick(Sender: TObject);
     procedure BtnBeneficiarioGeneroClick(Sender: TObject);
+    procedure BtnRelatorioProducaoCulturaClick(Sender: TObject);
+    procedure BtnRelatorioProducaoCriacaoClick(Sender: TObject);
+    procedure BtnRelatorioProducaoServicoClick(Sender: TObject);
+    procedure BtnRelatorioFaterCategoriaClick(Sender: TObject);
   public
     procedure AtualizarBarraStatus(const BD, Usuario, Local: string);
     procedure RecenteRemover(const Controle: TdxRibbonBackstageViewGalleryControl; const ID: Int64);
@@ -223,7 +230,8 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Credito.Classificacao, Emater.Credito.Raca, Emater.Credito.Variedade, Emater.Agenda, Emater.Proater.Principal, Emater.Proater.Consulta,
   Emater.Indicador.Editor, Emater.Indicador.Selecao, Emater.Indicador.Consulta, Emater.Relatorio.Beneficiario.EstadoCivil,
   Emater.Relatorio.Beneficiario.Escolaridade, Emater.Relatorio.Beneficiario.Ribeirinho, Emater.Relatorio.Beneficiario.Faixa,
-  Emater.Relatorio.Beneficiario.Genero;
+  Emater.Relatorio.Beneficiario.Genero, Emater.Relatorio.Producao.Cultura, Emater.Relatorio.Consts, Emater.Relatorio.Producao.Criacao,
+  Emater.Relatorio.Producao.Servico, Emater.Relatorio.Fater.Categoria;
 
 { TForm1 }
 
@@ -814,6 +822,58 @@ begin
   finally
     FrmRelatorioBeneficiarioFaixa.Release;
     FrmRelatorioBeneficiarioFaixa := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmSistemaPrincipal.BtnRelatorioFaterCategoriaClick(Sender: TObject);
+begin
+  FrmRelatorioFaterCategoria := TFrmRelatorioFaterCategoria.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioFaterCategoria.ShowModal;
+  finally
+    FrmRelatorioFaterCategoria.Release;
+    FrmRelatorioFaterCategoria := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmSistemaPrincipal.BtnRelatorioProducaoCriacaoClick(Sender: TObject);
+begin
+  FrmRelatorioProducaoCriacao := TFrmRelatorioProducaoCriacao.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioProducaoCriacao.ShowModal;
+  finally
+    FrmRelatorioProducaoCriacao.Release;
+    FrmRelatorioProducaoCriacao := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmSistemaPrincipal.BtnRelatorioProducaoCulturaClick(Sender: TObject);
+begin
+  FrmRelatorioProducaoCultura := TFrmRelatorioProducaoCultura.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioProducaoCultura.ShowModal;
+  finally
+    FrmRelatorioProducaoCultura.Release;
+    FrmRelatorioProducaoCultura := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmSistemaPrincipal.BtnRelatorioProducaoServicoClick(Sender: TObject);
+begin
+  FrmRelatorioProducaoServico := TFrmRelatorioProducaoServico.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioProducaoServico.ShowModal;
+  finally
+    FrmRelatorioProducaoServico.Release;
+    FrmRelatorioProducaoServico := nil;
     Screen.Cursor := crDefault;
   end;
 end;

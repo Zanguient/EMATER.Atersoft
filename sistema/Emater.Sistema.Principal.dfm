@@ -3081,7 +3081,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
-      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3134,6 +3133,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 4
     end
     object RbnTbRelatorios: TdxRibbonTab
+      Active = True
       Caption = 'Relat'#243'rios'
       Groups = <
         item
@@ -4085,6 +4085,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         end
         item
           Visible = True
+          ItemName = 'BtnRelatorioFaterCategoria'
+        end
+        item
+          Visible = True
           ItemName = 'BtnFaterQuadrimestre'
         end
         item
@@ -4227,6 +4231,14 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         item
           Visible = True
           ItemName = 'BtnRelatorioProducaoCultura'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnRelatorioProducaoCriacao'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnRelatorioProducaoServico'
         end>
     end
     object BtnProducaoBeneficiario: TdxBarLargeButton
@@ -4321,6 +4333,57 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Hint = 'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo a cultura'
       Visible = ivAlways
       LargeImageIndex = 20
+      OnClick = BtnRelatorioProducaoCulturaClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioProducaoCriacao: TdxBarLargeButton
+      Tag = 1
+      Caption = 
+        'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo o tipo de cr' +
+        'ia'#231#227'o'
+      Category = 5
+      Description = 
+        'Relat'#243'rio de produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo' +
+        ' o tipo de cria'#231#227'o'
+      Hint = 
+        'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo o tipo de cr' +
+        'ia'#231#227'o'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnRelatorioProducaoCriacaoClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioProducaoServico: TdxBarLargeButton
+      Tag = 1
+      Caption = 
+        'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo o tipo de ar' +
+        'tesanato ou servi'#231'o'
+      Category = 5
+      Description = 
+        'Relat'#243'rio de produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo' +
+        ' o tipo de artesanato ou servi'#231'o'
+      Hint = 
+        'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo o tipo de ar' +
+        'tesanato ou servi'#231'o'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnRelatorioProducaoServicoClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioFaterCategoria: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Atendimentos por categoria segundo a atividade produtiva'
+      Category = 5
+      Description = 
+        'Relat'#243'rio de quantidade de atendimentos por categoria segundo a ' +
+        'atividade produtiva'
+      Hint = 'Atendimentos por categoria segundo a atividade produtiva'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnRelatorioFaterCategoriaClick
       SyncImageIndex = False
       ImageIndex = 156
     end

@@ -21,6 +21,7 @@ resourcestring
   RELATORIO_AVISO_INFORMAR_CPF_NAO_LOCALIZADO = 'O CPF informado não foi localizado na base de dados.';
   RELATORIO_AVISO_INFORMAR_CPF_INVALIDO = 'O CPF informado está incorreto.';
   RELATORIO_AVISO_PERIODO_INVALIDO = 'O período %s está incorreto. Por favor, informe um período válido.';
+  RELATORIO_AVISO_ANO_INVALIDO = 'O ano %s está incorreto. Por favor, informe um ano válido.';
 
   RELATORIO_INFO_PERIODO = 'Período de %s até %s';
   RELATORIO_INFO_SAFRA = 'Safra %s/%s';

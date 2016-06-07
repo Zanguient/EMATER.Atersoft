@@ -6,10 +6,11 @@ inherited FrmCreditoVariedade: TFrmCreditoVariedade
   Caption = 'Cr'#233'dito Rural :: Tabelas :: Variedades'
   ClientHeight = 474
   ClientWidth = 410
-  ExplicitLeft = 415
-  ExplicitTop = 152
-  ExplicitWidth = 426
-  ExplicitHeight = 513
+  Constraints.MinWidth = 416
+  ExplicitLeft = 8
+  ExplicitTop = 8
+  ExplicitWidth = 416
+  ExplicitHeight = 503
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
@@ -26,6 +27,10 @@ inherited FrmCreditoVariedade: TFrmCreditoVariedade
     ClientRectBottom = 426
     ClientRectRight = 393
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
+      ExplicitWidth = 391
+      ExplicitHeight = 398
       object GrdPrincipal: TcxGrid
         Left = 8
         Top = 88
@@ -115,7 +120,7 @@ inherited FrmCreditoVariedade: TFrmCreditoVariedade
           Height = 13
           Caption = 'Descri'#231#227'o da variedade'
           FocusControl = DbEdtNome
-          Transparent = False
+          Transparent = True
         end
         object DbEdtNome: TcxDBTextEdit
           Left = 8

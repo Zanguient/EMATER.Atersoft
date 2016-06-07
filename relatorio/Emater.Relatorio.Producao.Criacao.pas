@@ -1,4 +1,4 @@
-unit Emater.Relatorio.Producao.Cultura;
+unit Emater.Relatorio.Producao.Criacao;
 
 interface
 
@@ -11,7 +11,7 @@ uses
   FireDAC.DApt, frxDBSet, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxCheckBox;
 
 type
-  TFrmRelatorioProducaoCultura = class(TFrmBaseRelatorio)
+  TFrmRelatorioProducaoCriacao = class(TFrmBaseRelatorio)
     Label1: TLabel;
     QryPrincipal: TFDQuery;
     FrxDtStPrincipal: TfrxDBDataset;
@@ -19,15 +19,10 @@ type
     LkpCmbBxUnidade: TcxLookupComboBox;
     LblUnidade: TLabel;
     Label2: TLabel;
-    Label3: TLabel;
-    EdtPlantioInicio: TcxMaskEdit;
-    EdtPlantioFim: TcxMaskEdit;
-    EdtColheitaInicio: TcxMaskEdit;
-    EdtColheitaFim: TcxMaskEdit;
+    EdtAnoInicio: TcxMaskEdit;
+    EdtAnoFim: TcxMaskEdit;
     Label4: TLabel;
-    Label5: TLabel;
     Label6: TLabel;
-    Label7: TLabel;
     ChckBxProducao: TcxCheckBox;
     procedure BtnLimparClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -41,7 +36,7 @@ type
   end;
 
 var
-  FrmRelatorioProducaoCultura: TFrmRelatorioProducaoCultura;
+  FrmRelatorioProducaoCriacao: TFrmRelatorioProducaoCriacao;
 
 implementation
 
@@ -49,23 +44,23 @@ implementation
 
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Relatorio.Consts, Emater.Relatorio.Modulo;
 
-procedure TFrmRelatorioProducaoCultura.BtnImprimirClick(Sender: TObject);
+procedure TFrmRelatorioProducaoCriacao.BtnImprimirClick(Sender: TObject);
 
   function ValidarPeriodo(EdtMsk: TcxMaskEdit; Mensagem: string): Boolean;
   begin
     Result := True;
     EdtMsk.Tag := 0;
     try
-      if (Trim(EdtMsk.Text) <> '/') then
+      if (Trim(EdtMsk.Text) <> '') then
         begin
-          if not IsValidDate(StrToInt(Copy(EdtMsk.Text, 4, 4)), StrToInt(Copy(EdtMsk.Text, 1, 2)), 1) then
+          if not IsValidDate(StrToInt(Copy(EdtMsk.Text, 1, 4)), 1, 1) then
             begin
               Result := False;
-              Msg.Aviso(Format(RELATORIO_AVISO_PERIODO_INVALIDO, [Mensagem]));
+              Msg.Aviso(Format(RELATORIO_AVISO_ANO_INVALIDO, [Mensagem]));
               EdtMsk.SetFocus;
             end
           else
-            EdtMsk.Tag := StrToInt(Copy(EdtMsk.Text, 4, 4) + Copy(EdtMsk.Text, 1, 2));
+            EdtMsk.Tag := StrToInt(Copy(EdtMsk.Text, 1, 4));
         end;
     except
       Result := False;
@@ -87,8 +82,7 @@ begin
       end
     else
       begin
-        if ValidarPeriodo(EdtPlantioInicio, 'inicial do plantio') and ValidarPeriodo(EdtPlantioFim, 'final do plantio') and
-          ValidarPeriodo(EdtColheitaInicio, 'inicial da colheita') and ValidarPeriodo(EdtColheitaFim, 'final da colheita') then
+        if ValidarPeriodo(EdtAnoInicio, 'inicial') and ValidarPeriodo(EdtAnoFim, 'final') then
           begin
 
             QryPrincipal.Close;
@@ -96,10 +90,8 @@ begin
             QryPrincipal.SQL.AddStrings(SQLMestre);
 
             // Período:
-            QryPrincipal.ParamByName('plantio_inicio').AsInteger := EdtPlantioInicio.Tag;
-            QryPrincipal.ParamByName('plantio_fim').AsInteger := EdtPlantioFim.Tag;
-            QryPrincipal.ParamByName('colheita_inicio').AsInteger := EdtColheitaInicio.Tag;
-            QryPrincipal.ParamByName('colheita_fim').AsInteger := EdtColheitaFim.Tag;
+            QryPrincipal.ParamByName('ano_inicio').AsInteger := EdtAnoInicio.Tag;
+            QryPrincipal.ParamByName('ano_fim').AsInteger := EdtAnoFim.Tag;
 
             // Unidade (escritório):
             if not VarIsNull(LkpCmbBxUnidade.EditValue) then
@@ -125,55 +117,41 @@ begin
   end;
 end;
 
-procedure TFrmRelatorioProducaoCultura.BtnLimparClick(Sender: TObject);
+procedure TFrmRelatorioProducaoCriacao.BtnLimparClick(Sender: TObject);
 begin
-  EdtPlantioInicio.Clear;
-  EdtPlantioFim.Clear;
-  EdtColheitaInicio.Clear;
-  EdtColheitaFim.Clear;
+  EdtAnoInicio.Clear;
+  EdtAnoFim.Clear;
   LkpCmbBxUnidade.EditValue := DtmSistemaModulo.UnidadeLocalID;
-  EdtPlantioInicio.SetFocus;
+  EdtAnoInicio.SetFocus;
 end;
 
-procedure TFrmRelatorioProducaoCultura.FormCreate(Sender: TObject);
+procedure TFrmRelatorioProducaoCriacao.FormCreate(Sender: TObject);
 begin
   inherited;
   SQLMestre.AddStrings(QryPrincipal.SQL);
 end;
 
-procedure TFrmRelatorioProducaoCultura.FormShow(Sender: TObject);
+procedure TFrmRelatorioProducaoCriacao.FormShow(Sender: TObject);
 begin
   inherited;
   LkpCmbBxUnidade.EditValue := DtmSistemaModulo.UnidadeLocalID;
 end;
 
-procedure TFrmRelatorioProducaoCultura.FrxPrincipalGetValue(const VarName: string; var Value: Variant);
+procedure TFrmRelatorioProducaoCriacao.FrxPrincipalGetValue(const VarName: string; var Value: Variant);
 var
-  Plantio, Colheita, Unidade: string;
+  Ano, Unidade: string;
 begin
   inherited;
 
-  Plantio := '';
-  Colheita := '';
+  Ano := '';
 
   // Filtro do período:
-  if (Trim(EdtPlantioInicio.Text) <> '/') then Plantio := 'a partir de ' + EdtPlantioInicio.Text + ' ';
-  if (Trim(EdtPlantioFim.Text) <> '/') then Plantio := Plantio + 'até ' + EdtPlantioFim.Text;
-  if (Trim(EdtColheitaInicio.Text) <> '/') then Colheita := 'a partir de ' + EdtColheitaInicio.Text + ' ';
-  if (Trim(EdtColheitaFim.Text) <> '/') then Colheita := Colheita + 'até ' + EdtColheitaFim.Text;
-
+  if (Trim(EdtAnoInicio.Text) <> '') then Ano := 'a partir de ' + EdtAnoInicio.Text + ' ';
+  if (Trim(EdtAnoFim.Text) <> '') then Ano := Ano + 'até ' + EdtAnoFim.Text;
   if (VarName = RELATORIO_CONST_FILTRO_PERIODO) then
     begin
       Value := '';
-      if (Plantio <> '') then Value := Format(RELATORIO_INFO_PLANTIO, [Plantio]);
-      if (Colheita <> '') then
-        begin
-          if (Value <> '') then
-            Value := Value + ' e ' + Format(RELATORIO_INFO_COLHEITA, [Colheita])
-          else
-            Value := Format(RELATORIO_INFO_COLHEITA, [Colheita]);
-        end;
-
+      if (Ano <> '') then Value := Format(RELATORIO_INFO_ANO, [Ano]);
     end;
 
   // Filtro da unidade:

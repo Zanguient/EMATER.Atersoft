@@ -4,7 +4,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
   Top = 89
   Hint = 'Janela principal do sistema.'
   Caption = 'SISATER Desktop'
-  ClientHeight = 523
+  ClientHeight = 522
   ClientWidth = 938
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -26,7 +26,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     Left = 0
     Top = 155
     Width = 938
-    Height = 345
+    Height = 344
     Align = alClient
     Center = True
     Picture.Data = {
@@ -3331,7 +3331,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
   end
   object dxRibbonStatusBar: TdxRibbonStatusBar
     Left = 0
-    Top = 500
+    Top = 499
     Width = 938
     Height = 23
     Images = DtmRecursoModulo.ImgLstPequenas
@@ -3403,7 +3403,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 499
     ExplicitWidth = 910
   end
   object dxBarManager: TdxBarManager

@@ -130,7 +130,7 @@ uses
   Emater.Indicador.Consulta in 'indicador\Emater.Indicador.Consulta.pas' {FrmIndicadorConsulta},
   Emater.Relatorio.Proater in 'relatorio\Emater.Relatorio.Proater.pas' {FrmRelatorioProater},
   Emater.Proater.Consts in 'proater\Emater.Proater.Consts.pas',
-  Emater.Relatorio.Producao.Servico in 'relatorio\Emater.Relatorio.Producao.Servico.pas' {FrmRelatorioProducaoServico},
+  Emater.Relatorio.Producao.Comercio in 'relatorio\Emater.Relatorio.Producao.Comercio.pas' {FrmRelatorioProducaoComercio},
   Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo in 'relatorio\Emater.Relatorio.Filtro.UnidadeFuncionarioPeriodo.pas' {FrmRelatorioFiltroUnidadeFuncionarioPeriodo: TFrame},
   Emater.Relatorio.Beneficiario.EstadoCivil in 'relatorio\Emater.Relatorio.Beneficiario.EstadoCivil.pas' {FrmRelatorioBeneficiarioEstadoCivil},
   Emater.Relatorio.Beneficiario.Faixa in 'relatorio\Emater.Relatorio.Beneficiario.Faixa.pas' {FrmRelatorioBeneficiarioFaixa},
@@ -139,7 +139,8 @@ uses
   Emater.Relatorio.Beneficiario.Genero in 'relatorio\Emater.Relatorio.Beneficiario.Genero.pas' {FrmRelatorioBeneficiarioGenero},
   Emater.Relatorio.Producao.Cultura in 'relatorio\Emater.Relatorio.Producao.Cultura.pas' {FrmRelatorioProducaoCultura},
   Emater.Relatorio.Producao.Criacao in 'relatorio\Emater.Relatorio.Producao.Criacao.pas' {FrmRelatorioProducaoCriacao},
-  Emater.Relatorio.Fater.Atividade in 'relatorio\Emater.Relatorio.Fater.Atividade.pas' {FrmRelatorioFaterAtividade};
+  Emater.Relatorio.Fater.Atividade in 'relatorio\Emater.Relatorio.Fater.Atividade.pas' {FrmRelatorioFaterAtividade},
+  Emater.Relatorio.Producao.Servico in 'relatorio\Emater.Relatorio.Producao.Servico.pas' {FrmRelatorioProducaoServico};
 
 {$R *.res}
 

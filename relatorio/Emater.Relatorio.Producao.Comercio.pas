@@ -1,4 +1,4 @@
-unit Emater.Relatorio.Producao.Servico;
+unit Emater.Relatorio.Producao.Comercio;
 
 interface
 
@@ -11,19 +11,16 @@ uses
   FireDAC.DApt, frxDBSet, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxCheckBox;
 
 type
-  TFrmRelatorioProducaoServico = class(TFrmBaseRelatorio)
-    Label1: TLabel;
+  TFrmRelatorioProducaoComercio = class(TFrmBaseRelatorio)
     QryPrincipal: TFDQuery;
     FrxDtStPrincipal: TfrxDBDataset;
-    DtSrcUnidadeLocal: TDataSource;
-    LkpCmbBxUnidade: TcxLookupComboBox;
     LblUnidade: TLabel;
     Label2: TLabel;
-    EdtAnoInicio: TcxMaskEdit;
-    EdtAnoFim: TcxMaskEdit;
+    EdtAnoInicio: TcxTextEdit;
+    EdtAnoFim: TcxTextEdit;
     Label4: TLabel;
     Label6: TLabel;
-    ChckBxProducao: TcxCheckBox;
+    CmbBxTipo: TcxComboBox;
     procedure BtnLimparClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtnImprimirClick(Sender: TObject);
@@ -36,7 +33,7 @@ type
   end;
 
 var
-  FrmRelatorioProducaoServico: TFrmRelatorioProducaoServico;
+  FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio;
 
 implementation
 
@@ -44,7 +41,7 @@ implementation
 
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Relatorio.Consts, Emater.Relatorio.Modulo;
 
-procedure TFrmRelatorioProducaoServico.BtnImprimirClick(Sender: TObject);
+procedure TFrmRelatorioProducaoComercio.BtnImprimirClick(Sender: TObject);
 
   function ValidarPeriodo(EdtMsk: TcxMaskEdit; Mensagem: string): Boolean;
   begin
@@ -117,7 +114,7 @@ begin
   end;
 end;
 
-procedure TFrmRelatorioProducaoServico.BtnLimparClick(Sender: TObject);
+procedure TFrmRelatorioProducaoComercio.BtnLimparClick(Sender: TObject);
 begin
   EdtAnoInicio.Clear;
   EdtAnoFim.Clear;
@@ -125,19 +122,19 @@ begin
   EdtAnoInicio.SetFocus;
 end;
 
-procedure TFrmRelatorioProducaoServico.FormCreate(Sender: TObject);
+procedure TFrmRelatorioProducaoComercio.FormCreate(Sender: TObject);
 begin
   inherited;
   SQLMestre.AddStrings(QryPrincipal.SQL);
 end;
 
-procedure TFrmRelatorioProducaoServico.FormShow(Sender: TObject);
+procedure TFrmRelatorioProducaoComercio.FormShow(Sender: TObject);
 begin
   inherited;
   LkpCmbBxUnidade.EditValue := DtmSistemaModulo.UnidadeLocalID;
 end;
 
-procedure TFrmRelatorioProducaoServico.FrxPrincipalGetValue(const VarName: string; var Value: Variant);
+procedure TFrmRelatorioProducaoComercio.FrxPrincipalGetValue(const VarName: string; var Value: Variant);
 var
   Ano, Unidade: string;
 begin

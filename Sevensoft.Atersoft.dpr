@@ -140,7 +140,8 @@ uses
   Emater.Relatorio.Producao.Cultura in 'relatorio\Emater.Relatorio.Producao.Cultura.pas' {FrmRelatorioProducaoCultura},
   Emater.Relatorio.Producao.Criacao in 'relatorio\Emater.Relatorio.Producao.Criacao.pas' {FrmRelatorioProducaoCriacao},
   Emater.Relatorio.Fater.Atividade in 'relatorio\Emater.Relatorio.Fater.Atividade.pas' {FrmRelatorioFaterAtividade},
-  Emater.Relatorio.Producao.Servico in 'relatorio\Emater.Relatorio.Producao.Servico.pas' {FrmRelatorioProducaoServico};
+  Emater.Relatorio.Producao.Servico in 'relatorio\Emater.Relatorio.Producao.Servico.pas' {FrmRelatorioProducaoServico},
+  Emater.Relatorio.Metodologia.Administrativa in 'relatorio\Emater.Relatorio.Metodologia.Administrativa.pas' {FrmRelatorioMetodologiaAdministrativa};
 
 {$R *.res}
 

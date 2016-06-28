@@ -5,8 +5,8 @@ inherited FrmProdutividadeFaterConsulta: TFrmProdutividadeFaterConsulta
   ActiveControl = nil
   Caption = 'Consulta de FATER'
   ClientWidth = 816
-  ExplicitLeft = 302
-  ExplicitTop = 121
+  ExplicitLeft = 8
+  ExplicitTop = 8
   ExplicitWidth = 832
   PixelsPerInch = 96
   TextHeight = 13
@@ -19,8 +19,7 @@ inherited FrmProdutividadeFaterConsulta: TFrmProdutividadeFaterConsulta
     Top = 236
     Width = 816
     Height = 237
-    ExplicitLeft = 16
-    ExplicitTop = 228
+    ExplicitTop = 236
     ExplicitWidth = 816
     ExplicitHeight = 237
     inherited GrdConsultaTbl: TcxGridDBTableView
@@ -135,6 +134,7 @@ inherited FrmProdutividadeFaterConsulta: TFrmProdutividadeFaterConsulta
       Height = 13
       Anchors = [akTop, akRight]
       Caption = 'M'#233'todo inicial:'
+      Transparent = True
     end
     object Label6: TLabel [7]
       Left = 8
@@ -142,6 +142,7 @@ inherited FrmProdutividadeFaterConsulta: TFrmProdutividadeFaterConsulta
       Width = 52
       Height = 13
       Caption = 'Finalidade:'
+      Transparent = True
     end
     object Label7: TLabel [8]
       Left = 200
@@ -166,6 +167,7 @@ inherited FrmProdutividadeFaterConsulta: TFrmProdutividadeFaterConsulta
       Width = 45
       Height = 13
       Caption = 'Situa'#231#227'o:'
+      Transparent = True
     end
     object Label11: TLabel [11]
       Left = 488
@@ -181,6 +183,7 @@ inherited FrmProdutividadeFaterConsulta: TFrmProdutividadeFaterConsulta
       Width = 39
       Height = 13
       Caption = 'Projeto:'
+      Transparent = True
     end
     inherited ImgCmbBxOpcao: TcxImageComboBox
       Left = 339

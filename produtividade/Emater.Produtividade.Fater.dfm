@@ -8,8 +8,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
   Caption = 'FATER'
   ClientHeight = 613
   ClientWidth = 851
-  ExplicitLeft = 321
-  ExplicitTop = 117
+  ExplicitLeft = 8
+  ExplicitTop = -133
   ExplicitWidth = 867
   ExplicitHeight = 652
   DesignSize = (
@@ -27,13 +27,14 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
     Top = 37
     Width = 835
     Height = 538
-    Properties.ActivePage = TbShtTecnicas
     ExplicitTop = 37
     ExplicitWidth = 835
     ExplicitHeight = 538
     ClientRectBottom = 536
     ClientRectRight = 833
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
       ExplicitWidth = 831
       ExplicitHeight = 508
       DesignSize = (
@@ -285,10 +286,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtTematica: TcxTabSheet
             Caption = 'Tem'#225'tica'
             ImageIndex = 0
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -324,10 +321,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtOrientacao: TcxTabSheet
             Caption = 'Orienta'#231#227'o t'#233'cnica'
             ImageIndex = 1
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -357,10 +350,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtResumo: TcxTabSheet
             Caption = 'Resumo da a'#231#227'o'
             ImageIndex = 2
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -390,10 +379,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtParceria: TcxTabSheet
             Caption = 'Parcerias'
             ImageIndex = 3
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -423,10 +408,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtTecnologia: TcxTabSheet
             Caption = 'Tecnologia inovadora'
             ImageIndex = 4
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -471,10 +452,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtPratica: TcxTabSheet
             Caption = 'Boas pr'#225'ticas'
             ImageIndex = 5
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -788,6 +765,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           DataBinding.DataField = 'FUN_ID'
           DataBinding.DataSource = DtSrcPrincipal
           Properties.DropDownRows = 16
+          Properties.DropDownWidth = 350
           Properties.ImmediatePost = True
           Properties.KeyFieldNames = 'FUN_ID'
           Properties.ListColumns = <
@@ -1314,10 +1292,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
     object TbShtDetalhes: TcxTabSheet
       Caption = 'Mais detalhes'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         831
         508)

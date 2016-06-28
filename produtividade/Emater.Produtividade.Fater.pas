@@ -945,6 +945,9 @@ begin
   if (DtmConexaoModulo.PerfilID = SISTEMA_PERFIL_ADMINISTRADOR) or (DtmConexaoModulo.PerfilID =  SISTEMA_PERFIL_CHEFIA) then
     begin
       DbImgCmbBxSituacao.Enabled := True;
+      DbLkpCmbBxUnidade.Enabled := True;
+      DbLkpCmbBxUnidade.Properties.ReadOnly := False;
+      DbLkpCmbBxUnidade.TabStop := True;
     end;
 end;
 

@@ -1,8 +1,6 @@
 inherited FrmRelatorioMetodologiaUnidade: TFrmRelatorioMetodologiaUnidade
   Left = 362
   Top = 152
-  ExplicitLeft = 362
-  ExplicitTop = 152
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl

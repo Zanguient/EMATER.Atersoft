@@ -3081,6 +3081,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
+      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3133,7 +3134,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 4
     end
     object RbnTbRelatorios: TdxRibbonTab
-      Active = True
       Caption = 'Relat'#243'rios'
       Groups = <
         item
@@ -4115,6 +4115,11 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         item
           Visible = True
           ItemName = 'BtnGeralProjeto'
+        end
+        item
+          BeginGroup = True
+          Visible = True
+          ItemName = 'BtnRelatorioMetodologiaAdministrativa'
         end>
     end
     object BtnFaterAtividade: TdxBarLargeButton
@@ -4238,6 +4243,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
         item
           Visible = True
           ItemName = 'BtnRelatorioProducaoServico'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnRelatorioProducaoComercio'
         end>
     end
     object BtnProducaoBeneficiario: TdxBarLargeButton
@@ -4383,6 +4392,38 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioFaterCategoriaClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioProducaoComercio: TdxBarLargeButton
+      Tag = 1
+      Caption = 
+        'Comercializa'#231#227'o realizada pelos benefici'#225'rio de ATER segundo o t' +
+        'ipo de produto/servi'#231'o'
+      Category = 5
+      Description = 
+        'Relat'#243'rio de comercializa'#231#227'o realizada pelos benefici'#225'rio de ATE' +
+        'R segundo o tipo de produto/servi'#231'o'
+      Hint = 
+        'Comercializa'#231#227'o realizada pelos benefici'#225'rio de ATER segundo o t' +
+        'ipo de produto/servi'#231'o'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnRelatorioProducaoComercioClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioMetodologiaAdministrativa: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Quantidade de metodologia por unidade administrativa'
+      Category = 5
+      Description = 
+        'Relat'#243'rio da quantidade de metodologia por unidade administrativ' +
+        'a'
+      Hint = 'Quantidade de metodologia por unidade administrativa'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnRelatorioMetodologiaAdministrativaClick
       SyncImageIndex = False
       ImageIndex = 156
     end

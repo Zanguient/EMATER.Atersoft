@@ -1,4 +1,4 @@
-unit Emater.Relatorio.Producao.Comercio;
+unit Emater.Relatorio.Producao.Servico;
 
 interface
 
@@ -11,19 +11,19 @@ uses
   FireDAC.DApt, frxDBSet, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxCheckBox;
 
 type
-  TFrmRelatorioProducaoComercio = class(TFrmBaseRelatorio)
+  TFrmRelatorioProducaoServico = class(TFrmBaseRelatorio)
+    Label1: TLabel;
     QryPrincipal: TFDQuery;
     FrxDtStPrincipal: TfrxDBDataset;
+    DtSrcUnidadeLocal: TDataSource;
+    LkpCmbBxUnidade: TcxLookupComboBox;
     LblUnidade: TLabel;
     Label2: TLabel;
-    EdtAnoInicio: TcxTextEdit;
-    EdtAnoFim: TcxTextEdit;
+    EdtAnoInicio: TcxMaskEdit;
+    EdtAnoFim: TcxMaskEdit;
     Label4: TLabel;
     Label6: TLabel;
-    CmbBxTipo: TcxComboBox;
-    DtSrcUnidadeLocal: TDataSource;
-    Label1: TLabel;
-    LkpCmbBxUnidade: TcxLookupComboBox;
+    ChckBxProducao: TcxCheckBox;
     procedure BtnLimparClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtnImprimirClick(Sender: TObject);
@@ -36,7 +36,7 @@ type
   end;
 
 var
-  FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio;
+  FrmRelatorioProducaoServico: TFrmRelatorioProducaoServico;
 
 implementation
 
@@ -44,9 +44,9 @@ implementation
 
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Relatorio.Consts, Emater.Relatorio.Modulo;
 
-procedure TFrmRelatorioProducaoComercio.BtnImprimirClick(Sender: TObject);
+procedure TFrmRelatorioProducaoServico.BtnImprimirClick(Sender: TObject);
 
-  function ValidarPeriodo(EdtMsk: TcxTextEdit; Mensagem: string): Boolean;
+  function ValidarPeriodo(EdtMsk: TcxMaskEdit; Mensagem: string): Boolean;
   begin
     Result := True;
     EdtMsk.Tag := 0;
@@ -90,18 +90,18 @@ begin
             QryPrincipal.SQL.AddStrings(SQLMestre);
 
             // Período:
-            QryPrincipal.ParamByName('ano_inicio').AsInteger := StrToInt(EdtAnoInicio.Text);
-            QryPrincipal.ParamByName('ano_fim').AsInteger := StrToInt(EdtAnoFim.Text);
+            QryPrincipal.ParamByName('ano_inicio').AsInteger := EdtAnoInicio.Tag;
+            QryPrincipal.ParamByName('ano_fim').AsInteger := EdtAnoFim.Tag;
 
             // Unidade (escritório):
             if not VarIsNull(LkpCmbBxUnidade.EditValue) then
-              QryPrincipal.ParamByName('escritorio').AsInteger := LkpCmbBxUnidade.EditValue
+              QryPrincipal.ParamByName('unidade').AsInteger := LkpCmbBxUnidade.EditValue
             else
-              QryPrincipal.ParamByName('escritorio').AsInteger := 0;
+              QryPrincipal.ParamByName('unidade').AsInteger := 0;
 
-            // Tipo:
-            QryPrincipal.ParamByName('tipo').AsInteger := CmbBxTipo.ItemIndex;
-
+            // Culturas:
+            if ChckBxProducao.Checked then
+              QryPrincipal.SQL.Add('where (producao > 0)');
 
             QryPrincipal.Open;
             FrxPrincipal.PrepareReport;
@@ -117,28 +117,27 @@ begin
   end;
 end;
 
-procedure TFrmRelatorioProducaoComercio.BtnLimparClick(Sender: TObject);
+procedure TFrmRelatorioProducaoServico.BtnLimparClick(Sender: TObject);
 begin
   EdtAnoInicio.Clear;
   EdtAnoFim.Clear;
-  CmbBxTipo.ItemIndex := 0;
   LkpCmbBxUnidade.EditValue := DtmSistemaModulo.UnidadeLocalID;
   EdtAnoInicio.SetFocus;
 end;
 
-procedure TFrmRelatorioProducaoComercio.FormCreate(Sender: TObject);
+procedure TFrmRelatorioProducaoServico.FormCreate(Sender: TObject);
 begin
   inherited;
   SQLMestre.AddStrings(QryPrincipal.SQL);
 end;
 
-procedure TFrmRelatorioProducaoComercio.FormShow(Sender: TObject);
+procedure TFrmRelatorioProducaoServico.FormShow(Sender: TObject);
 begin
   inherited;
   LkpCmbBxUnidade.EditValue := DtmSistemaModulo.UnidadeLocalID;
 end;
 
-procedure TFrmRelatorioProducaoComercio.FrxPrincipalGetValue(const VarName: string; var Value: Variant);
+procedure TFrmRelatorioProducaoServico.FrxPrincipalGetValue(const VarName: string; var Value: Variant);
 var
   Ano, Unidade: string;
 begin
@@ -168,10 +167,6 @@ begin
       else
         Value := '';
     end;
-
-  // Filtro do tipo de produto/seviço:
-  if (VarName = 'filtro_tipo') then
-    Value := 'Tipo de produto/serviço: ' + CmbBxTipo.Text;
 end;
 
 end.

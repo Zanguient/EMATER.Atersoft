@@ -1,34 +1,53 @@
-inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
+inherited FrmRelatorioProducaoServico: TFrmRelatorioProducaoServico
   Left = 517
   Top = 152
+  ExplicitLeft = 8
+  ExplicitTop = 8
+  ExplicitWidth = 584
+  ExplicitHeight = 463
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
     inherited TbShtFiltros: TcxTabSheet
       inherited LblTitulo: TLabel
         Caption = 
-          ' Comercializa'#231#227'o realizada pelos benefici'#225'rio de ater segundo o ' +
-          'tipo de produto/servi'#231'o'
+          ' Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo o tipo de a' +
+          'rtesanato ou servi'#231'o'
       end
       inherited GrpBxFiltro: TcxGroupBox
+        object Label1: TLabel
+          Left = 9
+          Top = 153
+          Width = 337
+          Height = 65
+          AutoSize = False
+          Caption = 
+            'Somente ser'#225' obtida a produ'#231#227'o dos benefici'#225'rios que estejam com' +
+            ' o cadastro ativo e atualizado. Para obter produ'#231#227'o de todos os ' +
+            'anos, deixe os campos de filtro em branco. Para obter produ'#231#227'o p' +
+            'artir de um ano, ou at'#233' um ano, informe o apenas o ano inicial o' +
+            'u o ano final.'
+          Transparent = True
+          WordWrap = True
+        end
         object LblUnidade: TLabel
           Left = 8
           Top = 60
-          Width = 118
+          Width = 48
           Height = 13
-          Caption = 'Tipo de produto/servi'#231'o:'
+          Caption = 'Escrit'#243'rio:'
           Transparent = True
         end
         object Label2: TLabel
           Left = 8
           Top = 28
-          Width = 163
+          Width = 82
           Height = 13
-          Caption = 'Ano da produ'#231#227'o/plantio/colheita:'
+          Caption = 'Ano da produ'#231#227'o'
           Transparent = True
         end
         object Label4: TLabel
-          Left = 296
+          Left = 254
           Top = 28
           Width = 16
           Height = 13
@@ -36,53 +55,16 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           Transparent = True
         end
         object Label6: TLabel
-          Left = 176
+          Left = 136
           Top = 28
           Width = 12
           Height = 13
           Caption = 'de'
           Transparent = True
         end
-        object Label1: TLabel
-          Left = 8
-          Top = 92
-          Width = 48
-          Height = 13
-          Caption = 'Escrit'#243'rio:'
-          Transparent = True
-        end
-        object EdtAnoInicio: TcxTextEdit
-          Left = 192
-          Top = 24
-          Properties.MaxLength = 4
-          TabOrder = 0
-          Text = '    '
-          Width = 100
-        end
-        object EdtAnoFim: TcxTextEdit
-          Left = 317
-          Top = 24
-          Properties.MaxLength = 4
-          TabOrder = 1
-          Text = '    '
-          Width = 100
-        end
-        object CmbBxTipo: TcxComboBox
-          Left = 192
-          Top = 56
-          Properties.DropDownListStyle = lsEditFixedList
-          Properties.Items.Strings = (
-            'Todos'
-            'Outros'
-            'Produtos/servi'#231'os'
-            'Derivados')
-          TabOrder = 2
-          Text = 'Todos'
-          Width = 225
-        end
         object LkpCmbBxUnidade: TcxLookupComboBox
-          Left = 192
-          Top = 88
+          Left = 152
+          Top = 56
           Properties.ClearKey = 46
           Properties.ImmediatePost = True
           Properties.KeyFieldNames = 'UND_ID'
@@ -98,27 +80,47 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
             end>
           Properties.ListOptions.ShowHeader = False
           Properties.ListSource = DtSrcUnidadeLocal
+          TabOrder = 2
+          Width = 305
+        end
+        object EdtAnoInicio: TcxMaskEdit
+          Left = 152
+          Top = 24
+          Properties.EditMask = '!9999;1; '
+          Properties.MaxLength = 0
+          TabOrder = 0
+          Text = '    '
+          Width = 97
+        end
+        object EdtAnoFim: TcxMaskEdit
+          Left = 275
+          Top = 24
+          Properties.EditMask = '!9999;1; '
+          Properties.MaxLength = 0
+          TabOrder = 1
+          Text = '    '
+          Width = 97
+        end
+        object ChckBxProducao: TcxCheckBox
+          Left = 152
+          Top = 88
+          Caption = 'Somente os artesanatos ou servi'#231'os que tiveram produ'#231#227'o.'
+          ParentBackground = False
+          ParentColor = False
           TabOrder = 3
-          Width = 225
+          Transparent = True
+          Width = 337
         end
       end
       inherited GrpBxOpcoes: TcxGroupBox
-        inherited LblModo: TLabel
-          Left = 296
-          ExplicitLeft = 296
-        end
         inherited CmbBxModo: TcxComboBox
-          Left = 296
-          ExplicitLeft = 296
-          ExplicitWidth = 121
-          Width = 121
+          ExplicitWidth = 145
+          Width = 145
         end
         inherited CmbBxCampo: TcxComboBox
           Properties.Items.Strings = (
-            'Destino do item comercializado')
-          Text = 'Destino do item comercializado'
-          ExplicitWidth = 281
-          Width = 281
+            'Descri'#231#227'o da cultura')
+          Text = 'Descri'#231#227'o da cultura'
         end
       end
     end
@@ -128,7 +130,7 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
   end
   inherited FrxPrincipal: TfrxReport
     ReportOptions.Name = 'Quantidade de benefici'#225'rios por categoria'
-    ReportOptions.LastChange = 42547.433059756940000000
+    ReportOptions.LastChange = 42527.856969837970000000
     ScriptText.Strings = (
       'begin'
       '    '
@@ -157,7 +159,7 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
         Value = #39'Teste'#39
       end
       item
-        Name = 'filtro_tipo'
+        Name = 'filtro_periodo'
         Value = #39'Teste'#39
       end
       item
@@ -217,8 +219,8 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           Height = 45.354342910000000000
           DisplayFormat.DecimalSeparator = ''
           Memo.UTF8W = (
-            'Comercializa'#231#227'o realizada pelos benefici'#225'rio de ATER '
-            'segundo o tipo de produto/servi'#231'o')
+            'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER'
+            'segundo o tipo de artesanato ou servi'#231'o')
         end
         object Memo15: TfrxMemoView
           Top = 45.354360000000000000
@@ -232,16 +234,18 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           HAlign = haCenter
           Memo.UTF8W = (
             '[filtro_periodo]'
-            '[filtro_tipo]')
+            '[filtro_unidade]')
           ParentFont = False
           Formats = <
+            item
+            end
             item
             end
             item
             end>
         end
         object Memo2: TfrxMemoView
-          Left = 90.708720000000000000
+          Left = 151.181200000000000000
           Top = 90.708720000000000000
           Width = 192.756030000000000000
           Height = 34.015770000000000000
@@ -255,14 +259,14 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           Fill.BackColor = 14211288
           GapX = 6.000000000000000000
           Memo.UTF8W = (
-            'Destino')
+            'Artesanato ou servi'#231'o')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo5: TfrxMemoView
-          Left = 514.016080000000000000
+          Left = 343.937230000000000000
           Top = 90.708720000000000000
-          Width = 113.385900000000000000
+          Width = 124.724490000000000000
           Height = 34.015770000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -275,12 +279,13 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           GapX = 6.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            'Quantidade')
+            'Produ'#231#227'o'
+            'obtida')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo10: TfrxMemoView
-          Left = 415.748300000000000000
+          Left = 468.661720000000000000
           Top = 90.708720000000000000
           Width = 98.267780000000000000
           Height = 34.015770000000000000
@@ -299,27 +304,6 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo3: TfrxMemoView
-          Left = 283.464750000000000000
-          Top = 90.708720000000000000
-          Width = 132.283550000000000000
-          Height = 34.015770000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.500000000000000000
-          Fill.BackColor = 14211288
-          GapX = 6.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8W = (
-            'Tipo de'
-            'produto/servi'#231'o')
-          ParentFont = False
-          VAlign = vaCenter
-        end
       end
       object MasterData: TfrxMasterData
         FillType = ftBrush
@@ -330,10 +314,10 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
         DataSetName = 'QryPrincipal'
         RowCount = 0
         object QryPrincipalESTADO_CIVIL: TfrxMemoView
-          Left = 90.708720000000000000
+          Left = 151.181200000000000000
           Width = 192.756030000000000000
           Height = 22.677180000000000000
-          DataField = 'DESTINO_PRODUTO'
+          DataField = 'SERVICO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'QryPrincipal'
           Font.Charset = DEFAULT_CHARSET
@@ -345,15 +329,15 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           Frame.Width = 0.500000000000000000
           GapX = 6.000000000000000000
           Memo.UTF8W = (
-            '[QryPrincipal."DESTINO_PRODUTO"]')
+            '[QryPrincipal."SERVICO"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object QryPrincipalINTEGRANTES: TfrxMemoView
-          Left = 514.016080000000000000
-          Width = 113.385900000000000000
+          Left = 343.937230000000000000
+          Width = 124.724490000000000000
           Height = 22.677180000000000000
-          DataField = 'QUANTIDADE'
+          DataField = 'PRODUCAO'
           DataSet = FrxDtStPrincipal
           DataSetName = 'QryPrincipal'
           DisplayFormat.FormatStr = '%2.0n'
@@ -368,12 +352,12 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           GapX = 6.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            '[QryPrincipal."QUANTIDADE"]')
+            '[QryPrincipal."PRODUCAO"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo11: TfrxMemoView
-          Left = 415.748300000000000000
+          Left = 468.661720000000000000
           Width = 98.267780000000000000
           Height = 22.677180000000000000
           DataField = 'UNIDADE_MEDIDA'
@@ -392,26 +376,6 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo4: TfrxMemoView
-          Left = 283.464750000000000000
-          Width = 132.283550000000000000
-          Height = 22.677180000000000000
-          DataField = 'TIPO_PRODUTO'
-          DataSet = FrxDtStPrincipal
-          DataSetName = 'QryPrincipal'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight]
-          Frame.Width = 0.500000000000000000
-          GapX = 6.000000000000000000
-          Memo.UTF8W = (
-            '[QryPrincipal."TIPO_PRODUTO"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
       end
       object Footer: TfrxFooter
         FillType = ftBrush
@@ -419,8 +383,8 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
         Top = 343.937230000000000000
         Width = 718.110700000000000000
         object Memo6: TfrxMemoView
-          Left = 90.708720000000000000
-          Width = 423.307360000000000000
+          Left = 151.181200000000000000
+          Width = 192.756030000000000000
           Height = 34.015770000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -437,8 +401,8 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           VAlign = vaCenter
         end
         object Memo9: TfrxMemoView
-          Left = 514.016080000000000000
-          Width = 113.385900000000000000
+          Left = 343.937230000000000000
+          Width = 124.724490000000000000
           Height = 34.015770000000000000
           DisplayFormat.FormatStr = '%2.0n'
           DisplayFormat.Kind = fkNumeric
@@ -453,7 +417,26 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
           GapX = 6.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            '[SUM(<QryPrincipal."QUANTIDADE">,MasterData)]')
+            '[SUM(<QryPrincipal."PRODUCAO">,MasterData)]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo12: TfrxMemoView
+          Left = 468.661720000000000000
+          Width = 98.267780000000000000
+          Height = 34.015770000000000000
+          DisplayFormat.FormatStr = '%2.0n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 0.500000000000000000
+          Fill.BackColor = 14211288
+          GapX = 6.000000000000000000
+          HAlign = haRight
           ParentFont = False
           VAlign = vaCenter
         end
@@ -466,16 +449,11 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
     UpdateTransaction = DtmConexaoModulo.FDWriteTransaction
     SQL.Strings = (
       
-        'select * from stp_rel_comercio_01(:tipo, :ano_inicio, :ano_fim, ' +
-        ':escritorio)')
+        'select * from stp_rel_producao_04 (:ano_inicio, :ano_fim, :unida' +
+        'de)')
     Left = 112
     Top = 272
     ParamData = <
-      item
-        Name = 'TIPO'
-        DataType = ftString
-        ParamType = ptInput
-      end
       item
         Name = 'ANO_INICIO'
         DataType = ftInteger
@@ -487,9 +465,10 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
         ParamType = ptInput
       end
       item
-        Name = 'ESCRITORIO'
+        Name = 'UNIDADE'
         DataType = ftInteger
         ParamType = ptInput
+        Value = '111'
       end>
   end
   object FrxDtStPrincipal: TfrxDBDataset
@@ -502,7 +481,7 @@ inherited FrmRelatorioProducaoComercio: TFrmRelatorioProducaoComercio
   end
   object DtSrcUnidadeLocal: TDataSource
     DataSet = DtmRelatorioModulo.DtStUnidadeLocal
-    Left = 360
-    Top = 240
+    Left = 408
+    Top = 192
   end
 end

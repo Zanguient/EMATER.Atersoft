@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Consulta, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   cxStyles, dxSkinsCore, dxSkinOffice2013White, dxSkinscxPCPainter, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit,
-  cxNavigator, Data.DB, cxDBData, cxContainer, Vcl.Menus, dxSkinsdxBarPainter, dxBar, cxClasses, FIBDataSet, pFIBDataSet,
+  cxNavigator, Data.DB, cxDBData, cxContainer, Vcl.Menus, dxSkinsdxBarPainter, dxBar, cxClasses,
   cxTextEdit, Vcl.StdCtrls, cxButtons, cxMaskEdit, cxDropDownEdit, cxImageComboBox, Vcl.ExtCtrls, cxGridLevel, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxCheckBox,
   Vcl.ComCtrls, dxCore, cxDateUtils, cxCalendar, cxCheckComboBox, dxSkinSeven, dxSkinSevenClassic, cxSplitter, dxPSGlbl,
@@ -34,15 +34,6 @@ type
     Label8: TLabel;
     EdtDataFim: TcxDateEdit;
     Label9: TLabel;
-    DtStConsultaBEN_ID: TFIBBCDField;
-    DtStConsultaBEN_DATA: TFIBDateField;
-    DtStConsultaBEN_SITUACAO: TFIBStringField;
-    DtStConsultaBEN_NOME: TFIBStringField;
-    DtStConsultaBEN_CPF: TFIBStringField;
-    DtStConsultaCID_NOME: TFIBStringField;
-    DtStConsultaCOM_NOME: TFIBStringField;
-    DtStConsultaFUN_NOME: TFIBStringField;
-    DtStConsultaUND_NOME: TFIBStringField;
     GrdConsultaTblBEN_DATA: TcxGridDBColumn;
     GrdConsultaTblBEN_SITUACAO: TcxGridDBColumn;
     GrdConsultaTblBEN_NOME: TcxGridDBColumn;
@@ -70,16 +61,7 @@ type
     dxPSEngineController: TdxPSEngineController;
     dxComponentPrinterLink: TdxGridReportLink;
     BtnImprimir: TdxBarButton;
-    DtStConsultaBEN_SEXO: TFIBStringField;
-    DtStConsultaBEN_IDADE: TFIBIntegerField;
-    DtStConsultaBEN_ESCOLARIDADE: TFIBStringField;
-    DtStConsultaBEN_ORGANIZACAO: TFIBStringField;
-    DtStConsultaBEN_CASADO: TFIBStringField;
     BtnImprimirFicha: TdxBarButton;
-    DtStConsultaBEN_CATEGORIA: TFIBStringField;
-    DtStConsultaBEN_ATIVIDADE: TFIBStringField;
-    DtStConsultaBEN_UPF_CADASTRADA: TFIBStringField;
-    DtStConsultaBEN_DAP: TFIBStringField;
     GrdConsultaTblBEN_SEXO: TcxGridDBColumn;
     GrdConsultaTblBEN_IDADE: TcxGridDBColumn;
     GrdConsultaTblBEN_ESCOLARIDADE: TcxGridDBColumn;
@@ -92,10 +74,6 @@ type
     Label10: TLabel;
     EdtApelido: TcxTextEdit;
     DtSrcComunidade: TDataSource;
-    DtStConsultaREG_EXCLUIDO: TFIBBooleanField;
-    DtStConsultaREG_REPLICADO: TFIBBooleanField;
-    DtStConsultaREG_USUARIO: TFIBStringField;
-    DtStConsultaREG_MODIFICADO: TFIBDateTimeField;
     QryConsultaBEN_ID: TLargeintField;
     QryConsultaBEN_DATA: TDateField;
     QryConsultaBEN_SITUACAO: TStringField;

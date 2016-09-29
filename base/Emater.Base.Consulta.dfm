@@ -11,8 +11,8 @@ inherited FrmBaseConsulta: TFrmBaseConsulta
   Position = poDefaultPosOnly
   WindowState = wsNormal
   OnShow = FormShow
-  ExplicitLeft = 429
-  ExplicitTop = 200
+  ExplicitLeft = 8
+  ExplicitTop = 8
   ExplicitWidth = 725
   ExplicitHeight = 512
   PixelsPerInch = 96
@@ -274,17 +274,6 @@ inherited FrmBaseConsulta: TFrmBaseConsulta
     OnStateChange = DtSrcConsultaStateChange
     Left = 144
     Top = 208
-  end
-  object DtStConsulta: TpFIBDataSet
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 80
-    Top = 168
   end
   object BarManager: TdxBarManager
     AllowReset = False

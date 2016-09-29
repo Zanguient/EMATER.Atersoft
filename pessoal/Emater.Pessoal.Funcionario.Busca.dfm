@@ -4,9 +4,7 @@ inherited FrmPessoalFuncionarioBusca: TFrmPessoalFuncionarioBusca
   Hint = 'Busca r'#225'pida de funcion'#225'rio.'
   Caption = 'Busca R'#225'pida de Funcion'#225'rios'
   ClientWidth = 825
-  ExplicitLeft = 335
-  ExplicitTop = 171
-  ExplicitWidth = 841
+  ExplicitWidth = 831
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlPesquisa: TcxPageControl
@@ -17,9 +15,8 @@ inherited FrmPessoalFuncionarioBusca: TFrmPessoalFuncionarioBusca
     ClientRectBottom = 122
     ClientRectRight = 807
     inherited TbShtParametros: TcxTabSheet
-      ExplicitLeft = 34
       ExplicitWidth = 805
-      ExplicitHeight = 99
+      ExplicitHeight = 94
       inherited LblValor: TLabel
         Width = 102
         Caption = 'Nome do funcion'#225'rio:'
@@ -193,7 +190,7 @@ inherited FrmPessoalFuncionarioBusca: TFrmPessoalFuncionarioBusca
   end
   inherited BtnFechar: TcxButton
     Left = 743
-    ExplicitLeft = 717
+    ExplicitLeft = 743
   end
   inherited BtnNovo: TcxButton
     Hint = 'Inserir novo funcion'#225'rio'
@@ -206,99 +203,6 @@ inherited FrmPessoalFuncionarioBusca: TFrmPessoalFuncionarioBusca
   inherited BtnVisualizar: TcxButton
     Hint = 'Visualizar funcion'#225'rio '
     Description = 'Visualiza o funcion'#225'rio atualmente selecionado.'
-  end
-  inherited DtStConsulta: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_PES_FUNCIONARIO'
-      'SET '
-      '    FUN_DATA = :FUN_DATA,'
-      '    FUN_NOME = :FUN_NOME,'
-      '    FUN_MATRICULA = :FUN_MATRICULA,'
-      '    FUN_CPF = :FUN_CPF,'
-      '    FUN_TELEFONE = :FUN_TELEFONE,'
-      '    FUN_CELULAR = :FUN_CELULAR,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO'
-      'WHERE'
-      '    FUN_ID = :OLD_FUN_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_PES_FUNCIONARIO'
-      'WHERE'
-      '        FUN_ID = :OLD_FUN_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_PES_FUNCIONARIO('
-      '    FUN_ID,'
-      '    FUN_DATA,'
-      '    FUN_NOME,'
-      '    FUN_MATRICULA,'
-      '    FUN_CPF,'
-      '    FUN_TELEFONE,'
-      '    FUN_CELULAR,'
-      '    REG_EXCLUIDO'
-      ')'
-      'VALUES('
-      '    :FUN_ID,'
-      '    :FUN_DATA,'
-      '    :FUN_NOME,'
-      '    :FUN_MATRICULA,'
-      '    :FUN_CPF,'
-      '    :FUN_TELEFONE,'
-      '    :FUN_CELULAR,'
-      '    :REG_EXCLUIDO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.fun_id,'
-      '  a.fun_data, '
-      '  a.fun_nome, '
-      '  a.fun_matricula, '
-      '  a.fun_cpf,'
-      '  a.fun_telefone,'
-      '  a.fun_celular, '
-      '  a.reg_excluido,'
-      '  b.cid_nome,'
-      '  b.ufe_id,'
-      '  c.fnc_descricao,'
-      '  (e.unt_descricao || '#39': '#39' || d.und_nome) as und_nome'
-      'from'
-      
-        '  tab_pes_funcionario a left join tab_dne_cidade b on (a.cid_id ' +
-        '= b.cid_id) left join'
-      '  tab_pes_funcao c on (a.fnc_id = c.fnc_id) left join'
-      '  tab_sis_unidade d on (a.und_id = d.und_id) left join'
-      '  tab_sis_unidade_tipo e on (d.unt_id = e.unt_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))'
-      '     ) and (     A.FUN_ID = :OLD_FUN_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.fun_id,'
-      '  a.fun_data, '
-      '  a.fun_nome, '
-      '  a.fun_matricula, '
-      '  a.fun_cpf,'
-      '  a.fun_telefone,'
-      '  a.fun_celular, '
-      '  a.reg_excluido,'
-      '  b.cid_nome,'
-      '  b.ufe_id,'
-      '  c.fnc_descricao,'
-      '  (e.unt_descricao || '#39': '#39' || d.und_nome) as und_nome'
-      'from'
-      
-        '  tab_pes_funcionario a left join tab_dne_cidade b on (a.cid_id ' +
-        '= b.cid_id) left join'
-      '  tab_pes_funcao c on (a.fnc_id = c.fnc_id) left join'
-      '  tab_sis_unidade d on (a.und_id = d.und_id) left join'
-      '  tab_sis_unidade_tipo e on (d.unt_id = e.unt_id)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
   end
   inherited dxBarManager: TdxBarManager
     DockControlHeights = (

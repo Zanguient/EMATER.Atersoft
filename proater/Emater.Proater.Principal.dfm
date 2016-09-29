@@ -4,10 +4,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   Caption = 'PROATER'
   ClientHeight = 590
   ClientWidth = 806
-  ExplicitLeft = 304
-  ExplicitTop = 106
-  ExplicitWidth = 822
-  ExplicitHeight = 629
+  ExplicitWidth = 812
+  ExplicitHeight = 619
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
@@ -75,10 +73,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtApresentacao: TcxTabSheet
           Caption = 'Apresenta'#231#227'o'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object DbMemoApresentacao: TcxDBMemo
             Left = 8
             Top = 48
@@ -258,6 +252,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtComunidades: TcxTabSheet
           Caption = 'Benefici'#225'rios e UPF'
           ImageIndex = 0
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -375,6 +373,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtProblemas: TcxTabSheet
           Caption = 'Problemas e potencialidades'
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -492,6 +494,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtAcordos: TcxTabSheet
           Caption = 'Acordos, conv'#234'nios e parcerias'
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -629,6 +635,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtRecursos: TcxTabSheet
           Caption = 'Recursos humanos'
           ImageIndex = 0
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -844,6 +854,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtMobiliario: TcxTabSheet
           Caption = 'Mobili'#225'rio'
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -959,6 +973,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtEquipamentos: TcxTabSheet
           Caption = 'Equipamentos'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1074,6 +1092,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtVeiculos: TcxTabSheet
           Caption = 'Ve'#237'culos'
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1193,6 +1215,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtDespesas: TcxTabSheet
           Caption = 'Despesas de custeio'
           ImageIndex = 4
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1303,6 +1329,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtNecessidades: TcxTabSheet
           Caption = 'Necessidades de qualifica'#231#227'o'
           ImageIndex = 5
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1438,6 +1468,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtProjetos: TcxTabSheet
           Caption = 'Projetos e subprojetos'
           ImageIndex = 0
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1785,6 +1819,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtMetodologias: TcxTabSheet
           Caption = 'Metodologias de ATER'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1900,6 +1938,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtBeneficiarios: TcxTabSheet
           Caption = 'Benefici'#225'rios de ATER'
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -2023,6 +2065,10 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtOrcamento: TcxTabSheet
           Caption = 'Previs'#227'o or'#231'ament'#225'ria'
           ImageIndex = 4
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -2167,10 +2213,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   inherited BtnRelatorio: TcxButton
     Top = 558
     ExplicitTop = 558
-  end
-  inherited DtStPrincipal: TpFIBDataSet
-    Left = 72
-    Top = 288
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 176

@@ -7,10 +7,8 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
   Caption = 'Perfis de usu'#225'rios'
   ClientHeight = 488
   ClientWidth = 492
-  ExplicitLeft = 337
-  ExplicitTop = 153
-  ExplicitWidth = 508
-  ExplicitHeight = 527
+  ExplicitWidth = 498
+  ExplicitHeight = 517
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
@@ -185,119 +183,6 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
     Top = 456
     ExplicitLeft = 330
     ExplicitTop = 456
-  end
-  inherited DtStPrincipal: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_SIS_PERFIL'
-      'SET '
-      '    PER_NOME = :PER_NOME,'
-      '    PER_ATIVO = :PER_ATIVO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    PER_ID = :OLD_PER_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_SIS_PERFIL'
-      'WHERE'
-      '        PER_ID = :OLD_PER_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_SIS_PERFIL('
-      '    PER_ID,'
-      '    PER_NOME,'
-      '    PER_ATIVO,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :PER_ID,'
-      '    :PER_NOME,'
-      '    :PER_ATIVO,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.per_id,'
-      '  a.per_nome,'
-      '  a.per_ativo,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_sis_perfil a'
-      'where( '
-      '  (a.reg_excluido = 0)'
-      '     ) and (     A.PER_ID = :OLD_PER_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.per_id,'
-      '  a.per_nome,'
-      '  a.per_ativo,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_sis_perfil a'
-      'where'
-      '  (a.reg_excluido = 0)'
-      'order by'
-      '  a.per_nome')
-    AutoUpdateOptions.UpdateTableName = 'TAB_SIS_PERFIL'
-    AutoUpdateOptions.KeyFields = 'PER_ID'
-    AutoUpdateOptions.AutoReWriteSqls = True
-    AutoUpdateOptions.CanChangeSQLs = True
-    AutoUpdateOptions.UpdateOnlyModifiedFields = True
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 96
-    Top = 280
-    object DtStPrincipalPER_ID: TFIBIntegerField
-      FieldName = 'PER_ID'
-    end
-    object DtStPrincipalPER_NOME: TFIBStringField
-      DisplayLabel = 'Nome do perfil'
-      FieldName = 'PER_NOME'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
-    end
-    object DtStPrincipalPER_ATIVO: TFIBBooleanField
-      DefaultExpression = 'True'
-      DisplayLabel = 'Ativo'
-      FieldName = 'PER_ATIVO'
-    end
   end
   inherited QryPrincipal: TFDQuery
     AfterPost = QryPrincipalAfterPost

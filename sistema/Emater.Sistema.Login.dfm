@@ -9,10 +9,8 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
   Position = poScreenCenter
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
-  ExplicitLeft = 470
-  ExplicitTop = 181
-  ExplicitWidth = 339
-  ExplicitHeight = 444
+  ExplicitWidth = 329
+  ExplicitHeight = 434
   PixelsPerInch = 96
   TextHeight = 13
   object Shape1: TShape

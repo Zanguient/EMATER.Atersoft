@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Tabela, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,
-  dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, FIBDataSet, pFIBDataSet, cxPC,
+  dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, cxPC,
   Vcl.StdCtrls, cxButtons, cxContainer, cxEdit, cxCheckBox, cxDBEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxCalendar,
   cxGroupBox, cxMemo, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData, cxLookupEdit,
   cxDBLookupEdit, cxDBLookupComboBox, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGridLevel, cxClasses,
@@ -14,15 +14,6 @@ uses
 
 type
   TFrmSistemaUsuario = class(TFrmBaseTabela)
-    DtStPrincipalUSR_ID: TFIBIntegerField;
-    DtStPrincipalUSR_DATA: TFIBDateField;
-    DtStPrincipalUSR_LOGIN: TFIBStringField;
-    DtStPrincipalUSR_SENHA: TFIBStringField;
-    DtStPrincipalUSR_EXPIRADA: TFIBBooleanField;
-    DtStPrincipalUSR_ATIVO: TFIBBooleanField;
-    DtStPrincipalUSR_OBSERVACAO: TFIBMemoField;
-    DtStPrincipalPER_ID: TFIBIntegerField;
-    DtStPrincipalPER_NOME: TFIBStringField;
     GrpBxUsuario: TcxGroupBox;
     Label1: TLabel;
     DbEdtData: TcxDBDateEdit;
@@ -50,12 +41,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     EdtFiltrarNome: TcxTextEdit;
-    DtStPrincipalFUN_NOME: TFIBStringField;
     GrdPrincipalTblFUN_NOME: TcxGridDBColumn;
-    DtStPrincipalREG_EXCLUIDO: TFIBBooleanField;
-    DtStPrincipalREG_REPLICADO: TFIBBooleanField;
-    DtStPrincipalREG_USUARIO: TFIBStringField;
-    DtStPrincipalREG_MODIFICADO: TFIBDateTimeField;
     QryPrincipalUSR_ID: TIntegerField;
     QryPrincipalUSR_DATA: TDateField;
     QryPrincipalUSR_LOGIN: TStringField;

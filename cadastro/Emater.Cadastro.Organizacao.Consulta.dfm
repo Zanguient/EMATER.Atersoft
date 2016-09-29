@@ -4,8 +4,6 @@ inherited FrmCadastroOrganizacaoConsulta: TFrmCadastroOrganizacaoConsulta
   Hint = 'Consulta de organiza'#231#245'es.'
   Caption = 'Consulta de Organiza'#231#245'es Sociais'
   ClientWidth = 728
-  ExplicitLeft = 379
-  ExplicitTop = 195
   ExplicitWidth = 744
   PixelsPerInch = 96
   TextHeight = 13
@@ -31,9 +29,9 @@ inherited FrmCadastroOrganizacaoConsulta: TFrmCadastroOrganizacaoConsulta
     Top = 151
     Width = 527
     Height = 322
-    ExplicitTop = 156
-    ExplicitWidth = 728
-    ExplicitHeight = 317
+    ExplicitTop = 151
+    ExplicitWidth = 527
+    ExplicitHeight = 322
     inherited GrdConsultaTbl: TcxGridDBTableView
       DataController.KeyFieldNames = 'ORG_ID'
       DataController.Summary.FooterSummaryItems = <
@@ -308,112 +306,6 @@ inherited FrmCadastroOrganizacaoConsulta: TFrmCadastroOrganizacaoConsulta
   inherited DtSrcConsulta: TDataSource
     Left = 104
     Top = 240
-  end
-  inherited DtStConsulta: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CAD_ORGANIZACAO'
-      'SET '
-      '    ORG_DATA = :ORG_DATA,'
-      '    ORG_NOME = :ORG_NOME,'
-      '    ORG_SIGLA = :ORG_SIGLA,'
-      '    ORG_CNPJ = :ORG_CNPJ,'
-      '    ORG_EMAIL = :ORG_EMAIL,'
-      '    ORG_RESPONSAVEL = :ORG_RESPONSAVEL,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    ORG_ID = :OLD_ORG_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CAD_ORGANIZACAO'
-      'WHERE'
-      '        ORG_ID = :OLD_ORG_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CAD_ORGANIZACAO('
-      '    ORG_ID,'
-      '    ORG_DATA,'
-      '    ORG_NOME,'
-      '    ORG_SIGLA,'
-      '    ORG_CNPJ,'
-      '    ORG_EMAIL,'
-      '    ORG_RESPONSAVEL,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :ORG_ID,'
-      '    :ORG_DATA,'
-      '    :ORG_NOME,'
-      '    :ORG_SIGLA,'
-      '    :ORG_CNPJ,'
-      '    :ORG_EMAIL,'
-      '    :ORG_RESPONSAVEL,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.org_id,'
-      '  a.org_data,'
-      '  a.org_nome,'
-      '  a.org_sigla,'
-      '  a.org_cnpj,'
-      '  a.org_email,'
-      '  a.org_responsavel,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  b.cid_nome,'
-      '  c.otp_descricao'
-      'from'
-      
-        '  tab_cad_organizacao a left join tab_dne_cidade b on (a.cid_id ' +
-        '= b.cid_id) left join'
-      '  tab_cad_organizacao_tipo c on (a.otp_id = c.otp_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      
-        '  (a.cid_id in (select cid_id from vwt_sis_municipio_unidade_loc' +
-        'al))'
-      '     ) and (     A.ORG_ID = :OLD_ORG_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.org_id,'
-      '  a.org_data,'
-      '  a.org_nome,'
-      '  a.org_sigla,'
-      '  a.org_cnpj,'
-      '  a.org_email,'
-      '  a.org_responsavel,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  b.cid_nome,'
-      '  c.otp_descricao'
-      'from'
-      
-        '  tab_cad_organizacao a left join tab_dne_cidade b on (a.cid_id ' +
-        '= b.cid_id) left join'
-      '  tab_cad_organizacao_tipo c on (a.otp_id = c.otp_id)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      
-        '  (a.cid_id in (select cid_id from vwt_sis_municipio_unidade_loc' +
-        'al))')
-    Left = 32
-    Top = 184
   end
   inherited BarManager: TdxBarManager
     Left = 168

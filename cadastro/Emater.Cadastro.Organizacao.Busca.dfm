@@ -5,20 +5,20 @@ inherited FrmCadastroOrganizacaoBusca: TFrmCadastroOrganizacaoBusca
   Caption = 'Busca R'#225'pida de Organiza'#231#227'o Sociais'
   ClientHeight = 476
   ClientWidth = 780
-  ExplicitLeft = 324
-  ExplicitTop = 140
-  ExplicitWidth = 796
-  ExplicitHeight = 515
+  ExplicitWidth = 786
+  ExplicitHeight = 505
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlPesquisa: TcxPageControl
     Width = 764
     Height = 124
-    ExplicitWidth = 744
+    ExplicitWidth = 764
     ExplicitHeight = 124
     ClientRectBottom = 122
     ClientRectRight = 762
     inherited TbShtParametros: TcxTabSheet
+      ExplicitWidth = 760
+      ExplicitHeight = 94
       inherited LblValor: TLabel
         Width = 107
         Caption = 'Nome da organiza'#231#227'o:'
@@ -76,14 +76,14 @@ inherited FrmCadastroOrganizacaoBusca: TFrmCadastroOrganizacaoBusca
           'os.'
         TabOrder = 6
         OnClick = BtnConsultarClick
-        ExplicitLeft = 648
+        ExplicitLeft = 668
         ExplicitTop = 24
       end
       inherited BtnLimparParametros: TcxButton
         Left = 668
         Top = 60
         TabOrder = 7
-        ExplicitLeft = 648
+        ExplicitLeft = 668
         ExplicitTop = 60
       end
       inherited EdtValor: TcxTextEdit
@@ -183,121 +183,32 @@ inherited FrmCadastroOrganizacaoBusca: TFrmCadastroOrganizacaoBusca
   inherited BtnSelecionar: TcxButton
     Left = 607
     Top = 444
-    ExplicitLeft = 587
+    ExplicitLeft = 607
     ExplicitTop = 444
   end
   inherited BtnFechar: TcxButton
     Left = 698
     Top = 444
-    ExplicitLeft = 678
+    ExplicitLeft = 698
     ExplicitTop = 444
   end
   inherited BtnNovo: TcxButton
     Top = 444
     Hint = 'Inserir nova organiza'#231#227'o'
     Description = 'Cria um novo registro de organiza'#231#227'o.'
-    ExplicitTop = 435
+    ExplicitTop = 444
   end
   inherited BtnEditar: TcxButton
     Top = 444
     Hint = 'Editar organiza'#231#227'o selecionada'
     Description = 'Edita a organiza'#231#227'o atualmente selecionada.'
-    ExplicitTop = 435
+    ExplicitTop = 444
   end
   inherited BtnVisualizar: TcxButton
     Top = 444
     Hint = 'Visualizar organiza'#231#227'o'
     Description = 'Visualiza o cadastro da organiza'#231#227'o atualmente selecionada.'
     ExplicitTop = 444
-  end
-  inherited DtStConsulta: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CAD_ORGANIZACAO'
-      'SET '
-      '    ORG_DATA = :ORG_DATA,'
-      '    ORG_NOME = :ORG_NOME,'
-      '    ORG_SIGLA = :ORG_SIGLA,'
-      '    ORG_CNPJ = :ORG_CNPJ,'
-      '    ORG_EMAIL = :ORG_EMAIL,'
-      '    ORG_RESPONSAVEL = :ORG_RESPONSAVEL,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO'
-      'WHERE'
-      '    ORG_ID = :OLD_ORG_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CAD_ORGANIZACAO'
-      'WHERE'
-      '        ORG_ID = :OLD_ORG_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CAD_ORGANIZACAO('
-      '    ORG_ID,'
-      '    ORG_DATA,'
-      '    ORG_NOME,'
-      '    ORG_SIGLA,'
-      '    ORG_CNPJ,'
-      '    ORG_EMAIL,'
-      '    ORG_RESPONSAVEL,'
-      '    REG_EXCLUIDO'
-      ')'
-      'VALUES('
-      '    :ORG_ID,'
-      '    :ORG_DATA,'
-      '    :ORG_NOME,'
-      '    :ORG_SIGLA,'
-      '    :ORG_CNPJ,'
-      '    :ORG_EMAIL,'
-      '    :ORG_RESPONSAVEL,'
-      '    :REG_EXCLUIDO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.org_id,'
-      '  a.org_data,'
-      '  a.org_nome,'
-      '  a.org_sigla,'
-      '  a.org_cnpj,'
-      '  a.org_email,'
-      '  a.org_responsavel,'
-      '  a.reg_excluido,'
-      '  b.cid_nome,'
-      '  c.otp_descricao'
-      'from'
-      
-        '  tab_cad_organizacao a left join tab_dne_cidade b on (a.cid_id ' +
-        '= b.cid_id) left join'
-      '  tab_cad_organizacao_tipo c on (a.otp_id = c.otp_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      
-        '  (a.cid_id in (select cid_id from vwt_sis_municipio_unidade_loc' +
-        'al))'
-      '     ) and (     A.ORG_ID = :OLD_ORG_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.org_id,'
-      '  a.org_data,'
-      '  a.org_nome,'
-      '  a.org_sigla,'
-      '  a.org_cnpj,'
-      '  a.org_email,'
-      '  a.org_responsavel,'
-      '  a.reg_excluido,'
-      '  b.cid_nome,'
-      '  c.otp_descricao'
-      'from'
-      
-        '  tab_cad_organizacao a left join tab_dne_cidade b on (a.cid_id ' +
-        '= b.cid_id) left join'
-      '  tab_cad_organizacao_tipo c on (a.otp_id = c.otp_id)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      
-        '  (a.cid_id in (select cid_id from vwt_sis_municipio_unidade_loc' +
-        'al))')
   end
   inherited dxBarManager: TdxBarManager
     DockControlHeights = (

@@ -9,10 +9,8 @@ inherited FrmDialogoPendencia: TFrmDialogoPendencia
   OldCreateOrder = True
   Position = poScreenCenter
   OnClose = FormClose
-  ExplicitLeft = 424
-  ExplicitTop = 149
-  ExplicitWidth = 336
-  ExplicitHeight = 453
+  ExplicitWidth = 326
+  ExplicitHeight = 444
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

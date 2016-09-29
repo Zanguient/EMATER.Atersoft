@@ -1,48 +1,7 @@
 object DtmConexaoModulo: TDtmConexaoModulo
   OldCreateOrder = False
-  OnCreate = DataModuleCreate
   Height = 399
   Width = 674
-  object ReadTransaction: TpFIBTransaction
-    DefaultDatabase = pFIBDatabase
-    TRParams.Strings = (
-      'write'
-      'nowait'
-      'rec_version'
-      'read_committed')
-    TPBMode = tpbDefault
-    Left = 536
-    Top = 80
-  end
-  object WriteTransaction: TpFIBTransaction
-    DefaultDatabase = pFIBDatabase
-    TimeoutAction = TACommit
-    TRParams.Strings = (
-      'write'
-      'nowait'
-      'rec_version'
-      'read_committed')
-    TPBMode = tpbDefault
-    Left = 536
-    Top = 128
-  end
-  object pFIBDatabase: TpFIBDatabase
-    DBName = 'localhost:Sevensoft.Atersoft.Desenvolvimento'
-    DBParams.Strings = (
-      'password=masterkey'
-      'user_name=SYSDBA'
-      'lc_ctype=WIN1252')
-    DefaultTransaction = ReadTransaction
-    DefaultUpdateTransaction = WriteTransaction
-    SQLDialect = 3
-    Timeout = 0
-    DesignDBOptions = []
-    LibraryName = 'fbclient.dll'
-    AliasName = 'Sevensoft.Atersoft.Desenvolvimento'
-    WaitForRestoreConnect = 0
-    Left = 536
-    Top = 32
-  end
   object FDConnection: TFDConnection
     Params.Strings = (
       'Database=Sevensoft.Atersoft.Desenvolvimento'
@@ -55,7 +14,6 @@ object DtmConexaoModulo: TDtmConexaoModulo
       'PageSize=8192')
     ResourceOptions.AssignedValues = [rvSilentMode]
     ResourceOptions.SilentMode = True
-    Connected = True
     LoginPrompt = False
     Transaction = FDReadTransaction
     UpdateTransaction = FDWriteTransaction

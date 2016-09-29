@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, dxRibbonForm, Emater.Classe.Cadeia, Emater.Classe.Mensagem,
-  pFIBDatabase, FIBDatabase, cxButtons, dxBar, Emater.Classe.Log, Vcl.StdCtrls;
+  cxButtons, dxBar, Emater.Classe.Log, Vcl.StdCtrls;
 
 type
   TFormularioEstilo = (feModal, feNormal, feMDIFilha);

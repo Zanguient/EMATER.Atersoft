@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, StdCtrls, Buttons, cxLookAndFeelPainters, cxGraphics, cxControls, cxLookAndFeels, cxContainer, cxEdit,
-  cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxDBData, Menus, cxTextEdit, dxBar, FIBDataSet, pFIBDataSet, cxButtons,
+  cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxDBData, Menus, cxTextEdit, dxBar, cxButtons,
   cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxMaskEdit,
   cxDropDownEdit, cxImageComboBox, cxPC, IniFiles, cxPCdxBarPopupMenu, Emater.Base.Basico, dxSkinsCore, dxSkinOffice2013White,
   dxSkinSeven, dxSkinSevenClassic, dxSkinscxPCPainter, cxNavigator, dxSkinsdxBarPainter, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option,
@@ -22,7 +22,6 @@ type
     BtnSelecionar: TcxButton;
     BtnFechar: TcxButton;
     DtSrcConsulta: TDataSource;
-    DtStConsulta: TpFIBDataSet;
     LblValor: TLabel;
     LblOpcao: TLabel;
     ImgCmbBxOpcao: TcxImageComboBox;

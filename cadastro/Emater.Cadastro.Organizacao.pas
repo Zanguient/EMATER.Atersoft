@@ -5,8 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Tabela, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore,
-  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, FIBDataSet,
-  pFIBDataSet, cxPC, Vcl.StdCtrls, cxButtons, cxContainer, cxEdit, cxGroupBox, cxDBEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit,
+  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB,
+  cxPC, Vcl.StdCtrls, cxButtons, cxContainer, cxEdit, cxGroupBox, cxDBEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit,
   cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGridLevel, cxClasses, cxGridCustomView, cxGrid, cxImageComboBox, dxBarBuiltInMenu,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
@@ -14,25 +14,6 @@ uses
 
 type
   TFrmCadastroOrganizacao = class(TFrmBaseTabela)
-    DtStPrincipalORG_ID: TFIBIntegerField;
-    DtStPrincipalORG_DATA: TFIBDateField;
-    DtStPrincipalORG_NOME: TFIBStringField;
-    DtStPrincipalORG_SIGLA: TFIBStringField;
-    DtStPrincipalORG_CNPJ: TFIBStringField;
-    DtStPrincipalORG_ENDERECO: TFIBStringField;
-    DtStPrincipalORG_NUMERO: TFIBStringField;
-    DtStPrincipalORG_COMPLEMENTO: TFIBStringField;
-    DtStPrincipalORG_BAIRRO: TFIBStringField;
-    DtStPrincipalORG_CEP: TFIBStringField;
-    DtStPrincipalORG_TELEFONE_1: TFIBStringField;
-    DtStPrincipalORG_TELEFONE_2: TFIBStringField;
-    DtStPrincipalORG_EMAIL: TFIBStringField;
-    DtStPrincipalORG_RESPONSAVEL: TFIBStringField;
-    DtStPrincipalCID_ID: TFIBIntegerField;
-    DtStPrincipalOTP_ID: TFIBIntegerField;
-    DtStPrincipalOTP_DESCRICAO: TFIBStringField;
-    DtStPrincipalCID_NOME: TFIBStringField;
-    DtStPrincipalUFE_ID: TFIBStringField;
     GrpBxPrincipal: TcxGroupBox;
     Label2: TLabel;
     Label3: TLabel;
@@ -79,15 +60,10 @@ type
     DbEdtCEP: TcxDBMaskEdit;
     GrdFiliacaoTblPUB_MARCADO: TcxGridDBColumn;
     GrdDisponivelTblPUB_DESMARCADO: TcxGridDBColumn;
-    DtStPrincipalORG_FILIADOS: TFIBIntegerField;
     Label16: TLabel;
     DbEdtFiliados: TcxDBTextEdit;
     DbEdtTelefone1: TcxDBMaskEdit;
     DbEdtTelefone2: TcxDBMaskEdit;
-    DtStPrincipalREG_EXCLUIDO: TFIBBooleanField;
-    DtStPrincipalREG_REPLICADO: TFIBBooleanField;
-    DtStPrincipalREG_USUARIO: TFIBStringField;
-    DtStPrincipalREG_MODIFICADO: TFIBDateTimeField;
     QryPrincipalORG_ID: TIntegerField;
     QryPrincipalORG_DATA: TDateField;
     QryPrincipalORG_NOME: TStringField;

@@ -3,8 +3,8 @@ unit Emater.Dialogo.Modulo;
 interface
 
 uses
-  Windows, SysUtils, Classes, DB, FIBDataSet, pFIBDataSet, Forms,
-  IniFiles, Controls, cxDBLookupComboBox, FIBQuery, pFIBQuery,
+  Windows, SysUtils, Classes, DB, Forms,
+  IniFiles, Controls, cxDBLookupComboBox,
   Vcl.Dialogs, Vcl.ExtDlgs;
 
 type

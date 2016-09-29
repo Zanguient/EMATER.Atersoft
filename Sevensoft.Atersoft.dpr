@@ -141,7 +141,9 @@ uses
   Emater.Relatorio.Producao.Criacao in 'relatorio\Emater.Relatorio.Producao.Criacao.pas' {FrmRelatorioProducaoCriacao},
   Emater.Relatorio.Fater.Atividade in 'relatorio\Emater.Relatorio.Fater.Atividade.pas' {FrmRelatorioFaterAtividade},
   Emater.Relatorio.Producao.Servico in 'relatorio\Emater.Relatorio.Producao.Servico.pas' {FrmRelatorioProducaoServico},
-  Emater.Relatorio.Metodologia.Administrativa in 'relatorio\Emater.Relatorio.Metodologia.Administrativa.pas' {FrmRelatorioMetodologiaAdministrativa};
+  Emater.Relatorio.Metodologia.Categoria in 'relatorio\Emater.Relatorio.Metodologia.Categoria.pas' {FrmRelatorioMetodologiaCategoria},
+  Emater.Relatorio.Metodologia.Administrativa in 'relatorio\Emater.Relatorio.Metodologia.Administrativa.pas' {FrmRelatorioMetodologiaAdministrativa},
+  Emater.Relatorio.Metodologia.Finalidade in 'relatorio\Emater.Relatorio.Metodologia.Finalidade.pas' {FrmRelatorioMetodologiaFinalidade};
 
 {$R *.res}
 

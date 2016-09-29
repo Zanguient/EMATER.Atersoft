@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls,  Dialogs, Forms, StdCtrls, cxButtons, ExtCtrls, IniFiles,
-  Menus, DB, FIBDataSet, pFIBDataSet, StrUtils, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, dxGDIPlusClasses, Emater.Base.Basico,
+  Menus, DB, StrUtils, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, dxGDIPlusClasses, Emater.Base.Basico,
   cxControls, cxContainer, cxEdit, cxLabel, cxTextEdit, dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxClasses, dxSkinsForm;
 
 type

@@ -5,32 +5,30 @@ inherited FrmCreditoFinanceira: TFrmCreditoFinanceira
   Hint = 'Tabela de agentes financeiros.'
   Caption = 'Agentes Financeiros'
   ClientHeight = 474
-  ClientWidth = 410
-  ExplicitLeft = 301
-  ExplicitTop = 111
-  ExplicitWidth = 426
-  ExplicitHeight = 513
+  ClientWidth = 412
+  ExplicitWidth = 418
+  ExplicitHeight = 503
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
-    Left = 248
+    Left = 250
     Top = 442
     Hint = '0'
     ExplicitLeft = 248
     ExplicitTop = 442
   end
   inherited PgCntrlMain: TcxPageControl
-    Width = 395
+    Width = 397
     Height = 428
     ExplicitWidth = 395
     ExplicitHeight = 428
     ClientRectBottom = 426
-    ClientRectRight = 393
+    ClientRectRight = 395
     inherited TbShtPrincipal: TcxTabSheet
       object GrdPrincipal: TcxGrid
         Left = 8
         Top = 88
-        Width = 375
+        Width = 377
         Height = 302
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
@@ -42,6 +40,7 @@ inherited FrmCreditoFinanceira: TFrmCreditoFinanceira
         TabOrder = 1
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 375
         object GrdPrincipalTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -104,11 +103,12 @@ inherited FrmCreditoFinanceira: TFrmCreditoFinanceira
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
+        ExplicitWidth = 375
         DesignSize = (
-          375
+          377
           74)
         Height = 81
-        Width = 375
+        Width = 377
         object Label1: TLabel
           Left = 8
           Top = 24
@@ -125,7 +125,8 @@ inherited FrmCreditoFinanceira: TFrmCreditoFinanceira
           DataBinding.DataField = 'FIN_DESCRICAO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 0
-          Width = 359
+          ExplicitWidth = 359
+          Width = 361
         end
       end
     end
@@ -163,106 +164,10 @@ inherited FrmCreditoFinanceira: TFrmCreditoFinanceira
     ExplicitTop = 442
   end
   inherited BtnFechar: TcxButton [7]
-    Left = 328
+    Left = 330
     Top = 442
     ExplicitLeft = 328
     ExplicitTop = 442
-  end
-  inherited DtStPrincipal: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CRD_FINANCEIRA'
-      'SET '
-      '    FIN_DESCRICAO = :FIN_DESCRICAO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    FIN_ID = :OLD_FIN_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CRD_FINANCEIRA'
-      'WHERE'
-      '        FIN_ID = :OLD_FIN_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CRD_FINANCEIRA('
-      '    FIN_ID,'
-      '    FIN_DESCRICAO,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :FIN_ID,'
-      '    :FIN_DESCRICAO,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.fin_id,'
-      '  a.fin_descricao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_crd_financeira a'
-      'where( '
-      '  (a.reg_excluido = 0)'
-      '     ) and (     A.FIN_ID = :OLD_FIN_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.fin_id,'
-      '  a.fin_descricao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_crd_financeira a'
-      'where'
-      '  (a.reg_excluido = 0)'
-      'order by'
-      '  a.fin_descricao')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 256
-    Top = 80
-    object DtStPrincipalFIN_ID: TFIBIntegerField
-      FieldName = 'FIN_ID'
-    end
-    object DtStPrincipalFIN_DESCRICAO: TFIBStringField
-      DisplayLabel = 'Nome do agente financeiro'
-      FieldName = 'FIN_DESCRICAO'
-      Required = True
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-    end
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248

@@ -7,8 +7,6 @@ inherited FrmCreditoVariedade: TFrmCreditoVariedade
   ClientHeight = 474
   ClientWidth = 410
   Constraints.MinWidth = 416
-  ExplicitLeft = 8
-  ExplicitTop = 8
   ExplicitWidth = 416
   ExplicitHeight = 503
   PixelsPerInch = 96
@@ -173,76 +171,6 @@ inherited FrmCreditoVariedade: TFrmCreditoVariedade
     Top = 442
     ExplicitLeft = 328
     ExplicitTop = 442
-  end
-  inherited DtStPrincipal: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CRD_VARIEDADE'
-      'SET '
-      '    VAR_DESCRICAO = :VAR_DESCRICAO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    VAR_ID = :OLD_VAR_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CRD_VARIEDADE'
-      'WHERE'
-      '        VAR_ID = :OLD_VAR_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CRD_VARIEDADE('
-      '    VAR_ID,'
-      '    VAR_DESCRICAO,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :VAR_ID,'
-      '    :VAR_DESCRICAO,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.var_id,'
-      '  a.var_descricao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_crd_variedade a'
-      'where( '
-      '  (a.reg_excluido = 0)'
-      '     ) and (     A.VAR_ID = :OLD_VAR_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.var_id,'
-      '  a.var_descricao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_crd_variedade a'
-      'where'
-      '  (a.reg_excluido = 0)'
-      'order by'
-      '  a.var_descricao')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 112
-    Top = 176
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248

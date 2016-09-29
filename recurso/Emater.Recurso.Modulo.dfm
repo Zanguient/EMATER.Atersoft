@@ -1,7 +1,5 @@
 object DtmRecursoModulo: TDtmRecursoModulo
   OldCreateOrder = False
-  Left = 563
-  Top = 202
   Height = 442
   Width = 498
   object ImgLstPequenas: TcxImageList

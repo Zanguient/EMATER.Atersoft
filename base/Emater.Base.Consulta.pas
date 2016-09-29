@@ -9,7 +9,7 @@ uses
   cxCustomData, cxGraphics, cxFilter, cxData, cxDataStorage, cxDBData,
   cxDropDownEdit, cxCheckBox, cxMemo, cxImageComboBox, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxGridLevel, cxClasses, cxGridCustomView,
-  cxGrid, cxMaskEdit, cxRadioGroup, FIBDataSet, pFIBDataSet, cxDBLookupComboBox,
+  cxGrid, cxMaskEdit, cxRadioGroup, cxDBLookupComboBox,
   Menus, cxButtonEdit, ExtCtrls, dxBar, IniFiles, cxLookAndFeels, Emater.Base.Filha,
   dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic,
   dxSkinscxPCPainter, cxNavigator, dxSkinsdxBarPainter, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
@@ -21,7 +21,6 @@ type
     GrdConsultaTbl: TcxGridDBTableView;
     GrdConsultaLvl: TcxGridLevel;
     DtSrcConsulta: TDataSource;
-    DtStConsulta: TpFIBDataSet;
     LblTitulo: TLabel;
     PnlMain: TPanel;
     LblValor: TLabel;

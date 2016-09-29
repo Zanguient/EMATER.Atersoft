@@ -5,9 +5,7 @@ inherited FrmCadastroUnidadeBusca: TFrmCadastroUnidadeBusca
   ActiveControl = EdtCPF
   Caption = 'Busca R'#225'pida de Unidade de Produ'#231#227'o Familiar'
   ClientWidth = 861
-  ExplicitLeft = 305
-  ExplicitTop = 152
-  ExplicitWidth = 877
+  ExplicitWidth = 867
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlPesquisa: TcxPageControl
@@ -19,7 +17,7 @@ inherited FrmCadastroUnidadeBusca: TFrmCadastroUnidadeBusca
     ClientRectRight = 843
     inherited TbShtParametros: TcxTabSheet
       ExplicitWidth = 841
-      ExplicitHeight = 179
+      ExplicitHeight = 163
       DesignSize = (
         841
         163)
@@ -369,7 +367,7 @@ inherited FrmCadastroUnidadeBusca: TFrmCadastroUnidadeBusca
   end
   inherited BtnFechar: TcxButton
     Left = 779
-    ExplicitLeft = 647
+    ExplicitLeft = 779
   end
   inherited BtnNovo: TcxButton
     Hint = 'Inserir nova unidade de produ'#231#227'o'
@@ -387,216 +385,6 @@ inherited FrmCadastroUnidadeBusca: TFrmCadastroUnidadeBusca
   end
   inherited DtSrcConsulta: TDataSource
     Top = 296
-  end
-  inherited DtStConsulta: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CAD_PRODUCAO_FAMILIAR'
-      'SET '
-      '    PRO_DENOMINACAO = :PRO_DENOMINACAO,'
-      '    PRO_AREA_LEGAL = :PRO_AREA_LEGAL,'
-      '    PRO_AREA_REAL = :PRO_AREA_REAL,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO'
-      'WHERE'
-      '    PRO_ID = :OLD_PRO_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CAD_PRODUCAO_FAMILIAR'
-      'WHERE'
-      '        PRO_ID = :OLD_PRO_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CAD_PRODUCAO_FAMILIAR('
-      '    PRO_ID,'
-      '    PRO_DENOMINACAO,'
-      '    PRO_AREA_LEGAL,'
-      '    PRO_AREA_REAL,'
-      '    REG_EXCLUIDO'
-      ')'
-      'VALUES('
-      '    :PRO_ID,'
-      '    :PRO_DENOMINACAO,'
-      '    :PRO_AREA_LEGAL,'
-      '    :PRO_AREA_REAL,'
-      '    :REG_EXCLUIDO'
-      ')')
-    RefreshSQL.Strings = (
-      'select '
-      '  a.pro_id, '
-      '  a.pro_denominacao, '
-      ''
-      
-        '  cast(coalesce(trunc(a.pro_latitude_graus), 0) as varchar(5)) |' +
-        '| '#39#176' '#39' ||'
-      
-        '  cast(coalesce(trunc(a.pro_latitude_minutos), 0) as varchar(5))' +
-        ' || '#39#39#39' '#39' ||'
-      
-        '  cast(coalesce(trunc(a.pro_latitude_segundos), 0) as varchar(5)' +
-        ') || '#39#39#39#39#39' '#39' ||'
-      '  coalesce(a.pro_latitude_hemisferio, '#39'?'#39') as pro_latitude,'
-      ''
-      
-        '  cast(coalesce(trunc(a.pro_longitude_graus), 0) as varchar(5)) ' +
-        '|| '#39#176' '#39' ||'
-      
-        '  cast(coalesce(trunc(a.pro_longitude_minutos), 0) as varchar(5)' +
-        ') || '#39#39#39' '#39' ||'
-      
-        '  cast(coalesce(trunc(a.pro_longitude_segundos), 0) as varchar(5' +
-        ')) || '#39#39#39#39#39' '#39' ||'
-      '  coalesce(a.pro_longitude_hemisferio, '#39'?'#39') as pro_longitude,'
-      ''
-      '  a.pro_area_legal,'
-      '  a.pro_area_real, '
-      '  a.reg_excluido,'
-      ''
-      '  (e.unt_descricao || '#39': '#39' || d.und_nome) as und_nome,'
-      '  b.cid_nome,'
-      '  c.fun_nome,'
-      '  f.dct_descricao as pro_documento_dominio,'
-      '  g.oct_descricao as pro_caracterizacao_dominio'
-      'from '
-      
-        '  tab_cad_producao_familiar a left join tab_dne_cidade b on (a.c' +
-        'id_id = b.cid_id) left join'
-      
-        '  tab_pes_funcionario c on (a.fun_id = c.fun_id and c.reg_exclui' +
-        'do = 0) left join'
-      '  tab_sis_unidade d on (a.und_id = d.und_id) left join'
-      '  tab_sis_unidade_tipo e on (d.unt_id = e.unt_id) left join'
-      '  tab_cad_documento_tipo f on (f.dct_id = a.dct_id) left join'
-      '  tab_cad_ocupacao_tipo g on (g.oct_id = a.oct_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))'
-      '     ) and (     A.PRO_ID = :OLD_PRO_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select '
-      '  a.pro_id, '
-      '  a.pro_denominacao, '
-      ''
-      
-        '  cast(coalesce(trunc(a.pro_latitude_graus), 0) as varchar(5)) |' +
-        '| '#39#176' '#39' ||'
-      
-        '  cast(coalesce(trunc(a.pro_latitude_minutos), 0) as varchar(5))' +
-        ' || '#39#39#39' '#39' ||'
-      
-        '  cast(coalesce(trunc(a.pro_latitude_segundos), 0) as varchar(5)' +
-        ') || '#39#39#39#39#39' '#39' ||'
-      '  coalesce(a.pro_latitude_hemisferio, '#39'?'#39') as pro_latitude,'
-      ''
-      
-        '  cast(coalesce(trunc(a.pro_longitude_graus), 0) as varchar(5)) ' +
-        '|| '#39#176' '#39' ||'
-      
-        '  cast(coalesce(trunc(a.pro_longitude_minutos), 0) as varchar(5)' +
-        ') || '#39#39#39' '#39' ||'
-      
-        '  cast(coalesce(trunc(a.pro_longitude_segundos), 0) as varchar(5' +
-        ')) || '#39#39#39#39#39' '#39' ||'
-      '  coalesce(a.pro_longitude_hemisferio, '#39'?'#39') as pro_longitude,'
-      ''
-      '  a.pro_area_legal,'
-      '  a.pro_area_real, '
-      '  a.reg_excluido,'
-      ''
-      '  (e.unt_descricao || '#39': '#39' || d.und_nome) as und_nome,'
-      '  b.cid_nome,'
-      '  c.fun_nome,'
-      '  f.dct_descricao as pro_documento_dominio,'
-      '  g.oct_descricao as pro_caracterizacao_dominio'
-      'from '
-      
-        '  tab_cad_producao_familiar a left join tab_dne_cidade b on (a.c' +
-        'id_id = b.cid_id) left join'
-      
-        '  tab_pes_funcionario c on (a.fun_id = c.fun_id and c.reg_exclui' +
-        'do = 0) left join'
-      '  tab_sis_unidade d on (a.und_id = d.und_id) left join'
-      '  tab_sis_unidade_tipo e on (d.unt_id = e.unt_id) left join'
-      '  tab_cad_documento_tipo f on (f.dct_id = a.dct_id) left join'
-      '  tab_cad_ocupacao_tipo g on (g.oct_id = a.oct_id)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
-    Left = 32
-    Top = 272
-    oAutoFormatFields = False
-    object DtStConsultaPRO_ID: TFIBIntegerField
-      FieldName = 'PRO_ID'
-    end
-    object DtStConsultaPRO_DENOMINACAO: TFIBStringField
-      DisplayLabel = 'Denomina'#231#227'o'
-      FieldName = 'PRO_DENOMINACAO'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaPRO_LATITUDE: TFIBStringField
-      DisplayLabel = 'Latitude'
-      FieldName = 'PRO_LATITUDE'
-      Size = 23
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaPRO_LONGITUDE: TFIBStringField
-      DisplayLabel = 'Longitude'
-      FieldName = 'PRO_LONGITUDE'
-      Size = 23
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaPRO_AREA_LEGAL: TFIBFloatField
-      DisplayLabel = #193'rea legal (ha)'
-      FieldName = 'PRO_AREA_LEGAL'
-    end
-    object DtStConsultaPRO_AREA_REAL: TFIBFloatField
-      DisplayLabel = #193'rea real (ha)'
-      FieldName = 'PRO_AREA_REAL'
-    end
-    object DtStConsultaUND_NOME: TFIBStringField
-      DisplayLabel = 'Escrit'#243'rio'
-      FieldName = 'UND_NOME'
-      Size = 152
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCID_NOME: TFIBStringField
-      DisplayLabel = 'Munic'#237'pio'
-      FieldName = 'CID_NOME'
-      Size = 80
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaFUN_NOME: TFIBStringField
-      DisplayLabel = 'T'#233'cnico respons'#225'vel'
-      FieldName = 'FUN_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaPRO_DOCUMENTO_DOMINIO: TFIBStringField
-      DisplayLabel = 'Processo de transi'#231#227'o agroecol'#243'gica'
-      FieldName = 'PRO_DOCUMENTO_DOMINIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaPRO_CARACTERIZACAO_DOMINIO: TFIBStringField
-      DisplayLabel = 'Caracteriza'#231#227'o de dom'#237'nio'
-      FieldName = 'PRO_CARACTERIZACAO_DOMINIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
   end
   inherited dxBarManager: TdxBarManager
     Top = 296

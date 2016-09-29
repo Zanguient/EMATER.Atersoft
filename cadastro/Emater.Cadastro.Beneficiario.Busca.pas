@@ -6,8 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Busca, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   dxSkinsCore, dxSkinOffice2013White, dxSkinscxPCPainter, cxPCdxBarPopupMenu, cxContainer, cxEdit, Vcl.Menus, cxStyles,
-  cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, Data.DB, cxDBData, dxSkinsdxBarPainter, dxBar, FIBDataSet,
-  pFIBDataSet, cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
+  cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, Data.DB, cxDBData, dxSkinsdxBarPainter, dxBar,
+  cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
   cxTextEdit, Vcl.StdCtrls, cxButtons, cxMaskEdit, cxDropDownEdit, cxImageComboBox, cxPC, Vcl.ComCtrls, dxCore, cxDateUtils,
   cxCheckBox, cxCheckComboBox, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxCalendar, dxSkinSeven, dxSkinSevenClassic, dxBarBuiltInMenu,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
@@ -15,15 +15,6 @@ uses
 
 type
   TFrmCadastroBeneficiarioBusca = class(TFrmBaseBusca)
-    DtStConsultaBEN_ID: TFIBBCDField;
-    DtStConsultaBEN_DATA: TFIBDateField;
-    DtStConsultaBEN_SITUACAO: TFIBStringField;
-    DtStConsultaBEN_NOME: TFIBStringField;
-    DtStConsultaBEN_CPF: TFIBStringField;
-    DtStConsultaCID_NOME: TFIBStringField;
-    DtStConsultaCOM_NOME: TFIBStringField;
-    DtStConsultaFUN_NOME: TFIBStringField;
-    DtStConsultaUND_NOME: TFIBStringField;
     GrdConsultaTblBEN_DATA: TcxGridDBColumn;
     GrdConsultaTblBEN_SITUACAO: TcxGridDBColumn;
     GrdConsultaTblBEN_NOME: TcxGridDBColumn;
@@ -51,7 +42,6 @@ type
     Label10: TLabel;
     EdtApelido: TcxTextEdit;
     DtSrcComunidade: TDataSource;
-    DtStConsultaREG_EXCLUIDO: TFIBBooleanField;
     QryComunidade: TFDQuery;
     QryComunidadeCOM_ID: TIntegerField;
     QryComunidadeCOM_NOME: TStringField;

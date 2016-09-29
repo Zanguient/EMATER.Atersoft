@@ -8,7 +8,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
   Caption = 'FATER'
   ClientHeight = 613
   ClientWidth = 851
-  ExplicitLeft = 8
   ExplicitTop = -133
   ExplicitWidth = 867
   ExplicitHeight = 652
@@ -286,6 +285,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtTematica: TcxTabSheet
             Caption = 'Tem'#225'tica'
             ImageIndex = 0
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -321,6 +324,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtOrientacao: TcxTabSheet
             Caption = 'Orienta'#231#227'o t'#233'cnica'
             ImageIndex = 1
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -350,6 +357,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtResumo: TcxTabSheet
             Caption = 'Resumo da a'#231#227'o'
             ImageIndex = 2
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -379,6 +390,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtParceria: TcxTabSheet
             Caption = 'Parcerias'
             ImageIndex = 3
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -408,6 +423,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtTecnologia: TcxTabSheet
             Caption = 'Tecnologia inovadora'
             ImageIndex = 4
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -452,6 +471,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtPratica: TcxTabSheet
             Caption = 'Boas pr'#225'ticas'
             ImageIndex = 5
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               783
               123)
@@ -825,6 +848,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       Caption = 'T'#233'cnicas e ferramentas'
       ImageIndex = 2
       OnShow = TbShtTecnicasShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         831
         508)
@@ -1292,6 +1319,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
     object TbShtDetalhes: TcxTabSheet
       Caption = 'Mais detalhes'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         831
         508)
@@ -1312,6 +1343,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Cria'#231#227'o/cultura/servi'#231'o'
           ImageIndex = 4
           OnShow = TbShtProdutoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             799
             447)
@@ -1430,6 +1465,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Benefici'#225'rio atendido'
           ImageIndex = 0
           OnShow = TbShtBeneficiariosShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             799
             447)
@@ -1666,6 +1705,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'T'#233'cnico participante'
           ImageIndex = 1
           OnShow = TbShtTecnicoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             799
             447)
@@ -1772,6 +1815,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Comunidade'
           ImageIndex = 2
           OnShow = TbShtComunidadesShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             799
             447)
@@ -1882,6 +1929,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Organiza'#231#227'o social'
           ImageIndex = 3
           OnShow = TbShtOrganizacaoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             799
             447)
@@ -2171,191 +2222,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       WordWrap = True
       ExplicitLeft = 648
     end
-  end
-  inherited DtStPrincipal: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_PRD_FATER'
-      'SET '
-      '    FAT_DATA_ACAO = :FAT_DATA_ACAO,'
-      '    FAT_DATA_VISITA = :FAT_DATA_VISITA,'
-      '    FAT_SITUACAO = :FAT_SITUACAO,'
-      '    FAT_TEMATICA = :FAT_TEMATICA,'
-      '    FAT_ORIENTACAO = :FAT_ORIENTACAO,'
-      '    FAT_RESUMO = :FAT_RESUMO,'
-      '    FAT_PARCERIA = :FAT_PARCERIA,'
-      '    FAT_TECNOLOGIA_USO = :FAT_TECNOLOGIA_USO,'
-      '    FAT_TECNOLOGIA = :FAT_TECNOLOGIA,'
-      '    FAT_BOA_PRATICA_USO = :FAT_BOA_PRATICA_USO,'
-      '    FAT_BOA_PRATICA = :FAT_BOA_PRATICA,'
-      '    UND_ID = :UND_ID,'
-      '    FIN_ID = :FIN_ID,'
-      '    MET_ID_INICIAL = :MET_ID_INICIAL,'
-      '    MET_ID_FINAL = :MET_ID_FINAL,'
-      '    CID_ID = :CID_ID,'
-      '    FUN_ID = :FUN_ID,'
-      '    REC_ID = :REC_ID,'
-      '    PRJ_ID = :PRJ_ID,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    FAT_ID = :OLD_FAT_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_PRD_FATER'
-      'WHERE'
-      '        FAT_ID = :OLD_FAT_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_PRD_FATER('
-      '    FAT_ID,'
-      '    FAT_DATA_ACAO,'
-      '    FAT_DATA_VISITA,'
-      '    FAT_SITUACAO,'
-      '    FAT_TEMATICA,'
-      '    FAT_ORIENTACAO,'
-      '    FAT_RESUMO,'
-      '    FAT_PARCERIA,'
-      '    FAT_TECNOLOGIA_USO,'
-      '    FAT_TECNOLOGIA,'
-      '    FAT_BOA_PRATICA_USO,'
-      '    FAT_BOA_PRATICA,'
-      '    UND_ID,'
-      '    FIN_ID,'
-      '    MET_ID_INICIAL,'
-      '    MET_ID_FINAL,'
-      '    CID_ID,'
-      '    FUN_ID,'
-      '    REC_ID,'
-      '    PRJ_ID,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :FAT_ID,'
-      '    :FAT_DATA_ACAO,'
-      '    :FAT_DATA_VISITA,'
-      '    :FAT_SITUACAO,'
-      '    :FAT_TEMATICA,'
-      '    :FAT_ORIENTACAO,'
-      '    :FAT_RESUMO,'
-      '    :FAT_PARCERIA,'
-      '    :FAT_TECNOLOGIA_USO,'
-      '    :FAT_TECNOLOGIA,'
-      '    :FAT_BOA_PRATICA_USO,'
-      '    :FAT_BOA_PRATICA,'
-      '    :UND_ID,'
-      '    :FIN_ID,'
-      '    :MET_ID_INICIAL,'
-      '    :MET_ID_FINAL,'
-      '    :CID_ID,'
-      '    :FUN_ID,'
-      '    :REC_ID,'
-      '    :PRJ_ID,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.fat_id,'
-      '  a.fat_data_acao,'
-      '  a.fat_data_visita,'
-      '  a.fat_situacao,'
-      '  a.fat_tematica,'
-      '  a.fat_orientacao,'
-      '  a.fat_resumo,'
-      '  a.fat_parceria,'
-      '  a.fat_tecnologia_uso,'
-      '  a.fat_tecnologia,'
-      '  a.fat_boa_pratica_uso,'
-      '  a.fat_boa_pratica,'
-      '  a.und_id,'
-      '  a.fin_id,'
-      '  a.met_id_inicial,'
-      '  a.met_id_final,'
-      '  a.cid_id,'
-      '  a.fun_id,'
-      '  a.rec_id,'
-      '  a.prj_id,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  b.ufe_id,'
-      
-        '  '#39'('#39' || coalesce(c.usr_login, '#39'N'#227'o identificado'#39') || '#39') '#39' || co' +
-        'alesce(d.fun_nome, '#39#39') as fat_modificado_usuario_nome'
-      'from'
-      
-        '  tab_prd_fater a left join tab_dne_cidade b on (a.cid_id = b.ci' +
-        'd_id) left join'
-      '  tab_sis_usuario c on (a.reg_usuario = c.usr_login) left join'
-      '  tab_pes_funcionario d on (c.usr_id = d.usr_id)'
-      'where( '
-      '  (a.fat_id = :fat_id) and'
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))'
-      '     ) and (     A.FAT_ID = :OLD_FAT_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.fat_id,'
-      '  a.fat_data_acao,'
-      '  a.fat_data_visita,'
-      '  a.fat_situacao,'
-      '  a.fat_tematica,'
-      '  a.fat_orientacao,'
-      '  a.fat_resumo,'
-      '  a.fat_parceria,'
-      '  a.fat_tecnologia_uso,'
-      '  a.fat_tecnologia,'
-      '  a.fat_boa_pratica_uso,'
-      '  a.fat_boa_pratica,'
-      '  a.und_id,'
-      '  a.fin_id,'
-      '  a.met_id_inicial,'
-      '  a.met_id_final,'
-      '  a.cid_id,'
-      '  a.fun_id,'
-      '  a.rec_id,'
-      '  a.prj_id,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  b.ufe_id,'
-      
-        '  '#39'('#39' || coalesce(c.usr_login, '#39'N'#227'o identificado'#39') || '#39') '#39' || co' +
-        'alesce(d.fun_nome, '#39#39') as fat_modificado_usuario_nome'
-      'from'
-      
-        '  tab_prd_fater a left join tab_dne_cidade b on (a.cid_id = b.ci' +
-        'd_id) left join'
-      '  tab_sis_usuario c on (a.reg_usuario = c.usr_login) left join'
-      '  tab_pes_funcionario d on (c.usr_id = d.usr_id)'
-      'where'
-      '  (a.fat_id = :fat_id) and'
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
-    AutoUpdateOptions.UpdateTableName = 'TAB_PRD_FATER'
-    AutoUpdateOptions.KeyFields = 'FAT_ID'
-    AutoUpdateOptions.AutoReWriteSqls = True
-    AutoUpdateOptions.CanChangeSQLs = True
-    AutoUpdateOptions.UpdateOnlyModifiedFields = True
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 88
-    Top = 192
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 96

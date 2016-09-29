@@ -4,13 +4,17 @@ inherited FrmProaterAcordo: TFrmProaterAcordo
   ClientHeight = 558
   ClientWidth = 469
   OnShow = FormShow
-  ExplicitWidth = 485
-  ExplicitHeight = 597
+  ExplicitLeft = 8
+  ExplicitTop = 8
+  ExplicitWidth = 475
+  ExplicitHeight = 587
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlPrincipal: TcxPageControl
     Width = 453
     Height = 512
+    ExplicitWidth = 453
+    ExplicitHeight = 512
     ClientRectBottom = 510
     ClientRectRight = 451
     inherited TbShtPrincipal: TcxTabSheet
@@ -130,10 +134,14 @@ inherited FrmProaterAcordo: TFrmProaterAcordo
   inherited BtnOK: TcxButton
     Left = 305
     Top = 526
+    ExplicitLeft = 305
+    ExplicitTop = 526
   end
   inherited BtnCancelar: TcxButton
     Left = 386
     Top = 526
+    ExplicitLeft = 386
+    ExplicitTop = 526
   end
   object DtSrcAcordo: TDataSource
     DataSet = FrmProaterPrincipal.QryAcordo

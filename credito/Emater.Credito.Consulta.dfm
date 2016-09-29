@@ -3,8 +3,6 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
   Top = 127
   Caption = 'Consulta de Projetos de Cr'#233'dito Rural'
   ClientWidth = 782
-  ExplicitLeft = 319
-  ExplicitTop = 127
   ExplicitWidth = 798
   PixelsPerInch = 96
   TextHeight = 13
@@ -17,9 +15,9 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
     Top = 191
     Width = 782
     Height = 282
-    ExplicitTop = 196
+    ExplicitTop = 191
     ExplicitWidth = 782
-    ExplicitHeight = 277
+    ExplicitHeight = 282
     inherited GrdConsultaTbl: TcxGridDBTableView
       DataController.KeyFieldNames = 'CRD_ID'
       object GrdConsultaTblCRD_TITULO: TcxGridDBColumn
@@ -171,20 +169,20 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
     end
     inherited BtnConsultar: TcxButton
       Left = 689
-      Top = 65
+      Top = 63
       Anchors = [akRight, akBottom]
       TabOrder = 12
       OnClick = BtnConsultarClick
-      ExplicitLeft = 616
-      ExplicitTop = 56
+      ExplicitLeft = 689
+      ExplicitTop = 63
     end
     inherited BtnLimparParametros: TcxButton
       Left = 689
-      Top = 97
+      Top = 95
       Anchors = [akRight, akBottom]
       TabOrder = 13
-      ExplicitLeft = 616
-      ExplicitTop = 88
+      ExplicitLeft = 689
+      ExplicitTop = 95
     end
     inherited EdtValor: TcxTextEdit
       Anchors = [akLeft, akTop, akRight]
@@ -201,7 +199,6 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
           FieldName = 'SIT_DESCRICAO'
         end>
       Properties.ListOptions.ShowHeader = False
-      Properties.ListSource = DtmCreditoModulo.DtSrcSituacao
       TabOrder = 2
       Width = 153
     end
@@ -214,7 +211,6 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
           FieldName = 'FIN_DESCRICAO'
         end>
       Properties.ListOptions.ShowHeader = False
-      Properties.ListSource = DtmCreditoModulo.DtSrcFinanceira
       TabOrder = 3
       Width = 161
     end
@@ -227,7 +223,6 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
           FieldName = 'LIN_DESCRICAO'
         end>
       Properties.ListOptions.ShowHeader = False
-      Properties.ListSource = DtmCreditoModulo.DtSrcLinha
       TabOrder = 4
       Width = 161
     end
@@ -240,7 +235,6 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
           FieldName = 'TIP_DESCRICAO'
         end>
       Properties.ListOptions.ShowHeader = False
-      Properties.ListSource = DtmCreditoModulo.DtSrcTipo
       TabOrder = 5
       Width = 161
     end
@@ -254,7 +248,6 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
           FieldName = 'PUB_DESCRICAO'
         end>
       Properties.ListOptions.ShowHeader = False
-      Properties.ListSource = DtmCreditoModulo.DtSrcPublico
       TabOrder = 6
       Width = 154
     end
@@ -303,106 +296,6 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
   end
   inherited DtSrcConsulta: TDataSource
     Top = 248
-  end
-  inherited DtStConsulta: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CRD_CREDITO_RURAL'
-      'SET '
-      '    CRD_TITULO = :CRD_TITULO,'
-      '    CRD_DATA_ELABORACAO = :CRD_DATA_ELABORACAO,'
-      '    CRD_DATA_CONTRATACAO = :CRD_DATA_CONTRATACAO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    CRD_ID = :OLD_CRD_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CRD_CREDITO_RURAL'
-      'WHERE'
-      '        CRD_ID = :OLD_CRD_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CRD_CREDITO_RURAL('
-      '    CRD_ID,'
-      '    CRD_TITULO,'
-      '    CRD_DATA_ELABORACAO,'
-      '    CRD_DATA_CONTRATACAO,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :CRD_ID,'
-      '    :CRD_TITULO,'
-      '    :CRD_DATA_ELABORACAO,'
-      '    :CRD_DATA_CONTRATACAO,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.crd_id,'
-      '  a.crd_titulo,'
-      '  b.sit_descricao as crd_situacao,'
-      '  c.fin_descricao as crd_agente_financeiro,'
-      '  d.lin_descricao as crd_linha_credito,'
-      '  e.tip_descricao as crd_tipo_credito,'
-      '  f.pub_descricao as crd_publico_beneficiario,'
-      '  g.und_nome as crd_escritorio,'
-      '  a.crd_data_elaboracao,'
-      '  a.crd_data_contratacao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      
-        '  tab_crd_credito_rural a left join tab_crd_situacao b on (a.sit' +
-        '_id = b.sit_id) left join'
-      '  tab_crd_financeira c on (a.fin_id = c.fin_id) left join'
-      '  tab_crd_linha d on (a.lin_id = d.lin_id) left join'
-      '  tab_crd_tipo e on (a.tip_id = e.tip_id) left join'
-      '  tab_crd_publico f on (a.pub_id = f.pub_id) left join'
-      '  tab_sis_unidade g on (a.und_id = g.und_id)'
-      'where( '
-      '  (a.reg_excluido = 0)'
-      '     ) and (     A.CRD_ID = :OLD_CRD_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.crd_id,'
-      '  a.crd_titulo,'
-      '  b.sit_descricao as crd_situacao,'
-      '  c.fin_descricao as crd_agente_financeiro,'
-      '  d.lin_descricao as crd_linha_credito,'
-      '  e.tip_descricao as crd_tipo_credito,'
-      '  f.pub_descricao as crd_publico_beneficiario,'
-      '  g.und_nome as crd_escritorio,'
-      '  a.crd_data_elaboracao,'
-      '  a.crd_data_contratacao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      
-        '  tab_crd_credito_rural a left join tab_crd_situacao b on (a.sit' +
-        '_id = b.sit_id) left join'
-      '  tab_crd_financeira c on (a.fin_id = c.fin_id) left join'
-      '  tab_crd_linha d on (a.lin_id = d.lin_id) left join'
-      '  tab_crd_tipo e on (a.tip_id = e.tip_id) left join'
-      '  tab_crd_publico f on (a.pub_id = f.pub_id) left join'
-      '  tab_sis_unidade g on (a.und_id = g.und_id)'
-      'where'
-      '  (a.reg_excluido = 0)')
-    Top = 280
   end
   inherited BarManager: TdxBarManager
     Top = 248

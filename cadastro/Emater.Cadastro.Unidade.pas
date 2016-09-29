@@ -5,8 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Tabela, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore,
-  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, FIBDataSet,
-  pFIBDataSet, cxPC, Vcl.StdCtrls, cxButtons, cxContainer, cxEdit, cxTextEdit, cxDBEdit, cxGroupBox, cxMaskEdit, cxDropDownEdit,
+  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, cxPC, Vcl.StdCtrls, cxButtons, cxContainer, cxEdit, cxTextEdit, cxDBEdit, cxGroupBox, cxMaskEdit, cxDropDownEdit,
   cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, cxCheckBox, cxImageComboBox, cxCurrencyEdit, cxCalc, Vcl.ExtCtrls, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData, cxGridLevel, cxGridCustomTableView, cxGridTableView,
   cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid, Vcl.DBCtrls, Math, cxSpinEdit, cxCalendar, DateUtils, dxBarBuiltInMenu, FireDAC.Stan.Intf,
@@ -281,14 +280,14 @@ type
     QryPrincipalDCT_ID: TIntegerField;
     QryPrincipalUFE_ID: TStringField;
     QryPrincipalPRO_MODIFICADO_USUARIO_NOME: TStringField;
-    QryPrincipalPRO_AREA_NUA_PERC: TFIBFloatField;
-    QryPrincipalPRO_AREA_PASTAGEM_PERC: TFIBFloatField;
-    QryPrincipalPRO_AREA_PERMANENTE_PERC: TFIBFloatField;
-    QryPrincipalPRO_AREA_TEMPORARIA_PERC: TFIBFloatField;
-    QryPrincipalPRO_AREA_RESERVA_PERC: TFIBFloatField;
-    QryPrincipalPRO_AREA_OUTROS_PERC: TFIBFloatField;
-    QryPrincipalPRO_AREA_TOTAL_PERC: TFIBFloatField;
-    QryPrincipalPRO_AREA_TOTAL_REAL: TFIBFloatField;
+    QryPrincipalPRO_AREA_NUA_PERC: TFloatField;
+    QryPrincipalPRO_AREA_PASTAGEM_PERC: TFloatField;
+    QryPrincipalPRO_AREA_PERMANENTE_PERC: TFloatField;
+    QryPrincipalPRO_AREA_TEMPORARIA_PERC: TFloatField;
+    QryPrincipalPRO_AREA_RESERVA_PERC: TFloatField;
+    QryPrincipalPRO_AREA_OUTROS_PERC: TFloatField;
+    QryPrincipalPRO_AREA_TOTAL_PERC: TFloatField;
+    QryPrincipalPRO_AREA_TOTAL_REAL: TFloatField;
     QryProducaoBemPBE_ID: TLargeintField;
     QryProducaoBemPRO_ID: TIntegerField;
     QryProducaoBemBEM_ID: TIntegerField;
@@ -348,7 +347,7 @@ type
     QryProducaoProdutoPRP_DESCRICAO_PRODUTO_DERIVADO: TStringField;
     QryProducaoProdutoUNI_UNIDADE: TStringField;
     QryProducaoProdutoDESTINO: TStringField;
-    QryProducaoProdutoPRP_VALOR_TOTAL: TFIBBCDField;
+    QryProducaoProdutoPRP_VALOR_TOTAL: TBCDField;
     QryProducaoBeneficiarioBPR_ID: TLargeintField;
     QryProducaoBeneficiarioBEN_ID: TLargeintField;
     QryProducaoBeneficiarioPRO_ID: TIntegerField;

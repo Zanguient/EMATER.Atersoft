@@ -5,20 +5,20 @@ inherited FrmCadastroComunidadeBusca: TFrmCadastroComunidadeBusca
   Caption = 'Busca R'#225'pida de Comunidades'
   ClientHeight = 441
   ClientWidth = 744
-  ExplicitLeft = 328
-  ExplicitTop = 176
-  ExplicitWidth = 760
-  ExplicitHeight = 480
+  ExplicitWidth = 750
+  ExplicitHeight = 470
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlPesquisa: TcxPageControl
     Width = 728
     Height = 125
-    ExplicitWidth = 691
+    ExplicitWidth = 728
     ExplicitHeight = 125
     ClientRectBottom = 123
     ClientRectRight = 726
     inherited TbShtParametros: TcxTabSheet
+      ExplicitWidth = 724
+      ExplicitHeight = 95
       inherited LblValor: TLabel
         Width = 106
         Caption = 'Nome da comunidade:'
@@ -51,14 +51,14 @@ inherited FrmCadastroComunidadeBusca: TFrmCadastroComunidadeBusca
           's'
         TabOrder = 3
         OnClick = BtnConsultarClick
-        ExplicitLeft = 747
+        ExplicitLeft = 630
         ExplicitTop = 24
       end
       inherited BtnLimparParametros: TcxButton
         Left = 630
         Top = 60
         TabOrder = 4
-        ExplicitLeft = 747
+        ExplicitLeft = 630
         ExplicitTop = 60
       end
       inherited EdtValor: TcxTextEdit
@@ -86,7 +86,7 @@ inherited FrmCadastroComunidadeBusca: TFrmCadastroComunidadeBusca
     Width = 728
     Height = 260
     ExplicitTop = 141
-    ExplicitWidth = 691
+    ExplicitWidth = 728
     ExplicitHeight = 260
     inherited GrdConsultaTbl: TcxGridDBTableView
       DataController.KeyFieldNames = 'COM_ID'
@@ -111,13 +111,13 @@ inherited FrmCadastroComunidadeBusca: TFrmCadastroComunidadeBusca
   inherited BtnSelecionar: TcxButton
     Left = 571
     Top = 408
-    ExplicitLeft = 493
+    ExplicitLeft = 571
     ExplicitTop = 408
   end
   inherited BtnFechar: TcxButton
     Left = 662
     Top = 408
-    ExplicitLeft = 584
+    ExplicitLeft = 662
     ExplicitTop = 408
   end
   inherited BtnNovo: TcxButton
@@ -138,80 +138,6 @@ inherited FrmCadastroComunidadeBusca: TFrmCadastroComunidadeBusca
     Hint = 'Visualizar comunidade'
     Description = 'Visualiza a tabela de comunidades.'
     ExplicitTop = 408
-  end
-  inherited DtStConsulta: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CAD_COMUNIDADE'
-      'SET '
-      '    COM_NOME = :COM_NOME,'
-      '    COM_LOCALIZACAO = :COM_LOCALIZACAO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    CID_ID = :CID_ID'
-      'WHERE'
-      '    COM_ID = :OLD_COM_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CAD_COMUNIDADE'
-      'WHERE'
-      '        COM_ID = :OLD_COM_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CAD_COMUNIDADE('
-      '    COM_ID,'
-      '    COM_NOME,'
-      '    COM_LOCALIZACAO,'
-      '    REG_EXCLUIDO,'
-      '    CID_ID'
-      ')'
-      'VALUES('
-      '    :COM_ID,'
-      '    :COM_NOME,'
-      '    :COM_LOCALIZACAO,'
-      '    :REG_EXCLUIDO,'
-      '    :CID_ID'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.com_id,'
-      '  a.com_nome,'
-      '  a.com_localizacao,'
-      '  a.reg_excluido,'
-      '  a.cid_id,'
-      '  b.cid_nome,'
-      '  b.ufe_id'
-      'from'
-      
-        '  tab_cad_comunidade a left join tab_dne_cidade b on (a.cid_id =' +
-        ' b.cid_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      
-        '  (a.cid_id in (select cid_id from vwt_sis_municipio_unidade_loc' +
-        'al))'
-      '     ) and (     A.COM_ID = :OLD_COM_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.com_id,'
-      '  a.com_nome,'
-      '  a.com_localizacao,'
-      '  a.reg_excluido,'
-      '  a.cid_id,'
-      '  b.cid_nome,'
-      '  b.ufe_id'
-      'from'
-      
-        '  tab_cad_comunidade a left join tab_dne_cidade b on (a.cid_id =' +
-        ' b.cid_id)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      
-        '  (a.cid_id in (select cid_id from vwt_sis_municipio_unidade_loc' +
-        'al))')
-    Left = 152
-    Top = 48
   end
   inherited dxBarManager: TdxBarManager
     DockControlHeights = (

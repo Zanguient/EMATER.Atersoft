@@ -6,25 +6,13 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Busca, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters, dxSkinsCore,
   dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, dxSkinscxPCPainter, cxPCdxBarPopupMenu, cxContainer, cxEdit, Vcl.Menus,
-  cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, Data.DB, cxDBData, dxSkinsdxBarPainter, dxBar, FIBDataSet,
-  pFIBDataSet, cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit,
+  cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, Data.DB, cxDBData, dxSkinsdxBarPainter, dxBar, cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit,
   Vcl.StdCtrls, cxButtons, cxMaskEdit, cxDropDownEdit, cxImageComboBox, cxPC, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, dxBarBuiltInMenu,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
   FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
   TFrmCadastroUnidadeBusca = class(TFrmBaseBusca)
-    DtStConsultaPRO_ID: TFIBIntegerField;
-    DtStConsultaPRO_DENOMINACAO: TFIBStringField;
-    DtStConsultaPRO_LATITUDE: TFIBStringField;
-    DtStConsultaPRO_LONGITUDE: TFIBStringField;
-    DtStConsultaPRO_AREA_LEGAL: TFIBFloatField;
-    DtStConsultaPRO_AREA_REAL: TFIBFloatField;
-    DtStConsultaUND_NOME: TFIBStringField;
-    DtStConsultaCID_NOME: TFIBStringField;
-    DtStConsultaFUN_NOME: TFIBStringField;
-    DtStConsultaPRO_DOCUMENTO_DOMINIO: TFIBStringField;
-    DtStConsultaPRO_CARACTERIZACAO_DOMINIO: TFIBStringField;
     GrdConsultaTblPRO_DENOMINACAO: TcxGridDBColumn;
     GrdConsultaTblPRO_LATITUDE: TcxGridDBColumn;
     GrdConsultaTblPRO_LONGITUDE: TcxGridDBColumn;
@@ -55,7 +43,6 @@ type
     DtSrcComunidade: TDataSource;
     Label10: TLabel;
     ImgCmbBxCAR: TcxImageComboBox;
-    DtStConsultaREG_EXCLUIDO: TFIBBooleanField;
     QryConsultaPRO_ID: TIntegerField;
     QryConsultaPRO_DENOMINACAO: TStringField;
     QryConsultaPRO_LATITUDE: TStringField;

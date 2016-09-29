@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Tabela, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,
-  dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, FIBDataSet, pFIBDataSet, cxPC,
+  dxSkinsCore, dxSkinOffice2013White, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, cxPC,
   Vcl.StdCtrls, cxButtons, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, cxDBData, cxContainer,
   cxCheckBox, cxDBEdit, cxTextEdit, cxGroupBox, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGridLevel, cxClasses,
   cxGridCustomView, cxGrid, dxSkinSeven, dxSkinSevenClassic, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
@@ -13,9 +13,6 @@ uses
 
 type
   TFrmSistemaPerfil = class(TFrmBaseTabela)
-    DtStPrincipalPER_ID: TFIBIntegerField;
-    DtStPrincipalPER_NOME: TFIBStringField;
-    DtStPrincipalPER_ATIVO: TFIBBooleanField;
     GrdPrincipal: TcxGrid;
     GrdPrincipalTbl: TcxGridDBTableView;
     GrdPrincipalLvl: TcxGridLevel;
@@ -25,10 +22,6 @@ type
     Label1: TLabel;
     DbEdtNome: TcxDBTextEdit;
     DbChckBxAtivo: TcxDBCheckBox;
-    DtStPrincipalREG_EXCLUIDO: TFIBBooleanField;
-    DtStPrincipalREG_REPLICADO: TFIBBooleanField;
-    DtStPrincipalREG_USUARIO: TFIBStringField;
-    DtStPrincipalREG_MODIFICADO: TFIBDateTimeField;
     QryPrincipalPER_ID: TIntegerField;
     QryPrincipalPER_NOME: TStringField;
     QryPrincipalPER_ATIVO: TSmallintField;

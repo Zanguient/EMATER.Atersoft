@@ -6,22 +6,20 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
   Caption = 'Ra'#231'as'
   ClientHeight = 474
   ClientWidth = 412
-  ExplicitLeft = 415
-  ExplicitTop = 152
-  ExplicitWidth = 428
-  ExplicitHeight = 513
+  ExplicitWidth = 418
+  ExplicitHeight = 503
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
     Left = 250
     Top = 442
-    ExplicitLeft = 248
+    ExplicitLeft = 250
     ExplicitTop = 442
   end
   inherited PgCntrlMain: TcxPageControl
     Width = 397
     Height = 428
-    ExplicitWidth = 395
+    ExplicitWidth = 397
     ExplicitHeight = 428
     ClientRectBottom = 426
     ClientRectRight = 395
@@ -164,78 +162,8 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
   inherited BtnFechar: TcxButton [7]
     Left = 330
     Top = 442
-    ExplicitLeft = 328
+    ExplicitLeft = 330
     ExplicitTop = 442
-  end
-  inherited DtStPrincipal: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CRD_RACA'
-      'SET '
-      '    RAC_DESCRICAO = :RAC_DESCRICAO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    RAC_ID = :OLD_RAC_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CRD_RACA'
-      'WHERE'
-      '        RAC_ID = :OLD_RAC_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CRD_RACA('
-      '    RAC_ID,'
-      '    RAC_DESCRICAO,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :RAC_ID,'
-      '    :RAC_DESCRICAO,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.rac_id,'
-      '  a.rac_descricao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_crd_raca a'
-      'where( '
-      '  (a.reg_excluido = 0)'
-      '     ) and (     A.RAC_ID = :OLD_RAC_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.rac_id,'
-      '  a.rac_descricao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_crd_raca a'
-      'where'
-      '  (a.reg_excluido = 0)'
-      'order by'
-      '  a.rac_descricao')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 112
-    Top = 184
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248

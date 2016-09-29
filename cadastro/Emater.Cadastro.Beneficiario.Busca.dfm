@@ -4,9 +4,7 @@ inherited FrmCadastroBeneficiarioBusca: TFrmCadastroBeneficiarioBusca
   Hint = 'Busca r'#225'pida de benefici'#225'rios de ATER.'
   Caption = 'Busca R'#225'pida de Benefici'#225'rios de ATER'
   ClientWidth = 861
-  ExplicitLeft = 280
-  ExplicitTop = 148
-  ExplicitWidth = 877
+  ExplicitWidth = 867
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlPesquisa: TcxPageControl
@@ -17,10 +15,8 @@ inherited FrmCadastroBeneficiarioBusca: TFrmCadastroBeneficiarioBusca
     ClientRectBottom = 161
     ClientRectRight = 843
     inherited TbShtParametros: TcxTabSheet
-      ExplicitLeft = 10
-      ExplicitTop = 76
-      ExplicitWidth = 877
-      ExplicitHeight = 235
+      ExplicitWidth = 841
+      ExplicitHeight = 133
       inherited LblValor: TLabel
         Width = 104
         Caption = 'Nome do benefici'#225'rio:'
@@ -122,7 +118,7 @@ inherited FrmCadastroBeneficiarioBusca: TFrmCadastroBeneficiarioBusca
           '.'
         TabOrder = 11
         OnClick = BtnConsultarClick
-        ExplicitLeft = 784
+        ExplicitLeft = 748
         ExplicitTop = 64
       end
       inherited BtnLimparParametros: TcxButton
@@ -300,150 +296,14 @@ inherited FrmCadastroBeneficiarioBusca: TFrmCadastroBeneficiarioBusca
     Hint = 'Visualizar benefici'#225'rio'
     Description = 'Visualiza o cadastro do benefici'#225'rio.'
   end
+  object DtSrcComunidade: TDataSource [7]
+    DataSet = QryComunidade
+    Left = 168
+    Top = 416
+  end
   inherited DtSrcConsulta: TDataSource
     Left = 168
     Top = 384
-  end
-  inherited DtStConsulta: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CAD_BENEFICIARIO'
-      'SET '
-      '    BEN_DATA = :BEN_DATA,'
-      '    BEN_NOME = :BEN_NOME,'
-      '    BEN_CPF = :BEN_CPF,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO'
-      'WHERE'
-      '    BEN_ID = :OLD_BEN_ID'
-      '    ')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.ben_id,'
-      '  a.ben_data,'
-      '  case a.ben_situacao'
-      '    when 1 then '#39'Ativo e atualizado'#39
-      '    when 2 then '#39'Ativo e desatualizado'#39
-      '    when 3 then '#39'Inativo'#39
-      '  end as ben_situacao,'
-      '  a.ben_nome,'
-      '  a.ben_cpf,'
-      '  a.reg_excluido,'
-      '  b.cid_nome,'
-      '  c.com_nome,'
-      '  d.fun_nome,'
-      '  (f.unt_descricao || '#39': '#39' || e.und_nome) as und_nome'
-      'from'
-      
-        '  tab_cad_beneficiario a left join tab_dne_cidade b on (a.cid_id' +
-        '_endereco = b.cid_id) left join'
-      
-        '  tab_cad_comunidade c on (a.com_id = c.com_id and c.reg_excluid' +
-        'o = 0) left join'
-      
-        '  tab_pes_funcionario d on (a.fun_id = d.fun_id and d.reg_exclui' +
-        'do = 0) left join'
-      '  tab_sis_unidade e on (a.und_id = e.und_id) left join'
-      '  tab_sis_unidade_tipo f on (e.unt_id = f.unt_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))'
-      '     ) and (     A.BEN_ID = :OLD_BEN_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.ben_id,'
-      '  a.ben_data,'
-      '  case a.ben_situacao'
-      '    when 1 then '#39'Ativo e atualizado'#39
-      '    when 2 then '#39'Ativo e desatualizado'#39
-      '    when 3 then '#39'Inativo'#39
-      '  end as ben_situacao,'
-      '  a.ben_nome,'
-      '  a.ben_cpf,'
-      '  a.reg_excluido,'
-      '  b.cid_nome,'
-      '  c.com_nome,'
-      '  d.fun_nome,'
-      '  (f.unt_descricao || '#39': '#39' || e.und_nome) as und_nome'
-      'from'
-      
-        '  tab_cad_beneficiario a left join tab_dne_cidade b on (a.cid_id' +
-        '_endereco = b.cid_id) left join'
-      
-        '  tab_cad_comunidade c on (a.com_id = c.com_id and c.reg_excluid' +
-        'o = 0) left join'
-      
-        '  tab_pes_funcionario d on (a.fun_id = d.fun_id and d.reg_exclui' +
-        'do = 0) left join'
-      '  tab_sis_unidade e on (a.und_id = e.und_id) left join'
-      '  tab_sis_unidade_tipo f on (e.unt_id = f.unt_id)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
-    Left = 56
-    Top = 312
-    object DtStConsultaBEN_ID: TFIBBCDField
-      FieldName = 'BEN_ID'
-      Size = 0
-    end
-    object DtStConsultaBEN_DATA: TFIBDateField
-      DisplayLabel = 'Data'
-      FieldName = 'BEN_DATA'
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStConsultaBEN_SITUACAO: TFIBStringField
-      DisplayLabel = 'Situa'#231#227'o'
-      FieldName = 'BEN_SITUACAO'
-      Size = 21
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaBEN_NOME: TFIBStringField
-      DisplayLabel = 'Nome do benefici'#225'rio'
-      FieldName = 'BEN_NOME'
-      Size = 150
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaBEN_CPF: TFIBStringField
-      DisplayLabel = 'CPF'
-      FieldName = 'BEN_CPF'
-      EditMask = '000.000.000-00;0; '
-      Size = 11
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCID_NOME: TFIBStringField
-      DisplayLabel = 'Munic'#237'pio'
-      FieldName = 'CID_NOME'
-      Size = 80
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaCOM_NOME: TFIBStringField
-      DisplayLabel = 'Comunidade'
-      FieldName = 'COM_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaFUN_NOME: TFIBStringField
-      DisplayLabel = 'T'#233'cnico respons'#225'vel'
-      FieldName = 'FUN_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaUND_NOME: TFIBStringField
-      DisplayLabel = 'Escrit'#243'rio'
-      FieldName = 'UND_NOME'
-      Size = 152
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStConsultaREG_EXCLUIDO: TFIBBooleanField
-      FieldName = 'REG_EXCLUIDO'
-    end
   end
   inherited dxBarManager: TdxBarManager
     Left = 232
@@ -457,11 +317,6 @@ inherited FrmCadastroBeneficiarioBusca: TFrmCadastroBeneficiarioBusca
   inherited PopupMenuBusca: TdxBarPopupMenu
     Left = 200
     Top = 384
-  end
-  object DtSrcComunidade: TDataSource [11]
-    DataSet = QryComunidade
-    Left = 168
-    Top = 416
   end
   inherited QryConsulta: TFDQuery
     SQL.Strings = (

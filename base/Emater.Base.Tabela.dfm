@@ -11,10 +11,8 @@ inherited FrmBaseTabela: TFrmBaseTabela
   Position = poScreenCenter
   OnClose = FormClose
   OnShow = FormShow
-  ExplicitLeft = 396
-  ExplicitTop = 179
-  ExplicitWidth = 586
-  ExplicitHeight = 422
+  ExplicitWidth = 576
+  ExplicitHeight = 412
   DesignSize = (
     570
     383)
@@ -117,14 +115,6 @@ inherited FrmBaseTabela: TFrmBaseTabela
     OptionsImage.NumGlyphs = 2
     TabOrder = 5
     Visible = False
-  end
-  object DtStPrincipal: TpFIBDataSet
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    Left = 216
-    Top = 40
-    poSQLINT64ToBCD = True
   end
   object DtSrcPrincipal: TDataSource
     DataSet = QryPrincipal

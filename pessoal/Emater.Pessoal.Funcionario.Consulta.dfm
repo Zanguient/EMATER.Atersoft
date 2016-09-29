@@ -5,8 +5,6 @@ inherited FrmPessoalFuncionarioConsulta: TFrmPessoalFuncionarioConsulta
   Caption = 'Consulta de Funcion'#225'rios'
   ClientHeight = 491
   ClientWidth = 816
-  ExplicitLeft = 387
-  ExplicitTop = 153
   ExplicitWidth = 832
   ExplicitHeight = 530
   PixelsPerInch = 96
@@ -20,9 +18,9 @@ inherited FrmPessoalFuncionarioConsulta: TFrmPessoalFuncionarioConsulta
     Top = 152
     Width = 816
     Height = 339
-    ExplicitTop = 157
-    ExplicitWidth = 692
-    ExplicitHeight = 334
+    ExplicitTop = 152
+    ExplicitWidth = 816
+    ExplicitHeight = 339
     inherited GrdConsultaTbl: TcxGridDBTableView
       DataController.KeyFieldNames = 'FUN_ID'
       DataController.Summary.FooterSummaryItems = <
@@ -78,7 +76,7 @@ inherited FrmPessoalFuncionarioConsulta: TFrmPessoalFuncionarioConsulta
     Height = 97
     BevelEdges = [beTop]
     BevelKind = bkTile
-    ExplicitWidth = 692
+    ExplicitWidth = 816
     ExplicitHeight = 97
     inherited LblValor: TLabel
       Width = 102
@@ -205,119 +203,9 @@ inherited FrmPessoalFuncionarioConsulta: TFrmPessoalFuncionarioConsulta
   end
   inherited BarDockControl: TdxBarDockControl
     Width = 816
-    ExplicitWidth = 692
+    ExplicitWidth = 816
   end
   inherited DtSrcConsulta: TDataSource
-    Top = 248
-  end
-  inherited DtStConsulta: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_PES_FUNCIONARIO'
-      'SET '
-      '    FUN_DATA = :FUN_DATA,'
-      '    FUN_NOME = :FUN_NOME,'
-      '    FUN_MATRICULA = :FUN_MATRICULA,'
-      '    FUN_CPF = :FUN_CPF,'
-      '    FUN_TELEFONE = :FUN_TELEFONE,'
-      '    FUN_CELULAR = :FUN_CELULAR,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    FUN_ID = :OLD_FUN_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_PES_FUNCIONARIO'
-      'WHERE'
-      '        FUN_ID = :OLD_FUN_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_PES_FUNCIONARIO('
-      '    FUN_ID,'
-      '    FUN_DATA,'
-      '    FUN_NOME,'
-      '    FUN_MATRICULA,'
-      '    FUN_CPF,'
-      '    FUN_TELEFONE,'
-      '    FUN_CELULAR,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :FUN_ID,'
-      '    :FUN_DATA,'
-      '    :FUN_NOME,'
-      '    :FUN_MATRICULA,'
-      '    :FUN_CPF,'
-      '    :FUN_TELEFONE,'
-      '    :FUN_CELULAR,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.fun_id,'
-      '  a.fun_data, '
-      '  a.fun_nome, '
-      '  a.fun_matricula, '
-      '  a.fun_cpf,'
-      '  a.fun_telefone,'
-      '  a.fun_celular, '
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  b.cid_nome,'
-      '  b.ufe_id,'
-      '  c.fnc_descricao,'
-      '  (e.unt_descricao || '#39': '#39' || d.und_nome) as und_nome'
-      'from'
-      
-        '  tab_pes_funcionario a left join tab_dne_cidade b on (a.cid_id ' +
-        '= b.cid_id) left join'
-      '  tab_pes_funcao c on (a.fnc_id = c.fnc_id) left join'
-      '  tab_sis_unidade d on (a.und_id = d.und_id) left join'
-      '  tab_sis_unidade_tipo e on (d.unt_id = e.unt_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))'
-      '     ) and (     A.FUN_ID = :OLD_FUN_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.fun_id,'
-      '  a.fun_data, '
-      '  a.fun_nome, '
-      '  a.fun_matricula, '
-      '  a.fun_cpf,'
-      '  a.fun_telefone,'
-      '  a.fun_celular, '
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  b.cid_nome,'
-      '  b.ufe_id,'
-      '  c.fnc_descricao,'
-      '  (e.unt_descricao || '#39': '#39' || d.und_nome) as und_nome'
-      'from'
-      
-        '  tab_pes_funcionario a left join tab_dne_cidade b on (a.cid_id ' +
-        '= b.cid_id) left join'
-      '  tab_pes_funcao c on (a.fnc_id = c.fnc_id) left join'
-      '  tab_sis_unidade d on (a.und_id = d.und_id) left join'
-      '  tab_sis_unidade_tipo e on (d.unt_id = e.unt_id)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
-    Left = 48
     Top = 248
   end
   inherited BarManager: TdxBarManager

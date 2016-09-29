@@ -5,16 +5,13 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Tabela, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore,
-  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, FIBDataSet,
-  pFIBDataSet, cxPC, Vcl.StdCtrls, cxButtons, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, cxDBData,
+  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, cxPC, Vcl.StdCtrls, cxButtons, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, cxDBData,
   cxContainer, cxGroupBox, cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid,
   cxTextEdit, cxDBEdit, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
   TFrmCreditoFinanceira = class(TFrmBaseTabela)
-    DtStPrincipalFIN_ID: TFIBIntegerField;
-    DtStPrincipalFIN_DESCRICAO: TFIBStringField;
     GrdPrincipal: TcxGrid;
     GrdPrincipalTbl: TcxGridDBTableView;
     GrdPrincipalLvl: TcxGridLevel;
@@ -22,10 +19,6 @@ type
     Label1: TLabel;
     DbEdtNome: TcxDBTextEdit;
     GrdPrincipalTblFIN_DESCRICAO: TcxGridDBColumn;
-    DtStPrincipalREG_EXCLUIDO: TFIBBooleanField;
-    DtStPrincipalREG_REPLICADO: TFIBBooleanField;
-    DtStPrincipalREG_USUARIO: TFIBStringField;
-    DtStPrincipalREG_MODIFICADO: TFIBDateTimeField;
     QryPrincipalFIN_ID: TIntegerField;
     QryPrincipalFIN_DESCRICAO: TStringField;
     QryPrincipalREG_EXCLUIDO: TSmallintField;

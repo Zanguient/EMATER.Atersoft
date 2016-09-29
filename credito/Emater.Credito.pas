@@ -5,8 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Tabela, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore,
-  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, FIBDataSet,
-  pFIBDataSet, cxPC, Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, cxContainer, cxEdit, cxGroupBox, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit,
+  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB,
+  cxPC, Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, cxContainer, cxEdit, cxGroupBox, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit,
   cxDBLookupComboBox, cxCurrencyEdit, cxDBEdit, cxCalendar, cxMaskEdit, cxSpinEdit, cxMemo, cxTextEdit, cxButtonEdit, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData, cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxGrid, cxImageComboBox, cxCalc, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
@@ -317,7 +317,7 @@ uses Emater.Conexao.Modulo, Emater.Credito.Modulo, Emater.Recurso.Modulo, Emater
 
 procedure TFrmCredito.AplicarUltimaAlteracao;
 begin
-  if not (DtStPrincipal.State in [dsEdit, dsInsert]) then
+  if not (QryPrincipal.State in [dsEdit, dsInsert]) then
     QryPrincipal.Edit;
   QryPrincipalREG_MODIFICADO.AsDateTime := Now;
   QryPrincipalREG_USUARIO.AsString := DtmConexaoModulo.UsuarioLogin;

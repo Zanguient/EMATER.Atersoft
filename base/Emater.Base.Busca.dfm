@@ -12,10 +12,8 @@ inherited FrmBaseBusca: TFrmBaseBusca
   Position = poScreenCenter
   OnClose = FormClose
   OnShow = FormShow
-  ExplicitLeft = 302
-  ExplicitTop = 135
-  ExplicitWidth = 650
-  ExplicitHeight = 550
+  ExplicitWidth = 640
+  ExplicitHeight = 540
   DesignSize = (
     634
     511)
@@ -246,16 +244,6 @@ inherited FrmBaseBusca: TFrmBaseBusca
     OnStateChange = DtSrcConsultaStateChange
     Left = 144
     Top = 208
-  end
-  object DtStConsulta: TpFIBDataSet
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    AutoCommit = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
-    DefaultFormats.DisplayFormatDate = 'dd/mm/yyyy'
-    Left = 80
-    Top = 168
   end
   object dxBarManager: TdxBarManager
     Font.Charset = DEFAULT_CHARSET

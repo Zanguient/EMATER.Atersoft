@@ -5,8 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Tabela, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore,
-  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB, FIBDataSet,
-  pFIBDataSet, cxPC, Vcl.StdCtrls, cxButtons, cxContainer, cxEdit, cxGroupBox, cxTextEdit, cxDBEdit, cxDropDownEdit, cxCalendar,
+  dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic, cxControls, dxSkinscxPCPainter, cxPCdxBarPopupMenu, Data.DB,
+  cxPC, Vcl.StdCtrls, cxButtons, cxContainer, cxEdit, cxGroupBox, cxTextEdit, cxDBEdit, cxDropDownEdit, cxCalendar,
   cxMaskEdit, cxSpinEdit, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxGridLevel, cxClasses, cxGridCustomView, cxGrid, cxLookupEdit, cxDBLookupEdit,
   cxDBLookupComboBox, cxImageComboBox, cxMemo, cxCheckBox, Vcl.ExtCtrls, cxButtonEdit, MaskUtils, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option,

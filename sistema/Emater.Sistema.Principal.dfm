@@ -3081,7 +3081,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
-      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3134,6 +3133,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 4
     end
     object RbnTbRelatorios: TdxRibbonTab
+      Active = True
       Caption = 'Relat'#243'rios'
       Groups = <
         item
@@ -4120,6 +4120,14 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
           BeginGroup = True
           Visible = True
           ItemName = 'BtnRelatorioMetodologiaAdministrativa'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnRelatorioMetodologiaFinalidade'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnRelatorioMetodologiaCategoria'
         end>
     end
     object BtnFaterAtividade: TdxBarLargeButton
@@ -4424,6 +4432,29 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioMetodologiaAdministrativaClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioMetodologiaFinalidade: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Quantidade de metodologia por finalidade da a'#231#227'o'
+      Category = 5
+      Description = 'Relat'#243'rio de quantidade de metodologia por finalidade da a'#231#227'o'
+      Hint = 'Quantidade de metodologia por finalidade da a'#231#227'o'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnRelatorioMetodologiaFinalidadeClick
+      SyncImageIndex = False
+      ImageIndex = 156
+    end
+    object BtnRelatorioMetodologiaCategoria: TdxBarLargeButton
+      Tag = 1
+      Caption = 'Quantidade de benefici'#225'rios por categoria segundo a metodologia'
+      Category = 5
+      Hint = 'Quantidade de benefici'#225'rios por categoria segundo a metodologia'
+      Visible = ivAlways
+      LargeImageIndex = 20
+      OnClick = BtnRelatorioMetodologiaCategoriaClick
       SyncImageIndex = False
       ImageIndex = 156
     end

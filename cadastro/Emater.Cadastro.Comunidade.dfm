@@ -6,10 +6,8 @@ inherited FrmCadastroComunidade: TFrmCadastroComunidade
   Caption = 'Comunidade'
   ClientHeight = 480
   ClientWidth = 490
-  ExplicitLeft = 467
-  ExplicitTop = 178
-  ExplicitWidth = 506
-  ExplicitHeight = 519
+  ExplicitWidth = 496
+  ExplicitHeight = 509
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
@@ -240,106 +238,6 @@ inherited FrmCadastroComunidade: TFrmCadastroComunidade
     Top = 448
     Hint = 'Imprimir comunidade'
     ExplicitTop = 448
-  end
-  inherited DtStPrincipal: TpFIBDataSet
-    MDTSQLExecutor = se_Server
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CAD_COMUNIDADE'
-      'SET '
-      '    COM_NOME = :COM_NOME,'
-      '    COM_LOCALIZACAO = :COM_LOCALIZACAO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO,'
-      '    CID_ID = :CID_ID'
-      'WHERE'
-      '    COM_ID = :OLD_COM_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CAD_COMUNIDADE'
-      'WHERE'
-      '        COM_ID = :OLD_COM_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CAD_COMUNIDADE('
-      '    COM_ID,'
-      '    COM_NOME,'
-      '    COM_LOCALIZACAO,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO,'
-      '    CID_ID'
-      ')'
-      'VALUES('
-      '    :COM_ID,'
-      '    :COM_NOME,'
-      '    :COM_LOCALIZACAO,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO,'
-      '    :CID_ID'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.com_id,'
-      '  a.com_nome,'
-      '  a.com_localizacao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  a.cid_id,'
-      '  b.cid_nome,'
-      '  b.ufe_id'
-      'from'
-      
-        '  tab_cad_comunidade a left join tab_dne_cidade b on (a.cid_id =' +
-        ' b.cid_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      
-        '  (a.cid_id in (select cid_id from vwt_sis_municipio_unidade_loc' +
-        'al))'
-      '     ) and (     A.COM_ID = :OLD_COM_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.com_id,'
-      '  a.com_nome,'
-      '  a.com_localizacao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  a.cid_id,'
-      '  b.cid_nome,'
-      '  b.ufe_id'
-      'from'
-      
-        '  tab_cad_comunidade a left join tab_dne_cidade b on (a.cid_id =' +
-        ' b.cid_id)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      
-        '  (a.cid_id in (select cid_id from vwt_sis_municipio_unidade_loc' +
-        'al))'
-      'order by '
-      '  a.com_nome')
-    AutoUpdateOptions.UpdateTableName = 'TAB_CAD_COMUNIDADE'
-    AutoUpdateOptions.KeyFields = 'COM_ID'
-    AutoUpdateOptions.AutoReWriteSqls = True
-    AutoUpdateOptions.CanChangeSQLs = True
-    AutoUpdateOptions.UpdateOnlyModifiedFields = True
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 368
-    Top = 56
   end
   inherited QryPrincipal: TFDQuery
     AfterPost = QryPrincipalAfterPost

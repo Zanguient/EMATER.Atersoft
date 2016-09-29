@@ -3,8 +3,6 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
   Top = 212
   Caption = 'Consulta de Registros de Indicadores'
   ClientWidth = 697
-  ExplicitLeft = 392
-  ExplicitTop = 212
   ExplicitWidth = 713
   PixelsPerInch = 96
   TextHeight = 13

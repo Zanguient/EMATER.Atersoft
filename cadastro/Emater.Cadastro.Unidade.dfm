@@ -8,8 +8,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
   Caption = 'Unidade de Produ'#231#227'o Familiar'
   ClientHeight = 630
   ClientWidth = 820
-  ExplicitLeft = 423
-  ExplicitTop = 114
   ExplicitWidth = 836
   ExplicitHeight = 669
   DesignSize = (
@@ -31,11 +29,11 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     ExplicitTop = 34
     ExplicitWidth = 805
     ExplicitHeight = 558
-    ClientRectBottom = 556
-    ClientRectRight = 803
+    ClientRectBottom = 558
+    ClientRectRight = 805
     inherited TbShtPrincipal: TcxTabSheet
-      ExplicitWidth = 801
-      ExplicitHeight = 528
+      ExplicitWidth = 805
+      ExplicitHeight = 534
       object GRpBxPrincipal: TcxGroupBox
         Left = 8
         Top = 0
@@ -46,7 +44,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         DesignSize = (
           777
-          296)
+          303)
         Height = 303
         Width = 777
         object Label1: TLabel
@@ -344,7 +342,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui CAR (Cadastro de Ambiente Rural):'
             DataBinding.DataField = 'PRO_CAR'
             DataBinding.DataSource = DtSrcPrincipal
-            ParentBackground = False
             ParentColor = False
             Properties.ImmediatePost = True
             Properties.ValueChecked = '1'
@@ -380,7 +377,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui sistema de energia el'#233'trica:'
             DataBinding.DataField = 'PRO_ENERGIA_SITUACAO'
             DataBinding.DataSource = DtSrcPrincipal
-            ParentBackground = False
             ParentColor = False
             Properties.Alignment = taLeftJustify
             Properties.ImmediatePost = True
@@ -399,7 +395,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_ENERGIA_CONCESSIONARIA'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -415,7 +410,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_ENERGIA_OUTRAS'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -441,7 +435,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             Caption = 'Possui sistema de abastecimento de '#225'gua:'
             DataBinding.DataField = 'PRO_AGUA_SITUACAO'
             DataBinding.DataSource = DtSrcPrincipal
-            ParentBackground = False
             ParentColor = False
             Properties.ImmediatePost = True
             Properties.ValueChecked = '1'
@@ -459,7 +452,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_CONCESSIONARIA'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -475,7 +467,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_POCO_ARTESIANO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -491,7 +482,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_POCO_AMAZONICO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -507,7 +497,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_RIO'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -523,7 +512,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
             DataBinding.DataField = 'PRO_AGUA_OUTRAS'
             DataBinding.DataSource = DtSrcPrincipal
             Enabled = False
-            ParentBackground = False
             ParentColor = False
             Properties.ValueChecked = '1'
             Properties.ValueUnchecked = '0'
@@ -597,7 +585,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 1
         DesignSize = (
           373
-          92)
+          99)
         Height = 99
         Width = 373
         object Label15: TLabel
@@ -1116,7 +1104,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 2
         DesignSize = (
           373
-          111)
+          118)
         Height = 118
         Width = 373
         object Label31: TLabel
@@ -1220,13 +1208,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benefici'#225'rios'
       ImageIndex = 6
       OnShow = TbShtBeneficiariosShow
-      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        801
-        528)
+        805
+        534)
       object GrdBen: TcxGrid
         Left = 8
         Top = 40
@@ -1353,13 +1340,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benfeitorias'
       ImageIndex = 2
       OnShow = TbShtBenfeitoriasShow
-      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        801
-        528)
+        805
+        534)
       object GrdPrdBem: TcxGrid
         Left = 8
         Top = 184
@@ -1481,10 +1467,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
-        ExplicitWidth = 781
         DesignSize = (
           777
-          74)
+          81)
         Height = 81
         Width = 777
         object Label10: TLabel
@@ -1546,7 +1531,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          ExplicitWidth = 397
           Width = 393
         end
         object DbEdtQuantidade: TcxDBSpinEdit
@@ -1685,10 +1669,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 6
-        ExplicitWidth = 781
         DesignSize = (
           777
-          52)
+          59)
         Height = 59
         Width = 777
         object cxDBNavigator1: TcxDBNavigator
@@ -1726,7 +1709,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Style.Font.Style = []
           Style.IsFontAssigned = True
           TabOrder = 1
-          ExplicitWidth = 491
           Width = 487
         end
         object DbEdtCPF: TcxDBTextEdit
@@ -1759,13 +1741,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ImageIndex = 3
       ParentFont = False
       OnShow = TbShtMaquinasShow
-      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        801
-        528)
+        805
+        534)
       object GrdPrdMaq: TcxGrid
         Left = 8
         Top = 184
@@ -1887,10 +1868,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
-        ExplicitWidth = 781
         DesignSize = (
           777
-          74)
+          81)
         Height = 81
         Width = 777
         object Label35: TLabel
@@ -1952,7 +1932,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcBem
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          ExplicitWidth = 397
           Width = 393
         end
         object DbEdtMaquinaQtde: TcxDBSpinEdit
@@ -2080,13 +2059,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Semoventes'
       ImageIndex = 4
       OnShow = TbShtSemoventesShow
-      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        801
-        528)
+        805
+        534)
       object GrdPrdSem: TcxGrid
         Left = 8
         Top = 184
@@ -2171,10 +2149,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
-        ExplicitWidth = 781
         DesignSize = (
           777
-          74)
+          81)
         Height = 81
         Width = 777
         object Label38: TLabel
@@ -2214,7 +2191,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.ListSource = DtSrcSemovente
           Properties.PostPopupValueOnTab = True
           TabOrder = 0
-          ExplicitWidth = 669
           Width = 665
         end
         object DbEdtSemoventeQtde: TcxDBSpinEdit
@@ -2281,13 +2257,12 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Atividades produtivas e comercializa'#231#227'o'
       ImageIndex = 5
       OnShow = TbShtAtividadesShow
-      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        801
-        528)
+        805
+        534)
       object GrdPrdAtv: TcxGrid
         Left = 8
         Top = 99
@@ -2758,312 +2733,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ExplicitLeft = 648
     end
   end
-  inherited DtStPrincipal: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CAD_PRODUCAO_FAMILIAR'
-      'SET '
-      '    PRO_DATA = :PRO_DATA,'
-      '    PRO_DENOMINACAO = :PRO_DENOMINACAO,'
-      '    PRO_ENDERECO = :PRO_ENDERECO,'
-      '    PRO_NUMERO = :PRO_NUMERO,'
-      '    PRO_COMPLEMENTO = :PRO_COMPLEMENTO,'
-      '    PRO_BAIRRO = :PRO_BAIRRO,'
-      '    PRO_CEP = :PRO_CEP,'
-      '    PRO_ACESSO = :PRO_ACESSO,'
-      '    PRO_ENERGIA_SITUACAO = :PRO_ENERGIA_SITUACAO,'
-      '    PRO_ENERGIA_CONCESSIONARIA = :PRO_ENERGIA_CONCESSIONARIA,'
-      '    PRO_ENERGIA_OUTRAS = :PRO_ENERGIA_OUTRAS,'
-      '    PRO_AGUA_SITUACAO = :PRO_AGUA_SITUACAO,'
-      '    PRO_AGUA_CONCESSIONARIA = :PRO_AGUA_CONCESSIONARIA,'
-      '    PRO_AGUA_POCO_ARTESIANO = :PRO_AGUA_POCO_ARTESIANO,'
-      '    PRO_AGUA_POCO_AMAZONICO = :PRO_AGUA_POCO_AMAZONICO,'
-      '    PRO_AGUA_RIO = :PRO_AGUA_RIO,'
-      '    PRO_AGUA_OUTRAS = :PRO_AGUA_OUTRAS,'
-      '    PRO_CAR = :PRO_CAR,'
-      '    PRO_CAR_NUMERO = :PRO_CAR_NUMERO,'
-      '    PRO_CAR_DATA = :PRO_CAR_DATA,'
-      '    PRO_RECEITA_ANUAL = :PRO_RECEITA_ANUAL,'
-      '    PRO_LATITUDE_GRAUS = :PRO_LATITUDE_GRAUS,'
-      '    PRO_LATITUDE_MINUTOS = :PRO_LATITUDE_MINUTOS,'
-      '    PRO_LATITUDE_SEGUNDOS = :PRO_LATITUDE_SEGUNDOS,'
-      '    PRO_LATITUDE_HEMISFERIO = :PRO_LATITUDE_HEMISFERIO,'
-      '    PRO_LONGITUDE_GRAUS = :PRO_LONGITUDE_GRAUS,'
-      '    PRO_LONGITUDE_MINUTOS = :PRO_LONGITUDE_MINUTOS,'
-      '    PRO_LONGITUDE_SEGUNDOS = :PRO_LONGITUDE_SEGUNDOS,'
-      '    PRO_LONGITUDE_HEMISFERIO = :PRO_LONGITUDE_HEMISFERIO,'
-      '    PRO_AREA_LEGAL = :PRO_AREA_LEGAL,'
-      '    PRO_AREA_REAL = :PRO_AREA_REAL,'
-      '    PRO_AREA_NUA = :PRO_AREA_NUA,'
-      '    PRO_AREA_PASTAGEM = :PRO_AREA_PASTAGEM,'
-      '    PRO_AREA_PERMANENTE = :PRO_AREA_PERMANENTE,'
-      '    PRO_AREA_TEMPORARIA = :PRO_AREA_TEMPORARIA,'
-      '    PRO_AREA_RESERVA = :PRO_AREA_RESERVA,'
-      '    PRO_AREA_OUTROS = :PRO_AREA_OUTROS,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO,'
-      '    CID_ID = :CID_ID,'
-      '    COM_ID = :COM_ID,'
-      '    FUN_ID = :FUN_ID,'
-      '    UND_ID = :UND_ID,'
-      '    OCT_ID = :OCT_ID,'
-      '    DCT_ID = :DCT_ID'
-      'WHERE'
-      '    PRO_ID = :OLD_PRO_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CAD_PRODUCAO_FAMILIAR'
-      'WHERE'
-      '        PRO_ID = :OLD_PRO_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CAD_PRODUCAO_FAMILIAR('
-      '    PRO_ID,'
-      '    PRO_DATA,'
-      '    PRO_DENOMINACAO,'
-      '    PRO_ENDERECO,'
-      '    PRO_NUMERO,'
-      '    PRO_COMPLEMENTO,'
-      '    PRO_BAIRRO,'
-      '    PRO_CEP,'
-      '    PRO_ACESSO,'
-      '    PRO_ENERGIA_SITUACAO,'
-      '    PRO_ENERGIA_CONCESSIONARIA,'
-      '    PRO_ENERGIA_OUTRAS,'
-      '    PRO_AGUA_SITUACAO,'
-      '    PRO_AGUA_CONCESSIONARIA,'
-      '    PRO_AGUA_POCO_ARTESIANO,'
-      '    PRO_AGUA_POCO_AMAZONICO,'
-      '    PRO_AGUA_RIO,'
-      '    PRO_AGUA_OUTRAS,'
-      '    PRO_CAR,'
-      '    PRO_CAR_NUMERO,'
-      '    PRO_CAR_DATA,'
-      '    PRO_RECEITA_ANUAL,'
-      '    PRO_LATITUDE_GRAUS,'
-      '    PRO_LATITUDE_MINUTOS,'
-      '    PRO_LATITUDE_SEGUNDOS,'
-      '    PRO_LATITUDE_HEMISFERIO,'
-      '    PRO_LONGITUDE_GRAUS,'
-      '    PRO_LONGITUDE_MINUTOS,'
-      '    PRO_LONGITUDE_SEGUNDOS,'
-      '    PRO_LONGITUDE_HEMISFERIO,'
-      '    PRO_AREA_LEGAL,'
-      '    PRO_AREA_REAL,'
-      '    PRO_AREA_NUA,'
-      '    PRO_AREA_PASTAGEM,'
-      '    PRO_AREA_PERMANENTE,'
-      '    PRO_AREA_TEMPORARIA,'
-      '    PRO_AREA_RESERVA,'
-      '    PRO_AREA_OUTROS,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO,'
-      '    CID_ID,'
-      '    COM_ID,'
-      '    FUN_ID,'
-      '    UND_ID,'
-      '    OCT_ID,'
-      '    DCT_ID'
-      ')'
-      'VALUES('
-      '    :PRO_ID,'
-      '    :PRO_DATA,'
-      '    :PRO_DENOMINACAO,'
-      '    :PRO_ENDERECO,'
-      '    :PRO_NUMERO,'
-      '    :PRO_COMPLEMENTO,'
-      '    :PRO_BAIRRO,'
-      '    :PRO_CEP,'
-      '    :PRO_ACESSO,'
-      '    :PRO_ENERGIA_SITUACAO,'
-      '    :PRO_ENERGIA_CONCESSIONARIA,'
-      '    :PRO_ENERGIA_OUTRAS,'
-      '    :PRO_AGUA_SITUACAO,'
-      '    :PRO_AGUA_CONCESSIONARIA,'
-      '    :PRO_AGUA_POCO_ARTESIANO,'
-      '    :PRO_AGUA_POCO_AMAZONICO,'
-      '    :PRO_AGUA_RIO,'
-      '    :PRO_AGUA_OUTRAS,'
-      '    :PRO_CAR,'
-      '    :PRO_CAR_NUMERO,'
-      '    :PRO_CAR_DATA,'
-      '    :PRO_RECEITA_ANUAL,'
-      '    :PRO_LATITUDE_GRAUS,'
-      '    :PRO_LATITUDE_MINUTOS,'
-      '    :PRO_LATITUDE_SEGUNDOS,'
-      '    :PRO_LATITUDE_HEMISFERIO,'
-      '    :PRO_LONGITUDE_GRAUS,'
-      '    :PRO_LONGITUDE_MINUTOS,'
-      '    :PRO_LONGITUDE_SEGUNDOS,'
-      '    :PRO_LONGITUDE_HEMISFERIO,'
-      '    :PRO_AREA_LEGAL,'
-      '    :PRO_AREA_REAL,'
-      '    :PRO_AREA_NUA,'
-      '    :PRO_AREA_PASTAGEM,'
-      '    :PRO_AREA_PERMANENTE,'
-      '    :PRO_AREA_TEMPORARIA,'
-      '    :PRO_AREA_RESERVA,'
-      '    :PRO_AREA_OUTROS,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO,'
-      '    :CID_ID,'
-      '    :COM_ID,'
-      '    :FUN_ID,'
-      '    :UND_ID,'
-      '    :OCT_ID,'
-      '    :DCT_ID'
-      ')')
-    RefreshSQL.Strings = (
-      'select '
-      '  a.pro_id, '
-      '  a.pro_data,'
-      '  a.pro_denominacao, '
-      '  a.pro_endereco, '
-      '  a.pro_numero, '
-      '  a.pro_complemento, '
-      '  a.pro_bairro, '
-      '  a.pro_cep,'
-      '  a.pro_acesso, '
-      '  a.pro_energia_situacao, '
-      '  a.pro_energia_concessionaria, '
-      '  a.pro_energia_outras, '
-      '  a.pro_agua_situacao, '
-      '  a.pro_agua_concessionaria, '
-      '  a.pro_agua_poco_artesiano, '
-      '  a.pro_agua_poco_amazonico, '
-      '  a.pro_agua_rio, '
-      '  a.pro_agua_outras, '
-      '  a.pro_car, '
-      '  a.pro_car_numero, '
-      '  a.pro_car_data, '
-      '  a.pro_receita_anual, '
-      '  a.pro_latitude_graus, '
-      '  a.pro_latitude_minutos, '
-      '  a.pro_latitude_segundos, '
-      '  a.pro_latitude_hemisferio, '
-      '  a.pro_longitude_graus, '
-      '  a.pro_longitude_minutos, '
-      '  a.pro_longitude_segundos, '
-      '  a.pro_longitude_hemisferio, '
-      '  a.pro_area_legal, '
-      '  a.pro_area_real, '
-      '  a.pro_area_nua, '
-      '  a.pro_area_pastagem, '
-      '  a.pro_area_permanente, '
-      '  a.pro_area_temporaria, '
-      '  a.pro_area_reserva, '
-      '  a.pro_area_outros, '
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  a.cid_id, '
-      '  a.com_id, '
-      '  a.fun_id, '
-      '  a.und_id, '
-      '  a.oct_id, '
-      '  a.dct_id,'
-      '  b.ufe_id,'
-      
-        '  '#39'('#39' || coalesce(c.usr_login, '#39'N'#227'o identificado'#39') || '#39') '#39' || co' +
-        'alesce(d.fun_nome, '#39#39') as pro_modificado_usuario_nome'
-      'from '
-      
-        '  tab_cad_producao_familiar a left join tab_dne_cidade b on (a.c' +
-        'id_id = b.cid_id) left join'
-      '  tab_sis_usuario c on (a.reg_usuario = c.usr_login) left join'
-      '  tab_pes_funcionario d on (c.usr_id = d.usr_id)'
-      'where( '
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local)) and'
-      '  (a.pro_id = :pro_id)'
-      '     ) and (     A.PRO_ID = :OLD_PRO_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select '
-      '  a.pro_id, '
-      '  a.pro_data,'
-      '  a.pro_denominacao, '
-      '  a.pro_endereco, '
-      '  a.pro_numero, '
-      '  a.pro_complemento, '
-      '  a.pro_bairro, '
-      '  a.pro_cep,'
-      '  a.pro_acesso, '
-      '  a.pro_energia_situacao, '
-      '  a.pro_energia_concessionaria, '
-      '  a.pro_energia_outras, '
-      '  a.pro_agua_situacao, '
-      '  a.pro_agua_concessionaria, '
-      '  a.pro_agua_poco_artesiano, '
-      '  a.pro_agua_poco_amazonico, '
-      '  a.pro_agua_rio, '
-      '  a.pro_agua_outras, '
-      '  a.pro_car, '
-      '  a.pro_car_numero, '
-      '  a.pro_car_data, '
-      '  a.pro_receita_anual, '
-      '  a.pro_latitude_graus, '
-      '  a.pro_latitude_minutos, '
-      '  a.pro_latitude_segundos, '
-      '  a.pro_latitude_hemisferio, '
-      '  a.pro_longitude_graus, '
-      '  a.pro_longitude_minutos, '
-      '  a.pro_longitude_segundos, '
-      '  a.pro_longitude_hemisferio, '
-      '  a.pro_area_legal, '
-      '  a.pro_area_real, '
-      '  a.pro_area_nua, '
-      '  a.pro_area_pastagem, '
-      '  a.pro_area_permanente, '
-      '  a.pro_area_temporaria, '
-      '  a.pro_area_reserva, '
-      '  a.pro_area_outros, '
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  a.cid_id, '
-      '  a.com_id, '
-      '  a.fun_id, '
-      '  a.und_id, '
-      '  a.oct_id, '
-      '  a.dct_id,'
-      '  b.ufe_id,'
-      
-        '  '#39'('#39' || coalesce(c.usr_login, '#39'N'#227'o identificado'#39') || '#39') '#39' || co' +
-        'alesce(d.fun_nome, '#39#39') as pro_modificado_usuario_nome'
-      'from '
-      
-        '  tab_cad_producao_familiar a left join tab_dne_cidade b on (a.c' +
-        'id_id = b.cid_id) left join'
-      '  tab_sis_usuario c on (a.reg_usuario = c.usr_login) left join'
-      '  tab_pes_funcionario d on (c.usr_id = d.usr_id)'
-      'where'
-      '  (a.reg_excluido = 0) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local)) and'
-      '  (a.pro_id = :pro_id)')
-    AutoUpdateOptions.UpdateTableName = 'TAB_CAD_PRODUCAO_FAMILIAR'
-    AutoUpdateOptions.KeyFields = 'PRO_ID'
-    AutoUpdateOptions.AutoReWriteSqls = True
-    AutoUpdateOptions.CanChangeSQLs = True
-    AutoUpdateOptions.UpdateOnlyModifiedFields = True
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 696
-    Top = 16
-    oAutoFormatFields = False
-  end
   inherited DtSrcPrincipal: TDataSource
     Left = 440
     Top = 168
@@ -3432,56 +3101,56 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       FixedChar = True
       Size = 2
     end
-    object QryPrincipalPRO_AREA_NUA_PERC: TFIBFloatField
+    object QryPrincipalPRO_AREA_NUA_PERC: TFloatField
       FieldKind = fkCalculated
       FieldName = 'PRO_AREA_NUA_PERC'
       DisplayFormat = '#,##0.00'
       EditFormat = '0'
       Calculated = True
     end
-    object QryPrincipalPRO_AREA_PASTAGEM_PERC: TFIBFloatField
+    object QryPrincipalPRO_AREA_PASTAGEM_PERC: TFloatField
       FieldKind = fkCalculated
       FieldName = 'PRO_AREA_PASTAGEM_PERC'
       DisplayFormat = '#,##0.00'
       EditFormat = '0'
       Calculated = True
     end
-    object QryPrincipalPRO_AREA_PERMANENTE_PERC: TFIBFloatField
+    object QryPrincipalPRO_AREA_PERMANENTE_PERC: TFloatField
       FieldKind = fkCalculated
       FieldName = 'PRO_AREA_PERMANENTE_PERC'
       DisplayFormat = '#,##0.00'
       EditFormat = '0'
       Calculated = True
     end
-    object QryPrincipalPRO_AREA_TEMPORARIA_PERC: TFIBFloatField
+    object QryPrincipalPRO_AREA_TEMPORARIA_PERC: TFloatField
       FieldKind = fkCalculated
       FieldName = 'PRO_AREA_TEMPORARIA_PERC'
       DisplayFormat = '#,##0.00'
       EditFormat = '0'
       Calculated = True
     end
-    object QryPrincipalPRO_AREA_RESERVA_PERC: TFIBFloatField
+    object QryPrincipalPRO_AREA_RESERVA_PERC: TFloatField
       FieldKind = fkCalculated
       FieldName = 'PRO_AREA_RESERVA_PERC'
       DisplayFormat = '#,##0.00'
       EditFormat = '0'
       Calculated = True
     end
-    object QryPrincipalPRO_AREA_OUTROS_PERC: TFIBFloatField
+    object QryPrincipalPRO_AREA_OUTROS_PERC: TFloatField
       FieldKind = fkCalculated
       FieldName = 'PRO_AREA_OUTROS_PERC'
       DisplayFormat = '#,##0.00'
       EditFormat = '0'
       Calculated = True
     end
-    object QryPrincipalPRO_AREA_TOTAL_PERC: TFIBFloatField
+    object QryPrincipalPRO_AREA_TOTAL_PERC: TFloatField
       FieldKind = fkCalculated
       FieldName = 'PRO_AREA_TOTAL_PERC'
       DisplayFormat = '#,##0%'
       EditFormat = '0%'
       Calculated = True
     end
-    object QryPrincipalPRO_AREA_TOTAL_REAL: TFIBFloatField
+    object QryPrincipalPRO_AREA_TOTAL_REAL: TFloatField
       FieldKind = fkCalculated
       FieldName = 'PRO_AREA_TOTAL_REAL'
       Calculated = True
@@ -4505,7 +4174,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ReadOnly = True
       Size = 63
     end
-    object QryProducaoProdutoPRP_VALOR_TOTAL: TFIBBCDField
+    object QryProducaoProdutoPRP_VALOR_TOTAL: TBCDField
       DisplayLabel = 'Valor total R$'
       FieldKind = fkCalculated
       FieldName = 'PRP_VALOR_TOTAL'

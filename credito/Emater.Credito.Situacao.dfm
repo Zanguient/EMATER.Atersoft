@@ -5,31 +5,29 @@ inherited FrmCreditoSituacao: TFrmCreditoSituacao
   Hint = 'Tabela de situa'#231#245'es do projeto de cr'#233'dito rural.'
   Caption = 'Situa'#231#245'es do Projeto de Cr'#233'dito Rural'
   ClientHeight = 474
-  ClientWidth = 410
-  ExplicitLeft = 415
-  ExplicitTop = 152
-  ExplicitWidth = 426
-  ExplicitHeight = 513
+  ClientWidth = 412
+  ExplicitWidth = 418
+  ExplicitHeight = 503
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
-    Left = 248
+    Left = 250
     Top = 442
     ExplicitLeft = 248
     ExplicitTop = 442
   end
   inherited PgCntrlMain: TcxPageControl
-    Width = 395
+    Width = 397
     Height = 428
     ExplicitWidth = 395
     ExplicitHeight = 428
     ClientRectBottom = 426
-    ClientRectRight = 393
+    ClientRectRight = 395
     inherited TbShtPrincipal: TcxTabSheet
       object GrdPrincipal: TcxGrid
         Left = 8
         Top = 88
-        Width = 375
+        Width = 377
         Height = 302
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = ANSI_CHARSET
@@ -41,6 +39,7 @@ inherited FrmCreditoSituacao: TFrmCreditoSituacao
         TabOrder = 1
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
+        ExplicitWidth = 375
         object GrdPrincipalTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -103,11 +102,12 @@ inherited FrmCreditoSituacao: TFrmCreditoSituacao
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
+        ExplicitWidth = 375
         DesignSize = (
-          375
+          377
           74)
         Height = 81
-        Width = 375
+        Width = 377
         object Label1: TLabel
           Left = 8
           Top = 24
@@ -124,7 +124,8 @@ inherited FrmCreditoSituacao: TFrmCreditoSituacao
           DataBinding.DataField = 'SIT_DESCRICAO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 0
-          Width = 359
+          ExplicitWidth = 359
+          Width = 361
         end
       end
     end
@@ -162,80 +163,10 @@ inherited FrmCreditoSituacao: TFrmCreditoSituacao
     ExplicitTop = 442
   end
   inherited BtnFechar: TcxButton [7]
-    Left = 328
+    Left = 330
     Top = 442
     ExplicitLeft = 328
     ExplicitTop = 442
-  end
-  inherited DtStPrincipal: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CRD_SITUACAO'
-      'SET '
-      '    SIT_DESCRICAO = :SIT_DESCRICAO,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    SIT_ID = :OLD_SIT_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CRD_SITUACAO'
-      'WHERE'
-      '        SIT_ID = :OLD_SIT_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CRD_SITUACAO('
-      '    SIT_ID,'
-      '    SIT_DESCRICAO,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :SIT_ID,'
-      '    :SIT_DESCRICAO,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.sit_id,'
-      '  a.sit_descricao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_crd_situacao a'
-      'where( '
-      '  (a.reg_excluido = 0)'
-      '     ) and (     A.SIT_ID = :OLD_SIT_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.sit_id,'
-      '  a.sit_descricao,'
-      '  a.reg_excluido,'
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado'
-      'from'
-      '  tab_crd_situacao a'
-      'where'
-      '  (a.reg_excluido = 0)'
-      'order by'
-      '  a.sit_descricao')
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 80
-    Top = 184
   end
   inherited DtSrcPrincipal: TDataSource
     Left = 248

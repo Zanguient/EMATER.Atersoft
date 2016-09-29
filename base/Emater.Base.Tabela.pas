@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, cxPC, cxControls, cxLookAndFeelPainters, StdCtrls,
-  cxButtons, DB, FIBDataSet, pFIBDataSet, Menus, FIB, cxGraphics, cxLookAndFeels, dxSkinsCore, cxPCdxBarPopupMenu, Emater.Base.Basico,
+  cxButtons, DB, Menus, cxGraphics, cxLookAndFeels, dxSkinsCore, cxPCdxBarPopupMenu, Emater.Base.Basico,
   dxSkinscxPCPainter, Datasnap.DBClient, MidasLib, Emater.Classe.Log, dxBarBuiltInMenu, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet,
   dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic;
@@ -25,7 +25,6 @@ type
     BtnCancelar: TcxButton;
     BtnExcluir: TcxButton;
     BtnFechar: TcxButton;
-    DtStPrincipal: TpFIBDataSet;
     DtSrcPrincipal: TDataSource;
     BtnSelecionar: TcxButton;
     BtnRelatorio: TcxButton;

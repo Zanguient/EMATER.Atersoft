@@ -8,8 +8,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
   Caption = 'Benefici'#225'rio de ATER'
   ClientHeight = 618
   ClientWidth = 736
-  ExplicitLeft = 340
-  ExplicitTop = 99
   ExplicitWidth = 752
   ExplicitHeight = 657
   DesignSize = (
@@ -1285,6 +1283,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Categoria e atividade produtiva'
           ImageIndex = 1
           OnShow = TbShtIdentificacaoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -1777,6 +1779,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Programas governamentais'
           ImageIndex = 3
           OnShow = TbShtProgramasShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2030,6 +2036,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'NIS/DAP'
           ImageIndex = 2
           OnShow = TbShtDAPShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2786,6 +2796,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Unidade de produ'#231#227'o'
           ImageIndex = 1
           OnShow = TbShtUnidadeShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -3086,6 +3100,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Benfeitorias'
               ImageIndex = 0
               OnShow = TbShtBenfeitoriasShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
               ExplicitHeight = 286
               DesignSize = (
                 667
@@ -3206,6 +3223,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'M'#225'quinas e equipamentos'
               ImageIndex = 1
               OnShow = TbShtMaquinasShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
               ExplicitHeight = 286
               DesignSize = (
                 667
@@ -3327,6 +3347,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Semoventes'
               ImageIndex = 2
               OnShow = TbShtSemoventesShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
               ExplicitHeight = 286
               DesignSize = (
                 667
@@ -3424,6 +3447,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Atividades produtivas e comercializa'#231#227'o'
               ImageIndex = 3
               OnShow = TbShtAtividadesShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
               ExplicitHeight = 286
               DesignSize = (
                 667
@@ -3657,323 +3683,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     OnClick = BtnRelatorioClick
     ExplicitTop = 586
   end
-  inherited DtStPrincipal: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_CAD_BENEFICIARIO'
-      'SET '
-      '    BEN_DATA = :BEN_DATA,'
-      '    BEN_SITUACAO = :BEN_SITUACAO,'
-      '    BEN_NOME = :BEN_NOME,'
-      '    BEN_NOME_MAE = :BEN_NOME_MAE,'
-      '    BEN_APELIDO = :BEN_APELIDO,'
-      '    BEN_MEMBROS = :BEN_MEMBROS,'
-      '    BEN_SEXO = :BEN_SEXO,'
-      '    BEN_NASCIMENTO = :BEN_NASCIMENTO,'
-      '    BEN_NACIONALIDADE = :BEN_NACIONALIDADE,'
-      '    BEN_CPF = :BEN_CPF,'
-      '    BEN_RG_NUMERO = :BEN_RG_NUMERO,'
-      '    BEN_RG_ORGAO = :BEN_RG_ORGAO,'
-      '    BEN_RG_DATA = :BEN_RG_DATA,'
-      '    BEN_RIBEIRINHO = :BEN_RIBEIRINHO,'
-      '    BEN_ENDERECO = :BEN_ENDERECO,'
-      '    BEN_NUMERO = :BEN_NUMERO,'
-      '    BEN_COMPLEMENTO = :BEN_COMPLEMENTO,'
-      '    BEN_BAIRRO = :BEN_BAIRRO,'
-      '    BEN_CEP = :BEN_CEP,'
-      '    BEN_TELEFONE = :BEN_TELEFONE,'
-      '    BEN_CELULAR = :BEN_CELULAR,'
-      '    BEN_EMAIL = :BEN_EMAIL,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO,'
-      '    CID_ID_NATURALIDADE = :CID_ID_NATURALIDADE,'
-      '    CID_ID_ENDERECO = :CID_ID_ENDERECO,'
-      '    ECV_ID = :ECV_ID,'
-      '    ESC_ID = :ESC_ID,'
-      '    COM_ID = :COM_ID,'
-      '    ORG_ID = :ORG_ID,'
-      '    FUN_ID = :FUN_ID,'
-      '    UND_ID = :UND_ID,'
-      '    MOT_ID = :MOT_ID'
-      'WHERE'
-      '    BEN_ID = :OLD_BEN_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_CAD_BENEFICIARIO'
-      'WHERE'
-      '        BEN_ID = :OLD_BEN_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_CAD_BENEFICIARIO('
-      '    BEN_ID,'
-      '    BEN_DATA,'
-      '    BEN_SITUACAO,'
-      '    BEN_NOME,'
-      '    BEN_NOME_MAE,'
-      '    BEN_APELIDO,'
-      '    BEN_MEMBROS,'
-      '    BEN_SEXO,'
-      '    BEN_NASCIMENTO,'
-      '    BEN_NACIONALIDADE,'
-      '    BEN_CPF,'
-      '    BEN_RG_NUMERO,'
-      '    BEN_RG_ORGAO,'
-      '    BEN_RG_DATA,'
-      '    BEN_RIBEIRINHO,'
-      '    BEN_ENDERECO,'
-      '    BEN_NUMERO,'
-      '    BEN_COMPLEMENTO,'
-      '    BEN_BAIRRO,'
-      '    BEN_CEP,'
-      '    BEN_TELEFONE,'
-      '    BEN_CELULAR,'
-      '    BEN_EMAIL,'
-      '    REG_EXCLUIDO,'
-      '    REG_USUARIO,'
-      '    REG_REPLICADO,'
-      '    REG_MODIFICADO,'
-      '    CID_ID_NATURALIDADE,'
-      '    CID_ID_ENDERECO,'
-      '    ECV_ID,'
-      '    ESC_ID,'
-      '    COM_ID,'
-      '    ORG_ID,'
-      '    FUN_ID,'
-      '    UND_ID,'
-      '    MOT_ID'
-      ')'
-      'VALUES('
-      '    :BEN_ID,'
-      '    :BEN_DATA,'
-      '    :BEN_SITUACAO,'
-      '    :BEN_NOME,'
-      '    :BEN_NOME_MAE,'
-      '    :BEN_APELIDO,'
-      '    :BEN_MEMBROS,'
-      '    :BEN_SEXO,'
-      '    :BEN_NASCIMENTO,'
-      '    :BEN_NACIONALIDADE,'
-      '    :BEN_CPF,'
-      '    :BEN_RG_NUMERO,'
-      '    :BEN_RG_ORGAO,'
-      '    :BEN_RG_DATA,'
-      '    :BEN_RIBEIRINHO,'
-      '    :BEN_ENDERECO,'
-      '    :BEN_NUMERO,'
-      '    :BEN_COMPLEMENTO,'
-      '    :BEN_BAIRRO,'
-      '    :BEN_CEP,'
-      '    :BEN_TELEFONE,'
-      '    :BEN_CELULAR,'
-      '    :BEN_EMAIL,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_USUARIO,'
-      '    :REG_REPLICADO,'
-      '    :REG_MODIFICADO,'
-      '    :CID_ID_NATURALIDADE,'
-      '    :CID_ID_ENDERECO,'
-      '    :ECV_ID,'
-      '    :ESC_ID,'
-      '    :COM_ID,'
-      '    :ORG_ID,'
-      '    :FUN_ID,'
-      '    :UND_ID,'
-      '    :MOT_ID'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.ben_id,'
-      '  a.ben_data,'
-      '  a.ben_situacao,'
-      '  a.ben_nome,'
-      '  a.ben_nome_mae,'
-      '  a.ben_apelido,'
-      '  a.ben_membros,'
-      '  a.ben_sexo,'
-      '  a.ben_nascimento,'
-      '  a.ben_nacionalidade,'
-      '  a.ben_cpf,'
-      '  a.ben_rg_numero,'
-      '  a.ben_rg_orgao,'
-      '  a.ben_rg_data,'
-      '  a.ben_ribeirinho,'
-      '  a.ben_endereco,'
-      '  a.ben_numero,'
-      '  a.ben_complemento,'
-      '  a.ben_bairro,'
-      '  a.ben_cep,'
-      '  a.ben_telefone,'
-      '  a.ben_celular,'
-      '  a.ben_email,'
-      '  a.reg_excluido,'
-      '  a.reg_usuario,'
-      '  a.reg_replicado,'
-      '  a.reg_modificado,'
-      '  a.cid_id_naturalidade,'
-      '  a.cid_id_endereco,'
-      '  a.ecv_id,'
-      '  a.esc_id,'
-      '  a.com_id,'
-      '  a.org_id,'
-      '  a.fun_id,'
-      '  a.und_id,'
-      '  a.mot_id,'
-      '  b.ufe_id,'
-      
-        '  '#39'('#39' || coalesce(c.usr_login, '#39'N'#227'o identificado'#39') || '#39') '#39' || co' +
-        'alesce(d.fun_nome, '#39#39') as ben_modificado_usuario_nome,'
-      '  e.cid_nome || '#39' ('#39' || e.ufe_id || '#39')'#39' as cid_nome_naturalidade'
-      'from'
-      
-        '  tab_cad_beneficiario a left join tab_dne_cidade b on (a.cid_id' +
-        '_endereco = b.cid_id) left join'
-      '  tab_sis_usuario c on (a.reg_usuario = c.usr_login) left join'
-      '  tab_pes_funcionario d on (c.usr_id = d.usr_id) left join'
-      '  tab_dne_cidade e on (a.cid_id_naturalidade = e.cid_id)'
-      'where( '
-      '  (a.ben_id = :ben_id) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local)) and'
-      '  (a.reg_excluido = 0)'
-      '     ) and (     A.BEN_ID = :OLD_BEN_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.ben_id,'
-      '  a.ben_data,'
-      '  a.ben_situacao,'
-      '  a.ben_nome,'
-      '  a.ben_nome_mae,'
-      '  a.ben_apelido,'
-      '  a.ben_membros,'
-      '  a.ben_sexo,'
-      '  a.ben_nascimento,'
-      '  a.ben_nacionalidade,'
-      '  a.ben_cpf,'
-      '  a.ben_rg_numero,'
-      '  a.ben_rg_orgao,'
-      '  a.ben_rg_data,'
-      '  a.ben_ribeirinho,'
-      '  a.ben_endereco,'
-      '  a.ben_numero,'
-      '  a.ben_complemento,'
-      '  a.ben_bairro,'
-      '  a.ben_cep,'
-      '  a.ben_telefone,'
-      '  a.ben_celular,'
-      '  a.ben_email,'
-      '  a.reg_excluido,'
-      '  a.reg_usuario,'
-      '  a.reg_replicado,'
-      '  a.reg_modificado,'
-      '  a.cid_id_naturalidade,'
-      '  a.cid_id_endereco,'
-      '  a.ecv_id,'
-      '  a.esc_id,'
-      '  a.com_id,'
-      '  a.org_id,'
-      '  a.fun_id,'
-      '  a.und_id,'
-      '  a.mot_id,'
-      '  b.ufe_id,'
-      
-        '  '#39'('#39' || coalesce(c.usr_login, '#39'N'#227'o identificado'#39') || '#39') '#39' || co' +
-        'alesce(d.fun_nome, '#39#39') as ben_modificado_usuario_nome,'
-      '  e.cid_nome || '#39' ('#39' || e.ufe_id || '#39')'#39' as cid_nome_naturalidade'
-      'from'
-      
-        '  tab_cad_beneficiario a left join tab_dne_cidade b on (a.cid_id' +
-        '_endereco = b.cid_id) left join'
-      '  tab_sis_usuario c on (a.reg_usuario = c.usr_login) left join'
-      '  tab_pes_funcionario d on (c.usr_id = d.usr_id) left join'
-      '  tab_dne_cidade e on (a.cid_id_naturalidade = e.cid_id)'
-      'where'
-      '  (a.ben_id = :ben_id) and'
-      '  (a.und_id in (select und_id from vwt_sis_unidade_local)) and'
-      '  (a.reg_excluido = 0)')
-    AutoUpdateOptions.UpdateTableName = 'TAB_CAD_BENEFICIARIO'
-    AutoUpdateOptions.KeyFields = 'BEN_ID'
-    AutoUpdateOptions.AutoReWriteSqls = True
-    AutoUpdateOptions.CanChangeSQLs = True
-    AutoUpdateOptions.UpdateOnlyModifiedFields = True
-    DefaultFormats.DateTimeDisplayFormat = 'dd/mm/yyyy hh:mm'
-    DefaultFormats.DisplayFormatTime = 'hh:mm'
-    Left = 72
-    Top = 128
-  end
   inherited DtSrcPrincipal: TDataSource
     Left = 296
     Top = 200
-  end
-  object DtSrcBeneficiarioCategoria: TDataSource [11]
-    DataSet = QryBeneficiarioCategoria
-    Left = 296
-    Top = 232
-  end
-  object DtSrcBeneficiarioDivisao: TDataSource [12]
-    DataSet = QryBeneficiarioDivisao
-    Left = 296
-    Top = 264
-  end
-  object DtSrcBeneficiarioDAP: TDataSource [13]
-    DataSet = QryBeneficiarioDAP
-    OnStateChange = DtSrcBeneficiarioDAPStateChange
-    Left = 296
-    Top = 328
-  end
-  object DtSrcFamilia: TDataSource [14]
-    DataSet = QryFamilia
-    OnStateChange = DtSrcFamiliaStateChange
-    Left = 296
-    Top = 360
-  end
-  object DtSrcBeneficiarioProducao: TDataSource [15]
-    DataSet = QryBeneficiarioProducao
-    OnStateChange = DtSrcBeneficiarioProducaoStateChange
-    Left = 296
-    Top = 392
-  end
-  object DtSrcCategoriaDisponivel: TDataSource [16]
-    DataSet = QryCategoriaDisponivel
-    Left = 360
-    Top = 232
-  end
-  object DtSrcDivisaoDisponivel: TDataSource [17]
-    DataSet = QryDivisaoDisponivel
-    Left = 360
-    Top = 264
-  end
-  object DtSrcProducaoBem: TDataSource [18]
-    DataSet = QryProducaoBem
-    Left = 296
-    Top = 424
-  end
-  object DtSrcProducaoSemovente: TDataSource [19]
-    DataSet = QryProducaoSemovente
-    Left = 296
-    Top = 456
-  end
-  object DtSrcProducaoAtividade: TDataSource [20]
-    DataSet = QryProducaoAtividade
-    Left = 296
-    Top = 488
-  end
-  object DtSrcProducaoProduto: TDataSource [21]
-    DataSet = QryProducaoProduto
-    Left = 296
-    Top = 520
-  end
-  object DtSrcBeneficiarioProgramaGoverno: TDataSource [22]
-    DataSet = QryBeneficiarioProgramaGoverno
-    Left = 296
-    Top = 296
-  end
-  object DtSrcProgramaGovernoDisponivel: TDataSource [23]
-    DataSet = QryProgramaGovernoDisponivel
-    Left = 360
-    Top = 296
   end
   inherited QryPrincipal: TFDQuery
     AfterPost = QryPrincipalAfterPost
@@ -4277,6 +3989,74 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       ProviderFlags = []
       Size = 85
     end
+  end
+  object DtSrcBeneficiarioCategoria: TDataSource [11]
+    DataSet = QryBeneficiarioCategoria
+    Left = 296
+    Top = 232
+  end
+  object DtSrcBeneficiarioDivisao: TDataSource [12]
+    DataSet = QryBeneficiarioDivisao
+    Left = 296
+    Top = 264
+  end
+  object DtSrcBeneficiarioDAP: TDataSource [13]
+    DataSet = QryBeneficiarioDAP
+    OnStateChange = DtSrcBeneficiarioDAPStateChange
+    Left = 296
+    Top = 328
+  end
+  object DtSrcFamilia: TDataSource [14]
+    DataSet = QryFamilia
+    OnStateChange = DtSrcFamiliaStateChange
+    Left = 296
+    Top = 360
+  end
+  object DtSrcBeneficiarioProducao: TDataSource [15]
+    DataSet = QryBeneficiarioProducao
+    OnStateChange = DtSrcBeneficiarioProducaoStateChange
+    Left = 296
+    Top = 392
+  end
+  object DtSrcCategoriaDisponivel: TDataSource [16]
+    DataSet = QryCategoriaDisponivel
+    Left = 360
+    Top = 232
+  end
+  object DtSrcDivisaoDisponivel: TDataSource [17]
+    DataSet = QryDivisaoDisponivel
+    Left = 360
+    Top = 264
+  end
+  object DtSrcProducaoBem: TDataSource [18]
+    DataSet = QryProducaoBem
+    Left = 296
+    Top = 424
+  end
+  object DtSrcProducaoSemovente: TDataSource [19]
+    DataSet = QryProducaoSemovente
+    Left = 296
+    Top = 456
+  end
+  object DtSrcProducaoAtividade: TDataSource [20]
+    DataSet = QryProducaoAtividade
+    Left = 296
+    Top = 488
+  end
+  object DtSrcProducaoProduto: TDataSource [21]
+    DataSet = QryProducaoProduto
+    Left = 296
+    Top = 520
+  end
+  object DtSrcBeneficiarioProgramaGoverno: TDataSource [22]
+    DataSet = QryBeneficiarioProgramaGoverno
+    Left = 296
+    Top = 296
+  end
+  object DtSrcProgramaGovernoDisponivel: TDataSource [23]
+    DataSet = QryProgramaGovernoDisponivel
+    Left = 360
+    Top = 296
   end
   inherited UpdtPrincipal: TFDUpdateSQL
     InsertSQL.Strings = (

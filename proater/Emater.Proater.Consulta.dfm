@@ -5,8 +5,6 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
   Caption = 'FrmProaterConsulta'
   ClientHeight = 570
   ClientWidth = 855
-  ExplicitLeft = 314
-  ExplicitTop = 85
   ExplicitWidth = 871
   ExplicitHeight = 609
   PixelsPerInch = 96
@@ -34,8 +32,8 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
     Width = 584
     Height = 457
     ExplicitTop = 113
-    ExplicitWidth = 553
-    ExplicitHeight = 360
+    ExplicitWidth = 584
+    ExplicitHeight = 457
     inherited GrdConsultaTbl: TcxGridDBTableView
       DataController.KeyFieldNames = 'PRO_ID'
       object GrdConsultaTblPRO_DATA: TcxGridDBColumn
@@ -77,7 +75,7 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
     Height = 58
     BevelEdges = [beTop]
     BevelKind = bkTile
-    ExplicitWidth = 805
+    ExplicitWidth = 855
     ExplicitHeight = 58
     inherited LblValor: TLabel
       Left = 64
@@ -115,7 +113,7 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       Anchors = [akTop, akRight]
       TabOrder = 1
       OnClick = BtnConsultarClick
-      ExplicitLeft = 624
+      ExplicitLeft = 674
       ExplicitTop = 22
     end
     inherited BtnLimparParametros: TcxButton
@@ -123,7 +121,7 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
       Top = 22
       Anchors = [akTop, akRight]
       TabOrder = 2
-      ExplicitLeft = 712
+      ExplicitLeft = 762
       ExplicitTop = 22
     end
     inherited EdtValor: TcxTextEdit
@@ -151,7 +149,7 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
   end
   inherited BarDockControl: TdxBarDockControl
     Width = 855
-    ExplicitWidth = 805
+    ExplicitWidth = 855
   end
   object PnlResumo: TPanel [6]
     Left = 589

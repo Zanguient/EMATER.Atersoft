@@ -1,8 +1,6 @@
 object DtmDialogoModulo: TDtmDialogoModulo
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 416
-  Top = 202
   Height = 210
   Width = 316
   object OpenPictureDialog: TOpenPictureDialog

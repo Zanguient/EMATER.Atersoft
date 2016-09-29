@@ -3,17 +3,13 @@ unit Emater.Conexao.Modulo;
 interface
 
 uses
-  Windows, SysUtils, Classes, DB, Forms, Controls, DBClient, FIBDataSet, FIB, Dialogs, FIBDatabase, pFIBDatabase, pFIBDataSet, StrUtils, pFIBErrorHandler,
-  FIBQuery, pFIBQuery, pFIBStoredProc, Emater.Classe.Log, IB_Services, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  Windows, SysUtils, Classes, DB, Forms, Controls, DBClient, Dialogs, StrUtils, Emater.Classe.Log, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
   FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait,
   FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.VCLUI.Error, FireDAC.Comp.UI,
   FireDAC.Phys.IBWrapper, FireDAC.Phys.IBBase;
 
 type
   TDtmConexaoModulo = class(TDataModule)
-    ReadTransaction: TpFIBTransaction;
-    WriteTransaction: TpFIBTransaction;
-    pFIBDatabase: TpFIBDatabase;
     FDConnection: TFDConnection;
     FDReadTransaction: TFDTransaction;
     FDWriteTransaction: TFDTransaction;
@@ -41,7 +37,6 @@ type
     procedure FDConnectionLost(Sender: TObject);
     procedure FDConnectionRestored(Sender: TObject);
     procedure FDConnectionError(ASender, AInitiator: TObject; var AException: Exception);
-    procedure DataModuleCreate(Sender: TObject);
   private
     FServidor: string;
     FBase: string;
@@ -86,12 +81,6 @@ type
     function ValidarUsuario(const AUsuario, ASenha: string): Boolean;
     function AlterarSenha(const AUsuario, ASenha: string): Boolean;
     function AlterarSenhaExpirada(const AUsuario: string): Boolean;
-
-    { ============================================= }
-    { Procedimentos                                 }
-    { ============================================= }
-    procedure Commit(const ATransacao: TpFIBTransaction; ARetencao: Boolean = True);
-    procedure Rollback(const ATransacao: TpFIBTransaction; ARetencao: Boolean = True);
   end;
 
 var
@@ -231,17 +220,6 @@ begin
   end;
 end;
 
-procedure TDtmConexaoModulo.Commit(const ATransacao: TpFIBTransaction; ARetencao: Boolean);
-begin
-  if ATransacao.InTransaction then
-    begin
-      if ARetencao then
-        ATransacao.CommitRetaining
-      else
-        ATransacao.Commit;
-    end;
-end;
-
 function TDtmConexaoModulo.Conectar(AServidor, ABase, AUsuario, ASenha: string): Boolean;
 begin
   CodeSite.EnterMethod(Self.Name + '.Conectar().');
@@ -349,11 +327,6 @@ begin
   end;
 end;
 
-procedure TDtmConexaoModulo.DataModuleCreate(Sender: TObject);
-begin
-  pFIBDatabase.Connected := True;
-end;
-
 procedure TDtmConexaoModulo.FDConnectionError(ASender, AInitiator: TObject; var AException: Exception);
 type
   TKindMessage = (mkNone, mkException, mkTable, mkProcedure);
@@ -407,8 +380,6 @@ var
 
       if (Result[Length(Result)] = '.') then
         Result := Copy(Result, 1, Length(Result) - 1);
-
-      Commit(ReadTransaction);
     end;
   end;
 
@@ -420,7 +391,6 @@ var
     Result := QryGetUniqueDescription.Fields[0].AsString;
     if (Result = '') then
       Result := UniqueName + '.';
-    Commit(ReadTransaction);
   end;
 
 begin
@@ -550,17 +520,6 @@ begin
         CodeSite.SendError('Erro original: [' + E.Message + '].');
       end;
   end;
-end;
-
-procedure TDtmConexaoModulo.Rollback(const ATransacao: TpFIBTransaction; ARetencao: Boolean);
-begin
-  if ATransacao.InTransaction then
-    begin
-      if ARetencao then
-        ATransacao.RollbackRetaining
-      else
-        ATransacao.Rollback;
-    end;
 end;
 
 end.

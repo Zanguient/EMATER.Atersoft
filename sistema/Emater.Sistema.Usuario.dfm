@@ -7,10 +7,8 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
   ClientHeight = 602
   ClientWidth = 616
   Scaled = False
-  ExplicitLeft = 301
-  ExplicitTop = 82
-  ExplicitWidth = 632
-  ExplicitHeight = 641
+  ExplicitWidth = 622
+  ExplicitHeight = 631
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnSelecionar: TcxButton
@@ -27,8 +25,8 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
     ClientRectBottom = 554
     ClientRectRight = 599
     inherited TbShtPrincipal: TcxTabSheet
-      ExplicitWidth = 601
-      ExplicitHeight = 532
+      ExplicitWidth = 597
+      ExplicitHeight = 526
       object Label2: TLabel
         Left = 8
         Top = 268
@@ -365,203 +363,6 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
   inherited BtnRelatorio: TcxButton
     Top = 570
     ExplicitTop = 570
-  end
-  inherited DtStPrincipal: TpFIBDataSet
-    UpdateSQL.Strings = (
-      'UPDATE TAB_SIS_USUARIO'
-      'SET '
-      '    USR_DATA = :USR_DATA,'
-      '    USR_LOGIN = :USR_LOGIN,'
-      '    USR_SENHA = :USR_SENHA,'
-      '    USR_EXPIRADA = :USR_EXPIRADA,'
-      '    USR_ATIVO = :USR_ATIVO,'
-      '    USR_OBSERVACAO = :USR_OBSERVACAO,'
-      '    PER_ID = :PER_ID,'
-      '    REG_EXCLUIDO = :REG_EXCLUIDO,'
-      '    REG_REPLICADO = :REG_REPLICADO,'
-      '    REG_USUARIO = :REG_USUARIO,'
-      '    REG_MODIFICADO = :REG_MODIFICADO'
-      'WHERE'
-      '    USR_ID = :OLD_USR_ID'
-      '    ')
-    DeleteSQL.Strings = (
-      'DELETE FROM'
-      '    TAB_SIS_USUARIO'
-      'WHERE'
-      '        USR_ID = :OLD_USR_ID'
-      '    ')
-    InsertSQL.Strings = (
-      'INSERT INTO TAB_SIS_USUARIO('
-      '    USR_ID,'
-      '    USR_DATA,'
-      '    USR_LOGIN,'
-      '    USR_SENHA,'
-      '    USR_EXPIRADA,'
-      '    USR_ATIVO,'
-      '    USR_OBSERVACAO,'
-      '    PER_ID,'
-      '    REG_EXCLUIDO,'
-      '    REG_REPLICADO,'
-      '    REG_USUARIO,'
-      '    REG_MODIFICADO'
-      ')'
-      'VALUES('
-      '    :USR_ID,'
-      '    :USR_DATA,'
-      '    :USR_LOGIN,'
-      '    :USR_SENHA,'
-      '    :USR_EXPIRADA,'
-      '    :USR_ATIVO,'
-      '    :USR_OBSERVACAO,'
-      '    :PER_ID,'
-      '    :REG_EXCLUIDO,'
-      '    :REG_REPLICADO,'
-      '    :REG_USUARIO,'
-      '    :REG_MODIFICADO'
-      ')')
-    RefreshSQL.Strings = (
-      'select'
-      '  a.usr_id,'
-      '  a.usr_data, '
-      '  a.usr_login, '
-      '  a.usr_senha, '
-      '  a.usr_expirada, '
-      '  a.usr_ativo, '
-      '  a.usr_observacao, '
-      '  a.per_id,'
-      '  a.reg_excluido, '
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  b.per_nome,'
-      '  upper(c.fun_nome) as fun_nome'
-      'from'
-      
-        '  tab_sis_usuario a join tab_sis_perfil b on (a.per_id = b.per_i' +
-        'd) left join'
-      '  tab_pes_funcionario c on (a.usr_id = c.usr_id)'
-      'where( '
-      '  (a.reg_excluido = 0)'
-      '     ) and (     A.USR_ID = :OLD_USR_ID'
-      '     )'
-      '    ')
-    SelectSQL.Strings = (
-      'select'
-      '  a.usr_id,'
-      '  a.usr_data, '
-      '  a.usr_login, '
-      '  a.usr_senha, '
-      '  a.usr_expirada, '
-      '  a.usr_ativo, '
-      '  a.usr_observacao, '
-      '  a.per_id,'
-      '  a.reg_excluido, '
-      '  a.reg_replicado,'
-      '  a.reg_usuario,'
-      '  a.reg_modificado,'
-      '  b.per_nome,'
-      '  upper(c.fun_nome) as fun_nome'
-      'from'
-      
-        '  tab_sis_usuario a join tab_sis_perfil b on (a.per_id = b.per_i' +
-        'd) left join'
-      '  tab_pes_funcionario c on (a.usr_id = c.usr_id)'
-      'where'
-      '  (a.reg_excluido = 0)'
-      'order by'
-      '  a.usr_login')
-    FilterOptions = [foCaseInsensitive]
-    AutoUpdateOptions.UpdateTableName = 'TAB_SIS_USUARIO'
-    AutoUpdateOptions.KeyFields = 'USR_ID'
-    AutoUpdateOptions.AutoReWriteSqls = True
-    AutoUpdateOptions.CanChangeSQLs = True
-    AutoUpdateOptions.UpdateOnlyModifiedFields = True
-    Transaction = DtmConexaoModulo.ReadTransaction
-    Database = DtmConexaoModulo.pFIBDatabase
-    UpdateTransaction = DtmConexaoModulo.WriteTransaction
-    Left = 368
-    object DtStPrincipalUSR_ID: TFIBIntegerField
-      FieldName = 'USR_ID'
-    end
-    object DtStPrincipalUSR_DATA: TFIBDateField
-      DisplayLabel = 'Data de cadastro:'
-      FieldName = 'USR_DATA'
-      Required = True
-      DisplayFormat = 'dd/mm/yyyy'
-    end
-    object DtStPrincipalUSR_LOGIN: TFIBStringField
-      DisplayLabel = 'Login'
-      FieldName = 'USR_LOGIN'
-      Required = True
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalUSR_SENHA: TFIBStringField
-      DisplayLabel = 'Senha'
-      FieldName = 'USR_SENHA'
-      Required = True
-      OnGetText = DtStPrincipalUSR_SENHAGetText
-      Size = 80
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalUSR_EXPIRADA: TFIBBooleanField
-      DefaultExpression = 'True'
-      DisplayLabel = 'A senha est'#225' expirada'
-      FieldName = 'USR_EXPIRADA'
-      Required = True
-    end
-    object DtStPrincipalUSR_ATIVO: TFIBBooleanField
-      DefaultExpression = 'True'
-      DisplayLabel = 'O usu'#225'rio est'#225' ativo'
-      FieldName = 'USR_ATIVO'
-      Required = True
-    end
-    object DtStPrincipalUSR_OBSERVACAO: TFIBMemoField
-      DisplayLabel = 'Observa'#231#245'es'
-      FieldName = 'USR_OBSERVACAO'
-      BlobType = ftMemo
-      Size = 8
-    end
-    object DtStPrincipalPER_ID: TFIBIntegerField
-      Alignment = taLeftJustify
-      DisplayLabel = 'Perfil'
-      FieldName = 'PER_ID'
-      Required = True
-    end
-    object DtStPrincipalPER_NOME: TFIBStringField
-      DisplayLabel = 'Perfil'
-      FieldName = 'PER_NOME'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalFUN_NOME: TFIBStringField
-      DisplayLabel = 'Funcion'#225'rio'
-      FieldName = 'FUN_NOME'
-      Size = 100
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_EXCLUIDO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_EXCLUIDO'
-    end
-    object DtStPrincipalREG_REPLICADO: TFIBBooleanField
-      DefaultExpression = 'False'
-      FieldName = 'REG_REPLICADO'
-    end
-    object DtStPrincipalREG_USUARIO: TFIBStringField
-      FieldName = 'REG_USUARIO'
-      Size = 50
-      Transliterate = False
-      EmptyStrToNull = True
-    end
-    object DtStPrincipalREG_MODIFICADO: TFIBDateTimeField
-      FieldName = 'REG_MODIFICADO'
-      DisplayFormat = 'dd/mm/yyyy hh:mm AMPM'
-    end
   end
   inherited QryPrincipal: TFDQuery
     AfterPost = QryPrincipalAfterPost

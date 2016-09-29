@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Emater.Base.Consulta, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   cxStyles, dxSkinsCore, dxSkinOffice2013White, dxSkinscxPCPainter, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit,
-  cxNavigator, Data.DB, cxDBData, cxContainer, Vcl.Menus, dxSkinsdxBarPainter, dxBar, cxClasses, FIBDataSet, pFIBDataSet,
+  cxNavigator, Data.DB, cxDBData, cxContainer, Vcl.Menus, dxSkinsdxBarPainter, dxBar, cxClasses,
   cxTextEdit, Vcl.StdCtrls, cxButtons, cxMaskEdit, cxDropDownEdit, cxImageComboBox, Vcl.ExtCtrls, cxGridLevel, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, Vcl.ComCtrls, dxCore, cxDateUtils, cxDBLookupComboBox,
   cxLookupEdit, cxDBLookupEdit, cxCalendar, dxSkinSeven, dxSkinSevenClassic, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
@@ -30,16 +30,6 @@ type
     LkpCmbBxTecnico: TcxLookupComboBox;
     LkpCmbBxMetodo: TcxLookupComboBox;
     LkpCmbBxFinalidade: TcxLookupComboBox;
-    DtStConsultaFAT_ID: TFIBBCDField;
-    DtStConsultaFAT_DATA_ACAO: TFIBDateField;
-    DtStConsultaFAT_DATA_VISITA: TFIBDateField;
-    DtStConsultaFAT_SITUACAO: TFIBStringField;
-    DtStConsultaUND_NOME: TFIBStringField;
-    DtStConsultaFIN_DESCRICAO: TFIBStringField;
-    DtStConsultaMET_DESCRICAO: TFIBStringField;
-    DtStConsultaCID_NOME: TFIBStringField;
-    DtStConsultaUFE_ID: TFIBStringField;
-    DtStConsultaFUN_NOME: TFIBStringField;
     GrdConsultaTblFAT_DATA_ACAO: TcxGridDBColumn;
     GrdConsultaTblFAT_SITUACAO: TcxGridDBColumn;
     GrdConsultaTblUND_NOME: TcxGridDBColumn;
@@ -59,12 +49,7 @@ type
     LkpCmbBxProjeto: TcxLookupComboBox;
     DtSrcProjeto: TDataSource;
     DtSrcMunicipio: TDataSource;
-    DtStConsultaREG_EXCLUIDO: TFIBBooleanField;
-    DtStConsultaREG_REPLICADO: TFIBBooleanField;
-    DtStConsultaREG_USUARIO: TFIBStringField;
-    DtStConsultaREG_MODIFICADO: TFIBDateTimeField;
     DtSrcComunidade: TDataSource;
-    DtStConsultaPRJ_NOME: TFIBStringField;
     QryConsultaFAT_ID: TLargeintField;
     QryConsultaFAT_DATA_ACAO: TDateField;
     QryConsultaFAT_DATA_VISITA: TDateField;
@@ -231,9 +216,9 @@ procedure TFrmProdutividadeFaterConsulta.BtnExcluirClick(Sender: TObject);
 var
   ID: Int64;
 begin
-  ID := DtStConsultaFAT_ID.AsInt64;
+  ID := QryConsultaFAT_ID.AsLargeInt;
   inherited;
-  if (DtStConsulta.RecordCount = 0) or (DtStConsultaFAT_ID.AsInt64 <> ID) then
+  if (QryConsulta.RecordCount = 0) or (QryConsultaFAT_ID.AsLargeint <> ID) then
     FrmSistemaPrincipal.RecenteRemover(FrmSistemaPrincipal.VwGlrCntrlFATER, ID);
 end;
 

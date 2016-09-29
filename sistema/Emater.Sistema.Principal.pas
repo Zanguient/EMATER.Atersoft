@@ -127,6 +127,8 @@ type
     BtnRelatorioFaterCategoria: TdxBarLargeButton;
     BtnRelatorioProducaoComercio: TdxBarLargeButton;
     BtnRelatorioMetodologiaAdministrativa: TdxBarLargeButton;
+    BtnRelatorioMetodologiaFinalidade: TdxBarLargeButton;
+    BtnRelatorioMetodologiaCategoria: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnBeneficiarioNovoClick(Sender: TObject);
     procedure BtnComunidadesClick(Sender: TObject);
@@ -202,6 +204,8 @@ type
     procedure BtnRelatorioFaterCategoriaClick(Sender: TObject);
     procedure BtnRelatorioProducaoComercioClick(Sender: TObject);
     procedure BtnRelatorioMetodologiaAdministrativaClick(Sender: TObject);
+    procedure BtnRelatorioMetodologiaFinalidadeClick(Sender: TObject);
+    procedure BtnRelatorioMetodologiaCategoriaClick(Sender: TObject);
   public
     procedure AtualizarBarraStatus(const BD, Usuario, Local: string);
     procedure RecenteRemover(const Controle: TdxRibbonBackstageViewGalleryControl; const ID: Int64);
@@ -235,7 +239,8 @@ uses Emater.Recurso.Modulo, Emater.Cadastro.Beneficiario, Emater.Cadastro.Comuni
   Emater.Indicador.Editor, Emater.Indicador.Selecao, Emater.Indicador.Consulta, Emater.Relatorio.Beneficiario.EstadoCivil,
   Emater.Relatorio.Beneficiario.Escolaridade, Emater.Relatorio.Beneficiario.Ribeirinho, Emater.Relatorio.Beneficiario.Faixa,
   Emater.Relatorio.Beneficiario.Genero, Emater.Relatorio.Producao.Cultura, Emater.Relatorio.Consts, Emater.Relatorio.Producao.Criacao,
-  Emater.Relatorio.Producao.Servico, Emater.Relatorio.Fater.Categoria, Emater.Relatorio.Producao.Comercio, Emater.Relatorio.Metodologia.Administrativa;
+  Emater.Relatorio.Producao.Servico, Emater.Relatorio.Fater.Categoria, Emater.Relatorio.Producao.Comercio, Emater.Relatorio.Metodologia.Administrativa,
+  Emater.Relatorio.Metodologia.Finalidade, Emater.Relatorio.Metodologia.Categoria;
 
 { TForm1 }
 
@@ -852,6 +857,32 @@ begin
   finally
     FrmRelatorioMetodologiaAdministrativa.Release;
     FrmRelatorioMetodologiaAdministrativa := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmSistemaPrincipal.BtnRelatorioMetodologiaCategoriaClick(Sender: TObject);
+begin
+  FrmRelatorioMetodologiaCategoria := TFrmRelatorioMetodologiaCategoria.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioMetodologiaCategoria.ShowModal;
+  finally
+    FrmRelatorioMetodologiaCategoria.Release;
+    FrmRelatorioMetodologiaCategoria := nil;
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+procedure TFrmSistemaPrincipal.BtnRelatorioMetodologiaFinalidadeClick(Sender: TObject);
+begin
+  FrmRelatorioMetodologiaFinalidade := TFrmRelatorioMetodologiaFinalidade.Create(Self);
+  try
+    Screen.Cursor := crHourglass;
+    FrmRelatorioMetodologiaFinalidade.ShowModal;
+  finally
+    FrmRelatorioMetodologiaFinalidade.Release;
+    FrmRelatorioMetodologiaFinalidade := nil;
     Screen.Cursor := crDefault;
   end;
 end;

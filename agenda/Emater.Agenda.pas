@@ -8,7 +8,7 @@ uses
   cxStyles, cxEdit, cxScheduler, cxSchedulerStorage, cxSchedulerCustomControls, cxSchedulerCustomResourceView, cxSchedulerDayView,
   cxSchedulerDateNavigator, cxSchedulerHolidays, cxSchedulerTimeGridView, cxSchedulerUtils, cxSchedulerWeekView, cxSchedulerYearView,
   cxSchedulerGanttView, cxSchedulerTreeListBrowser, dxSkinsCore, dxSkinOffice2013White, dxSkinSeven, dxSkinSevenClassic,
-  dxSkinscxSchedulerPainter, Data.DB, FIBDataSet, pFIBDataSet, cxClasses, cxSchedulerDBStorage,
+  dxSkinscxSchedulerPainter, Data.DB, cxClasses, cxSchedulerDBStorage,
   cxSchedulerRecurrence, cxSchedulerRibbonStyleEventEditor, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet, cxSchedulercxGridConnection, Vcl.StdCtrls,
   Vcl.ExtCtrls, cxContainer, cxDropDownEdit, cxCalendar, cxDBEdit, cxMaskEdit, cxSpinEdit, cxTimeEdit, cxTextEdit, cxMemo, cxImageComboBox, dxSkinsdxBarPainter,

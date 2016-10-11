@@ -9,16 +9,16 @@ uses
 
 type
   TFrmSistemaAbertura = class(TForm)
-    ImgIcone: TImage;
     ShpJanela: TShape;
     Shape1: TShape;
     Shape2: TShape;
+    ImgLogotipoGrande: TImage;
+    LblCopyright: TLabel;
     Shape3: TShape;
+    ImgIcone: TImage;
     cxLabel1: TcxLabel;
     cxLabel2: TcxLabel;
     cxLabel3: TcxLabel;
-    ImgLogotipoGrande: TImage;
-    LblCopyright: TLabel;
     procedure FormCreate(Sender: TObject);
   end;
 

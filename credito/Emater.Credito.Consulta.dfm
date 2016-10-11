@@ -169,20 +169,20 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
     end
     inherited BtnConsultar: TcxButton
       Left = 689
-      Top = 63
+      Top = 61
       Anchors = [akRight, akBottom]
       TabOrder = 12
       OnClick = BtnConsultarClick
       ExplicitLeft = 689
-      ExplicitTop = 63
+      ExplicitTop = 61
     end
     inherited BtnLimparParametros: TcxButton
       Left = 689
-      Top = 95
+      Top = 93
       Anchors = [akRight, akBottom]
       TabOrder = 13
       ExplicitLeft = 689
-      ExplicitTop = 95
+      ExplicitTop = 93
     end
     inherited EdtValor: TcxTextEdit
       Anchors = [akLeft, akTop, akRight]
@@ -353,7 +353,8 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
       '  tab_crd_publico f on (a.pub_id = f.pub_id) left join'
       '  tab_sis_unidade g on (a.und_id = g.und_id)'
       'where'
-      '  (a.reg_excluido = 0)')
+      '  (a.reg_excluido = 0) and'
+      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
     Top = 248
     object QryConsultaCRD_ID: TLargeintField
       DisplayLabel = 'Identificador'

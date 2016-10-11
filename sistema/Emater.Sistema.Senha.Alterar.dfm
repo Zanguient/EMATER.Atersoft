@@ -3,18 +3,16 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   Top = 198
   BorderStyle = bsDialog
   Caption = 'Alterar Senha do Usu'#225'rio'
-  ClientHeight = 269
-  ClientWidth = 444
+  ClientHeight = 379
+  ClientWidth = 395
   Position = poScreenCenter
-  ExplicitLeft = 474
-  ExplicitTop = 198
-  ExplicitWidth = 460
-  ExplicitHeight = 308
+  ExplicitWidth = 401
+  ExplicitHeight = 408
   PixelsPerInch = 96
   TextHeight = 13
   object LblUsuarioLegenda: TLabel
     Left = 48
-    Top = 116
+    Top = 208
     Width = 67
     Height = 13
     Caption = 'Usu'#225'rio atual:'
@@ -22,7 +20,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   end
   object LblUsuario: TLabel
     Left = 120
-    Top = 116
+    Top = 208
     Width = 52
     Height = 13
     Caption = 'USU'#193'RIO'
@@ -36,7 +34,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   end
   object LblMensagem: TLabel
     Left = 48
-    Top = 100
+    Top = 192
     Width = 310
     Height = 13
     Caption = 'Somente o usu'#225'rio autenticado no sistema pode alterar a senha.'
@@ -44,7 +42,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   end
   object ImgLocked: TImage
     Left = 8
-    Top = 98
+    Top = 190
     Width = 32
     Height = 32
     Picture.Data = {
@@ -221,7 +219,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   end
   object LblSenhaAtual: TLabel
     Left = 48
-    Top = 145
+    Top = 245
     Width = 61
     Height = 13
     Caption = 'Senha &atual:'
@@ -229,7 +227,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   end
   object LblNovaSenha: TLabel
     Left = 48
-    Top = 169
+    Top = 269
     Width = 61
     Height = 13
     Caption = '&Nova senha:'
@@ -237,7 +235,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   end
   object LblRepetirSenha: TLabel
     Left = 48
-    Top = 193
+    Top = 293
     Width = 98
     Height = 13
     Caption = '&Repetir nova senha:'
@@ -245,8 +243,8 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   end
   object BvlBottom: TBevel
     Left = 0
-    Top = 229
-    Width = 444
+    Top = 339
+    Width = 395
     Height = 40
     Align = alBottom
     Shape = bsTopLine
@@ -256,66 +254,69 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
   object Shape1: TShape
     Left = 0
     Top = 0
-    Width = 444
-    Height = 84
+    Width = 395
+    Height = 169
     Align = alTop
     Brush.Color = 4166144
     Pen.Color = 4166144
-    ExplicitLeft = -73
-    ExplicitWidth = 517
-  end
-  object Shape3: TShape
-    Left = 16
-    Top = 18
-    Width = 48
-    Height = 48
-    Pen.Color = 2474628
-    Pen.Width = 4
-  end
-  object ImgIcone: TImage
-    Left = 24
-    Top = 26
-    Width = 32
-    Height = 32
-    AutoSize = True
-    Center = True
   end
   object Shape2: TShape
     Left = 0
-    Top = 84
-    Width = 444
+    Top = 169
+    Width = 395
     Height = 6
     Align = alTop
     Brush.Color = 2474628
     Pen.Color = 2474628
     ExplicitLeft = -73
+    ExplicitTop = 84
     ExplicitWidth = 517
   end
+  object Shape3: TShape
+    Left = 101
+    Top = 19
+    Width = 193
+    Height = 97
+    Pen.Color = 2474628
+    Pen.Width = 4
+  end
+  object ImgIcone: TImage
+    Left = 181
+    Top = 32
+    Width = 32
+    Height = 32
+    AutoSize = True
+    Center = True
+  end
   object BtnOK: TcxButton
-    Left = 280
-    Top = 237
+    Left = 231
+    Top = 347
     Width = 75
     Height = 25
+    Anchors = [akRight, akBottom]
     Caption = 'OK'
     Default = True
     OptionsImage.NumGlyphs = 2
-    TabOrder = 6
+    TabOrder = 4
     OnClick = BtnOKClick
+    ExplicitLeft = 280
   end
   object BtnCancelar: TcxButton
-    Left = 362
-    Top = 237
+    Left = 313
+    Top = 347
     Width = 75
     Height = 25
+    Anchors = [akRight, akBottom]
     Cancel = True
     Caption = 'Cancelar'
     ModalResult = 2
     OptionsImage.NumGlyphs = 2
-    TabOrder = 7
+    TabOrder = 5
+    ExplicitLeft = 362
   end
   object cxLabel1: TcxLabel
-    Left = 80
-    Top = 12
+    Left = 105
+    Top = 126
     Caption = 'SISATER Desktop'
     ParentColor = False
     ParentFont = False
@@ -339,9 +340,34 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     StyleHot.LookAndFeel.NativeStyle = True
     Transparent = True
   end
+  object EdtSenhaAtual: TcxTextEdit
+    Left = 152
+    Top = 241
+    ParentFont = False
+    Properties.EchoMode = eemPassword
+    Properties.PasswordChar = '*'
+    TabOrder = 0
+    Width = 225
+  end
+  object EdtNovaSenha: TcxTextEdit
+    Left = 152
+    Top = 265
+    Properties.EchoMode = eemPassword
+    Properties.PasswordChar = '*'
+    TabOrder = 1
+    Width = 225
+  end
+  object EdtRepetirSenha: TcxTextEdit
+    Left = 152
+    Top = 289
+    Properties.EchoMode = eemPassword
+    Properties.PasswordChar = '*'
+    TabOrder = 2
+    Width = 225
+  end
   object cxLabel2: TcxLabel
-    Left = 80
-    Top = 39
+    Left = 154
+    Top = 66
     Caption = 'EMATER - PAR'#193
     ParentColor = False
     ParentFont = False
@@ -351,23 +377,16 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     Style.Font.Name = 'Tahoma'
     Style.Font.Style = []
     Style.Font.Quality = fqClearType
-    Style.LookAndFeel.Kind = lfUltraFlat
-    Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
-    Style.TextStyle = []
+    Style.TextColor = 4166144
+    Style.TextStyle = [fsBold]
     Style.TransparentBorder = False
     Style.IsFontAssigned = True
-    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-    StyleDisabled.LookAndFeel.NativeStyle = True
-    StyleFocused.LookAndFeel.Kind = lfUltraFlat
-    StyleFocused.LookAndFeel.NativeStyle = True
-    StyleHot.LookAndFeel.Kind = lfUltraFlat
-    StyleHot.LookAndFeel.NativeStyle = True
     Transparent = True
   end
   object cxLabel3: TcxLabel
-    Left = 80
-    Top = 53
+    Left = 111
+    Top = 80
+    AutoSize = False
     Caption = 
       'Empresa de Assist'#234'ncia T'#233'cnica e Extens'#227'o Rural do Estado do Par' +
       #225
@@ -381,7 +400,7 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     Style.Font.Quality = fqClearType
     Style.LookAndFeel.Kind = lfUltraFlat
     Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
+    Style.TextColor = 4166144
     Style.TextStyle = []
     Style.TransparentBorder = False
     Style.IsFontAssigned = True
@@ -391,31 +410,13 @@ inherited FrmSistemaSenhaAlterar: TFrmSistemaSenhaAlterar
     StyleFocused.LookAndFeel.NativeStyle = True
     StyleHot.LookAndFeel.Kind = lfUltraFlat
     StyleHot.LookAndFeel.NativeStyle = True
+    Properties.Alignment.Horz = taCenter
+    Properties.Alignment.Vert = taVCenter
+    Properties.WordWrap = True
     Transparent = True
-  end
-  object EdtSenhaAtual: TcxTextEdit
-    Left = 152
-    Top = 141
-    ParentFont = False
-    Properties.EchoMode = eemPassword
-    Properties.PasswordChar = '*'
-    TabOrder = 1
-    Width = 225
-  end
-  object EdtNovaSenha: TcxTextEdit
-    Left = 152
-    Top = 165
-    Properties.EchoMode = eemPassword
-    Properties.PasswordChar = '*'
-    TabOrder = 3
-    Width = 225
-  end
-  object EdtRepetirSenha: TcxTextEdit
-    Left = 152
-    Top = 189
-    Properties.EchoMode = eemPassword
-    Properties.PasswordChar = '*'
-    TabOrder = 5
-    Width = 225
+    Height = 26
+    Width = 174
+    AnchorX = 198
+    AnchorY = 93
   end
 end

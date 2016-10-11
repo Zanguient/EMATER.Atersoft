@@ -8,8 +8,8 @@ inherited FrmAgenda: TFrmAgenda
   ClientWidth = 826
   WindowState = wsNormal
   OnShow = FormShow
-  ExplicitLeft = 322
-  ExplicitTop = 152
+  ExplicitLeft = 8
+  ExplicitTop = 8
   ExplicitWidth = 842
   ExplicitHeight = 620
   PixelsPerInch = 96
@@ -151,8 +151,6 @@ inherited FrmAgenda: TFrmAgenda
     OnBeforeDeleting = cxSchedulerBeforeDeleting
     OnBeforeEditing = cxSchedulerBeforeEditing
     OnEventSelectionChanged = cxSchedulerEventSelectionChanged
-    ExplicitTop = 29
-    ExplicitHeight = 552
     Splitters = {
       010000007E0000001F010000830000001F01000001000000240100000D020000}
     StoredClientBounds = {0100000001000000390300000D020000}
@@ -164,8 +162,6 @@ inherited FrmAgenda: TFrmAgenda
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitTop = -8
-      ExplicitHeight = 422
       object Label1: TLabel
         Left = 8
         Top = 97
@@ -460,7 +456,8 @@ inherited FrmAgenda: TFrmAgenda
         've_id) left join'
       '  tab_agn_situacao c on (a.sit_id = c.sit_id)'
       'where'
-      '  (a.reg_excluido = 0)')
+      '  (a.reg_excluido = 0) and'
+      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
     Left = 592
     Top = 192
     object QryAgendaAGN_ID: TIntegerField

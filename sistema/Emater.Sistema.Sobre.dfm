@@ -3,21 +3,19 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
   Top = 218
   BorderStyle = bsDialog
   Caption = 'Sobre'
-  ClientHeight = 377
+  ClientHeight = 472
   ClientWidth = 517
   Color = clWhite
   KeyPreview = True
   Position = poScreenCenter
   OnKeyPress = FormKeyPress
-  ExplicitLeft = 368
-  ExplicitTop = 218
-  ExplicitWidth = 533
-  ExplicitHeight = 416
+  ExplicitWidth = 523
+  ExplicitHeight = 501
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel
     Left = 16
-    Top = 120
+    Top = 208
     Width = 310
     Height = 13
     Caption = 'Produto desenvolvido pela Sevensoft Tecnologia da Informa'#231#227'o.'
@@ -27,30 +25,14 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
     Left = 0
     Top = 0
     Width = 517
-    Height = 84
+    Height = 169
     Align = alTop
     Brush.Color = 4166144
     Pen.Color = 4166144
   end
-  object Shape3: TShape
-    Left = 16
-    Top = 18
-    Width = 48
-    Height = 48
-    Pen.Color = 2474628
-    Pen.Width = 4
-  end
-  object ImgIcone: TImage
-    Left = 24
-    Top = 26
-    Width = 32
-    Height = 32
-    AutoSize = True
-    Center = True
-  end
   object LblCopyright: TLabel
     Left = 69
-    Top = 353
+    Top = 448
     Width = 379
     Height = 11
     Anchors = [akLeft, akRight, akBottom]
@@ -67,16 +49,17 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
   end
   object ShpLinha: TShape
     Left = 0
-    Top = 84
+    Top = 169
     Width = 517
     Height = 6
     Align = alTop
     Brush.Color = 2474628
     Pen.Color = 2474628
+    ExplicitTop = 84
   end
   object ImgLogotipoGrande: TImage
     Left = 167
-    Top = 305
+    Top = 393
     Width = 183
     Height = 41
     AutoSize = True
@@ -449,7 +432,7 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
   end
   object LblNome: TLabel
     Left = 16
-    Top = 104
+    Top = 192
     Width = 188
     Height = 13
     Caption = 'Sevensoft'#174' SISATER Desktop 1.0'
@@ -462,7 +445,7 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
   end
   object LblVersao: TLabel
     Left = 208
-    Top = 104
+    Top = 192
     Width = 49
     Height = 13
     Caption = '(vers'#227'o)'
@@ -475,14 +458,14 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
   end
   object Label2: TLabel
     Left = 16
-    Top = 136
+    Top = 224
     Width = 193
     Height = 13
     Caption = 'Fale com a Sevensoft atrav'#233's do e-mail:'
   end
   object Label1: TLabel
     Left = 16
-    Top = 168
+    Top = 256
     Width = 385
     Height = 13
     Caption = 
@@ -492,9 +475,9 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
   object ShpJanela: TShape
     Tag = 2
     Left = 0
-    Top = 72
+    Top = 168
     Width = 517
-    Height = 305
+    Height = 304
     Anchors = [akLeft, akTop, akRight, akBottom]
     Brush.Style = bsClear
     Pen.Color = 4166144
@@ -502,7 +485,7 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
   end
   object LblLink: TLabel
     Left = 212
-    Top = 136
+    Top = 224
     Width = 132
     Height = 13
     Cursor = crHandPoint
@@ -515,89 +498,25 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
     ParentFont = False
     OnClick = LblLinkClick
   end
-  object cxLabel1: TcxLabel
-    Left = 80
-    Top = 12
-    Caption = 'SISATER Desktop'
-    ParentColor = False
-    ParentFont = False
-    Style.Font.Charset = DEFAULT_CHARSET
-    Style.Font.Color = clWindowText
-    Style.Font.Height = -24
-    Style.Font.Name = 'Tahoma'
-    Style.Font.Style = []
-    Style.Font.Quality = fqClearType
-    Style.LookAndFeel.Kind = lfUltraFlat
-    Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
-    Style.TextStyle = []
-    Style.TransparentBorder = False
-    Style.IsFontAssigned = True
-    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-    StyleDisabled.LookAndFeel.NativeStyle = True
-    StyleFocused.LookAndFeel.Kind = lfUltraFlat
-    StyleFocused.LookAndFeel.NativeStyle = True
-    StyleHot.LookAndFeel.Kind = lfUltraFlat
-    StyleHot.LookAndFeel.NativeStyle = True
-    Transparent = True
+  object Shape3: TShape
+    Left = 162
+    Top = 19
+    Width = 193
+    Height = 97
+    Pen.Color = 2474628
+    Pen.Width = 4
   end
-  object cxLabel2: TcxLabel
-    Left = 80
-    Top = 39
-    Caption = 'EMATER - PAR'#193
-    ParentColor = False
-    ParentFont = False
-    Style.Font.Charset = DEFAULT_CHARSET
-    Style.Font.Color = clWindowText
-    Style.Font.Height = -11
-    Style.Font.Name = 'Tahoma'
-    Style.Font.Style = []
-    Style.Font.Quality = fqClearType
-    Style.LookAndFeel.Kind = lfUltraFlat
-    Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
-    Style.TextStyle = []
-    Style.TransparentBorder = False
-    Style.IsFontAssigned = True
-    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-    StyleDisabled.LookAndFeel.NativeStyle = True
-    StyleFocused.LookAndFeel.Kind = lfUltraFlat
-    StyleFocused.LookAndFeel.NativeStyle = True
-    StyleHot.LookAndFeel.Kind = lfUltraFlat
-    StyleHot.LookAndFeel.NativeStyle = True
-    Transparent = True
-  end
-  object cxLabel3: TcxLabel
-    Left = 80
-    Top = 53
-    Caption = 
-      'Empresa de Assist'#234'ncia T'#233'cnica e Extens'#227'o Rural do Estado do Par' +
-      #225
-    ParentColor = False
-    ParentFont = False
-    Style.Font.Charset = DEFAULT_CHARSET
-    Style.Font.Color = clWindowText
-    Style.Font.Height = -11
-    Style.Font.Name = 'Tahoma'
-    Style.Font.Style = []
-    Style.Font.Quality = fqClearType
-    Style.LookAndFeel.Kind = lfUltraFlat
-    Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
-    Style.TextStyle = []
-    Style.TransparentBorder = False
-    Style.IsFontAssigned = True
-    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-    StyleDisabled.LookAndFeel.NativeStyle = True
-    StyleFocused.LookAndFeel.Kind = lfUltraFlat
-    StyleFocused.LookAndFeel.NativeStyle = True
-    StyleHot.LookAndFeel.Kind = lfUltraFlat
-    StyleHot.LookAndFeel.NativeStyle = True
-    Transparent = True
+  object ImgIcone: TImage
+    Left = 242
+    Top = 32
+    Width = 32
+    Height = 32
+    AutoSize = True
+    Center = True
   end
   object MemoEquipe: TMemo
     Left = 16
-    Top = 184
+    Top = 272
     Width = 489
     Height = 113
     TabStop = False
@@ -685,7 +604,87 @@ inherited FrmSistemaSobre: TFrmSistemaSobre
       'Ricardo Hideo Dohara - Engenheiro Agr'#244'nomo')
     ReadOnly = True
     ScrollBars = ssVertical
-    TabOrder = 3
+    TabOrder = 0
     WordWrap = False
+  end
+  object cxLabel1: TcxLabel
+    Left = 166
+    Top = 126
+    Caption = 'SISATER Desktop'
+    ParentColor = False
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -24
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = []
+    Style.Font.Quality = fqClearType
+    Style.LookAndFeel.Kind = lfUltraFlat
+    Style.LookAndFeel.NativeStyle = True
+    Style.TextColor = clWhite
+    Style.TextStyle = []
+    Style.TransparentBorder = False
+    Style.IsFontAssigned = True
+    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
+    StyleDisabled.LookAndFeel.NativeStyle = True
+    StyleFocused.LookAndFeel.Kind = lfUltraFlat
+    StyleFocused.LookAndFeel.NativeStyle = True
+    StyleHot.LookAndFeel.Kind = lfUltraFlat
+    StyleHot.LookAndFeel.NativeStyle = True
+    Transparent = True
+  end
+  object cxLabel2: TcxLabel
+    Left = 215
+    Top = 66
+    Caption = 'EMATER - PAR'#193
+    ParentColor = False
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = []
+    Style.Font.Quality = fqClearType
+    Style.TextColor = 4166144
+    Style.TextStyle = [fsBold]
+    Style.TransparentBorder = False
+    Style.IsFontAssigned = True
+    Transparent = True
+  end
+  object cxLabel3: TcxLabel
+    Left = 172
+    Top = 80
+    AutoSize = False
+    Caption = 
+      'Empresa de Assist'#234'ncia T'#233'cnica e Extens'#227'o Rural do Estado do Par' +
+      #225
+    ParentColor = False
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = []
+    Style.Font.Quality = fqClearType
+    Style.LookAndFeel.Kind = lfUltraFlat
+    Style.LookAndFeel.NativeStyle = True
+    Style.TextColor = 4166144
+    Style.TextStyle = []
+    Style.TransparentBorder = False
+    Style.IsFontAssigned = True
+    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
+    StyleDisabled.LookAndFeel.NativeStyle = True
+    StyleFocused.LookAndFeel.Kind = lfUltraFlat
+    StyleFocused.LookAndFeel.NativeStyle = True
+    StyleHot.LookAndFeel.Kind = lfUltraFlat
+    StyleHot.LookAndFeel.NativeStyle = True
+    Properties.Alignment.Horz = taCenter
+    Properties.Alignment.Vert = taVCenter
+    Properties.WordWrap = True
+    Transparent = True
+    Height = 26
+    Width = 174
+    AnchorX = 259
+    AnchorY = 93
   end
 end

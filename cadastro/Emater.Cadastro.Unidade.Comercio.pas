@@ -18,9 +18,9 @@ type
     cxGroupBox1: TcxGroupBox;
     LblOutro: TLabel;
     DbEdtOutro: TcxDBTextEdit;
-    Label2: TLabel;
+    LblConsumida: TLabel;
     DbEdtConsumida: TcxDBCalcEdit;
-    Label3: TLabel;
+    LblComercializada: TLabel;
     DbEdtComercializada: TcxDBCalcEdit;
     Label4: TLabel;
     DbEdtValorUnitario: TcxDBCurrencyEdit;
@@ -122,6 +122,11 @@ begin
       if (DtSrcProducaoProduto.State in [dsEdit, dsInsert]) then
         DtSrcProducaoProduto.DataSet.FieldByName('UNI_ID').AsInteger := DtSrcDerivado.DataSet.FieldByName('UNI_ID').AsInteger;
     end;
+
+  LblConsumida.Visible := (DtSrcProducaoProduto.DataSet.FieldByName('DES_ID').AsInteger = 100000003);
+  DbEdtConsumida.Visible := (DtSrcProducaoProduto.DataSet.FieldByName('DES_ID').AsInteger = 100000003);
+  LblComercializada.Visible := (DtSrcProducaoProduto.DataSet.FieldByName('DES_ID').AsInteger <> 100000003);
+  DbEdtComercializada.Visible := (DtSrcProducaoProduto.DataSet.FieldByName('DES_ID').AsInteger <> 100000003);
 end;
 
 procedure TFrmCadastroUnidadeComercio.DbLkpCmbBxProdutoPropertiesChange(Sender: TObject);

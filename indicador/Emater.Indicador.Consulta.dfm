@@ -190,11 +190,12 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
       '  c.ind_chave'
       'from'
       
-        '  tab_ind_registro  a join tab_sis_unidade b on (a.und_id = b.un' +
-        'd_id) join'
+        '  tab_ind_registro a join tab_sis_unidade b on (a.und_id = b.und' +
+        '_id) join'
       '  tab_ind_indicador c on (a.ind_id = c.ind_id)'
       'where'
-      '  (a.reg_excluido = 0)')
+      '  (a.reg_excluido = 0) and'
+      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
     object QryConsultaREG_ID: TLargeintField
       FieldName = 'REG_ID'
       Origin = 'REG_ID'

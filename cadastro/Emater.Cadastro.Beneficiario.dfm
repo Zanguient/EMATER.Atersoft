@@ -174,6 +174,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
     ClientRectRight = 719
     inherited TbShtPrincipal: TcxTabSheet
       Caption = 'Benefici'#225'rio de ATER'
+      ExplicitLeft = 2
+      ExplicitTop = 28
       ExplicitWidth = 717
       ExplicitHeight = 512
       object PgCntrlBeneficiario: TcxPageControl
@@ -1283,10 +1285,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Categoria e atividade produtiva'
           ImageIndex = 1
           OnShow = TbShtIdentificacaoShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -1779,10 +1777,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Programas governamentais'
           ImageIndex = 3
           OnShow = TbShtProgramasShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2036,10 +2030,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'NIS/DAP'
           ImageIndex = 2
           OnShow = TbShtDAPShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2324,10 +2314,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Integrante familiar'
           ImageIndex = 0
           OnShow = TbShtFamiliaShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2766,10 +2752,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       Caption = 'Unidade de Produ'#231#227'o Familiar'
       ImageIndex = 4
       OnShow = TbShtSecundariaShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         717
         512)
@@ -2796,10 +2778,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Unidade de produ'#231#227'o'
           ImageIndex = 1
           OnShow = TbShtUnidadeShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2975,10 +2953,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Caracteriza'#231#227'o da produ'#231#227'o'
           ImageIndex = 2
           OnShow = TbShtProducaoShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -3100,10 +3074,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Benfeitorias'
               ImageIndex = 0
               OnShow = TbShtBenfeitoriasShow
-              ExplicitLeft = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 286
               DesignSize = (
                 667
                 291)
@@ -3122,7 +3092,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 0
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
-                ExplicitHeight = 270
                 object GrdPrdBemTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3223,10 +3192,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'M'#225'quinas e equipamentos'
               ImageIndex = 1
               OnShow = TbShtMaquinasShow
-              ExplicitLeft = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 286
               DesignSize = (
                 667
                 291)
@@ -3347,10 +3312,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Semoventes'
               ImageIndex = 2
               OnShow = TbShtSemoventesShow
-              ExplicitLeft = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 286
               DesignSize = (
                 667
                 291)
@@ -3447,10 +3408,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Atividades produtivas e comercializa'#231#227'o'
               ImageIndex = 3
               OnShow = TbShtAtividadesShow
-              ExplicitLeft = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 286
               DesignSize = (
                 667
                 291)

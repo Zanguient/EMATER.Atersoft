@@ -425,6 +425,8 @@ type
     DbEdtPeriodoInicio: TcxDBMaskEdit;
     LblPeriodoColheita: TLabel;
     DbEdtPeriodoFim: TcxDBMaskEdit;
+    QrySubMetodoMET_MES: TSmallintField;
+    GrdMetTblMET_MES: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure BtnNovoClick(Sender: TObject);
     procedure QryPrincipalNewRecord(DataSet: TDataSet);
@@ -538,6 +540,8 @@ type
     procedure BtnBenEditarClick(Sender: TObject);
     procedure BtnOrcIncluirClick(Sender: TObject);
     procedure BtnOrcEditarClick(Sender: TObject);
+    procedure QrySubMetodoMET_MESGetText(Sender: TField; var Text: string; DisplayText: Boolean);
+    procedure QrySubMetodoMET_MESSetText(Sender: TField; const Text: string);
   private
     procedure VisualizarTexto(const FieldName: string);
     procedure EditarItem(const FDQuery: TFDQuery; const Button: TcxButton);
@@ -1692,6 +1696,41 @@ procedure TFrmProaterPrincipal.QrySubMetodoBeforePost(DataSet: TDataSet);
 begin
   inherited;
   DtmSistemaModulo.GravarAuditoriaAlteracao(QrySubMetodo);
+end;
+
+procedure TFrmProaterPrincipal.QrySubMetodoMET_MESGetText(Sender: TField; var Text: string; DisplayText: Boolean);
+begin
+  case QrySubMetodoMET_MES.Value of
+    1: Text := MES_JANEIRO;
+    2: Text := MES_FEVEREIRO;
+    3: Text := MES_MARCO;
+    4: Text := MES_ABRIL;
+    5: Text := MES_MAIO;
+    6: Text := MES_JUNHO;
+    7: Text := MES_JULHO;
+    8: Text := MES_AGOSTO;
+    9: Text := MES_SETEMBRO;
+    10: Text := MES_OUTUBRO;
+    11: Text := MES_NOVEMBRO;
+    12: Text := MES_DEZEMBRO;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.QrySubMetodoMET_MESSetText(Sender: TField; const Text: string);
+begin
+  if (Text = MES_JANEIRO) then QrySubMetodoMET_MES.Value := 1;
+  if (Text = MES_FEVEREIRO) then QrySubMetodoMET_MES.Value := 2;
+  if (Text = MES_MARCO) then QrySubMetodoMET_MES.Value := 3;
+  if (Text = MES_ABRIL) then QrySubMetodoMET_MES.Value := 4;
+  if (Text = MES_MAIO) then QrySubMetodoMET_MES.Value := 5;
+  if (Text = MES_JUNHO) then QrySubMetodoMET_MES.Value := 6;
+  if (Text = MES_JULHO) then QrySubMetodoMET_MES.Value := 7;
+  if (Text = MES_AGOSTO) then QrySubMetodoMET_MES.Value := 8;
+  if (Text = MES_SETEMBRO) then QrySubMetodoMET_MES.Value := 9;
+  if (Text = MES_OUTUBRO) then QrySubMetodoMET_MES.Value := 10;
+  if (Text = MES_NOVEMBRO) then QrySubMetodoMET_MES.Value := 11;
+  if (Text = MES_DEZEMBRO) then QrySubMetodoMET_MES.Value := 12;
+
 end;
 
 procedure TFrmProaterPrincipal.QrySubMetodoNewRecord(DataSet: TDataSet);

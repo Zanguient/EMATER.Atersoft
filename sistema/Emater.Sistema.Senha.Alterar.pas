@@ -21,15 +21,15 @@ type
     LblRepetirSenha: TLabel;
     BvlBottom: TBevel;
     Shape1: TShape;
-    Shape3: TShape;
-    ImgIcone: TImage;
     Shape2: TShape;
     cxLabel1: TcxLabel;
-    cxLabel2: TcxLabel;
-    cxLabel3: TcxLabel;
     EdtSenhaAtual: TcxTextEdit;
     EdtNovaSenha: TcxTextEdit;
     EdtRepetirSenha: TcxTextEdit;
+    Shape3: TShape;
+    ImgIcone: TImage;
+    cxLabel2: TcxLabel;
+    cxLabel3: TcxLabel;
     procedure BtnOKClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private

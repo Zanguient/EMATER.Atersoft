@@ -29,11 +29,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
     ExplicitTop = 34
     ExplicitWidth = 805
     ExplicitHeight = 558
-    ClientRectBottom = 558
-    ClientRectRight = 805
+    ClientRectBottom = 556
+    ClientRectRight = 803
     inherited TbShtPrincipal: TcxTabSheet
-      ExplicitWidth = 805
-      ExplicitHeight = 534
+      ExplicitLeft = 2
+      ExplicitTop = 28
+      ExplicitWidth = 801
+      ExplicitHeight = 528
       object GRpBxPrincipal: TcxGroupBox
         Left = 8
         Top = 0
@@ -44,7 +46,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         DesignSize = (
           777
-          303)
+          296)
         Height = 303
         Width = 777
         object Label1: TLabel
@@ -585,7 +587,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 1
         DesignSize = (
           373
-          99)
+          92)
         Height = 99
         Width = 373
         object Label15: TLabel
@@ -1104,7 +1106,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 2
         DesignSize = (
           373
-          118)
+          111)
         Height = 118
         Width = 373
         object Label31: TLabel
@@ -1208,12 +1210,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benefici'#225'rios'
       ImageIndex = 6
       OnShow = TbShtBeneficiariosShow
+      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        805
-        534)
+        801
+        528)
       object GrdBen: TcxGrid
         Left = 8
         Top = 40
@@ -1340,12 +1343,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benfeitorias'
       ImageIndex = 2
       OnShow = TbShtBenfeitoriasShow
+      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        805
-        534)
+        801
+        528)
       object GrdPrdBem: TcxGrid
         Left = 8
         Top = 184
@@ -1469,7 +1473,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         DesignSize = (
           777
-          81)
+          74)
         Height = 81
         Width = 777
         object Label10: TLabel
@@ -1671,7 +1675,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 6
         DesignSize = (
           777
-          59)
+          52)
         Height = 59
         Width = 777
         object cxDBNavigator1: TcxDBNavigator
@@ -1741,12 +1745,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ImageIndex = 3
       ParentFont = False
       OnShow = TbShtMaquinasShow
+      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        805
-        534)
+        801
+        528)
       object GrdPrdMaq: TcxGrid
         Left = 8
         Top = 184
@@ -1870,7 +1875,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 1
         DesignSize = (
           777
-          81)
+          74)
         Height = 81
         Width = 777
         object Label35: TLabel
@@ -2059,12 +2064,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Semoventes'
       ImageIndex = 4
       OnShow = TbShtSemoventesShow
+      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        805
-        534)
+        801
+        528)
       object GrdPrdSem: TcxGrid
         Left = 8
         Top = 184
@@ -2151,7 +2157,7 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 1
         DesignSize = (
           777
-          81)
+          74)
         Height = 81
         Width = 777
         object Label38: TLabel
@@ -2257,12 +2263,13 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Atividades produtivas e comercializa'#231#227'o'
       ImageIndex = 5
       OnShow = TbShtAtividadesShow
+      ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        805
-        534)
+        801
+        528)
       object GrdPrdAtv: TcxGrid
         Left = 8
         Top = 99
@@ -2995,14 +3002,14 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       DisplayLabel = #193'rea legal (ha)'
       FieldName = 'PRO_AREA_LEGAL'
       Origin = 'PRO_AREA_LEGAL'
-      DisplayFormat = ',##0.000'
+      DisplayFormat = ',##0.00'
     end
     object QryPrincipalPRO_AREA_REAL: TCurrencyField
       DisplayLabel = #193'rea real (ha)'
       FieldName = 'PRO_AREA_REAL'
       Origin = 'PRO_AREA_REAL'
       Required = True
-      DisplayFormat = ',##0.000'
+      DisplayFormat = ',##0.00'
     end
     object QryPrincipalPRO_AREA_NUA: TCurrencyField
       FieldName = 'PRO_AREA_NUA'

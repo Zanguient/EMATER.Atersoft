@@ -3,46 +3,28 @@ inherited FrmSistemaAjuda: TFrmSistemaAjuda
   Top = 218
   BorderStyle = bsDialog
   Caption = 'Ajuda'
-  ClientHeight = 377
+  ClientHeight = 439
   ClientWidth = 517
   Color = clWhite
   KeyPreview = True
   Position = poScreenCenter
   OnKeyPress = FormKeyPress
-  ExplicitLeft = 368
-  ExplicitTop = 218
-  ExplicitWidth = 533
-  ExplicitHeight = 416
+  ExplicitWidth = 523
+  ExplicitHeight = 468
   PixelsPerInch = 96
   TextHeight = 13
   object Shape1: TShape
     Left = 0
     Top = 0
     Width = 517
-    Height = 84
+    Height = 169
     Align = alTop
     Brush.Color = 4166144
     Pen.Color = 4166144
   end
-  object Shape3: TShape
-    Left = 16
-    Top = 18
-    Width = 48
-    Height = 48
-    Pen.Color = 2474628
-    Pen.Width = 4
-  end
-  object ImgIcone: TImage
-    Left = 24
-    Top = 26
-    Width = 32
-    Height = 32
-    AutoSize = True
-    Center = True
-  end
   object LblCopyright: TLabel
     Left = 69
-    Top = 353
+    Top = 415
     Width = 379
     Height = 11
     Anchors = [akLeft, akRight, akBottom]
@@ -55,19 +37,21 @@ inherited FrmSistemaAjuda: TFrmSistemaAjuda
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    ExplicitTop = 353
   end
   object ShpLinha: TShape
     Left = 0
-    Top = 84
+    Top = 169
     Width = 517
     Height = 6
     Align = alTop
     Brush.Color = 2474628
     Pen.Color = 2474628
+    ExplicitTop = 84
   end
   object ImgLogotipoGrande: TImage
     Left = 167
-    Top = 305
+    Top = 361
     Width = 183
     Height = 41
     AutoSize = True
@@ -438,20 +422,9 @@ inherited FrmSistemaAjuda: TFrmSistemaAjuda
       F4DF11E95E02B6B1F14DC3CD7EB24CC3CCB8370F1C26563146F2903CC658CA29
       6EE477EB5D48A514A551CB4050B0628C739A5A2A0A0C51451401FFD9}
   end
-  object ShpJanela: TShape
-    Tag = 2
-    Left = 0
-    Top = 80
-    Width = 517
-    Height = 297
-    Anchors = [akLeft, akTop, akRight, akBottom]
-    Brush.Style = bsClear
-    Pen.Color = 4166144
-    Pen.Width = 2
-  end
   object LblLink: TLabel
-    Left = 80
-    Top = 160
+    Left = 88
+    Top = 248
     Width = 128
     Height = 13
     Cursor = crHandPoint
@@ -465,8 +438,8 @@ inherited FrmSistemaAjuda: TFrmSistemaAjuda
     OnClick = LblLinkClick
   end
   object Label2: TLabel
-    Left = 16
-    Top = 104
+    Left = 24
+    Top = 192
     Width = 327
     Height = 26
     AutoSize = False
@@ -482,32 +455,60 @@ inherited FrmSistemaAjuda: TFrmSistemaAjuda
     WordWrap = True
   end
   object Label4: TLabel
-    Left = 16
-    Top = 144
+    Left = 24
+    Top = 232
     Width = 46
     Height = 13
     Caption = 'Telefone:'
     WordWrap = True
   end
   object Label5: TLabel
-    Left = 80
-    Top = 144
+    Left = 88
+    Top = 232
     Width = 75
     Height = 13
     Caption = '(91) 3299-3456'
     WordWrap = True
   end
   object Label6: TLabel
-    Left = 16
-    Top = 160
+    Left = 24
+    Top = 248
     Width = 32
     Height = 13
     Caption = 'E-mail:'
     WordWrap = True
   end
+  object Shape3: TShape
+    Left = 162
+    Top = 19
+    Width = 193
+    Height = 97
+    Pen.Color = 2474628
+    Pen.Width = 4
+  end
+  object ImgIcone: TImage
+    Left = 242
+    Top = 32
+    Width = 32
+    Height = 32
+    AutoSize = True
+    Center = True
+  end
+  object ShpJanela: TShape
+    Tag = 2
+    Left = 0
+    Top = 160
+    Width = 517
+    Height = 279
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Brush.Style = bsClear
+    Pen.Color = 4166144
+    Pen.Width = 2
+    ExplicitHeight = 330
+  end
   object cxLabel1: TcxLabel
-    Left = 80
-    Top = 12
+    Left = 166
+    Top = 126
     Caption = 'SISATER Desktop'
     ParentColor = False
     ParentFont = False
@@ -532,8 +533,8 @@ inherited FrmSistemaAjuda: TFrmSistemaAjuda
     Transparent = True
   end
   object cxLabel2: TcxLabel
-    Left = 80
-    Top = 39
+    Left = 215
+    Top = 66
     Caption = 'EMATER - PAR'#193
     ParentColor = False
     ParentFont = False
@@ -543,23 +544,16 @@ inherited FrmSistemaAjuda: TFrmSistemaAjuda
     Style.Font.Name = 'Tahoma'
     Style.Font.Style = []
     Style.Font.Quality = fqClearType
-    Style.LookAndFeel.Kind = lfUltraFlat
-    Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
-    Style.TextStyle = []
+    Style.TextColor = 4166144
+    Style.TextStyle = [fsBold]
     Style.TransparentBorder = False
     Style.IsFontAssigned = True
-    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-    StyleDisabled.LookAndFeel.NativeStyle = True
-    StyleFocused.LookAndFeel.Kind = lfUltraFlat
-    StyleFocused.LookAndFeel.NativeStyle = True
-    StyleHot.LookAndFeel.Kind = lfUltraFlat
-    StyleHot.LookAndFeel.NativeStyle = True
     Transparent = True
   end
   object cxLabel3: TcxLabel
-    Left = 80
-    Top = 53
+    Left = 172
+    Top = 80
+    AutoSize = False
     Caption = 
       'Empresa de Assist'#234'ncia T'#233'cnica e Extens'#227'o Rural do Estado do Par' +
       #225
@@ -573,7 +567,7 @@ inherited FrmSistemaAjuda: TFrmSistemaAjuda
     Style.Font.Quality = fqClearType
     Style.LookAndFeel.Kind = lfUltraFlat
     Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
+    Style.TextColor = 4166144
     Style.TextStyle = []
     Style.TransparentBorder = False
     Style.IsFontAssigned = True
@@ -583,6 +577,13 @@ inherited FrmSistemaAjuda: TFrmSistemaAjuda
     StyleFocused.LookAndFeel.NativeStyle = True
     StyleHot.LookAndFeel.Kind = lfUltraFlat
     StyleHot.LookAndFeel.NativeStyle = True
+    Properties.Alignment.Horz = taCenter
+    Properties.Alignment.Vert = taVCenter
+    Properties.WordWrap = True
     Transparent = True
+    Height = 26
+    Width = 174
+    AnchorX = 259
+    AnchorY = 93
   end
 end

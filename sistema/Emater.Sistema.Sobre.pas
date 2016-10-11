@@ -11,14 +11,9 @@ uses
 type
   TFrmSistemaSobre = class(TFrmBaseBasico)
     Shape1: TShape;
-    Shape3: TShape;
-    ImgIcone: TImage;
     LblCopyright: TLabel;
     ShpLinha: TShape;
     ShpJanela: TShape;
-    cxLabel1: TcxLabel;
-    cxLabel2: TcxLabel;
-    cxLabel3: TcxLabel;
     ImgLogotipoGrande: TImage;
     LblNome: TLabel;
     LblVersao: TLabel;
@@ -27,6 +22,11 @@ type
     LblLink: TLabel;
     MemoEquipe: TMemo;
     Label1: TLabel;
+    cxLabel1: TcxLabel;
+    Shape3: TShape;
+    ImgIcone: TImage;
+    cxLabel2: TcxLabel;
+    cxLabel3: TcxLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure LblLinkClick(Sender: TObject);

@@ -5,10 +5,10 @@ inherited FrmCadastroUnidadeComercio: TFrmCadastroUnidadeComercio
   ClientHeight = 450
   ClientWidth = 646
   OnShow = FormShow
-  ExplicitLeft = 376
-  ExplicitTop = 140
-  ExplicitWidth = 662
-  ExplicitHeight = 489
+  ExplicitLeft = 8
+  ExplicitTop = 8
+  ExplicitWidth = 652
+  ExplicitHeight = 479
   PixelsPerInch = 96
   TextHeight = 13
   object LblTitulo: TLabel [0]
@@ -125,13 +125,15 @@ inherited FrmCadastroUnidadeComercio: TFrmCadastroUnidadeComercio
     Height = 376
     ExplicitTop = 35
     ExplicitWidth = 630
-    ExplicitHeight = 319
+    ExplicitHeight = 376
     ClientRectBottom = 374
     ClientRectRight = 628
     inherited TbShtPrincipal: TcxTabSheet
       Caption = 'Detalhes da comercializa'#231#227'o'
+      ExplicitLeft = 2
+      ExplicitTop = 28
       ExplicitWidth = 626
-      ExplicitHeight = 289
+      ExplicitHeight = 346
       object cxGroupBox1: TcxGroupBox
         Left = 8
         Top = 0
@@ -150,7 +152,7 @@ inherited FrmCadastroUnidadeComercio: TFrmCadastroUnidadeComercio
           FocusControl = DbEdtOutro
           Transparent = True
         end
-        object Label2: TLabel
+        object LblConsumida: TLabel
           Left = 16
           Top = 228
           Width = 169
@@ -159,7 +161,7 @@ inherited FrmCadastroUnidadeComercio: TFrmCadastroUnidadeComercio
           FocusControl = DbEdtConsumida
           Transparent = True
         end
-        object Label3: TLabel
+        object LblComercializada: TLabel
           Left = 53
           Top = 252
           Width = 132
@@ -414,13 +416,13 @@ inherited FrmCadastroUnidadeComercio: TFrmCadastroUnidadeComercio
     ModalResult = 0
     OnClick = BtnOKClick
     ExplicitLeft = 482
-    ExplicitTop = 361
+    ExplicitTop = 418
   end
   inherited BtnCancelar: TcxButton
     Left = 563
     Top = 418
     ExplicitLeft = 563
-    ExplicitTop = 361
+    ExplicitTop = 418
   end
   object DtSrcProducaoProduto: TDataSource
     Left = 560

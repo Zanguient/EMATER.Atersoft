@@ -498,7 +498,8 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
         'id) left join'
       '  stp_prd_proater_validacao(a.pro_id) c on (1 = 1)'
       'where'
-      '  (a.reg_excluido = 0)')
+      '  (a.reg_excluido = 0) and'
+      '  (a.und_id in (select und_id from vwt_sis_unidade_local))')
     object QryConsultaPRO_ID: TLargeintField
       FieldName = 'PRO_ID'
       Origin = 'PRO_ID'

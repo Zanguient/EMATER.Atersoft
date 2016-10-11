@@ -1,8 +1,6 @@
 inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
   Left = 383
   Top = 196
-  ExplicitLeft = 383
-  ExplicitTop = 196
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
@@ -94,7 +92,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
   end
   inherited FrxPrincipal: TfrxReport
     EngineOptions.PrintIfEmpty = True
-    ReportOptions.LastChange = 42491.731182812500000000
+    ReportOptions.LastChange = 42654.771826157400000000
     Left = 64
     Top = 72
     Datasets = <
@@ -220,7 +218,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
         end
         inherited MemoRelatorio: TfrxMemoView
           Memo.UTF8W = (
-            '[titulo]')
+            '[titulo]: [DtStPrincipal."BEN_NOME"]')
         end
       end
       inherited Header: TfrxHeader
@@ -2220,7 +2218,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
-            '[titulo]')
+            '[titulo]: [DtStPrincipal."BEN_NOME"]')
           ParentFont = False
           WordWrap = False
           VAlign = vaCenter
@@ -2865,7 +2863,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
-            '[titulo]')
+            '[titulo]: [DtStPrincipal."BEN_NOME"]')
           ParentFont = False
           WordWrap = False
           VAlign = vaCenter
@@ -3571,7 +3569,6 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Top = 506.457020000000000000
           Width = 113.385900000000000000
           Height = 30.236220470000000000
-          DataField = 'PRO_AREA_LEGAL'
           DataSet = FrxDtStProducaoFamiliar
           DataSetName = 'DtStProducaoFamiliar'
           Font.Charset = DEFAULT_CHARSET
@@ -3585,7 +3582,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           HAlign = haRight
           HideZeros = True
           Memo.UTF8W = (
-            '[DtStProducaoFamiliar."PRO_AREA_LEGAL"]')
+            '[FormatFloat('#39',##0.00'#39',<DtStProducaoFamiliar."PRO_AREA_LEGAL">)]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -3607,7 +3604,6 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Top = 555.590910000000000000
           Width = 113.385900000000000000
           Height = 30.236220470000000000
-          DataField = 'PRO_AREA_REAL'
           DataSet = FrxDtStProducaoFamiliar
           DataSetName = 'DtStProducaoFamiliar'
           Font.Charset = DEFAULT_CHARSET
@@ -3621,7 +3617,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           HAlign = haRight
           HideZeros = True
           Memo.UTF8W = (
-            '[DtStProducaoFamiliar."PRO_AREA_REAL"]')
+            '[FormatFloat('#39',##0.00'#39',<DtStProducaoFamiliar."PRO_AREA_REAL">)]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -6685,7 +6681,7 @@ inherited FrmRelatorioBeneficiarioCadastro: TFrmRelatorioBeneficiarioCadastro
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
-            '[titulo]')
+            '[titulo]: [DtStPrincipal."BEN_NOME"]')
           ParentFont = False
           WordWrap = False
           VAlign = vaCenter

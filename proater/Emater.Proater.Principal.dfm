@@ -22,6 +22,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     ClientRectBottom = 542
     ClientRectRight = 789
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
       ExplicitWidth = 787
       ExplicitHeight = 514
       object Label30: TLabel
@@ -104,10 +106,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtObservacao: TcxTabSheet
           Caption = 'Observa'#231#245'es'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object DbMemoObservacao: TcxDBMemo
             Left = 8
             Top = 48
@@ -198,10 +196,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtDiagnostico: TcxTabSheet
       Caption = 'Diagn'#243'stico do munic'#237'pio'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PgCntrlDiagnostico: TcxPageControl
         Left = 8
         Top = 8
@@ -215,12 +209,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         ClientRectRight = 767
         ClientRectTop = 28
         object TbShtEstatistica: TcxTabSheet
-          Caption = 'Estat'#237'sticas'
+          Caption = 'Estat'#237'sticas municipais'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object BtnEstatistica: TcxButton
             Left = 8
             Top = 24
@@ -252,10 +242,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtComunidades: TcxTabSheet
           Caption = 'Benefici'#225'rios e UPF'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -373,10 +359,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtProblemas: TcxTabSheet
           Caption = 'Problemas e potencialidades'
           ImageIndex = 1
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -494,10 +476,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtAcordos: TcxTabSheet
           Caption = 'Acordos, conv'#234'nios e parcerias'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -616,10 +594,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtCapacidade: TcxTabSheet
       Caption = 'Capacidade operacional do ESLOC'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PgCntrlCapacidade: TcxPageControl
         Left = 8
         Top = 8
@@ -635,10 +609,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtRecursos: TcxTabSheet
           Caption = 'Recursos humanos'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -854,10 +824,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtMobiliario: TcxTabSheet
           Caption = 'Mobili'#225'rio'
           ImageIndex = 1
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -973,10 +939,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtEquipamentos: TcxTabSheet
           Caption = 'Equipamentos'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1092,10 +1054,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtVeiculos: TcxTabSheet
           Caption = 'Ve'#237'culos'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1215,10 +1173,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtDespesas: TcxTabSheet
           Caption = 'Despesas de custeio'
           ImageIndex = 4
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1329,10 +1283,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtNecessidades: TcxTabSheet
           Caption = 'Necessidades de qualifica'#231#227'o'
           ImageIndex = 5
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1448,10 +1398,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     object TbShtPlano: TcxTabSheet
       Caption = 'Plano de ATER do ESLOC'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PgCntrlPlano: TcxPageControl
         Left = 8
         Top = 8
@@ -1468,10 +1414,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtProjetos: TcxTabSheet
           Caption = 'Projetos e subprojetos'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1819,10 +1761,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtMetodologias: TcxTabSheet
           Caption = 'Metodologias de ATER'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -1917,17 +1855,21 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               Styles.Selection = DtmRecursoModulo.cxStyleSelection
               object GrdMetTblMET_DESCRICAO: TcxGridDBColumn
                 DataBinding.FieldName = 'MET_DESCRICAO'
-                Width = 429
+                Width = 395
               end
               object GrdMetTblMET_ANO: TcxGridDBColumn
                 DataBinding.FieldName = 'MET_ANO'
                 HeaderAlignmentHorz = taRightJustify
-                Width = 70
+                Width = 65
+              end
+              object GrdMetTblMET_MES: TcxGridDBColumn
+                DataBinding.FieldName = 'MET_MES'
+                Width = 85
               end
               object GrdMetTblMET_QUANTIDADE: TcxGridDBColumn
                 DataBinding.FieldName = 'MET_QUANTIDADE'
                 HeaderAlignmentHorz = taRightJustify
-                Width = 246
+                Width = 200
               end
             end
             object GrdMetLvl: TcxGridLevel
@@ -1938,10 +1880,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtBeneficiarios: TcxTabSheet
           Caption = 'Benefici'#225'rios de ATER'
           ImageIndex = 3
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -2065,10 +2003,6 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         object TbShtOrcamento: TcxTabSheet
           Caption = 'Previs'#227'o or'#231'ament'#225'ria'
           ImageIndex = 4
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             765
             467)
@@ -4034,6 +3968,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       '  a.spr_id, '
       '  a.met_id, '
       '  a.met_ano, '
+      '  a.met_mes,'
       '  a.met_quantidade,'
       '  a.reg_excluido, '
       '  a.reg_replicado, '
@@ -4048,7 +3983,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       '  (a.spr_id = :spr_id) and'
       '  (a.reg_excluido = 0)'
       'order by'
-      '  b.met_descricao, a.met_ano')
+      '  b.met_descricao, a.met_ano, a.met_mes')
     Left = 392
     Top = 352
     ParamData = <
@@ -4078,6 +4013,15 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       FieldName = 'MET_ANO'
       Origin = 'MET_ANO'
       Required = True
+    end
+    object QrySubMetodoMET_MES: TSmallintField
+      Alignment = taLeftJustify
+      DisplayLabel = 'M'#234's'
+      FieldName = 'MET_MES'
+      Origin = 'MET_MES'
+      Required = True
+      OnGetText = QrySubMetodoMET_MESGetText
+      OnSetText = QrySubMetodoMET_MESSetText
     end
     object QrySubMetodoMET_QUANTIDADE: TIntegerField
       DisplayLabel = 'Quantidade'
@@ -4115,20 +4059,22 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     Connection = DtmConexaoModulo.FDConnection
     InsertSQL.Strings = (
       'INSERT INTO TAB_PRD_SUBPROJETO_METODO'
-      '(PSM_ID, SPR_ID, MET_ID, MET_ANO, MET_QUANTIDADE, '
-      '  REG_EXCLUIDO, REG_REPLICADO, REG_USUARIO, '
-      '  REG_MODIFICADO)'
+      '(PSM_ID, SPR_ID, MET_ID, MET_ANO, MET_MES, '
+      '  MET_QUANTIDADE, REG_EXCLUIDO, REG_REPLICADO, '
+      '  REG_USUARIO, REG_MODIFICADO)'
       
         'VALUES (:NEW_PSM_ID, :NEW_SPR_ID, :NEW_MET_ID, :NEW_MET_ANO, :NE' +
-        'W_MET_QUANTIDADE, '
-      '  :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, :NEW_REG_USUARIO, '
-      '  :NEW_REG_MODIFICADO)')
+        'W_MET_MES, '
+      '  :NEW_MET_QUANTIDADE, :NEW_REG_EXCLUIDO, :NEW_REG_REPLICADO, '
+      '  :NEW_REG_USUARIO, :NEW_REG_MODIFICADO)')
     ModifySQL.Strings = (
       'UPDATE TAB_PRD_SUBPROJETO_METODO'
       
         'SET PSM_ID = :NEW_PSM_ID, SPR_ID = :NEW_SPR_ID, MET_ID = :NEW_ME' +
         'T_ID, '
-      '  MET_ANO = :NEW_MET_ANO, MET_QUANTIDADE = :NEW_MET_QUANTIDADE, '
+      
+        '  MET_ANO = :NEW_MET_ANO, MET_MES = :NEW_MET_MES, MET_QUANTIDADE' +
+        ' = :NEW_MET_QUANTIDADE, '
       
         '  REG_EXCLUIDO = :NEW_REG_EXCLUIDO, REG_REPLICADO = :NEW_REG_REP' +
         'LICADO, '
@@ -4141,8 +4087,8 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
       'WHERE PSM_ID = :OLD_PSM_ID')
     FetchRowSQL.Strings = (
       
-        'SELECT PSM_ID, SPR_ID, MET_ID, MET_ANO, MET_QUANTIDADE, REG_EXCL' +
-        'UIDO, '
+        'SELECT PSM_ID, SPR_ID, MET_ID, MET_ANO, MET_MES, MET_QUANTIDADE,' +
+        ' REG_EXCLUIDO, '
       '  REG_REPLICADO, REG_USUARIO, REG_MODIFICADO'
       'FROM TAB_PRD_SUBPROJETO_METODO'
       'WHERE PSM_ID = :PSM_ID')

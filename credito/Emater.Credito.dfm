@@ -7,8 +7,6 @@ inherited FrmCredito: TFrmCredito
   Caption = 'Projeto de Cr'#233'dito Rural'
   ClientHeight = 499
   ClientWidth = 839
-  ExplicitLeft = 313
-  ExplicitTop = 131
   ExplicitWidth = 855
   ExplicitHeight = 538
   DesignSize = (
@@ -35,6 +33,8 @@ inherited FrmCredito: TFrmCredito
     ClientRectRight = 819
     inherited TbShtPrincipal: TcxTabSheet
       Caption = 'Projeto'
+      ExplicitLeft = 2
+      ExplicitTop = 28
       ExplicitWidth = 817
       ExplicitHeight = 391
       DesignSize = (
@@ -285,8 +285,8 @@ inherited FrmCredito: TFrmCredito
         TabOrder = 0
         DesignSize = (
           510
-          357)
-        Height = 364
+          351)
+        Height = 358
         Width = 510
         object Label1: TLabel
           Left = 8
@@ -319,7 +319,7 @@ inherited FrmCredito: TFrmCredito
         object Label4: TLabel
           Tag = 2
           Left = 8
-          Top = 222
+          Top = 216
           Width = 89
           Height = 13
           Anchors = [akLeft, akBottom]
@@ -331,7 +331,7 @@ inherited FrmCredito: TFrmCredito
         object Label5: TLabel
           Tag = 2
           Left = 184
-          Top = 222
+          Top = 216
           Width = 80
           Height = 13
           Anchors = [akLeft, akBottom]
@@ -343,7 +343,7 @@ inherited FrmCredito: TFrmCredito
         object Label6: TLabel
           Tag = 2
           Left = 360
-          Top = 222
+          Top = 216
           Width = 75
           Height = 13
           Anchors = [akLeft, akBottom]
@@ -355,7 +355,7 @@ inherited FrmCredito: TFrmCredito
         object Label7: TLabel
           Tag = 2
           Left = 8
-          Top = 262
+          Top = 256
           Width = 95
           Height = 13
           Anchors = [akLeft, akBottom]
@@ -366,7 +366,7 @@ inherited FrmCredito: TFrmCredito
         end
         object Label8: TLabel
           Left = 264
-          Top = 262
+          Top = 256
           Width = 63
           Height = 13
           Anchors = [akLeft, akBottom]
@@ -378,7 +378,7 @@ inherited FrmCredito: TFrmCredito
         object Label9: TLabel
           Tag = 2
           Left = 8
-          Top = 302
+          Top = 296
           Width = 89
           Height = 13
           Anchors = [akLeft, akBottom]
@@ -390,7 +390,7 @@ inherited FrmCredito: TFrmCredito
         object Label10: TLabel
           Tag = 2
           Left = 264
-          Top = 302
+          Top = 296
           Width = 95
           Height = 13
           Anchors = [akLeft, akBottom]
@@ -425,12 +425,13 @@ inherited FrmCredito: TFrmCredito
           DataBinding.DataSource = DtSrcPrincipal
           Properties.ScrollBars = ssVertical
           TabOrder = 2
-          Height = 134
+          ExplicitHeight = 134
+          Height = 128
           Width = 494
         end
         object DbLkpCmbBxFinanceira: TcxDBLookupComboBox
           Left = 8
-          Top = 238
+          Top = 232
           Anchors = [akLeft, akBottom]
           DataBinding.DataField = 'FIN_ID'
           DataBinding.DataSource = DtSrcPrincipal
@@ -442,11 +443,12 @@ inherited FrmCredito: TFrmCredito
             end>
           Properties.ListOptions.ShowHeader = False
           TabOrder = 3
+          ExplicitTop = 238
           Width = 145
         end
         object DbLkpCmbBxLinha: TcxDBLookupComboBox
           Left = 184
-          Top = 238
+          Top = 232
           Anchors = [akLeft, akBottom]
           DataBinding.DataField = 'LIN_ID'
           DataBinding.DataSource = DtSrcPrincipal
@@ -458,11 +460,12 @@ inherited FrmCredito: TFrmCredito
             end>
           Properties.ListOptions.ShowHeader = False
           TabOrder = 5
+          ExplicitTop = 238
           Width = 145
         end
         object DbLkpCmbBxTipo: TcxDBLookupComboBox
           Left = 360
-          Top = 238
+          Top = 232
           Anchors = [akLeft, akRight, akBottom]
           DataBinding.DataField = 'TIP_ID'
           DataBinding.DataSource = DtSrcPrincipal
@@ -474,11 +477,12 @@ inherited FrmCredito: TFrmCredito
             end>
           Properties.ListOptions.ShowHeader = False
           TabOrder = 7
+          ExplicitTop = 238
           Width = 119
         end
         object DbLkpCmbBxPublico: TcxDBLookupComboBox
           Left = 8
-          Top = 278
+          Top = 272
           Anchors = [akLeft, akBottom]
           DataBinding.DataField = 'PUB_ID'
           DataBinding.DataSource = DtSrcPrincipal
@@ -490,11 +494,12 @@ inherited FrmCredito: TFrmCredito
             end>
           Properties.ListOptions.ShowHeader = False
           TabOrder = 9
+          ExplicitTop = 278
           Width = 225
         end
         object DbLkpCmbBxComunidade: TcxDBLookupComboBox
           Left = 264
-          Top = 278
+          Top = 272
           Anchors = [akLeft, akRight, akBottom]
           DataBinding.DataField = 'COM_ID'
           DataBinding.DataSource = DtSrcPrincipal
@@ -507,12 +512,13 @@ inherited FrmCredito: TFrmCredito
           Properties.ListOptions.ShowHeader = False
           Properties.ListSource = DtmCadastroModulo.DtSrcComunidade
           TabOrder = 11
+          ExplicitTop = 278
           Width = 215
         end
         object BtnFinanceiraTabela: TcxButton
           Tag = 1
           Left = 155
-          Top = 239
+          Top = 233
           Width = 21
           Height = 19
           Hint = 'Abrir tabela de agentes financeiros'
@@ -524,11 +530,12 @@ inherited FrmCredito: TFrmCredito
           ShowHint = True
           TabOrder = 4
           OnClick = BtnFinanceiraTabelaClick
+          ExplicitTop = 239
         end
         object BtnLinhaTabela: TcxButton
           Tag = 1
           Left = 331
-          Top = 239
+          Top = 233
           Width = 21
           Height = 19
           Hint = 'Abrir tabela de linhas de cr'#233'dito'
@@ -540,11 +547,12 @@ inherited FrmCredito: TFrmCredito
           ShowHint = True
           TabOrder = 6
           OnClick = BtnLinhaTabelaClick
+          ExplicitTop = 239
         end
         object BtnTipoTabela: TcxButton
           Tag = 1
           Left = 481
-          Top = 239
+          Top = 233
           Width = 21
           Height = 19
           Hint = 'Abrir tabela de tipos de cr'#233'dito'
@@ -556,11 +564,12 @@ inherited FrmCredito: TFrmCredito
           ShowHint = True
           TabOrder = 8
           OnClick = BtnTipoTabelaClick
+          ExplicitTop = 239
         end
         object BtnPublicoTabela: TcxButton
           Tag = 1
           Left = 236
-          Top = 279
+          Top = 273
           Width = 21
           Height = 19
           Hint = 'Abrir tabela de p'#250'blico benefici'#225'rio'
@@ -572,11 +581,12 @@ inherited FrmCredito: TFrmCredito
           ShowHint = True
           TabOrder = 10
           OnClick = BtnPublicoTabelaClick
+          ExplicitTop = 279
         end
         object BtnComunidadeTabela: TcxButton
           Tag = 1
           Left = 481
-          Top = 279
+          Top = 273
           Width = 21
           Height = 19
           Hint = 'Abrir tabela de comunidades'
@@ -588,10 +598,11 @@ inherited FrmCredito: TFrmCredito
           ShowHint = True
           TabOrder = 12
           OnClick = BtnComunidadeTabelaClick
+          ExplicitTop = 279
         end
         object DbEdtTecnicoCampo: TcxDBButtonEdit
           Left = 8
-          Top = 318
+          Top = 312
           Anchors = [akLeft, akBottom]
           DataBinding.DataField = 'CRD_TECNICO_CAMPO'
           DataBinding.DataSource = DtSrcPrincipal
@@ -603,11 +614,12 @@ inherited FrmCredito: TFrmCredito
           Properties.ReadOnly = True
           Properties.OnButtonClick = DbEdtTecnicoCampoPropertiesButtonClick
           TabOrder = 13
+          ExplicitTop = 318
           Width = 249
         end
         object DbEdtTecnicoElaborador: TcxDBButtonEdit
           Left = 264
-          Top = 318
+          Top = 312
           Anchors = [akLeft, akRight, akBottom]
           DataBinding.DataField = 'CRD_TECNICO_ELABORADOR'
           DataBinding.DataSource = DtSrcPrincipal
@@ -619,6 +631,7 @@ inherited FrmCredito: TFrmCredito
           Properties.ReadOnly = True
           Properties.OnButtonClick = DbEdtTecnicoElaboradorPropertiesButtonClick
           TabOrder = 14
+          ExplicitTop = 318
           Width = 238
         end
       end
@@ -627,10 +640,6 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Visitas'
       ImageIndex = 1
       OnShow = TbShtVisitaShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -897,10 +906,6 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Proponentes'
       ImageIndex = 2
       OnShow = TbShtProponentesShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -1244,10 +1249,6 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Itens'
       ImageIndex = 3
       OnShow = TbShtItensShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         817
         391)

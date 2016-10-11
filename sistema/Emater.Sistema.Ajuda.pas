@@ -11,20 +11,20 @@ uses
 type
   TFrmSistemaAjuda = class(TFrmBaseBasico)
     Shape1: TShape;
-    Shape3: TShape;
-    ImgIcone: TImage;
     LblCopyright: TLabel;
     ShpLinha: TShape;
     ShpJanela: TShape;
-    cxLabel1: TcxLabel;
-    cxLabel2: TcxLabel;
-    cxLabel3: TcxLabel;
     ImgLogotipoGrande: TImage;
     LblLink: TLabel;
     Label2: TLabel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
+    Shape3: TShape;
+    ImgIcone: TImage;
+    cxLabel1: TcxLabel;
+    cxLabel2: TcxLabel;
+    cxLabel3: TcxLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure LblLinkClick(Sender: TObject);

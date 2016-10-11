@@ -3133,7 +3133,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 4
     end
     object RbnTbRelatorios: TdxRibbonTab
-      Active = True
       Caption = 'Relat'#243'rios'
       Groups = <
         item
@@ -3142,6 +3141,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 5
     end
     object RbnTbSistema: TdxRibbonTab
+      Active = True
       Caption = 'Sistema'
       Groups = <
         item

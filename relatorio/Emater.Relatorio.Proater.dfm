@@ -3,13 +3,18 @@ inherited FrmRelatorioProater: TFrmRelatorioProater
   Top = 156
   Caption = 'PROATER'
   ClientHeight = 433
-  ExplicitLeft = 615
-  ExplicitTop = 156
-  ExplicitHeight = 472
+  ExplicitLeft = 8
+  ExplicitTop = 8
+  ExplicitWidth = 584
+  ExplicitHeight = 462
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
     inherited TbShtFiltros: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
+      ExplicitWidth = 557
+      ExplicitHeight = 355
       inherited LblTitulo: TLabel
         Caption = ' Modelo Referencial do PROATER Municipal'
       end

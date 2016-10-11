@@ -23,35 +23,20 @@ object FrmSistemaAbertura: TFrmSistemaAbertura
     Left = 0
     Top = 0
     Width = 517
-    Height = 84
+    Height = 169
     Align = alTop
     Brush.Color = 4166144
     Pen.Color = 4166144
   end
-  object Shape3: TShape
-    Left = 16
-    Top = 18
-    Width = 48
-    Height = 48
-    Pen.Color = 2474628
-    Pen.Width = 4
-  end
-  object ImgIcone: TImage
-    Left = 24
-    Top = 26
-    Width = 32
-    Height = 32
-    AutoSize = True
-    Center = True
-  end
   object Shape2: TShape
     Left = 0
-    Top = 84
+    Top = 169
     Width = 517
     Height = 6
     Align = alTop
     Brush.Color = 2474628
     Pen.Color = 2474628
+    ExplicitTop = 84
   end
   object ImgLogotipoGrande: TImage
     Left = 167
@@ -446,18 +431,33 @@ object FrmSistemaAbertura: TFrmSistemaAbertura
   object ShpJanela: TShape
     Tag = 2
     Left = 0
-    Top = 72
+    Top = 160
     Width = 517
-    Height = 268
+    Height = 180
     Anchors = [akLeft, akTop, akRight, akBottom]
     Brush.Style = bsClear
     Pen.Color = 4166144
     Pen.Width = 2
-    ExplicitWidth = 565
+  end
+  object Shape3: TShape
+    Left = 162
+    Top = 19
+    Width = 193
+    Height = 97
+    Pen.Color = 2474628
+    Pen.Width = 4
+  end
+  object ImgIcone: TImage
+    Left = 242
+    Top = 32
+    Width = 32
+    Height = 32
+    AutoSize = True
+    Center = True
   end
   object cxLabel1: TcxLabel
-    Left = 80
-    Top = 12
+    Left = 166
+    Top = 126
     Caption = 'SISATER Desktop'
     ParentColor = False
     ParentFont = False
@@ -482,8 +482,8 @@ object FrmSistemaAbertura: TFrmSistemaAbertura
     Transparent = True
   end
   object cxLabel2: TcxLabel
-    Left = 80
-    Top = 39
+    Left = 215
+    Top = 66
     Caption = 'EMATER - PAR'#193
     ParentColor = False
     ParentFont = False
@@ -493,23 +493,16 @@ object FrmSistemaAbertura: TFrmSistemaAbertura
     Style.Font.Name = 'Tahoma'
     Style.Font.Style = []
     Style.Font.Quality = fqClearType
-    Style.LookAndFeel.Kind = lfUltraFlat
-    Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
-    Style.TextStyle = []
+    Style.TextColor = 4166144
+    Style.TextStyle = [fsBold]
     Style.TransparentBorder = False
     Style.IsFontAssigned = True
-    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-    StyleDisabled.LookAndFeel.NativeStyle = True
-    StyleFocused.LookAndFeel.Kind = lfUltraFlat
-    StyleFocused.LookAndFeel.NativeStyle = True
-    StyleHot.LookAndFeel.Kind = lfUltraFlat
-    StyleHot.LookAndFeel.NativeStyle = True
     Transparent = True
   end
   object cxLabel3: TcxLabel
-    Left = 80
-    Top = 53
+    Left = 172
+    Top = 80
+    AutoSize = False
     Caption = 
       'Empresa de Assist'#234'ncia T'#233'cnica e Extens'#227'o Rural do Estado do Par' +
       #225
@@ -523,7 +516,7 @@ object FrmSistemaAbertura: TFrmSistemaAbertura
     Style.Font.Quality = fqClearType
     Style.LookAndFeel.Kind = lfUltraFlat
     Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
+    Style.TextColor = 4166144
     Style.TextStyle = []
     Style.TransparentBorder = False
     Style.IsFontAssigned = True
@@ -533,6 +526,13 @@ object FrmSistemaAbertura: TFrmSistemaAbertura
     StyleFocused.LookAndFeel.NativeStyle = True
     StyleHot.LookAndFeel.Kind = lfUltraFlat
     StyleHot.LookAndFeel.NativeStyle = True
+    Properties.Alignment.Horz = taCenter
+    Properties.Alignment.Vert = taVCenter
+    Properties.WordWrap = True
     Transparent = True
+    Height = 26
+    Width = 174
+    AnchorX = 259
+    AnchorY = 93
   end
 end

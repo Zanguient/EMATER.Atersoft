@@ -3,37 +3,36 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
   Top = 181
   BorderStyle = bsDialog
   Caption = 'Login do Usu'#225'rio'
-  ClientHeight = 405
+  ClientHeight = 427
   ClientWidth = 323
   OldCreateOrder = True
   Position = poScreenCenter
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
   ExplicitWidth = 329
-  ExplicitHeight = 434
+  ExplicitHeight = 456
   PixelsPerInch = 96
   TextHeight = 13
   object Shape1: TShape
     Left = 0
     Top = 0
     Width = 323
-    Height = 142
+    Height = 169
     Align = alTop
     Brush.Color = 4166144
     Pen.Color = 4166144
-    ExplicitWidth = 341
   end
   object Shape3: TShape
-    Left = 137
-    Top = 13
-    Width = 48
-    Height = 48
+    Left = 65
+    Top = 20
+    Width = 193
+    Height = 97
     Pen.Color = 2474628
     Pen.Width = 4
   end
   object ImgIcone: TImage
     Left = 145
-    Top = 21
+    Top = 33
     Width = 32
     Height = 32
     AutoSize = True
@@ -41,7 +40,7 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
   end
   object Shape2: TShape
     Left = 0
-    Top = 142
+    Top = 169
     Width = 323
     Height = 6
     Align = alTop
@@ -52,7 +51,7 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
   end
   object PnlLogin: TPanel
     Left = 40
-    Top = 176
+    Top = 192
     Width = 241
     Height = 169
     TabOrder = 3
@@ -174,7 +173,7 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
   end
   object cxLabel1: TcxLabel
     Left = 69
-    Top = 65
+    Top = 127
     Caption = 'SISATER Desktop'
     ParentColor = False
     ParentFont = False
@@ -200,7 +199,7 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
   end
   object cxLabel2: TcxLabel
     Left = 118
-    Top = 95
+    Top = 67
     Caption = 'EMATER - PAR'#193
     ParentColor = False
     ParentFont = False
@@ -210,15 +209,15 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
     Style.Font.Name = 'Tahoma'
     Style.Font.Style = []
     Style.Font.Quality = fqClearType
-    Style.TextColor = clWhite
+    Style.TextColor = 4166144
     Style.TextStyle = [fsBold]
     Style.TransparentBorder = False
     Style.IsFontAssigned = True
     Transparent = True
   end
   object cxLabel3: TcxLabel
-    Left = 45
-    Top = 109
+    Left = 75
+    Top = 81
     AutoSize = False
     Caption = 
       'Empresa de Assist'#234'ncia T'#233'cnica e Extens'#227'o Rural do Estado do Par' +
@@ -233,7 +232,7 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
     Style.Font.Quality = fqClearType
     Style.LookAndFeel.Kind = lfUltraFlat
     Style.LookAndFeel.NativeStyle = True
-    Style.TextColor = clWhite
+    Style.TextColor = 4166144
     Style.TextStyle = []
     Style.TransparentBorder = False
     Style.IsFontAssigned = True
@@ -248,13 +247,13 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
     Properties.WordWrap = True
     Transparent = True
     Height = 26
-    Width = 233
+    Width = 174
     AnchorX = 162
-    AnchorY = 122
+    AnchorY = 94
   end
   object BtnCancelar: TcxButton
     Left = 168
-    Top = 362
+    Top = 378
     Width = 113
     Height = 25
     Hint = 'Cancelar login e sair do sistema'
@@ -274,7 +273,7 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
   end
   object BtnEncerrar: TcxButton
     Left = 40
-    Top = 362
+    Top = 378
     Width = 113
     Height = 25
     Hint = 'Encerrar aplica'#231#227'o'
@@ -293,7 +292,7 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
   end
   object BtnMais: TcxButton
     Left = 40
-    Top = 362
+    Top = 378
     Width = 113
     Height = 25
     Hint = 'Configurar par'#226'metros da conex'#227'o com o banco de dados'
@@ -314,6 +313,6 @@ inherited FrmSistemaLogin: TFrmSistemaLogin
   object dxSkinController: TdxSkinController
     SkinName = 'Office2013White'
     Left = 16
-    Top = 24
+    Top = 48
   end
 end

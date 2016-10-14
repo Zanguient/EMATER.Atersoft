@@ -73,6 +73,9 @@ var
 begin
   CodeSite.EnterMethod(Self.Name + '.RegistrarSeguranca().');
   try
+    J := 0;
+
+    {$IFDEF DEBUG}
     if (Self.Tag = 1) then
       begin
         CodeSite.SendMsg('Aplicação registrada: [' + Self.Name + '].');
@@ -83,7 +86,6 @@ begin
           Self.Hint);
       end;
 
-    J := 0;
     for I := 0 to ComponentCount - 1 do
       begin
         if (Components[I] is TcxButton) then
@@ -115,6 +117,7 @@ begin
             end;
       end;
     CodeSite.SendMsg('Controles registrados: [' + IntToStr(J) + '].');
+    {$ENDIF}
   finally
     CodeSite.ExitMethod(Self.Name + '.RegistrarSeguranca().');
   end;

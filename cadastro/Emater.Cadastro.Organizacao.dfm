@@ -2,8 +2,8 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
   Tag = 1
   Left = 403
   Top = 135
-  Hint = 'Cadastro das organiza'#231#245'es.'
-  Caption = 'Organiza'#231#227'o Social'
+  Hint = 'Cadastros :: Organiza'#231#227'o Social'
+  Caption = 'Cadastros :: Organiza'#231#227'o Social'
   ClientHeight = 474
   ClientWidth = 572
   ExplicitWidth = 578
@@ -27,6 +27,8 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
     ClientRectBottom = 426
     ClientRectRight = 555
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
       ExplicitWidth = 553
       ExplicitHeight = 398
       object LblPublicoDisponivel: TLabel
@@ -530,11 +532,9 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
         Top = 312
         Width = 33
         Height = 25
-        Hint = 'Remover p'#250'blico afiliado/associado da organiza'#231#227'o'
+        Hint = '06. Remover afiliado/associado'
         Caption = '>'
-        Description = 
-          'Remove o atributo selecionado de p'#250'blico afiliado/associado da o' +
-          'rganiza'#231#227'o.'
+        Description = 'Remover p'#250'blico afiliado/associado da organiza'#231#227'o social.'
         TabOrder = 4
         OnClick = BtnFiliacaoRemoverClick
       end
@@ -544,11 +544,9 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
         Top = 278
         Width = 33
         Height = 25
-        Hint = 'Adicionar p'#250'blico afiliado/associado '#224' organiza'#231#227'o'
+        Hint = '05. Adicionar afiliado/associado'
         Caption = '<'
-        Description = 
-          'Adiciona um atributo de p'#250'blico afiliado/associado '#224' organiza'#231#227'o' +
-          '.'
+        Description = 'Adicionar p'#250'blico afiliado/associado '#224' organiza'#231#227'o social.'
         TabOrder = 3
         OnClick = BtnFiliacaoAdicionarClick
       end
@@ -557,29 +555,29 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 442
-    Hint = 'Inserir nova organiza'#231#227'o'
-    Description = 'Cria um novo registro de organiza'#231#227'o.'
+    Hint = '01. Novo'
+    Description = 'Criar nova organiza'#231#227'o social.'
     ExplicitTop = 442
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 442
-    Hint = 'Salvar as altera'#231#245'es na organiza'#231#227'o'
-    Description = 'Salva as altera'#231#245'es realizadas no registro da organiza'#231#227'o.'
+    Hint = '02. Salvar'
+    Description = 'Salvar altera'#231#245'es na organiza'#231#227'o social.'
     ExplicitTop = 442
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 442
-    Hint = 'Cancelar as altera'#231#245'es na organiza'#231#227'o'
-    Description = 'Cancela as altera'#231#245'es realizadas no registro da organiza'#231#227'o.'
+    Hint = '03. Cancelar'
+    Description = 'Cancelar altera'#231#245'es da organiza'#231#227'o social.'
     ExplicitTop = 442
   end
   inherited BtnExcluir: TcxButton
     Tag = 1
     Top = 442
-    Hint = 'Excluir organiza'#231#227'o'
-    Description = 'Exclui a organiza'#231#227'o atualmente selecionada.'
+    Hint = '04. Excluir'
+    Description = 'Excluir organiza'#231#227'o social atual.'
     ExplicitTop = 442
   end
   inherited BtnFechar: TcxButton

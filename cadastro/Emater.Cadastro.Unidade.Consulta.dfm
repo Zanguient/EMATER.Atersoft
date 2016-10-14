@@ -1,7 +1,7 @@
 inherited FrmCadastroUnidadeConsulta: TFrmCadastroUnidadeConsulta
-  Hint = 'Consulta de unidades de produ'#231#227'o familiar.'
+  Hint = 'Cadastros :: UPF :: Consulta'
   ActiveControl = EdtCPF
-  Caption = 'Consulta de Unidades de Produ'#231#227'o Familiar'
+  Caption = 'Cadastros :: UPF :: Consulta'
   ClientWidth = 790
   ExplicitWidth = 806
   PixelsPerInch = 96
@@ -477,22 +477,20 @@ inherited FrmCadastroUnidadeConsulta: TFrmCadastroUnidadeConsulta
       0
       0)
     inherited BtnNovo: TdxBarButton
-      Description = 'Cria um novo registro de unidade de produ'#231#227'o familiar.'
-      Hint = 'Inserir nova unidade de produ'#231#227'o'
+      Description = 'Criar nova UPF.'
+      Hint = '01. Novo'
     end
     inherited BtnEditar: TdxBarButton
-      Description = 'Edita a unidade de produ'#231#227'o familiar atualmente selecionada.'
-      Hint = 'Editar unidade de produ'#231#227'o selecionada'
+      Description = 'Editar UPF selecionada.'
+      Hint = '02. Editar'
     end
     inherited BtnVisualizar: TdxBarButton
-      Description = 
-        'Visualiza o cadastro da unidade de produ'#231#227'o familiar atualmente ' +
-        'selecionada.'
-      Hint = 'Visualizar unidade de produ'#231#227'o familiar'
+      Description = 'Visualizar UPF selecionada.'
+      Hint = '03. Visualizar'
     end
     inherited BtnExcluir: TdxBarButton
-      Description = 'Exclui a unidade de produ'#231#227'o atualmente selecionada.'
-      Hint = 'Excluir unidade de produ'#231#227'o selecionada'
+      Description = 'Excluir UPF selecionada.'
+      Hint = '04. Excluir'
     end
   end
   inherited PopupMenuConsulta: TdxBarPopupMenu

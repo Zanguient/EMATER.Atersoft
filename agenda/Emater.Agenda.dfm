@@ -151,6 +151,7 @@ inherited FrmAgenda: TFrmAgenda
     OnBeforeDeleting = cxSchedulerBeforeDeleting
     OnBeforeEditing = cxSchedulerBeforeEditing
     OnEventSelectionChanged = cxSchedulerEventSelectionChanged
+    Selection = 1
     Splitters = {
       010000007E0000001F010000830000001F01000001000000240100000D020000}
     StoredClientBounds = {0100000001000000390300000D020000}
@@ -774,11 +775,7 @@ inherited FrmAgenda: TFrmAgenda
         item
           BeginGroup = True
           Visible = True
-          ItemName = 'BtnImprimirDia'
-        end
-        item
-          Visible = True
-          ItemName = 'BtnImprimirMes'
+          ItemName = 'BtnImprimir'
         end
         item
           BeginGroup = True
@@ -829,26 +826,6 @@ inherited FrmAgenda: TFrmAgenda
       PaintStyle = psCaptionGlyph
       UnclickAfterDoing = False
       OnClick = BtnExcluirClick
-    end
-    object BtnImprimirDia: TdxBarButton
-      Tag = 1
-      Caption = 'Imprimir &dia'
-      Category = 0
-      Description = 'Imprime a agenda do dia'
-      Hint = 'Imprimir agenda do dia'
-      Visible = ivAlways
-      ImageIndex = 156
-      PaintStyle = psCaptionGlyph
-    end
-    object BtnImprimirMes: TdxBarButton
-      Tag = 1
-      Caption = 'Imprimir &m'#234's'
-      Category = 0
-      Description = 'Imprime a agenda do m'#234's'
-      Hint = 'Imprimir agenda do m'#234's'
-      Visible = ivAlways
-      ImageIndex = 156
-      PaintStyle = psCaptionGlyph
     end
     object BtnFechar: TdxBarButton
       Caption = 'Fechar'
@@ -903,6 +880,72 @@ inherited FrmAgenda: TFrmAgenda
       ImageIndex = 189
       PaintStyle = psCaptionGlyph
       OnClick = BtnMesClick
+    end
+    object BtnImprimir: TdxBarSubItem
+      Tag = 1
+      Caption = 'Imprimir agen&da'
+      Category = 0
+      Description = 'Op'#231#245'es de impress'#227'o da agenda'
+      Hint = 'Op'#231#245'es de impress'#227'o da agenda'
+      Visible = ivAlways
+      ImageIndex = 156
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'BtnImprimirDia'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnImprimirSemana'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnImprimirMes'
+        end
+        item
+          Visible = True
+          ItemName = 'BtnImprimirDetalhe'
+        end>
+    end
+    object BtnImprimirDia: TdxBarButton
+      Caption = 'Imprimir &dia'
+      Category = 0
+      Description = 'Imprime a agenda do dia'
+      Hint = 'Imprimir agenda do dia'
+      Visible = ivAlways
+      ImageIndex = 156
+      PaintStyle = psCaptionGlyph
+      OnClick = BtnImprimirDiaClick
+    end
+    object BtnImprimirSemana: TdxBarButton
+      Caption = 'Imprimir &semana'
+      Category = 0
+      Description = 'Imprimir agenda da semana'
+      Hint = 'Imprimir agenda da semana'
+      Visible = ivAlways
+      ImageIndex = 156
+      PaintStyle = psCaptionGlyph
+      OnClick = BtnImprimirSemanaClick
+    end
+    object BtnImprimirMes: TdxBarButton
+      Caption = 'Imprimir &m'#234's'
+      Category = 0
+      Description = 'Imprime a agenda do m'#234's'
+      Hint = 'Imprimir agenda do m'#234's'
+      Visible = ivAlways
+      ImageIndex = 156
+      PaintStyle = psCaptionGlyph
+      OnClick = BtnImprimirMesClick
+    end
+    object BtnImprimirDetalhe: TdxBarButton
+      Caption = 'Imprimir d&etalhes'
+      Category = 0
+      Description = 'Imprimir detalhes'
+      Hint = 'Imprimir detalhes'
+      Visible = ivAlways
+      ImageIndex = 156
+      PaintStyle = psCaptionGlyph
+      OnClick = BtnImprimirDetalheClick
     end
   end
   object DtSrcAgendaPainel: TDataSource
@@ -1036,5 +1079,50 @@ inherited FrmAgenda: TFrmAgenda
       'WHERE AGN_ID = :AGN_ID')
     Left = 624
     Top = 256
+  end
+  object dxComponentPrinter: TdxComponentPrinter
+    CurrentLink = dxComponentPrinterLink
+    PreviewOptions.Caption = 'Agenda do Escrit'#243'rio'
+    Version = 0
+    Left = 592
+    Top = 288
+    object dxComponentPrinterLink: TcxSchedulerReportLink
+      Active = True
+      Component = cxScheduler
+      PageNumberFormat = pnfNumeral
+      PDFExportOptions.Author = 'EMATER'
+      PDFExportOptions.Title = 'Agenda'
+      PDFExportOptions.DefaultFileName = 'Agenda'
+      PDFExportOptions.DefaultFileNameAssigned = True
+      PDFExportOptions.IsTitleAssigned = True
+      PrinterPage.DMPaper = 9
+      PrinterPage.Footer = 6350
+      PrinterPage.GrayShading = True
+      PrinterPage.Header = 6350
+      PrinterPage.Margins.Bottom = 12700
+      PrinterPage.Margins.Left = 12700
+      PrinterPage.Margins.Right = 12700
+      PrinterPage.Margins.Top = 12700
+      PrinterPage.Orientation = poLandscape
+      PrinterPage.PageSize.X = 210000
+      PrinterPage.PageSize.Y = 297000
+      PrinterPage._dxMeasurementUnits_ = 0
+      PrinterPage._dxLastMU_ = 2
+      ReportDocument.Caption = 'Agenda'
+      ReportDocument.CreationDate = 42656.690056087970000000
+      AssignedFormatValues = [fvTime, fvPageNumber]
+      PrintRange.TimePrintFrom = 0.333333333333333300
+      PrintRange.TimePrintTo = 0.750000000000000000
+      PrintStyles.Memo.Active = True
+      PrintStyles.Monthly.PrintExactlyOneMonthPerPage = True
+      BuiltInReportLink = True
+    end
+  end
+  object dxPSEngineController: TdxPSEngineController
+    Active = True
+    DialogsLookAndFeel.NativeStyle = True
+    PreviewDialogStyle = 'Standard'
+    Left = 624
+    Top = 288
   end
 end

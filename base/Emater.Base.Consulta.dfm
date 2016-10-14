@@ -291,6 +291,7 @@ inherited FrmBaseConsulta: TFrmBaseConsulta
     ImageOptions.Images = DtmRecursoModulo.ImgLstPequenas
     ImageOptions.StretchGlyphs = False
     PopupMenuLinks = <>
+    ShowHint = False
     Style = bmsUseLookAndFeel
     UseSystemFont = True
     Left = 208

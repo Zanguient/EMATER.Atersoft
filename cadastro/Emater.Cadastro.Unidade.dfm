@@ -2,10 +2,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
   Tag = 1
   Left = 423
   Top = 114
-  Hint = 'Cadastro de unidades de produ'#231#227'o familiar.'
+  Hint = 'Cadastros :: UPF'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
-  Caption = 'Unidade de Produ'#231#227'o Familiar'
+  Caption = 'Cadastros :: UPF'
   ClientHeight = 630
   ClientWidth = 820
   ExplicitWidth = 836
@@ -282,8 +282,8 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Top = 153
           Width = 21
           Height = 19
-          Hint = 'Cadastrar nova comunidade'
-          Description = 'Acessa o cadastro de comunidades e cria um novo registro.'
+          Hint = '26. Nova comunidade'
+          Description = 'Criar nova comunidade.'
           OptionsImage.ImageIndex = 100
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           TabOrder = 10
@@ -1210,10 +1210,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benefici'#225'rios'
       ImageIndex = 6
       OnShow = TbShtBeneficiariosShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -1232,8 +1228,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 3
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 781
-        ExplicitHeight = 476
         object GrdBenTbl: TcxGridDBTableView
           OnDblClick = GrdBenTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -1308,9 +1302,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 8
         Width = 113
         Height = 25
-        Hint = 'Excluir benefici'#225'rio da unidade'
+        Hint = '06. Desvincular benefici'#225'rio'
         Caption = 'Excluir benefici'#225'rio'
-        Description = 'Exclui o benefici'#225'rio vinculado a esta unidade de produ'#231#227'o.'
+        Description = 'Desvincular benefici'#225'rio selecionado da UPF.'
         TabOrder = 1
         OnClick = BtnBenExcluirClick
       end
@@ -1320,9 +1314,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 8
         Width = 113
         Height = 25
-        Hint = 'Inserir benefici'#225'rio na unidade'
+        Hint = '05. Vincular benefici'#225'rio'
         Caption = 'Incluir benefici'#225'rio...'
-        Description = 'Insere um benefici'#225'rio vinculado a esta unidade de produ'#231#227'o.'
+        Description = 'Vincular benefici'#225'rio '#224' UPF.'
         TabOrder = 0
         OnClick = BtnBenIncluirClick
       end
@@ -1332,9 +1326,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 8
         Width = 113
         Height = 25
-        Hint = 'Visualizar benefici'#225'rio da unidade'
+        Hint = '07. Visualizar benefici'#225'rio'
         Caption = 'Visualizar benefici'#225'rio'
-        Description = 'Visualiza o benefici'#225'rio atualmente selecionado.'
+        Description = 'Visualizar cadastro do benefici'#225'rio selecionado.'
         TabOrder = 2
         OnClick = BtnBenVisualizarClick
       end
@@ -1343,10 +1337,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benfeitorias'
       ImageIndex = 2
       OnShow = TbShtBenfeitoriasShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -1365,8 +1355,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 5
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 781
-        ExplicitHeight = 332
         object GrdPrdBemTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1544,7 +1532,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
-          ExplicitLeft = 660
           Width = 113
         end
         object DbImgCmbBxEstado: TcxDBImageComboBox
@@ -1576,7 +1563,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
-          ExplicitLeft = 412
           Width = 137
         end
         object EdtDataBem: TcxDBDateEdit
@@ -1589,7 +1575,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
-          ExplicitLeft = 556
           Width = 97
         end
       end
@@ -1599,9 +1584,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Inserir nova benfeitoria'
+        Hint = '08. Nova benfeitoria'
         Caption = 'Novo'
-        Description = 'Cria um novo registro de benfeitoria.'
+        Description = 'Criar nova benfeitoria.'
         TabOrder = 1
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1617,9 +1602,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Salvar altera'#231#245'es na benfeitoria'
+        Hint = '09. Salvar benfeitoria'
         Caption = 'Salvar'
-        Description = 'Salva as altera'#231#245'es realizadas na benfeitoria.'
+        Description = 'Salvar altera'#231#245'es na benfeitoria.'
         TabOrder = 2
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1635,9 +1620,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Cancelar altera'#231#245'es na benfeitoria'
+        Hint = '10. Cancelar benfeitoria'
         Caption = 'Cancelar'
-        Description = 'Cancela as altera'#231#245'es realizadas na benfeitoria.'
+        Description = 'Cancelar altera'#231#245'es na benfeitoria.'
         TabOrder = 3
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1653,9 +1638,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Excluir benfeitoria'
+        Hint = '11. Excluir benfeitoria'
         Caption = 'Excluir'
-        Description = 'Exclui a benfeitoria atualmente selecionada.'
+        Description = 'Excluir benfeitoria selecionada.'
         TabOrder = 4
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1730,7 +1715,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Style.Font.Style = []
           Style.IsFontAssigned = True
           TabOrder = 2
-          ExplicitLeft = 604
           Width = 169
         end
       end
@@ -1745,10 +1729,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ImageIndex = 3
       ParentFont = False
       OnShow = TbShtMaquinasShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -1767,8 +1747,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 781
-        ExplicitHeight = 332
         object GrdPrdMaqTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -1946,7 +1924,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'BEM_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoBem
           TabOrder = 3
-          ExplicitLeft = 660
           Width = 113
         end
         object DbImgCmbBxMaquinaEstado: TcxDBImageComboBox
@@ -1978,7 +1955,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
               Value = 4
             end>
           TabOrder = 1
-          ExplicitLeft = 412
           Width = 137
         end
         object EdtDataEquipamento: TcxDBDateEdit
@@ -1991,7 +1967,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           Properties.SaveTime = False
           Properties.ShowTime = False
           TabOrder = 2
-          ExplicitLeft = 556
           Width = 97
         end
       end
@@ -2001,9 +1976,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Inserir nova m'#225'quina ou equipamento'
+        Hint = '12. Nova m'#225'quina ou equipamento'
         Caption = 'Novo'
-        Description = 'Cria um novo registro de m'#225'quina ou equipamento.'
+        Description = 'Criar nova m'#225'quina ou equipamento.'
         TabOrder = 2
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2019,11 +1994,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Salvar altera'#231#245'es na m'#225'quina ou equipamento'
+        Hint = '13. Salvar m'#225'quina ou equipamento'
         Caption = 'Salvar'
-        Description = 
-          'Salva as altera'#231#245'es realizadas no registro da m'#225'quina ou equipam' +
-          'ento.'
+        Description = 'Salvar altera'#231#245'es na m'#225'quina ou equipamento.'
         TabOrder = 3
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2039,11 +2012,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Cancelar altera'#231#245'es na m'#225'quina ou equipamento'
+        Hint = '14. Cancelar m'#225'quina ou equipamento'
         Caption = 'Cancelar'
-        Description = 
-          'Cancela as altera'#231#245'es realizadas no registro da m'#225'quina ou equip' +
-          'amento.'
+        Description = 'Cancelar altera'#231#245'es na m'#225'quina ou equipamento.'
         TabOrder = 4
         OnClick = BtnBemCancelarClick
       end
@@ -2053,9 +2024,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Excluir m'#225'quina ou equipamento'
+        Hint = '15. Excluir m'#225'quina ou equipamento'
         Caption = 'Excluir'
-        Description = 'Exclui a m'#225'quina ou equipamento atualmente selecionada.'
+        Description = 'Excluir m'#225'quina ou equipamento selecionado.'
         TabOrder = 5
         OnClick = BtnBemExcluirClick
       end
@@ -2064,10 +2035,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Semoventes'
       ImageIndex = 4
       OnShow = TbShtSemoventesShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -2086,8 +2053,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 781
-        ExplicitHeight = 332
         object GrdPrdSemTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -2206,7 +2171,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
           DataBinding.DataField = 'PRD_QUANTIDADE'
           DataBinding.DataSource = DtSrcProducaoSemovente
           TabOrder = 1
-          ExplicitLeft = 684
           Width = 89
         end
       end
@@ -2216,9 +2180,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Inserir novo semovente'
+        Hint = '16. Novo semovente'
         Caption = 'Novo'
-        Description = 'Cria um novo registro de semovente.'
+        Description = 'Criar novo semovente.'
         TabOrder = 2
         OnClick = BtnSemNovoClick
       end
@@ -2228,9 +2192,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Salvar altera'#231#245'es no semovente'
+        Hint = '17. Salvar semovente'
         Caption = 'Salvar'
-        Description = 'Salva as altera'#231#245'es realizadas no registro do semovente.'
+        Description = 'Salvar altera'#231#245'es no semovente.'
         TabOrder = 3
         OnClick = BtnSemSalvarClick
       end
@@ -2240,9 +2204,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Cancelar altera'#231#245'es no semovente'
+        Hint = '18. Cancelar semovente'
         Caption = 'Cancelar'
-        Description = 'Cancela as altera'#231#245'es realizadas no registro do semovente.'
+        Description = 'Cancelar altera'#231#245'es no semovente.'
         TabOrder = 4
         OnClick = BtnSemCancelarClick
       end
@@ -2252,9 +2216,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 152
         Width = 75
         Height = 25
-        Hint = 'Excluir semovente'
+        Hint = '19. Excluir semovente'
         Caption = 'Excluir'
-        Description = 'Exclui o semovente atualmente selecionado.'
+        Description = 'Excluir semovente selecionado.'
         TabOrder = 5
         OnClick = BtnSemExcluirClick
       end
@@ -2263,10 +2227,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Atividades produtivas e comercializa'#231#227'o'
       ImageIndex = 5
       OnShow = TbShtAtividadesShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -2285,7 +2245,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 0
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 781
         object GrdPrdAtvTbl: TcxGridDBTableView
           OnDblClick = GrdPrdAtvTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -2372,11 +2331,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 67
         Width = 137
         Height = 25
-        Hint = 'Inserir atividade produtiva'
+        Hint = '20. Incluir produ'#231#227'o'
         Caption = 'Incluir produ'#231#227'o...'
-        Description = 
-          'Cria um novo registro de atividade produtiva na unidade de produ' +
-          #231#227'o familiar.'
+        Description = 'Incluir novo item de produ'#231#227'o.'
         TabOrder = 1
         OnClick = BtnAtvIncluirClick
       end
@@ -2386,9 +2343,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 67
         Width = 137
         Height = 25
-        Hint = 'Excluir atividade produtiva'
+        Hint = '22. Excluir produ'#231#227'o'
         Caption = 'Excluir produ'#231#227'o'
-        Description = 'Exclui o registro de atividade produtiva atualmente selecionado.'
+        Description = 'Excluir item de produ'#231#227'o selecionado.'
         TabOrder = 2
         OnClick = BtnAtvExcluirClick
       end
@@ -2407,8 +2364,6 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         TabOrder = 3
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 781
-        ExplicitHeight = 180
         object GrdPrdTbl: TcxGridDBTableView
           OnDblClick = GrdPrdTblDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -2501,11 +2456,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 304
         Width = 137
         Height = 25
-        Hint = 'Inserir detalhes da comercializa'#231#227'o da produ'#231#227'o'
+        Hint = '23. Incluir comercializa'#231#227'o'
         Caption = 'Incluir comercializa'#231#227'o...'
-        Description = 
-          'Cria um novo registro de detalhes da comercializa'#231#227'o da produ'#231#227'o' +
-          '.'
+        Description = 'Incluir item de comercializa'#231#227'o.'
         TabOrder = 4
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2521,11 +2474,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 304
         Width = 137
         Height = 25
-        Hint = 'Excluir detalhes da comercializa'#231#227'o da produ'#231#227'o'
+        Hint = '25. Excluir comercializa'#231#227'o'
         Caption = 'Excluir comercializa'#231#227'o'
-        Description = 
-          'Exclui o registro dos detalhes da comercializa'#231#227'o da produ'#231#227'o at' +
-          'ualmente selecionado.'
+        Description = 'Excluir item de comercializa'#231#227'o selecionado.'
         TabOrder = 5
         OnClick = BtnPrdExcluirClick
       end
@@ -2535,9 +2486,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 67
         Width = 137
         Height = 25
-        Hint = 'Editar atividade produtiva'
+        Hint = '21. Editar produ'#231#227'o'
         Caption = 'Editar produ'#231#227'o...'
-        Description = 'Edita o registro de atividade produtiva atualmente selecionado.'
+        Description = 'Editar item de produ'#231#227'o selecionado.'
         TabOrder = 6
         OnClick = BtnAtvEditarClick
       end
@@ -2547,11 +2498,9 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
         Top = 304
         Width = 137
         Height = 25
-        Hint = 'Editar detalhes da comercializa'#231#227'o da produ'#231#227'o'
+        Hint = '24. Editar comercializa'#231#227'o'
         Caption = 'Editar comercializa'#231#227'o...'
-        Description = 
-          'Edita o registro atualmente selecionado dos detalhes da comercia' +
-          'liza'#231#227'o da produ'#231#227'o.'
+        Description = 'Editar item de comercializa'#231#227'o selecionado.'
         TabOrder = 7
         OnClick = BtnPrdEditarClick
       end
@@ -2560,33 +2509,29 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 598
-    Hint = 'Inserir nova unidade de produ'#231#227'o'
-    Description = 'Cria um novo registro de unidade de produ'#231#227'o.'
+    Hint = '01. Novo'
+    Description = 'Criar nova UPF.'
     ExplicitTop = 598
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 598
-    Hint = 'Salvar altera'#231#245'es na unidade de produ'#231#227'o'
-    Description = 
-      'Salva as altera'#231#245'es realizadas no registro da unidade de produ'#231#227 +
-      'o.'
+    Hint = '02. Salvar'
+    Description = 'Salvar altera'#231#245'es da UPF.'
     ExplicitTop = 598
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 598
-    Hint = 'Cancelar altera'#231#245'es na unidade de produ'#231#227'o'
-    Description = 
-      'Cancela as altera'#231#245'es realizadas no registro da unidade de produ' +
-      #231#227'o.'
+    Hint = '03. Cancelar'
+    Description = 'Cancelar altera'#231#245'es da UPF.'
     ExplicitTop = 598
   end
   inherited BtnExcluir: TcxButton
     Tag = 1
     Top = 598
-    Hint = 'Excluir unidade de produ'#231#227'o'
-    Description = 'Exclui a unidade de produ'#231#227'o atualmente selecionada.'
+    Hint = '04. Excluir'
+    Description = 'Excluir UPF atual.'
     ExplicitTop = 598
   end
   inherited BtnFechar: TcxButton

@@ -2,8 +2,8 @@ inherited FrmCadastroComunidade: TFrmCadastroComunidade
   Tag = 1
   Left = 467
   Top = 178
-  Hint = 'Tabela de cadastro das comunidades.'
-  Caption = 'Comunidade'
+  Hint = 'Cadastros :: Comunidade'
+  Caption = 'Cadastros :: Comunidade'
   ClientHeight = 480
   ClientWidth = 490
   ExplicitWidth = 496
@@ -25,6 +25,8 @@ inherited FrmCadastroComunidade: TFrmCadastroComunidade
     ClientRectBottom = 432
     ClientRectRight = 473
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
       ExplicitWidth = 471
       ExplicitHeight = 404
       object GrpBxPrincipal: TcxGroupBox
@@ -203,29 +205,29 @@ inherited FrmCadastroComunidade: TFrmCadastroComunidade
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 448
-    Hint = 'Inserir nova comunidade'
-    Description = 'Cria um novo registro para a comunidade.'
+    Hint = '01. Novo'
+    Description = 'Criar nova comunidade.'
     ExplicitTop = 448
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 448
-    Hint = 'Salvar altera'#231#245'es na comunidade'
-    Description = 'Salva as altera'#231#245'es realizadas no registro da comunidade.'
+    Hint = '02. Salvar'
+    Description = 'Salvar altera'#231#245'es na comunidade.'
     ExplicitTop = 448
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 448
-    Hint = 'Cancelar altera'#231#245'es na comunidade'
-    Description = 'Cancela as altera'#231#245'es realizadas no registro da comunidade.'
+    Hint = '03. Cancelar'
+    Description = 'Cancelar altera'#231#245'es na comunidade.'
     ExplicitTop = 448
   end
   inherited BtnExcluir: TcxButton
     Tag = 1
     Top = 448
-    Hint = 'Excluir comunidade'
-    Description = 'Exclui a comunidade atualmente selecionada.'
+    Hint = '04. Excluir'
+    Description = 'Excluir comunidade selecionada.'
     ExplicitTop = 448
   end
   inherited BtnFechar: TcxButton

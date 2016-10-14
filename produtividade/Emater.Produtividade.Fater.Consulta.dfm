@@ -1,9 +1,9 @@
 inherited FrmProdutividadeFaterConsulta: TFrmProdutividadeFaterConsulta
   Left = 302
   Top = 121
-  Hint = 'Consultas de FATER.'
+  Hint = 'Cadastros :: FATER :: Consulta'
   ActiveControl = nil
-  Caption = 'Consulta de FATER'
+  Caption = 'Cadastros :: FATER :: Consulta'
   ClientWidth = 816
   ExplicitWidth = 832
   PixelsPerInch = 96
@@ -394,19 +394,20 @@ inherited FrmProdutividadeFaterConsulta: TFrmProdutividadeFaterConsulta
       0
       0)
     inherited BtnNovo: TdxBarButton
-      Description = 'Cria um novo registro de FATER.'
-      Hint = 'Inserir nova FATER'
+      Description = 'Criar nova FATER.'
+      Hint = '01. Nova FATER'
     end
     inherited BtnEditar: TdxBarButton
-      Description = 'Edita a FATER atualmente selecionada.'
-      Hint = 'Editar FATER selecionada'
+      Description = 'Editar FATER selecionada.'
+      Hint = '02. Editar FATER'
     end
     inherited BtnVisualizar: TdxBarButton
-      Description = 'Visualiza a FATER atualmente selecionada.'
+      Description = 'Visualizar FATER selecionada.'
+      Hint = '03. Visualizar FATER'
     end
     inherited BtnExcluir: TdxBarButton
-      Description = 'Exclui a FATER atualmente selecionada.'
-      Hint = 'Excluir FATER selecionada'
+      Description = 'Excluir FATER selecionada.'
+      Hint = '04. Excluir FATER'
     end
   end
   inherited PopupMenuConsulta: TdxBarPopupMenu

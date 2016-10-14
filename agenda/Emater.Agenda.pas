@@ -12,7 +12,9 @@ uses
   cxSchedulerRecurrence, cxSchedulerRibbonStyleEventEditor, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet, cxSchedulercxGridConnection, Vcl.StdCtrls,
   Vcl.ExtCtrls, cxContainer, cxDropDownEdit, cxCalendar, cxDBEdit, cxMaskEdit, cxSpinEdit, cxTimeEdit, cxTextEdit, cxMemo, cxImageComboBox, dxSkinsdxBarPainter,
-  dxBar, DateUtils;
+  dxBar, DateUtils, dxPSGlbl, dxPSUtl, dxPSEngn, dxPrnPg, dxBkgnd, dxWrap, dxPrnDev, dxPSCompsProvider, dxPSFillPatterns, dxPSEdgePatterns, dxPSPDFExportCore,
+  dxPSPDFExport, cxDrawTextUtils, dxSkinscxPCPainter, dxPSPrVwStd, dxPSPrVwAdv, dxPSPrVwRibbon, dxPScxPageControlProducer, dxPScxGridLnk,
+  dxPScxGridLayoutViewLnk, dxPScxSchedulerLnk, dxPScxEditorProducers, dxSkinsdxRibbonPainter, dxPScxExtEditorProducers, dxPSCore, dxPScxCommon;
 
 type
   TFrmAgenda = class(TFrmBaseFilha)
@@ -100,6 +102,12 @@ type
     BtnSemana: TdxBarButton;
     BtnSemanaTrabalho: TdxBarButton;
     BtnMes: TdxBarButton;
+    dxComponentPrinter: TdxComponentPrinter;
+    dxPSEngineController: TdxPSEngineController;
+    dxComponentPrinterLink: TcxSchedulerReportLink;
+    BtnImprimir: TdxBarSubItem;
+    BtnImprimirSemana: TdxBarButton;
+    BtnImprimirDetalhe: TdxBarButton;
     procedure FormShow(Sender: TObject);
     procedure cxSchedulerBeforeEditing(Sender: TcxCustomScheduler; AEvent: TcxSchedulerControlEvent; AInplace: Boolean; var Allow: Boolean);
     procedure FormCreate(Sender: TObject);
@@ -114,6 +122,10 @@ type
     procedure BtnSemanaClick(Sender: TObject);
     procedure BtnSemanaTrabalhoClick(Sender: TObject);
     procedure BtnMesClick(Sender: TObject);
+    procedure BtnImprimirMesClick(Sender: TObject);
+    procedure BtnImprimirDiaClick(Sender: TObject);
+    procedure BtnImprimirSemanaClick(Sender: TObject);
+    procedure BtnImprimirDetalheClick(Sender: TObject);
   end;
 
 var
@@ -123,7 +135,7 @@ implementation
 
 {$R *.dfm}
 
-uses Emater.Conexao.Modulo, Emater.Agenda.Evento, Emater.Classe.Log, Emater.Recurso.Modulo;
+uses Emater.Conexao.Modulo, Emater.Agenda.Evento, Emater.Classe.Log, Emater.Recurso.Modulo, Emater.Sistema.Modulo;
 
 procedure TFrmAgenda.BtnDiaClick(Sender: TObject);
 begin
@@ -148,6 +160,30 @@ end;
 procedure TFrmAgenda.BtnFecharClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TFrmAgenda.BtnImprimirDetalheClick(Sender: TObject);
+begin
+  dxComponentPrinterLink.PrintStyles.Details.Active := True;
+  dxComponentPrinter.Preview(True, nil);
+end;
+
+procedure TFrmAgenda.BtnImprimirDiaClick(Sender: TObject);
+begin
+  dxComponentPrinterLink.PrintStyles.Daily.Active := True;
+  dxComponentPrinter.Preview(True, nil);
+end;
+
+procedure TFrmAgenda.BtnImprimirMesClick(Sender: TObject);
+begin
+  dxComponentPrinterLink.PrintStyles.Monthly.Active := True;
+  dxComponentPrinter.Preview(True, nil);
+end;
+
+procedure TFrmAgenda.BtnImprimirSemanaClick(Sender: TObject);
+begin
+  dxComponentPrinterLink.PrintStyles.Weekly.Active := True;
+  dxComponentPrinter.Preview(True, nil);
 end;
 
 procedure TFrmAgenda.BtnMesClick(Sender: TObject);
@@ -274,6 +310,7 @@ begin
   QryAgenda.Open;
   BtnSemana.Click;
   cxSchedulerEventSelectionChanged(nil, nil);
+  dxComponentPrinterLink.ReportTitle.Text := DtmSistemaModulo.UnidadeLocalNome;
 end;
 
 procedure TFrmAgenda.QryAgendaAfterOpen(DataSet: TDataSet);

@@ -2,13 +2,12 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
   Tag = 1
   Left = 321
   Top = 117
-  Hint = 'Cadastro de FATER.'
+  Hint = 'Cadastros :: FATER'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
-  Caption = 'FATER'
+  Caption = 'Cadastros :: FATER'
   ClientHeight = 613
   ClientWidth = 851
-  ExplicitTop = -133
   ExplicitWidth = 867
   ExplicitHeight = 652
   DesignSize = (
@@ -40,8 +39,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         831
         508)
       object Label27: TLabel
-        Left = 437
-        Top = 331
+        Left = 433
+        Top = 325
         Width = 136
         Height = 13
         Anchors = [akRight, akBottom]
@@ -51,8 +50,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         ExplicitTop = 350
       end
       object Label29: TLabel
-        Left = 589
-        Top = 331
+        Left = 585
+        Top = 325
         Width = 156
         Height = 13
         Anchors = [akRight, akBottom]
@@ -70,10 +69,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         ParentColor = False
         TabOrder = 0
         DesignSize = (
-          803
-          316)
-        Height = 323
-        Width = 803
+          799
+          310)
+        Height = 317
+        Width = 799
         object Label1: TLabel
           Left = 8
           Top = 16
@@ -210,7 +209,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.ListSource = DtSrcFinalidade
           Properties.PostPopupValueOnTab = True
           TabOrder = 6
-          Width = 371
+          Width = 367
         end
         object DbLkpCmbBxRecurso: TcxDBLookupComboBox
           Left = 424
@@ -229,7 +228,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.ListSource = DtSrcRecurso
           Properties.PostPopupValueOnTab = True
           TabOrder = 3
-          Width = 371
+          Width = 367
         end
         object DbLkpCmbBxProjeto: TcxDBLookupComboBox
           Left = 8
@@ -249,7 +248,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.PostPopupValueOnTab = True
           Properties.OnChange = DbLkpCmbBxProjetoPropertiesChange
           TabOrder = 7
-          Width = 787
+          Width = 783
         end
         object DbLkpCmbBxMetodoFinal: TcxDBLookupComboBox
           Left = 216
@@ -272,26 +271,22 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         object PgCntrlTexto: TcxPageControl
           Left = 8
           Top = 139
-          Width = 787
-          Height = 153
+          Width = 783
+          Height = 140
           Anchors = [akLeft, akTop, akRight, akBottom]
           TabOrder = 8
           Properties.ActivePage = TbShtTematica
           Properties.CustomButtons.Buttons = <>
-          ClientRectBottom = 151
+          ClientRectBottom = 138
           ClientRectLeft = 2
-          ClientRectRight = 785
+          ClientRectRight = 781
           ClientRectTop = 28
           object TbShtTematica: TcxTabSheet
             Caption = 'Tem'#225'tica'
             ImageIndex = 0
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
-              783
-              123)
+              779
+              110)
             object BtnTematica: TcxButton
               Left = 8
               Top = 8
@@ -317,20 +312,16 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 1
-              Height = 74
-              Width = 767
+              Height = 61
+              Width = 763
             end
           end
           object TbShtOrientacao: TcxTabSheet
             Caption = 'Orienta'#231#227'o t'#233'cnica'
             ImageIndex = 1
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
-              783
-              123)
+              779
+              110)
             object DbMemoOrientacao: TcxDBMemo
               Left = 8
               Top = 40
@@ -339,8 +330,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 1
-              Height = 74
-              Width = 767
+              Height = 61
+              Width = 763
             end
             object BtnOrientacao: TcxButton
               Left = 8
@@ -357,13 +348,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtResumo: TcxTabSheet
             Caption = 'Resumo da a'#231#227'o'
             ImageIndex = 2
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
-              783
-              123)
+              779
+              110)
             object DbMemoResumo: TcxDBMemo
               Left = 8
               Top = 40
@@ -372,8 +359,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 1
-              Height = 74
-              Width = 767
+              Height = 61
+              Width = 763
             end
             object BtnResumo: TcxButton
               Left = 8
@@ -390,13 +377,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtParceria: TcxTabSheet
             Caption = 'Parcerias'
             ImageIndex = 3
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
-              783
-              123)
+              779
+              110)
             object BtnParceria: TcxButton
               Left = 8
               Top = 8
@@ -416,20 +399,16 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 1
-              Height = 74
-              Width = 767
+              Height = 61
+              Width = 763
             end
           end
           object TbShtTecnologia: TcxTabSheet
             Caption = 'Tecnologia inovadora'
             ImageIndex = 4
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
-              783
-              123)
+              779
+              110)
             object DbChckBxTecnologia: TcxDBCheckBox
               Left = 144
               Top = 11
@@ -464,20 +443,16 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 2
-              Height = 74
-              Width = 767
+              Height = 61
+              Width = 763
             end
           end
           object TbShtPratica: TcxTabSheet
             Caption = 'Boas pr'#225'ticas'
             ImageIndex = 5
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
-              783
-              123)
+              779
+              110)
             object DbChckBxBoas: TcxDBCheckBox
               Left = 144
               Top = 11
@@ -512,15 +487,15 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
               DataBinding.DataSource = DtSrcPrincipal
               Properties.ScrollBars = ssVertical
               TabOrder = 2
-              Height = 74
-              Width = 767
+              Height = 61
+              Width = 763
             end
           end
         end
       end
       object GrdTecVw: TcxGrid
-        Left = 437
-        Top = 348
+        Left = 433
+        Top = 342
         Width = 145
         Height = 137
         Anchors = [akRight, akBottom]
@@ -597,8 +572,8 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         end
       end
       object GrdFerVw: TcxGrid
-        Left = 590
-        Top = 348
+        Left = 586
+        Top = 342
         Width = 221
         Height = 137
         Anchors = [akRight, akBottom]
@@ -676,17 +651,17 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       end
       object GrpBxRegistro: TcxGroupBox
         Left = 8
-        Top = 324
+        Top = 318
         Anchors = [akLeft, akRight, akBottom]
         Caption = 'Outras informa'#231#245'es da Fater'
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
         DesignSize = (
-          422
+          418
           154)
         Height = 161
-        Width = 422
+        Width = 418
         object Label13: TLabel
           Left = 8
           Top = 16
@@ -703,7 +678,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Transparent = True
         end
         object Label7: TLabel
-          Left = 209
+          Left = 205
           Top = 56
           Width = 45
           Height = 13
@@ -755,7 +730,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Width = 137
         end
         object DbImgCmbBxSituacao: TcxDBImageComboBox
-          Left = 209
+          Left = 205
           Top = 72
           Anchors = [akTop, akRight]
           DataBinding.DataField = 'FAT_SITUACAO'
@@ -801,7 +776,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.ListOptions.ShowHeader = False
           Properties.PostPopupValueOnTab = True
           TabOrder = 1
-          Width = 262
+          Width = 258
         end
         object DbLkpCmbBxUnidade: TcxDBLookupComboBox
           Left = 8
@@ -821,7 +796,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Properties.PostPopupValueOnTab = True
           Properties.ReadOnly = True
           TabOrder = 2
-          Width = 194
+          Width = 190
         end
         object DbEdtModificadoData: TcxDBTextEdit
           Left = 8
@@ -840,7 +815,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           DataBinding.DataSource = DtSrcPrincipal
           Enabled = False
           TabOrder = 5
-          Width = 270
+          Width = 266
         end
       end
     end
@@ -848,10 +823,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       Caption = 'T'#233'cnicas e ferramentas'
       ImageIndex = 2
       OnShow = TbShtTecnicasShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         831
         508)
@@ -890,7 +861,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       object LblCategorias: TLabel
         Left = 8
         Top = 8
-        Width = 803
+        Width = 799
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -910,7 +881,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       object Shape1: TShape
         Left = 8
         Top = 8
-        Width = 803
+        Width = 799
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Brush.Style = bsClear
@@ -920,7 +891,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       object Label14: TLabel
         Left = 8
         Top = 212
-        Width = 803
+        Width = 799
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -940,7 +911,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       object Shape2: TShape
         Left = 8
         Top = 212
-        Width = 803
+        Width = 799
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Brush.Style = bsClear
@@ -1111,9 +1082,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         Top = 88
         Width = 33
         Height = 25
-        Hint = 'Remover t'#233'cnica de ATER'
+        Hint = '06. Remover t'#233'cnica'
         Caption = '>'
-        Description = 'Remove a t'#233'cnica de ATER aplicada '#224' FATER.'
+        Description = 'Remover t'#233'cnica de ATER.'
         TabOrder = 2
         OnClick = BtnTecRemoverClick
       end
@@ -1123,9 +1094,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         Top = 56
         Width = 33
         Height = 25
-        Hint = 'Adicionar t'#233'cnica de ATER'
+        Hint = '05. Adicionar t'#233'cnica'
         Caption = '<'
-        Description = 'Adiciona a t'#233'cnica de ATER aplicada '#224' FATER.'
+        Description = 'Adicionar t'#233'cnica de ATER.'
         TabOrder = 3
         OnClick = BtnTecAdicionarClick
       end
@@ -1133,7 +1104,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         Left = 384
         Top = 260
         Width = 329
-        Height = 133
+        Height = 127
         Anchors = [akLeft, akTop, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1215,7 +1186,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         Left = 8
         Top = 260
         Width = 329
-        Height = 133
+        Height = 127
         Anchors = [akLeft, akTop, akBottom]
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -1297,9 +1268,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         Top = 292
         Width = 33
         Height = 25
-        Hint = 'Remover ferramenta de ATER'
+        Hint = '08. Remover ferramenta'
         Caption = '>'
-        Description = 'Remove o atributo de ferramenta de ATER aplicada '#224' FATER.'
+        Description = 'Remover ferramenta de ATER.'
         TabOrder = 6
         OnClick = BtnFerRemoverClick
       end
@@ -1309,9 +1280,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
         Top = 260
         Width = 33
         Height = 25
-        Hint = 'Adicionar ferramenta de ATER'
+        Hint = '07. Adicionar ferramenta'
         Caption = '<'
-        Description = 'Adiciona o atributo de ferramenta de ATER aplicada '#224' FATER.'
+        Description = 'Adicionar ferramenta de ATER.'
         TabOrder = 7
         OnClick = BtnFerAdicionarClick
       end
@@ -1319,42 +1290,34 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
     object TbShtDetalhes: TcxTabSheet
       Caption = 'Mais detalhes'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         831
         508)
       object PgCntrlDetalhes: TcxPageControl
         Left = 8
         Top = 8
-        Width = 803
-        Height = 477
+        Width = 799
+        Height = 471
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 0
         Properties.ActivePage = TbShtProduto
         Properties.CustomButtons.Buttons = <>
-        ClientRectBottom = 475
+        ClientRectBottom = 469
         ClientRectLeft = 2
-        ClientRectRight = 801
+        ClientRectRight = 797
         ClientRectTop = 28
         object TbShtProduto: TcxTabSheet
           Caption = 'Cria'#231#227'o/cultura/servi'#231'o'
           ImageIndex = 4
           OnShow = TbShtProdutoShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
-            799
-            447)
+            795
+            441)
           object GrdPrd: TcxGrid
             Left = 8
             Top = 40
-            Width = 783
-            Height = 399
+            Width = 779
+            Height = 393
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1442,9 +1405,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 7
             Width = 113
             Height = 25
-            Hint = 'Inserir produto '#224' FATER'
+            Hint = '09. Incluir produto'
             Caption = 'Incluir produto...'
-            Description = 'Insere um produto '#224' FATER.'
+            Description = 'Incluir produto da FATER.'
             TabOrder = 0
             OnClick = BtnPrdIncluirClick
           end
@@ -1454,9 +1417,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 7
             Width = 113
             Height = 25
-            Hint = 'Excluir produto da FATER'
+            Hint = '10. Excluir produto'
             Caption = 'Excluir produto'
-            Description = 'Exclui o produto atualmente selecionada da FATER.'
+            Description = 'Excluir produto da FATER.'
             TabOrder = 1
             OnClick = BtnPrdExcluirClick
           end
@@ -1465,13 +1428,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Benefici'#225'rio atendido'
           ImageIndex = 0
           OnShow = TbShtBeneficiariosShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
-            799
-            447)
+            795
+            441)
           object Label15: TLabel
             Left = 8
             Top = 8
@@ -1491,7 +1450,7 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object GrdBen: TcxGrid
             Left = 8
             Top = 56
-            Width = 783
+            Width = 779
             Height = 161
             Anchors = [akLeft, akTop, akRight]
             Font.Charset = ANSI_CHARSET
@@ -1576,9 +1535,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 24
             Width = 113
             Height = 25
-            Hint = 'Inserir benefici'#225'rio atendido'
+            Hint = '11. Incluir benefici'#225'rio'
             Caption = 'Incluir benefici'#225'rio...'
-            Description = 'Insere um benefici'#225'rio atendido '#224' FATER.'
+            Description = 'Incluir benefici'#225'rio da FATER.'
             TabOrder = 0
             OnClick = BtnBenIncluirClick
           end
@@ -1588,17 +1547,17 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 24
             Width = 113
             Height = 25
-            Hint = 'Excluir benefici'#225'rio atendido'
+            Hint = '12. Excluir benefici'#225'rio'
             Caption = 'Excluir benefici'#225'rio'
-            Description = 'Exclui o benefici'#225'rio atendido da FATER.'
+            Description = 'Excluir benefici'#225'rio da FATER.'
             TabOrder = 1
             OnClick = BtnBenExcluirClick
           end
           object GrdBenPar: TcxGrid
             Left = 8
             Top = 288
-            Width = 783
-            Height = 151
+            Width = 779
+            Height = 145
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1682,9 +1641,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 256
             Width = 113
             Height = 25
-            Hint = 'Inserir participante n'#227'o benefici'#225'rio'
+            Hint = '13. Incluir participante.'
             Caption = 'Incluir participante...'
-            Description = 'Insere um participante n'#227'o benefici'#225'rio '#224' FATER.'
+            Description = 'Incluir participante da FATER.'
             TabOrder = 3
             OnClick = BtnBenParIncluirClick
           end
@@ -1694,9 +1653,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 256
             Width = 113
             Height = 25
-            Hint = 'Excluir participante n'#227'o benefici'#225'rio'
+            Hint = '14. Excluir participante'
             Caption = 'Excluir participante'
-            Description = 'Exclui o participante n'#227'o benefici'#225'rio da FATER.'
+            Description = 'Excluir participante da FATER.'
             TabOrder = 4
             OnClick = BtnBenParExcluirClick
           end
@@ -1705,22 +1664,18 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'T'#233'cnico participante'
           ImageIndex = 1
           OnShow = TbShtTecnicoShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
-            799
-            447)
+            795
+            441)
           object BtnTecIncluir: TcxButton
             Tag = 1
             Left = 8
             Top = 8
             Width = 113
             Height = 25
-            Hint = 'Inserir t'#233'cnico da FATER'
+            Hint = '15. Incluir t'#233'cnico'
             Caption = 'Incluir t'#233'cnico...'
-            Description = 'Insere um novo t'#233'cnico '#224' FATER.'
+            Description = 'Incluir t'#233'cnico da FATER.'
             TabOrder = 0
             OnClick = BtnTecIncluirClick
           end
@@ -1730,17 +1685,17 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 8
             Width = 113
             Height = 25
-            Hint = 'Excluir t'#233'cnco da FATER'
+            Hint = '16. Excluir t'#233'cnico'
             Caption = 'Excluir t'#233'cnico'
-            Description = 'Exclui o t'#233'cnico atualmente selecionado da FATER.'
+            Description = 'Excluir t'#233'cnico da FATER.'
             TabOrder = 1
             OnClick = BtnTecExcluirClick
           end
           object GrdPar: TcxGrid
             Left = 8
             Top = 40
-            Width = 783
-            Height = 399
+            Width = 779
+            Height = 393
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1815,18 +1770,14 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Comunidade'
           ImageIndex = 2
           OnShow = TbShtComunidadesShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
-            799
-            447)
+            795
+            441)
           object GrdCom: TcxGrid
             Left = 8
             Top = 40
-            Width = 783
-            Height = 399
+            Width = 779
+            Height = 393
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1906,9 +1857,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 8
             Width = 113
             Height = 25
-            Hint = 'Inserir comunidade '#224' FATER'
+            Hint = '17. Incluir comunidade'
             Caption = 'Incluir comunidade...'
-            Description = 'Insere uma comunidade '#224' FATER.'
+            Description = 'Incluir comunidade da FATER.'
             TabOrder = 0
             OnClick = BtnComIncluirClick
           end
@@ -1918,9 +1869,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 8
             Width = 113
             Height = 25
-            Hint = 'Excluir comunidade da FATER'
+            Hint = '18. Excluir comunidade'
             Caption = 'Excluir comunidade'
-            Description = 'Exclui a comunidade atualmente selecionada da FATER.'
+            Description = 'Excluir comunidade da FATER.'
             TabOrder = 1
             OnClick = BtnComExcluirClick
           end
@@ -1929,18 +1880,14 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Organiza'#231#227'o social'
           ImageIndex = 3
           OnShow = TbShtOrganizacaoShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
-            799
-            447)
+            795
+            441)
           object GrdOrg: TcxGrid
             Left = 8
             Top = 40
-            Width = 783
-            Height = 399
+            Width = 779
+            Height = 393
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1951,8 +1898,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             TabOrder = 2
             LookAndFeel.Kind = lfFlat
             LookAndFeel.NativeStyle = True
-            ExplicitWidth = 787
-            ExplicitHeight = 405
             object GrdOrgTbl: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -2022,9 +1967,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 8
             Width = 113
             Height = 25
-            Hint = 'Inserir organiza'#231#227'o '#224' FATER'
+            Hint = '19. Incluir organiza'#231#227'o'
             Caption = 'Incluir organiza'#231#227'o...'
-            Description = 'Insere uma organiza'#231#227'o '#224' FATER.'
+            Description = 'Incluir organiza'#231#227'o social da FATER.'
             TabOrder = 0
             OnClick = BtnOrgIncluirClick
           end
@@ -2034,9 +1979,9 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
             Top = 8
             Width = 113
             Height = 25
-            Hint = 'Excluir organiza'#231#227'o da FATER'
+            Hint = '20. Excluir organiza'#231#227'o'
             Caption = 'Excluir organiza'#231#227'o'
-            Description = 'Exclui a organiza'#231#227'o atualmente selecionada da FATER.'
+            Description = 'Excluir organiza'#231#227'o social da FATER.'
             TabOrder = 1
             OnClick = BtnOrgExcluirClick
           end
@@ -2047,29 +1992,29 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 581
-    Hint = 'Inserir nova FATER'
-    Description = 'Cria um novo registro de FATER.'
+    Hint = '01. Novo'
+    Description = 'Criar nova FATER.'
     ExplicitTop = 581
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 581
-    Hint = 'Salvar altera'#231#245'es na FATER'
-    Description = 'Salva as altera'#231#245'es realizadas no registro de FATER.'
+    Hint = '02. Salvar'
+    Description = 'Salvar altera'#231#245'es na FATER.'
     ExplicitTop = 581
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 581
-    Hint = 'Cancelar altera'#231#245'es na FATER'
-    Description = 'Cancela as altera'#231#245'es realizadas no registro de FATER.'
+    Hint = '03. Cancelar'
+    Description = 'Cancelar altera'#231#245'es da FATER.'
     ExplicitTop = 581
   end
   inherited BtnExcluir: TcxButton
     Tag = 1
     Top = 581
-    Hint = 'Excluir FATER'
-    Description = 'Exclui a FATER atualmente selecionada.'
+    Hint = '04. Excluir'
+    Description = 'Excluir FATER atual.'
     ExplicitTop = 581
   end
   inherited BtnFechar: TcxButton

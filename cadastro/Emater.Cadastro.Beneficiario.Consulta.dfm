@@ -1,7 +1,7 @@
 inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
   Left = 374
-  Hint = 'Consulta de benefici'#225'rios.'
-  Caption = 'Consulta de Benefici'#225'rios de ATER'
+  Hint = 'Cadastros :: Benefici'#225'rio de ATER :: Consulta'
+  Caption = 'Cadastros :: Benefici'#225'rio de ATER :: Consulta'
   ClientWidth = 816
   ExplicitWidth = 832
   PixelsPerInch = 96
@@ -600,27 +600,27 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
         end>
     end
     inherited BtnNovo: TdxBarButton
-      Description = 'Abre a janela de benefici'#225'rio e cria um novo registro.'
-      Hint = 'Inserir novo benefici'#225'rio'
+      Description = 'Criar novo benefici'#225'rio.'
+      Hint = '01. Novo'
     end
     inherited BtnEditar: TdxBarButton
-      Description = 'Edita o benefici'#225'rio atualmente selecionado.'
-      Hint = 'Editar benefici'#225'rio selecionado'
+      Description = 'Editar benefici'#225'rio selecionado.'
+      Hint = '02. Editar'
     end
     inherited BtnVisualizar: TdxBarButton
-      Description = 'Visualiza o cadastro do benefici'#225'rio atualmente selecionado.'
-      Hint = 'Visualizar benefici'#225'rio'
+      Description = 'Visualizar benefici'#225'rio selecionado.'
+      Hint = '03. Visualizar'
     end
     inherited BtnExcluir: TdxBarButton
-      Description = 'Exclui o benefici'#225'rio atualmente selecionado.'
-      Hint = 'Excluir benefici'#225'rio'
+      Description = 'Excluir benefici'#225'rio selecionado.'
+      Hint = '04. Excluir'
     end
     object BtnImprimir: TdxBarButton [6]
       Tag = 1
       Caption = 'C&onsulta'
       Category = 0
-      Description = 'Imprime o resultado da consulta atual'
-      Hint = 'Consulta'
+      Description = 'Imprimir resultado da consulta.'
+      Hint = '05. Imprimir consulta'
       Visible = ivAlways
       ImageIndex = 156
       PaintStyle = psCaptionGlyph
@@ -630,8 +630,8 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
       Tag = 1
       Caption = '&Prontu'#225'rio'
       Category = 0
-      Description = 'Imprime o prontu'#225'rio do benefici'#225'rio atualmente selecionado'
-      Hint = 'Prontu'#225'rio'
+      Description = 'Imprimir prontu'#225'rio do benefici'#225'rio selecionado.'
+      Hint = '06. Imprimir prontu'#225'rio'
       Visible = ivAlways
       ImageIndex = 156
       PaintStyle = psCaptionGlyph
@@ -991,6 +991,7 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
     object dxComponentPrinterLink: TdxGridReportLink
       Active = True
       Component = GrdConsulta
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.GrayShading = True
@@ -1019,7 +1020,8 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = 'Listagem de Benefici'#225'rios de ATER'
-      ReportDocument.CreationDate = 42556.306626273150000000
+      ReportDocument.CreationDate = 42657.545317476860000000
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       OptionsSize.AutoWidth = True
       OptionsView.FilterBar = False
       BuiltInReportLink = True

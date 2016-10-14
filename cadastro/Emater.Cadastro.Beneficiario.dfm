@@ -2,10 +2,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
   Tag = 1
   Left = 340
   Top = 99
-  Hint = 'Cadastro dos benefici'#225'rios.'
+  Hint = 'Cadastros :: Benefici'#225'rio de ATER'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
-  Caption = 'Benefici'#225'rio de ATER'
+  Caption = 'Cadastros :: Benefici'#225'rio de ATER'
   ClientHeight = 618
   ClientWidth = 736
   ExplicitWidth = 752
@@ -811,8 +811,8 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Top = 113
               Width = 21
               Height = 19
-              Hint = 'Cadastrar nova comunidade'
-              Description = 'Acessa o cadastro de comunidades e cria um novo registro.'
+              Hint = '24. Nova comunidade'
+              Description = 'Criar nova comunidade.'
               OptionsImage.ImageIndex = 100
               OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
               ParentShowHint = False
@@ -826,9 +826,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Top = 113
               Width = 21
               Height = 19
-              Hint = 'Cadastrar nova organiza'#231#227'o'
+              Hint = '25. Nova organiza'#231#227'o social'
               Anchors = [akTop, akRight]
-              Description = 'Acessa o cadastro de organiza'#231#245'es e cria um novo registro.'
+              Description = 'Criar nova organiza'#231#227'o social.'
               OptionsImage.ImageIndex = 100
               OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
               ParentShowHint = False
@@ -1285,6 +1285,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Categoria e atividade produtiva'
           ImageIndex = 1
           OnShow = TbShtIdentificacaoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -1559,9 +1563,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 88
             Width = 33
             Height = 25
-            Hint = 'Remover categoria do benefici'#225'rio'
+            Hint = '06. Remover categoria'
             Caption = '>'
-            Description = 'Remove um atributo de categoria do benefici'#225'rio.'
+            Description = 'Remover categoria do benefici'#225'rio.'
             TabOrder = 2
             OnClick = BtnCatRemoverClick
           end
@@ -1571,9 +1575,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 56
             Width = 33
             Height = 25
-            Hint = 'Adicionar categoria ao benefici'#225'rio'
+            Hint = '05. Adicionar categoria'
             Caption = '<'
-            Description = 'Adiciona um atributo de categoria ao benefici'#225'rio.'
+            Description = 'Adicionar categoria ao benefici'#225'rio.'
             TabOrder = 3
             OnClick = BtnCatAdicionarClick
           end
@@ -1754,9 +1758,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 304
             Width = 33
             Height = 25
-            Hint = 'Remover unidade produtiva do benefici'#225'rio'
+            Hint = '08. Remover atividade produtiva.'
             Caption = '>'
-            Description = 'Remove um atributo de atividade produtiva do benefici'#225'rio.'
+            Description = 'Remover atividade produtiva do benefici'#225'rio.'
             TabOrder = 6
             OnClick = BtnDvsRemoverClick
           end
@@ -1766,9 +1770,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 272
             Width = 33
             Height = 25
-            Hint = 'Adicionar atividade produtiva ao benefici'#225'rio'
+            Hint = '07. Adicionar atividade produtiva'
             Caption = '<'
-            Description = 'Adiciona um atributo de atividade produtiva ao benefici'#225'rio.'
+            Description = 'Adicionar atividade produtiva ao benefici'#225'rio.'
             TabOrder = 7
             OnClick = BtnDvsAdicionarClick
           end
@@ -1777,6 +1781,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Programas governamentais'
           ImageIndex = 3
           OnShow = TbShtProgramasShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2005,9 +2013,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 88
             Width = 33
             Height = 25
-            Hint = 'Remover programa de governo'
+            Hint = '10. Remover programa de governo'
             Caption = '>'
-            Description = 'Remove o atributo de programa do governo da unidade de produ'#231#227'o.'
+            Description = 'Remover programa de governo do benefici'#225'rio.'
             TabOrder = 2
             OnClick = BtnPrgRemoverClick
           end
@@ -2017,11 +2025,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 56
             Width = 33
             Height = 25
-            Hint = 'Adicionar programa de governo'
+            Hint = '09. Adicionar programa de governo'
             Caption = '<'
-            Description = 
-              'Adiciona o atributo de programa de governo '#224' unidade de produ'#231#227'o' +
-              '.'
+            Description = 'Adicionar programa de governo ao benefici'#225'rio.'
             TabOrder = 1
             OnClick = BtnPrgAdicionarClick
           end
@@ -2030,6 +2036,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'NIS/DAP'
           ImageIndex = 2
           OnShow = TbShtDAPShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2181,9 +2191,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 120
             Width = 75
             Height = 25
-            Hint = 'Inserir novo NIS/DAP'
+            Hint = '11. Novo NIS/DAP'
             Caption = 'Novo'
-            Description = 'Cria um novo registro de NIS/DAP.'
+            Description = 'Criar novo NIS/DAP.'
             TabOrder = 1
             OnClick = BtnDAPNovoClick
           end
@@ -2193,9 +2203,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 120
             Width = 75
             Height = 25
-            Hint = 'Salvar altera'#231#245'es no NIS/DAP'
+            Hint = '12. Salvar NIS/DAP'
             Caption = 'Salvar'
-            Description = 'Salva as altera'#231#245'es realizadas no registro do NIS/DAP.'
+            Description = 'Salvar altera'#231#245'es no NIS/DAP.'
             TabOrder = 2
             OnClick = BtnDAPSalvarClick
           end
@@ -2205,9 +2215,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 120
             Width = 75
             Height = 25
-            Hint = 'Cancelar altera'#231#245'es no NIS/DAP'
+            Hint = '13. Cancelar NIS/DAP'
             Caption = 'Cancelar'
-            Description = 'Cancela as altera'#231#245'es realizadas no registro do NIS/DAP.'
+            Description = 'Cancelar altera'#231#245'es no NIS/DAP.'
             TabOrder = 3
             OnClick = BtnDAPCancelarClick
           end
@@ -2217,9 +2227,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 120
             Width = 75
             Height = 25
-            Hint = 'Excluir NIS/DAP'
+            Hint = '14. Excluir NIS/DAP'
             Caption = 'Excluir'
-            Description = 'Exclui o NIS/DAP atualmente selecionado.'
+            Description = 'Excluir NIS/DAP selecionado.'
             TabOrder = 4
             OnClick = BtnDAPExcluirClick
           end
@@ -2314,6 +2324,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Integrante familiar'
           ImageIndex = 0
           OnShow = TbShtFamiliaShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2331,9 +2345,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 232
             Width = 75
             Height = 25
-            Hint = 'Excluir integrante familiar'
+            Hint = '18. Excluir integrante familiar'
             Caption = 'Excluir'
-            Description = 'Exclui o integrante familiar atualmente selecionado'
+            Description = 'Excluir integrante familiar selecionado.'
             TabOrder = 0
             OnClick = BtnFamExcluirClick
           end
@@ -2711,9 +2725,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 232
             Width = 75
             Height = 25
-            Hint = 'Inserir novo integrante familiar'
+            Hint = '15. Novo integrante familiar'
             Caption = 'Novo'
-            Description = 'Cria novo registro de integrante familiar'
+            Description = 'Criar novo integrante familiar.'
             TabOrder = 2
             OnClick = BtnFamNovoClick
           end
@@ -2723,11 +2737,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 232
             Width = 75
             Height = 25
-            Hint = 'Salvar altera'#231#245'es no integrante familiar'
+            Hint = '16. Salvar integrante familiar'
             Caption = 'Salvar'
-            Description = 
-              'Salva as altera'#231#245'es realizadas no registro do integrante familia' +
-              'r'
+            Description = 'Salvar altera'#231#245'es no integrante familiar.'
             TabOrder = 3
             OnClick = BtnFamSalvarClick
           end
@@ -2737,11 +2749,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 232
             Width = 75
             Height = 25
-            Hint = 'Cancelar altera'#231#245'es no integrante familiar'
+            Hint = '17. Cancelar integrante familiar'
             Caption = 'Cancelar'
-            Description = 
-              'Cancela as altera'#231#245'es realizadas no registro do integrante famil' +
-              'iar'
+            Description = 'Cancelar altera'#231#245'es no integrante familiar.'
             TabOrder = 4
             OnClick = BtnFamCancelarClick
           end
@@ -2752,6 +2762,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
       Caption = 'Unidade de Produ'#231#227'o Familiar'
       ImageIndex = 4
       OnShow = TbShtSecundariaShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         717
         512)
@@ -2778,6 +2792,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Unidade de produ'#231#227'o'
           ImageIndex = 1
           OnShow = TbShtUnidadeShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -2882,13 +2900,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 24
             Width = 121
             Height = 25
-            Hint = 
-              'Pesquisar uma unidade de produ'#231#227'o familiar e vincular com este b' +
-              'enefici'#225'rio'
+            Hint = '19. Pesquisar e vincular UPF'
             Caption = 'Pesquisar e vincular...'
-            Description = 
-              'Cria um novo v'#237'nculo entre o benefici'#225'rio e uma unidade de produ' +
-              #231#227'o.'
+            Description = 'Pesquisar uma UPF e vincular ao benefici'#225'rio.'
             TabOrder = 0
             OnClick = BtnPrdIncluirClick
           end
@@ -2898,13 +2912,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 24
             Width = 105
             Height = 25
-            Hint = 
-              'Remover v'#237'nculo deste benefici'#225'rio com a unidade de produ'#231#227'o fam' +
-              'iliar selecionada'
+            Hint = '20. Remover v'#237'nculo de UPF'
             Caption = 'Remover v'#237'nculo'
-            Description = 
-              'Exclui o v'#237'nculo atualmente selecionado entre benefici'#225'rio e uni' +
-              'dade de produ'#231#227'o.'
+            Description = 'Remover v'#237'nculo entre a UPF selecionada e o benefici'#225'rio.'
             TabOrder = 1
             OnClick = BtnPrdExcluirClick
           end
@@ -2914,11 +2924,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 24
             Width = 73
             Height = 25
-            Hint = 'Visualizar unidade de produ'#231#227'o'
+            Hint = '23. Visualizar UPF'
             Caption = 'Visualizar...'
-            Description = 
-              'Visualiza as informa'#231#245'es da unidade de produ'#231#227'o atualmente selec' +
-              'ionada.'
+            Description = 'Visualizar UPF selecionada.'
             TabOrder = 4
             OnClick = BtnPrdVisualizarClick
           end
@@ -2928,9 +2936,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 24
             Width = 73
             Height = 25
-            Hint = 'Editar unidade de produ'#231#227'o'
+            Hint = '22. Editar UPF'
             Caption = 'Editar...'
-            Description = 'Edita o registro de unidade de produ'#231#227'o atualmente selecionado.'
+            Description = 'Editar UPF selecionada.'
             TabOrder = 3
             OnClick = BtnPrdEditarClick
           end
@@ -2940,11 +2948,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
             Top = 24
             Width = 73
             Height = 25
-            Hint = 'Criar nova unidade de produ'#231#227'o familiar'
+            Hint = '21. Nova UPF'
             Caption = 'Novo...'
-            Description = 
-              'Cria uma nova unidade de produ'#231#227'o familiar e vincula a este bene' +
-              'fici'#225'rio'
+            Description = 'Criar nova UPF.'
             TabOrder = 2
             OnClick = BtnPrdNovoClick
           end
@@ -2953,6 +2959,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
           Caption = 'Caracteriza'#231#227'o da produ'#231#227'o'
           ImageIndex = 2
           OnShow = TbShtProducaoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             690
             461)
@@ -3074,6 +3084,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Benfeitorias'
               ImageIndex = 0
               OnShow = TbShtBenfeitoriasShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               DesignSize = (
                 667
                 291)
@@ -3192,6 +3206,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'M'#225'quinas e equipamentos'
               ImageIndex = 1
               OnShow = TbShtMaquinasShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               DesignSize = (
                 667
                 291)
@@ -3312,6 +3330,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Semoventes'
               ImageIndex = 2
               OnShow = TbShtSemoventesShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               DesignSize = (
                 667
                 291)
@@ -3330,8 +3352,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 0
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
-                ExplicitWidth = 655
-                ExplicitHeight = 276
                 object GrdPrdSemTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3408,6 +3428,10 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
               Caption = 'Atividades produtivas e comercializa'#231#227'o'
               ImageIndex = 3
               OnShow = TbShtAtividadesShow
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               DesignSize = (
                 667
                 291)
@@ -3512,7 +3536,6 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
                 TabOrder = 1
                 LookAndFeel.Kind = lfFlat
                 LookAndFeel.NativeStyle = True
-                ExplicitHeight = 121
                 object GrdPrdTbl: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -3597,29 +3620,29 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 586
-    Hint = 'Inserir novo benefici'#225'rio'
-    Description = 'Cria um novo registro para o benefici'#225'rio.'
+    Hint = '01. Novo'
+    Description = 'Criar novo benefici'#225'rio.'
     ExplicitTop = 586
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 586
-    Hint = 'Salvar altera'#231#245'es no benefici'#225'rio'
-    Description = 'Salva as altera'#231#245'es realizadas no registro do benefici'#225'rio.'
+    Hint = '02. Salvar'
+    Description = 'Salvar altera'#231#245'es do benefici'#225'rio.'
     ExplicitTop = 586
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 586
-    Hint = 'Cancelar altera'#231#245'es no benefici'#225'rio'
-    Description = 'Cancela as altera'#231#245'es realizadas no registro do benefici'#225'rio.'
+    Hint = '03. Cancelar'
+    Description = 'Cancelar altera'#231#245'es do benefici'#225'rio.'
     ExplicitTop = 586
   end
   inherited BtnExcluir: TcxButton
     Tag = 1
     Top = 586
-    Hint = 'Excluir benefici'#225'rio'
-    Description = 'Exclui o benefici'#225'rio atualmente selecionado.'
+    Hint = '04. Excluir'
+    Description = 'Excluir benefici'#225'rio atual.'
     ExplicitTop = 586
   end
   inherited BtnFechar: TcxButton
@@ -3631,11 +3654,9 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
   inherited BtnRelatorio: TcxButton
     Tag = 1
     Top = 586
-    Hint = 'Imprimir prontu'#225'rio do benefici'#225'rio'
+    Hint = '04. Prontu'#225'rio'
     Caption = '&Prontu'#225'rio'
-    Description = 
-      'Imprime o prontu'#225'rio do benefici'#225'rio de ATER atualmente selecion' +
-      'ado.'
+    Description = 'Imprimir prontu'#225'rio do benefici'#225'rio atual.'
     Visible = True
     OnClick = BtnRelatorioClick
     ExplicitTop = 586

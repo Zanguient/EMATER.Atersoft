@@ -1,8 +1,8 @@
 inherited FrmCadastroOrganizacaoConsulta: TFrmCadastroOrganizacaoConsulta
   Left = 379
   Top = 195
-  Hint = 'Consulta de organiza'#231#245'es.'
-  Caption = 'Consulta de Organiza'#231#245'es Sociais'
+  Hint = 'Cadastros :: Organiza'#231#227'o Social :: Consulta'
+  Caption = 'Cadastros :: Organiza'#231#227'o Social :: Consulta'
   ClientWidth = 728
   ExplicitWidth = 744
   PixelsPerInch = 96
@@ -316,20 +316,20 @@ inherited FrmCadastroOrganizacaoConsulta: TFrmCadastroOrganizacaoConsulta
       0
       0)
     inherited BtnNovo: TdxBarButton
-      Description = 'Cria um novo registro de organiza'#231#227'o.'
-      Hint = 'Inserir nova organiza'#231#227'o'
+      Description = 'Criar nova organiza'#231#227'o social.'
+      Hint = '01. Novo'
     end
     inherited BtnEditar: TdxBarButton
-      Description = 'Edita a organiza'#231#227'o atualmente selecionada.'
-      Hint = 'Editar organiza'#231#227'o selecionada'
+      Description = 'Editar organiza'#231#227'o social selecionada.'
+      Hint = '02. Editar'
     end
     inherited BtnVisualizar: TdxBarButton
-      Description = 'Visualiza o cadastro da organiza'#231#227'o atualmente selecionada.'
-      Hint = 'Visualizar organiza'#231#227'o'
+      Description = 'Visualizar organiza'#231#227'o social selecionada.'
+      Hint = '03. Visualizar'
     end
     inherited BtnExcluir: TdxBarButton
-      Description = 'Exclui a organiza'#231#227'o atualmente selecionada.'
-      Hint = 'Excluir organiza'#231#227'o selecionada.'
+      Description = 'Excluir organiza'#231#227'o social selecionada.'
+      Hint = '04. Excluir'
     end
   end
   inherited PopupMenuConsulta: TdxBarPopupMenu

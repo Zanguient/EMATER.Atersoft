@@ -60,6 +60,7 @@ end;
 
 procedure TFrmCreditoVariedade.FormCreate(Sender: TObject);
 begin
+  Legenda := 'Variedades';
   inherited;
   ControleAtivo := DbEdtNome;
   CampoChave := 'VAR_ID';

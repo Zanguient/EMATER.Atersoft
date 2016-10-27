@@ -68,14 +68,15 @@ begin
 end;
 
 procedure TFrmBaseBasico.RegistrarSeguranca;
+{$IFDEF DEBUG}
 var
   I, J: Integer;
+{$ENDIF}
 begin
   CodeSite.EnterMethod(Self.Name + '.RegistrarSeguranca().');
   try
-    J := 0;
-
     {$IFDEF DEBUG}
+    J := 0;
     if (Self.Tag = 1) then
       begin
         CodeSite.SendMsg('Aplicação registrada: [' + Self.Name + '].');
@@ -114,7 +115,21 @@ begin
                     TdxBarButton(Components[I]).Description) then
                     Inc(J);
                 end;
-            end;
+            end
+          else
+            if (Components[I] is TdxBarSubItem) then
+              begin
+                if (TdxBarSubItem(Components[I]).Tag = 1) then
+                  begin
+                    if DtmSistemaModulo.ControleRegistrar(
+                      SISTEMA_MODULO_ID,
+                      Self.Name,
+                      TdxBarSubItem(Components[I]).Name,
+                      TdxBarSubItem(Components[I]).Hint,
+                      TdxBarSubItem(Components[I]).Description) then
+                      Inc(J);
+                  end;
+              end;
       end;
     CodeSite.SendMsg('Controles registrados: [' + IntToStr(J) + '].');
     {$ENDIF}
@@ -154,7 +169,15 @@ begin
                 TdxBarButton(Components[I]).Visible := ivAlways
               else
                 TdxBarButton(Components[I]).Visible := ivNever;
-            end;
+            end
+          else
+            if ((Components[I] is TdxBarSubItem) and (TdxBarSubItem(Components[I]).Tag = 1)) then
+              begin
+                if DtmSistemaModulo.ControleAtivo(Self.Name, TdxBarSubItem(Components[I]).Name) then
+                  TdxBarSubItem(Components[I]).Visible := ivAlways
+                else
+                  TdxBarSubItem(Components[I]).Visible := ivNever;
+              end;
       end;
     CodeSite.SendMsg('Segurança aplicada aos controles com sucesso.');
   finally

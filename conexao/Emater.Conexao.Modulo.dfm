@@ -20,7 +20,7 @@ object DtmConexaoModulo: TDtmConexaoModulo
     OnError = FDConnectionError
     OnLost = FDConnectionLost
     OnRestored = FDConnectionRestored
-    Left = 64
+    Left = 56
     Top = 32
   end
   object FDReadTransaction: TFDTransaction

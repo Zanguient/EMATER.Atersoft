@@ -2,18 +2,16 @@ inherited FrmLogImportar: TFrmLogImportar
   Tag = 1
   Left = 358
   Top = 183
-  Hint = 'Janela de importa'#231#227'o de dados da replica'#231#227'o.'
+  Hint = 'Sistema :: Banco de Dados :: Importa'#231#227'o'
   BorderStyle = bsDialog
-  Caption = 'Importa'#231#227'o de dados'
+  Caption = 'Sistema :: Banco de Dados :: Importa'#231#227'o'
   ClientHeight = 451
   ClientWidth = 786
   Position = poMainFormCenter
   OnClose = FormClose
   OnShow = FormShow
-  ExplicitLeft = 358
-  ExplicitTop = 183
-  ExplicitWidth = 802
-  ExplicitHeight = 490
+  ExplicitWidth = 792
+  ExplicitHeight = 480
   PixelsPerInch = 96
   TextHeight = 13
   object LblTitulo: TLabel
@@ -75,8 +73,6 @@ inherited FrmLogImportar: TFrmLogImportar
     TabOrder = 1
     LookAndFeel.Kind = lfFlat
     LookAndFeel.NativeStyle = True
-    ExplicitWidth = 844
-    ExplicitHeight = 320
     object GrdConsultaTbl: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -182,18 +178,14 @@ inherited FrmLogImportar: TFrmLogImportar
     Top = 417
     Width = 122
     Height = 25
-    Hint = 'Iniciar impota'#231#227'o'
+    Hint = '02. Importar'
     Anchors = [akRight, akBottom]
     Caption = '&Iniciar importa'#231#227'o'
-    Description = 
-      'Inicia e realiza o processo de importa'#231#227'o dos dados carregados p' +
-      'ara atualiza'#231#227'o da base de dados.'
+    Description = 'Executar o processo de importa'#231#227'o dos dados.'
     OptionsImage.ImageIndex = 54
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     TabOrder = 3
     OnClick = BtnIniciarImportacaoClick
-    ExplicitLeft = 497
-    ExplicitTop = 448
   end
   object BtnCarregarArquivo: TcxButton
     Tag = 1
@@ -201,18 +193,14 @@ inherited FrmLogImportar: TFrmLogImportar
     Top = 417
     Width = 121
     Height = 25
-    Hint = 'Carregar arquivo'
+    Hint = '01. Carregar'
     Anchors = [akRight, akBottom]
     Caption = '&Carregar arquivo'
-    Description = 
-      'Carrega um arquivo de importa'#231#227'o de dados de replica'#231#227'o para a b' +
-      'ase de dados.'
+    Description = 'Carregar arquivo para importa'#231#227'o.'
     OptionsImage.ImageIndex = 121
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     TabOrder = 2
     OnClick = BtnCarregarArquivoClick
-    ExplicitLeft = 370
-    ExplicitTop = 448
   end
   object BtnFechar: TcxButton
     Left = 695
@@ -227,8 +215,6 @@ inherited FrmLogImportar: TFrmLogImportar
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     OptionsImage.NumGlyphs = 2
     TabOrder = 5
-    ExplicitLeft = 769
-    ExplicitTop = 448
   end
   object BtnVisualizarImportacao: TcxButton
     Tag = 1
@@ -236,24 +222,22 @@ inherited FrmLogImportar: TFrmLogImportar
     Top = 417
     Width = 137
     Height = 25
-    Hint = 'Visualizar transa'#231#227'o'
+    Hint = '03. Visualizar'
     Anchors = [akRight, akBottom]
     Caption = '&Visualizar transa'#231#245'es'
-    Description = 
-      'Visualiza em uma janela as transa'#231#245'es que foram importadas ou n'#227 +
-      'o com sucesso.'
+    Description = 'Visualizar o log da importa'#231#227'o.'
     OptionsImage.ImageIndex = 66
     OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
     TabOrder = 4
     OnClick = BtnVisualizarImportacaoClick
-    ExplicitLeft = 626
-    ExplicitTop = 448
   end
   object GrpBxFiltros: TcxGroupBox
     Left = 8
     Top = 40
     Anchors = [akLeft, akTop, akRight]
     Caption = 'Filtros'
+    ParentBackground = False
+    ParentColor = False
     TabOrder = 0
     Transparent = True
     Height = 57

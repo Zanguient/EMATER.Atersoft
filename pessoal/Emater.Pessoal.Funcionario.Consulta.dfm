@@ -1,8 +1,8 @@
 inherited FrmPessoalFuncionarioConsulta: TFrmPessoalFuncionarioConsulta
   Left = 387
   Top = 153
-  Hint = 'Consulta de funcion'#225'rios.'
-  Caption = 'Consulta de Funcion'#225'rios'
+  Hint = 'Sistema :: Funcion'#225'rios :: Consulta'
+  Caption = 'Sistema :: Funcion'#225'rios :: Consulta'
   ClientHeight = 491
   ClientWidth = 816
   ExplicitWidth = 832
@@ -216,19 +216,20 @@ inherited FrmPessoalFuncionarioConsulta: TFrmPessoalFuncionarioConsulta
       0
       0)
     inherited BtnNovo: TdxBarButton
-      Description = 'Cria um novo registro de funcion'#225'rio.'
-      Hint = 'Inserir novo funcion'#225'rio'
+      Description = 'Criar novo funcion'#225'rio.'
+      Hint = '01. Novo'
     end
     inherited BtnEditar: TdxBarButton
-      Description = 'Edita o funcion'#225'rio atualmente selecionado.'
-      Hint = 'Editar funcion'#225'rio selecionado.'
+      Description = 'Editar funcion'#225'rio selecionado.'
+      Hint = '02. Editar'
     end
     inherited BtnVisualizar: TdxBarButton
-      Description = 'Visualiza o funcion'#225'rio atualmente selecionado.'
+      Description = 'Visualizar funcion'#225'rio selecionado.'
+      Hint = '03. Visualizar'
     end
     inherited BtnExcluir: TdxBarButton
-      Description = 'Exclui o funcion'#225'rio atualmente selecionado.'
-      Hint = 'Excluir funcion'#225'rio selecionado.'
+      Description = 'Excluir funcion'#225'rio selecionado.'
+      Hint = '04. Excluir'
     end
   end
   inherited PopupMenuConsulta: TdxBarPopupMenu

@@ -135,21 +135,18 @@ inherited FrmCreditoVariedade: TFrmCreditoVariedade
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 442
-    Hint = '01. Novo'
     Description = 'Inserir nova variedade.'
     ExplicitTop = 442
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 442
-    Hint = '02. Salvar'
     Description = 'Salvar altera'#231#245'es na variedade.'
     ExplicitTop = 442
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 442
-    Hint = '03. Cancelar'
     Description = 'Cancelar altera'#231#245'es na variedade.'
     ExplicitTop = 442
   end

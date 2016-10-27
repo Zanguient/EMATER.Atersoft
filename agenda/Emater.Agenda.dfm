@@ -2,14 +2,12 @@ inherited FrmAgenda: TFrmAgenda
   Tag = 1
   Left = 322
   Top = 152
-  Hint = 'Agenda do Escrit'#243'rio'
-  Caption = 'Agenda do Escrit'#243'rio'
+  Hint = 'Agenda :: Agenda do Escrit'#243'rio'
+  Caption = 'Agenda :: Agenda do Escrit'#243'rio'
   ClientHeight = 581
   ClientWidth = 826
   WindowState = wsNormal
   OnShow = FormShow
-  ExplicitLeft = 8
-  ExplicitTop = 8
   ExplicitWidth = 842
   ExplicitHeight = 620
   PixelsPerInch = 96
@@ -151,7 +149,6 @@ inherited FrmAgenda: TFrmAgenda
     OnBeforeDeleting = cxSchedulerBeforeDeleting
     OnBeforeEditing = cxSchedulerBeforeEditing
     OnEventSelectionChanged = cxSchedulerEventSelectionChanged
-    Selection = 1
     Splitters = {
       010000007E0000001F010000830000001F01000001000000240100000D020000}
     StoredClientBounds = {0100000001000000390300000D020000}
@@ -793,8 +790,8 @@ inherited FrmAgenda: TFrmAgenda
       Tag = 1
       Caption = '&Novo...'
       Category = 0
-      Description = 'Cria um novo compromisso na agenda'
-      Hint = 'Inserir novo compromisso'
+      Description = 'Criar novo compromisso na agenda.'
+      Hint = '01. Novo'
       Visible = ivAlways
       ImageIndex = 100
       PaintStyle = psCaptionGlyph
@@ -805,9 +802,9 @@ inherited FrmAgenda: TFrmAgenda
       Tag = 1
       Caption = '&Editar...'
       Category = 0
-      Description = 'Altera o compromisso atualmente selecionado'
+      Description = 'Editar compromisso selecionado.'
       Enabled = False
-      Hint = 'Alterar compromisso selecionado'
+      Hint = '02. Editar'
       Visible = ivAlways
       ImageIndex = 19
       PaintStyle = psCaptionGlyph
@@ -818,9 +815,9 @@ inherited FrmAgenda: TFrmAgenda
       Tag = 1
       Caption = 'E&xcluir'
       Category = 0
-      Description = 'Exclui o compromisso selecionado'
+      Description = 'Excluir compromisso selecionado.'
       Enabled = False
-      Hint = 'Excluir compromisso'
+      Hint = '03. Excluir'
       Visible = ivAlways
       ImageIndex = 96
       PaintStyle = psCaptionGlyph
@@ -885,8 +882,8 @@ inherited FrmAgenda: TFrmAgenda
       Tag = 1
       Caption = 'Imprimir agen&da'
       Category = 0
-      Description = 'Op'#231#245'es de impress'#227'o da agenda'
-      Hint = 'Op'#231#245'es de impress'#227'o da agenda'
+      Description = 'Imprimir compromissos da agenda.'
+      Hint = '04. Imprimir'
       Visible = ivAlways
       ImageIndex = 156
       ItemLinks = <
@@ -1089,7 +1086,6 @@ inherited FrmAgenda: TFrmAgenda
     object dxComponentPrinterLink: TcxSchedulerReportLink
       Active = True
       Component = cxScheduler
-      PageNumberFormat = pnfNumeral
       PDFExportOptions.Author = 'EMATER'
       PDFExportOptions.Title = 'Agenda'
       PDFExportOptions.DefaultFileName = 'Agenda'
@@ -1109,8 +1105,7 @@ inherited FrmAgenda: TFrmAgenda
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = 'Agenda'
-      ReportDocument.CreationDate = 42656.690056087970000000
-      AssignedFormatValues = [fvTime, fvPageNumber]
+      ReportDocument.CreationDate = 42660.791207928240000000
       PrintRange.TimePrintFrom = 0.333333333333333300
       PrintRange.TimePrintTo = 0.750000000000000000
       PrintStyles.Memo.Active = True

@@ -2,10 +2,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
   Tag = 1
   Left = 423
   Top = 114
-  Hint = 'Cadastros :: UPF'
+  Hint = 'Cadastros :: UPF :: Cadastro'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
-  Caption = 'Cadastros :: UPF'
+  Caption = 'Cadastros :: UPF :: Cadastro'
   ClientHeight = 630
   ClientWidth = 820
   ExplicitWidth = 836
@@ -1210,6 +1210,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benefici'#225'rios'
       ImageIndex = 6
       OnShow = TbShtBeneficiariosShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -1337,6 +1341,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Benfeitorias'
       ImageIndex = 2
       OnShow = TbShtBenfeitoriasShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -1729,6 +1737,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       ImageIndex = 3
       ParentFont = False
       OnShow = TbShtMaquinasShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -2035,6 +2047,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Semoventes'
       ImageIndex = 4
       OnShow = TbShtSemoventesShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -2227,6 +2243,10 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
       Caption = 'Atividades produtivas e comercializa'#231#227'o'
       ImageIndex = 5
       OnShow = TbShtAtividadesShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         801
         528)
@@ -2509,21 +2529,18 @@ inherited FrmCadastroUnidade: TFrmCadastroUnidade
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 598
-    Hint = '01. Novo'
     Description = 'Criar nova UPF.'
     ExplicitTop = 598
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 598
-    Hint = '02. Salvar'
     Description = 'Salvar altera'#231#245'es da UPF.'
     ExplicitTop = 598
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 598
-    Hint = '03. Cancelar'
     Description = 'Cancelar altera'#231#245'es da UPF.'
     ExplicitTop = 598
   end

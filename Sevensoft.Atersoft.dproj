@@ -82,8 +82,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>CompanyName=Sevensoft Tecnologia da Informação;FileDescription=Sevensoft Atersoft;FileVersion=1.0.0.109;InternalName=Sevensoft.Atersoft;LegalCopyright=Copyright© 2014, Sevensoft Tecnologia da Informação.;LegalTrademarks=O logotipo do sistema é marca da EMATER do Estado do Pará, Brasil. O nome Atersoft é marca da Sevensoft Tecnologia da Informação.;OriginalFilename=Sevensoft.Atersoft.exe;ProductName=ATER Pará;ProductVersion=1.0;Comments=Sistema desenvolvido e mantido pela Sevensoft Tecnlogia da Informação.</VerInfo_Keys>
-        <VerInfo_Build>109</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Sevensoft Tecnologia da Informação;FileDescription=Sevensoft Atersoft;FileVersion=1.0.0.111;InternalName=Sevensoft.Atersoft;LegalCopyright=Copyright© 2014, Sevensoft Tecnologia da Informação.;LegalTrademarks=O logotipo do sistema é marca da EMATER do Estado do Pará, Brasil. O nome Atersoft é marca da Sevensoft Tecnologia da Informação.;OriginalFilename=Sevensoft.Atersoft.exe;ProductName=ATER Pará;ProductVersion=1.0;Comments=Sistema desenvolvido e mantido pela Sevensoft Tecnlogia da Informação.</VerInfo_Keys>
+        <VerInfo_Build>111</VerInfo_Build>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -95,10 +95,11 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Build>42</VerInfo_Build>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_Build>111</VerInfo_Build>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=Sevensoft Tecnologia da Informação;FileDescription=Sevensoft Atersoft;FileVersion=1.0.0.42;InternalName=Sevensoft.Atersoft;LegalCopyright=Copyright© 2014, Sevensoft Tecnologia da Informação.;LegalTrademarks=O logotipo do sistema é marca da EMATER do Estado do Pará, Brasil. O nome Atersoft é marca da Sevensoft Tecnologia da Informação.;OriginalFilename=Sevensoft.Atersoft.exe;ProductName=ATER Pará;ProductVersion=1.0;Comments=Sistema desenvolvido e mantido pela Sevensoft Tecnlogia da Informação.</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Sevensoft Tecnologia da Informação;FileDescription=Sevensoft Atersoft;FileVersion=1.0.0.111;InternalName=Sevensoft.Atersoft;LegalCopyright=Copyright© 2014, Sevensoft Tecnologia da Informação.;LegalTrademarks=O logotipo do sistema é marca da EMATER do Estado do Pará, Brasil. O nome Atersoft é marca da Sevensoft Tecnologia da Informação.;OriginalFilename=Sevensoft.Atersoft.exe;ProductName=ATER Pará;ProductVersion=1.0;Comments=Sistema desenvolvido e mantido pela Sevensoft Tecnlogia da Informação.</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -632,8 +633,6 @@
                     <Source Name="MainSource">Sevensoft.Atersoft.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\17.0\Bpl\FIBPlus_XE10.bpl">FibPlus 7.7</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\17.0\Bpl\FIBPlusEditors_XE10.bpl">FIBPlus 7.7 Property Editors</Excluded_Packages>
                     <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\17.0\Bpl\FIBPlusTools_XE10.bpl">FIBPlus 7.7 Projects Tools</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k230.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp230.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>

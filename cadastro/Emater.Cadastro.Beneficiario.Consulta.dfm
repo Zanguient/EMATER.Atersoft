@@ -602,6 +602,7 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
     inherited BtnNovo: TdxBarButton
       Description = 'Criar novo benefici'#225'rio.'
       Hint = '01. Novo'
+      CloseSubMenuOnClick = False
     end
     inherited BtnEditar: TdxBarButton
       Description = 'Editar benefici'#225'rio selecionado.'
@@ -991,7 +992,6 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
     object dxComponentPrinterLink: TdxGridReportLink
       Active = True
       Component = GrdConsulta
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.GrayShading = True
@@ -1020,8 +1020,7 @@ inherited FrmCadastroBeneficiarioConsulta: TFrmCadastroBeneficiarioConsulta
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = 'Listagem de Benefici'#225'rios de ATER'
-      ReportDocument.CreationDate = 42657.545317476860000000
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
+      ReportDocument.CreationDate = 42660.443925659730000000
       OptionsSize.AutoWidth = True
       OptionsView.FilterBar = False
       BuiltInReportLink = True

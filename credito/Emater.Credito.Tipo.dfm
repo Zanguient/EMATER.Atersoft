@@ -2,8 +2,8 @@ inherited FrmCreditoTipo: TFrmCreditoTipo
   Tag = 1
   Left = 415
   Top = 152
-  Hint = 'Tabela de tipos de cr'#233'dito.'
-  Caption = 'Tipos de Cr'#233'dito'
+  Hint = 'Cr'#233'dito Rural :: Tabelas :: Tipos de Cr'#233'dito'
+  Caption = 'Cr'#233'dito Rural :: Tabelas :: Tipos de Cr'#233'dito'
   ClientHeight = 474
   ClientWidth = 412
   ExplicitWidth = 418
@@ -13,17 +13,21 @@ inherited FrmCreditoTipo: TFrmCreditoTipo
   inherited BtnSelecionar: TcxButton
     Left = 250
     Top = 442
-    ExplicitLeft = 248
+    ExplicitLeft = 250
     ExplicitTop = 442
   end
   inherited PgCntrlMain: TcxPageControl
     Width = 397
     Height = 428
-    ExplicitWidth = 395
+    ExplicitWidth = 397
     ExplicitHeight = 428
     ClientRectBottom = 426
     ClientRectRight = 395
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
+      ExplicitWidth = 393
+      ExplicitHeight = 398
       object GrdPrincipal: TcxGrid
         Left = 8
         Top = 88
@@ -39,7 +43,6 @@ inherited FrmCreditoTipo: TFrmCreditoTipo
         TabOrder = 1
         LookAndFeel.Kind = lfFlat
         LookAndFeel.NativeStyle = True
-        ExplicitWidth = 375
         object GrdPrincipalTbl: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           Navigator.Buttons.First.Hint = 'Primeira prescri'#231#227'o'
@@ -102,7 +105,6 @@ inherited FrmCreditoTipo: TFrmCreditoTipo
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
-        ExplicitWidth = 375
         DesignSize = (
           377
           74)
@@ -124,7 +126,6 @@ inherited FrmCreditoTipo: TFrmCreditoTipo
           DataBinding.DataField = 'TIP_DESCRICAO'
           DataBinding.DataSource = DtSrcPrincipal
           TabOrder = 0
-          ExplicitWidth = 359
           Width = 361
         end
       end
@@ -165,7 +166,7 @@ inherited FrmCreditoTipo: TFrmCreditoTipo
   inherited BtnFechar: TcxButton [7]
     Left = 330
     Top = 442
-    ExplicitLeft = 328
+    ExplicitLeft = 330
     ExplicitTop = 442
   end
   inherited DtSrcPrincipal: TDataSource

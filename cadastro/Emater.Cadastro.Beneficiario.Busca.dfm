@@ -1,8 +1,8 @@
 inherited FrmCadastroBeneficiarioBusca: TFrmCadastroBeneficiarioBusca
   Left = 280
   Top = 148
-  Hint = 'Busca r'#225'pida de benefici'#225'rios de ATER.'
-  Caption = 'Busca R'#225'pida de Benefici'#225'rios de ATER'
+  Hint = 'Cadastros :: Benefici'#225'rio de ATER :: Busca'
+  Caption = 'Cadastros :: Benefici'#225'rio de ATER :: Busca'
   ClientWidth = 861
   ExplicitWidth = 867
   PixelsPerInch = 96
@@ -285,21 +285,13 @@ inherited FrmCadastroBeneficiarioBusca: TFrmCadastroBeneficiarioBusca
     ExplicitLeft = 779
   end
   inherited BtnNovo: TcxButton
-    Hint = 'Inserir novo benefici'#225'rio'
-    Description = 'Abre a janela de benefici'#225'rio e cria um novo registro.'
+    Description = 'Criar novo benefici'#225'rio.'
   end
   inherited BtnEditar: TcxButton
-    Hint = 'Editar benefici'#225'rio'
-    Description = 'Edita o benefici'#225'rio atualmente selecionado.'
+    Description = 'Editar benefici'#225'rio selecionado.'
   end
   inherited BtnVisualizar: TcxButton
-    Hint = 'Visualizar benefici'#225'rio'
-    Description = 'Visualiza o cadastro do benefici'#225'rio.'
-  end
-  object DtSrcComunidade: TDataSource [7]
-    DataSet = QryComunidade
-    Left = 168
-    Top = 416
+    Description = 'Visualizar benefici'#225'rio selecionado.'
   end
   inherited DtSrcConsulta: TDataSource
     Left = 168
@@ -467,6 +459,11 @@ inherited FrmCadastroBeneficiarioBusca: TFrmCadastroBeneficiarioBusca
       'WHERE BEN_ID = :BEN_ID')
     Left = 136
     Top = 384
+  end
+  object DtSrcComunidade: TDataSource
+    DataSet = QryComunidade
+    Left = 168
+    Top = 416
   end
   object QryComunidade: TFDQuery
     Connection = DtmConexaoModulo.FDConnection

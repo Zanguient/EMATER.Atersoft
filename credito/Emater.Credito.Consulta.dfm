@@ -1,7 +1,8 @@
 inherited FrmCreditoConsulta: TFrmCreditoConsulta
   Left = 319
   Top = 127
-  Caption = 'Consulta de Projetos de Cr'#233'dito Rural'
+  Hint = 'Cr'#233'dito Rural :: Consulta'
+  Caption = 'Cr'#233'dito Rural :: Consulta'
   ClientWidth = 782
   ExplicitWidth = 798
   PixelsPerInch = 96
@@ -169,20 +170,20 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
     end
     inherited BtnConsultar: TcxButton
       Left = 689
-      Top = 61
+      Top = 55
       Anchors = [akRight, akBottom]
       TabOrder = 12
       OnClick = BtnConsultarClick
       ExplicitLeft = 689
-      ExplicitTop = 61
+      ExplicitTop = 55
     end
     inherited BtnLimparParametros: TcxButton
       Left = 689
-      Top = 93
+      Top = 87
       Anchors = [akRight, akBottom]
       TabOrder = 13
       ExplicitLeft = 689
-      ExplicitTop = 93
+      ExplicitTop = 87
     end
     inherited EdtValor: TcxTextEdit
       Anchors = [akLeft, akTop, akRight]
@@ -305,22 +306,20 @@ inherited FrmCreditoConsulta: TFrmCreditoConsulta
       0
       0)
     inherited BtnNovo: TdxBarButton
-      Description = 
-        'Abre a janela de projeto de cr'#233'dito rural e cria um novo registr' +
-        'o.'
-      Hint = 'Inserir projeto de cr'#233'dito rural'
+      Description = 'Criar novo projeto de cr'#233'dito rural.'
+      Hint = '01. Novo'
     end
     inherited BtnEditar: TdxBarButton
-      Description = 'Edita o projeto de cr'#233'dito rural atualmente selecionado.'
-      Hint = 'Editar projeto de cr'#233'dito rural selecionado'
+      Description = 'Editar projeto de cr'#233'dito rural selecionado.'
+      Hint = '02. Editar'
     end
     inherited BtnVisualizar: TdxBarButton
-      Description = 'Visualiza o projeto de cr'#233'dito rural atualmente selecionado.'
-      Hint = 'Visualizar projeto de cr'#233'dito rural selecionado'
+      Description = 'Visualizar projeto de cr'#233'dito rural selecionado.'
+      Hint = '03. Visualizar'
     end
     inherited BtnExcluir: TdxBarButton
-      Description = 'Exclui o projeto de cr'#233'dito rural atualmente selecionado.'
-      Hint = 'Excluir projeto de cr'#233'dito rural'
+      Description = 'Excluir projeto de cr'#233'dito rural selecionado.'
+      Hint = '04. Excluir'
     end
   end
   inherited PopupMenuConsulta: TdxBarPopupMenu

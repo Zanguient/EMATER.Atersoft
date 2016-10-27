@@ -5,7 +5,7 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
   Hint = 'Cadastros :: Benefici'#225'rio de ATER'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
-  Caption = 'Cadastros :: Benefici'#225'rio de ATER'
+  Caption = 'Cadastros :: Benefici'#225'rio de ATER :: Cadastro'
   ClientHeight = 618
   ClientWidth = 736
   ExplicitWidth = 752
@@ -3620,21 +3620,18 @@ inherited FrmCadastroBeneficiario: TFrmCadastroBeneficiario
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 586
-    Hint = '01. Novo'
     Description = 'Criar novo benefici'#225'rio.'
     ExplicitTop = 586
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 586
-    Hint = '02. Salvar'
     Description = 'Salvar altera'#231#245'es do benefici'#225'rio.'
     ExplicitTop = 586
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 586
-    Hint = '03. Cancelar'
     Description = 'Cancelar altera'#231#245'es do benefici'#225'rio.'
     ExplicitTop = 586
   end

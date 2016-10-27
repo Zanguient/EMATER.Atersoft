@@ -3460,6 +3460,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     ImageOptions.LargeImages = DtmRecursoModulo.ImgLstGrandes
     MenusShowRecentItemsFirst = False
     PopupMenuLinks = <>
+    ShowHint = False
     UseSystemFont = True
     Left = 344
     Top = 304
@@ -3865,8 +3866,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Consulta'
       Category = 0
-      Description = 'Janela de consulta dos benefici'#225'rios de ATER.'
-      Hint = 'Consulta de benefici'#225'rios de ATER'
+      Description = 'Consultar benefici'#225'rios de ATER.'
+      Hint = 'Cadastros :: Benefici'#225'rio de ATER :: Consulta'
       Visible = ivAlways
       LargeImageIndex = 11
       UnclickAfterDoing = False
@@ -3878,8 +3879,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Novo'
       Category = 0
-      Description = 'Janela para inclus'#227'o de um novo benefici'#225'rio de ATER.'
-      Hint = 'Novo benefici'#225'rio de ATER'
+      Description = 'Criar novo benefici'#225'rio de ATER.'
+      Hint = 'Cadastros :: Benefici'#225'rio de ATER :: Novo'
       Visible = ivAlways
       LargeImageIndex = 0
       UnclickAfterDoing = False
@@ -3891,8 +3892,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Nova'
       Category = 1
-      Description = 'Janela para inclus'#227'o de uma nova unidade de produ'#231#227'o familiar.'
-      Hint = 'Nova unidade de produ'#231#227'o familiar'
+      Description = 'Criar nova unidade de produ'#231#227'o familiar.'
+      Hint = 'Cadastros :: UPF :: Nova'
       Visible = ivAlways
       LargeImageIndex = 9
       UnclickAfterDoing = False
@@ -3904,8 +3905,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Consulta'
       Category = 1
-      Description = 'Janela de consulta das unidades de produ'#231#227'o familiar.'
-      Hint = 'Consulta de unidade de produ'#231#227'o familiar'
+      Description = 'Consultar unidades de produ'#231#227'o familiar.'
+      Hint = 'Cadastros :: UPF :: Consulta'
       Visible = ivAlways
       LargeImageIndex = 10
       UnclickAfterDoing = False
@@ -3917,8 +3918,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Consulta'
       Category = 2
-      Description = 'Janela para consulta de FATER.'
-      Hint = 'Consulta de FATER'
+      Description = 'Consultar FATER.'
+      Hint = 'Cadastros :: FATER :: Consulta'
       Visible = ivAlways
       LargeImageIndex = 8
       UnclickAfterDoing = False
@@ -3930,8 +3931,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Nova'
       Category = 2
-      Description = 'Janela para inclus'#227'o de uma nova FATER.'
-      Hint = 'Nova FATER'
+      Description = 'Criar nova FATER.'
+      Hint = 'Cadastros :: FATER :: Nova'
       Visible = ivAlways
       LargeImageIndex = 7
       UnclickAfterDoing = False
@@ -3943,8 +3944,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Consulta'
       Category = 3
-      Description = 'Janela de consulta das organiza'#231#245'es.'
-      Hint = 'Consulta de organiza'#231#245'es'
+      Description = 'Consultar organiza'#231#245'es.'
+      Hint = 'Cadastros :: Organiza'#231#227'o :: Consulta'
       Visible = ivAlways
       LargeImageIndex = 12
       UnclickAfterDoing = False
@@ -3956,8 +3957,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Nova'
       Category = 3
-      Description = 'Janela para inclus'#227'o de uma nova organiza'#231#227'o.'
-      Hint = 'Nova organiza'#231#227'o'
+      Description = 'Criar nova organiza'#231#227'o.'
+      Hint = 'Cadastros :: Organiza'#231#227'o :: Nova'
       Visible = ivAlways
       LargeImageIndex = 6
       UnclickAfterDoing = False
@@ -3969,8 +3970,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Consulta/Nova'
       Category = 4
-      Description = 'Janela da tabela das comunidades.'
-      Hint = 'Tabela de comunidades'
+      Description = 'Consultar e criar comunidades.'
+      Hint = 'Cadastros :: Comunidade :: Tabela'
       Visible = ivAlways
       LargeImageIndex = 5
       UnclickAfterDoing = False
@@ -3982,8 +3983,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Relat'#243'rios de Benefici'#225'rio de ATER'
       Category = 5
-      Description = 'Relat'#243'rios de Benefici'#225'rio de ATER'
-      Hint = 'Relat'#243'rios de Benefici'#225'rio de ATER'
+      Description = 'Relat'#243'rios de Benefici'#225'rio de ATER.'
+      Hint = 'Relat'#243'rios :: Benefici'#225'rio de ATER'
       Visible = ivAlways
       ImageIndex = 156
       LargeImageIndex = 20
@@ -4026,8 +4027,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Prontu'#225'rio do benefici'#225'rio de ATER'
       Category = 5
-      Description = 'Relat'#243'rio do cadastro individual do benefici'#225'rio'
-      Hint = 'Prontu'#225'rio do benefici'#225'rio de ATER'
+      Description = 'Relat'#243'rio do cadastro individual do benefici'#225'rio.'
+      Hint = 
+        'Relat'#243'rios :: Benefici'#225'rio de ATER :: Prontu'#225'rio do benefici'#225'rio' +
+        ' de ATER'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnBeneficiarioIndividualClick
@@ -4042,10 +4045,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de benefici'#225'rio de ATER cadastrados segundo a categori' +
-        'a, sexo e faixa et'#225'ria de jovens'
+        'a, sexo e faixa et'#225'ria de jovens.'
       Hint = 
-        'Benefici'#225'rios de ATER cadastrados segundo a categoria, sexo e fa' +
-        'ixa et'#225'ria de jovens'
+        'Relat'#243'rios :: Benefici'#225'rio de ATER :: Benefici'#225'rios de ATER cada' +
+        'strados segundo a categoria, sexo e faixa et'#225'ria de jovens'
       Visible = ivAlways
       LargeImageIndex = 20
       UnclickAfterDoing = False
@@ -4059,8 +4062,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de benefici'#225'rios de ATER cadastrados segundo a ativida' +
-        'de produtiva'
-      Hint = 'Benefici'#225'rios de ATER cadastrados segundo a atividade produtiva'
+        'de produtiva.'
+      Hint = 
+        'Relat'#243'rios :: Benefici'#225'rio de ATER :: Benefici'#225'rios de ATER cada' +
+        'strados segundo a atividade produtiva'
       Visible = ivAlways
       LargeImageIndex = 20
       UnclickAfterDoing = False
@@ -4072,8 +4077,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Relat'#243'rios de AMA'
       Category = 5
-      Description = 'Relat'#243'rios de AMA'
-      Hint = 'Relat'#243'rios de AMA'
+      Description = 'Relat'#243'rios de AMA.'
+      Hint = 'Relat'#243'rios :: AMA'
       Visible = ivAlways
       ImageIndex = 156
       LargeImageIndex = 20
@@ -4134,8 +4139,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Atendimentos por atividade segundo a categoria'
       Category = 5
-      Description = 'Relat'#243'rio de atendimentos por atividade segundo a categoria'
-      Hint = 'Atendimentos por atividade segundo a categoria'
+      Description = 'Relat'#243'rio de atendimentos por atividade segundo a categoria.'
+      Hint = 
+        'Relat'#243'rios :: AMA :: Atendimentos por atividade segundo a catego' +
+        'ria'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnFaterAtividadeClick
@@ -4146,8 +4153,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Atendimentos de t'#233'cnicos por quadrimestre'
       Category = 5
-      Description = 'Relat'#243'rio de atendimentos de t'#233'cnicos por quadrimestre'
-      Hint = 'Atendimentos de t'#233'cnicos por quadrimestre'
+      Description = 'Relat'#243'rio de atendimentos de t'#233'cnicos por quadrimestre.'
+      Hint = 'Relat'#243'rios :: AMA :: Atendimentos de t'#233'cnicos por quadrimestre'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnFaterQuadrimestreClick
@@ -4157,8 +4164,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     object BtnFaterComunidade: TdxBarLargeButton
       Caption = 'Atendimentos por comunidade'
       Category = 5
-      Description = 'Relat'#243'rio de atendimentos por comunidade'
-      Hint = 'Atendimentos por comunidade'
+      Description = 'Relat'#243'rio de atendimentos por comunidade.'
+      Hint = 'Relat'#243'rios :: AMA :: Atendimentos por comunidade'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnFaterComunidadeClick
@@ -4169,8 +4176,12 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Desempenho de atendimento por metodologia e t'#233'cnico'
       Category = 5
-      Description = 'Relat'#243'rio de desempenho de atendimento por metodologia e t'#233'cnico'
-      Hint = 'Desempenho de atendimento por metodologia e t'#233'cnico'
+      Description = 
+        'Relat'#243'rio de desempenho de atendimento por metodologia e t'#233'cnico' +
+        '.'
+      Hint = 
+        'Relat'#243'rios :: AMA :: Desempenho de atendimento por metodologia e' +
+        ' t'#233'cnico'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnMetodologiaFuncionarioClick
@@ -4183,8 +4194,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de desempenho de atendimento por metodologia e escrit'#243 +
-        'rio'
-      Hint = 'Desempenho de atendimento por metodologia e escrit'#243'rio'
+        'rio.'
+      Hint = 
+        'Relat'#243'rios :: AMA :: Desempenho de atendimento por metodologia e' +
+        ' escrit'#243'rio'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnMetodologiaUnidadeClick
@@ -4195,8 +4208,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Geral por t'#233'cnico respons'#225'vel'
       Category = 5
-      Description = 'Relat'#243'rio geral por t'#233'cnico respons'#225'vel'
-      Hint = 'Geral por t'#233'cnico t'#233'cnico respons'#225'vel'
+      Description = 'Relat'#243'rio geral por t'#233'cnico respons'#225'vel.'
+      Hint = 'Relat'#243'rios :: AMA :: Geral por t'#233'cnico t'#233'cnico respons'#225'vel'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnGeralFuncionarioClick
@@ -4207,8 +4220,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Geral por escrit'#243'rio'
       Category = 5
-      Description = 'Relat'#243'rio geral por escrit'#243'rio'
-      Hint = 'Geral por escrit'#243'rio'
+      Description = 'Relat'#243'rio geral por escrit'#243'rio.'
+      Hint = 'Relat'#243'rios :: AMA :: Geral por escrit'#243'rio'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnGeralUnidadeClick
@@ -4219,8 +4232,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Geral por projeto'
       Category = 5
-      Description = 'Relat'#243'rio geral por projeto'
-      Hint = 'Geral por projeto'
+      Description = 'Relat'#243'rio geral por projeto.'
+      Hint = 'Relat'#243'rios :: AMA :: Geral por projeto'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnGeralProjetoClick
@@ -4230,8 +4243,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     object BtnUPFRelatorio: TdxBarSubItem
       Caption = 'Relat'#243'rios de UPF'
       Category = 5
-      Description = 'Relat'#243'rios de UPF'
-      Hint = 'Relat'#243'rios de UPF'
+      Description = 'Relat'#243'rios de UPF.'
+      Hint = 'Relat'#243'rios :: UPF'
       Visible = ivAlways
       ImageIndex = 156
       LargeImageIndex = 20
@@ -4261,8 +4274,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Produ'#231#227'o por benefici'#225'rio'
       Category = 5
-      Description = 'Relat'#243'rio de produ'#231#227'o por benefici'#225'rio'
-      Hint = 'Produ'#231#227'o por benefici'#225'rio'
+      Description = 'Relat'#243'rio de produ'#231#227'o por benefici'#225'rio.'
+      Hint = 'Relat'#243'rios :: UPF :: Produ'#231#227'o por benefici'#225'rio'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnProducaoBeneficiarioClick
@@ -4275,8 +4288,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio da quantidade de benefici'#225'rio de ATER cadastrados e in' +
-        'tegrantes familiares, segundo o estado civil'
-      Hint = 'Benefici'#225'rios de ATER cadastrados segundo o estado civil'
+        'tegrantes familiares, segundo o estado civil.'
+      Hint = 
+        'Relat'#243'rios :: Benefici'#225'rio de ATER :: Benefici'#225'rios de ATER cada' +
+        'strados segundo o estado civil'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnEstadoCivilBeneficiarioClick
@@ -4289,8 +4304,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio da quantidade de benefici'#225'rio de ATER cadastrados e in' +
-        'tegrantes familiares, segundo a escolaridade'
-      Hint = 'Benefici'#225'rios de ATER cadastrados segundo a escolaridade'
+        'tegrantes familiares, segundo a escolaridade.'
+      Hint = 
+        'Relat'#243'rios :: Benefici'#225'rio de ATER :: Benefici'#225'rios de ATER cada' +
+        'strados segundo a escolaridade'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnEscolaridadeBeneficiarioClick
@@ -4303,8 +4320,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de ribeirinhos cadastrados segundo a categoria e g'#234'ner' +
-        'o'
-      Hint = 'Ribeirinhos cadastrados segundo a categoria e g'#234'nero'
+        'o.'
+      Hint = 
+        'Relat'#243'rios :: Benefici'#225'rio de ATER :: Ribeirinhos cadastrados se' +
+        'gundo a categoria e g'#234'nero'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioRibeirinhoClick
@@ -4317,8 +4336,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de benefici'#225'rios de ATER cadastrados segundo a faixa e' +
-        't'#225'ria'
-      Hint = 'Benefici'#225'rios de ATER cadastrados segundo a faixa et'#225'ria'
+        't'#225'ria.'
+      Hint = 
+        'Relat'#243'rios :: Benefici'#225'rio de ATER :: Benefici'#225'rios de ATER cada' +
+        'strados segundo a faixa et'#225'ria'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioFaixaEtariaClick
@@ -4331,8 +4352,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de benefici'#225'rios de ATER cadastrados segundo a categor' +
-        'ia e g'#234'nero'
-      Hint = 'Benefici'#225'rios de ATER cadastrados segundo a categoria e g'#234'nero'
+        'ia e g'#234'nero.'
+      Hint = 
+        'Relat'#243'rios :: Benefici'#225'rio de ATER :: Benefici'#225'rios de ATER cada' +
+        'strados segundo a categoria e g'#234'nero'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnBeneficiarioGeneroClick
@@ -4345,8 +4368,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo' +
-        ' a cultura'
-      Hint = 'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo a cultura'
+        ' a cultura.'
+      Hint = 
+        'Relat'#243'rios :: UPF :: Produ'#231#227'o obtida pelos benefici'#225'rios de ATER' +
+        ' segundo a cultura'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioProducaoCulturaClick
@@ -4361,10 +4386,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo' +
-        ' o tipo de cria'#231#227'o'
+        ' o tipo de cria'#231#227'o.'
       Hint = 
-        'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo o tipo de cr' +
-        'ia'#231#227'o'
+        'Relat'#243'rios :: UPF :: Produ'#231#227'o obtida pelos benefici'#225'rios de ATER' +
+        ' segundo o tipo de cria'#231#227'o'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioProducaoCriacaoClick
@@ -4379,10 +4404,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo' +
-        ' o tipo de artesanato ou servi'#231'o'
+        ' o tipo de artesanato ou servi'#231'o.'
       Hint = 
-        'Produ'#231#227'o obtida pelos benefici'#225'rios de ATER segundo o tipo de ar' +
-        'tesanato ou servi'#231'o'
+        'Relat'#243'rios :: UPF :: Produ'#231#227'o obtida pelos benefici'#225'rios de ATER' +
+        ' segundo o tipo de artesanato ou servi'#231'o'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioProducaoServicoClick
@@ -4395,8 +4420,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de quantidade de atendimentos por categoria segundo a ' +
-        'atividade produtiva'
-      Hint = 'Atendimentos por categoria segundo a atividade produtiva'
+        'atividade produtiva.'
+      Hint = 
+        'Relat'#243'rios :: AMA :: Atendimentos por categoria segundo a ativid' +
+        'ade produtiva'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioFaterCategoriaClick
@@ -4411,10 +4438,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio de comercializa'#231#227'o realizada pelos benefici'#225'rio de ATE' +
-        'R segundo o tipo de produto/servi'#231'o'
+        'R segundo o tipo de produto/servi'#231'o.'
       Hint = 
-        'Comercializa'#231#227'o realizada pelos benefici'#225'rio de ATER segundo o t' +
-        'ipo de produto/servi'#231'o'
+        'Relat'#243'rios :: UPF :: Comercializa'#231#227'o realizada pelos benefici'#225'ri' +
+        'o de ATER segundo o tipo de produto/servi'#231'o'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioProducaoComercioClick
@@ -4427,8 +4454,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Category = 5
       Description = 
         'Relat'#243'rio da quantidade de metodologia por unidade administrativ' +
-        'a'
-      Hint = 'Quantidade de metodologia por unidade administrativa'
+        'a.'
+      Hint = 
+        'Relat'#243'rios :: AMA :: Quantidade de metodologia por unidade admin' +
+        'istrativa'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioMetodologiaAdministrativaClick
@@ -4439,8 +4468,10 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Quantidade de metodologia por finalidade da a'#231#227'o'
       Category = 5
-      Description = 'Relat'#243'rio de quantidade de metodologia por finalidade da a'#231#227'o'
-      Hint = 'Quantidade de metodologia por finalidade da a'#231#227'o'
+      Description = 'Relat'#243'rio de quantidade de metodologia por finalidade da a'#231#227'o.'
+      Hint = 
+        'Relat'#243'rios :: AMA :: Quantidade de metodologia por finalidade da' +
+        ' a'#231#227'o'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioMetodologiaFinalidadeClick
@@ -4451,7 +4482,12 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Quantidade de benefici'#225'rios por categoria segundo a metodologia'
       Category = 5
-      Hint = 'Quantidade de benefici'#225'rios por categoria segundo a metodologia'
+      Description = 
+        'Relat'#243'rio de quantidade de benefici'#225'rios por categoria segundo a' +
+        ' metodologia.'
+      Hint = 
+        'Relat'#243'rios :: AMA :: Quantidade de benefici'#225'rios por categoria s' +
+        'egundo a metodologia'
       Visible = ivAlways
       LargeImageIndex = 20
       OnClick = BtnRelatorioMetodologiaCategoriaClick
@@ -4462,8 +4498,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Consulta'
       Category = 6
-      Description = 'Janela de consulta dos funcion'#225'rios.'
-      Hint = 'Consulta de funcion'#225'rios'
+      Description = 'Consultar funcion'#225'rios.'
+      Hint = 'Sistema :: Funcion'#225'rios :: Consulta'
       Visible = ivAlways
       LargeImageIndex = 13
       UnclickAfterDoing = False
@@ -4475,8 +4511,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Novo'
       Category = 6
-      Description = 'Janela para inclus'#227'o de um novo funcion'#225'rio.'
-      Hint = 'Novo funcion'#225'rio'
+      Description = 'Criar novo funcion'#225'rio.'
+      Hint = 'Sistema :: Funcion'#225'rios :: Novo'
       Visible = ivAlways
       LargeImageIndex = 4
       UnclickAfterDoing = False
@@ -4488,8 +4524,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Perfis'
       Category = 7
-      Description = 'Janela da tabela de perfis de usu'#225'rios.'
-      Hint = 'Perfis de usu'#225'rios'
+      Description = 'Tabela de perfis de usu'#225'rios.'
+      Hint = 'Sistema :: Usu'#225'rios :: Perfis'
       Visible = ivAlways
       LargeImageIndex = 3
       UnclickAfterDoing = False
@@ -4501,8 +4537,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Cadastro'
       Category = 7
-      Description = 'Janela da tabela de usu'#225'rios do sistema.'
-      Hint = 'Cadastro de usu'#225'rios'
+      Description = 'Tabela de usu'#225'rios do sistema.'
+      Hint = 'Sistema :: Usu'#225'rios :: Cadastro'
       Visible = ivAlways
       LargeImageIndex = 1
       UnclickAfterDoing = False
@@ -4514,8 +4550,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Permiss'#245'es'
       Category = 7
-      Description = 'Janela de permiss'#245'es dos perfis e usu'#225'rios.'
-      Hint = 'Permiss'#245'es dos perfis e usu'#225'rios'
+      Description = 'Controle de permiss'#245'es dos perfis e usu'#225'rios.'
+      Hint = 'Sistema :: Usu'#225'rios :: Permiss'#245'es'
       Visible = ivAlways
       LargeImageIndex = 14
       UnclickAfterDoing = False
@@ -4524,11 +4560,14 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       ImageIndex = 150
     end
     object BtnSenhaAlterar: TdxBarLargeButton
+      Tag = 1
       Caption = 'Alterar senha'
       Category = 7
-      Hint = 'Alterar senha'
+      Description = 'Altera'#231#227'o de senha do usu'#225'rio.'
+      Hint = 'Sistema :: Usu'#225'rios :: Alterar senha'
       Visible = ivAlways
       LargeImageIndex = 24
+      UnclickAfterDoing = False
       OnClick = BtnSenhaAlterarClick
       SyncImageIndex = False
       ImageIndex = 179
@@ -4537,8 +4576,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Exporta'#231#227'o de dados'
       Category = 8
-      Description = 'Janela para exporta'#231#227'o de dados para replica'#231#227'o.'
-      Hint = 'Exporta'#231#227'o de dados'
+      Description = 'Exportar dados para replica'#231#227'o.'
+      Hint = 'Sistema :: Banco de Dados :: Exporta'#231#227'o'
       Visible = ivAlways
       LargeImageIndex = 15
       UnclickAfterDoing = False
@@ -4550,8 +4589,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Importa'#231#227'o de dados'
       Category = 8
-      Description = 'Janela para importa'#231#227'o de dados da replica'#231#227'o.'
-      Hint = 'Importa'#231#227'o de dados'
+      Description = 'Importar dados da replica'#231#227'o.'
+      Hint = 'Sistema :: Banco de Dados :: Importa'#231#227'o'
       Visible = ivAlways
       LargeImageIndex = 16
       UnclickAfterDoing = False
@@ -4563,8 +4602,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Backup'
       Category = 8
-      Description = 'Janela pra execu'#231#227'o do processo de backup da base de dados.'
-      Hint = 'Backup do banco de dados'
+      Description = 'Executar processo de backup da base de dados.'
+      Hint = 'Sistema :: Banco de Dados :: Backup'
       Visible = ivAlways
       LargeImageIndex = 18
       UnclickAfterDoing = False
@@ -4576,8 +4615,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Restaura'#231#227'o'
       Category = 8
-      Description = 'Janela para restaura'#231#227'o do banco de dados.'
-      Hint = 'Restaura'#231#227'o do banco de dados'
+      Description = 'Restaurar banco de dados.'
+      Hint = 'Sistema :: Banco de Dados :: Restaura'#231#227'o'
       Visible = ivAlways
       LargeImageIndex = 19
       UnclickAfterDoing = False
@@ -4600,8 +4639,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Ambiente'
       Category = 9
-      Description = 'Janela com as defini'#231#245'es do ambiente.'
-      Hint = 'Defini'#231#245'es do ambiente'
+      Description = 'Defini'#231#245'es do ambiente.'
+      Hint = 'Sistema :: Ambiente'
       Visible = ivAlways
       LargeImageIndex = 17
       UnclickAfterDoing = False
@@ -4612,7 +4651,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     object BtnSobre: TdxBarLargeButton
       Caption = 'Sobre'
       Category = 9
-      Hint = 'Sobre o sistema'
+      Description = 'Informa'#231#245'es sobre o sistema.'
+      Hint = 'Sistema :: Sobre'
       Visible = ivAlways
       LargeImageIndex = 21
       UnclickAfterDoing = False
@@ -4623,7 +4663,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     object BtnAjuda: TdxBarLargeButton
       Caption = 'Ajuda'
       Category = 9
-      Hint = 'Ajuda'
+      Description = 'Informa'#231#245'es para obter ajuda do sistema.'
+      Hint = 'Sistema :: Ajuda'
       Visible = ivAlways
       LargeImageIndex = 22
       OnClick = BtnAjudaClick
@@ -4633,6 +4674,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     object BtnDocumentos: TdxBarSubItem
       Caption = 'Documentos'
       Category = 9
+      Description = 'Atalhos para documentos do sistema.'
+      Hint = 'Sistema :: Documentos'
       Visible = ivAlways
       ImageIndex = 157
       LargeImageIndex = 23
@@ -4739,8 +4782,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Novo'
       Category = 10
-      Description = 'Janela para inclus'#227'o de um novo projeto de cr'#233'dito rural.'
-      Hint = 'Novo projeto de cr'#233'dito rural'
+      Description = 'Criar novo projeto de cr'#233'dito rural.'
+      Hint = 'Cr'#233'dito Rural :: Novo'
       Visible = ivAlways
       LargeImageIndex = 26
       UnclickAfterDoing = False
@@ -4752,8 +4795,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Consulta'
       Category = 10
-      Description = 'Janela de consulta dos projetos de cr'#233'dito rural.'
-      Hint = 'Consulta de projeto de cr'#233'dito rural'
+      Description = 'Consultar projetos de cr'#233'dito rural.'
+      Hint = 'Cr'#233'dito Rural :: Consulta'
       Visible = ivAlways
       LargeImageIndex = 27
       UnclickAfterDoing = False
@@ -4765,8 +4808,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Tabelas'
       Category = 10
-      Description = 'Tabela do cr'#233'dito rural'
-      Hint = 'Tabelas do cr'#233'dito rural'
+      Description = 'Menu de tabelas do cr'#233'dito rural.'
+      Hint = 'Cr'#233'dito Rural :: Tabelas'
       Visible = ivAlways
       ImageIndex = 183
       LargeImageIndex = 28
@@ -4809,8 +4852,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Agentes financeiros'
       Category = 10
-      Description = 'Tabela de agentes financeiros'
-      Hint = 'Agentes financeiros'
+      Description = 'Tabela de agentes financeiros.'
+      Hint = 'Cr'#233'dito Rural :: Tabelas :: Agentes Financeiros'
       Visible = ivAlways
       LargeImageIndex = 28
       OnClick = BtnCreditoAgenteFinanceiroClick
@@ -4821,8 +4864,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Linhas de cr'#233'dito'
       Category = 10
-      Description = 'Tabela de linhas de cr'#233'dito'
-      Hint = 'Linhas de cr'#233'dito'
+      Description = 'Tabela de linhas de cr'#233'dito.'
+      Hint = 'Cr'#233'dito Rural :: Tabelas :: Linhas de Cr'#233'dito'
       Visible = ivAlways
       LargeImageIndex = 28
       OnClick = BtnCreditoLinhaCreditoClick
@@ -4833,8 +4876,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Tipos de cr'#233'dito'
       Category = 10
-      Description = 'Tabela de tipos de cr'#233'dito'
-      Hint = 'Tipos de cr'#233'dito'
+      Description = 'Tabela de tipos de cr'#233'dito.'
+      Hint = 'Cr'#233'dito Rural :: Tabelas :: Tipos de Cr'#233'dito'
       Visible = ivAlways
       LargeImageIndex = 28
       OnClick = BtnCreditoTipoCreditoClick
@@ -4845,8 +4888,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'P'#250'blicos benefici'#225'rios'
       Category = 10
-      Description = 'Tabela de p'#250'blicos benefici'#225'rios'
-      Hint = 'P'#250'blicos benefici'#225'rios'
+      Description = 'Tabela de p'#250'blicos benefici'#225'rios.'
+      Hint = 'Cr'#233'dito Rural :: Tabelas :: P'#250'blicos Benefici'#225'rios'
       Visible = ivAlways
       LargeImageIndex = 28
       OnClick = BtnCreditoPublicoClick
@@ -4857,8 +4900,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Situa'#231#245'es do projeto'
       Category = 10
-      Description = 'Tabela de situa'#231#245'es do projeto'
-      Hint = 'Situa'#231#245'es do projeto'
+      Description = 'Tabela de situa'#231#245'es do projeto.'
+      Hint = 'Cr'#233'dito Rural :: Tabelas :: Situa'#231#245'es do Projeto'
       Visible = ivAlways
       LargeImageIndex = 28
       OnClick = BtnCreditoSituacaoClick
@@ -4869,8 +4912,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Classifica'#231#245'es do porte'
       Category = 10
-      Description = 'Tabela de classifica'#231#245'es do porte'
-      Hint = 'Classifica'#231#245'es do porte'
+      Description = 'Tabela de classifica'#231#245'es do porte.'
+      Hint = 'Cr'#233'dito Rural :: Tabelas :: Classifica'#231#245'es do Porte'
       Visible = ivAlways
       LargeImageIndex = 28
       OnClick = BtnCreditoClassificacaoClick
@@ -4893,8 +4936,8 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Tag = 1
       Caption = 'Ra'#231'as'
       Category = 10
-      Description = 'Tabela de ra'#231'as'
-      Hint = 'Ra'#231'as'
+      Description = 'Tabela de ra'#231'as.'
+      Hint = 'Cr'#233'dito Rural :: Tabelas :: Ra'#231'as'
       Visible = ivAlways
       LargeImageIndex = 28
       OnClick = BtnCreditoRacaClick
@@ -4902,17 +4945,21 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       ImageIndex = 183
     end
     object BtnAgenda: TdxBarLargeButton
+      Tag = 1
       Caption = 'Agenda'
       Category = 11
-      Hint = 'Agenda'
+      Description = 'Agenda de compromissos do escrit'#243'rio.'
+      Hint = 'Agenda :: Agenda do Escrit'#243'rio'
       Visible = ivAlways
       LargeImageIndex = 29
       OnClick = BtnAgendaClick
     end
     object BtnPROATER: TdxBarLargeButton
+      Tag = 1
       Caption = 'PROATER'
       Category = 12
-      Hint = 'PROATER'
+      Description = 'Consultar PROATER.'
+      Hint = 'PROATER :: Consulta'
       Visible = ivAlways
       LargeImageIndex = 2
       OnClick = BtnPROATERClick
@@ -4920,9 +4967,11 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       ImageIndex = 151
     end
     object BtnIndicadorConsulta: TdxBarLargeButton
+      Tag = 1
       Caption = 'Consulta'
       Category = 13
-      Hint = 'Consulta'
+      Description = 'Consultar indicadores.'
+      Hint = 'Indicadores :: Consulta'
       Visible = ivAlways
       LargeImageIndex = 30
       OnClick = BtnIndicadorConsultaClick
@@ -4930,9 +4979,11 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       ImageIndex = 186
     end
     object BtnIndicadorAdicionar: TdxBarLargeButton
+      Tag = 1
       Caption = 'Novo'
       Category = 13
-      Hint = 'Novo'
+      Description = 'Criar novo indicador'
+      Hint = 'Indicadores :: Novo'
       Visible = ivAlways
       LargeImageIndex = 31
       OnClick = BtnIndicadorAdicionarClick

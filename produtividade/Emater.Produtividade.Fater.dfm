@@ -2,10 +2,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
   Tag = 1
   Left = 321
   Top = 117
-  Hint = 'Cadastros :: FATER'
+  Hint = 'Cadastros :: FATER :: Cadastro'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
-  Caption = 'Cadastros :: FATER'
+  Caption = 'Cadastros :: FATER :: Cadastro'
   ClientHeight = 613
   ClientWidth = 851
   ExplicitWidth = 867
@@ -319,6 +319,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtOrientacao: TcxTabSheet
             Caption = 'Orienta'#231#227'o t'#233'cnica'
             ImageIndex = 1
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -348,6 +352,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtResumo: TcxTabSheet
             Caption = 'Resumo da a'#231#227'o'
             ImageIndex = 2
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -377,6 +385,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtParceria: TcxTabSheet
             Caption = 'Parcerias'
             ImageIndex = 3
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -406,6 +418,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtTecnologia: TcxTabSheet
             Caption = 'Tecnologia inovadora'
             ImageIndex = 4
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -450,6 +466,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtPratica: TcxTabSheet
             Caption = 'Boas pr'#225'ticas'
             ImageIndex = 5
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -823,6 +843,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       Caption = 'T'#233'cnicas e ferramentas'
       ImageIndex = 2
       OnShow = TbShtTecnicasShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         831
         508)
@@ -1290,6 +1314,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
     object TbShtDetalhes: TcxTabSheet
       Caption = 'Mais detalhes'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         831
         508)
@@ -1310,6 +1338,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Cria'#231#227'o/cultura/servi'#231'o'
           ImageIndex = 4
           OnShow = TbShtProdutoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             795
             441)
@@ -1428,6 +1460,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Benefici'#225'rio atendido'
           ImageIndex = 0
           OnShow = TbShtBeneficiariosShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             795
             441)
@@ -1664,6 +1700,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'T'#233'cnico participante'
           ImageIndex = 1
           OnShow = TbShtTecnicoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             795
             441)
@@ -1770,6 +1810,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Comunidade'
           ImageIndex = 2
           OnShow = TbShtComunidadesShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             795
             441)
@@ -1880,6 +1924,10 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Organiza'#231#227'o social'
           ImageIndex = 3
           OnShow = TbShtOrganizacaoShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             795
             441)
@@ -1992,21 +2040,18 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 581
-    Hint = '01. Novo'
     Description = 'Criar nova FATER.'
     ExplicitTop = 581
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 581
-    Hint = '02. Salvar'
     Description = 'Salvar altera'#231#245'es na FATER.'
     ExplicitTop = 581
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 581
-    Hint = '03. Cancelar'
     Description = 'Cancelar altera'#231#245'es da FATER.'
     ExplicitTop = 581
   end

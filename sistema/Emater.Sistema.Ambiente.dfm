@@ -1,8 +1,9 @@
 inherited FrmSistemaAmbiente: TFrmSistemaAmbiente
   Left = 381
   Top = 158
+  Hint = 'Sistema :: Ambiente'
   ActiveControl = DbLkpCmbBxUnidade
-  Caption = 'Configura'#231#245'es do Ambiente'
+  Caption = 'Sistema :: Ambiente'
   ClientWidth = 372
   OnShow = FormShow
   ExplicitLeft = 8
@@ -17,6 +18,10 @@ inherited FrmSistemaAmbiente: TFrmSistemaAmbiente
     ClientRectRight = 354
     inherited TbShtPrincipal: TcxTabSheet
       Caption = 'Ambiente'
+      ExplicitLeft = 2
+      ExplicitTop = 28
+      ExplicitWidth = 352
+      ExplicitHeight = 324
       object Label5: TLabel
         Left = 8
         Top = 24

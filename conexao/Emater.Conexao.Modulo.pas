@@ -194,9 +194,9 @@ end;
 procedure TDtmConexaoModulo.AlterarSenhaAdministrador(const AServidor: string);
 begin
   try
+    FDIBSecurity.Host := AServidor;
     FDIBSecurity.UserName := 'SYSDBA';
     FDIBSecurity.Password := 'masterkey';
-    FDIBSecurity.Host := AServidor;
     FDIBSecurity.AUserName := 'SYSDBA';
     FDIBSecurity.APassword := '3m@T3R_1';
     FDIBSecurity.ModifyUser;

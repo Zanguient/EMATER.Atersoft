@@ -1,9 +1,9 @@
 inherited FrmCadastroUnidadeBusca: TFrmCadastroUnidadeBusca
   Left = 305
   Top = 152
-  Hint = 'Busca r'#225'pida de unidades de produ'#231#227'o familiar.'
+  Hint = 'Cadastros :: UPF :: Busca'
   ActiveControl = EdtCPF
-  Caption = 'Busca R'#225'pida de Unidade de Produ'#231#227'o Familiar'
+  Caption = 'Cadastros :: UPF :: Busca'
   ClientWidth = 861
   ExplicitWidth = 867
   PixelsPerInch = 96
@@ -370,18 +370,13 @@ inherited FrmCadastroUnidadeBusca: TFrmCadastroUnidadeBusca
     ExplicitLeft = 779
   end
   inherited BtnNovo: TcxButton
-    Hint = 'Inserir nova unidade de produ'#231#227'o'
-    Description = 'Cria um novo registro de unidade de produ'#231#227'o familiar.'
+    Description = 'Criar nova unidade de produ'#231#227'o familiar.'
   end
   inherited BtnEditar: TcxButton
-    Hint = 'Editar unidade de produ'#231#227'o selecionada'
-    Description = 'Edita a unidade de produ'#231#227'o familiar atualmente selecionada.'
+    Description = 'Editar unidade de produ'#231#227'o familiar selecionada.'
   end
   inherited BtnVisualizar: TcxButton
-    Hint = 'Visualizar unidade de produ'#231#227'o familiar'
-    Description = 
-      'Visualiza o cadastro da unidade de produ'#231#227'o familiar atualmente ' +
-      'selecionada.'
+    Description = 'Visualizar unidade de produ'#231#227'o familiar selecionada.'
   end
   inherited DtSrcConsulta: TDataSource
     Top = 296

@@ -2,8 +2,6 @@ object DtmSistemaModulo: TDtmSistemaModulo
   OldCreateOrder = False
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Left = 402
-  Top = 191
   Height = 379
   Width = 595
   object DtSrcUnidade: TDataSource
@@ -122,14 +120,14 @@ object DtmSistemaModulo: TDtmSistemaModulo
         Name = 'LEGENDA'
         DataType = ftString
         ParamType = ptInput
-        Size = 50
+        Size = 300
       end
       item
         Position = 4
         Name = 'DESCRICAO'
         DataType = ftString
         ParamType = ptInput
-        Size = 300
+        Size = 200
       end>
   end
   object StrdPrcControleRegistrar: TFDStoredProc
@@ -164,14 +162,14 @@ object DtmSistemaModulo: TDtmSistemaModulo
         Name = 'LEGENDA'
         DataType = ftString
         ParamType = ptInput
-        Size = 100
+        Size = 300
       end
       item
         Position = 5
         Name = 'DESCRICAO'
         DataType = ftString
         ParamType = ptInput
-        Size = 300
+        Size = 200
       end>
   end
   object StrdPrcRecenteRegistrar: TFDStoredProc

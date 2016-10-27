@@ -1,7 +1,9 @@
 inherited FrmProaterPrincipal: TFrmProaterPrincipal
+  Tag = 1
   Left = 304
   Top = 106
-  Caption = 'PROATER'
+  Hint = 'PROATER :: Cadastro'
+  Caption = 'PROATER :: Cadastro'
   ClientHeight = 590
   ClientWidth = 806
   ExplicitWidth = 812
@@ -154,7 +156,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
         TabOrder = 3
-        Width = 357
+        Width = 353
       end
       object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8
@@ -329,29 +331,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
           object BtnComIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 16
             Width = 75
             Height = 25
+            Hint = '06. Nova comunidade'
             Caption = 'Incluir'
+            Description = 'Criar novo comunidade.'
             TabOrder = 1
             OnClick = BtnComIncluirClick
           end
           object BtnComEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 16
             Width = 75
             Height = 25
+            Hint = '07. Editar comunidade'
             Caption = 'Editar'
+            Description = 'Editar comunidade selecionada.'
             TabOrder = 2
             OnClick = BtnComEditarClick
           end
           object BtnComExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 16
             Width = 75
             Height = 25
+            Hint = '08. Excluir comunidade'
             Caption = 'Excluir'
+            Description = 'Excluir comunidade selecionada.'
             TabOrder = 3
             OnClick = BtnComExcluirClick
           end
@@ -446,29 +457,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
           object BtnPotIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 16
             Width = 75
             Height = 25
+            Hint = '09. Novo problema, potencialidade'
             Caption = 'Incluir'
+            Description = 'Criar novo problema ou potencialidade.'
             TabOrder = 1
             OnClick = BtnPotIncluirClick
           end
           object BtnPotEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 16
             Width = 75
             Height = 25
+            Hint = '10. Editar problema, potencialidade'
             Caption = 'Editar'
+            Description = 'Editar problema ou potencialidade selecionado.'
             TabOrder = 2
             OnClick = BtnPotEditarClick
           end
           object BtnPotExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 16
             Width = 75
             Height = 25
+            Hint = '11. Excluir problema, potencialidade'
             Caption = 'Excluir'
+            Description = 'Excluir problema ou potencialidade selecionado.'
             TabOrder = 3
             OnClick = BtnPotExcluirClick
           end
@@ -480,29 +500,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnAcrIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 16
             Width = 75
             Height = 25
+            Hint = '12. Novo acordo, conv'#234'nio, parceria'
             Caption = 'Incluir'
+            Description = 'Criar novo acordo, conv'#234'nio ou parceria.'
             TabOrder = 0
             OnClick = BtnAcrIncluirClick
           end
           object BtnAcrEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 16
             Width = 75
             Height = 25
+            Hint = '13. Editar acordo, conv'#234'nio, parceria'
             Caption = 'Editar'
+            Description = 'Editar acordo, conv'#234'nio ou parceria selecionada.'
             TabOrder = 1
             OnClick = BtnAcrEditarClick
           end
           object BtnAcrExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 16
             Width = 75
             Height = 25
+            Hint = '14. Excluir acordo, conv'#234'nio, parceria'
             Caption = 'Excluir'
+            Description = 'Excluir acordo, conv'#234'nio ou parceria selecionada.'
             TabOrder = 2
             OnClick = BtnAcrExcluirClick
           end
@@ -641,20 +670,26 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             Transparent = True
           end
           object BtnFncIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 32
             Width = 75
             Height = 25
+            Hint = '15. Nova for'#231'a de trabalho'
             Caption = 'Incluir'
+            Description = 'Criar nova for'#231'a de trabalho.'
             TabOrder = 0
             OnClick = BtnFncIncluirClick
           end
           object BtnFncExcluir: TcxButton
+            Tag = 1
             Left = 88
             Top = 32
             Width = 75
             Height = 25
+            Hint = '16. Excluir for'#231'a de trabalho'
             Caption = 'Excluir'
+            Description = 'Excluir for'#231'a de trabalho selecionada.'
             TabOrder = 1
             OnClick = BtnFncExcluirClick
           end
@@ -731,20 +766,26 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             end
           end
           object BtnDemIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 264
             Width = 75
             Height = 25
+            Hint = '17. Nova demanda de pessoal'
             Caption = 'Incluir'
+            Description = 'Criar nova demanda de pessoal.'
             TabOrder = 3
             OnClick = BtnDemIncluirClick
           end
           object BtnDemExcluir: TcxButton
+            Tag = 1
             Left = 88
             Top = 264
             Width = 75
             Height = 25
+            Hint = '18. Excluir demanda de pessoal'
             Caption = 'Excluir'
+            Description = 'Excluir demanda de pessoal selecionada.'
             TabOrder = 4
             OnClick = BtnDemExcluirClick
           end
@@ -828,29 +869,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnMobIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 16
             Width = 75
             Height = 25
+            Hint = '19. Novo mobili'#225'rio'
             Caption = 'Incluir'
+            Description = 'Criar novo mobili'#225'rio.'
             TabOrder = 0
             OnClick = BtnMobIncluirClick
           end
           object BtnMobEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 16
             Width = 75
             Height = 25
+            Hint = '20. Editar mobili'#225'rio'
             Caption = 'Editar'
+            Description = 'Editar mobili'#225'rio selecionado.'
             TabOrder = 1
             OnClick = BtnMobEditarClick
           end
           object BtnMobExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 16
             Width = 75
             Height = 25
+            Hint = '21. Excluir mobili'#225'rio'
             Caption = 'Excluir'
+            Description = 'Excluir mobili'#225'rio selecionado.'
             TabOrder = 2
             OnClick = BtnMobExcluirClick
           end
@@ -943,29 +993,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnEqpIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 16
             Width = 75
             Height = 25
+            Hint = '22. Novo equipamento'
             Caption = 'Incluir'
+            Description = 'Criar novo equipamento.'
             TabOrder = 0
             OnClick = BtnEqpIncluirClick
           end
           object BtnEqpEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 16
             Width = 75
             Height = 25
+            Hint = '23. Editar equipamento'
             Caption = 'Editar'
+            Description = 'Editar equipamento selecionado.'
             TabOrder = 1
             OnClick = BtnEqpEditarClick
           end
           object BtnEqpExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 16
             Width = 75
             Height = 25
+            Hint = '24. Excluir equipamento'
             Caption = 'Excluir'
+            Description = 'Excluir equipamento selecionado.'
             TabOrder = 2
             OnClick = BtnEqpExcluirClick
           end
@@ -1058,29 +1117,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnVeiIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 16
             Width = 75
             Height = 25
+            Hint = '25. Novo ve'#237'culo'
             Caption = 'Incluir'
+            Description = 'Criar novo ve'#237'culo.'
             TabOrder = 0
             OnClick = BtnVeiIncluirClick
           end
           object BtnVeiEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 16
             Width = 75
             Height = 25
+            Hint = '26. Editar ve'#237'culo'
             Caption = 'Editar'
+            Description = 'Editar ve'#237'culo selecionado.'
             TabOrder = 1
             OnClick = BtnVeiEditarClick
           end
           object BtnVeiExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 16
             Width = 75
             Height = 25
+            Hint = '27. Excluir ve'#237'culo'
             Caption = 'Excluir'
+            Description = 'Excluir ve'#237'culo selecionado.'
             TabOrder = 2
             OnClick = BtnVeiExcluirClick
           end
@@ -1177,29 +1245,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnCusIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 16
             Width = 75
             Height = 25
+            Hint = '28. Nova despesa'
             Caption = 'Incluir'
+            Description = 'Criar nova despesa de custeio.'
             TabOrder = 0
             OnClick = BtnCusIncluirClick
           end
           object BtnCusEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 16
             Width = 75
             Height = 25
+            Hint = '29. Editar despesa'
             Caption = 'Editar'
+            Description = 'Editar despesa de custeio selecionada.'
             TabOrder = 1
             OnClick = BtnCusEditarClick
           end
           object BtnCusExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 16
             Width = 75
             Height = 25
+            Hint = '30. Excluir despesa'
             Caption = 'Excluir'
+            Description = 'Excluir despesa de custeio selecionada.'
             TabOrder = 2
             OnClick = BtnCusExcluirClick
           end
@@ -1287,29 +1364,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnQuaIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 16
             Width = 75
             Height = 25
+            Hint = '31. Nova qualifica'#231#227'o'
             Caption = 'Incluir'
+            Description = 'Criar nova necessidade de qualifica'#231#227'o.'
             TabOrder = 0
             OnClick = BtnQuaIncluirClick
           end
           object BtnQuaEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 16
             Width = 75
             Height = 25
+            Hint = '32. Editar qualifica'#231#227'o'
             Caption = 'Editar'
+            Description = 'Editar necessidade de qualifica'#231#227'o selecionada.'
             TabOrder = 1
             OnClick = BtnQuaEditarClick
           end
           object BtnQuaExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 16
             Width = 75
             Height = 25
+            Hint = '33. Excluir qualifica'#231#227'o'
             Caption = 'Excluir'
+            Description = 'Excluir necessidade de qualifica'#231#227'o selecionada.'
             TabOrder = 2
             OnClick = BtnQuaExcluirClick
           end
@@ -1418,29 +1504,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnSubIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 16
             Width = 75
             Height = 25
+            Hint = '34. Novo subprojeto'
             Caption = 'Incluir'
+            Description = 'Criar novo subprojeto.'
             TabOrder = 0
             OnClick = BtnSubIncluirClick
           end
           object BtnSubEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 16
             Width = 75
             Height = 25
+            Hint = '35. Editar subprojeto'
             Caption = 'Editar'
+            Description = 'Editar subprojeto selecionado.'
             TabOrder = 1
             OnClick = BtnSubEditarClick
           end
           object BtnSubExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 16
             Width = 75
             Height = 25
+            Hint = '36. Excluir subprojeto'
             Caption = 'Excluir'
+            Description = 'Excluir subprojeto selecionado.'
             TabOrder = 2
             OnClick = BtnSubExcluirClick
           end
@@ -1549,29 +1644,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnMetaIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 128
             Width = 75
             Height = 25
+            Hint = '37. Nova meta'
             Caption = 'Incluir'
+            Description = 'Criar nova meta.'
             TabOrder = 0
             OnClick = BtnMetaIncluirClick
           end
           object BtnMetaEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 128
             Width = 75
             Height = 25
+            Hint = '38. Editar meta'
             Caption = 'Editar'
+            Description = 'Editar meta selecionada.'
             TabOrder = 1
             OnClick = BtnMetaEditarClick
           end
           object BtnMetaExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 128
             Width = 75
             Height = 25
+            Hint = '39. Excluir meta'
             Caption = 'Excluir'
+            Description = 'Excluir meta selecionada.'
             TabOrder = 2
             OnClick = BtnMetaExcluirClick
           end
@@ -1765,29 +1869,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnMetIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 128
             Width = 75
             Height = 25
+            Hint = '40. Nova metodologia'
             Caption = 'Incluir'
+            Description = 'Criar nova metodologia.'
             TabOrder = 0
             OnClick = BtnMetIncluirClick
           end
           object BtnMetEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 128
             Width = 75
             Height = 25
+            Hint = '41. Editar metodologia'
             Caption = 'Editar'
+            Description = 'Editar metodologia selecionada.'
             TabOrder = 1
             OnClick = BtnMetEditarClick
           end
           object BtnMetExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 128
             Width = 75
             Height = 25
+            Hint = '42. Excluir metodologia'
             Caption = 'Excluir'
+            Description = 'Excluir metodologia selecionada.'
             TabOrder = 2
             OnClick = BtnMetExcluirClick
           end
@@ -1884,29 +1997,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnBenIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 128
             Width = 75
             Height = 25
+            Hint = '43. Novo benefici'#225'rio'
             Caption = 'Incluir'
+            Description = 'Criar novo benefici'#225'rio.'
             TabOrder = 0
             OnClick = BtnBenIncluirClick
           end
           object BtnBenEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 128
             Width = 75
             Height = 25
+            Hint = '44. Editar benefici'#225'rio'
             Caption = 'Editar'
+            Description = 'Editar benefici'#225'rio selecionado.'
             TabOrder = 1
             OnClick = BtnBenEditarClick
           end
           object BtnBenExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 128
             Width = 75
             Height = 25
+            Hint = '45. Excluir benefici'#225'rio'
             Caption = 'Excluir'
+            Description = 'Excluir benefici'#225'rio selecionado.'
             TabOrder = 2
             OnClick = BtnBenExcluirClick
           end
@@ -2007,29 +2129,38 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
             765
             467)
           object BtnOrcIncluir: TcxButton
+            Tag = 1
             Left = 8
             Top = 128
             Width = 75
             Height = 25
+            Hint = '46. Novo or'#231'amento'
             Caption = 'Incluir'
+            Description = 'Criar nova previs'#227'o or'#231'ament'#225'ria.'
             TabOrder = 0
             OnClick = BtnOrcIncluirClick
           end
           object BtnOrcEditar: TcxButton
+            Tag = 1
             Left = 88
             Top = 128
             Width = 75
             Height = 25
+            Hint = '47. Editar or'#231'amento'
             Caption = 'Editar'
+            Description = 'Editar previs'#227'o or'#231'ament'#225'ria selecionada.'
             TabOrder = 1
             OnClick = BtnOrcEditarClick
           end
           object BtnOrcExcluir: TcxButton
+            Tag = 1
             Left = 168
             Top = 128
             Width = 75
             Height = 25
+            Hint = '48. Excluir or'#231'amento'
             Caption = 'Excluir'
+            Description = 'Excluir previs'#227'o or'#231'ament'#225'ria selecionada.'
             TabOrder = 2
             OnClick = BtnOrcExcluirClick
           end
@@ -2123,19 +2254,28 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     end
   end
   inherited BtnNovo: TcxButton
+    Tag = 1
     Top = 558
+    Description = 'Criar novo PROATER.'
     ExplicitTop = 558
   end
   inherited BtnSalvar: TcxButton
+    Tag = 1
     Top = 558
+    Description = 'Salvar altera'#231#245'es no PROATER.'
     ExplicitTop = 558
   end
   inherited BtnCancelar: TcxButton
+    Tag = 1
     Top = 558
+    Description = 'Cancelar altera'#231#245'es no PROATER.'
     ExplicitTop = 558
   end
   inherited BtnExcluir: TcxButton
+    Tag = 1
     Top = 558
+    Hint = '04. Excluir'
+    Description = 'Excluir PROATER atual.'
     ExplicitTop = 558
   end
   inherited BtnFechar: TcxButton
@@ -2145,7 +2285,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
     ExplicitTop = 558
   end
   inherited BtnRelatorio: TcxButton
+    Tag = 1
     Top = 558
+    Hint = '05. Imprimir'
+    Description = 'Imprimir PROATER atual.'
+    Visible = True
+    OnClick = BtnRelatorioClick
     ExplicitTop = 558
   end
   inherited DtSrcPrincipal: TDataSource

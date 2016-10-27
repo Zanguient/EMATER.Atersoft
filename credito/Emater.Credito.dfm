@@ -2,9 +2,10 @@ inherited FrmCredito: TFrmCredito
   Tag = 1
   Left = 313
   Top = 131
+  Hint = 'Cr'#233'dito Rural :: Cadastro'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
-  Caption = 'Projeto de Cr'#233'dito Rural'
+  Caption = 'Cr'#233'dito Rural :: Cadastro'
   ClientHeight = 499
   ClientWidth = 839
   ExplicitWidth = 855
@@ -171,9 +172,9 @@ inherited FrmCredito: TFrmCredito
           Top = 41
           Width = 21
           Height = 19
-          Hint = 'Abrir tabela de situa'#231#245'es do projeto'
+          Hint = '22. Tabela de situa'#231#227'o do projeto'
           Anchors = [akTop, akRight]
-          Description = 'Acessa a tabela de situa'#231#245'es do projeto.'
+          Description = 'Abrir tabela de situa'#231#227'o do projeto.'
           OptionsImage.ImageIndex = 102
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
@@ -425,7 +426,6 @@ inherited FrmCredito: TFrmCredito
           DataBinding.DataSource = DtSrcPrincipal
           Properties.ScrollBars = ssVertical
           TabOrder = 2
-          ExplicitHeight = 134
           Height = 128
           Width = 494
         end
@@ -443,7 +443,6 @@ inherited FrmCredito: TFrmCredito
             end>
           Properties.ListOptions.ShowHeader = False
           TabOrder = 3
-          ExplicitTop = 238
           Width = 145
         end
         object DbLkpCmbBxLinha: TcxDBLookupComboBox
@@ -460,7 +459,6 @@ inherited FrmCredito: TFrmCredito
             end>
           Properties.ListOptions.ShowHeader = False
           TabOrder = 5
-          ExplicitTop = 238
           Width = 145
         end
         object DbLkpCmbBxTipo: TcxDBLookupComboBox
@@ -477,7 +475,6 @@ inherited FrmCredito: TFrmCredito
             end>
           Properties.ListOptions.ShowHeader = False
           TabOrder = 7
-          ExplicitTop = 238
           Width = 119
         end
         object DbLkpCmbBxPublico: TcxDBLookupComboBox
@@ -494,7 +491,6 @@ inherited FrmCredito: TFrmCredito
             end>
           Properties.ListOptions.ShowHeader = False
           TabOrder = 9
-          ExplicitTop = 278
           Width = 225
         end
         object DbLkpCmbBxComunidade: TcxDBLookupComboBox
@@ -512,7 +508,6 @@ inherited FrmCredito: TFrmCredito
           Properties.ListOptions.ShowHeader = False
           Properties.ListSource = DtmCadastroModulo.DtSrcComunidade
           TabOrder = 11
-          ExplicitTop = 278
           Width = 215
         end
         object BtnFinanceiraTabela: TcxButton
@@ -521,16 +516,15 @@ inherited FrmCredito: TFrmCredito
           Top = 233
           Width = 21
           Height = 19
-          Hint = 'Abrir tabela de agentes financeiros'
+          Hint = '17. Tabela de agentes financeiros'
           Anchors = [akLeft, akBottom]
-          Description = 'Acessa a tabela de agentes financeiros.'
+          Description = 'Abrir tabela de agentes financeiros.'
           OptionsImage.ImageIndex = 102
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
           ShowHint = True
           TabOrder = 4
           OnClick = BtnFinanceiraTabelaClick
-          ExplicitTop = 239
         end
         object BtnLinhaTabela: TcxButton
           Tag = 1
@@ -538,16 +532,15 @@ inherited FrmCredito: TFrmCredito
           Top = 233
           Width = 21
           Height = 19
-          Hint = 'Abrir tabela de linhas de cr'#233'dito'
+          Hint = '18. Tabela de linhas de cr'#233'dito'
           Anchors = [akLeft, akBottom]
-          Description = 'Acessa a tabela de linhas de cr'#233'dito.'
+          Description = 'Abrir tabela de linhas de cr'#233'dito.'
           OptionsImage.ImageIndex = 102
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
           ShowHint = True
           TabOrder = 6
           OnClick = BtnLinhaTabelaClick
-          ExplicitTop = 239
         end
         object BtnTipoTabela: TcxButton
           Tag = 1
@@ -555,16 +548,15 @@ inherited FrmCredito: TFrmCredito
           Top = 233
           Width = 21
           Height = 19
-          Hint = 'Abrir tabela de tipos de cr'#233'dito'
+          Hint = '19. Tabela de tipos de cr'#233'dito'
           Anchors = [akRight, akBottom]
-          Description = 'Acessa a tabela de tipos de cr'#233'dito.'
+          Description = 'Abrir tabela de tipos de cr'#233'dito.'
           OptionsImage.ImageIndex = 102
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
           ShowHint = True
           TabOrder = 8
           OnClick = BtnTipoTabelaClick
-          ExplicitTop = 239
         end
         object BtnPublicoTabela: TcxButton
           Tag = 1
@@ -572,16 +564,15 @@ inherited FrmCredito: TFrmCredito
           Top = 273
           Width = 21
           Height = 19
-          Hint = 'Abrir tabela de p'#250'blico benefici'#225'rio'
+          Hint = '20. Tabela de p'#250'blico benefici'#225'rio'
           Anchors = [akLeft, akBottom]
-          Description = 'Acessa a tabela de p'#250'blico benefici'#225'rio.'
+          Description = 'Abrir tabela de p'#250'blico benefici'#225'rio.'
           OptionsImage.ImageIndex = 102
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
           ShowHint = True
           TabOrder = 10
           OnClick = BtnPublicoTabelaClick
-          ExplicitTop = 279
         end
         object BtnComunidadeTabela: TcxButton
           Tag = 1
@@ -589,16 +580,15 @@ inherited FrmCredito: TFrmCredito
           Top = 273
           Width = 21
           Height = 19
-          Hint = 'Abrir tabela de comunidades'
+          Hint = '21. Nova comunidade'
           Anchors = [akRight, akBottom]
-          Description = 'Acessa a tabela de comunidades.'
+          Description = 'Criar nova comunidade.'
           OptionsImage.ImageIndex = 100
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
           ShowHint = True
           TabOrder = 12
           OnClick = BtnComunidadeTabelaClick
-          ExplicitTop = 279
         end
         object DbEdtTecnicoCampo: TcxDBButtonEdit
           Left = 8
@@ -614,7 +604,6 @@ inherited FrmCredito: TFrmCredito
           Properties.ReadOnly = True
           Properties.OnButtonClick = DbEdtTecnicoCampoPropertiesButtonClick
           TabOrder = 13
-          ExplicitTop = 318
           Width = 249
         end
         object DbEdtTecnicoElaborador: TcxDBButtonEdit
@@ -631,7 +620,6 @@ inherited FrmCredito: TFrmCredito
           Properties.ReadOnly = True
           Properties.OnButtonClick = DbEdtTecnicoElaboradorPropertiesButtonClick
           TabOrder = 14
-          ExplicitTop = 318
           Width = 238
         end
       end
@@ -640,6 +628,10 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Visitas'
       ImageIndex = 1
       OnShow = TbShtVisitaShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -777,10 +769,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Inserir nova visita'
+        Hint = '05. Nova visita'
         Anchors = [akLeft, akBottom]
         Caption = 'Novo'
-        Description = 'Cria um novo registro de visita.'
+        Description = 'Criar nova visita.'
         TabOrder = 1
         OnClick = BtnVisitaNovoClick
       end
@@ -790,10 +782,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Salvar altera'#231#245'es no registro de visita'
+        Hint = '06. Salvar visita'
         Anchors = [akLeft, akBottom]
         Caption = 'Salvar'
-        Description = 'Salva as altera'#231#245'es realizadas no registro da visita.'
+        Description = 'Salvar altera'#231#245'es na visita.'
         TabOrder = 2
         OnClick = BtnVisitaSalvarClick
       end
@@ -803,10 +795,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Cancelar altera'#231#245'es no registro de visita'
+        Hint = '07. Cancelar visita'
         Anchors = [akLeft, akBottom]
         Caption = 'Cancelar'
-        Description = 'Cancela as altera'#231#245'es realizadas no registro de visita.'
+        Description = 'Cancelar altera'#231#245'es na visita.'
         TabOrder = 3
         OnClick = BtnVisitaCancelarClick
       end
@@ -816,10 +808,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Excluir registro de visita'
+        Hint = '08. Excluir visita'
         Anchors = [akLeft, akBottom]
         Caption = 'Excluir'
-        Description = 'Exclui o registro de visita atualmente selecionado.'
+        Description = 'Excluir visita selecionada.'
         TabOrder = 4
         OnClick = BtnVisitaExcluirClick
       end
@@ -906,6 +898,10 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Proponentes'
       ImageIndex = 2
       OnShow = TbShtProponentesShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -1061,8 +1057,8 @@ inherited FrmCredito: TFrmCredito
           Top = 161
           Width = 21
           Height = 19
-          Hint = 'Abrir tabela de classifica'#231#245'es do porte do proponente'
-          Description = 'Acessa a tabela de classifica'#231#245'es do porte do proponente.'
+          Hint = '25. Tabela de classifica'#231#245'es do porte'
+          Description = 'Abrir tabela de classifica'#231#245'es do porte do proponente.'
           OptionsImage.ImageIndex = 102
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
@@ -1076,8 +1072,8 @@ inherited FrmCredito: TFrmCredito
           Top = 41
           Width = 21
           Height = 19
-          Hint = 'Criar um novo cadastro de benefici'#225'rio ou organiza'#231#227'o social'
-          Description = 'Cria um novo cadastro de benefici'#225'rio ou de organiza'#231#227'o social'
+          Hint = '24. Novo benefici'#225'rio/organiza'#231#227'o social'
+          Description = 'Criar novo cadastro de benefici'#225'rio ou organiza'#231#227'o social.'
           OptionsImage.ImageIndex = 100
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
@@ -1091,8 +1087,8 @@ inherited FrmCredito: TFrmCredito
           Top = 41
           Width = 21
           Height = 19
-          Hint = 'Pesquisar um CPF/CNPJ usando a busca r'#225'pida'
-          Description = 'Realiza a busca r'#225'pida de um CPF/CNPJ'
+          Hint = '23. Pesquisar proponente'
+          Description = 'Pesquisar um CPF/CNPJ de proponente usando a busca r'#225'pida.'
           OptionsImage.ImageIndex = 99
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
@@ -1107,10 +1103,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Inserir novo proponente'
+        Hint = '09. Novo proponente'
         Anchors = [akLeft, akBottom]
         Caption = 'Novo'
-        Description = 'Cria um novo proponente.'
+        Description = 'Criar novo proponente.'
         TabOrder = 1
         OnClick = BtnPropNovoClick
       end
@@ -1120,10 +1116,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Salvar altera'#231#245'es no proponente'
+        Hint = '10. Salvar proponente'
         Anchors = [akLeft, akBottom]
         Caption = 'Salvar'
-        Description = 'Salva as altera'#231#245'es realizadas no proponente.'
+        Description = 'Salvar altera'#231#245'es no proponente.'
         TabOrder = 2
         OnClick = BtnPropSalvarClick
       end
@@ -1133,10 +1129,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Cancelar altera'#231#245'es no proponente'
+        Hint = '11. Cancelar proponente'
         Anchors = [akLeft, akBottom]
         Caption = 'Cancelar'
-        Description = 'Cancela as altera'#231#245'es realizadas no proponente.'
+        Description = 'Cancelar altera'#231#245'es no proponente.'
         TabOrder = 3
         OnClick = BtnPropCancelarClick
       end
@@ -1146,10 +1142,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Excluir registro de proponente'
+        Hint = '12. Excluir proponente'
         Anchors = [akLeft, akBottom]
         Caption = 'Excluir'
-        Description = 'Exclui o proponente atualmente selecionado.'
+        Description = 'Excluir proponente selecionado.'
         TabOrder = 4
         OnClick = BtnPropExcluirClick
       end
@@ -1249,6 +1245,10 @@ inherited FrmCredito: TFrmCredito
       Caption = 'Itens'
       ImageIndex = 3
       OnShow = TbShtItensShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         817
         391)
@@ -1668,8 +1668,8 @@ inherited FrmCredito: TFrmCredito
           Top = 121
           Width = 21
           Height = 19
-          Hint = 'Abrir tabela de ra'#231'as de cria'#231#227'o'
-          Description = 'Acessa a tabela de ra'#231'as de cria'#231#227'o.'
+          Hint = '26. Tabela de ra'#231'as de cria'#231#245'es'
+          Description = 'Abrir tabela de ra'#231'as de cria'#231#245'es.'
           OptionsImage.ImageIndex = 102
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
@@ -1700,10 +1700,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Inserir novo item'
+        Hint = '13. Novo item'
         Anchors = [akLeft, akBottom]
         Caption = 'Novo'
-        Description = 'Cria um novo item.'
+        Description = 'Criar novo item.'
         TabOrder = 2
         OnClick = BtnItmNovoClick
       end
@@ -1713,10 +1713,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Salvar altera'#231#245'es no item'
+        Hint = '14. Salvar item'
         Anchors = [akLeft, akBottom]
         Caption = 'Salvar'
-        Description = 'Salva as altera'#231#245'es realizadas no item.'
+        Description = 'Salvar altera'#231#245'es no item.'
         TabOrder = 3
         OnClick = BtnItmSalvarClick
       end
@@ -1726,10 +1726,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Cancelar altera'#231#245'es no item'
+        Hint = '15. Cancelar item'
         Anchors = [akLeft, akBottom]
         Caption = 'Cancelar'
-        Description = 'Cancela as altera'#231#245'es realizadas no item.'
+        Description = 'Cancelar altera'#231#245'es no item.'
         TabOrder = 4
         OnClick = BtnItmCancelarClick
       end
@@ -1739,10 +1739,10 @@ inherited FrmCredito: TFrmCredito
         Top = 346
         Width = 75
         Height = 25
-        Hint = 'Excluir item'
+        Hint = '16. Excluir item'
         Anchors = [akLeft, akBottom]
         Caption = 'Excluir'
-        Description = 'Exclui o item atualmente selecionado.'
+        Description = 'Excluir item selecionado.'
         TabOrder = 5
         OnClick = BtnItmExcluirClick
       end
@@ -1751,32 +1751,32 @@ inherited FrmCredito: TFrmCredito
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 467
-    Hint = 'Inserir novo projeto de cr'#233'dito rural'
-    Description = 'Cria um novo cadastro de cr'#233'dito rural.'
+    Hint = '01. Novo'
+    Description = 'Criar novo projeto de cr'#233'dito rural.'
     TabOrder = 2
     ExplicitTop = 467
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 467
-    Hint = 'Salvar altera'#231#245'es no projeto de cr'#233'dito rural'
-    Description = 'Salva as altera'#231#245'es realizadas no projeto de cr'#233'dito rural.'
+    Hint = '02. Salvar'
+    Description = 'Salvar altera'#231#245'es no projeto de cr'#233'dito rural.'
     TabOrder = 3
     ExplicitTop = 467
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 467
-    Hint = 'Cancelar altera'#231#245'es no projeto de cr'#233'dito rural'
-    Description = 'Cancela as altera'#231#245'es realizadas no projeto de cr'#233'dito rural.'
+    Hint = '03. Cancelar'
+    Description = 'Cancelar altera'#231#245'es no projeto de cr'#233'dito rural.'
     TabOrder = 4
     ExplicitTop = 467
   end
   inherited BtnExcluir: TcxButton
     Tag = 1
     Top = 467
-    Hint = 'Excluir projeto de cr'#233'dito rural'
-    Description = 'Exclui o projeto de cr'#233'dito rural atualmente selecionado.'
+    Hint = '04. Excluir'
+    Description = 'Excluir projeto de cr'#233'dito rural atual.'
     TabOrder = 5
     ExplicitTop = 467
   end

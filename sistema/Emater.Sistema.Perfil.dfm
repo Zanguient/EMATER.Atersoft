@@ -2,9 +2,9 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
   Tag = 1
   Left = 337
   Top = 153
-  Hint = 'Tabela de perfis de usu'#225'rios.'
+  Hint = 'Sistema :: Usu'#225'rios :: Perfis'
   ActiveControl = DbEdtNome
-  Caption = 'Perfis de usu'#225'rios'
+  Caption = 'Sistema :: Usu'#225'rios :: Perfis'
   ClientHeight = 488
   ClientWidth = 492
   ExplicitWidth = 498
@@ -25,6 +25,10 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
     ClientRectBottom = 440
     ClientRectRight = 475
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
+      ExplicitWidth = 473
+      ExplicitHeight = 412
       object GrdPrincipal: TcxGrid
         Left = 8
         Top = 112
@@ -147,29 +151,26 @@ inherited FrmSistemaPerfil: TFrmSistemaPerfil
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 456
-    Hint = 'Inserir novo perfil'
-    Description = 'Cria um novo registro de perfil de usu'#225'rios.'
+    Description = 'Criar novo perfil.'
     ExplicitTop = 456
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 456
-    Hint = 'Salvar altera'#231#245'es no perfil'
-    Description = 'Salva as altera'#231#245'es realizadas no perfil de usu'#225'rios.'
+    Description = 'Salvar altera'#231#245'es no perfil.'
     ExplicitTop = 456
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 456
-    Hint = 'Cancelar altera'#231#245'es no perfil'
-    Description = 'Cancela as altera'#231#245'es realizadas no perfil de usu'#225'rios.'
+    Description = 'Cancelar altera'#231#245'es no perfil.'
     ExplicitTop = 456
   end
   inherited BtnExcluir: TcxButton
     Tag = 1
     Top = 456
-    Hint = 'Excluir perfil'
-    Description = 'Exclui o perfil de usu'#225'rios atualmente selecionado.'
+    Hint = '04. Excluir'
+    Description = 'Excluir perfil selecionado.'
     ExplicitTop = 456
   end
   inherited BtnFechar: TcxButton

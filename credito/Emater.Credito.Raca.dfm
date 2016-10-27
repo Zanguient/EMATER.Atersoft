@@ -2,8 +2,8 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
   Tag = 1
   Left = 415
   Top = 152
-  Hint = 'Tabela de ra'#231'as de cria'#231#245'es do cr'#233'dito rural.'
-  Caption = 'Ra'#231'as'
+  Hint = 'Cr'#233'dito Rural :: Tabelas :: Ra'#231'as'
+  Caption = 'Cr'#233'dito Rural :: Tabelas :: Ra'#231'as'
   ClientHeight = 474
   ClientWidth = 412
   ExplicitWidth = 418
@@ -24,6 +24,10 @@ inherited FrmCreditoRaca: TFrmCreditoRaca
     ClientRectBottom = 426
     ClientRectRight = 395
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
+      ExplicitWidth = 393
+      ExplicitHeight = 398
       object GrdPrincipal: TcxGrid
         Left = 8
         Top = 88

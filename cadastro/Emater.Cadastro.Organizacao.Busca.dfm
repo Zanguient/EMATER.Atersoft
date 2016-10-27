@@ -1,8 +1,8 @@
 inherited FrmCadastroOrganizacaoBusca: TFrmCadastroOrganizacaoBusca
   Left = 324
   Top = 140
-  Hint = 'Busca r'#225'pida de organiza'#231#245'es sociais.'
-  Caption = 'Busca R'#225'pida de Organiza'#231#227'o Sociais'
+  Hint = 'Cadastros :: Organiza'#231#227'o Social :: Busca'
+  Caption = 'Cadastros :: Organiza'#231#227'o Social :: Busca'
   ClientHeight = 476
   ClientWidth = 780
   ExplicitWidth = 786
@@ -194,20 +194,17 @@ inherited FrmCadastroOrganizacaoBusca: TFrmCadastroOrganizacaoBusca
   end
   inherited BtnNovo: TcxButton
     Top = 444
-    Hint = 'Inserir nova organiza'#231#227'o'
-    Description = 'Cria um novo registro de organiza'#231#227'o.'
+    Description = 'Criar nova organiza'#231#227'o'
     ExplicitTop = 444
   end
   inherited BtnEditar: TcxButton
     Top = 444
-    Hint = 'Editar organiza'#231#227'o selecionada'
-    Description = 'Edita a organiza'#231#227'o atualmente selecionada.'
+    Description = 'Editar organiza'#231#227'o selecionada.'
     ExplicitTop = 444
   end
   inherited BtnVisualizar: TcxButton
     Top = 444
-    Hint = 'Visualizar organiza'#231#227'o'
-    Description = 'Visualiza o cadastro da organiza'#231#227'o atualmente selecionada.'
+    Description = 'Visualizar organiza'#231#227'o selecionada.'
     ExplicitTop = 444
   end
   inherited dxBarManager: TdxBarManager

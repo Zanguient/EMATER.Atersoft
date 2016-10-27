@@ -1,7 +1,8 @@
 inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
   Left = 392
   Top = 212
-  Caption = 'Consulta de Registros de Indicadores'
+  Hint = 'Indicadores :: Consulta'
+  Caption = 'Indicadores :: Consulta'
   ClientWidth = 697
   ExplicitWidth = 713
   PixelsPerInch = 96
@@ -169,8 +170,21 @@ inherited FrmIndicadorConsulta: TFrmIndicadorConsulta
       0
       0
       0)
+    inherited BtnNovo: TdxBarButton
+      Description = 'Criar novo indicador.'
+      Hint = '01. Novo'
+    end
+    inherited BtnEditar: TdxBarButton
+      Description = 'Editar indicador selecionado.'
+      Hint = '02. Editar'
+    end
+    inherited BtnVisualizar: TdxBarButton
+      Description = 'Visualizar indicador selecionado.'
+      Hint = '03. Visualizar'
+    end
     inherited BtnExcluir: TdxBarButton
-      Hint = 'Excluir'
+      Description = 'Excluir indicador selecionado.'
+      Hint = '04. Excluir'
     end
   end
   inherited QryConsulta: TFDQuery

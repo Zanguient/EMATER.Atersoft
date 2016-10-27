@@ -60,6 +60,7 @@ end;
 
 procedure TFrmCreditoTipo.FormCreate(Sender: TObject);
 begin
+  Legenda := 'Tipo de crédito';
   inherited;
   ControleAtivo := DbEdtNome;
   CampoChave := 'TIP_ID';

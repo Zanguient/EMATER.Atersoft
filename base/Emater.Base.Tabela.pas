@@ -50,14 +50,17 @@ type
     FTabela: string;
     FDataSets: TDataSetArray;
     FIsCachedUpdates: Boolean;
+    FLegenda: string;
     procedure DadosCacheAplicar(const DataSet: TFDQuery);
     procedure DadosCacheCancelar(const DataSet: TFDQuery; DoRefresh: Boolean = True);
     function DadosCachePendente: Boolean;
+    procedure SetLegenda(const Value: string);
   published
     property ControleAtivo: TWinControl read FControleAtivo write FControleAtivo;
     property CampoChave: string read FCampoChave write FCampoChave;
     property Tabela: string read FTabela write FTabela;
     property DataSets: TDataSetArray read FDataSets;
+    property Legenda: string read FLegenda write SetLegenda;
   public
     procedure Novo;
     procedure Editar(const ID: Largeint);
@@ -602,6 +605,20 @@ begin
     end
   else
     Result := '';
+end;
+
+procedure TFrmBaseTabela.SetLegenda(const Value: string);
+begin
+  FLegenda := AnsiLowerCase(Value);
+
+  BtnNovo.Hint := '01. Novo';
+  BtnSalvar.Hint := '02. Salvar';
+  BtnCancelar.Hint := '03. Cancelar';
+  BtnExcluir.Hint := '04. Excluir';
+  BtnNovo.Description := 'Criar novo(a) ' + FLegenda + '.';
+  BtnSalvar.Description := 'Salvar alterações no(a) ' + FLegenda + '.';
+  BtnCancelar.Description := 'Cancelar alterações no(a) ' + FLegenda + '.';
+  BtnExcluir.Description := 'Excluir ' + FLegenda + ' selecionado(a).';
 end;
 
 procedure TFrmBaseTabela.Visualizar(const ID: Largeint);

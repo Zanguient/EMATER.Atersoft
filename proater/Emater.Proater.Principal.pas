@@ -542,6 +542,7 @@ type
     procedure BtnOrcEditarClick(Sender: TObject);
     procedure QrySubMetodoMET_MESGetText(Sender: TField; var Text: string; DisplayText: Boolean);
     procedure QrySubMetodoMET_MESSetText(Sender: TField; const Text: string);
+    procedure BtnRelatorioClick(Sender: TObject);
   private
     procedure VisualizarTexto(const FieldName: string);
     procedure EditarItem(const FDQuery: TFDQuery; const Button: TcxButton);
@@ -557,7 +558,7 @@ implementation
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Produtividade.Fater.Editor, Emater.Proater.Comunidade, Emater.Base.Consts, Emater.Proater.Potencial,
   Emater.Proater.Modulo, Emater.Recurso.Modulo, Emater.Proater.Acordo, Emater.Pessoal.Funcionario.Busca, Emater.Proater.Demanda, Emater.Proater.Mobiliario,
   Emater.Proater.Equipamento, Emater.Proater.Veiculo, Emater.Proater.Custo, Emater.Proater.Qualificacao, Emater.Proater.SubProjeto, Emater.Proater.Meta,
-  Emater.Proater.Metodo, Emater.Proater.Beneficiario, Emater.Proater.Orcamento, Emater.Proater.Consts;
+  Emater.Proater.Metodo, Emater.Proater.Beneficiario, Emater.Proater.Orcamento, Emater.Proater.Consts, Emater.Relatorio.Proater;
 
 procedure TFrmProaterPrincipal.BtnAcrEditarClick(Sender: TObject);
 begin
@@ -951,6 +952,22 @@ begin
   finally
     FrmProaterQualificacao.Release;
     FrmProaterQualificacao := nil;
+  end;
+end;
+
+procedure TFrmProaterPrincipal.BtnRelatorioClick(Sender: TObject);
+var
+  S: string;
+begin
+  Screen.Cursor := crHourGlass;
+  FrmRelatorioProater := TFrmRelatorioProater.Create(Self);
+  try
+    S := QryPrincipalPRO_PERIODO_INICIO.Text + ' a ' + QryPrincipalPRO_PERIODO_FIM.Text + ' do município de ' + DbLkpCmbBxUnidade.Text;
+    FrmRelatorioProater.Preparar(QryPrincipalPRO_ID.Value, S);
+  finally
+    FrmRelatorioProater.Release;
+    FrmRelatorioProater := nil;
+    Screen.Cursor := crDefault;
   end;
 end;
 

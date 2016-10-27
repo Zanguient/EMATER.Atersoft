@@ -60,6 +60,7 @@ end;
 
 procedure TFrmCreditoRaca.FormCreate(Sender: TObject);
 begin
+  Legenda := 'Raça';
   inherited;
   ControleAtivo := DbEdtNome;
   CampoChave := 'RAC_ID';

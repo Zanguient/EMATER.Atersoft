@@ -1,8 +1,8 @@
 inherited FrmCadastroComunidadeBusca: TFrmCadastroComunidadeBusca
   Left = 328
   Top = 176
-  Hint = 'Busca r'#225'pida de comunidades.'
-  Caption = 'Busca R'#225'pida de Comunidades'
+  Hint = 'Cadastros :: Comunidade :: Busca'
+  Caption = 'Cadastros :: Comunidade :: Busca'
   ClientHeight = 441
   ClientWidth = 744
   ExplicitWidth = 750
@@ -122,21 +122,18 @@ inherited FrmCadastroComunidadeBusca: TFrmCadastroComunidadeBusca
   end
   inherited BtnNovo: TcxButton
     Top = 408
-    Hint = 'Inserir nova comunidade'
-    Description = 'Cria um novo registro de comunidade.'
+    Description = 'Criar nova comunidade.'
     ExplicitTop = 408
   end
   inherited BtnEditar: TcxButton
     Top = 408
-    Hint = 'Editar comunidade selecionada'
-    Description = 'Edita a comunidade atualmente selecionada.'
+    Description = 'Editar comunidade selecionada.'
     Visible = False
     ExplicitTop = 408
   end
   inherited BtnVisualizar: TcxButton
     Top = 408
-    Hint = 'Visualizar comunidade'
-    Description = 'Visualiza a tabela de comunidades.'
+    Description = 'Visualizar comunidade selecionada.'
     ExplicitTop = 408
   end
   inherited dxBarManager: TdxBarManager

@@ -2,8 +2,8 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
   Tag = 1
   Left = 403
   Top = 135
-  Hint = 'Cadastros :: Organiza'#231#227'o Social'
-  Caption = 'Cadastros :: Organiza'#231#227'o Social'
+  Hint = 'Cadastros :: Organiza'#231#227'o Social :: Cadastro'
+  Caption = 'Cadastros :: Organiza'#231#227'o Social :: Cadastro'
   ClientHeight = 474
   ClientWidth = 572
   ExplicitWidth = 578
@@ -555,21 +555,18 @@ inherited FrmCadastroOrganizacao: TFrmCadastroOrganizacao
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 442
-    Hint = '01. Novo'
     Description = 'Criar nova organiza'#231#227'o social.'
     ExplicitTop = 442
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 442
-    Hint = '02. Salvar'
     Description = 'Salvar altera'#231#245'es na organiza'#231#227'o social.'
     ExplicitTop = 442
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 442
-    Hint = '03. Cancelar'
     Description = 'Cancelar altera'#231#245'es da organiza'#231#227'o social.'
     ExplicitTop = 442
   end

@@ -207,6 +207,7 @@ inherited FrmBaseBusca: TFrmBaseBusca
     Top = 479
     Width = 75
     Height = 25
+    Hint = '01. Novo'
     Anchors = [akLeft, akBottom]
     Caption = '&Novo'
     OptionsImage.NumGlyphs = 2
@@ -219,6 +220,7 @@ inherited FrmBaseBusca: TFrmBaseBusca
     Top = 479
     Width = 75
     Height = 25
+    Hint = '02. Editar'
     Anchors = [akLeft, akBottom]
     Caption = '&Editar...'
     Enabled = False
@@ -232,6 +234,7 @@ inherited FrmBaseBusca: TFrmBaseBusca
     Top = 479
     Width = 75
     Height = 25
+    Hint = '03. Visualizar'
     Anchors = [akLeft, akBottom]
     Caption = '&Visualizar...'
     Enabled = False

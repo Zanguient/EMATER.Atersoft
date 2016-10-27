@@ -60,6 +60,7 @@ end;
 
 procedure TFrmCreditoSituacao.FormCreate(Sender: TObject);
 begin
+  Legenda := 'Situação do projeto';
   inherited;
   ControleAtivo := DbEdtNome;
   CampoChave := 'SIT_ID';

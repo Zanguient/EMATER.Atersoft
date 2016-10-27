@@ -46,6 +46,10 @@ inherited FrmBaseTabela: TFrmBaseTabela
     object TbShtPrincipal: TcxTabSheet
       Caption = 'Principal'
       ImageIndex = 0
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
   end
   object BtnNovo: TcxButton
@@ -53,6 +57,7 @@ inherited FrmBaseTabela: TFrmBaseTabela
     Top = 351
     Width = 75
     Height = 25
+    Hint = '01. Novo'
     Anchors = [akLeft, akBottom]
     Caption = '&Novo'
     OptionsImage.NumGlyphs = 2
@@ -64,6 +69,7 @@ inherited FrmBaseTabela: TFrmBaseTabela
     Top = 351
     Width = 75
     Height = 25
+    Hint = '02. Salvar'
     Anchors = [akLeft, akBottom]
     Caption = '&Salvar'
     OptionsImage.NumGlyphs = 2
@@ -75,6 +81,7 @@ inherited FrmBaseTabela: TFrmBaseTabela
     Top = 351
     Width = 75
     Height = 25
+    Hint = '03. Cancelar'
     Anchors = [akLeft, akBottom]
     Caption = '&Cancelar'
     OptionsImage.NumGlyphs = 2

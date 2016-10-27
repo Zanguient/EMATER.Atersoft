@@ -1,8 +1,8 @@
 inherited FrmPessoalFuncionarioBusca: TFrmPessoalFuncionarioBusca
   Left = 335
   Top = 171
-  Hint = 'Busca r'#225'pida de funcion'#225'rio.'
-  Caption = 'Busca R'#225'pida de Funcion'#225'rios'
+  Hint = 'Sistema :: Funcion'#225'rios :: Busca'
+  Caption = 'Sistema :: Funcion'#225'rios :: Busca'
   ClientWidth = 825
   ExplicitWidth = 831
   PixelsPerInch = 96
@@ -193,16 +193,13 @@ inherited FrmPessoalFuncionarioBusca: TFrmPessoalFuncionarioBusca
     ExplicitLeft = 743
   end
   inherited BtnNovo: TcxButton
-    Hint = 'Inserir novo funcion'#225'rio'
-    Description = 'Cria um novo registro de funcion'#225'rio.'
+    Description = 'Criar novo funcion'#225'rio.'
   end
   inherited BtnEditar: TcxButton
-    Hint = 'Editar funcion'#225'rio selecionado'
-    Description = 'Edita o funcion'#225'rio atualmente selecionado.'
+    Description = 'Editar funcion'#225'rio selecionado.'
   end
   inherited BtnVisualizar: TcxButton
-    Hint = 'Visualizar funcion'#225'rio '
-    Description = 'Visualiza o funcion'#225'rio atualmente selecionado.'
+    Description = 'Visualizar funcion'#225'rio selecionado.'
   end
   inherited dxBarManager: TdxBarManager
     DockControlHeights = (

@@ -60,6 +60,7 @@ end;
 
 procedure TFrmCreditoLinha.FormCreate(Sender: TObject);
 begin
+  Legenda := 'Linha de crédito';
   inherited;
   ControleAtivo := DbEdtNome;
   CampoChave := 'LIN_ID';

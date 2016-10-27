@@ -1,16 +1,15 @@
 inherited FrmSistemaBackup: TFrmSistemaBackup
   Left = 398
   Top = 181
+  Hint = 'Sistema :: Banco de Dados :: Backup'
   BorderStyle = bsDialog
-  Caption = 'Backup da Base de Dados'
+  Caption = 'Sistema :: Banco de Dados :: Backup'
   ClientHeight = 459
   ClientWidth = 633
   Position = poScreenCenter
   OnClose = FormClose
-  ExplicitLeft = 398
-  ExplicitTop = 181
-  ExplicitWidth = 649
-  ExplicitHeight = 498
+  ExplicitWidth = 639
+  ExplicitHeight = 488
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

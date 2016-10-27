@@ -289,7 +289,7 @@ begin
   if Msg.Confirmacao(BASE_MSG_CONFIRMAR_EXCLUIR) then
     try
       DtSrcConsulta.DataSet.Edit;
-      DtSrcConsulta.DataSet.FieldByName('REG_EXCLUIDO').AsBoolean := True;
+      DtSrcConsulta.DataSet.FieldByName('REG_EXCLUIDO').AsInteger := 1;
       DtSrcConsulta.DataSet.FieldByName('REG_REPLICADO').Value := 0;
       DtSrcConsulta.DataSet.FieldByName('REG_USUARIO').AsString := DtmConexaoModulo.UsuarioLogin;
       DtSrcConsulta.DataSet.FieldByName('REG_MODIFICADO').Value := Now;

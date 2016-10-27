@@ -60,6 +60,7 @@ end;
 
 procedure TFrmCreditoPublico.FormCreate(Sender: TObject);
 begin
+  Legenda := 'Público beneficiário';
   inherited;
   ControleAtivo := DbEdtNome;
   CampoChave := 'PUB_ID';

@@ -175,6 +175,7 @@ end;
 
 procedure TFrmSistemaUsuario.FormCreate(Sender: TObject);
 begin
+  Legenda := 'Usuário';
   inherited;
   CampoChave := 'USR_ID';
   Tabela := 'TAB_SIS_USUARIO';

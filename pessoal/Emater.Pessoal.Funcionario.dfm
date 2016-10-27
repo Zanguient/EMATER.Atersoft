@@ -2,10 +2,10 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
   Tag = 1
   Left = 380
   Top = 147
-  Hint = 'Cadastro de t'#233'cnicos.'
+  Hint = 'Sistema :: Funcion'#225'rios :: Cadastro'
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSizeable
-  Caption = 'Funcion'#225'rio'
+  Caption = 'Sistema :: Funcion'#225'rios :: Cadastro'
   ClientHeight = 576
   ClientWidth = 617
   ExplicitWidth = 633
@@ -138,6 +138,8 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
     ClientRectBottom = 502
     ClientRectRight = 600
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
       ExplicitWidth = 598
       ExplicitHeight = 474
       object GRpBxPrincipal: TcxGroupBox
@@ -688,10 +690,10 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
           Top = 81
           Width = 161
           Height = 25
-          Hint = 'Visualizar cadastro do usu'#225'rio'
+          Hint = '05. Usu'#225'rio'
           Anchors = [akTop, akRight]
           Caption = 'Visualizar cadastro do usu'#225'rio'
-          Description = 'Visualizar cadastro do usu'#225'rio'
+          Description = 'Visualizar cadastro do usu'#225'rio.'
           OptionsImage.Images = DtmRecursoModulo.ImgLstPequenas
           ParentShowHint = False
           ShowHint = True
@@ -764,29 +766,26 @@ inherited FrmPessoalFuncionario: TFrmPessoalFuncionario
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 544
-    Hint = 'Inserir um novo funcion'#225'rio'
-    Description = 'Cria um novo registro de funcion'#225'rio.'
+    Description = 'Criar novo funcion'#225'rio.'
     ExplicitTop = 544
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 544
-    Hint = 'Salvar as altera'#231#245'es no funcion'#225'rio'
-    Description = 'Salva as altera'#231#245'es realizadas no registro do funcion'#225'rio.'
+    Description = 'Salvar altera'#231#245'es no funcion'#225'rio.'
     ExplicitTop = 544
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 544
-    Hint = 'Cancelar as altera'#231#245'es no funcion'#225'rio'
-    Description = 'Cancela as altera'#231#245'es realizadas no registro do funcion'#225'rio.'
+    Description = 'Cancelar altera'#231#245'es no funcion'#225'rio.'
     ExplicitTop = 544
   end
   inherited BtnExcluir: TcxButton
     Tag = 1
     Top = 544
-    Hint = 'Excluir funcion'#225'rio'
-    Description = 'Exclui o funcion'#225'rio atualmente selecionado.'
+    Hint = '04. Excluir'
+    Description = 'Excluir funcion'#225'rio atual.'
     ExplicitTop = 544
   end
   inherited BtnFechar: TcxButton

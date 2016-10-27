@@ -1,16 +1,15 @@
 inherited FrmSistemaRestauracao: TFrmSistemaRestauracao
   Left = 481
   Top = 153
+  Hint = 'Sistema :: Banco de Dados :: Restaura'#231#227'o'
   BorderStyle = bsDialog
-  Caption = 'Restaura'#231#227'o da Base de Dados'
+  Caption = 'Sistema :: Banco de Dados :: Restaura'#231#227'o'
   ClientHeight = 457
   ClientWidth = 633
   Position = poScreenCenter
   OnClose = FormClose
-  ExplicitLeft = 481
-  ExplicitTop = 153
-  ExplicitWidth = 649
-  ExplicitHeight = 496
+  ExplicitWidth = 639
+  ExplicitHeight = 486
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

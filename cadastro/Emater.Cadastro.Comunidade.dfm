@@ -3,7 +3,7 @@ inherited FrmCadastroComunidade: TFrmCadastroComunidade
   Left = 467
   Top = 178
   Hint = 'Cadastros :: Comunidade'
-  Caption = 'Cadastros :: Comunidade'
+  Caption = 'Cadastros :: Comunidade :: Cadastro'
   ClientHeight = 480
   ClientWidth = 490
   ExplicitWidth = 496
@@ -205,21 +205,18 @@ inherited FrmCadastroComunidade: TFrmCadastroComunidade
   inherited BtnNovo: TcxButton
     Tag = 1
     Top = 448
-    Hint = '01. Novo'
     Description = 'Criar nova comunidade.'
     ExplicitTop = 448
   end
   inherited BtnSalvar: TcxButton
     Tag = 1
     Top = 448
-    Hint = '02. Salvar'
     Description = 'Salvar altera'#231#245'es na comunidade.'
     ExplicitTop = 448
   end
   inherited BtnCancelar: TcxButton
     Tag = 1
     Top = 448
-    Hint = '03. Cancelar'
     Description = 'Cancelar altera'#231#245'es na comunidade.'
     ExplicitTop = 448
   end

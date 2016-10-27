@@ -2,8 +2,8 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
   Tag = 1
   Left = 301
   Top = 82
-  Hint = 'Tabela de usu'#225'rios do sistema.'
-  Caption = 'Usu'#225'rios'
+  Hint = 'Sistema :: Usu'#225'rios :: Cadastro'
+  Caption = 'Sistema :: Usu'#225'rios :: Cadastro'
   ClientHeight = 602
   ClientWidth = 616
   Scaled = False
@@ -25,6 +25,8 @@ inherited FrmSistemaUsuario: TFrmSistemaUsuario
     ClientRectBottom = 554
     ClientRectRight = 599
     inherited TbShtPrincipal: TcxTabSheet
+      ExplicitLeft = 2
+      ExplicitTop = 28
       ExplicitWidth = 597
       ExplicitHeight = 526
       object Label2: TLabel

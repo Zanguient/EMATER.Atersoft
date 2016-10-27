@@ -60,6 +60,7 @@ end;
 
 procedure TFrmCreditoClassificacao.FormCreate(Sender: TObject);
 begin
+  Legenda := 'Classificação do Porte do proponente';
   inherited;
   ControleAtivo := DbEdtNome;
   CampoChave := 'CLS_ID';

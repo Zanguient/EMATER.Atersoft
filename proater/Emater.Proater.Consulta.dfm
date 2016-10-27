@@ -1,8 +1,9 @@
 inherited FrmProaterConsulta: TFrmProaterConsulta
   Left = 314
   Top = 85
+  Hint = 'PROATER :: Consulta'
   ActiveControl = nil
-  Caption = 'FrmProaterConsulta'
+  Caption = 'PROATER :: Consulta'
   ClientHeight = 570
   ClientWidth = 855
   ExplicitWidth = 871
@@ -416,25 +417,27 @@ inherited FrmProaterConsulta: TFrmProaterConsulta
         end>
     end
     inherited BtnNovo: TdxBarButton
-      Description = 'Abre a janela e cria um novo registro de PROATER'
-      Hint = 'Novo PROATER'
+      Description = 'Criar novo PROATER.'
+      Hint = '01. Novo'
     end
     inherited BtnEditar: TdxBarButton
-      Description = 'Edita o PROATER atualmente selecionado'
-      Hint = 'Editar PROATER'
+      Description = 'Editar PROATER selecionado.'
+      Hint = '02. Editar'
     end
     inherited BtnVisualizar: TdxBarButton
-      Description = 'Visualiza o PROATER atualmente selecionado'
-      Hint = 'Visualizar PROATER'
+      Description = 'Visualizar PROATER selecionado.'
+      Hint = '03. Visualizar'
     end
     inherited BtnExcluir: TdxBarButton
-      Description = 'Exclui o PROATER atualmente selecionado'
-      Hint = 'Excluir PROATER'
+      Description = 'Excluir PROATER selecionado.'
+      Hint = '04. Excluir'
     end
     object BtnImprimir: TdxBarButton [5]
+      Tag = 1
       Caption = 'Imprimir PROATER'
       Category = 0
-      Hint = 'Imprimir PROATER'
+      Description = 'Imprimir PROATER.'
+      Hint = '05. Imprimir'
       Visible = ivAlways
       ImageIndex = 156
       PaintStyle = psCaptionGlyph

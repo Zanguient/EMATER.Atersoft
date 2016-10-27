@@ -59,6 +59,7 @@ end;
 
 procedure TFrmCreditoFinanceira.FormCreate(Sender: TObject);
 begin
+  Legenda := 'Agente financeiro';
   inherited;
   ControleAtivo := DbEdtNome;
   CampoChave := 'FIN_ID';

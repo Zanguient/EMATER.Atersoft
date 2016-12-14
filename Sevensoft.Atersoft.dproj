@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>Sevensoft.Atersoft.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -96,10 +96,10 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Build>111</VerInfo_Build>
+        <VerInfo_Build>112</VerInfo_Build>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=Sevensoft Tecnologia da Informação;FileDescription=Sevensoft Atersoft;FileVersion=1.0.0.111;InternalName=Sevensoft.Atersoft;LegalCopyright=Copyright© 2014, Sevensoft Tecnologia da Informação.;LegalTrademarks=O logotipo do sistema é marca da EMATER do Estado do Pará, Brasil. O nome Atersoft é marca da Sevensoft Tecnologia da Informação.;OriginalFilename=Sevensoft.Atersoft.exe;ProductName=ATER Pará;ProductVersion=1.0;Comments=Sistema desenvolvido e mantido pela Sevensoft Tecnlogia da Informação.</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Sevensoft Tecnologia da Informação;FileDescription=Sevensoft Atersoft;FileVersion=1.0.0.112;InternalName=Sevensoft.Atersoft;LegalCopyright=Copyright© 2014, Sevensoft Tecnologia da Informação.;LegalTrademarks=O logotipo do sistema é marca da EMATER do Estado do Pará, Brasil. O nome Atersoft é marca da Sevensoft Tecnologia da Informação.;OriginalFilename=Sevensoft.Atersoft.exe;ProductName=ATER Pará;ProductVersion=1.0;Comments=Sistema desenvolvido e mantido pela Sevensoft Tecnlogia da Informação.</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">

@@ -64,7 +64,7 @@ type
   public
     procedure Novo;
     procedure Editar(const ID: Largeint);
-    procedure Visualizar(const ID: Largeint);
+    procedure Visualizar(const ID: Largeint); virtual;
     function Selecionar: Largeint;
     function SelecionarNumero(const ACampoNome: string): Largeint;
     function SelecionarTexto(const ACampoNome: string): string;

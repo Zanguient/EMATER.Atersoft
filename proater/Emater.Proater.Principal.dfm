@@ -19,13 +19,12 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
   inherited PgCntrlMain: TcxPageControl
     Width = 791
     Height = 544
+    Properties.ActivePage = TbShtCapacidade
     ExplicitWidth = 791
     ExplicitHeight = 544
     ClientRectBottom = 542
     ClientRectRight = 789
     inherited TbShtPrincipal: TcxTabSheet
-      ExplicitLeft = 2
-      ExplicitTop = 28
       ExplicitWidth = 787
       ExplicitHeight = 514
       object Label30: TLabel
@@ -156,7 +155,7 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
         Properties.PostPopupValueOnTab = True
         Properties.ReadOnly = False
         TabOrder = 3
-        Width = 353
+        Width = 401
       end
       object DbDtEdtPROATER: TcxDBDateEdit
         Left = 8
@@ -852,9 +851,11 @@ inherited FrmProaterPrincipal: TFrmProaterPrincipal
               Styles.Selection = DtmRecursoModulo.cxStyleSelection
               object GrdDemTblCRG_DESCRICAO: TcxGridDBColumn
                 DataBinding.FieldName = 'CRG_DESCRICAO'
+                Width = 660
               end
               object GrdDemTblDEM_QUANTIDADE: TcxGridDBColumn
                 DataBinding.FieldName = 'DEM_QUANTIDADE'
+                Width = 85
               end
             end
             object GrdDemLvl: TcxGridLevel

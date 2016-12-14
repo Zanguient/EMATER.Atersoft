@@ -3081,7 +3081,6 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
     TabOrder = 0
     TabStop = False
     object RbnTbCadastros: TdxRibbonTab
-      Active = True
       Caption = 'Cadastros'
       Groups = <
         item
@@ -3134,6 +3133,7 @@ object FrmSistemaPrincipal: TFrmSistemaPrincipal
       Index = 4
     end
     object RbnTbRelatorios: TdxRibbonTab
+      Active = True
       Caption = 'Relat'#243'rios'
       Groups = <
         item

@@ -1,8 +1,10 @@
 inherited FrmRelatorioGeralProjeto: TFrmRelatorioGeralProjeto
   Left = 362
   Top = 152
-  ExplicitLeft = 362
-  ExplicitTop = 152
+  ExplicitLeft = 8
+  ExplicitTop = 8
+  ExplicitWidth = 584
+  ExplicitHeight = 463
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgCntrlRelatorio: TcxPageControl
@@ -74,6 +76,10 @@ inherited FrmRelatorioGeralProjeto: TFrmRelatorioGeralProjeto
           end
           inherited LkpCmbBxProjeto: TcxLookupComboBox
             Top = 0
+            Properties.ListColumns = <
+              item
+                FieldName = 'PRJ_NOME'
+              end>
             ExplicitTop = 0
           end
         end

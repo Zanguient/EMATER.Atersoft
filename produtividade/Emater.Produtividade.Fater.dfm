@@ -319,10 +319,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtOrientacao: TcxTabSheet
             Caption = 'Orienta'#231#227'o t'#233'cnica'
             ImageIndex = 1
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -352,10 +348,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtResumo: TcxTabSheet
             Caption = 'Resumo da a'#231#227'o'
             ImageIndex = 2
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -385,10 +377,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtParceria: TcxTabSheet
             Caption = 'Parcerias'
             ImageIndex = 3
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -418,10 +406,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtTecnologia: TcxTabSheet
             Caption = 'Tecnologia inovadora'
             ImageIndex = 4
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -466,10 +450,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           object TbShtPratica: TcxTabSheet
             Caption = 'Boas pr'#225'ticas'
             ImageIndex = 5
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             DesignSize = (
               779
               110)
@@ -843,10 +823,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
       Caption = 'T'#233'cnicas e ferramentas'
       ImageIndex = 2
       OnShow = TbShtTecnicasShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         831
         508)
@@ -1314,10 +1290,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
     object TbShtDetalhes: TcxTabSheet
       Caption = 'Mais detalhes'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         831
         508)
@@ -1338,10 +1310,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Cria'#231#227'o/cultura/servi'#231'o'
           ImageIndex = 4
           OnShow = TbShtProdutoShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             795
             441)
@@ -1460,10 +1428,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Benefici'#225'rio atendido'
           ImageIndex = 0
           OnShow = TbShtBeneficiariosShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             795
             441)
@@ -1700,10 +1664,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'T'#233'cnico participante'
           ImageIndex = 1
           OnShow = TbShtTecnicoShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             795
             441)
@@ -1810,10 +1770,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Comunidade'
           ImageIndex = 2
           OnShow = TbShtComunidadesShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             795
             441)
@@ -1924,10 +1880,6 @@ inherited FrmProdutividadeFater: TFrmProdutividadeFater
           Caption = 'Organiza'#231#227'o social'
           ImageIndex = 3
           OnShow = TbShtOrganizacaoShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             795
             441)

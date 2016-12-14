@@ -386,6 +386,8 @@ type
     procedure AplicarUltimaAlteracao;
     procedure CarregarProjetoPorCidade(const Cidade: Integer);
     procedure RecenteRegistrar;
+  public
+    procedure Visualizar(const ID: Largeint); override;
   end;
 
 var
@@ -781,6 +783,13 @@ procedure TFrmProdutividadeFater.TbShtTecnicoShow(Sender: TObject);
 begin
   if not DtStFaterFuncionario.Active then
     DtStFaterFuncionario.Open;
+end;
+
+procedure TFrmProdutividadeFater.Visualizar(const ID: Largeint);
+begin
+  inherited;
+  DtStFaterTecnica.Open;
+  DtStFAterFerramenta.Open;
 end;
 
 procedure TFrmProdutividadeFater.VisualizarTexto(const FieldName: string);

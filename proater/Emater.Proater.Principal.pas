@@ -558,7 +558,7 @@ implementation
 uses Emater.Sistema.Modulo, Emater.Conexao.Modulo, Emater.Produtividade.Fater.Editor, Emater.Proater.Comunidade, Emater.Base.Consts, Emater.Proater.Potencial,
   Emater.Proater.Modulo, Emater.Recurso.Modulo, Emater.Proater.Acordo, Emater.Pessoal.Funcionario.Busca, Emater.Proater.Demanda, Emater.Proater.Mobiliario,
   Emater.Proater.Equipamento, Emater.Proater.Veiculo, Emater.Proater.Custo, Emater.Proater.Qualificacao, Emater.Proater.SubProjeto, Emater.Proater.Meta,
-  Emater.Proater.Metodo, Emater.Proater.Beneficiario, Emater.Proater.Orcamento, Emater.Proater.Consts, Emater.Relatorio.Proater;
+  Emater.Proater.Metodo, Emater.Proater.Beneficiario, Emater.Proater.Orcamento, Emater.Proater.Consts, Emater.Relatorio.Proater, Emater.Sistema.Consts;
 
 procedure TFrmProaterPrincipal.BtnAcrEditarClick(Sender: TObject);
 begin
@@ -1436,6 +1436,14 @@ begin
   PgCntrlPlano.ActivePageIndex := 0;
 
   FrmProaterPrincipal := Self;
+
+  // Controle serão ativos somente para o usuário administrador:
+  if (DtmConexaoModulo.PerfilID = SISTEMA_PERFIL_ADMINISTRADOR) or (DtmConexaoModulo.PerfilID =  SISTEMA_PERFIL_CHEFIA) then
+    begin
+      DbLkpCmbBxUnidade.Enabled := True;
+      DbLkpCmbBxUnidade.Properties.ReadOnly := False;
+      DbLkpCmbBxUnidade.TabStop := True;
+    end;
 end;
 
 procedure TFrmProaterPrincipal.FormShow(Sender: TObject);
@@ -1585,6 +1593,7 @@ begin
   inherited;
   DtmSistemaModulo.GravarAuditoriaInclusao(QryDemanda, 'TAB_PRD_PROATER_DEMANDA', 'DEM_ID');
   QryDemandaPRO_ID.Value := QryPrincipalPRO_ID.Value;
+  QryDemandaDEM_QUANTIDADE.Value := 0;
 end;
 
 procedure TFrmProaterPrincipal.QryEquipamentoBeforePost(DataSet: TDataSet);

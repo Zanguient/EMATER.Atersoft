@@ -3,10 +3,10 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
   Top = 97
   ClientHeight = 516
   ClientWidth = 627
-  ExplicitLeft = 275
-  ExplicitTop = 97
-  ExplicitWidth = 643
-  ExplicitHeight = 555
+  ExplicitLeft = 8
+  ExplicitTop = 8
+  ExplicitWidth = 633
+  ExplicitHeight = 545
   PixelsPerInch = 96
   TextHeight = 13
   inherited BtnImprimir: TcxButton
@@ -29,7 +29,8 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
     ClientRectBottom = 463
     ClientRectRight = 607
     inherited TbShtFiltros: TcxTabSheet
-      ExplicitHeight = 443
+      ExplicitWidth = 605
+      ExplicitHeight = 435
       inherited ShpTitulo: TShape
         Width = 585
         Anchors = [akLeft, akTop, akRight]
@@ -49,7 +50,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
         Width = 585
         inherited ImgMain: TImage
           Left = 446
-          Top = 198
+          Top = 191
           Anchors = [akRight, akBottom]
           ExplicitLeft = 446
           ExplicitTop = 238
@@ -2251,8 +2252,9 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       'where'
       '  (d.pro_id = :id) and'
       
-        '  (d.atv_periodo_colheita >= :ano_inicio) and (d.atv_periodo_col' +
-        'heita <= :ano_fim) and'
+        '  (((d.atv_periodo_colheita >= :ano_inicio) and (d.atv_periodo_c' +
+        'olheita <= :ano_fim)) or'
+      '  (d.atv_ano between :ano_inicio and :ano_fim))  and'
       '  (d.reg_excluido = 0) and'
       '  (d.sip_id between :sistema_inicio and :sistema_fim) and'
       '  (d.prd_id between :produto_inicio and :produto_fim) and'
@@ -2395,6 +2397,9 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       Origin = 'PRP_QTDE_COMERCIALIZADA'
       ProviderFlags = []
       ReadOnly = True
+      DisplayFormat = ',##0.000'
+      EditFormat = '0.000'
+      currency = False
     end
     object DtStComercioCOMERCIO_UNIDADE: TStringField
       AutoGenerateValue = arDefault
@@ -2410,6 +2415,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       Origin = 'PRP_VALOR'
       ProviderFlags = []
       ReadOnly = True
+      currency = True
       Precision = 18
       Size = 2
     end
@@ -2419,6 +2425,7 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       Origin = 'COMERCIO_TOTAL'
       ProviderFlags = []
       ReadOnly = True
+      currency = True
       Precision = 18
       Size = 5
     end
@@ -2751,8 +2758,9 @@ inherited FrmRelatorioProducaoBeneficiario: TFrmRelatorioProducaoBeneficiario
       '    )'
       '  ) and'
       
-        '  (d.atv_periodo_colheita >= :ano_inicio) and (d.atv_periodo_col' +
-        'heita <= :ano_fim) and'
+        '  (((d.atv_periodo_colheita >= :ano_inicio) and (d.atv_periodo_c' +
+        'olheita <= :ano_fim)) or'
+      '  (d.atv_ano between :ano_inicio and :ano_fim))  and'
       '  (d.reg_excluido = 0) and'
       '  (d.sip_id between :sistema_inicio and :sistema_fim) and'
       '  (d.prd_id between :produto_inicio and :produto_fim) and'
